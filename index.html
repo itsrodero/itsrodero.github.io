@@ -113,8 +113,8 @@
             <p><strong>¿Dónde se guardan las imágenes descargadas?</strong><br>
             Al hacer clic en el botón de descarga, la imagen se abrirá en su tamaño original (1080p, 720p o 480p). En tu móvil, mantén pulsada la imagen y dale a "Guardar imagen". En ordenador, haz clic derecho y selecciona "Guardar imagen como...". Se guardará en tu carpeta de descargas predeterminada.</p>
         </div>
-
-  </div>  <script>
+</div>
+  <script>
         // Guardamos las etiquetas para poder copiarlas luego
         let currentTagsText = "";
 
@@ -143,19 +143,17 @@
 
                 document.getElementById('results').style.display = 'block';
 
-                // 2. Extraer Etiquetas SEO (La nueva magia)
+                // 2. Extraer Etiquetas SEO (La magia corregida)
                 document.getElementById('tags-results').style.display = 'block';
                 document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⏳ Extrayendo etiquetas de los servidores de YouTube...</span>';
                 
-                // Usamos un proxy gratuito para leer el código de YouTube
-                fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://www.youtube.com/watch?v=' + videoId)}`)
+                // Usamos el proxy potente que no da errores
+                fetch(`https://api.codetabs.com/v1/proxy?quest=https://www.youtube.com/watch?v=${videoId}`)
                 .then(response => {
-                    if (response.ok) return response.json();
+                    if (response.ok) return response.text();
                     throw new Error('Error en la red');
                 })
-                .then(data => {
-                    const html = data.contents;
-                    const html = data.contents;
+                .then(html => {
                     // Buscamos las palabras clave ocultas en el código
                     const tagMatch = html.match(/<meta\s+name="keywords"\s+content="([^"]+)"/i);
                     
@@ -198,6 +196,7 @@
 </body>
 
 </html>
+
 
 
 
