@@ -5,7 +5,7 @@
     <meta name="monetag" content="39486a95b7a127eac8a0da953ea39977">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descargar Miniaturas de YouTube en HD, 4K y 1080p</title>
+    <title>TubeTools - Herramientas para Creadores de YouTube</title>
     <meta name="description" content="Herramienta gratuita para extraer y guardar portadas y miniaturas de vídeos de YouTube en alta calidad (HD, HQ, 1080p).">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -67,7 +67,7 @@
 
 
 <nav>
-        <a href="#" class="logo">🚀 CreatorTools</a>
+        <a href="#" class="logo">🚀 TubeTools</a>
         <div class="nav-links">
             <a href="#">Inicio</a>
             <a href="#tags-results">Etiquetas SEO</a>
@@ -77,18 +77,17 @@
 
     
     <header>
-        <h1>YT Thumbnail Downloader</h1>
+        <h1>TubeTools: Descarga Miniaturas</h1>
     </header>
 
     <div class="container">
         
 
-        <div class="hero">
-            <p>Pega el enlace de cualquier vídeo de YouTube y descarga su miniatura en todas las resoluciones disponibles al instante.</p>
-            <div class="input-group">
-                <input type="text" id="yt-url" placeholder="Ej: https://www.youtube.com/watch?v=h_HedjISQ3g">
-                <button onclick="getThumbnails()">Extraer Miniaturas</button>
-            </div>
+        <div class="input-group" style="display: flex; gap: 10px; justify-content: center; max-width: 600px; margin: 0 auto;">
+        <input type="text" id="youtube-url" placeholder="Ej: https://www.youtube.com/watch?v=h_HedjlSQ3g" style="flex: 1;">
+        <button onclick="extractThumbnails()">Extraer</button>
+        <button onclick="document.getElementById('youtube-url').value = '';" style="background-color: #555; width: auto; padding: 10px 20px; border-radius: 8px; color: white; border: none; cursor: pointer;">Limpiar</button>
+    </div>
         </div>
 
         <div id="results">
@@ -140,6 +139,22 @@
 </div>
 
 
+
+<div class="seo-content" style="margin-top: 40px; text-align: center;">
+        <h3 style="color: #333; font-size: 20px;">🚀 Próximamente en TubeTools</h3>
+        <p>Estamos trabajando en el ecosistema definitivo para creadores de contenido:</p>
+        <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+            <div style="background-color: #f9f9f9; border: 1px dashed #ccc; padding: 15px 20px; border-radius: 8px; color: #666;">
+                🏷️ Extractor de Etiquetas SEO <span style="background-color: #ff4757; color: white; font-size: 10px; padding: 3px 6px; border-radius: 4px; margin-left: 5px; font-weight: bold;">Pronto</span>
+            </div>
+            <div style="background-color: #f9f9f9; border: 1px dashed #ccc; padding: 15px 20px; border-radius: 8px; color: #666;">
+                💰 Calculadora de Ingresos <span style="background-color: #ff4757; color: white; font-size: 10px; padding: 3px 6px; border-radius: 4px; margin-left: 5px; font-weight: bold;">Pronto</span>
+            </div>
+        </div>
+    </div>
+
+
+    
 <div class="seo-content" style="margin-top: 20px;">
         <h2>💡 Guía 2026: Cómo optimizar tus vídeos y hackear el algoritmo</h2>
         <p>Para triunfar creando contenido, no basta con grabar buenos vídeos; necesitas que el público haga clic en ellos y que el algoritmo los recomiende. En nuestra plataforma (CreatorTools), sabemos que hay dos factores cruciales que marcan la diferencia entre un vídeo viral y uno que nadie ve: las <strong>miniaturas atractivas (thumbnails)</strong> y las <strong>etiquetas SEO (tags ocultos)</strong>.</p>
@@ -158,7 +173,7 @@
     
     <div id="contacto" class="seo-content" style="margin-top: 20px;">
         <h2>📬 Contacto y Soporte</h2>
-        <p>¿Tienes alguna duda, sugerencia o has encontrado un error en la herramienta? Queremos escucharte. Puedes ponerte en contacto con nuestro equipo de soporte técnico escribiendo directamente a: <strong>admin@tudominio.com</strong>. Intentamos responder a todas las consultas en un plazo de 24-48 horas laborables.</p>
+        <p>¿Tienes alguna duda, sugerencia o has encontrado un error en la herramienta? Queremos escucharte. Puedes ponerte en contacto con nuestro equipo de soporte técnico escribiendo directamente a: <strong>contacto@tubetools.online</strong>. Intentamos responder a todas las consultas en un plazo de 24-48 horas laborables.</p>
     </div>
 
     <div id="privacidad" class="seo-content" style="margin-top: 20px; margin-bottom: 40px;">
@@ -260,6 +275,7 @@
 </body>
 
 </html>
+
 
 
 
