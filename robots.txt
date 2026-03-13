@@ -3,3 +3,4 @@ Allow: /
 
 User-agent: *
 Allow: /
+Sitemap: https://tubetools.online/sitemap.xml
