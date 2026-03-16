@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - TubeTools</title>
+    <meta name="description" content="Articles for YouTube creators: tools, thumbnail analysis, CTR guides, and more.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f9f9f9; color: #1c1e21; line-height: 1.7; }
+        nav { background: #1c1e21; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: white; text-decoration: none; margin: 0 10px; }
+        nav a:hover { color: #ff0000; }
+        main { max-width: 850px; margin: 40px auto; padding: 20px; background: white; border-radius: 16px; }
+        h1 { color: #d32f2f; }
+        .articulo { border-bottom: 1px solid #eee; padding: 20px 0; }
+        .btn { background: #d32f2f; color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; display: inline-block; }
+        footer { background: #1c1e21; color: #888; text-align: center; padding: 30px; margin-top: 40px; }
+        
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; transition: color 0.3s; }
+        nav a:hover { color: #d32f2f; }
+    </style>
+</head>
+<body>
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
+        <p style="margin-bottom: 15px;">🍪 We use our own and third-party cookies to improve your experience, analyze traffic, and show personalized ads. You can accept or reject them.</p>
+        <div>
+            <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Accept</button>
+            <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Reject</button>
+        </div>
+    </div>
+    <script>
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+        document.getElementById('reject-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+    </script>
+
+    <nav>
+        <a href="index.html" style="font-weight: bold; font-size: 22px; text-decoration: none; color: white;">🚀 TubeTools</a>
+        <div>
+            <a href="../blog.html" style="color: #4CAF50;">🇪🇸 ES</a>
+            <a href="index.html">Home</a>
+            <a href="calculator.html">Calculator</a>
+            <a href="blog.html" style="color: #d32f2f;">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <main>
+        <h1>📝 Blog for Creators</h1>
+        <p>Tips, guides, and tools to grow on YouTube.</p>
+
+        <div class="articulo">
+            <h2>🔧 The 5 Free Tools EVERY YouTuber Needs (2026 Guide)</h2>
+            <p>OBS, Canva, TubeTools, DaVinci, VidIQ... all free.</p>
+            <a href="article1.html" class="btn">Read article</a>
+        </div>
+
+        <div class="articulo">
+            <h2>🕵️ How to Analyze Your Competition's Thumbnails (2026 Guide)</h2>
+            <p>Dissect thumbnails like a pro and improve your CTR.</p>
+            <a href="analyze-thumbnail.html" class="btn">Read article</a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2026 TubeTools.online - <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a> | <a href="contact.html">Contact</a></p>
+    </footer>
+</body>
+</html>
