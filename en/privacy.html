@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - TubeTools</title>
+    <meta name="description" content="TubeTools privacy policy. We comply with GDPR and international data protection laws.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f9f9f9; color: #1c1e21; line-height: 1.7; }
+        nav { background: #1c1e21; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: white; text-decoration: none; margin: 0 10px; }
+        nav a:hover { color: #ff0000; }
+        main { max-width: 850px; margin: 40px auto; padding: 30px; background: white; border-radius: 16px; }
+        h1 { color: #d32f2f; }
+        h2 { color: #333; margin-top: 30px; }
+        footer { background: #1c1e21; color: #888; text-align: center; padding: 30px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" style="font-weight: bold; font-size: 22px;">🚀 TubeTools</a>
+        <div>
+            <a href="../privacidad.html" style="color: #4CAF50;">🇪🇸 ES</a>
+            <a href="index.html">Home</a>
+            <a href="calculator.html">Calculator</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <main>
+        <h1>Privacy Policy</h1>
+        <p><em>Last updated: March 16, 2026</em></p>
+
+        <h2>1. Data Controller</h2>
+        <p><strong>Owner:</strong> Daniel (hereinafter, TubeTools)<br>
+        <strong>Contact email:</strong> contacto@tubetools.online<br>
+        <strong>Main purpose:</strong> Platform management and user support.</p>
+
+        <h2>2. Data We Collect</h2>
+        <p>At TubeTools, we collect the following personal data:</p>
+        <ul>
+            <li><strong>Browsing data:</strong> IP address, browser type, pages visited, date, and time (via Google Analytics).</li>
+            <li><strong>Contact data:</strong> When you use the contact form, we collect your name and email address to respond to you.</li>
+            <li><strong>Cookies:</strong> We use technical and third-party cookies for website operation and to show personalized ads (with prior consent).</li>
+        </ul>
+
+        <h2>3. Purpose of Processing</h2>
+        <p>Your data is used to:</p>
+        <ul>
+            <li>Provide the thumbnail extraction service (we do not store URLs or images).</li>
+            <li>Respond to your inquiries and suggestions.</li>
+            <li>Improve the website through statistical analysis.</li>
+            <li>Show ads tailored to your interests (only if you accept cookies).</li>
+        </ul>
+
+        <h2>4. Legal Basis</h2>
+        <p>The legal basis for processing is:</p>
+        <ul>
+            <li><strong>Execution of a contract:</strong> By using our tool, you accept our terms.</li>
+            <li><strong>Consent:</strong> For the use of non-technical cookies and for sending communications.</li>
+        </ul>
+
+        <h2>5. Data Retention</h2>
+        <p>Contact data is kept for the time necessary to answer your query. Browsing data is retained for 14 months (according to Google Analytics).</p>
+
+        <h2>6. Data Recipients</h2>
+        <p>We do not share your data with third parties, except for legal obligations. We use third-party services such as:</p>
+        <ul>
+            <li><strong>Google LLC</strong> (Google Analytics, Google AdSense) – with your consent.</li>
+            <li><strong>GitHub</strong> (website hosting).</li>
+            <li><strong>Formspree</strong> (contact form management).</li>
+        </ul>
+
+        <h2>7. International Transfers</h2>
+        <p>By using Google and GitHub services, your data may be transferred to the United States. Both companies adhere to the Privacy Shield or use standard contractual clauses approved by the European Commission.</p>
+
+        <h2>8. Your Rights</h2>
+        <p>You have the right to access, rectify, delete, limit processing, object, and port your data. To exercise these rights, email us at <strong>contacto@tubetools.online</strong> attaching a copy of your ID or identification document.</p>
+
+        <h2>9. Cookies</h2>
+        <p>We use our own and third-party cookies. You can manage your consent in the cookie banner that appears upon entering the website. For more information, please consult the corresponding section in this Privacy Policy.</p>
+
+        <h2>10. Changes to the Privacy Policy</h2>
+        <p>We may modify this policy to adapt it to new legislation. We recommend reviewing it periodically.</p>
+
+        <p>If you have any doubts, contact us: <strong>contacto@tubetools.online</strong></p>
+    </main>
+    <footer>
+        <p>© 2026 TubeTools.online - <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a> | <a href="contact.html">Contact</a></p>
+    </footer>
+
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
+        <p style="margin-bottom: 15px;">🍪 We use our own and third-party cookies to improve your experience, analyze traffic, and show personalized ads. You can accept or reject them.</p>
+        <div>
+            <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Accept</button>
+            <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Reject</button>
+        </div>
+    </div>
+    <script>
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+        document.getElementById('reject-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
