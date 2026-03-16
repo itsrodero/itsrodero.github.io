@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Revenue Calculator 2026 - TubeTools</title>
+    <meta name="description" content="Calculate how much money you can make on YouTube in 2026 based on your daily views and estimated CPM. Free tool for creators.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f9f9f9; color: #1c1e21; line-height: 1.7; }
+        nav { background: #1c1e21; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: white; text-decoration: none; margin: 0 10px; font-weight: 500; }
+        nav a:hover { color: #d32f2f; }
+        main { max-width: 850px; margin: 40px auto; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        h1 { color: #d32f2f; text-align: center; margin-bottom: 10px; font-size: 2.2rem; }
+        p.subtitulo { text-align: center; color: #666; margin-bottom: 40px; }
+        
+        /* Diseño de la Calculadora */
+        .calculadora-container { background: #f1f3f5; padding: 30px; border-radius: 12px; margin-bottom: 40px; border: 1px solid #e9ecef; }
+        .input-group { margin-bottom: 25px; }
+        .input-group label { display: block; font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; }
+        .slider { width: 100%; height: 8px; border-radius: 5px; background: #ddd; outline: none; appearance: none; margin-bottom: 10px; }
+        .slider::-webkit-slider-thumb { appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #d32f2f; cursor: pointer; }
+        .valor-display { font-size: 1.2rem; font-weight: bold; color: #d32f2f; background: white; padding: 5px 15px; border-radius: 8px; display: inline-block; border: 1px solid #ddd; }
+        
+        /* Tarjetas de Resultados */
+        .resultados-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 30px; }
+        .resultado-card { background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid #d32f2f; }
+        .resultado-card h3 { font-size: 1rem; color: #666; margin-bottom: 10px; }
+        .resultado-card .dinero { font-size: 1.8rem; font-weight: bold; color: #1c1e21; }
+        
+        /* Sección SEO */
+        .seo-text { margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px; }
+        .seo-text h2 { color: #1c1e21; margin-top: 25px; margin-bottom: 15px; font-size: 1.5rem; }
+        .seo-text p { margin-bottom: 15px; color: #444; }
+        
+        footer { background: #1c1e21; color: #888; text-align: center; padding: 30px; margin-top: 40px; }
+        footer a { color: #bbb; text-decoration: none; margin: 0 10px; }
+        footer a:hover { color: white; }
+
+        @media (max-width: 600px) {
+            .resultados-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" style="font-weight: bold; font-size: 22px;">🚀 TubeTools</a>
+        <div>
+            <a href="../calculadora.html" style="color: #4CAF50;">🇪🇸 ES</a>
+            <a href="index.html">Home</a>
+            <a href="calculator.html" style="color: #d32f2f;">Calculator</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>💸 YouTube Revenue Calculator</h1>
+        <p class="subtitulo">Discover how much money your channel can generate based on your views and niche.</p>
+
+        <div class="calculadora-container">
+            <div class="input-group">
+                <label for="visitas">👁️ Estimated Daily Views</label>
+                <input type="range" id="visitas" class="slider" min="100" max="500000" step="100" value="10000">
+                <span class="valor-display" id="visitas-val">10,000 views/day</span>
+            </div>
+
+            <div class="input-group">
+                <label for="cpm">📈 Estimated CPM (Dollars per 1,000 views)</label>
+                <input type="range" id="cpm" class="slider" min="0.1" max="25" step="0.1" value="2.5">
+                <span class="valor-display" id="cpm-val">$2.50 CPM</span>
+            </div>
+
+            <div class="resultados-grid">
+                <div class="resultado-card">
+                    <h3>Daily Earnings</h3>
+                    <div class="dinero" id="res-diario">$0.00</div>
+                </div>
+                <div class="resultado-card">
+                    <h3>Monthly Earnings</h3>
+                    <div class="dinero" id="res-mensual">$0.00</div>
+                </div>
+                <div class="resultado-card">
+                    <h3>Yearly Earnings</h3>
+                    <div class="dinero" id="res-anual">$0.00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="seo-text">
+            <h2>How does this YouTube Revenue Calculator work?</h2>
+            <p>Our tool uses a simple but accurate algorithm based on the YouTube Partner Program (YPP) monetization model. YouTube pays creators for ad impressions on their videos, and this calculator estimates your share of the revenue based on two key factors: your traffic volume and your CPM.</p>
+            <p>Please note that YouTube keeps approximately 45% of the advertising revenue, giving the remaining 55% to the creator. Our calculator already reflects realistic estimates of what would actually reach your pocket.</p>
+
+            <h2>What is CPM and why is it so important?</h2>
+            <p>The <strong>CPM (Cost Per Mille)</strong> is the amount of money advertisers are willing to pay for every 1,000 ad views on your videos. Not all channels earn the same, even if they have the exact same views. CPM varies drastically depending on:</p>
+            <ul>
+                <li><strong>Your channel's niche:</strong> Finance, technology, cryptocurrency, or business channels have extremely high CPMs (sometimes exceeding $15 or $20) because advertisers are selling expensive products. Vlog, prank, or gaming channels usually have a lower CPM (between $1 and $3).</li>
+                <li><strong>Your audience's geography:</strong> Views coming from the United States, United Kingdom, Canada, or Australia pay much more than views from Latin American countries or Spain, due to the local purchasing power of the advertisers.</li>
+                <li><strong>The time of the year:</strong> During the last quarter of the year (Christmas, Black Friday), CPM skyrockets because all brands are aggressively investing in advertising.</li>
+            </ul>
+
+            <h2>How to increase your YouTube revenue in 2026?</h2>
+            <p>If the figures in the calculator seem low to you, the strategy is not always to get more views, but to <strong>improve the quality of those views</strong>. Optimizing your thumbnail CTR using tools like our <a href="index.html" style="color: #d32f2f; font-weight: bold;">Thumbnail Extractor and Analyzer</a> will allow you to compete against larger channels, attract an older audience, and consequently, raise your channel's overall CPM.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 TubeTools.online - All rights reserved.</p>
+        <div style="margin-top: 10px;">
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Use</a> | 
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        const sliderVisitas = document.getElementById("visitas");
+        const sliderCpm = document.getElementById("cpm");
+        const visitasVal = document.getElementById("visitas-val");
+        const cpmVal = document.getElementById("cpm-val");
+        
+        const resDiario = document.getElementById("res-diario");
+        const resMensual = document.getElementById("res-mensual");
+        const resAnual = document.getElementById("res-anual");
+
+        function calcularGanancias() {
+            const v = parseInt(sliderVisitas.value);
+            const c = parseFloat(sliderCpm.value);
+
+            visitasVal.textContent = v.toLocaleString('en-US') + " views/day";
+            cpmVal.textContent = "$" + c.toFixed(2) + " CPM";
+
+            const rpm = c * 0.55; 
+            const diario = (v / 1000) * rpm;
+            const mensual = diario * 30;
+            const anual = mensual * 12;
+
+            resDiario.textContent = "$" + diario.toFixed(2);
+            resMensual.textContent = "$" + mensual.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            resAnual.textContent = "$" + anual.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        }
+
+        sliderVisitas.addEventListener("input", calcularGanancias);
+        sliderCpm.addEventListener("input", calcularGanancias);
+
+        calcularGanancias();
+    </script>
+
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
+        <p style="margin-bottom: 15px;">🍪 We use our own and third-party cookies to improve your experience, analyze traffic, and show personalized ads. You can accept or reject them.</p>
+        <div>
+            <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Accept</button>
+            <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Reject</button>
+        </div>
+    </div>
+    <script>
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+        document.getElementById('reject-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
