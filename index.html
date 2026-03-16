@@ -81,11 +81,36 @@
         .btn-copy-tags:hover { background-color: #333; }
 
 
-/* Navegación y Footer (Para parecer Profesionales) */
-        nav { background-color: #1c1e21; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        nav .logo { color: white; font-size: 20px; font-weight: bold; text-decoration: none; letter-spacing: 1px; }
-        nav .nav-links a { color: #ddd; text-decoration: none; margin-left: 20px; font-size: 15px; font-weight: 500; transition: 0.3s; }
-        nav .nav-links a:hover { color: #fff; }
+/* --- NUEVO MENÚ CON ESPACIADO PRO --- */
+        nav { 
+            background-color: #1c1e21; 
+            padding: 15px 25px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav div {
+            display: flex;
+            gap: 20px; /* Aquí está el aire que faltaba */
+            align-items: center;
+            flex-wrap: wrap; 
+            justify-content: flex-end;
+        }
+
+        nav a { 
+            color: white !important; /* Forzamos el color para que no haya fallos */
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 15px;
+            transition: color 0.3s;
+            padding: 5px 0; 
+        }
+
+        nav a:hover { 
+            color: #d32f2f !important; 
+        }
         
         footer { background-color: #1c1e21; color: #888; text-align: center; padding: 30px 20px; margin-top: 60px; font-size: 14px; }
         footer .footer-links { margin-top: 15px; }
@@ -99,8 +124,6 @@
 
        .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; transition: color 0.3s; }
-        nav a:hover { color: #d32f2f; }
     </style>
 </head>
  <body>
