@@ -21,6 +21,35 @@
     </style>
 </head>
 <body>
+    <!-- BANNER DE COOKIES -->
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
+    <p style="margin-bottom: 15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y mostrar anuncios personalizados. Puedes aceptarlas o rechazarlas.</p>
+    <div>
+        <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Aceptar</button>
+        <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Rechazar</button>
+    </div>
+</div>
+<script>
+    // Mostrar banner si no hay consentimiento guardado
+    if (!localStorage.getItem('cookieConsent')) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    }
+
+    // Al aceptar
+    document.getElementById('accept-cookies').addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        document.getElementById('cookie-banner').style.display = 'none';
+        // Aquí puedes activar cookies de terceros (Google Analytics, Ads)
+    });
+
+    // Al rechazar
+    document.getElementById('reject-cookies').addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'rejected');
+        document.getElementById('cookie-banner').style.display = 'none';
+        // Aquí puedes bloquear cookies de terceros
+    });
+</script>
+<!-- FIN BANNER DE COOKIES -->
     <nav>
         <a href="index.html" style="font-weight: bold;">🚀 TubeTools</a>
         <div>
