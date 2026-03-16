@@ -19,35 +19,6 @@
     </style>
 </head>
 <body>
-    <!-- BANNER DE COOKIES -->
-<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
-    <p style="margin-bottom: 15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y mostrar anuncios personalizados. Puedes aceptarlas o rechazarlas.</p>
-    <div>
-        <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Aceptar</button>
-        <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Rechazar</button>
-    </div>
-</div>
-<script>
-    // Mostrar banner si no hay consentimiento guardado
-    if (!localStorage.getItem('cookieConsent')) {
-        document.getElementById('cookie-banner').style.display = 'block';
-    }
-
-    // Al aceptar
-    document.getElementById('accept-cookies').addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        document.getElementById('cookie-banner').style.display = 'none';
-        // Aquí puedes activar cookies de terceros (Google Analytics, Ads)
-    });
-
-    // Al rechazar
-    document.getElementById('reject-cookies').addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'rejected');
-        document.getElementById('cookie-banner').style.display = 'none';
-        // Aquí puedes bloquear cookies de terceros
-    });
-</script>
-<!-- FIN BANNER DE COOKIES -->
     <nav>
         <a href="index.html" style="font-weight: bold;">🚀 TubeTools</a>
         <div>
@@ -75,7 +46,7 @@
 
         <h2>3. Propiedad intelectual</h2>
         <p>Las miniaturas descargadas son propiedad de sus respectivos creadores y están protegidas por derechos de autor. TubeTools no reclama ningún derecho sobre dichas imágenes. El usuario es el único responsable del uso que haga de ellas.</p>
-        <p>El código, diseño y contenido original de TubeTools (incluyendo textos, logotipos y gráficos) son propiedad de [Tu Nombre] y están protegidos por las leyes de propiedad intelectual.</p>
+        <p>El código, diseño y contenido original de TubeTools (incluyendo textos, logotipos y gráficos) son propiedad de Daniel y están protegidos por las leyes de propiedad intelectual.</p>
 
         <h2>4. Limitación de responsabilidad</h2>
         <p>TubeTools se proporciona "tal cual", sin garantías de ningún tipo. No garantizamos que el servicio sea ininterrumpido o libre de errores. En ningún caso seremos responsables por daños directos o indirectos derivados del uso de la herramienta.</p>
@@ -87,7 +58,7 @@
         <p>Nos reservamos el derecho a modificar estos términos en cualquier momento. Los cambios serán efectivos desde su publicación en esta página. Es tu responsabilidad revisarlos periódicamente.</p>
 
         <h2>7. Legislación aplicable</h2>
-        <p>Estos términos se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de [tu ciudad, opcional].</p>
+        <p>Estos términos se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de Madrid, España.</p>
 
         <h2>8. Contacto</h2>
         <p>Si tienes preguntas sobre estos términos, puedes escribirnos a: <strong>contacto@tubetools.online</strong></p>
@@ -95,5 +66,31 @@
     <footer>
         <p>© 2026 TubeTools.online - <a href="privacidad.html">Privacidad</a> | <a href="terminos.html">Términos</a> | <a href="contacto.html">Contacto</a></p>
     </footer>
-</body>
+
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
+        <p style="margin-bottom: 15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y mostrar anuncios personalizados. Puedes aceptarlas o rechazarlas.</p>
+        <div>
+            <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Aceptar</button>
+            <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Rechazar</button>
+        </div>
+    </div>
+    <script>
+        // Mostrar banner si no hay consentimiento guardado
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+
+        // Al aceptar
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+
+        // Al rechazar
+        document.getElementById('reject-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+    </script>
+    </body>
 </html>
