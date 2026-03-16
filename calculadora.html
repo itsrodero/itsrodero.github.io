@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Ingresos de YouTube 2026 - TubeTools</title>
+    <meta name="description" content="Calcula cuánto dinero puedes ganar en YouTube en 2026 según tus visitas diarias y tu CPM estimado. Herramienta gratuita para creadores.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f9f9f9; color: #1c1e21; line-height: 1.7; }
+        nav { background: #1c1e21; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: white; text-decoration: none; margin: 0 10px; font-weight: 500; }
+        nav a:hover { color: #d32f2f; }
+        main { max-width: 850px; margin: 40px auto; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        h1 { color: #d32f2f; text-align: center; margin-bottom: 10px; font-size: 2.2rem; }
+        p.subtitulo { text-align: center; color: #666; margin-bottom: 40px; }
+        
+        /* Diseño de la Calculadora */
+        .calculadora-container { background: #f1f3f5; padding: 30px; border-radius: 12px; margin-bottom: 40px; border: 1px solid #e9ecef; }
+        .input-group { margin-bottom: 25px; }
+        .input-group label { display: block; font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; }
+        .slider { width: 100%; height: 8px; border-radius: 5px; background: #ddd; outline: none; appearance: none; margin-bottom: 10px; }
+        .slider::-webkit-slider-thumb { appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #d32f2f; cursor: pointer; }
+        .valor-display { font-size: 1.2rem; font-weight: bold; color: #d32f2f; background: white; padding: 5px 15px; border-radius: 8px; display: inline-block; border: 1px solid #ddd; }
+        
+        /* Tarjetas de Resultados */
+        .resultados-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 30px; }
+        .resultado-card { background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid #d32f2f; }
+        .resultado-card h3 { font-size: 1rem; color: #666; margin-bottom: 10px; }
+        .resultado-card .dinero { font-size: 1.8rem; font-weight: bold; color: #1c1e21; }
+        
+        /* Sección SEO */
+        .seo-text { margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px; }
+        .seo-text h2 { color: #1c1e21; margin-top: 25px; margin-bottom: 15px; font-size: 1.5rem; }
+        .seo-text p { margin-bottom: 15px; color: #444; }
+        
+        footer { background: #1c1e21; color: #888; text-align: center; padding: 30px; margin-top: 40px; }
+        footer a { color: #bbb; text-decoration: none; margin: 0 10px; }
+        footer a:hover { color: white; }
+
+        @media (max-width: 600px) {
+            .resultados-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" style="font-weight: bold; font-size: 22px;">🚀 TubeTools</a>
+        <div>
+            <a href="index.html">Inicio</a>
+            <a href="calculadora.html" style="color: #d32f2f;">Calculadora</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>💸 Calculadora de Ingresos de YouTube</h1>
+        <p class="subtitulo">Descubre cuánto dinero puede generar tu canal basándote en tus visitas y tu nicho.</p>
+
+        <div class="calculadora-container">
+            <div class="input-group">
+                <label for="visitas">👁️ Visitas Diarias Estimadas</label>
+                <input type="range" id="visitas" class="slider" min="100" max="500000" step="100" value="10000">
+                <span class="valor-display" id="visitas-val">10,000 visitas/día</span>
+            </div>
+
+            <div class="input-group">
+                <label for="cpm">📈 CPM Estimado (Dólares por cada 1.000 visitas)</label>
+                <input type="range" id="cpm" class="slider" min="0.1" max="25" step="0.1" value="2.5">
+                <span class="valor-display" id="cpm-val">$2.50 CPM</span>
+            </div>
+
+            <div class="resultados-grid">
+                <div class="resultado-card">
+                    <h3>Ganancias Diarias</h3>
+                    <div class="dinero" id="res-diario">$0.00</div>
+                </div>
+                <div class="resultado-card">
+                    <h3>Ganancias Mensuales</h3>
+                    <div class="dinero" id="res-mensual">$0.00</div>
+                </div>
+                <div class="resultado-card">
+                    <h3>Ganancias Anuales</h3>
+                    <div class="dinero" id="res-anual">$0.00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="seo-text">
+            <h2>¿Cómo funciona esta Calculadora de Ingresos de YouTube?</h2>
+            <p>Nuestra herramienta utiliza un algoritmo sencillo pero preciso basado en el modelo de monetización del Programa para Partners de YouTube (YPP). YouTube paga a los creadores por las reproducciones de anuncios en sus vídeos, y esta calculadora estima tu parte de los ingresos basándose en dos factores clave: el volumen de tu tráfico y tu CPM.</p>
+            <p>Debes tener en cuenta que YouTube se queda con aproximadamente el 45% de los ingresos publicitarios, entregando el 55% restante al creador. Nuestra calculadora ya refleja estimaciones realistas de lo que llegaría a tu bolsillo.</p>
+
+            <h2>¿Qué es el CPM y por qué es tan importante?</h2>
+            <p>El <strong>CPM (Coste por Mil)</strong> es la cantidad de dinero que los anunciantes están dispuestos a pagar por cada 1.000 visualizaciones de un anuncio en tus vídeos. No todos los canales ganan lo mismo, aunque tengan las mismas visitas. El CPM varía drásticamente según:</p>
+            <ul>
+                <li><strong>El Nicho de tu canal:</strong> Canales de finanzas, tecnología, criptomonedas o negocios tienen CPMs altísimos (a veces superando los $15 o $20), ya que los anunciantes venden productos caros. Canales de vlogs, bromas o gaming suelen tener un CPM más bajo (entre $1 y $3).</li>
+                <li><strong>La geografía de tu audiencia:</strong> Las visitas provenientes de Estados Unidos, Reino Unido, Canadá o Australia pagan mucho más que las visitas de países latinoamericanos o España, debido al poder adquisitivo local de los anunciantes.</li>
+                <li><strong>La época del año:</strong> Durante el último trimestre del año (Navidad, Black Friday), el CPM se dispara porque todas las marcas invierten agresivamente en publicidad.</li>
+            </ul>
+
+            <h2>¿Cómo aumentar tus ingresos en YouTube en 2026?</h2>
+            <p>Si las cifras de la calculadora te parecen bajas, la estrategia no siempre es conseguir más visitas, sino <strong>mejorar la calidad de esas visitas</strong>. Optimizar el CTR de tus miniaturas usando herramientas como nuestro <a href="index.html" style="color: #d32f2f; font-weight: bold;">Extractor y Analizador de Miniaturas</a> te permitirá competir contra canales más grandes, atraer a un público más adulto y, en consecuencia, subir el CPM global de tu canal.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 TubeTools.online - Todos los derechos reservados.</p>
+        <div style="margin-top: 10px;">
+            <a href="privacidad.html">Privacidad</a> | 
+            <a href="terminos.html">Términos</a> | 
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </footer>
+
+    <script>
+        const sliderVisitas = document.getElementById("visitas");
+        const sliderCpm = document.getElementById("cpm");
+        const visitasVal = document.getElementById("visitas-val");
+        const cpmVal = document.getElementById("cpm-val");
+        
+        const resDiario = document.getElementById("res-diario");
+        const resMensual = document.getElementById("res-mensual");
+        const resAnual = document.getElementById("res-anual");
+
+        function calcularGanancias() {
+            // Obtener valores actuales
+            const v = parseInt(sliderVisitas.value);
+            const c = parseFloat(sliderCpm.value);
+
+            // Actualizar textos en pantalla
+            visitasVal.textContent = v.toLocaleString('en-US') + " visitas/día";
+            cpmVal.textContent = "$" + c.toFixed(2) + " CPM";
+
+            // Matemática pura: (Visitas / 1000) * CPM = Ganancia Diaria
+            // Asumimos un RPM (lo que cobra el creador) aproximado al 55% del CPM para ser realistas
+            const rpm = c * 0.55; 
+            const diario = (v / 1000) * rpm;
+            const mensual = diario * 30;
+            const anual = mensual * 12;
+
+            // Inyectar resultados formateados
+            resDiario.textContent = "$" + diario.toFixed(2);
+            resMensual.textContent = "$" + mensual.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            resAnual.textContent = "$" + anual.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        }
+
+        // Escuchar cambios en los deslizadores en tiempo real
+        sliderVisitas.addEventListener("input", calcularGanancias);
+        sliderCpm.addEventListener("input", calcularGanancias);
+
+        // Calcular al cargar la página por primera vez
+        calcularGanancias();
+    </script>
+
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
+        <p style="margin-bottom: 15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y mostrar anuncios personalizados. Puedes aceptarlas o rechazarlas.</p>
+        <div>
+            <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Aceptar</button>
+            <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Rechazar</button>
+        </div>
+    </div>
+    <script>
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+        document.getElementById('reject-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
