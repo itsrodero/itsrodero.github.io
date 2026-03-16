@@ -9,9 +9,36 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f9f9f9; color: #1c1e21; line-height: 1.7; }
-        nav { background: #1c1e21; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
-        nav a { color: white; text-decoration: none; margin: 0 10px; }
-        nav a:hover { color: #ff0000; }
+       /* --- NUEVO MENÚ CON ESPACIADO PRO --- */
+        nav { 
+            background-color: #1c1e21; 
+            padding: 15px 25px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav div {
+            display: flex;
+            gap: 20px; /* El aire mágico entre botones */
+            align-items: center;
+            flex-wrap: wrap; 
+            justify-content: flex-end;
+        }
+
+        nav a { 
+            color: white !important; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 15px;
+            transition: color 0.3s;
+            padding: 5px 0; 
+        }
+
+        nav a:hover { 
+            color: #d32f2f !important; 
+        }
         main { max-width: 850px; margin: 40px auto; padding: 20px; background: white; border-radius: 16px; }
         h1 { color: #d32f2f; }
         .articulo { border-bottom: 1px solid #eee; padding: 20px 0; }
