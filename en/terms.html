@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - TubeTools</title>
+    <meta name="description" content="Terms and conditions of use for TubeTools. Read our conditions before using the tool.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f9f9f9; color: #1c1e21; line-height: 1.7; }
+        nav { background: #1c1e21; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: white; text-decoration: none; margin: 0 10px; }
+        nav a:hover { color: #ff0000; }
+        main { max-width: 850px; margin: 40px auto; padding: 30px; background: white; border-radius: 16px; }
+        h1 { color: #d32f2f; }
+        h2 { color: #333; margin-top: 30px; }
+        footer { background: #1c1e21; color: #888; text-align: center; padding: 30px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" style="font-weight: bold; font-size: 22px;">🚀 TubeTools</a>
+        <div>
+            <a href="../terminos.html" style="color: #4CAF50;">🇪🇸 ES</a>
+            <a href="index.html">Home</a>
+            <a href="calculator.html">Calculator</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <main>
+        <h1>Terms and Conditions of Use</h1>
+        <p><em>Last updated: March 16, 2026</em></p>
+
+        <p>Welcome to TubeTools. By accessing and using this website, you agree to comply with the following terms and conditions. If you do not agree, please do not use our services.</p>
+
+        <h2>1. Service Description</h2>
+        <p>TubeTools offers a free tool that allows users to extract and download YouTube video thumbnails in high resolution. We do not store any URLs or images on our servers; the entire process is done in real-time.</p>
+
+        <h2>2. Permitted Use</h2>
+        <p>The user agrees to use the tool only for lawful purposes and in accordance with these conditions. It is prohibited to:</p>
+        <ul>
+            <li>Use the tool to infringe the copyright or intellectual property rights of third parties.</li>
+            <li>Make unauthorized commercial use of the downloaded thumbnails.</li>
+            <li>Attempt to breach the site's security or engage in activities that could damage the service.</li>
+        </ul>
+
+        <h2>3. Intellectual Property</h2>
+        <p>The downloaded thumbnails are the property of their respective creators and are protected by copyright. TubeTools claims no rights over such images. The user is solely responsible for their use.</p>
+        <p>The code, design, and original content of TubeTools (including texts, logos, and graphics) are the property of Daniel and are protected by intellectual property laws.</p>
+
+        <h2>4. Limitation of Liability</h2>
+        <p>TubeTools is provided "as is," without warranties of any kind. We do not guarantee that the service will be uninterrupted or error-free. In no event shall we be liable for direct or indirect damages arising from the use of the tool.</p>
+
+        <h2>5. Third-Party Links</h2>
+        <p>Our site may contain links to external websites (e.g., Canva, OBS). We have no control over the content or practices of those sites and assume no responsibility for them.</p>
+
+        <h2>6. Modifications</h2>
+        <p>We reserve the right to modify these terms at any time. Changes will be effective upon posting on this page. It is your responsibility to review them periodically.</p>
+
+        <h2>7. Governing Law</h2>
+        <p>These terms are governed by Spanish law. For any dispute, the parties submit to the courts and tribunals of Madrid, Spain.</p>
+
+        <h2>8. Contact</h2>
+        <p>If you have questions about these terms, you can write to us at: <strong>contacto@tubetools.online</strong></p>
+    </main>
+    <footer>
+        <p>© 2026 TubeTools.online - <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a> | <a href="contact.html">Contact</a></p>
+    </footer>
+
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
+        <p style="margin-bottom: 15px;">🍪 We use our own and third-party cookies to improve your experience, analyze traffic, and show personalized ads. You can accept or reject them.</p>
+        <div>
+            <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Accept</button>
+            <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Reject</button>
+        </div>
+    </div>
+    <script>
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+        document.getElementById('reject-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
