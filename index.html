@@ -19,6 +19,30 @@
     <title>TubeTools - Herramientas para Creadores de YouTube</title>
     <meta name="description" content="Herramienta gratuita para extraer y guardar portadas y miniaturas de vídeos de YouTube en alta calidad (HD, HQ, 1080p).">
     <style>
+     /* Anchor Sticky para Móviles */
+        .sticky-anchor {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #1c1e21;
+            color: white;
+            text-align: center;
+            padding: 12px 0;
+            z-index: 9998; /* Un nivel debajo del banner de cookies */
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+            display: none; /* Se oculta por defecto */
+        }
+        .sticky-anchor a {
+            color: #ff4757;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .sticky-anchor { display: block; } /* Solo se muestra en móviles */
+            body { padding-bottom: 50px; } /* Evita que el banner tape el footer */
+        }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f0f2f5; color: #1c1e21; line-height: 1.6; }
         header { background-color: #ffffff; padding: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
@@ -79,7 +103,10 @@
         nav a:hover { color: #d32f2f; }
     </style>
 </head>
-<body>
+ <body>
+  <div class="sticky-anchor">
+        <a href="calculadora.html">💰 ¿Cuánto ganarías en YouTube? ¡Calcula aquí! 🚀</a>
+    </div>
 <!-- BANNER DE COOKIES -->
 <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
     <p style="margin-bottom: 15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y mostrar anuncios personalizados. Puedes aceptarlas o rechazarlas.</p>
