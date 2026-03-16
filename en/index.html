@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MKM07L3RLR');
+</script>
+ <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255"
+     crossorigin="anonymous"></script>
+ <meta name="google-site-verification" content="VL9NkPgXLuB5ytJr-X7bzO4QmTEgRIn7TCK3vDmgAtw" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TubeTools - Free Tools for YouTube Creators</title>
+    <meta name="description" content="Free tool to extract and download YouTube video thumbnails and covers in high quality (HD, HQ, 1080p).">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f0f2f5; color: #1c1e21; line-height: 1.6; }
+        header { background-color: #ffffff; padding: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
+        header h1 { color: #ff0000; font-size: 28px; }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center; }
+        .hero { background: #ffffff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .hero p { color: #555; margin-bottom: 25px; font-size: 18px; }
+        .input-group { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+        input[type="text"] { width: 100%; max-width: 600px; padding: 18px; font-size: 16px; border: 2px solid #ddd; border-radius: 8px; transition: 0.3s; }
+        input[type="text"]:focus { border-color: #ff0000; outline: none; box-shadow: 0 0 8px rgba(255,0,0,0.2); }
+        button { padding: 18px 30px; font-size: 18px; cursor: pointer; background-color: #ff0000; color: white; border: none; border-radius: 8px; font-weight: bold; transition: 0.3s; width: 100%; max-width: 600px; }
+        button:hover { background-color: #cc0000; transform: translateY(-2px); }
+        
+        /* Zona de Monetización */
+        .ad-space { background-color: #e9ecef; color: #adb5bd; padding: 30px; margin: 30px 0; border: 2px dashed #ced4da; border-radius: 8px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Resultados */
+        #results { display: none; margin-top: 40px; text-align: left; }
+        .result-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .result-card h3 { margin-bottom: 15px; color: #333; display: flex; justify-content: space-between; align-items: center;}
+        .result-card img { width: 100%; border-radius: 8px; background: #eee; }
+        .btn-download { display: inline-block; padding: 12px 25px; background-color: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 15px; transition: 0.3s; text-align: center; width: 100%; }
+        .btn-download:hover { background-color: #218838; }
+        
+        /* SEO Text */
+        .seo-content { margin-top: 50px; background: white; padding: 30px; border-radius: 12px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .seo-content h2 { color: #333; margin-bottom: 15px; }
+        .seo-content p { color: #666; margin-bottom: 15px; }
+        
+       /* Estilos de las Etiquetas SEO */
+        .tags-container { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; text-align: left; display: none; }
+        .tags-container h3 { color: #333; margin-bottom: 5px; font-size: 20px;}
+        .tags-container p { color: #666; font-size: 14px; margin-bottom: 15px; }
+        .tag-pill { display: inline-block; background: #f0f2f5; color: #1c1e21; padding: 8px 16px; border-radius: 20px; margin: 0 8px 8px 0; font-size: 14px; border: 1px solid #ddd; }
+        .btn-copy-tags { background-color: #1c1e21; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; cursor: pointer; margin-top: 15px; transition: 0.3s; font-weight: bold;}
+        .btn-copy-tags:hover { background-color: #333; }
+
+        /* Navegación y Footer (Para parecer Profesionales) */
+        nav { background-color: #1c1e21; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav .logo { color: white; font-size: 20px; font-weight: bold; text-decoration: none; letter-spacing: 1px; }
+        nav .nav-links a { color: #ddd; text-decoration: none; margin-left: 20px; font-size: 15px; font-weight: 500; transition: 0.3s; }
+        nav .nav-links a:hover { color: #fff; }
+        
+        footer { background-color: #1c1e21; color: #888; text-align: center; padding: 30px 20px; margin-top: 60px; font-size: 14px; }
+        footer .footer-links { margin-top: 15px; }
+        footer a { color: #bbb; text-decoration: none; margin: 0 10px; transition: 0.3s; }
+        footer a:hover { color: white; }
+
+        @media(min-width: 768px) {
+            .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        }
+
+       .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; transition: color 0.3s; }
+        nav a:hover { color: #d32f2f; }
+    </style>
+</head>
+<body>
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
+    <p style="margin-bottom: 15px;">🍪 We use our own and third-party cookies to improve your experience, analyze traffic, and show personalized ads. You can accept or reject them.</p>
+    <div>
+        <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Accept</button>
+        <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Reject</button>
+    </div>
+</div>
+<script>
+    if (!localStorage.getItem('cookieConsent')) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    }
+    document.getElementById('accept-cookies').addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        document.getElementById('cookie-banner').style.display = 'none';
+    });
+    document.getElementById('reject-cookies').addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'rejected');
+        document.getElementById('cookie-banner').style.display = 'none';
+    });
+</script>
+<nav>
+        <a href="index.html" style="font-weight: bold; font-size: 22px; text-decoration: none; color: white;">🚀 TubeTools</a>
+        <div>
+            <a href="../index.html" style="color: #4CAF50;">🇪🇸 ES</a>
+            <a href="index.html">Home</a>
+            <a href="calculadora.html">Calculator</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contact</a>
+        </div>
+    </nav>
+
+    
+    <header>
+        <h1>TubeTools: Thumbnail Downloader</h1>
+    </header>
+
+    <div class="container">
+        
+        <div class="input-group" style="display: flex; gap: 10px; justify-content: center; max-width: 600px; margin: 0 auto;">
+        <input type="text" id="youtube-url" placeholder="Ex: https://www.youtube.com/watch?v=h_HedjlSQ3g" style="flex: 1;">
+        <button onclick="extractThumbnails()">Extract</button>
+        <button onclick="document.getElementById('youtube-url').value = '';" style="background-color: #555; width: auto; padding: 10px 20px; border-radius: 8px; color: white; border: none; cursor: pointer;">Clear</button>
+    </div>
+        </div>
+
+        <div id="results">
+            <h2 style="text-align: center; margin-bottom: 20px;">Results</h2>
+            
+            <div class="result-card">
+                <h3>1. High Resolution (HD 1080p) <span>⭐ Recommended</span></h3>
+                <img id="img-max" src="" alt="HD Thumbnail">
+                <a id="btn-max" class="btn-download" href="" target="_blank">Open & Save (1080p)</a>
+            </div>
+
+          
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>2. High Quality (720p)</h3>
+                    <img id="img-hq" src="" alt="HQ Thumbnail">
+                    <a id="btn-hq" class="btn-download" href="" target="_blank">Open & Save (720p)</a>
+                </div>
+                <div class="result-card">
+                    <h3>3. Medium Quality (480p)</h3>
+                    <img id="img-mq" src="" alt="Medium Thumbnail">
+                    <a id="btn-mq" class="btn-download" href="" target="_blank">Open & Save (480p)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="seo-content">
+            <h2>How to download a YouTube video thumbnail?</h2>
+            <p>With our free tool, getting the cover of any video takes just seconds. Simply copy the YouTube video URL (link) from your browser or mobile app, paste it into the search box above, and click "Extract".</p>
+            <p>Our website will connect directly to the servers and provide you with the original image in <strong>HD (1080p)</strong>, as well as lighter versions for your design projects, blogs, or social media. All this quickly, safely, and without installing any additional software.</p>
+        </div>
+    
+    <div id="tags-results" class="tags-container">
+            <h3>🏷️ Hidden SEO Tags</h3>
+            <p>These are the exact keywords this video is using to rank. Copy them for your own videos.</p>
+            <div id="tags-list"></div>
+            <button class="btn-copy-tags" onclick="copyTags()">📋 Copy all tags</button>
+        </div>
+    
+    <div class="seo-content" style="margin-top: 20px;">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <p><strong>Is it legal to download a YouTube video thumbnail?</strong><br>
+            Yes, downloading the cover image is completely legal for personal use, inspiration, or making references. However, remember that the image's copyright belongs to the video creator, so you should not use it to impersonate or for commercial purposes without their permission.</p>
+            
+            <p><strong>Where are the downloaded images saved?</strong><br>
+            By clicking the download button, the image will open in its original size (1080p, 720p, or 480p). On your mobile, tap and hold the image and select "Save image". On desktop, right-click and select "Save image as...". It will be saved in your default downloads folder.</p>
+        </div>
+</div>
+
+
+
+<div class="seo-content" style="margin-top: 40px; text-align: center;">
+        <h3 style="color: #333; font-size: 20px;">🚀 Coming Soon to TubeTools</h3>
+        <p>We are building the ultimate ecosystem for content creators:</p>
+        <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+            <div style="background-color: #f9f9f9; border: 1px dashed #ccc; padding: 15px 20px; border-radius: 8px; color: #666;">
+                🏷️ SEO Tag Extractor <span style="background-color: #ff4757; color: white; font-size: 10px; padding: 3px 6px; border-radius: 4px; margin-left: 5px; font-weight: bold;">Soon</span>
+            </div>
+            <div style="background-color: #f9f9f9; border: 1px dashed #ccc; padding: 15px 20px; border-radius: 8px; color: #666;">
+                💰 Revenue Calculator <span style="background-color: #ff4757; color: white; font-size: 10px; padding: 3px 6px; border-radius: 4px; margin-left: 5px; font-weight: bold;">Soon</span>
+            </div>
+        </div>
+    </div>
+
+
+    
+<div id="guia" class="seo-content" style="margin-top: 20px;">
+        <h2>💡 2026 Guide: How to optimize your videos and hack the algorithm</h2>
+        <p>To succeed in content creation, recording good videos isn't enough; you need the audience to click on them and the algorithm to recommend them. At TubeTools, we know there are two crucial factors that make the difference between a viral video and one nobody sees: attractive <strong>thumbnails</strong> and <strong>SEO tags (hidden tags)</strong>.</p>
+        
+        <h3 style="color: #333; font-size: 18px; margin-top: 15px;">1. The vital importance of a High Definition (HD) thumbnail</h3>
+        <p>The cover image is your virtual storefront. It's the first impression a user gets on their mobile before deciding whether to consume your content or your competitor's. Downloading and analyzing high-resolution thumbnails (1080p and 720p) allows you to study what color palettes, giant fonts, and facial expressions successful YouTubers are using to replicate their Click-Through Rate (CTR).</p>
+        
+        <h3 style="color: #333; font-size: 18px; margin-top: 15px;">2. The power of spying on your competition's SEO Tags</h3>
+        <p>Although algorithms evolve, SEO (Search Engine Optimization) remains king for starting channels. By using a YouTube tag extractor, you can discover the exact keywords (Long-tail keywords) that top creators keep hidden in their code to rank in the top results. Copying and adapting this positioning strategy will give you a massive competitive advantage and free organic views in the long run.</p>
+        
+        <h3 style="color: #333; font-size: 18px; margin-top: 15px;">3. Analytics tools for Content Creators</h3>
+        <p>Passive growth requires analysis. We recommend keeping your images clean, using readable text on small screens, and ensuring your title complements the image without repeating the exact same words. Use our suite of free, no-registration online tools to audit the market, analyze your competition, and prepare your next big launch.</p>
+    </div>
+
+    <hr style="border: 1px solid #e0e0e0; margin: 40px 0;">
+    
+    <div id="contacto" class="seo-content" style="margin-top: 20px;">
+        <h2>📬 Contact & Support</h2>
+        <p>Do you have any questions, suggestions, or found a bug in the tool? We want to hear from you. You can contact our technical support team by writing directly to: <strong>contacto@tubetools.online</strong>. We try to respond to all inquiries within 24-48 business hours.</p>
+    </div>
+
+    <div id="privacidad" class="seo-content" style="margin-top: 20px; margin-bottom: 40px;">
+        <h2>⚖️ Legal Notices & Privacy</h2>
+        <p><strong>Privacy:</strong> At TubeTools.online we respect your privacy. This tool does not store the URLs you enter or save the downloaded images on our servers. The entire extraction process is done in real-time through public YouTube APIs. We do not collect personal data from users.</p>
+        <p><strong>Terms of Use:</strong> TubeTools is offered for free for educational and personal inspiration purposes. The user is solely responsible for the use of the extracted images. The copyright of each thumbnail belongs to the original video creator on YouTube. By using this website, you agree to respect current copyright laws.</p>
+        <p><strong>Cookies:</strong> We use our own and third-party cookies (like Google AdSense) to analyze traffic and personalize the ads you see.</p>
+    </div>
+
+ <section style="max-width: 800px; margin: 40px auto; padding: 20px; text-align: left; background-color: #f9f9f9; border-radius: 8px;">
+    <h2>What is TubeTools and how to download thumbnails?</h2>
+    <p>TubeTools is a free tool designed for content creators, designers, and users who need to extract and save YouTube video thumbnails (covers) in high resolution (HD, 1080p, 4K).</p>
+    <h3>How does our cover downloader work?</h3>
+    <ol>
+        <li>Copy the link (URL) of the YouTube video you want to extract the image from.</li>
+        <li>Paste the link into the search box of our tool.</li>
+        <li>Click the button to generate the images. Our system will connect to public servers to show you all available qualities (Max Resolution, High Quality, Medium).</li>
+        <li>Right-click on the image you prefer and select "Save image as..." to download it for free to your device.</li>
+    </ol>
+    <p>Our platform is fast, safe, and doesn't require installing any programs. It's ideal for analyzing the competition, getting inspired for your own designs, or saving a memory of your favorite videos.</p>
+</section>
+    
+
+
+    
+  <script>
+        let currentTagsText = "";
+
+       function extractThumbnails() {
+            const url = document.getElementById('youtube-url').value;
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|shorts\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            const match = url.match(regExp);
+
+            if (match && match[2].length === 11) {
+                const videoId = match[2];
+                
+                // 1. Mostrar las Miniaturas
+                const urls = {
+                    max: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+                    hq: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+                    mq: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
+                };
+
+                document.getElementById('img-max').src = urls.max;
+                document.getElementById('img-hq').src = urls.hq;
+                document.getElementById('img-mq').src = urls.mq;
+
+                document.getElementById('btn-max').href = urls.max;
+                document.getElementById('btn-hq').href = urls.hq;
+                document.getElementById('btn-mq').href = urls.mq;
+
+                document.getElementById('results').style.display = 'block';
+
+                // 2. Extraer Etiquetas SEO
+                document.getElementById('tags-results').style.display = 'block';
+                document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⏳ Extracting tags from YouTube servers...</span>';
+                
+                fetch(`https://api.codetabs.com/v1/proxy?quest=https://www.youtube.com/watch?v=${videoId}`)
+                .then(response => {
+                    if (response.ok) return response.text();
+                    throw new Error('Network error');
+                })
+                .then(html => {
+                    const tagMatch = html.match(/<meta\s+name="keywords"\s+content="([^"]+)"/i);
+                    
+                    if (tagMatch && tagMatch[1]) {
+                        currentTagsText = tagMatch[1];
+                        const tagsArray = currentTagsText.split(',').map(tag => tag.trim());
+                        let tagsHtml = '';
+                        tagsArray.forEach(tag => {
+                            if(tag !== "") tagsHtml += `<span class="tag-pill">${tag}</span>`;
+                        });
+                        document.getElementById('tags-list').innerHTML = tagsHtml;
+                    } else {
+                        document.getElementById('tags-list').innerHTML = '<span class="tag-pill">❌ This video has no hidden tags configured.</span>';
+                        currentTagsText = "";
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⚠️ Error extracting tags. Please try again.</span>';
+                });
+
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+                
+            } else {
+                alert('Oops, the link seems invalid. Make sure to copy a correct YouTube URL.');
+            }
+        }
+
+        // Función para el botón de copiar
+        function copyTags() {
+            if (currentTagsText !== "") {
+                navigator.clipboard.writeText(currentTagsText).then(() => {
+                    alert('✅ All tags copied to the clipboard!');
+                });
+            } else {
+                alert('No tags to copy.');
+            }
+        }
+    </script>
+ <footer style="text-align: center; padding: 30px 10px; margin-top: 60px; border-top: 1px solid #eaeaeb; font-family: sans-serif; font-size: 14px; color: #666; background-color: #f9f9f9;">
+    <p>&copy; 2026 TubeTools.online - All rights reserved.</p>
+    <div style="margin-top: 10px;">
+        <a href="privacidad.html" style="color: #555; text-decoration: none; margin: 0 15px;">Privacy Policy</a>
+        <a href="terminos.html" style="color: #555; text-decoration: none; margin: 0 15px;">Terms of Use</a>
+        <a href="contacto.html" style="color: #555; text-decoration: none; margin: 0 15px;">Contact & About</a>
+     <a href="blog.html" style="color: #d32f2f; font-weight: bold; text-decoration: none; margin: 0 15px;">Our Blog</a>
+    </div>
+</footer>
+</body>
+</html>
