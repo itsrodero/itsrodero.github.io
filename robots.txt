@@ -1,6 +1,4 @@
-User-agent: Mediapartners-Google
-Allow: /
-
 User-agent: *
 Allow: /
+
 Sitemap: https://tubetools.online/sitemap.xml
