@@ -8,95 +8,98 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f9f9f9; color: #1c1e21; line-height: 1.7; }
-        nav { background: #1c1e21; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
-        nav a { color: white; text-decoration: none; margin: 0 10px; }
-        nav a:hover { color: #ff0000; }
-        main { max-width: 850px; margin: 40px auto; padding: 20px; background: white; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
-        h1 { color: #d32f2f; font-size: 2rem; }
-        h2 { color: #333; margin: 30px 0 15px; border-left: 5px solid #d32f2f; padding-left: 15px; }
-        img { width: 100%; border-radius: 12px; margin: 20px 0; }
-        .btn { background: #d32f2f; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; display: inline-block; margin: 20px 0; font-weight: bold; }
-        footer { background: #1c1e21; color: #888; text-align: center; padding: 30px; margin-top: 40px; }
+        body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; background-color: #f9f9f9; color: #1c1e21; line-height: 1.7; }
+        nav { background-color: #1c1e21; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        nav .logo { color: white; font-size: 22px; font-weight: bold; text-decoration: none; }
+        nav .nav-links a { color: #ddd; text-decoration: none; margin-left: 20px; font-size: 15px; font-weight: bold; transition: color 0.3s; }
+        nav .nav-links a:hover { color: #ff0000; }
+        main { max-width: 850px; margin: 40px auto; padding: 0 20px; }
+        article { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        h1 { color: #d32f2f; font-size: 2.2rem; margin-bottom: 10px; line-height: 1.2; }
+        .meta { color: #666; font-size: 0.9rem; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .meta a { color: #d32f2f; text-decoration: none; }
+        h2 { color: #1c1e21; font-size: 1.8rem; margin: 40px 0 15px; border-left: 5px solid #d32f2f; padding-left: 15px; }
+        p { margin-bottom: 20px; color: #3a3a3a; }
+        a { color: #d32f2f; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        .btn-cta { display: inline-block; background-color: #d32f2f; color: white; padding: 16px 32px; text-decoration: none; font-weight: bold; border-radius: 50px; margin: 30px 0; transition: background 0.3s, transform 0.2s; box-shadow: 0 4px 10px rgba(211,47,47,0.2); text-align: center;}
+        .btn-cta:hover { background-color: #b71c1c; transform: translateY(-2px); text-decoration: none; color: white; }
+        img { width: 100%; border-radius: 12px; margin: 30px 0; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        footer { background-color: #1c1e21; color: #888; text-align: center; padding: 40px 20px; margin-top: 60px; }
+        footer a { color: #bbb; text-decoration: none; margin: 0 15px; }
+        footer a:hover { color: white; }
+        @media (max-width: 600px) { h1 { font-size: 1.8rem; } article { padding: 25px; } }
     </style>
 </head>
 <body>
-    <!-- BANNER DE COOKIES -->
-<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
-    <p style="margin-bottom: 15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y mostrar anuncios personalizados. Puedes aceptarlas o rechazarlas.</p>
-    <div>
-        <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Aceptar</button>
-        <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Rechazar</button>
-    </div>
-</div>
-<script>
-    // Mostrar banner si no hay consentimiento guardado
-    if (!localStorage.getItem('cookieConsent')) {
-        document.getElementById('cookie-banner').style.display = 'block';
-    }
-
-    // Al aceptar
-    document.getElementById('accept-cookies').addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        document.getElementById('cookie-banner').style.display = 'none';
-        // Aquí puedes activar cookies de terceros (Google Analytics, Ads)
-    });
-
-    // Al rechazar
-    document.getElementById('reject-cookies').addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'rejected');
-        document.getElementById('cookie-banner').style.display = 'none';
-        // Aquí puedes bloquear cookies de terceros
-    });
-</script>
-<!-- FIN BANNER DE COOKIES -->
-    <nav>
-        <a href="index.html" style="font-weight: bold;">🚀 TubeTools</a>
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
+        <p style="margin-bottom: 15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y mostrar anuncios personalizados.</p>
         <div>
+            <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Aceptar</button>
+            <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Rechazar</button>
+        </div>
+    </div>
+    <script>
+        if (!localStorage.getItem('cookieConsent')) { document.getElementById('cookie-banner').style.display = 'block'; }
+        document.getElementById('accept-cookies').addEventListener('click', function() { localStorage.setItem('cookieConsent', 'accepted'); document.getElementById('cookie-banner').style.display = 'none'; });
+        document.getElementById('reject-cookies').addEventListener('click', function() { localStorage.setItem('cookieConsent', 'rejected'); document.getElementById('cookie-banner').style.display = 'none'; });
+    </script>
+
+    <nav>
+        <a href="index.html" class="logo">🚀 TubeTools</a>
+        <div class="nav-links">
+            <a href="en/analyze-thumbnail.html" style="color: #4CAF50;">🇬🇧 EN</a>
             <a href="index.html">Inicio</a>
+            <a href="calculadora.html">Calculadora</a>
             <a href="blog.html">Blog</a>
             <a href="contacto.html">Contacto</a>
         </div>
     </nav>
     <main>
-        <h1>Cómo Analizar la Miniatura de tu Competencia (Guía Técnica 2026)</h1>
-        <p><em>Publicado: 13 de marzo de 2026</em></p>
+        <article>
+            <h1>Cómo Analizar la Miniatura de tu Competencia (Guía Técnica 2026)</h1>
+            <div class="meta">
+                Por <a href="contacto.html">Daniel</a> · 13 de marzo, 2026
+            </div>
+            <p>¿Alguna vez te has preguntado por qué algunos vídeos explotan en visitas y otros, con mejor contenido, se quedan estancados? La respuesta casi siempre está en el CTR (Click-Through Rate). La miniatura es tu escaparate, y si no atrapa el ojo del espectador en menos de 2 segundos, has perdido la visita.</p>
+            <p>En esta guía técnica, te enseñamos a diseccionar las miniaturas de tus competidores más exitosos usando nuestra plataforma <strong>TubeTools</strong>. No se trata de copiar, se trata de entender la psicología detrás del clic.</p>
 
-        <p>¿Quieres saber por qué algunos vídeos explotan y otros no? La respuesta está en la miniatura. Aquí te enseñamos a diseccionar las de tus competidores usando <strong>TubeTools</strong>.</p>
+            <h2>1. Extrae la miniatura original en Alta Resolución</h2>
+            <p>El primer paso para estudiar a un grande es ver su trabajo de cerca. Ve a YouTube, busca el vídeo más viral de tu nicho este mes, copia su URL y pégala en <a href="index.html">TubeTools</a>. Descarga la imagen en su versión HD (1080p) para poder ver los detalles que en la pantalla del móvil pasan desapercibidos.</p>
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&auto=format" alt="Extracción de miniatura">
 
-        <h2>1. Extrae la miniatura original</h2>
-        <p>Ve a YouTube, copia la URL del vídeo de tu competidor, pégala en <a href="index.html">TubeTools</a> y descarga la imagen en HD.</p>
-        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&auto=format" alt="Captura de TubeTools extrayendo miniatura">
+            <h2>2. Analiza la composición y el punto de fuga</h2>
+            <p>Abre la imagen que acabas de descargar. Aplica mentalmente la regla de los tercios (imagina una cuadrícula de 3x3 sobre la foto). ¿Dónde está ubicado el rostro del creador? ¿Hacia dónde miran sus ojos? Los YouTubers top siempre colocan los elementos clave en las intersecciones de esa cuadrícula para dirigir tu mirada directamente hacia el objeto de interés.</p>
+            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&auto=format" alt="Análisis de composición">
 
-        <div style="text-align:center;">
-            <a href="index.html" class="btn">🔍 Probar TubeTools</a>
-        </div>
+            <h2>3. Extrae la psicología del color (Paleta)</h2>
+            <p>Sube la miniatura que descargaste a una herramienta gratuita como <a href="https://coolors.co" target="_blank" rel="noopener noreferrer">Coolors.co</a>. Descubrirás que las miniaturas virales rara vez usan más de 3 colores principales. Fíjate en cómo usan el contraste: si el fondo es oscuro y frío (azules), el texto y el sujeto principal estarán iluminados con colores cálidos (naranjas, amarillos, rojos) para "saltar" de la pantalla.</p>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format" alt="Paleta de colores extraída">
 
-        <h2>2. Analiza la composición</h2>
-        <p>Aplica mentalmente la regla de los tercios. ¿Dónde está el rostro? ¿Hay equilibrio?</p>
-        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&auto=format" alt="Análisis de composición">
+            <h2>4. Identifica la tipografía ganadora</h2>
+            <p>El texto en una miniatura no debe ser un resumen del título, debe generar una intriga irresistible en menos de 4 palabras. Utiliza herramientas como <a href="https://www.whatfontis.com" target="_blank" rel="noopener noreferrer">WhatFontIs</a> para descubrir la fuente exacta. Notarás un patrón: tipografías gruesas, sin remates (Sans-Serif), con bordes negros pesados y sombras paralelas para asegurar que se lean perfectamente incluso en la pantalla de un smartphone antiguo.</p>
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format" alt="Detalle de tipografía">
 
-        <h2>3. Extrae la paleta de colores</h2>
-        <p>Usa <a href="https://coolors.co" target="_blank">Coolors.co</a> para identificar los colores exactos.</p>
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format" alt="Paleta de colores extraída">
+            <h2>5. Estudia la exageración facial</h2>
+            <p>Los humanos estamos programados biológicamente para reaccionar a los rostros de otros humanos. Una emoción exagerada (sorpresa brutal, miedo, alegría extrema) equivale a una tasa de clics mucho mayor. Haz zoom en la miniatura descargada y fíjate en la boca, la elevación de las cejas y la blancura de los ojos. Muchas veces, estos elementos están sutilmente retocados en Photoshop para acentuar la emoción.</p>
+            <img src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?w=800&auto=format" alt="Expresiones faciales">
 
-        <h2>4. Identifica la tipografía</h2>
-        <p>¿Qué fuente usa? Herramientas como <a href="https://www.whatfontis.com" target="_blank">WhatFontIs</a> te ayudan.</p>
-        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format" alt="Detalle de tipografía">
+            <h2>Conclusión</h2>
+            <p>Con este método científico y <strong>TubeTools</strong> como tu herramienta principal de extracción, puedes aprender de los mejores creadores del mundo. Descarga su miniatura, analízala pieza por pieza, comprende el "por qué" de sus decisiones de diseño y luego crea tu propia versión mejorada y adaptada a tu contenido.</p>
 
-        <h2>5. Estudia la expresión facial</h2>
-        <p>Emoción exagerada = más clics. Fíjate en la boca, cejas, dirección de la mirada.</p>
-        <img src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?w=800&auto=format" alt="Expresiones faciales">
-
-        <h2>Conclusión</h2>
-        <p>Con este método y <strong>TubeTools</strong>, puedes aprender de los mejores sin copiar, solo inspirándote. Descarga su miniatura, analízala y crea tu propia versión mejorada.</p>
-
-        <div style="text-align:center;">
-            <a href="index.html" class="btn">⚡ Probar TubeTools ahora</a>
-        </div>
+            <div style="text-align:center; margin-top: 40px;">
+                <a href="index.html" class="btn-cta">⚡ Ir a TubeTools y Extraer una Miniatura</a>
+            </div>
+        </article>
     </main>
     <footer>
-        <p>© 2026 TubeTools.online - <a href="privacidad.html">Privacidad</a> | <a href="terminos.html">Términos</a> | <a href="contacto.html">Contacto</a></p>
+        <p>© 2026 TubeTools.online - Todos los derechos reservados.</p>
+        <div class="footer-links" style="margin-top: 10px;">
+            <a href="privacidad.html">Privacidad</a>
+            <a href="terminos.html">Términos</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="blog.html">Blog</a>
+        </div>
     </footer>
 </body>
 </html>
