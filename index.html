@@ -301,7 +301,7 @@
         // Guardamos las etiquetas para poder copiarlas luego
         let currentTagsText = "";
 
-       function extractThumbnails() {
+        function extractThumbnails() {
             const url = document.getElementById('youtube-url').value;
             const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|shorts\/|watch\?v=|\&v=)([^#\&\?]*).*/;
             const match = url.match(regExp);
@@ -320,24 +320,37 @@
                 document.getElementById('img-hq').src = urls.hq;
                 document.getElementById('img-mq').src = urls.mq;
 
-                document.getElementById('btn-max').href = urls.max;
-                document.getElementById('btn-hq').href = urls.hq;
-                document.getElementById('btn-mq').href = urls.mq;
-
                 document.getElementById('results').style.display = 'block';
 
-                // 2. Extraer Etiquetas SEO (La magia corregida)
+                // --- NUEVO SISTEMA DE DESCARGA DIRECTA (Reemplaza los href antiguos) ---
+                const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+                
+                // Buscamos el título del vídeo para el nombre del archivo
+                fetch(`https://noembed.com/embed?url=${videoUrl}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        let titulo = data.title ? data.title.replace(/[^a-zA-Z0-9]/g, "_") : "Miniatura";
+                        setupDownloadButton('btn-max', urls.max, `${titulo}_HD.jpg`);
+                        setupDownloadButton('btn-hq', urls.hq, `${titulo}_HQ.jpg`);
+                        setupDownloadButton('btn-mq', urls.mq, `${titulo}_Normal.jpg`);
+                    })
+                    .catch(() => {
+                        setupDownloadButton('btn-max', urls.max, `Miniatura_HD.jpg`);
+                        setupDownloadButton('btn-hq', urls.hq, `Miniatura_HQ.jpg`);
+                        setupDownloadButton('btn-mq', urls.mq, `Miniatura_Normal.jpg`);
+                    });
+                // --- FIN DEL NUEVO SISTEMA ---
+
+                // 2. Extraer Etiquetas SEO
                 document.getElementById('tags-results').style.display = 'block';
                 document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⏳ Extrayendo etiquetas de los servidores de YouTube...</span>';
                 
-                // Usamos el proxy potente que no da errores
                 fetch(`https://api.codetabs.com/v1/proxy?quest=https://www.youtube.com/watch?v=${videoId}`)
                 .then(response => {
                     if (response.ok) return response.text();
                     throw new Error('Error en la red');
                 })
                 .then(html => {
-                    // Buscamos las palabras clave ocultas en el código
                     const tagMatch = html.match(/<meta\s+name="keywords"\s+content="([^"]+)"/i);
                     
                     if (tagMatch && tagMatch[1]) {
@@ -365,7 +378,7 @@
             }
         }
 
-        // Función para el botón de copiar
+        // Función para el botón de copiar etiquetas
         function copyTags() {
             if (currentTagsText !== "") {
                 navigator.clipboard.writeText(currentTagsText).then(() => {
@@ -374,6 +387,40 @@
             } else {
                 alert('No hay etiquetas para copiar.');
             }
+        }
+
+        // --- FUNCIÓN MÁGICA: FORZAR DESCARGA SALTANDO BLOQUEOS CORS ---
+        function setupDownloadButton(buttonId, imageUrl, fileName) {
+            const btn = document.getElementById(buttonId);
+            btn.removeAttribute('href'); 
+            
+            btn.onclick = function(e) {
+                e.preventDefault();
+                const originalContent = btn.innerHTML; 
+                btn.innerHTML = "⏳ Descargando..."; 
+                
+                // Usamos un proxy gratuito (el mismo que usas para los tags o allorigins)
+                fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(imageUrl)}`)
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const url = window.URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = fileName; 
+                        document.body.appendChild(a);
+                        a.click();
+                        window.URL.revokeObjectURL(url);
+                        document.body.removeChild(a);
+                        
+                        btn.innerHTML = "✅ ¡Descargada!";
+                        setTimeout(() => { btn.innerHTML = originalContent; }, 2000);
+                    })
+                    .catch(err => {
+                        btn.innerHTML = "❌ Error, abriendo pestaña...";
+                        setTimeout(() => { btn.innerHTML = originalContent; }, 2000);
+                        window.open(imageUrl, '_blank'); 
+                    });
+            };
         }
     </script>
  <footer style="text-align: center; padding: 30px 10px; margin-top: 60px; border-top: 1px solid #eaeaeb; font-family: sans-serif; font-size: 14px; color: #666; background-color: #f9f9f9;">
