@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head> 
+ <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1c1e21">
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -371,6 +373,15 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker registrado', reg))
+        .catch(err => console.log('Error al registrar SW', err));
+    });
+  }
+</script>
+ <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('../service-worker.js')
         .then(reg => console.log('Service Worker registrado', reg))
         .catch(err => console.log('Error al registrar SW', err));
     });
