@@ -108,5 +108,14 @@
     <footer>
         <p>© 2026 TubeTools.online - <a href="privacidad.html">Privacidad</a> | <a href="terminos.html">Términos</a> | <a href="contacto.html">Contacto</a></p>
     </footer>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker registrado', reg))
+        .catch(err => console.log('Error al registrar SW', err));
+    });
+  }
+</script>
 </body>
 </html>
