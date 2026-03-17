@@ -3,8 +3,11 @@ const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/calculadora.html',
-  '/favicon.svg'
+  '/favicon.svg',
+  '/en/index.html',
+  '/en/calculator.html'
 ];
+// ... (el resto del código que te pasé antes se queda igual)
 
 // Instalación del Service Worker
 self.addEventListener('install', event => {
