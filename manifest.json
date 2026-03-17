@@ -1,0 +1,17 @@
+{
+  "name": "TubeTools - Creadores",
+  "short_name": "TubeTools",
+  "description": "Herramientas gratuitas para creadores de YouTube.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1c1e21",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
