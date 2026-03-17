@@ -9,6 +9,8 @@
 
   gtag('config', 'G-MKM07L3RLR');
 </script>
+ <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1c1e21">
  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255"
      crossorigin="anonymous"></script>
@@ -365,5 +367,14 @@
         <a href="../blog.html" style="color: #d32f2f; font-weight: bold; text-decoration: none; margin: 0 15px;">Our Blog</a>
     </div>
 </footer>
+ <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker registrado', reg))
+        .catch(err => console.log('Error al registrar SW', err));
+    });
+  }
+</script>
 </body>
 </html>
