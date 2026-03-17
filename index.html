@@ -385,6 +385,15 @@
      <a href="blog.html" style="color: #d32f2f; font-weight: bold; text-decoration: none; margin: 0 15px;">Nuestro Blog</a>
     </div>
 </footer>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker registrado', reg))
+        .catch(err => console.log('Error al registrar SW', err));
+    });
+  }
+</script>
 </body>
 
 </html>
