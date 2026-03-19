@@ -315,6 +315,8 @@
 
             if (match && match[2].length === 11) {
                 const videoId = match[2];
+             // Guardar en el historial local
+                guardarEnHistorial(videoId);
                 
                 // 1. Mostrar las Miniaturas
                 const urls = {
