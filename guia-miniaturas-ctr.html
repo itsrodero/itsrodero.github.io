@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Definitiva para Crear Miniaturas de YouTube - TubeTools</title>
+    <meta name="description" content="Diseña miniaturas que dupliquen tu tasa de clics en YouTube. Aprende la regla de los 3 elementos, psicología del color y textos gancho.">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1c1e21">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
+    <style>
+        /* Reset y estilos generales TubeTools */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Arial, sans-serif; }
+        body { background-color: #f4f6f8; color: #1c1e21; }
+        
+        /* Navbar (Tu menú superior) */
+        nav { background-color: #1c1e21; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        nav .logo { font-size: 22px; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        nav .logo span { color: #d32f2f; }
+        nav .menu-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; transition: color 0.3s; font-size: 15px; }
+        nav .menu-links a:hover { color: #d32f2f; }
+
+        /* Estilos exclusivos del artículo SEO */
+        .seo-article { max-width: 800px; margin: 40px auto; padding: 40px; background: white; border-radius: 16px; line-height: 1.8; color: #3a3a3a; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .seo-article h1 { color: #d32f2f; font-size: 2.3rem; margin-bottom: 15px; line-height: 1.2; }
+        .seo-article h2 { color: #1c1e21; font-size: 1.8rem; margin: 50px 0 20px; border-left: 5px solid #d32f2f; padding-left: 15px; }
+        .seo-article h3 { font-size: 1.4rem; margin: 30px 0 15px; color: #2c3e50; }
+        .seo-article p { margin-bottom: 20px; font-size: 1.05rem; }
+        .seo-article ul { margin-bottom: 25px; padding-left: 25px; font-size: 1.05rem; }
+        .seo-article li { margin-bottom: 10px; }
+        .seo-article a { color: #d32f2f; text-decoration: none; font-weight: 500; }
+        .seo-article a:hover { text-decoration: underline; }
+        .toc { background: #f8f9fa; padding: 20px; border-radius: 12px; margin: 30px 0; border-left: 4px solid #d32f2f; }
+        .toc h3 { margin-top: 0; color: #d32f2f; }
+        .seo-article img { width: 100%; border-radius: 12px; margin: 30px 0 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .img-caption { font-size: 0.9rem; color: #666; text-align: center; margin-bottom: 30px; }
+        .seo-article blockquote { border-left: 5px solid #d32f2f; background: #fef4f4; padding: 15px 25px; margin: 30px 0; border-radius: 8px; font-style: italic; }
+        .btn-cta { display: inline-block; background-color: #d32f2f; color: white !important; padding: 16px 32px; text-decoration: none; font-weight: bold; border-radius: 50px; margin: 20px 0; transition: background 0.3s; text-align: center; }
+        .btn-cta:hover { background-color: #b71c1c; text-decoration: none; transform: scale(1.02); }
+
+        /* Footer */
+        footer { background-color: #1c1e21; color: #aaa; text-align: center; padding: 40px 20px; margin-top: 50px; }
+        footer a { color: white; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        footer a:hover { color: #d32f2f; }
+        
+        /* Responsive Básico */
+        @media (max-width: 768px) {
+            .seo-article { margin: 20px; padding: 20px; }
+            .seo-article h1 { font-size: 1.8rem; }
+            nav .menu-links { display: none; } /* En móvil se simplifica el menú superior */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">🚀 Tube<span>Tools</span></a>
+        <div class="menu-links">
+            <a href="index.html">Extractor</a>
+            <a href="calculadora.html">Calculadora</a>
+            <a href="en/index.html">🇬🇧 EN</a>
+        </div>
+    </nav>
+
+    <article class="seo-article">
+        <h1>Guía Definitiva para Crear Miniaturas de YouTube que Disparen tu CTR</h1>
+        <p style="color: #777; font-size: 0.9rem;"><em>Por el equipo de TubeTools · 8 min de lectura</em></p>
+
+        <div class="toc">
+            <h3>📋 En esta guía</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><a href="#regla-3-elementos">1. La regla de los 3 elementos: menos es más</a></li>
+                <li><a href="#psicologia-color">2. Psicología del contraste de color</a></li>
+                <li><a href="#textos-gancho">3. Cómo escribir textos gancho (sin repetir el título)</a></li>
+                <li><a href="#expresiones-faciales">4. La importancia de exagerar las expresiones</a></li>
+                <li><a href="#conclusion">5. Ponte en acción con TubeTools</a></li>
+            </ul>
+        </div>
+
+        <p>El 90% del éxito de un vídeo en YouTube se decide antes de que alguien haga clic. Tu miniatura es el escaparate, la primera impresión, el anzuelo. Si no engancha en menos de un segundo, todo tu trabajo se pierde en el olvido. En esta guía vas a aprender a diseñar miniaturas que <strong>multipliquen tu CTR</strong> usando principios de psicología visual, diseño y copywriting. Y lo mejor: sin necesidad de ser diseñador.</p>
+
+        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&auto=format" alt="Persona diseñando en ordenador">
+        <div class="img-caption">El diseño de miniaturas es una mezcla de arte y psicología</div>
+
+        <h2 id="regla-3-elementos">1. La regla de los 3 elementos: menos es más</h2>
+        <p>Cuando un usuario ve tu miniatura, su cerebro procesa la información en décimas de segundo. Si hay demasiados elementos, se confunde y pasa de largo. La fórmula ganadora se reduce a <strong>tres componentes máximos</strong>:</p>
+        <ul>
+            <li><strong>Un rostro con emoción:</strong> El cerebro humano está cableado para detectar caras. Una expresión exagerada (sorpresa, enfado, felicidad) genera curiosidad inmediata.</li>
+            <li><strong>Un objeto o elemento clave:</strong> El producto, el lugar, el personaje del que hablas. Debe ser reconocible al instante.</li>
+            <li><strong>Texto (máximo 4 palabras):</strong> Un gancho visual que complemente la imagen, no que la repita.</li>
+        </ul>
+        <p>Si metes más de tres cosas, saturas. Mira los canales top: MrBeast, AuronPlay, Ibai. Sus miniaturas son limpias, directas, con un solo foco visual.</p>
+
+        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&auto=format" alt="Ejemplo de miniatura limpia con tres elementos">
+        <div class="img-caption">Ejemplo: rostro + objeto + texto corto</div>
+
+        <h2 id="psicologia-color">2. Psicología del contraste de color</h2>
+        <p>El color no es decoración, es <strong>emoción y atención</strong>. Los colores cálidos (rojo, naranja, amarillo) avanzan visualmente y se asocian a urgencia, peligro o alegría. Los fríos (azul, verde) transmiten calma, confianza, pero pasan más desapercibidos en un mar de miniaturas.</p>
+        <h3>Claves para elegir tu paleta</h3>
+        <ul>
+            <li><strong>Alto contraste:</strong> El fondo debe contrastar fuertemente con el sujeto y el texto. Si tu fondo es oscuro, el texto debe ser claro y viceversa. Así el ojo va directo a lo importante.</li>
+            <li><strong>Colores complementarios:</strong> Usa la rueda de colores. Naranja y azul, rojo y verde, amarillo y morado. Crean tensión visual, lo que obliga a mirar.</li>
+            <li><strong>Psicología aplicada:</strong>
+                <ul>
+                    <li><span style="color:#d32f2f; font-weight: bold;">🔴 Rojo:</span> urgencia, pasión, parar la mirada.</li>
+                    <li><span style="color:#FFD700; font-weight: bold;">🟡 Amarillo:</span> optimismo, juventud, atención extrema.</li>
+                    <li><span style="color:#0000FF; font-weight: bold;">🔵 Azul:</span> confianza, profesionalidad.</li>
+                </ul>
+            </li>
+        </ul>
+        <p>No uses más de tres colores en una miniatura. Y recuerda: el texto debe destacar por encima de todo.</p>
+
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format" alt="Paleta de colores y contraste">
+        <div class="img-caption">El contraste atrae la mirada de forma inconsciente</div>
+
+        <h2 id="textos-gancho">3. Cómo escribir textos gancho (sin repetir el título)</h2>
+        <p>Uno de los errores más comunes es poner en la miniatura exactamente las mismas palabras que en el título. Eso es un desperdicio. El texto de la miniatura debe <strong>amplificar la curiosidad</strong>, no repetir información.</p>
+        <h3>Principios del microcopy en miniaturas</h3>
+        <ul>
+            <li><strong>Intriga vs revelación:</strong> En lugar de "Cómo ganar dinero", prueba "Gané 1000€ en un día". El primero es genérico, el segundo promete una historia.</li>
+            <li><strong>Números y datos:</strong> "7 trucos", "3 pasos", "24 horas". Los números concretan y prometen rapidez.</li>
+            <li><strong>Palabras gatillo:</strong> "Esto", "Así", "Increíble", "Nunca viste". Activan la curiosidad.</li>
+            <li><strong>Menos de 4 palabras:</strong> El texto debe leerse en medio segundo.</li>
+        </ul>
+
+        <blockquote>
+            💡 <strong>Tip Pro:</strong> Escribe el texto en una fuente gruesa (Impact, Bebas Neue) con borde negro y fondo semitransparente. Así se lee sobre cualquier imagen en formato móvil.
+        </blockquote>
+
+        <h2 id="expresiones-faciales">4. La importancia de exagerar las expresiones</h2>
+        <p>Las emociones neutras no venden. En una miniatura, necesitas <strong>exagerar al máximo</strong>. Abre la boca, levanta las cejas, muestra sorpresa, enfado o incredulidad. Es casi caricaturesco, pero funciona.</p>
+        <p>No tengas miedo a parecer ridículo. Haz fotos con la boca abierta, señala algo con el dedo, pon cara de asombro. Luego recorta y coloca sobre tu fondo. Si no puedes hacer fotos propias, usa bancos de imágenes con modelos que ya tengan esas expresiones exageradas.</p>
+
+        <img src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?w=800&auto=format" alt="Persona con expresión de sorpresa exagerada">
+        <div class="img-caption">Una buena expresión facial puede duplicar tu CTR de inmediato</div>
+
+        <h2 id="conclusion">5. Ponte en acción con TubeTools</h2>
+        <p>Ya tienes la teoría. Ahora necesitas práctica y, sobre todo, <strong>inspiración</strong>. La mejor forma de aprender a hacer miniaturas perfectas es estudiar a los que ya lo lograron.</p>
+        <p>Con <strong>TubeTools</strong> puedes descargar en HD las miniaturas de cualquier vídeo de YouTube. Analiza los canales de tu nicho, fíjate en cómo aplican la regla de los tres elementos, qué colores usan, qué tipo de expresiones y qué palabras eligen. Guarda las que más te gusten, compáralas y adapta lo que funciona a tu propio estilo.</p>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="index.html" class="btn-cta">🚀 Extrae miniaturas gratis aquí</a>
+        </div>
+
+    </article>
+
+    <footer>
+        <p>© 2026 TubeTools. Herramientas gratuitas para creadores.</p>
+        <div style="margin-top: 15px;">
+            <a href="index.html">Extractor de Miniaturas</a> | 
+            <a href="calculadora.html">Calculadora de Ganancias</a>
+        </div>
+    </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(reg => console.log('SW registrado', reg))
+                    .catch(err => console.log('Error en SW', err));
+            });
+        }
+    </script>
+</body>
+</html>
