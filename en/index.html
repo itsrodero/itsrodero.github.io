@@ -174,6 +174,12 @@
         <button onclick="extractThumbnails()">Extract</button>
         <button onclick="document.getElementById('youtube-url').value = '';" style="background-color: #555; width: auto; padding: 10px 20px; border-radius: 8px; color: white; border: none; cursor: pointer;">Clear</button>
     </div>
+     <div id="historial-section" style="display: none; max-width: 600px; margin: 30px auto; text-align: center;">
+        <h3 style="font-size: 16px; margin-bottom: 15px; color: #444;">🕒 Recent extractions</h3>
+        <div id="historial-grid" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; justify-content: center;">
+            </div>
+        <button onclick="limpiarHistorial()" style="background: transparent; border: 1px solid #ccc; color: #666; padding: 5px 10px; border-radius: 5px; margin-top: 10px; cursor: pointer; font-size: 12px;">Clear history</button>
+    </div>
         </div>
 
         <div id="results">
