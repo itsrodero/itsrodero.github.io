@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Definitiva: La Miniatura Perfecta - TubeTools</title>
+    <meta name="description" content="Asegúrate de que tu miniatura de YouTube está optimizada para el máximo CTR antes de publicarla.">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; }
+        body { background-color: #f4f6f8; color: #1c1e21; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+        
+        /* Contenedor principal que se exportará */
+        #documento-pdf { background: white; max-width: 800px; width: 100%; padding: 50px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-top: 8px solid #d32f2f; }
+        
+        .header-doc { text-align: center; margin-bottom: 40px; border-bottom: 2px solid #f0f0f0; padding-bottom: 20px; }
+        .header-doc h1 { color: #1c1e21; font-size: 32px; margin-bottom: 10px; }
+        .header-doc p { color: #666; font-size: 18px; }
+        
+        /* Estilos de la Checklist Interactiva */
+        .checklist-item { display: flex; align-items: flex-start; margin-bottom: 20px; padding: 20px; background: #fafafa; border-radius: 8px; border-left: 4px solid transparent; transition: all 0.3s ease; }
+        .checklist-item:hover { background: #f0f2f5; }
+        .checklist-item.completado { border-left-color: #4CAF50; background: #f0fdf4; }
+        
+        /* Checkbox personalizado */
+        .custom-checkbox { width: 28px; height: 28px; border: 2px solid #ccc; border-radius: 6px; margin-right: 20px; cursor: pointer; display: flex; justify-content: center; align-items: center; flex-shrink: 0; background: white; transition: all 0.2s; }
+        .checklist-item.completado .custom-checkbox { background: #4CAF50; border-color: #4CAF50; }
+        .custom-checkbox::after { content: '✓'; color: white; font-size: 18px; font-weight: bold; display: none; }
+        .checklist-item.completado .custom-checkbox::after { display: block; }
+
+        .item-content h3 { font-size: 19px; color: #1c1e21; margin-bottom: 8px; }
+        .item-content p { color: #555; line-height: 1.6; font-size: 15px; }
+
+        .footer-doc { margin-top: 40px; text-align: center; color: #888; font-size: 14px; padding-top: 20px; border-top: 1px solid #eee; }
+        .footer-doc a { color: #d32f2f; text-decoration: none; font-weight: bold; }
+
+        /* Botón Flotante de Acción */
+        .panel-accion { position: sticky; bottom: 20px; background: #1c1e21; padding: 20px 30px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: flex; gap: 20px; margin-top: 40px; z-index: 100; align-items: center; }
+        .btn-descargar { background: #d32f2f; color: white; border: none; padding: 12px 25px; border-radius: 30px; font-weight: bold; font-size: 16px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: transform 0.2s; }
+        .btn-descargar:hover { transform: scale(1.05); }
+        .progreso-texto { color: white; font-weight: bold; font-size: 16px; }
+
+        /* Ocultar elementos UI al exportar a PDF */
+        .html2pdf__container .panel-accion { display: none !important; }
+        .html2pdf__container .custom-checkbox { border-color: #333; }
+        
+        @media (max-width: 600px) { #documento-pdf { padding: 30px 20px; } .panel-accion { flex-direction: column; border-radius: 20px; padding: 15px; text-align: center; } }
+    </style>
+</head>
+<body>
+
+    <div id="documento-pdf">
+        <div class="header-doc">
+            <h1>La Miniatura Perfecta</h1>
+            <p>Checklist Definitiva para reventar el CTR en YouTube</p>
+        </div>
+
+        <div class="checklist-item" id="item1" onclick="toggleCheck('item1')">
+            <div class="custom-checkbox"></div>
+            <div class="item-content">
+                <h3>1. La Regla de los 3 Elementos</h3>
+                <p>La miniatura tiene un máximo de 3 focos de atención visual (ej: Rostro + Objeto + Texto). Está limpia y no satura la vista del usuario.</p>
+            </div>
+        </div>
+
+        <div class="checklist-item" id="item2" onclick="toggleCheck('item2')">
+            <div class="custom-checkbox"></div>
+            <div class="item-content">
+                <h3>2. Prueba de Reducción Móvil</h3>
+                <p>He alejado la pantalla o reducido la miniatura al 20% de su tamaño y todavía se distingue perfectamente qué está pasando en la imagen.</p>
+            </div>
+        </div>
+
+        <div class="checklist-item" id="item3" onclick="toggleCheck('item3')">
+            <div class="custom-checkbox"></div>
+            <div class="item-content">
+                <h3>3. Contraste Brutal</h3>
+                <p>He usado colores que rompen el patrón de YouTube. El texto y el sujeto principal resaltan fuertemente sobre el fondo (no se camuflan).</p>
+            </div>
+        </div>
+
+        <div class="checklist-item" id="item4" onclick="toggleCheck('item4')">
+            <div class="custom-checkbox"></div>
+            <div class="item-content">
+                <h3>4. Texto "Gancho", NO Descriptivo</h3>
+                <p>Las palabras de la miniatura generan intriga o urgencia. NO repiten el título del vídeo. Tienen un máximo de 4 palabras en una fuente gruesa y legible.</p>
+            </div>
+        </div>
+
+        <div class="checklist-item" id="item5" onclick="toggleCheck('item5')">
+            <div class="custom-checkbox"></div>
+            <div class="item-content">
+                <h3>5. Expresión Facial Exagerada</h3>
+                <p>Si aparece una persona, su rostro muestra una emoción exagerada (sorpresa, miedo, alegría extrema, confusión) que conecta con la psicología del espectador.</p>
+            </div>
+        </div>
+
+        <div class="footer-doc">
+            <p>Este es un recurso exclusivo generado por <a href="https://tubetools.online" target="_blank">TubeTools.online</a></p>
+            <p style="margin-top: 5px;">Extrae miniaturas de tu competencia, analiza canales y domina el algoritmo.</p>
+        </div>
+    </div>
+
+    <div class="panel-accion">
+        <span class="progreso-texto">Progreso: <span id="contador">0</span>/5 completado</span>
+        <button class="btn-descargar" onclick="descargarPDF()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Exportar a PDF
+        </button>
+    </div>
+
+    <script>
+        // 1. Lógica para marcar/desmarcar con Memoria (LocalStorage)
+        function toggleCheck(id) {
+            const elemento = document.getElementById(id);
+            elemento.classList.toggle('completado');
+            guardarProgreso();
+            actualizarContador();
+        }
+
+        function actualizarContador() {
+            const marcados = document.querySelectorAll('.completado').length;
+            document.getElementById('contador').innerText = marcados;
+        }
+
+        function guardarProgreso() {
+            const estado = {};
+            document.querySelectorAll('.checklist-item').forEach(item => {
+                estado[item.id] = item.classList.contains('completado');
+            });
+            localStorage.setItem('tubeToolsChecklist', JSON.stringify(estado));
+        }
+
+        function cargarProgreso() {
+            const estadoGuardado = JSON.parse(localStorage.getItem('tubeToolsChecklist'));
+            if (estadoGuardado) {
+                for (const [id, completado] of Object.entries(estadoGuardado)) {
+                    if (completado) document.getElementById(id).classList.add('completado');
+                }
+                actualizarContador();
+            }
+        }
+
+        // Cargar progreso al iniciar la página
+        window.onload = cargarProgreso;
+
+        // 2. Lógica PRO para generar el PDF pixel-perfect
+        function descargarPDF() {
+            const elemento = document.getElementById('documento-pdf');
+            const opciones = {
+                margin:       10,
+                filename:     'TubeTools_Checklist_Miniaturas.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            // html2pdf hace la magia
+            html2pdf().set(opciones).from(elemento).save();
+        }
+    </script>
+</body>
+</html>
