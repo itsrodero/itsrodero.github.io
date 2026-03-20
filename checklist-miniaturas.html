@@ -144,35 +144,36 @@
         // Cargar progreso al iniciar la página
         window.onload = cargarProgreso;
 
-        // 2. Lógica PRO para generar el PDF pixel-perfect (VERSIÓN CORREGIDA)
+        // 2. Lógica PRO para generar el PDF pixel-perfect (VERSIÓN DEFINITIVA)
         function descargarPDF() {
             const elemento = document.getElementById('documento-pdf');
             
-            // Quitamos la sombra y el borde superior solo durante un segundo para que el PDF quede limpio
+            // Guardamos su aspecto original
             const sombraOriginal = elemento.style.boxShadow;
             const bordeOriginal = elemento.style.borderTop;
+            
+            // Lo ponemos "plano" para el PDF
             elemento.style.boxShadow = 'none';
             elemento.style.borderTop = 'none';
-            elemento.style.border = '1px solid #ddd'; // Le ponemos un borde sutil tipo folio
 
             const opciones = {
-                margin:       [10, 10, 10, 10], // Márgenes superior, izquierdo, inferior, derecho
+                margin:       10,
                 filename:     'TubeTools_Checklist_Miniaturas.pdf',
                 image:        { type: 'jpeg', quality: 1 },
                 html2canvas:  { 
                     scale: 2, 
                     useCORS: true,
-                    windowWidth: 800 // 🔥 ESTA ES LA MAGIA: Le dice que haga la foto como si estuviera en un monitor grande
+                    // ESTA ES LA CLAVE: Forzar coordenadas a 0 para que no recorte si la pantalla es grande
+                    scrollX: 0, 
+                    scrollY: 0 
                 },
-                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
-                pagebreak:    { mode: 'avoid-all' } // Evita que corte los elementos por la mitad
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
             
-            // Generamos el PDF y cuando termine, le devolvemos sus estilos originales a la web
             html2pdf().set(opciones).from(elemento).save().then(() => {
+                // Le devolvemos el diseño a la web
                 elemento.style.boxShadow = sombraOriginal;
                 elemento.style.borderTop = bordeOriginal;
-                elemento.style.border = 'none';
             });
         }
     </script>
