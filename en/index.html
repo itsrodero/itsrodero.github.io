@@ -309,21 +309,21 @@
                 fetch(`https://noembed.com/embed?url=${videoUrl}`)
                     .then(res => res.json())
                     .then(data => {
-                        let titulo = data.title ? data.title.replace(/[^a-zA-Z0-9]/g, "_") : "Miniatura";
+                        let titulo = data.title ? data.title.replace(/[^a-zA-Z0-9]/g, "_") : "Thumbnail";
                         setupDownloadButton('btn-max', urls.max, `${titulo}_HD.jpg`);
                         setupDownloadButton('btn-hq', urls.hq, `${titulo}_HQ.jpg`);
                         setupDownloadButton('btn-mq', urls.mq, `${titulo}_Normal.jpg`);
                     })
                     .catch(() => {
-                        setupDownloadButton('btn-max', urls.max, `Miniatura_HD.jpg`);
-                        setupDownloadButton('btn-hq', urls.hq, `Miniatura_HQ.jpg`);
-                        setupDownloadButton('btn-mq', urls.mq, `Miniatura_Normal.jpg`);
+                        setupDownloadButton('btn-max', urls.max, `Thumbnail_HD.jpg`);
+                        setupDownloadButton('btn-hq', urls.hq, `Thumbnail_HQ.jpg`);
+                        setupDownloadButton('btn-mq', urls.mq, `Thumbnail_Normal.jpg`);
                     });
                 // --- FIN DEL NUEVO SISTEMA ---
 
                 // 2. Extraer Etiquetas SEO
                 document.getElementById('tags-results').style.display = 'block';
-                document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⏳ Extrayendo etiquetas de los servidores de YouTube...</span>';
+                document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⏳ Extracting tags from YouTube servers...</span>';
                 
                 fetch(`https://api.codetabs.com/v1/proxy?quest=https://www.youtube.com/watch?v=${videoId}`)
                 .then(response => {
@@ -342,12 +342,12 @@
                         });
                         document.getElementById('tags-list').innerHTML = tagsHtml;
                     } else {
-                        document.getElementById('tags-list').innerHTML = '<span class="tag-pill">❌ Este vídeo no tiene etiquetas ocultas configuradas.</span>';
+                        document.getElementById('tags-list').innerHTML = '<span class="tag-pill">❌ This video has no hidden tags configured.</span>';
                         currentTagsText = "";
                     }
                 })
                 .catch(error => {
-                    document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⚠️ Error al extraer las etiquetas. Inténtalo de nuevo.</span>';
+                    document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⚠️ Error extracting tags. Please try again.</span>';
                 });
 
                 // Hacer scroll suave
@@ -362,10 +362,10 @@
         function copyTags() {
             if (currentTagsText !== "") {
                 navigator.clipboard.writeText(currentTagsText).then(() => {
-                    alert('✅ ¡Todas las etiquetas copiadas al portapapeles!');
+                    alert('✅ All tags copied to clipboard!');
                 });
             } else {
-                alert('No hay etiquetas para copiar.');
+                alert('No tags to copy.');
             }
         }
 
@@ -455,15 +455,7 @@
         <a href="blog.html" style="color: #d32f2f; font-weight: bold; text-decoration: none; margin: 0 15px;">Our Blog</a>
     </div>
 </footer>
- <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(reg => console.log('Service Worker registrado', reg))
-        .catch(err => console.log('Error al registrar SW', err));
-    });
-  }
-</script>
+ 
  <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
