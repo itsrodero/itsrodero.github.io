@@ -172,5 +172,21 @@
             });
         }
     </script>
+    <div id="cookie-banner" style="position: fixed; bottom: 20px; left: 20px; right: 20px; background: #fff; border: 1px solid #ccc; padding: 20px; z-index: 10000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-radius: 8px; display: none;">
+    <p style="margin-bottom: 15px; color: #333;">🍪 We use our own and third-party cookies to improve your experience, analyze traffic, and show personalized ads. <a href="privacy.html" style="color: #d32f2f; text-decoration: underline;">Read our Privacy Policy</a>.</p>
+    <button onclick="acceptCookies()" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">Accept</button>
+</div>
+
+<script>
+function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+window.addEventListener('load', function() {
+    if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    }
+});
+</script>
 </body>
 </html>
