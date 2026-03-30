@@ -377,7 +377,7 @@
             btn.onclick = function(e) {
                 e.preventDefault();
                 const originalContent = btn.innerHTML; 
-                btn.innerHTML = "⏳ Descargando..."; 
+                btn.innerHTML = "⏳ Processing..."; 
                 
                 // Usamos un proxy gratuito (el mismo que usas para los tags o allorigins)
                 fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(imageUrl)}`)
@@ -392,11 +392,11 @@
                         window.URL.revokeObjectURL(url);
                         document.body.removeChild(a);
                         
-                        btn.innerHTML = "✅ ¡Descargada!";
+                        btn.innerHTML = "✅ Ready!";
                         setTimeout(() => { btn.innerHTML = originalContent; }, 2000);
                     })
                     .catch(err => {
-                        btn.innerHTML = "❌ Error, abriendo pestaña...";
+                        btn.innerHTML = "❌ Error, opening image...";
                         setTimeout(() => { btn.innerHTML = originalContent; }, 2000);
                         window.open(imageUrl, '_blank'); 
                     });
