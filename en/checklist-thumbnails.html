@@ -40,8 +40,8 @@
         .footer-doc a { color: #d32f2f; text-decoration: none; font-weight: bold; }
 
         .panel-accion { position: sticky; bottom: 20px; background: #1c1e21; padding: 20px 30px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: flex; gap: 20px; margin-top: 40px; z-index: 100; align-items: center; }
-        .btn-descargar { background: #d32f2f; color: white; border: none; padding: 12px 25px; border-radius: 30px; font-weight: bold; font-size: 16px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: transform 0.2s; }
-        .btn-descargar:hover { transform: scale(1.05); }
+        .btn-exportar { background: #d32f2f; color: white; border: none; padding: 12px 25px; border-radius: 30px; font-weight: bold; font-size: 16px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: transform 0.2s; }
+        .btn-exportar:hover { transform: scale(1.05); }
         .progreso-texto { color: white; font-weight: bold; font-size: 16px; }
 
         .html2pdf__container .panel-accion { display: none !important; }
@@ -106,7 +106,7 @@
 
     <div class="panel-accion">
         <span class="progreso-texto">Progress: <span id="contador">0</span>/5 completed</span>
-        <button class="btn-descargar" onclick="descargarPDF()">
+        <button class="btn-exportar" onclick="exportarPDF()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             Export to PDF
         </button>
