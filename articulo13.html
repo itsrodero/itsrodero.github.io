@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño de Miniaturas Mobile-First: La Regla del 70% | TubeTools</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.9; color: #2d3436; background-color: #fdfdfd; }
+        .article-header { background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%); color: white; padding: 100px 0; text-align: center; }
+        .article-body { max-width: 900px; margin: -60px auto 60px; background: white; padding: 60px; border-radius: 24px; box-shadow: 0 25px 50px rgba(0,0,0,0.05); }
+        h2 { color: #0083b0; margin-top: 50px; font-weight: 800; font-size: 2.2rem; border-left: 6px solid #00b4db; padding-left: 20px; }
+        .mobile-alert { background-color: #e0f7fa; border-radius: 12px; padding: 30px; margin: 40px 0; border-left: 6px solid #00bcd4; }
+        img { width: 100%; border-radius: 16px; margin: 40px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        p { font-size: 1.1rem; margin-bottom: 25px; }
+        .cta-section { background: #f8f9fa; border-radius: 20px; padding: 50px; text-align: center; margin-top: 60px; border: 2px dashed #0083b0; }
+    </style>
+</head>
+<body>
+    <header class="article-header">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Diseño 'Mobile-First'</h1>
+            <p class="lead opacity-75">Si no funciona en una pantalla de 6 pulgadas, no funciona en absoluto.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="article-body">
+            <p class="text-muted small mb-4 text-uppercase fw-bold">Lectura de 12 Minutos • Diseño UX</p>
+            
+            <p class="lead fw-bold">Editamos vídeos y diseñamos miniaturas en enormes monitores 4K de 27 pulgadas. Pasamos horas perfeccionando los detalles más finos, ajustando sombras píxel a píxel y asegurándonos de que cada poro de un rostro sea visible. Pero aquí está la brutal realidad: más del 70% de tu audiencia juzgará esa obra maestra en la pantalla de un smartphone que apenas mide 6 pulgadas de ancho, a menudo mientras viajan en autobús, con reflejos en la pantalla y el brillo bajo.</p>
+
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80" alt="Usuario viendo contenido en smartphone">
+
+            <h2>1. El "Test de Entrecerrar los Ojos" y la Escala Visual</h2>
+            <p>Diseñar pensando en el escritorio es una métrica de vanidad. Si quieres captar el codiciado mercado móvil, debes adoptar una estricta filosofía de diseño "Mobile-First". La evaluación definitiva para cualquier miniatura es el "Test de Entrecerrar los Ojos" (Squint Test). Aleja el zoom de tu imagen hasta que tenga el tamaño de un sello de correos (unos 3 o 4 centímetros de ancho en tu monitor), y luego entrecierra los ojos. Si no puedes identificar de inmediato el gancho emocional y leer el texto en un solo segundo, tu diseño ha fracasado rotundamente.</p>
+            <p>Los fondos complejos con múltiples elementos se convierten en un borrón confuso en los dispositivos móviles. Un enfoque mobile-first exige una simplificación despiadada. Debes eliminar cualquier personaje secundario, texturas de fondo intrincadas o chistes visuales sutiles. Si un elemento no contribuye de forma directa y masiva a la brecha de curiosidad principal, bórralo sin piedad.</p>
+
+            <h2>2. Tipografía para la Pantalla Pequeña</h2>
+            <p>Las fuentes que se ven elegantes e impactantes en un monitor de escritorio a menudo se vuelven completamente ilegibles en un teléfono. Las tipografías delgadas, con serifas (remates) o muy estilizadas destruirán tu CTR. El estándar actual para el diseño móvil exige fuentes sans-serif ultra gruesas (Bold o Black) con un interletraje (espacio entre letras) muy ajustado.</p>
+            <p>Además, el texto necesita un "contenedor". Una simple sombra paralela ya no es suficiente contra la interfaz dinámica y a menudo caótica de YouTube. Debes usar cajas de fondo de colores sólidos detrás de tu texto, o aplicar trazos gruesos y muy contrastados (outlines) para garantizar que las palabras salten literalmente de la pantalla, independientemente de la configuración visual que tenga el usuario en su dispositivo.</p>
+
+            <div class="mobile-alert">
+                <h3 class="h5 fw-bold">📱 LA REGLA DEL 60% DE ESPACIO INMOBILIARIO</h3>
+                <p class="mb-0">En un diseño pensado primero para móviles, el sujeto principal (generalmente un rostro que muestra una emoción de alta intensidad) debe ocupar al menos el 60% del lienzo total de la imagen. Esto puede parecer incómodamente cerca y recortado mientras diseñas en tu PC, pero en un smartphone, crea la intimidad visual y el impacto contundente necesarios para detener el pulgar del usuario mientras hace scroll.</p>
+            </div>
+
+            <h2>3. El Comportamiento del Contraste con Brillo Bajo</h2>
+            <p>Un factor ignorado casi por completo por los diseñadores aficionados es cómo las pantallas renderizan el color con niveles de brillo bajos. Millones de usuarios navegan por YouTube en la cama o en entornos con poca luz, con el brillo de la pantalla al mínimo. Los degradados de color sutiles se fusionan y se vuelven grises en estas condiciones.</p>
+            <p>Por esta razón, los esquemas de color complementarios de altísimo contraste (como Azul/Naranja o Morado/Amarillo) son absolutamente obligatorios. Los metadatos de tu imagen deben estar estructurados para mantener una clara separación entre el sujeto en primer plano y la capa de fondo, incluso cuando la retroiluminación de la pantalla del usuario está comprometida.</p>
+
+            <div class="cta-section">
+                <h3 class="fw-bold mb-3">Simula la Experiencia Móvil</h3>
+                <p>Deja de adivinar cómo se ve tu arte en un teléfono. Utiliza nuestro <strong>Inspector Visual de Alta Resolución</strong> para extraer datos estructurales y verificar la integridad del contraste de tus activos antes de desplegarlos en la plataforma.</p>
+                <a href="index.html" class="btn btn-dark btn-lg rounded-pill px-5 py-3 fw-bold mt-3">INICIAR INSPECCIÓN VISUAL</a>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
