@@ -367,20 +367,32 @@
             }
         }
 
-        // --- FUNCIÓN MÁGICA: FORZAR DESCARGA SALTANDO BLOQUEOS CORS ---
+        // --- FUNCIÓN MÁGICA: FORZAR DESCARGA (VERSIÓN BLINDADA CON MÚLTIPLES PROXIES) ---
         function setupDownloadButton(buttonId, imageUrl, fileName) {
             const btn = document.getElementById(buttonId);
             btn.removeAttribute('href'); 
             
-            btn.onclick = function(e) {
+            btn.onclick = async function(e) {
                 e.preventDefault();
                 const originalContent = btn.innerHTML; 
-                btn.innerHTML = "⏳ Processing..."; 
-                
-                // Usamos un proxy gratuito (el mismo que usas para los tags o allorigins)
-                fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(imageUrl)}`)
-                    .then(response => response.blob())
-                    .then(blob => {
+                btn.innerHTML = "⏳ Extrayendo..."; 
+
+                // Lista de proxies gratuitos para tener Plan A, B y C
+                const proxies = [
+                    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(imageUrl)}`,
+                    `https://corsproxy.io/?${encodeURIComponent(imageUrl)}`,
+                    `https://api.allorigins.win/raw?url=${encodeURIComponent(imageUrl)}`
+                ];
+
+                let success = false;
+
+                // El código prueba los proxies uno por uno hasta que uno funciona
+                for (let proxy of proxies) {
+                    try {
+                        const response = await fetch(proxy);
+                        if (!response.ok) continue; // Si este proxy falla o está saturado, pasa al siguiente
+                        
+                        const blob = await response.blob();
                         const url = window.URL.createObjectURL(blob);
                         const a = document.createElement('a');
                         a.href = url;
@@ -390,14 +402,21 @@
                         window.URL.revokeObjectURL(url);
                         document.body.removeChild(a);
                         
-                        btn.innerHTML = "✅ Ready!";
+                        btn.innerHTML = "✅ ¡Descargada!";
                         setTimeout(() => { btn.innerHTML = originalContent; }, 2000);
-                    })
-                    .catch(err => {
-                        btn.innerHTML = "❌ Error, opening image...";
-                        setTimeout(() => { btn.innerHTML = originalContent; }, 2000);
-                        window.open(imageUrl, '_blank'); 
-                    });
+                        success = true;
+                        break; // Salimos del bucle porque ya hemos triunfado
+                    } catch (err) {
+                        console.log("Proxy saturado, intentando alternativa...");
+                    }
+                }
+
+                // Si por algún milagro TODOS los proxies de internet están caídos, usamos el salvavidas
+                if (!success) {
+                    btn.innerHTML = "❌ Abriendo imagen...";
+                    setTimeout(() => { btn.innerHTML = originalContent; }, 2000);
+                    window.open(imageUrl, '_blank'); 
+                }
             };
         }
    // --- SISTEMA DE LOCALSTORAGE (HISTORIAL) ---
