@@ -179,10 +179,6 @@
     <div>
         <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Aceptar</button>
         <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Rechazar</button>
-     document.getElementById("accept-cookies").addEventListener("click", function() {
-  localStorage.setItem("cookieConsent", "accepted");
-  document.getElementById("cookie-banner").style.display = "none";
-
   // ← AÑADIR ESTO: cargar GA4 ahora que aceptó
   const s = document.createElement("script");
   s.async = true;
