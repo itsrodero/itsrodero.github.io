@@ -245,4 +245,14 @@
 <lastmod>2026-05-01T00:00:00+00:00</lastmod>
 <priority>0.75</priority>
 </url>
+  <url>
+  <loc>https://tubetools.online/en/analyze-thumbnail.html</loc>
+  <lastmod>2026-05-03T00:00:00+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
+  <loc>https://tubetools.online/checklist-miniaturas.html</loc>
+  <lastmod>2026-05-03T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
 </urlset>
