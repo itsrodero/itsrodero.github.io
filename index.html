@@ -179,17 +179,9 @@
     <div>
         <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Aceptar</button>
         <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Rechazar</button>
-  // ← AÑADIR ESTO: cargar GA4 ahora que aceptó
-  const s = document.createElement("script");
-  s.async = true;
-  s.src = "https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR";
-  document.head.appendChild(s);
-  s.onload = function() {
-    gtag("js", new Date());
-    gtag("config", "G-MKM07L3RLR");
-  };
-});
     </div>
+</div>
+
 </div>
 <script>
     // Mostrar banner si no hay consentimiento guardado
