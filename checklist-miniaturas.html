@@ -192,11 +192,12 @@
 
 <script>
 function acceptCookies() {
-    localStorage.setItem('cookiesAccepted', 'true');
+    localStorage.setItem('cookieConsent', 'accepted'); // <- 'cookieConsent' NO 'cookiesAccepted'
     document.getElementById('cookie-banner').style.display = 'none';
 }
+
 window.addEventListener('load', function() {
-    if (!localStorage.getItem('cookiesAccepted')) {
+    if (!localStorage.getItem('cookieConsent')) {  // <- mismo key
         document.getElementById('cookie-banner').style.display = 'block';
     }
 });
