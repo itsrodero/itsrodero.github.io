@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /private/
 
+# Sitemaps
 Sitemap: https://tubetools.online/sitemap.xml
+
+# Velocidad de crawl (no agobiar al servidor de GitHub Pages)
+Crawl-delay: 1
