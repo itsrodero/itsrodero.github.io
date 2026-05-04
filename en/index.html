@@ -314,7 +314,10 @@
                     mq: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
                 };
 
-                document.getElementById('img-max').src = urls.max;
+                const imgMax = document.getElementById('img-max');
+imgMax.src = urls.max;
+imgMax.setAttribute('loading', 'lazy');
+imgMax.setAttribute('decoding', 'async');
                 document.getElementById('img-hq').src = urls.hq;
                 document.getElementById('img-mq').src = urls.mq;
 
