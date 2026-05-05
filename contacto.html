@@ -127,5 +127,15 @@
     <footer>
         <p>© 2026 TubeTools.online - <a href="privacidad.html">Privacidad</a> | <a href="terminos.html">Términos</a> | <a href="contacto.html">Contacto</a></p>
     </footer>
+    <!-- ✅ Service Worker para cache eficiente -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('SW registrado', reg.scope))
+        .catch(err => console.log('SW error:', err));
+    });
+  }
+</script>
 </body>
 </html>
