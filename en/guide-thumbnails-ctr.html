@@ -322,5 +322,15 @@
         document.getElementById('readingBar').style.width = progress + '%';
     });
 </script>
+    <!-- ✅ Service Worker para cache eficiente -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('SW registrado', reg.scope))
+        .catch(err => console.log('SW error:', err));
+    });
+  }
+</script>
 </body>
 </html>
