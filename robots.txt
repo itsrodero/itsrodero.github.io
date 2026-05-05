@@ -2,8 +2,11 @@ User-agent: *
 Allow: /
 Disallow: /private/
 
+# Noindex pages that don't need to rank
+Disallow: /service-worker.js
+
 # Sitemaps
 Sitemap: https://tubetools.online/sitemap.xml
 
-# Velocidad de crawl (no agobiar al servidor de GitHub Pages)
+# Crawl delay
 Crawl-delay: 1
