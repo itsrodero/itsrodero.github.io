@@ -117,5 +117,15 @@
     <a href="blog.html" style="color:#bbb;text-decoration:none;margin:0 10px;">Blog</a>
   </div>
 </footer>
+    <!-- ✅ Service Worker para cache eficiente -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('SW registrado', reg.scope))
+        .catch(err => console.log('SW error:', err));
+    });
+  }
+</script>
 </body>
 </html>
