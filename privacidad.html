@@ -1,178 +1,198 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MKM07L3RLR');
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - TubeTools</title>
-    <meta name="description" content="Política de privacidad de TubeTools. Cumplimos con el RGPD y la LOPD.">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f9f9f9; color: #1c1e21; line-height: 1.7; }
-        /* --- NUEVO MENÚ CON ESPACIADO PRO --- */
-        nav { 
-            background-color: #1c1e21; 
-            padding: 15px 25px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav div {
-            display: flex;
-            gap: 20px; /* El aire mágico entre botones */
-            align-items: center;
-            flex-wrap: wrap; 
-            justify-content: flex-end;
-        }
-
-        nav a { 
-            color: white !important; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 15px;
-            transition: color 0.3s;
-            padding: 5px 0; 
-        }
-
-        nav a:hover { 
-            color: #d32f2f !important; 
-        }
-        main { max-width: 850px; margin: 40px auto; padding: 30px; background: white; border-radius: 16px; }
-        h1 { color: #d32f2f; }
-        h2 { color: #333; margin-top: 30px; }
-        footer { background: #1c1e21; color: #888; text-align: center; padding: 30px; margin-top: 40px; }
-    </style>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (localStorage.getItem("cookieConsent") === "accepted") {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR";
+      document.head.appendChild(s);
+      s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); };
+    }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad – TubeTools</title>
+  <meta name="description" content="Política de privacidad de TubeTools: qué datos recogemos, cómo Google AdSense usa cookies, tus derechos bajo RGPD y CCPA, y cómo gestionar tus preferencias.">
+  <link rel="canonical" href="https://tubetools.online/privacidad.html">
+  <link rel="alternate" hreflang="es" href="https://tubetools.online/privacidad.html">
+  <link rel="alternate" hreflang="en" href="https://tubetools.online/en/privacy.html">
+  <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/privacy.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f9f9f9; color: #1c1e21; line-height: 1.8; }
+    nav { background-color: #1c1e21; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    nav a { color: white !important; text-decoration: none; font-weight: bold; font-size: 15px; margin-left: 20px; }
+    nav a:hover { color: #d32f2f !important; }
+    main { max-width: 860px; margin: 40px auto; padding: 40px; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+    h1 { color: #d32f2f; font-size: 2rem; margin-bottom: 8px; }
+    h2 { color: #1c1e21; margin-top: 35px; margin-bottom: 10px; font-size: 1.3rem; border-left: 4px solid #d32f2f; padding-left: 12px; }
+    p { margin-bottom: 15px; color: #333; }
+    ul { margin: 10px 0 15px 20px; }
+    ul li { margin-bottom: 8px; color: #333; }
+    .highlight { background: #fff5f5; border: 1px solid #ffcdd2; border-radius: 8px; padding: 20px; margin: 20px 0; }
+    .adsense-section { background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 8px; padding: 20px; margin: 20px 0; }
+    footer { background: #1c1e21; color: #888; text-align: center; padding: 30px; margin-top: 40px; }
+    footer a { color: #bbb; text-decoration: none; margin: 0 10px; }
+    @media(max-width:600px){ main { padding: 20px; margin: 20px; } }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" style="font-weight: bold; font-size: 22px; text-decoration: none; color: white;">🚀 TubeTools</a>
-        <div>
-            <a href="en/privacy.html" style="color: #4CAF50;">🇬🇧 EN</a>
-            <a href="index.html">Inicio</a>
-            <a href="calculadora.html">Calculadora</a>
-            <a href="blog.html">Blog</a>
-            <a href="contacto.html">Contacto</a>
-        </div>
-    </nav>
-    <main>
-        <h1>Política de Privacidad</h1>
-        <p><em>Última actualización: 16 de marzo de 2026</em></p>
 
-        <h2>1. Responsable del tratamiento</h2>
-        <p><strong>Titular:</strong> Daniel (en adelante, TubeTools)<br>
-        <strong>Correo de contacto:</strong> contacto@tubetools.online<br>
-        <strong>Finalidad principal:</strong> Gestión de la plataforma y atención al usuario.</p>
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
+  <p style="margin-bottom:15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia y mostrar anuncios personalizados. <a href="privacidad.html" style="color:#ff4757;text-decoration:underline;">Política de Privacidad</a>.</p>
+  <button onclick="localStorage.setItem('cookieConsent','accepted');this.parentElement.style.display='none';" style="background:#d32f2f;color:white;border:none;padding:10px 20px;border-radius:5px;margin-right:10px;cursor:pointer;">Aceptar</button>
+  <button onclick="localStorage.setItem('cookieConsent','rejected');this.parentElement.style.display='none';" style="background:#555;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">Rechazar</button>
+</div>
+<script>if(!localStorage.getItem('cookieConsent'))document.getElementById('cookie-banner').style.display='block';</script>
 
-        <h2>2. Datos que recopilamos</h2>
-        <p>En TubeTools recopilamos los siguientes datos personales:</p>
-        <ul>
-            <li><strong>Datos de navegación:</strong> dirección IP, tipo de navegador, páginas visitadas, fecha y hora (mediante Google Analytics).</li>
-            <li><strong>Datos de contacto:</strong> cuando usas el formulario de contacto, recopilamos tu nombre y correo electrónico para responderte.</li>
-            <li><strong>Cookies:</strong> utilizamos cookies técnicas y de terceros para el funcionamiento de la web y para mostrar anuncios personalizados (previo consentimiento).</li>
-        </ul>
+<nav>
+  <a href="index.html" style="font-size:22px;">🚀 TubeTools</a>
+  <div>
+    <a href="en/privacy.html">🇬🇧 EN</a>
+    <a href="index.html">Inicio</a>
+    <a href="calculadora.html">Calculadora</a>
+    <a href="blog.html">Blog</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</nav>
 
-        <h2>3. Finalidad del tratamiento</h2>
-        <p>Tus datos se utilizan para:</p>
-        <ul>
-            <li>Prestar el servicio de extracción de miniaturas (no almacenamos URLs ni imágenes).</li>
-            <li>Responder a tus consultas y sugerencias.</li>
-            <li>Mejorar la web mediante análisis estadísticos.</li>
-            <li>Mostrar anuncios adaptados a tus intereses (solo si aceptas cookies).</li>
-        </ul>
+<main>
+  <h1>Política de Privacidad</h1>
+  <p><em>Última actualización: 5 de mayo de 2026</em></p>
 
-        <h2>4. Legitimación</h2>
-        <p>La base legal para el tratamiento es:</p>
-        <ul>
-            <li><strong>Ejecución de un contrato:</strong> al usar nuestra herramienta, aceptas nuestros términos.</li>
-            <li><strong>Consentimiento:</strong> para el uso de cookies no técnicas y para el envío de comunicaciones.</li>
-        </ul>
+  <p>Esta Política de Privacidad explica cómo <strong>TubeTools</strong> (tubetools.online) recopila, utiliza y protege la información cuando usas nuestro sitio web. Nos comprometemos a ser completamente transparentes sobre nuestras prácticas de datos, incluyendo el uso de servicios publicitarios como Google AdSense. Por favor, lee esta política detenidamente antes de usar nuestros servicios.</p>
 
-        <h2>5. Conservación de los datos</h2>
-        <p>Los datos de contacto se conservan el tiempo necesario para atender tu consulta. Los datos de navegación se conservan durante 14 meses (según Google Analytics).</p>
+  <h2>1. Responsable del Tratamiento</h2>
+  <p><strong>Titular:</strong> Daniel (operando como TubeTools)<br>
+  <strong>Correo de contacto:</strong> contacto@tubetools.online<br>
+  <strong>Sitio web:</strong> https://tubetools.online<br>
+  <strong>Finalidad:</strong> Gestión de la plataforma, desarrollo de herramientas y atención al usuario.</p>
 
-        <h2>6. Destinatarios de los datos</h2>
-        <p>No cedemos tus datos a terceros, salvo obligación legal. Utilizamos servicios de terceros como:</p>
-        <ul>
-            <li><strong>Google LLC</strong> (Google Analytics, Google AdSense) – con tu consentimiento.</li>
-            <li><strong>GitHub</strong> (alojamiento de la web).</li>
-            <li><strong>Formspree</strong> (gestión del formulario de contacto).</li>
-        </ul>
+  <h2>2. Qué Datos Recopilamos</h2>
+  <p>TubeTools recopila los siguientes tipos de datos:</p>
+  <ul>
+    <li><strong>Datos de navegación:</strong> Dirección IP, tipo de navegador, sistema operativo, páginas visitadas, tiempo en la página, fecha y hora de la visita (recopilados a través de Google Analytics 4).</li>
+    <li><strong>Datos de contacto:</strong> Cuando utilizas nuestro formulario de contacto, recopilamos tu nombre y correo electrónico únicamente para responder a tu consulta.</li>
+    <li><strong>Datos de cookies:</strong> Utilizamos cookies propias y de terceros. Las cookies de terceros de Google se utilizan con fines analíticos y publicitarios (ver Sección 4 a continuación).</li>
+    <li><strong>Datos de uso de la herramienta:</strong> Las URLs introducidas en nuestra herramienta de extracción de miniaturas se procesan en tiempo real, pero NO se almacenan en nuestros servidores.</li>
+  </ul>
 
-        <h2>7. Transferencias internacionales</h2>
-        <p>Al utilizar servicios de Google y GitHub, tus datos pueden ser transferidos a Estados Unidos. Ambas empresas están adheridas al Escudo de Privacidad (Privacy Shield) o utilizan cláusulas contractuales tipo aprobadas por la Comisión Europea.</p>
+  <h2>3. Cómo Utilizamos tus Datos</h2>
+  <p>Utilizamos los datos recopilados para:</p>
+  <ul>
+    <li>Proporcionar el servicio de extracción y análisis de miniaturas de YouTube.</li>
+    <li>Responder a consultas del formulario de contacto y comentarios de usuarios.</li>
+    <li>Analizar el tráfico del sitio web y mejorar la experiencia del usuario mediante Google Analytics.</li>
+    <li>Mostrar anuncios relevantes a través de Google AdSense (con tu consentimiento de cookies).</li>
+    <li>Detectar y prevenir errores técnicos y usos indebidos de nuestras herramientas.</li>
+  </ul>
 
-        <h2>8. Tus derechos</h2>
-        <p>Tienes derecho a acceder, rectificar, suprimir, limitar el tratamiento, oponerte y portar tus datos. Para ejercerlos, escríbenos a <strong>contacto@tubetools.online</strong> adjuntando una copia de tu DNI o documento identificativo.</p>
+  <div class="adsense-section">
+    <h2 style="border:none;padding:0;margin-top:0;">4. Google AdSense – Publicidad y Cookies (Importante)</h2>
+    <p>TubeTools está monetizado a través de <strong>Google AdSense</strong>, operado por Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, EE.UU.). Esta es la forma principal en que financiamos las herramientas gratuitas que ofrecemos.</p>
+    <p>Cuando aceptas las cookies, Google AdSense puede:</p>
+    <ul>
+      <li>Instalar cookies publicitarias (incluyendo <code>__gads</code>, <code>__gpi</code>, <code>NID</code>) en tu navegador para mostrar anuncios personalizados basados en tus intereses y comportamiento de navegación.</li>
+      <li>Utilizar la huella digital del dispositivo y el seguimiento entre sitios para mostrarte publicidad relevante en diferentes páginas web.</li>
+      <li>Recopilar datos sobre tus visitas a TubeTools y otros sitios web para medir el rendimiento de los anuncios y optimizar su entrega.</li>
+    </ul>
+    <p>Si <strong>rechazas las cookies</strong>, Google AdSense solo mostrará anuncios no personalizados. Seguirás viendo publicidad, pero no estará basada en tus intereses personales ni en tu historial de navegación.</p>
+    <p>Puedes gestionar tus preferencias de publicidad de Google en: <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">https://adssettings.google.com</a></p>
+    <p>Para desactivar el uso de cookies de Google para publicidad, visita: <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">https://www.google.com/settings/ads</a></p>
+    <p>Para más información sobre cómo Google utiliza los datos cuando usas sitios o aplicaciones de socios: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Políticas y Condiciones de Google</a>.</p>
+  </div>
 
-        <h2>9. Cookies</h2>
-        <p>Utilizamos cookies propias y de terceros. Puedes gestionar tu consentimiento en el banner de cookies que aparece al entrar en la web. Para más información, puedes consultar el apartado correspondiente en esta misma Política de Privacidad.</p>
+  <h2>5. Política de Cookies</h2>
+  <p>Utilizamos los siguientes tipos de cookies:</p>
+  <ul>
+    <li><strong>Cookies esenciales/técnicas:</strong> Necesarias para el funcionamiento del sitio web. No pueden desactivarse. Almacenan tu preferencia de consentimiento de cookies y habilitan funciones básicas como el extractor de miniaturas.</li>
+    <li><strong>Cookies analíticas (Google Analytics 4):</strong> Recopilan datos anonimizados sobre cómo los visitantes usan nuestro sitio web. Solo se cargan después de que aceptes las cookies. Puedes desactivarlas en: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out</a>.</li>
+    <li><strong>Cookies publicitarias (Google AdSense):</strong> Utilizadas para mostrar anuncios personalizados. Si rechazas las cookies, los anuncios serán no personalizados.</li>
+  </ul>
+  <p>Puedes gestionar o retirar tu consentimiento de cookies en cualquier momento borrando el localStorage de tubetools.online en tu navegador.</p>
 
-        <h2>10. Cambios en la política de privacidad</h2>
-        <p>Podemos modificar esta política para adaptarla a novedades legislativas. Te recomendamos revisarla periódicamente.</p>
+  <h2>6. Base Legal del Tratamiento</h2>
+  <ul>
+    <li><strong>Ejecución de contrato:</strong> Tratamiento necesario para prestar el servicio de extracción de miniaturas.</li>
+    <li><strong>Consentimiento:</strong> Para cookies analíticas (Google Analytics) y publicitarias (Google AdSense) — activadas solo tras aceptar las cookies en nuestro banner.</li>
+    <li><strong>Interés legítimo:</strong> Para seguridad, prevención de fraudes y operación general del sitio web.</li>
+  </ul>
 
-        <h3>Publicidad de Google AdSense y Cookies de DoubleClick</h3>
-<p>Nuestro sitio web utiliza Google AdSense para publicar anuncios. Proveedores de terceros, incluido Google, utilizan cookies para mostrar anuncios relevantes basándose en las visitas anteriores de un usuario a nuestro sitio web u otros sitios web de Internet. El uso de cookies de publicidad permite a Google y a sus socios mostrar anuncios basados en las visitas de los usuarios a este sitio. Los usuarios pueden inhabilitar la publicidad personalizada visitando la Configuración de anuncios de Google.</p>
-        <h2>11. Derechos de Privacidad de California (CCPA)</h2>
-<p>Si eres residente del estado de California (Estados Unidos), tienes derechos adicionales de privacidad bajo la Ley de Privacidad del Consumidor de California (CCPA, por sus siglas en inglés), vigente desde el 1 de enero de 2020:</p>
-<ul>
-    <li><strong>Derecho a saber:</strong> Puedes solicitar información sobre las categorías y datos personales específicos que hemos recopilado sobre ti, los fines para los que los utilizamos y con quién los compartimos.</li>
-    <li><strong>Derecho a eliminar:</strong> Puedes solicitar que eliminemos la información personal que hemos recopilado sobre ti, con algunas excepciones legales.</li>
-    <li><strong>Derecho a no ser discriminado:</strong> No te discriminaremos por ejercer tus derechos bajo la CCPA.</li>
-    <li><strong>Derecho a opt-out de la venta:</strong> TubeTools <strong>no vende</strong> información personal a terceros. No obstante, tienes el derecho formal de optar por no participar en cualquier venta potencial futura.</li>
-</ul>
-<p>Para ejercer cualquiera de estos derechos, puedes enviarnos un correo a <strong>contacto@tubetools.online</strong> indicando "Solicitud CCPA" en el asunto. Responderemos en un plazo máximo de 45 días naturales, tal y como exige la normativa.</p>
-<p>Para más información sobre cómo Google gestiona los datos en el contexto de AdSense y los derechos CCPA relacionados con la publicidad personalizada, visita: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></p>
+  <h2>7. Conservación de Datos</h2>
+  <ul>
+    <li><strong>Datos del formulario de contacto:</strong> Conservados hasta 6 meses después de resolver tu consulta.</li>
+    <li><strong>Datos analíticos:</strong> Conservados por Google Analytics durante 14 meses.</li>
+    <li><strong>Datos publicitarios:</strong> Gestionados por Google conforme a sus propias políticas de retención de datos.</li>
+    <li><strong>Datos de uso de herramientas (URLs de miniaturas):</strong> No se almacenan — solo se procesan en tiempo real.</li>
+  </ul>
 
-        <p>Si tienes dudas, contáctanos: <strong>contacto@tubetools.online</strong></p>
-    </main>
-    <footer>
-        <p>© 2026 TubeTools.online - <a href="privacidad.html">Privacidad</a> | <a href="terminos.html">Términos</a> | <a href="contacto.html">Contacto</a></p>
-    </footer>
+  <h2>8. Terceros que Reciben Datos</h2>
+  <ul>
+    <li><strong>Google LLC</strong> — Google Analytics (análisis de tráfico) y Google AdSense (publicidad). Política de privacidad de Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></li>
+    <li><strong>GitHub Pages</strong> — Alojamiento web. Declaración de privacidad de GitHub: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a></li>
+    <li><strong>Formspree</strong> — Gestión del formulario de contacto. Política de privacidad de Formspree: <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">formspree.io/legal/privacy-policy</a></li>
+  </ul>
 
-    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
-        <p style="margin-bottom: 15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y mostrar anuncios personalizados. <a href="privacidad.html" style="color: #ff4757; text-decoration: underline;">Lee nuestra Política de Privacidad</a>.</p>
-        <div>
-            <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Aceptar</button>
-            <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Rechazar</button>
-        </div>
-    </div>
-    <script>
-        // Mostrar banner si no hay consentimiento guardado
-        if (!localStorage.getItem('cookieConsent')) {
-            document.getElementById('cookie-banner').style.display = 'block';
-        }
+  <h2>9. Transferencias Internacionales de Datos</h2>
+  <p>Al utilizar Google Analytics y Google AdSense, tus datos pueden transferirse y procesarse en Estados Unidos. Google LLC está certificado bajo el Marco de Privacidad de Datos UE-EE.UU. y cumple con las Cláusulas Contractuales Estándar de la UE para transferencias internacionales de datos.</p>
 
-        // Al aceptar
-        document.getElementById('accept-cookies').addEventListener('click', function() {
-            localStorage.setItem('cookieConsent', 'accepted');
-            document.getElementById('cookie-banner').style.display = 'none';
-        });
+  <h2>10. Tus Derechos (RGPD – Residentes en la UE)</h2>
+  <p>Si te encuentras en la Unión Europea, tienes los siguientes derechos bajo el RGPD:</p>
+  <ul>
+    <li><strong>Derecho de acceso:</strong> Solicitar una copia de los datos personales que conservamos sobre ti.</li>
+    <li><strong>Derecho de rectificación:</strong> Solicitar la corrección de datos inexactos.</li>
+    <li><strong>Derecho de supresión:</strong> Solicitar la eliminación de tus datos ("derecho al olvido").</li>
+    <li><strong>Derecho a la limitación del tratamiento:</strong> Solicitar que limitemos el uso de tus datos.</li>
+    <li><strong>Derecho a la portabilidad:</strong> Recibir tus datos en formato legible por máquina.</li>
+    <li><strong>Derecho de oposición:</strong> Oponerte al tratamiento basado en intereses legítimos.</li>
+    <li><strong>Derecho a retirar el consentimiento:</strong> Retirar el consentimiento de cookies en cualquier momento.</li>
+  </ul>
+  <p>Para ejercer cualquiera de estos derechos, escríbenos a <strong>contacto@tubetools.online</strong>. Responderemos en un plazo de 30 días.</p>
 
-        // Al rechazar
-        document.getElementById('reject-cookies').addEventListener('click', function() {
-            localStorage.setItem('cookieConsent', 'rejected');
-            document.getElementById('cookie-banner').style.display = 'none';
-        });
-    </script>
-    <!-- ✅ Service Worker para cache eficiente -->
+  <h2>11. Privacidad de los Menores</h2>
+  <p>TubeTools no está dirigido a menores de 13 años. No recopilamos conscientemente información personal de niños. Si crees que un menor de 13 años nos ha proporcionado datos personales, contáctanos y los eliminaremos de inmediato.</p>
+
+  <h2>12. Seguridad</h2>
+  <p>Implementamos medidas técnicas y organizativas adecuadas para proteger tus datos personales contra accesos no autorizados, alteración, divulgación o destrucción. Nuestro sitio web usa cifrado HTTPS en todas las conexiones.</p>
+
+  <h2>13. Cambios en Esta Política</h2>
+  <p>Podemos actualizar esta Política de Privacidad periódicamente. Cuando lo hagamos, actualizaremos la fecha de "Última actualización" en la parte superior. Te recomendamos revisar esta política periódicamente. El uso continuado de TubeTools tras los cambios constituye la aceptación de la política actualizada.</p>
+
+  <h2>14. Contacto</h2>
+  <p>Si tienes preguntas sobre esta Política de Privacidad o tus datos personales, contáctanos:</p>
+  <ul>
+    <li><strong>Correo:</strong> contacto@tubetools.online</li>
+    <li><strong>Web:</strong> <a href="contacto.html">tubetools.online/contacto.html</a></li>
+  </ul>
+
+  <div class="highlight">
+    <strong>Resumen:</strong> TubeTools es gratuito porque muestra anuncios de Google AdSense. Si aceptas las cookies, esos anuncios son personalizados según tus intereses. Si las rechazas, verás anuncios genéricos. Puedes cambiar tu preferencia en cualquier momento borrando los datos del navegador para este sitio. Nunca vendemos tus datos.
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 TubeTools.online — Todos los derechos reservados.</p>
+  <div style="margin-top:10px;">
+    <a href="privacidad.html">Privacidad</a>
+    <a href="terminos.html">Términos</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">Sobre nosotros</a>
+  </div>
+</footer>
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('SW registrado', reg.scope))
+        .then(reg => console.log('SW ok'))
         .catch(err => console.log('SW error:', err));
     });
   }
 </script>
-    </body>
+</body>
 </html>
