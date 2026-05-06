@@ -4,21 +4,18 @@
  <link rel="canonical" href="https://tubetools.online/en/">
  <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1c1e21">
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR"></script>
-<script>
+ <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-
-  // Solo cargar GA4 si ya aceptó cookies
   if (localStorage.getItem("cookieConsent") === "accepted") {
-    const s = document.createElement("script");
+    var s = document.createElement("script");
     s.async = true;
     s.src = "https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR";
     document.head.appendChild(s);
-    gtag("js", new Date());
-    gtag("config", "G-MKM07L3RLR");
+    s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); };
   }
 </script>
+
  <link rel="preconnect" href="https://img.youtube.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
@@ -26,8 +23,6 @@
 <link rel="preload" as="image" href="https://img.youtube.com/vi/placeholder/maxresdefault.jpg">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://api.codetabs.com">
- <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#1c1e21">
  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255"
          crossorigin="anonymous"></script>
