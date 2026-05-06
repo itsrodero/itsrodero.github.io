@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- PEGAR ESTE BLOQUE como primeras líneas dentro de <head> -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-MKM07L3RLR');
-    </script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (localStorage.getItem("cookieConsent") === "accepted") {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR";
+      document.head.appendChild(s);
+      s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); };
+    }
+  </script>
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
     <!-- RESTO DEL HEAD QUE YA TIENES -->
     <meta name="description" content="Los 5 errores de miniatura que destruyen tu CTR en Youtube : aprende qué nunca debes hacer si quieres que el algoritmo te recomiende">
