@@ -28,9 +28,9 @@
          crossorigin="anonymous"></script>
 <meta name="google-site-verification" content="VL9NkPgXLuB5ytJr-X7bzO4QmTEgRIn7TCK3vDmgAtw" />
     <meta charset="UTF-8">
- <link rel="alternate" hreflang="en" href="https://tubetools.online/en/index.html">
-  <link rel="alternate" hreflang="es" href="https://tubetools.online/index.html">
-  <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/index.html">
+ <link rel="alternate" hreflang="en" href="https://tubetools.online/en/">
+  <link rel="alternate" hreflang="es" href="https://tubetools.online/">
+  <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TubeTools - Free Tools for YouTube Creators</title>
  <!-- Open Graph -->
@@ -605,15 +605,6 @@ imgMax.setAttribute('decoding', 'async');
     </div>
 </footer>
  
- <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('../service-worker.js')
-        .then(reg => console.log('Service Worker registrado', reg))
-        .catch(err => console.log('Error al registrar SW', err));
-    });
-  }
-</script>
  <!-- ✅ Service Worker para cache eficiente -->
 <script>
   if ('serviceWorker' in navigator) {
