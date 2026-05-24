@@ -52,8 +52,16 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebPage","name":"Política de Privacidad - TubeTools","url":"https://tubetools.online/privacidad.html","publisher":{"@type":"Organization","name":"TubeTools","url":"https://tubetools.online"}}
   </script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <style>
+    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
+    .skip-link:focus{top:0;}
+  </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
 
 <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
   <p style="margin-bottom:15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia y mostrar anuncios personalizados. <a href="privacidad.html" style="color:#ff4757;text-decoration:underline;">Política de Privacidad</a>.</p>
@@ -63,18 +71,19 @@
 <script>if(!localStorage.getItem('cookieConsent'))document.getElementById('cookie-banner').style.display='block';</script>
 
 <nav>
-  <a href="index.html" style="font-size:22px;">🚀 TubeTools</a>
-  <div>
-    <a href="en/privacy.html">🇬🇧 EN</a>
-    <a href="index.html">Inicio</a>
-    <a href="calculadora.html">Calculadora</a>
-    <a href="blog.html">Blog</a>
-    <a href="glosario.html">Glosario</a>
-    <a href="contacto.html">Contacto</a>
-  </div>
-</nav>
+    <a href="index.html" class="logo">🚀 TubeTools</a>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+      <a href="en/privacy.html" style="color:#4CAF50;font-weight:600;">🇬🇧 EN</a>
+      <a href="index.html">Inicio</a>
+      <a href="generador-titulos-youtube.html">🎯 Herramientas</a>
+      <a href="calculadora.html">Calculadora</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </nav>
 
-<main>
+<main id="main-content">
   <h1>Política de Privacidad</h1>
   <p><em>Última actualización: 5 de mayo de 2026</em></p>
 

@@ -115,21 +115,28 @@
   <meta name="twitter:title" content="Calculadora de Ingresos de YouTube 2026 - TubeTools">
   <meta name="twitter:description" content="Calcula cuánto dinero puedes ganar en YouTube en 2026 según tus visitas diarias y tu CPM estimado. Herramienta gratuita para creadores.">
   <meta name="twitter:image" content="https://tubetools.online/og_image_es.png">
+  <style>
+    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
+    .skip-link:focus{top:0;}
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" style="font-weight: bold; font-size: 22px;">🚀 TubeTools</a>
-        <div>
-            <a href="en/calculator.html" style="color: #4CAF50;">🇬🇧 EN</a>
-            <a href="index.html">Inicio</a>
-            <a href="calculadora.html" style="color: #d32f2f;">Calculadora</a>
-            <a href="blog.html">Blog</a>
-            <a href="glosario.html">Glosario</a>
-            <a href="contacto.html">Contacto</a>
-        </div>
-    </nav>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    <main>
+    <nav>
+    <a href="index.html" class="logo">🚀 TubeTools</a>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+      <a href="en/calculator.html" style="color:#4CAF50;font-weight:600;">🇬🇧 EN</a>
+      <a href="index.html">Inicio</a>
+      <a href="generador-titulos-youtube.html">🎯 Herramientas</a>
+      <a href="calculadora.html">Calculadora</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </nav>
+
+    <main id="main-content">
         <h1>💸 Calculadora de Ingresos de YouTube</h1>
         <p class="subtitulo">Descubre cuánto dinero puede generar tu canal basándote en tus visitas y tu nicho.</p>
 
@@ -258,15 +265,7 @@
             document.getElementById('cookie-banner').style.display = 'none';
         });
     </script>
-    <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(reg => console.log('Service Worker registrado', reg))
-        .catch(err => console.log('Error al registrar SW', err));
-    });
-  }
-</script>
+    
     <!-- ✅ Service Worker para cache eficiente -->
 <script>
   if ('serviceWorker' in navigator) {

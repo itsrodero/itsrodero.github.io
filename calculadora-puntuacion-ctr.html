@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora CTR Score YouTube - Gratis | TubeTools</title>
+  <meta name="description" content="Calculadora CTR Score de YouTube gratis. Responde 12 preguntas sobre tu miniatura. Obtén puntuación CTR prevista y mejoras específicas para más clics.">
+  <link rel="canonical" href="https://tubetools.online/calculadora-puntuacion-ctr.html">
+  <link rel="alternate" hreflang="es" href="https://tubetools.online/calculadora-puntuacion-ctr.html">
+  <link rel="alternate" hreflang="en" href="https://tubetools.online/en/ctr-score-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/ctr-score-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tubetools.online/calculadora-puntuacion-ctr.html">
+  <meta property="og:title" content="Calculadora CTR Score YouTube - Gratis | TubeTools">
+  <meta property="og:description" content="Calculadora CTR Score de YouTube gratis. Responde 12 preguntas sobre tu miniatura. Obtén puntuación CTR prevista y mejoras específicas para más clics.">
+  <meta property="og:image" content="https://tubetools.online/og_image_es.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora CTR Score YouTube | TubeTools">
+  <meta name="twitter:description" content="12 preguntas sobre tu miniatura. Obtén tu puntuación CTR prevista y un plan de acción para aumentar clics.">
+  <meta name="twitter:image" content="https://tubetools.online/og_image_es.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora CTR Score YouTube","description":"Herramienta gratuita para predecir el CTR de tu miniatura de YouTube y obtener recomendaciones específicas de mejora.","url":"https://tubetools.online/calculadora-puntuacion-ctr.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"TubeTools","url":"https://tubetools.online"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://tubetools.online/"},{"@type":"ListItem","position":2,"name":"Herramientas","item":"https://tubetools.online/index.html"},{"@type":"ListItem","position":3,"name":"Calculadora CTR Score","item":"https://tubetools.online/calculadora-puntuacion-ctr.html"}]}
+  </script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1c1e21;background:#f5f5f5;line-height:1.6}
+    nav{background:#1c1e21;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+    nav a{color:#fff;text-decoration:none;font-size:.9rem}
+    nav a.logo{font-weight:700;font-size:1.1rem}
+    .nav-links{display:flex;gap:20px}
+    .hero{background:linear-gradient(135deg,#1c1e21 0%,#d32f2f 100%);color:#fff;text-align:center;padding:50px 20px 40px}
+    .hero h1{font-size:2.2rem;font-weight:800;margin-bottom:12px}
+    .hero p{font-size:1.05rem;opacity:.9;max-width:600px;margin:0 auto}
+    .tool-wrap{max-width:780px;margin:-20px auto 0;padding:0 20px 60px}
+    .card{background:#fff;border-radius:16px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-bottom:20px}
+    .progress-bar{background:#f0f0f0;border-radius:10px;height:8px;margin-bottom:25px}
+    .progress-fill{background:linear-gradient(90deg,#d32f2f,#ff6b6b);border-radius:10px;height:8px;transition:.4s}
+    .q-label{font-size:.8rem;color:#888;margin-bottom:5px;font-weight:500}
+    .question{font-size:1.1rem;font-weight:700;color:#1c1e21;margin-bottom:20px}
+    .options{display:flex;flex-direction:column;gap:10px}
+    .opt{padding:13px 16px;border:2px solid #eee;border-radius:10px;cursor:pointer;transition:.2s;font-size:.95rem;text-align:left;background:#fff}
+    .opt:hover{border-color:#d32f2f;background:#fce4ec}
+    .opt.selected{border-color:#d32f2f;background:#fce4ec;font-weight:600}
+    .nav-btns{display:flex;gap:12px;margin-top:20px}
+    .btn{flex:1;padding:13px;border:none;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;transition:.2s}
+    .btn-back{background:#f0f0f0;color:#555}
+    .btn-back:hover{background:#ddd}
+    .btn-next{background:#d32f2f;color:#fff}
+    .btn-next:hover{background:#b71c1c}
+    .btn-next:disabled{background:#ccc;cursor:not-allowed}
+    .result-card{display:none}
+    .score-circle{width:140px;height:140px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 25px;border:8px solid}
+    .score-num{font-size:2.8rem;font-weight:800;line-height:1}
+    .score-label{font-size:.85rem;font-weight:600;margin-top:4px}
+    .grade-badge{display:inline-block;padding:6px 18px;border-radius:25px;font-weight:700;font-size:1rem;margin-bottom:20px}
+    .issue-item{display:flex;gap:12px;padding:12px;background:#fff5f5;border-radius:8px;margin-bottom:8px;align-items:flex-start;border-left:3px solid #d32f2f}
+    .fix-item{display:flex;gap:12px;padding:12px;background:#f0fff4;border-radius:8px;margin-bottom:8px;align-items:flex-start;border-left:3px solid #2e7d32}
+    .tag-icon{font-size:1.2rem;flex-shrink:0}
+    .cta-box{background:linear-gradient(135deg,#1c1e21,#d32f2f);color:#fff;border-radius:12px;padding:25px;text-align:center;margin-top:20px}
+    .cta-box a{color:#fff;font-weight:700;text-decoration:underline}
+    .restart-btn{background:#f0f0f0;color:#333;border:none;padding:12px 25px;border-radius:10px;cursor:pointer;font-weight:600;margin-top:15px;width:100%}
+    .restart-btn:hover{background:#ddd}
+    .info-section{max-width:780px;margin:0 auto;padding:0 20px 60px}
+    .info-section h2{font-size:1.4rem;font-weight:700;margin:30px 0 15px;color:#1c1e21}
+    .info-section p{color:#444;margin-bottom:14px}
+    footer{background:#1c1e21;color:#888;text-align:center;padding:40px 20px}
+    footer a{color:#bbb;text-decoration:none;margin:0 12px}
+  </style>
+  <style>
+    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
+    .skip-link:focus{top:0;}
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <nav>
+    <a href="index.html" class="logo">🚀 TubeTools</a>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+      <a href="en/ctr-score-calculator.html" style="color:#4CAF50;font-weight:600;">🇬🇧 EN</a>
+      <a href="index.html">Inicio</a>
+      <a href="generador-titulos-youtube.html">🎯 Herramientas</a>
+      <a href="calculadora.html">Calculadora</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>🎯 Calculadora de Puntuación CTR</h1>
+    <p>Responde 12 preguntas sobre tu miniatura y título. Obtén tu puntuación CTR prevista y un plan de acción preciso para aumentar tus clics.</p>
+  </div>
+
+  <div class="tool-wrap">
+    <div class="card" id="quizCard">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:8%"></div></div>
+      <div class="q-label" id="qLabel">Pregunta 1 de 12</div>
+      <div class="question" id="questionText"></div>
+      <div class="options" id="optionsWrap"></div>
+      <div class="nav-btns">
+        <button class="btn btn-back" id="backBtn" onclick="prevQ()" style="display:none">← Atrás</button>
+        <button class="btn btn-next" id="nextBtn" onclick="nextQ()" disabled>Siguiente →</button>
+      </div>
+    </div>
+
+    <div class="card result-card" id="resultCard">
+      <div id="resultContent"></div>
+      <button class="restart-btn" onclick="restart()">🔄 Probar Otra Miniatura</button>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h2>Cómo se Calcula la Puntuación CTR</h2>
+    <p>La Puntuación CTR está basada en 12 factores que el algoritmo de YouTube y la psicología visual han identificado como los predictores más sólidos de la tasa de clics. Cada factor está ponderado según su impacto real — el contraste y la señal emocional tienen más peso que factores secundarios como el esquema de color.</p>
+    <p>La puntuación se traduce en un rango de CTR previsto basado en datos de canales de YouTube en múltiples nichos. Una puntuación de 80+ predice un CTR del 6-12% (excepcional). De 50-80 predice 3-6% (media a buena). Por debajo de 50 predice menos del 3% (necesita mejora significativa).</p>
+    <p>La herramienta también genera una lista priorizada de arreglos específicos. Resolver los 2-3 problemas principales tiene más impacto que intentar optimizar los 12 factores al mismo tiempo.</p>
+
+    <h2>¿A Qué Puntuación Debes Aspirar?</h2>
+    <p>Aspira a una Puntuación CTR de 75+, que se correlaciona con un CTR de YouTube superior al 5%. La media de YouTube es del 3-4%. Los canales que mantienen consistentemente un CTR superior al 6% reciben significativamente más promoción algorítmica y crecen más rápido, incluso con la misma calidad de vídeo y frecuencia de publicación.</p>
+
+    <h2>Los 12 Factores que Predicen el CTR en YouTube</h2>
+    <p><strong>1. Expresión Facial:</strong> Una cara grande y con carga emocional es el predictor más fuerte del CTR. Los canales con caras en miniaturas tienen un CTR entre un 30-38% mayor. Las expresiones extremas (sorpresa, miedo, impacto) superan ampliamente a las neutras.</p>
+    <p><strong>2. Contraste:</strong> El bajo contraste entre sujeto y fondo es la razón técnica #1 por la que las miniaturas fallan. En pantallas móviles bajo luz solar, solo los elementos de alto contraste sobreviven. Ratio mínimo necesario: 4.5:1.</p>
+    <p><strong>3. Legibilidad en Móvil:</strong> El 70% de las visualizaciones de YouTube ocurren en móvil. A tamaño de miniatura móvil (aprox. 120×68px), solo el texto en fuente grande con trazo de contorno permanece legible. Cualquier fuente por debajo de 40pt fallará.</p>
+    <p><strong>4. Tipografía:</strong> Las fuentes sans-serif en negrita con trazo de contorno mantienen la legibilidad en cualquier tamaño. Las sombras paralelas crean borrosidad a tamaño miniatura. Las fuentes decorativas o finas fallan casi siempre en el test móvil.</p>
+    <p><strong>5. Economía de Color:</strong> Las miniaturas con 2-3 colores y un color dominante claro superan a las que usan 6+ colores. Más colores = más complejidad visual = menos clics.</p>
+    <p><strong>6. Brecha de Curiosidad:</strong> La miniatura y el título deben contar partes diferentes de la historia. Si la miniatura ilustra el título, ninguno añade valor. Cuando se complementan sin repetirse, el espectador debe clicar para resolver la tensión.</p>
+    <p><strong>7. Jerarquía Visual:</strong> Un único punto focal claro reduce la carga cognitiva del espectador y dirige su atención donde tú quieres. Las miniaturas con elementos que compiten en igual peso visual rinden por debajo de la media.</p>
+    <p><strong>8. Interrupción de Patrón:</strong> En cualquier página de resultados de YouTube, la mayoría de miniaturas del mismo nicho comparten convenciones visuales. Una miniatura que rompe exactamente una convención crea el contraste necesario para captar la atención.</p>
+    <p><strong>9. Señal Emocional:</strong> Las señales emocionales fuertes — especialmente negativas como shock, miedo e indignación — superan a las neutras o positivas en la mayoría de nichos. Esto se debe al sesgo de negatividad del cerebro humano.</p>
+    <p><strong>10. Optimización del Título:</strong> Un título que sitúa la keyword principal en las primeras 5 palabras, crea una promesa específica y complementa la miniatura vale entre un 15-25% más de CTR que un título genérico.</p>
+    <p><strong>11. Test Móvil:</strong> Los creadores que comprueban activamente sus miniaturas a tamaño móvil real detectan problemas de legibilidad y contraste antes de publicar. Este hábito separa a los canales que mejoran de los que repiten los mismos errores.</p>
+    <p><strong>12. CTR Actual:</strong> Si tu vídeo ya está publicado, su CTR actual es la señal más fiable disponible. Un CTR por debajo del 2% es una señal inmediata para rediseñar la miniatura en las primeras 72 horas.</p>
+
+    <section style="margin:40px 0;padding:25px;border-top:2px solid #d32f2f;">
+      <h2 style="color:#d32f2f;margin-bottom:20px;">📚 Herramientas y Guías Relacionadas</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;">
+        <a href="generador-titulos-youtube.html" style="display:block;padding:15px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;"><strong>🎯 Generador de Títulos YouTube</strong></a>
+        <a href="guia-miniaturas-ctr.html" style="display:block;padding:15px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;"><strong>Guía Completa de CTR y Miniaturas</strong></a>
+        <a href="calculadora.html" style="display:block;padding:15px;background:#fff8e1;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #f57f17;"><strong>🧮 Calculadora de Ingresos YouTube</strong></a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 TubeTools.online — Todos los derechos reservados.</p>
+    <div style="margin-top:10px;">
+      <a href="privacidad.html">Política de Privacidad</a>
+      <a href="terminos.html">Términos de Uso</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="blog.html">Blog</a>
+    </div>
+  </footer>
+
+  <script>
+    const questions = [
+      { q: "¿Tu miniatura tiene una cara humana con una expresión fuerte?", opts: [["Sí, cara grande y muy expresiva",10],["Sí, pero pequeña o con expresión neutra",5],["No hay cara — objeto o escena en su lugar",2],["No hay cara por diseño (grabación de pantalla, etc.)",4]], key:"face" },
+      { q: "¿Cómo es el contraste entre tu sujeto principal y el fondo?", opts: [["Muy alto — el sujeto destaca dramáticamente",10],["Buen contraste, claramente diferenciable",7],["Moderado — hay algo de fusión",4],["Bajo contraste, el sujeto se mezcla con el fondo",0]], key:"contrast" },
+      { q: "¿Puedes leer todo el texto de la miniatura a 120×68px (tamaño móvil)?", opts: [["Sí, todo el texto es perfectamente legible a tamaño pequeño",10],["La mayoría es legible, se pierde algo de detalle",6],["Parte del texto es difícil de leer a tamaño pequeño",2],["No hay texto en la miniatura",5]], key:"text_legibility" },
+      { q: "¿Qué estilo de fuente se usa en el texto de la miniatura?", opts: [["Sans-serif en negrita/gruesa con trazo de contorno",10],["Sans-serif en negrita, solo sombra paralela",6],["Fuente fina o decorativa",2],["No hay texto en la miniatura",5]], key:"font" },
+      { q: "¿Cuántos colores distintos hay en tu miniatura?", opts: [["2-3 colores con un color dominante claro",10],["4-5 colores, aún relativamente limpia",6],["6+ colores o paleta de gradiente compleja",2]], key:"colors" },
+      { q: "¿Tu miniatura crea brecha de curiosidad con tu título?", opts: [["Sí — miniatura y título cuentan partes diferentes de la historia",10],["Parcial — se complementan pero se solapan algo",6],["No — la miniatura básicamente ilustra el título",2]], key:"curiosity_gap" },
+      { q: "¿Dónde está el punto focal principal de tu miniatura?", opts: [["Un único punto focal claro — el ojo va allí al instante",10],["Un sujeto principal pero con elementos que compiten",6],["Múltiples elementos que compiten, jerarquía poco clara",2]], key:"focal" },
+      { q: "¿Cómo se ve tu miniatura frente a la competencia en tu nicho?", opts: [["Claramente destaca — estilo/colores/enfoque diferente",10],["Estilo similar pero con diferenciación clara",6],["Se mezcla con las miniaturas típicas del nicho",3],["No he comparado con la competencia",1]], key:"pattern" },
+      { q: "¿Cuál es la señal emocional principal de tu miniatura?", opts: [["Emoción negativa fuerte (shock, miedo, indignación, sorpresa)",10],["Emoción positiva fuerte (emoción, alegría, triunfo)",8],["Emoción leve o neutra",4],["Sin señal emocional",1]], key:"emotion" },
+      { q: "¿Cómo de optimizado está tu título?", opts: [["Promesa específica, brecha de curiosidad, keyword en las 5 primeras palabras",10],["Buen título con keyword pero gancho débil",6],["Título genérico, keyword presente",4],["El título repite exactamente el texto de la miniatura",1]], key:"title" },
+      { q: "¿Has probado tu miniatura a tamaño real en móvil?", opts: [["Sí — probada en el teléfono y calidad confirmada",10],["Sí — probada en escritorio a tamaño pequeño",7],["No — solo vista a tamaño completo",3],["No — no la he probado",0]], key:"mobile_test" },
+      { q: "¿Cuál es el CTR actual de este vídeo (si está publicado)?", opts: [["Aún no publicado",8],["Superior al 6%",10],["4% – 6%",7],["2% – 4%",4],["Inferior al 2%",1]], key:"current_ctr" },
+    ];
+
+    let current = 0, answers = {}, scores = [];
+
+    function renderQ() {
+      const q = questions[current];
+      document.getElementById('qLabel').textContent = `Pregunta ${current+1} de ${questions.length}`;
+      document.getElementById('questionText').textContent = q.q;
+      document.getElementById('progressFill').style.width = ((current+1)/questions.length*100)+'%';
+      const wrap = document.getElementById('optionsWrap');
+      wrap.innerHTML = '';
+      q.opts.forEach((o,i) => {
+        const btn = document.createElement('button');
+        btn.className = 'opt' + (answers[current]===i?' selected':'');
+        btn.textContent = o[0];
+        btn.onclick = () => selectOpt(i);
+        wrap.appendChild(btn);
+      });
+      document.getElementById('nextBtn').disabled = answers[current] === undefined;
+      document.getElementById('backBtn').style.display = current > 0 ? 'block' : 'none';
+      document.getElementById('nextBtn').textContent = current === questions.length-1 ? 'Ver Mi Puntuación 🎯' : 'Siguiente →';
+    }
+
+    function selectOpt(i) {
+      answers[current] = i;
+      document.querySelectorAll('.opt').forEach((b,j) => b.classList.toggle('selected', j===i));
+      document.getElementById('nextBtn').disabled = false;
+    }
+
+    function nextQ() {
+      if (answers[current] === undefined) return;
+      scores[current] = questions[current].opts[answers[current]][1];
+      if (current < questions.length-1) { current++; renderQ(); }
+      else showResult();
+    }
+
+    function prevQ() { if(current>0){current--;renderQ();} }
+
+    function showResult() {
+      const total = scores.reduce((a,b)=>a+b,0);
+      const max = questions.reduce((a,q)=>a+Math.max(...q.opts.map(o=>o[1])),0);
+      const pct = Math.round(total/max*100);
+
+      let grade, color, ctrRange, gradeLabel;
+      if(pct>=80){grade='A';color='#2e7d32';ctrRange='6% – 12%';gradeLabel='🔥 Excepcional'}
+      else if(pct>=65){grade='B';color='#f57f17';ctrRange='4% – 7%';gradeLabel='✅ Buena'}
+      else if(pct>=50){grade='C';color='#e65100';ctrRange='2.5% – 5%';gradeLabel='⚡ Media'}
+      else{grade='D';color='#c62828';ctrRange='Inferior al 2.5%';gradeLabel='⚠️ Necesita Trabajo'}
+
+      const weakItems = [];
+      const fixes = {
+        face: {issue:'Sin cara fuerte o expresión en la miniatura',fix:'Añade una cara grande con carga emocional. Usa shock, sorpresa o preocupación. Graba 10+ variaciones de expresión y selecciona la más potente.'},
+        contrast: {issue:'Bajo contraste entre sujeto y fondo',fix:'Aumenta el contraste sujeto/fondo. Prueba un fondo de color sólido o desenfocado. Usa colores complementarios (rojo+blanco, amarillo+negro).'},
+        text_legibility: {issue:'Texto no legible a tamaño de miniatura móvil (120×68px)',fix:'Aumenta el tamaño de fuente (mín. 40pt a 1280×720). Añade trazo de contorno blanco/negro. Elimina texto secundario si está demasiado apretado.'},
+        font: {issue:'Elección de fuente débil reduce la legibilidad del texto',fix:'Cambia a una fuente sans-serif en negrita gruesa (Impact, Bebas Neue, Montserrat ExtraBold). Reemplaza la sombra paralela por un trazo de contorno sólido.'},
+        colors: {issue:'Demasiados colores crean ruido visual',fix:'Reduce a un máximo de 2-3 colores. Elige un color dominante, uno de acento y uno neutro. Más colores = menos impacto visual.'},
+        curiosity_gap: {issue:'La miniatura y el título cuentan la misma historia — sin brecha de curiosidad',fix:'Rediseña la miniatura para mostrar lo que el título no dice, o reescribe el título para prometer lo que la miniatura no muestra. Deben complementarse, no duplicarse.'},
+        focal: {issue:'Sin jerarquía visual clara — el ojo no sabe adónde ir primero',fix:'Identifica tu UN elemento más importante. Hazlo un 40-60% más grande que todo lo demás. Elimina o minimiza los elementos que compiten.'},
+        pattern: {issue:'La miniatura se mezcla con la competencia — sin interrupción de patrón',fix:'Analiza las 5 miniaturas principales de tu nicho. Encuentra el patrón visual dominante. Rompe exactamente una convención manteniendo el resto familiar.'},
+        emotion: {issue:'Señal emocional débil o ausente',fix:'Añade o amplifica el elemento emocional. Si hay cara, hazla más extrema. Si no hay cara, usa color y composición para señalar urgencia o curiosidad.'},
+        title: {issue:'Título no optimizado para CTR',fix:'Pon tu keyword principal en las primeras 5 palabras. Añade especificidad (número, plazo, resultado). Crea tensión entre la promesa del título y el visual de la miniatura.'},
+        mobile_test: {issue:'Miniatura no probada a tamaño móvil real',fix:'Redimensiona a 120×68px y comprueba: ¿Se lee el texto? ¿El sujeto es claro? ¿El color destaca? Arregla todo lo que falle a tamaño pequeño.'},
+        current_ctr: {issue:'CTR actual inferior al 4%',fix:'Un CTR inferior al 4% es señal de rediseñar la miniatura de inmediato. Cambia la miniatura en las primeras 72 horas tras la publicación y monitoriza la mejora.'},
+      };
+
+      questions.forEach((q,i) => {
+        const s = scores[i];
+        const maxS = Math.max(...q.opts.map(o=>o[1]));
+        if(s < maxS*0.6) weakItems.push({key:q.key, score:s, max:maxS});
+      });
+      weakItems.sort((a,b)=>(b.max-b.score)-(a.max-a.score));
+
+      let issuesHTML = '', fixesHTML = '';
+      weakItems.slice(0,4).forEach(w => {
+        const f = fixes[w.key];
+        if(f){
+          issuesHTML += `<div class="issue-item"><span class="tag-icon">⚠️</span><div><strong>${f.issue}</strong></div></div>`;
+          fixesHTML += `<div class="fix-item"><span class="tag-icon">✅</span><div>${f.fix}</div></div>`;
+        }
+      });
+      if(!issuesHTML){
+        issuesHTML='<p style="color:#2e7d32;font-weight:600;">🎉 ¡Sin problemas importantes! Tu miniatura está bien optimizada.</p>';
+        fixesHTML='<p style="color:#555;">Céntrate en hacer A/B testing de pequeñas variaciones para subir tu CTR aún más.</p>';
+      }
+
+      document.getElementById('resultContent').innerHTML = `
+        <div style="text-align:center;margin-bottom:25px;">
+          <div class="score-circle" style="border-color:${color};">
+            <div class="score-num" style="color:${color};">${pct}</div>
+            <div class="score-label" style="color:${color};">/100</div>
+          </div>
+          <div class="grade-badge" style="background:${color}22;color:${color};">Nota ${grade} — ${gradeLabel}</div>
+          <p style="color:#555;font-size:1rem;">Rango de CTR previsto: <strong style="color:${color};">${ctrRange}</strong></p>
+        </div>
+        ${weakItems.length>0?`<h3 style="margin-bottom:12px;color:#d32f2f;">⚠️ Principales Problemas Encontrados (${Math.min(4,weakItems.length)})</h3>${issuesHTML}<h3 style="margin:20px 0 12px;color:#2e7d32;">🔧 Arreglos Específicos (Por Orden de Prioridad)</h3>${fixesHTML}`:''}
+        <div class="cta-box" style="margin-top:20px;">
+          <p style="font-size:1rem;margin-bottom:10px;">¿Quieres profundizar más? Lee la <a href="guia-miniaturas-ctr.html">Guía Completa de CTR y Miniaturas</a> o usa el <a href="generador-titulos-youtube.html">Generador de Títulos</a> para optimizar tu título.</p>
+        </div>`;
+
+      document.getElementById('quizCard').style.display = 'none';
+      document.getElementById('resultCard').style.display = 'block';
+      document.getElementById('resultCard').scrollIntoView({behavior:'smooth'});
+    }
+
+    function restart() {
+      current=0; answers={}; scores=[];
+      document.getElementById('quizCard').style.display='block';
+      document.getElementById('resultCard').style.display='none';
+      renderQ();
+      document.getElementById('quizCard').scrollIntoView({behavior:'smooth'});
+    }
+
+    renderQ();
+    if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+  </script>
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:18px 20px;text-align:center;z-index:9999;display:none;">
+    <p style="margin-bottom:12px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y mostrar anuncios personalizados. <a href="privacidad.html" style="color:#ff4757;text-decoration:underline;">Lee nuestra Política de Privacidad</a>.</p>
+    <div>
+      <button id="accept-cookies" style="background:#d32f2f;color:white;border:none;padding:10px 20px;border-radius:5px;margin-right:10px;cursor:pointer;font-weight:600;">Aceptar</button>
+      <button id="reject-cookies" style="background:#555;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">Rechazar</button>
+    </div>
+  </div>
+  <script>
+    if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').style.display='block';}
+    document.getElementById('accept-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');document.getElementById('cookie-banner').style.display='none';});
+    document.getElementById('reject-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','rejected');document.getElementById('cookie-banner').style.display='none';});
+  </script>
+</body>
+</html>

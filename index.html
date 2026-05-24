@@ -1,30 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TubeTools: Analizador de Miniaturas YouTube Gratis</title>
+  <meta name="description" content="Extrae cualquier miniatura de YouTube en HD al instante. Analiza la competencia, mejora tu CTR y haz crecer tu canal. Gratis, sin registro.">
   <link rel="canonical" href="https://tubetools.online/">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#1c1e21">
-  <!-- GA4: solo se carga si el usuario aceptó cookies (ver script del banner) -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    if (localStorage.getItem("cookieConsent") === "accepted") {
-        var s = document.createElement("script");
-        s.async = true;
-        s.src = "https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR";
-        document.head.appendChild(s);
-        s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); };
-    }
-  </script>
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
-      <meta name="google-site-verification" content="VL9NkPgXLuB5ytJr-X7bzO4QmTEgRIn7TCK3vDmgAtw" />
-    <meta charset="UTF-8">
- <link rel="alternate" hreflang="es" href="https://tubetools.online/">
+  <link rel="alternate" hreflang="es" href="https://tubetools.online/">
   <link rel="alternate" hreflang="en" href="https://tubetools.online/en/">
   <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TubeTools - Herramientas para Creadores de YouTube</title>
- <!-- Open Graph -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#d32f2f">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tubetools.online/">
   <meta property="og:title" content="TubeTools: Analizador de Miniaturas YouTube Gratis">
@@ -34,555 +21,795 @@
   <meta name="twitter:title" content="TubeTools: Analizador de Miniaturas YouTube Gratis">
   <meta name="twitter:description" content="Extrae cualquier miniatura de YouTube en HD al instante. Gratis, sin registro.">
   <meta name="twitter:image" content="https://tubetools.online/og_image_es.png">
-    <meta name="description" content="Herramienta gratuita para visualizar, auditar y analizar portadas y miniaturas de vídeos de YouTube en alta calidad (HD, HQ, 1080p).">
-    <style>
-     /* Anchor Sticky para Móviles */
-        .sticky-anchor {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #1c1e21;
-            color: white;
-            text-align: center;
-            padding: 12px 0;
-            z-index: 9998; /* Un nivel debajo del banner de cookies */
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-            display: none; /* Se oculta por defecto */
-        }
-        .sticky-anchor a {
-            color: #ff4757;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        @media (max-width: 768px) {
-            .sticky-anchor { display: block; } /* Solo se muestra en móviles */
-            body { padding-bottom: 50px; } /* Evita que el banner tape el footer */
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f0f2f5; color: #1c1e21; line-height: 1.6; }
-        header { background-color: #ffffff; padding: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
-        header h1 { color: #ff0000; font-size: 28px; }
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center; }
-        .hero { background: #ffffff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .hero p { color: #555; margin-bottom: 25px; font-size: 18px; }
-        .input-group { display: flex; flex-direction: column; gap: 15px; align-items: center; }
-        input[type="text"] { width: 100%; max-width: 600px; padding: 18px; font-size: 16px; border: 2px solid #ddd; border-radius: 8px; transition: 0.3s; }
-        input[type="text"]:focus { border-color: #ff0000; outline: none; box-shadow: 0 0 8px rgba(255,0,0,0.2); }
-        button { padding: 18px 30px; font-size: 18px; cursor: pointer; background-color: #ff0000; color: white; border: none; border-radius: 8px; font-weight: bold; transition: 0.3s; width: 100%; max-width: 600px; }
-        button:hover { background-color: #cc0000; transform: translateY(-2px); }
-        
-        /* Zona de Monetización */
-        .ad-space { background-color: #e9ecef; color: #adb5bd; padding: 30px; margin: 30px 0; border: 2px dashed #ced4da; border-radius: 8px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
-        
-        /* Resultados */
-        #results { display: none; margin-top: 40px; text-align: left; }
-        .result-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .result-card h3 { margin-bottom: 15px; color: #333; display: flex; justify-content: space-between; align-items: center;}
-        .result-card img { width: 100%; border-radius: 8px; background: #eee; }
-        .btn-download { display: inline-block; padding: 12px 25px; background-color: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 15px; transition: 0.3s; text-align: center; width: 100%; }
-        .btn-download:hover { background-color: #218838; }
-        
-        /* SEO Text */
-        .seo-content { margin-top: 50px; background: white; padding: 30px; border-radius: 12px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .seo-content h2 { color: #333; margin-bottom: 15px; }
-        .seo-content p { color: #666; margin-bottom: 15px; }
-        
-       /* Estilos de las Etiquetas SEO */
-        .tags-container { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; text-align: left; display: none; }
-        .tags-container h3 { color: #333; margin-bottom: 5px; font-size: 20px;}
-        .tags-container p { color: #666; font-size: 14px; margin-bottom: 15px; }
-        .tag-pill { display: inline-block; background: #f0f2f5; color: #1c1e21; padding: 8px 16px; border-radius: 20px; margin: 0 8px 8px 0; font-size: 14px; border: 1px solid #ddd; }
-        .btn-copy-tags { background-color: #1c1e21; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; cursor: pointer; margin-top: 15px; transition: 0.3s; font-weight: bold;}
-        .btn-copy-tags:hover { background-color: #333; }
+  <meta name="google-site-verification" content="VL9NkPgXLuB5ytJr-X7bzO4QmTEgRIn7TCK3vDmgAtw">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://img.youtube.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (localStorage.getItem("cookieConsent") === "accepted") {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR";
+      document.head.appendChild(s);
+      s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); };
+    }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Extractor de Miniaturas de YouTube","url":"https://tubetools.online/","description":"Herramienta gratuita para extraer y analizar miniaturas de YouTube en HD. Mejora tu CTR sin registro.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"TubeTools","url":"https://tubetools.online","description":"Herramientas gratuitas para creadores de YouTube: analizador de miniaturas, calculadora de ingresos, guías de CTR y más."}
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #d32f2f;
+      --red-dark: #b71c1c;
+      --red-light: #ff5252;
+      --dark: #1c1e21;
+      --dark2: #2c2e33;
+      --gray: #f4f5f7;
+      --gray2: #e9eaec;
+      --text: #1c1e21;
+      --text2: #555;
+      --white: #fff;
+      --radius: 14px;
+      --shadow: 0 4px 24px rgba(0,0,0,.08);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,.13);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--gray); color: var(--text); line-height: 1.7; }
 
+    /* ── Skip link ── */
+    .skip-link { position:absolute;top:-100px;left:0;background:var(--red);color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s; }
+    .skip-link:focus { top:0; }
 
-/* --- NUEVO MENÚ CON ESPACIADO PRO --- */
-        nav { 
-            background-color: #1c1e21; 
-            padding: 15px 25px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav div {
-            display: flex;
-            gap: 20px; /* Aquí está el aire que faltaba */
-            align-items: center;
-            flex-wrap: wrap; 
-            justify-content: flex-end;
-        }
-
-        nav a { 
-            color: white !important; /* Forzamos el color para que no haya fallos */
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 15px;
-            transition: color 0.3s;
-            padding: 5px 0; 
-        }
-
-        nav a:hover { 
-            color: #d32f2f !important; 
-        }
-        
-        footer { background-color: #1c1e21; color: #888; text-align: center; padding: 30px 20px; margin-top: 60px; font-size: 14px; }
-        footer .footer-links { margin-top: 15px; }
-        footer a { color: #bbb; text-decoration: none; margin: 0 10px; transition: 0.3s; }
-        footer a:hover { color: white; }
-
-        
-        @media(min-width: 768px) {
-            .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        }
-
-       .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        
-    </style>
- <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Extractor de Miniaturas de YouTube",
-  "url": "https://tubetools.online/",
-  "description": "Herramienta gratuita para extraer y descargar miniaturas de YouTube en HD. Analiza miniaturas para mejorar tu CTR.",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "EUR"
-  }
-}
-</script>
-</head>
- <body>
-  
-<!-- BANNER DE COOKIES -->
-<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
-    <p style="margin-bottom: 15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y mostrar anuncios personalizados. <a href="privacidad.html" style="color: #ff4757; text-decoration: underline;">Lee nuestra Política de Privacidad</a>.</p>
-    <div>
-        <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Aceptar</button>
-        <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Rechazar</button>
-    </div>
-
-</div>
-<script>
-    // Mostrar banner si no hay consentimiento guardado
-    if (!localStorage.getItem('cookieConsent')) {
-        document.getElementById('cookie-banner').style.display = 'block';
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--dark);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 58px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
+    .nav-logo { color: #fff; text-decoration: none; font-size: 1.15rem; font-weight: 800; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+    .nav-logo span { color: var(--red-light); }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a { color: #ccc; text-decoration: none; font-size: .88rem; font-weight: 500; padding: 6px 11px; border-radius: 8px; transition: background .2s, color .2s; white-space: nowrap; }
+    .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
+    .nav-links a.en-btn { color: #90caf9; border: 1px solid rgba(144,202,249,.35); }
+    .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; padding: 6px; }
+    @media(max-width:680px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0; background: var(--dark2); flex-direction: column; align-items: stretch; padding: 10px 16px 16px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 11px 14px; border-radius: 8px; }
     }
 
-    // Al aceptar
-    document.getElementById('accept-cookies').addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        document.getElementById('cookie-banner').style.display = 'none';
-        // Aquí puedes activar cookies de terceros (Google Analytics, Ads)
-    });
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--dark) 0%, #2d1515 50%, #1a0a0a 100%);
+      padding: 64px 20px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(211,47,47,.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(211,47,47,.18); border: 1px solid rgba(211,47,47,.4);
+      color: #ff8a80; font-size: .8rem; font-weight: 700; letter-spacing: .06em;
+      padding: 5px 14px; border-radius: 999px; margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 900; color: #fff;
+      line-height: 1.15; margin-bottom: 16px;
+      max-width: 760px; margin-left: auto; margin-right: auto;
+    }
+    .hero h1 em { color: var(--red-light); font-style: normal; }
+    .hero-sub {
+      font-size: clamp(.95rem, 2vw, 1.15rem);
+      color: #bbb; max-width: 560px;
+      margin: 0 auto 40px;
+    }
 
-    // Al rechazar
-    document.getElementById('reject-cookies').addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'rejected');
-        document.getElementById('cookie-banner').style.display = 'none';
-        // Aquí puedes bloquear cookies de terceros
-    });
-</script>
-<!-- FIN BANNER DE COOKIES -->
+    /* ── TOOL CARD ── */
+    .tool-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 28px 28px;
+      position: relative;
+    }
+    .tool-card-label {
+      position: absolute; top: -13px; left: 24px;
+      background: var(--red); color: #fff;
+      font-size: .75rem; font-weight: 800; letter-spacing: .07em;
+      padding: 4px 14px; border-radius: 999px; text-transform: uppercase;
+    }
+    .input-row {
+      display: flex; gap: 10px; margin-bottom: 14px;
+    }
+    .url-input {
+      flex: 1; padding: 14px 18px;
+      border: 2px solid var(--gray2); border-radius: 10px;
+      font-size: 1rem; color: var(--text);
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .url-input:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(211,47,47,.12); }
+    .url-input::placeholder { color: #aaa; }
+    .btn-analyze {
+      padding: 14px 24px; background: var(--red); color: #fff;
+      border: none; border-radius: 10px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; white-space: nowrap; transition: background .2s, transform .15s;
+    }
+    .btn-analyze:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .btn-clear {
+      padding: 14px 16px; background: var(--gray2); color: #666;
+      border: none; border-radius: 10px; font-size: .95rem;
+      cursor: pointer; transition: background .2s;
+    }
+    .btn-clear:hover { background: #ddd; }
+    @media(max-width:540px) {
+      .input-row { flex-wrap: wrap; }
+      .url-input { flex-basis: 100%; }
+      .btn-analyze { flex: 1; }
+    }
+    .tool-hints {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      font-size: .8rem; color: #999; padding-top: 4px;
+    }
+    .tool-hints span { display: flex; align-items: center; gap: 5px; }
 
-<nav>
-        <a href="index.html" style="font-weight: bold; font-size: 22px; text-decoration: none; color: white;">🚀 TubeTools</a>
-        <div>
-         <a href="en/index.html" style="color: #4CAF50;">🇬🇧 EN</a>
-            <a href="index.html">Inicio</a>
-            <a href="calculadora.html">Calculadora</a>
-            <a href="blog.html">Blog</a>
-            <a href="glosario.html">Glosario</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="about.html">Sobre nosotros</a>
-        </div>
-    </nav>
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray2);
+      padding: 22px 20px;
+    }
+    .stats-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; justify-content: space-around; flex-wrap: wrap; gap: 16px;
+      text-align: center;
+    }
+    .stat-item { flex: 1; min-width: 120px; }
+    .stat-num { font-size: 1.55rem; font-weight: 900; color: var(--red); }
+    .stat-label { font-size: .8rem; color: var(--text2); margin-top: 2px; }
 
-    
-    <header>
-        <h1>TubeTools: Analizador de Miniaturas</h1>
-    </header>
+    /* ── RESULTS ── */
+    .results-section {
+      display: none; max-width: 720px; margin: 32px auto 0;
+      padding: 0 20px;
+    }
+    .results-title { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 18px; }
+    .result-card {
+      background: #fff; border-radius: var(--radius);
+      box-shadow: var(--shadow); margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .result-card-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 18px; border-bottom: 1px solid var(--gray2);
+    }
+    .result-card-header h3 { font-size: .95rem; font-weight: 700; color: var(--dark); }
+    .badge-rec {
+      background: #e8f5e9; color: #2e7d32;
+      font-size: .72rem; font-weight: 800; padding: 3px 10px;
+      border-radius: 999px; text-transform: uppercase;
+    }
+    .result-card img {
+      width: 100%; display: block;
+      background: var(--gray2);
+    }
+    .result-card-footer { padding: 14px 18px; }
+    .btn-download {
+      display: block; width: 100%; padding: 12px;
+      background: #1b5e20; color: #fff; text-align: center;
+      text-decoration: none; border-radius: 8px; font-weight: 700; font-size: .9rem;
+      transition: background .2s;
+    }
+    .btn-download:hover { background: #2e7d32; }
+    .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media(max-width:500px) { .results-grid { grid-template-columns: 1fr; } }
 
-    <div class="container">
-        
+    /* ── HISTORIAL ── */
+    .history-section {
+      display: none; max-width: 720px; margin: 24px auto 0;
+      padding: 0 20px;
+    }
+    .history-inner {
+      background: #fff; border-radius: var(--radius);
+      padding: 18px 20px; box-shadow: var(--shadow);
+    }
+    .history-inner h3 { font-size: .9rem; font-weight: 700; color: var(--dark); margin-bottom: 14px; }
+    .history-grid { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 6px; }
+    .history-thumb {
+      min-width: 96px; cursor: pointer; border-radius: 8px;
+      overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.12);
+      transition: transform .2s;
+    }
+    .history-thumb:hover { transform: scale(1.06); }
+    .history-thumb img { width: 96px; height: 54px; object-fit: cover; display: block; }
+    .btn-clear-history {
+      background: none; border: 1px solid #ddd; color: #999;
+      padding: 5px 12px; border-radius: 6px; font-size: .75rem;
+      cursor: pointer; margin-top: 10px; transition: border-color .2s;
+    }
+    .btn-clear-history:hover { border-color: #aaa; color: #666; }
 
-        <div class="input-group" style="display: flex; gap: 10px; justify-content: center; max-width: 600px; margin: 0 auto;">
-        <input type="text" id="youtube-url" placeholder="Ej: https://www.youtube.com/watch?v=h_HedjlSQ3g" style="flex: 1;">
-        <button onclick="extractThumbnails()">Analizar Vídeo</button>
-        <button onclick="document.getElementById('youtube-url').value = '';" style="background-color: #555; width: auto; padding: 10px 20px; border-radius: 8px; color: white; border: none; cursor: pointer;">Limpiar</button>
+    /* ── TAGS ── */
+    .tags-section {
+      display: none; max-width: 720px; margin: 20px auto 0;
+      padding: 0 20px;
+    }
+    .tags-inner {
+      background: #fff; border-radius: var(--radius);
+      padding: 20px 22px; box-shadow: var(--shadow);
+    }
+    .tags-inner h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+    .tags-inner p { font-size: .83rem; color: #888; margin-bottom: 14px; }
+    .tag-pill {
+      display: inline-block; background: var(--gray); color: var(--text);
+      padding: 6px 14px; border-radius: 999px; margin: 0 6px 8px 0;
+      font-size: .82rem; border: 1px solid var(--gray2);
+    }
+    .btn-copy-tags {
+      background: var(--dark); color: #fff; border: none;
+      padding: 10px 20px; border-radius: 8px; font-size: .88rem;
+      font-weight: 700; cursor: pointer; margin-top: 12px; transition: background .2s;
+    }
+    .btn-copy-tags:hover { background: #333; }
+
+    /* ── TOOLS GRID ── */
+    .section { max-width: 960px; margin: 0 auto; padding: 56px 20px; }
+    .section-title {
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 800; color: var(--dark);
+      text-align: center; margin-bottom: 8px;
+    }
+    .section-sub { text-align: center; color: var(--text2); margin-bottom: 36px; font-size: .97rem; }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .tool-tile {
+      background: #fff; border-radius: var(--radius);
+      padding: 26px 22px; box-shadow: var(--shadow);
+      text-decoration: none; color: var(--text);
+      display: flex; flex-direction: column; gap: 10px;
+      border: 2px solid transparent;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .tool-tile:hover { border-color: var(--red); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .tool-tile-icon { font-size: 2rem; line-height: 1; }
+    .tool-tile h3 { font-size: 1rem; font-weight: 800; color: var(--dark); }
+    .tool-tile p { font-size: .85rem; color: var(--text2); line-height: 1.6; flex: 1; }
+    .tool-tile-cta { font-size: .82rem; font-weight: 700; color: var(--red); margin-top: 6px; }
+
+    /* ── BLOG PREVIEW ── */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .blog-card {
+      background: #fff; border-radius: var(--radius);
+      box-shadow: var(--shadow); overflow: hidden;
+      text-decoration: none; color: var(--text);
+      transition: transform .2s, box-shadow .2s;
+      display: flex; flex-direction: column;
+    }
+    .blog-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .blog-card-cat {
+      background: var(--red); color: #fff;
+      font-size: .72rem; font-weight: 800; letter-spacing: .06em;
+      padding: 6px 14px; text-transform: uppercase;
+    }
+    .blog-card-body { padding: 18px 18px 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .blog-card-body h3 { font-size: .97rem; font-weight: 700; color: var(--dark); line-height: 1.4; }
+    .blog-card-body p { font-size: .83rem; color: var(--text2); line-height: 1.6; flex: 1; }
+    .blog-card-link { font-size: .82rem; font-weight: 700; color: var(--red); }
+
+    /* ── WHY SECTION ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .why-card {
+      background: #fff; border-radius: var(--radius);
+      padding: 24px 20px; box-shadow: var(--shadow);
+      border-left: 4px solid var(--red);
+    }
+    .why-card h3 { font-size: .97rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .why-card p { font-size: .85rem; color: var(--text2); line-height: 1.6; }
+
+    /* ── SEO CONTENT ── */
+    .seo-section {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px 32px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .seo-section h2 { font-size: 1.3rem; font-weight: 800; color: var(--dark); margin-bottom: 14px; border-left: 4px solid var(--red); padding-left: 14px; }
+    .seo-section h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin: 22px 0 10px; }
+    .seo-section p { font-size: .93rem; color: var(--text2); line-height: 1.8; margin-bottom: 12px; }
+    .seo-section ul, .seo-section ol { margin: 10px 0 14px 22px; }
+    .seo-section li { color: var(--text2); font-size: .93rem; line-height: 2.1; }
+    .seo-section li strong { color: var(--dark); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); color: #888;
+      text-align: center; padding: 40px 20px;
+      margin-top: 60px;
+    }
+    .footer-logo { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 16px; }
+    .footer-logo span { color: var(--red-light); }
+    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 20px; }
+    .footer-links a { color: #bbb; text-decoration: none; font-size: .88rem; transition: color .2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: .8rem; color: #666; }
+
+    /* ── COOKIE BANNER ── */
+    #cookie-banner {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      background: rgba(28,30,33,.97); backdrop-filter: blur(6px);
+      color: #fff; padding: 18px 20px; text-align: center; z-index: 9999;
+      border-top: 2px solid var(--red);
+    }
+    #cookie-banner p { font-size: .88rem; margin-bottom: 12px; color: #ccc; }
+    #cookie-banner a { color: #ff8a80; }
+    .cookie-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .cookie-btn-accept { background: var(--red); color: #fff; border: none; padding: 9px 22px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: .88rem; }
+    .cookie-btn-reject { background: #444; color: #ccc; border: none; padding: 9px 22px; border-radius: 8px; cursor: pointer; font-size: .88rem; }
+
+    /* ── MOBILE STICKY ── */
+    .sticky-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      background: var(--dark); border-top: 1px solid #333;
+      padding: 10px 16px; z-index: 990; text-align: center;
+    }
+    .sticky-cta a { color: var(--red-light); font-weight: 700; font-size: .88rem; text-decoration: none; }
+    @media(max-width:768px) { .sticky-cta { display: block; } body { padding-bottom: 46px; } }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner">
+    <p>🍪 Usamos cookies propias y de terceros para mejorar tu experiencia y mostrar anuncios. <a href="privacidad.html">Política de Privacidad</a></p>
+    <div class="cookie-btns">
+      <button class="cookie-btn-accept" id="accept-cookies">Aceptar todo</button>
+      <button class="cookie-btn-reject" id="reject-cookies">Rechazar</button>
     </div>
+  </div>
 
-     <div id="historial-section" style="display: none; max-width: 600px; margin: 30px auto; text-align: center;">
-        <h3 style="font-size: 16px; margin-bottom: 15px; color: #444;">🕒 Últimas extracciones</h3>
-        <div id="historial-grid" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; justify-content: center;">
-            </div>
-       
-        <button onclick="limpiarHistorial()" style="background: transparent; border: 1px solid #ccc; color: #666; padding: 5px 10px; border-radius: 5px; margin-top: 10px; cursor: pointer; font-size: 12px;">Limpiar historial</button>
-        </div>
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">🚀 Tube<span>Tools</span></a>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menú">☰</button>
+    <div class="nav-links">
+      <a href="en/index.html" class="en-btn">🇬🇧 EN</a>
+      <a href="index.html">Inicio</a>
+      <a href="calculadora.html">Calculadora</a>
+      <a href="generador-titulos-youtube.html">Herramientas</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
     </div>
-  <div style="max-width: 800px; margin: 40px auto; background: linear-gradient(135deg, #1c1e21 0%, #3a3a3a 100%); border-radius: 12px; padding: 30px; text-align: center; color: white; box-shadow: 0 10px 20px rgba(0,0,0,0.15);">
-        <h3 style="color: #FFD700; font-size: 22px; margin-bottom: 10px;">🔥 Novedad: Domina el Algoritmo</h3>
-        <p style="font-size: 16px; margin-bottom: 20px; color: #eee;">Descubre los secretos psicológicos y visuales que usan los canales Top para conseguir millones de clics.</p>
-        <a href="guia-miniaturas-ctr.html" style="display: inline-block; background: #d32f2f; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: background 0.3s; font-size: 15px;">
-            Leer Guía Definitiva de CTR ➔
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="main-content">
+    <div class="hero-badge">⚡ 100% Gratis · Sin Registro</div>
+    <h1>Analiza cualquier miniatura de<br><em>YouTube en HD</em> al instante</h1>
+    <p class="hero-sub">Extrae, estudia y descarga miniaturas de tu competencia. Mejora tu CTR y haz crecer tu canal con datos visuales reales.</p>
+
+    <div class="tool-card">
+      <span class="tool-card-label">🔍 Analizador de Miniaturas</span>
+      <div class="input-row">
+        <input type="text" id="youtube-url" class="url-input"
+          placeholder="Pega aquí el enlace del vídeo de YouTube…"
+          aria-label="URL de YouTube">
+        <button class="btn-analyze" onclick="extractThumbnails()">Analizar</button>
+        <button class="btn-clear" onclick="document.getElementById('youtube-url').value=''" title="Limpiar">✕</button>
+      </div>
+      <div class="tool-hints">
+        <span>✅ youtube.com/watch?v=…</span>
+        <span>✅ youtu.be/…</span>
+        <span>✅ YouTube Shorts</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-num">HD 1080p</div><div class="stat-label">Máxima resolución</div></div>
+      <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Calidades disponibles</div></div>
+      <div class="stat-item"><div class="stat-num">0€</div><div class="stat-label">Sin costes ocultos</div></div>
+      <div class="stat-item"><div class="stat-num">0 datos</div><div class="stat-label">Sin registro requerido</div></div>
+    </div>
+  </div>
+
+  <!-- HISTORIAL -->
+  <div class="history-section" id="historial-section">
+    <div class="history-inner">
+      <h3>🕒 Últimas extracciones</h3>
+      <div class="history-grid" id="historial-grid"></div>
+      <button class="btn-clear-history" onclick="limpiarHistorial()">Limpiar historial</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-section" id="results">
+    <p class="results-title">Resultados — elige la calidad que necesitas:</p>
+    <div class="result-card">
+      <div class="result-card-header">
+        <h3>1. Alta Resolución (HD 1080p)</h3>
+        <span class="badge-rec">⭐ Recomendado</span>
+      </div>
+      <img id="img-max" src="" alt="Miniatura HD 1080p" loading="lazy">
+      <div class="result-card-footer">
+        <a id="btn-max" class="btn-download" href="#">⬇ Descargar HD (1080p)</a>
+      </div>
+    </div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-card-header"><h3>2. Alta calidad (720p)</h3></div>
+        <img id="img-hq" src="" alt="Miniatura 720p" loading="lazy">
+        <div class="result-card-footer">
+          <a id="btn-hq" class="btn-download" href="#">⬇ Descargar 720p</a>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-card-header"><h3>3. Calidad media (480p)</h3></div>
+        <img id="img-mq" src="" alt="Miniatura 480p" loading="lazy">
+        <div class="result-card-footer">
+          <a id="btn-mq" class="btn-download" href="#">⬇ Descargar 480p</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAGS -->
+  <div class="tags-section" id="tags-results">
+    <div class="tags-inner">
+      <h3>🏷️ Etiquetas SEO del vídeo</h3>
+      <p>Palabras clave que este vídeo usa en su código. Úsalas para analizar la estrategia de posicionamiento.</p>
+      <div id="tags-list"></div>
+      <button class="btn-copy-tags" onclick="copyTags()">📋 Copiar etiquetas</button>
+    </div>
+  </div>
+
+  <!-- TOOLS GRID -->
+  <div style="background:#fff; margin-top: 48px;">
+    <div class="section">
+      <h2 class="section-title">Todas las herramientas, gratis</h2>
+      <p class="section-sub">Todo lo que necesitas para analizar, optimizar y monetizar tu canal de YouTube.</p>
+      <div class="tools-grid">
+        <a href="index.html" class="tool-tile">
+          <div class="tool-tile-icon">🖼️</div>
+          <h3>Analizador de Miniaturas</h3>
+          <p>Extrae cualquier miniatura en HD 1080p. Estudia a tu competencia y mejora tu CTR.</p>
+          <span class="tool-tile-cta">Usar ahora →</span>
         </a>
+        <a href="calculadora.html" class="tool-tile">
+          <div class="tool-tile-icon">🧮</div>
+          <h3>Calculadora de Ingresos</h3>
+          <p>Estima cuánto puedes ganar según tus visualizaciones, RPM y nicho. Sin fórmulas complicadas.</p>
+          <span class="tool-tile-cta">Calcular →</span>
+        </a>
+        <a href="generador-titulos-youtube.html" class="tool-tile">
+          <div class="tool-tile-icon">🎯</div>
+          <h3>Generador de Títulos</h3>
+          <p>Crea títulos optimizados para el algoritmo que atraigan clics y posicionen en búsqueda.</p>
+          <span class="tool-tile-cta">Generar →</span>
+        </a>
+        <a href="checklist-miniaturas.html" class="tool-tile">
+          <div class="tool-tile-icon">✅</div>
+          <h3>Checklist de Miniaturas</h3>
+          <p>Valida tu miniatura antes de publicar con los 10 puntos clave que garantizan mayor CTR.</p>
+          <span class="tool-tile-cta">Ver checklist →</span>
+        </a>
+        <a href="calculadora-puntuacion-ctr.html" class="tool-tile">
+          <div class="tool-tile-icon">📊</div>
+          <h3>Puntuación CTR</h3>
+          <p>Puntúa el potencial de CTR de tu miniatura antes de publicarla con 12 criterios técnicos.</p>
+          <span class="tool-tile-cta">Puntuar →</span>
+        </a>
+        <a href="glosario.html" class="tool-tile">
+          <div class="tool-tile-icon">📖</div>
+          <h3>Glosario YouTube</h3>
+          <p>Más de 80 términos del ecosistema YouTube explicados en español: RPM, CTR, CPM y mucho más.</p>
+          <span class="tool-tile-cta">Ver glosario →</span>
+        </a>
+      </div>
     </div>
+  </div>
 
-        <div id="results">
-            <h2 style="text-align: center; margin-bottom: 20px;">Resultados Obtenidos</h2>
-            
-            <div class="result-card">
-                <h3>1. Alta Resolución (HD 1080p) <span>⭐ Recomendado</span></h3>
-                <img id="img-max" src="" alt="Miniatura HD">
-                <a id="btn-max" class="btn-download" href="" target="_blank">Visualizar HD (1080p)</a>
-            </div>
-
-          
-
-            <div class="results-grid">
-                <div class="result-card">
-                    <h3>2. Calidad Alta (720p)</h3>
-                    <img id="img-hq" src="" alt="Miniatura HQ">
-                    <a id="btn-hq" class="btn-download" href="" target="_blank">Visualizar (720p)</a>
-                </div>
-                <div class="result-card">
-                    <h3>3. Calidad Media (480p)</h3>
-                    <img id="img-mq" src="" alt="Miniatura Media">
-                    <a id="btn-mq" class="btn-download" href="" target="_blank">Visualizar (480p)</a>
-                </div>
-            </div>
-        </div>
-
-        <div id="tags-results" class="tags-container">
-            <h3>🏷️ Auditoría de Etiquetas SEO</h3>
-            <p>Estas son las palabras clave exactas que este vídeo está usando en su código. Úsalas para analizar su estrategia de posicionamiento.</p>
-            <div id="tags-list"></div>
-            <button class="btn-copy-tags" onclick="copyTags()">📋 Copiar etiquetas para análisis</button>
-        </div>
-
-        <div class="seo-content" style="margin-top: 40px;">
-            <h2>Guía Completa: Cómo auditar y analizar portadas de YouTube</h2>
-            <p>Con nuestra herramienta analítica gratuita, visualizar y auditar la portada de cualquier vídeo es un proceso de segundos. Solo tienes que copiar la URL (enlace) del vídeo desde tu navegador o aplicación, pegarla en la caja de texto superior y hacer clic en "Analizar Vídeo".</p>
-            <p>Nuestra plataforma se conecta mediante las APIs públicas para ofrecerte la imagen en su resolución original <strong>HD (1080p)</strong>. Esto te permite estudiar en detalle la composición, la legibilidad de la tipografía y el contraste de colores sin necesidad de instalar programas de edición complejos.</p>
-            
-            <h3 style="margin-top: 25px; color: #333;">Preguntas Frecuentes sobre el Análisis Visual (FAQ)</h3>
-            <p><strong>¿Por qué es vital auditar una portada en 1080p?</strong><br>
-            Al visualizar un diseño en alta definición, puedes detectar errores de composición que arruinan el CTR (Click-Through Rate). Una saturación de color incorrecta o bordes pixelados en los textos pueden hacer que el algoritmo deje de recomendar un vídeo. Nuestra herramienta te permite inspeccionar estos detalles a nivel profesional.</p>
-            
-            <p><strong>¿Es legal visualizar estas imágenes para su estudio?</strong><br>
-            Sí, el análisis y estudio de metadatos públicos es una práctica estándar en el marketing digital. TubeTools es una plataforma educativa. Recuerda que los derechos de autor de cada obra pertenecen a su creador original; utiliza esta herramienta únicamente para inspirarte, aprender sobre diseño gráfico y mejorar tus propias creaciones.</p>
-        </div>
-
-        <section style="max-width: 800px; margin: 40px auto; padding: 30px; text-align: left; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); line-height: 1.8;">
-            <h2>Masterclass de CTR: La ciencia detrás del algoritmo en 2026</h2>
-            <p>El ecosistema de creación de contenido en plataformas de vídeo nunca ha sido tan competitivo. A diario se suben millones de horas de vídeo, y el único filtro que decide qué contenido triunfa y cuál fracasa es el usuario. En TubeTools, nuestra misión es proporcionar un entorno de análisis visual avanzado para que los creadores puedan auditar sus propias portadas y estudiar las tendencias del mercado antes de publicar.</p>
-            
-            <h3>1. La Psicología del Clic y el Impacto Visual</h3>
-            <p>El Click-Through Rate (CTR) es, sin duda, la métrica más importante en la fase inicial de publicación de un vídeo. Representa el porcentaje de usuarios que deciden hacer clic tras ver tu portada en sus pantallas. Si tu contenido tiene una retención excelente pero un CTR inferior al 4%, el sistema automatizado de recomendaciones dejará de mostrarlo. Por ello, someter tu diseño a un escrutinio exhaustivo mediante visores HD es un paso obligatorio en la preproducción.</p>
-            
-            <h3>2. Anatomía de una portada perfecta</h3>
-            <p>A través del análisis de miles de tendencias, hemos identificado que la saturación de elementos es el enemigo número uno del creador. Los estudios de neuromarketing aplicados al contenido digital demuestran que las portadas más exitosas aplican la regla de la simplicidad extrema. Al utilizar nuestra plataforma para analizar vídeos que son tendencia, notarás un patrón innegable:</p>
-            <ul>
-                <li><strong>El sujeto principal:</strong> Rostros humanos con emociones altamente expresivas. El cerebro está programado para reaccionar ante estímulos faciales de sorpresa, alegría o tensión.</li>
-                <li><strong>El texto de apoyo:</strong> Menos de cinco palabras. Tipografías gruesas, sin remates (sans-serif) y con un alto nivel de contraste respecto al fondo. Nunca debe repetir el título del vídeo.</li>
-                <li><strong>Jerarquía visual:</strong> El uso correcto de la regla de los tercios y fondos ligeramente desenfocados (efecto bokeh) para forzar al ojo humano a mirar exactamente donde el creador desea.</li>
-            </ul>
-
-            <h3>3. Metodología de uso de nuestro Visor Analítico</h3>
-            <p>Para sacar el máximo provecho a nuestra suite de herramientas, te recomendamos seguir este flujo de trabajo profesional:</p>
-            <ol>
-                <li>Localiza los tres vídeos más exitosos del último mes dentro de tu nicho específico.</li>
-                <li>Copia sus enlaces y procésalos en nuestro motor de análisis superior.</li>
-                <li>Nuestra tecnología procesará los metadatos públicos y te mostrará la portada en sus diferentes formatos de calidad (Max Resolution, High Quality, Standard).</li>
-                <li>Observa detenidamente cómo la competencia gestiona los espacios negativos. ¿Dónde colocan el texto para evitar que la marca de tiempo del reproductor lo tape? ¿Qué paleta cromática domina la composición?</li>
-            </ol>
-            <p>Recuerda que TubeTools ha sido diseñado como un entorno seguro y libre de distracciones publicitarias intrusivas. Analizar las estrategias visuales de los líderes de la industria es el primer escalón para dominar la retención de audiencia de forma orgánica, ética y estructurada.</p>
-        </section>
-    <hr style="border: 1px solid #e0e0e0; margin: 40px 0;">
-    
-    <div id="contacto" class="seo-content" style="margin-top: 20px;">
-        <h2>📬 Contacto y Soporte</h2>
-        <p>¿Tienes alguna duda, sugerencia o has encontrado un error en la herramienta? Queremos escucharte. Puedes ponerte en contacto con nuestro equipo de soporte técnico escribiendo directamente a: <strong>contacto@tubetools.online</strong>. Intentamos responder a todas las consultas en un plazo de 24-48 horas laborables.</p>
+  <!-- WHY TUBETOOLS -->
+  <div class="section">
+    <h2 class="section-title">¿Por qué TubeTools?</h2>
+    <p class="section-sub">Herramientas reales para creadores reales, sin barreras.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>⚡ Instantáneo y sin registro</h3>
+        <p>Ninguna herramienta de TubeTools requiere crear una cuenta. Pegas la URL, obtienes el resultado. Sin fricciones.</p>
+      </div>
+      <div class="why-card">
+        <h3>📱 Optimizado para móvil</h3>
+        <p>Diseñado mobile-first. Funciona perfectamente en cualquier dispositivo, tamaño de pantalla y conexión lenta.</p>
+      </div>
+      <div class="why-card">
+        <h3>🔒 Tu privacidad, respetada</h3>
+        <p>No almacenamos las URLs que introduces ni las imágenes descargadas. Todo se procesa en tiempo real.</p>
+      </div>
+      <div class="why-card">
+        <h3>🎓 Guías basadas en datos</h3>
+        <p>Artículos escritos con datos reales de CPM, CTR y RPM, no consejos genéricos. Aprende qué funciona de verdad.</p>
+      </div>
     </div>
+  </div>
 
-    <div id="privacidad" class="seo-content" style="margin-top: 20px; margin-bottom: 40px;">
-        <h2>⚖️ Avisos Legales y Privacidad</h2>
-        <p><strong>Privacidad:</strong> En TubeTools.online respetamos tu privacidad. Esta herramienta no almacena las URLs que introduces ni guarda las imágenes visualizadas en nuestros servidores. Todo el proceso de extracción se realiza en tiempo real a través de las APIs públicas de YouTube. No recopilamos datos personales de los usuarios.</p>
-        <p><strong>Términos de Uso:</strong> TubeTools se ofrece de forma gratuita para fines educativos y de inspiración personal. El usuario es el único responsable del uso de las imágenes extraídas. Los derechos de autor de cada miniatura pertenecen al creador original del vídeo en YouTube. Al usar esta web, aceptas respetar las leyes de copyright vigentes.</p>
-        <p><strong>Cookies:</strong> Utilizamos cookies propias y de terceros (como Google AdSense) para analizar el tráfico y personalizar los anuncios que ves.</p>
+  <!-- BLOG PREVIEW -->
+  <div style="background:#fff; padding-top:1px; padding-bottom:1px;">
+    <div class="section">
+      <h2 class="section-title">Aprende a monetizar tu canal</h2>
+      <p class="section-sub">Guías basadas en datos reales para creadores de YouTube en 2026.</p>
+      <div class="blog-grid">
+        <a href="guia-miniaturas-ctr.html" class="blog-card">
+          <div class="blog-card-cat">Guía Definitiva</div>
+          <div class="blog-card-body">
+            <h3>La Guía Definitiva de CTR y Miniaturas para YouTube 2026</h3>
+            <p>Todo lo que necesitas saber sobre diseño de miniaturas, psicología del clic y optimización del algoritmo.</p>
+            <span class="blog-card-link">Leer guía →</span>
+          </div>
+        </a>
+        <a href="aumentar-rpm-youtube.html" class="blog-card">
+          <div class="blog-card-cat">Monetización</div>
+          <div class="blog-card-body">
+            <h3>Cómo Aumentar tu RPM en YouTube: 10 Estrategias Probadas para 2026</h3>
+            <p>Desde nichos de alto CPM hasta audiencia de EEUU y optimización de mid-rolls. Con datos reales.</p>
+            <span class="blog-card-link">Leer →</span>
+          </div>
+        </a>
+        <a href="cpm-youtube-por-nicho.html" class="blog-card">
+          <div class="blog-card-cat">CPM & Datos</div>
+          <div class="blog-card-body">
+            <h3>CPM de YouTube por Nicho en 2026: Ranking Completo con Datos Reales</h3>
+            <p>Finanzas, gaming, educación, tecnología… qué nichos pagan más y por qué. Tablas con cifras reales.</p>
+            <span class="blog-card-link">Leer →</span>
+          </div>
+        </a>
+        <a href="requisitos-monetizacion-youtube.html" class="blog-card">
+          <div class="blog-card-cat">Monetización</div>
+          <div class="blog-card-body">
+            <h3>Requisitos para Monetizar YouTube en 2026: Guía Completa Paso a Paso</h3>
+            <p>YPP niveles, suscriptores, horas, proceso de solicitud y los errores que te harán rechazar.</p>
+            <span class="blog-card-link">Leer →</span>
+          </div>
+        </a>
+        <a href="blog.html" class="blog-card" style="justify-content:center;align-items:center;min-height:140px;background:linear-gradient(135deg,#1c1e21,#2d1515);color:#fff;">
+          <div style="text-align:center;padding:24px;">
+            <div style="font-size:2rem;margin-bottom:8px;">📚</div>
+            <div style="font-weight:800;font-size:1rem;color:#fff;">Ver todos los artículos</div>
+            <div style="font-size:.83rem;color:#bbb;margin-top:6px;">15+ guías para creadores</div>
+          </div>
+        </a>
+      </div>
     </div>
+  </div>
 
- 
-    <script>
-        // Guardamos las etiquetas para poder copiarlas luego
-        let currentTagsText = "";
+  <!-- SEO CONTENT -->
+  <div class="section">
+    <div class="seo-section">
+      <h2>Guía Completa: Cómo Analizar Miniaturas de YouTube para Mejorar tu CTR</h2>
+      <p>Con TubeTools puedes visualizar y estudiar la miniatura de cualquier vídeo de YouTube en su máxima resolución disponible en segundos. Solo copia la URL del vídeo, pégala en la herramienta y haz clic en "Analizar". Obtendrás la imagen en <strong>HD 1080p</strong>, 720p y 480p para estudiar todos los detalles de composición, tipografía y color.</p>
 
-        function extractThumbnails() {
-            const url = document.getElementById('youtube-url').value;
-            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|shorts\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-            const match = url.match(regExp);
+      <h3>¿Por qué analizar las miniaturas de tu competencia?</h3>
+      <p>El <strong>CTR (Click-Through Rate)</strong> es la métrica que determina si el algoritmo de YouTube distribuye tu vídeo a más personas o lo ignora. Los canales del Top 1% de su nicho tienen CTRs entre el 8% y el 15%, mientras que la media está entre el 2% y el 5%. La diferencia entre esos rangos la hace principalmente el diseño de la miniatura.</p>
+      <p>Estudiar las miniaturas de los vídeos más vistos de tu nicho te permite identificar los patrones visuales que tu audiencia específica responde mejor: esquemas de color, posición del sujeto, uso del texto, tipo de expresión facial. Estos patrones no son accidentales — son el resultado de meses o años de A/B testing de los canales más grandes.</p>
 
-            if (match && match[2].length === 11) {
-                const videoId = match[2];
-             // Guardar en el historial local
-                guardarEnHistorial(videoId);
-                
-                // 1. Mostrar las Miniaturas
-                const urls = {
-                    max: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
-                    hq: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
-                    mq: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
-                };
+      <h3>Cómo usar el analizador de miniaturas de TubeTools</h3>
+      <ol>
+        <li><strong>Localiza los 5 vídeos más vistos de tu nicho</strong> en el último mes usando la búsqueda de YouTube filtrada por "Este mes".</li>
+        <li><strong>Copia la URL de cada vídeo</strong> y pégala en el analizador de TubeTools.</li>
+        <li><strong>Descarga la miniatura en HD</strong> y analiza: colores dominantes, posición del sujeto, tamaño y tipo de fuente, presencia de texto, elementos de acento.</li>
+        <li><strong>Identifica los 3 patrones más repetidos</strong> entre las miniaturas que más visualizaciones tienen.</li>
+        <li><strong>Diseña tu próxima miniatura</strong> replicando esos patrones con un elemento diferenciador propio.</li>
+      </ol>
 
-                const imgMax = document.getElementById('img-max');
-imgMax.src = urls.max;
-imgMax.setAttribute('loading', 'lazy');
-imgMax.setAttribute('decoding', 'async');
-                document.getElementById('img-hq').src = urls.hq;
-                document.getElementById('img-mq').src = urls.mq;
-
-                document.getElementById('results').style.display = 'block';
-
-                // --- NUEVO SISTEMA DE DESCARGA DIRECTA (Reemplaza los href antiguos) ---
-                const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-                
-                // Buscamos el título del vídeo para el nombre del archivo
-                fetch(`https://noembed.com/embed?url=${videoUrl}`)
-                    .then(res => res.json())
-                    .then(data => {
-                        let titulo = data.title ? data.title.replace(/[^a-zA-Z0-9]/g, "_") : "Miniatura";
-                        setupDownloadButton('btn-max', urls.max, `${titulo}_HD.jpg`);
-                        setupDownloadButton('btn-hq', urls.hq, `${titulo}_HQ.jpg`);
-                        setupDownloadButton('btn-mq', urls.mq, `${titulo}_Normal.jpg`);
-                    })
-                    .catch(() => {
-                        setupDownloadButton('btn-max', urls.max, `Miniatura_HD.jpg`);
-                        setupDownloadButton('btn-hq', urls.hq, `Miniatura_HQ.jpg`);
-                        setupDownloadButton('btn-mq', urls.mq, `Miniatura_Normal.jpg`);
-                    });
-                // --- FIN DEL NUEVO SISTEMA ---
-
-                // 2. Extraer Etiquetas SEO
-                document.getElementById('tags-results').style.display = 'block';
-                document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⏳ Extrayendo etiquetas de los servidores de YouTube...</span>';
-                
-                fetch(`https://api.codetabs.com/v1/proxy?quest=https://www.youtube.com/watch?v=${videoId}`)
-                .then(response => {
-                    if (response.ok) return response.text();
-                    throw new Error('Error en la red');
-                })
-                .then(html => {
-                    const tagMatch = html.match(/<meta\s+name="keywords"\s+content="([^"]+)"/i);
-                    
-                    if (tagMatch && tagMatch[1]) {
-                        currentTagsText = tagMatch[1];
-                        const tagsArray = currentTagsText.split(',').map(tag => tag.trim());
-                        let tagsHtml = '';
-                        tagsArray.forEach(tag => {
-                            if(tag !== "") tagsHtml += `<span class="tag-pill">${tag}</span>`;
-                        });
-                        document.getElementById('tags-list').innerHTML = tagsHtml;
-                    } else {
-                        document.getElementById('tags-list').innerHTML = '<span class="tag-pill">❌ Este vídeo no tiene etiquetas ocultas configuradas.</span>';
-                        currentTagsText = "";
-                    }
-                })
-                .catch(error => {
-                    document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⚠️ Error al extraer las etiquetas. Inténtalo de nuevo.</span>';
-                });
-
-                // Hacer scroll suave
-                document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
-                
-            } else {
-                alert('Oops, parece que el enlace no es válido. Asegúrate de copiar una URL correcta de YouTube.');
-            }
-        }
-
-        // Función para el botón de copiar etiquetas
-        function copyTags() {
-            if (currentTagsText !== "") {
-                navigator.clipboard.writeText(currentTagsText).then(() => {
-                    alert('✅ ¡Todas las etiquetas copiadas al portapapeles!');
-                });
-            } else {
-                alert('No hay etiquetas para copiar.');
-            }
-        }
-
-       // --- FUNCIÓN MÁGICA: FORZAR DESCARGA (VERSIÓN BLINDADA CON MÚLTIPLES PROXIES) ---
-        function setupDownloadButton(buttonId, imageUrl, fileName) {
-            const btn = document.getElementById(buttonId);
-            btn.removeAttribute('href'); 
-            
-            btn.onclick = async function(e) {
-                e.preventDefault();
-                const originalContent = btn.innerHTML; 
-                btn.innerHTML = "⏳ Extrayendo..."; 
-
-                // Lista de proxies gratuitos para tener Plan A, B y C
-                const proxies = [
-                    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(imageUrl)}`,
-                    `https://corsproxy.io/?${encodeURIComponent(imageUrl)}`,
-                    `https://api.allorigins.win/raw?url=${encodeURIComponent(imageUrl)}`
-                ];
-
-                let success = false;
-
-                // El código prueba los proxies uno por uno hasta que uno funciona
-                for (let proxy of proxies) {
-                    try {
-                        const response = await fetch(proxy);
-                        if (!response.ok) continue; // Si este proxy falla o está saturado, pasa al siguiente
-                        
-                        const blob = await response.blob();
-                        const url = window.URL.createObjectURL(blob);
-                        const a = document.createElement('a');
-                        a.href = url;
-                        a.download = fileName; 
-                        document.body.appendChild(a);
-                        a.click();
-                        window.URL.revokeObjectURL(url);
-                        document.body.removeChild(a);
-                        
-                        btn.innerHTML = "✅ ¡Descargada!";
-                        setTimeout(() => { btn.innerHTML = originalContent; }, 2000);
-                        success = true;
-                        break; // Salimos del bucle porque ya hemos triunfado
-                    } catch (err) {
-                        console.log("Proxy saturado, intentando alternativa...");
-                    }
-                }
-
-                // Si por algún milagro TODOS los proxies de internet están caídos, usamos el salvavidas
-                if (!success) {
-                    btn.innerHTML = "❌ Abriendo imagen...";
-                    setTimeout(() => { btn.innerHTML = originalContent; }, 2000);
-                    window.open(imageUrl, '_blank'); 
-                }
-            };
-        }
-   // --- SISTEMA DE LOCALSTORAGE (HISTORIAL) ---
-        function cargarHistorial() {
-            let historial = JSON.parse(localStorage.getItem('tubeToolsHistorial')) || [];
-            const container = document.getElementById('historial-section');
-            const grid = document.getElementById('historial-grid');
-            
-            if (historial.length === 0) {
-                container.style.display = 'none';
-                return;
-            }
-            
-            container.style.display = 'block';
-            grid.innerHTML = '';
-            
-            historial.forEach(item => {
-                grid.innerHTML += `
-                    <div style="min-width: 100px; max-width: 100px; cursor: pointer; transition: transform 0.2s;" 
-                         onclick="document.getElementById('youtube-url').value='https://www.youtube.com/watch?v=${item.id}'; extractThumbnails(); document.getElementById('historial-section').scrollIntoView({ behavior: 'smooth' });"
-                         onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                        <img src="${item.img}" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                    </div>
-                `;
-            });
-        }
-
-        function guardarEnHistorial(videoId) {
-            let historial = JSON.parse(localStorage.getItem('tubeToolsHistorial')) || [];
-            historial = historial.filter(item => item.id !== videoId);
-            historial.unshift({
-                id: videoId,
-                img: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
-            });
-            if (historial.length > 5) historial.pop();
-            localStorage.setItem('tubeToolsHistorial', JSON.stringify(historial));
-            cargarHistorial();
-        }
-
-        function limpiarHistorial() {
-            localStorage.removeItem('tubeToolsHistorial');
-            cargarHistorial();
-        }
-
-        window.addEventListener('load', cargarHistorial);
-    </script>
-
-<section class="seo-authority-content" style="max-width: 900px; margin: 60px auto; padding: 30px; background-color: #f8f9fa; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); font-family: system-ui, -apple-system, sans-serif; color: #333; line-height: 1.6;">
-    <h2 style="font-size: 1.8rem; color: #d32f2f; margin-bottom: 20px; font-weight: 700; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;">Guía Definitiva: Cómo el CTR de tu Miniatura Decide el Éxito en YouTube</h2>
-    <p style="font-size: 1.1rem; margin-bottom: 20px;">En el ecosistema actual de YouTube, la calidad de tu vídeo es secundaria si tu <strong>Click-Through Rate (CTR)</strong> inicial es bajo. El algoritmo evalúa el rendimiento en las primeras 24 horas; si los usuarios ignoran tu miniatura, las impresiones se detienen drásticamente. Tu miniatura es el activo digital más importante para captar la atención frente a la competencia.</p>
-    
-    <h3 style="font-size: 1.4rem; color: #212529; margin-top: 30px; margin-bottom: 15px; font-weight: 600;">Los 3 Errores Letales en el Diseño de Miniaturas</h3>
-    <ul style="list-style-type: none; padding-left: 0;">
-        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;"><span style="color: #d32f2f; position: absolute; left: 0; font-weight: bold;">✕</span> <strong>Exceso de texto y baja legibilidad:</strong> El 70% del tráfico proviene de dispositivos móviles. Si tu miniatura requiere más de 1.5 segundos para leerse, el usuario hará scroll y perderás la visita.</li>
-        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;"><span style="color: #d32f2f; position: absolute; left: 0; font-weight: bold;">✕</span> <strong>Falta de contraste cromático:</strong> Emplear paletas oscuras o colores que se mimetizan con el "Modo Oscuro" de la interfaz de YouTube reduce la visibilidad un 40%.</li>
-        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;"><span style="color: #d32f2f; position: absolute; left: 0; font-weight: bold;">✕</span> <strong>Ausencia de psicología emocional:</strong> Los rostros humanos que muestran emociones primarias (sorpresa, intriga, alegría) activan la curiosidad biológica. Expresiones planas arruinan el CTR.</li>
-    </ul>
-
-    <h3 style="font-size: 1.4rem; color: #212529; margin-top: 30px; margin-bottom: 15px; font-weight: 600;">Tu Kit de Herramientas Todo-en-Uno para Dominar YouTube</h3>
-    <p style="font-size: 1.05rem; margin-bottom: 0;">Para vencer al algoritmo, necesitas las herramientas adecuadas. Nuestro <strong>Analizador de Miniaturas en HD</strong> te permite extraer y estudiar al detalle las miniaturas de tu competencia directa para replicar sus tácticas de contraste. Además, con nuestra <strong>Calculadora de Ganancias</strong> y la <strong>Checklist de CTR</strong>, dejarás de depender de la intuición y empezarás a tomar decisiones basadas en datos reales para hacer crecer tu canal de forma predecible.</p>
-</section>
-  
- <footer style="text-align: center; padding: 30px 10px; margin-top: 60px; border-top: 1px solid #eaeaeb; font-family: sans-serif; font-size: 14px; color: #666; background-color: #f9f9f9;">
-    <p>&copy; 2026 TubeTools.online - Todos los derechos reservados.</p>
-    <div style="margin-top: 10px;">
-        <a href="privacidad.html" style="color: #555; text-decoration: none; margin: 0 15px;">Política de Privacidad</a>
-        <a href="terminos.html" style="color: #555; text-decoration: none; margin: 0 15px;">Términos de Uso</a>
-       <a href="about.html" style="color: #555; text-decoration: none; margin: 0 15px;">Sobre nosotros</a>
-       <a href="contacto.html" style="color: #555; text-decoration: none; margin: 0 15px;">Contacto y Acerca de</a>
-      <a href="blog.html" style="color:white;text-decoration:none;font-weight:bold;font-size:15px;">Blog</a>
-    <a href="glosario.html" style="color:white;text-decoration:none;font-weight:bold;font-size:15px;">Glosario</a>
+      <h3>Preguntas frecuentes sobre el extractor de miniaturas</h3>
+      <p><strong>¿Es legal descargar miniaturas de YouTube?</strong><br>
+      Sí. Las miniaturas son imágenes públicas accesibles a través de las APIs de YouTube. TubeTools las usa exclusivamente con fines educativos y de análisis competitivo. Los derechos de autor de cada miniatura pertenecen a su creador original.</p>
+      <p><strong>¿Por qué a veces no aparece la versión 1080p?</strong><br>
+      YouTube solo genera la versión maxresdefault (1080p) para vídeos que han sido subidos en alta resolución. Si el vídeo fue subido en calidad estándar o es muy antiguo, la máxima resolución disponible puede ser 720p o 480p. Esto es una limitación de YouTube, no de TubeTools.</p>
     </div>
-</footer>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">🚀 Tube<span>Tools</span></div>
+    <div class="footer-links">
+      <a href="about.html">Sobre nosotros</a>
+      <a href="blog.html">Blog</a>
+      <a href="glosario.html">Glosario</a>
+      <a href="calculadora.html">Calculadora</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="terminos.html">Términos</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="en/index.html">🇬🇧 English</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 TubeTools.online — Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- MOBILE STICKY -->
+  <div class="sticky-cta">
+    <a href="#main-content" onclick="document.getElementById('youtube-url').focus()">🔍 Analizar miniatura gratis →</a>
+  </div>
+
+  <!-- SCRIPTS -->
   <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(reg => console.log('Service Worker registrado', reg))
-        .catch(err => console.log('Error al registrar SW', err));
+    // Cookie banner
+    if (!localStorage.getItem('cookieConsent')) document.getElementById('cookie-banner').style.display = 'block';
+    document.getElementById('accept-cookies').addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
     });
-  }
-</script>
-   <!-- ✅ Service Worker para cache eficiente -->
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('SW registrado', reg.scope))
-        .catch(err => console.log('SW error:', err));
+    document.getElementById('reject-cookies').addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'rejected');
+      document.getElementById('cookie-banner').style.display = 'none';
     });
-  }
-</script>
+
+    // Enter key on input
+    document.getElementById('youtube-url').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') extractThumbnails();
+    });
+
+    let currentTagsText = '';
+
+    function extractThumbnails() {
+      const url = document.getElementById('youtube-url').value.trim();
+      const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|shorts\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+      const match = url.match(regExp);
+      if (match && match[2].length === 11) {
+        const videoId = match[2];
+        guardarEnHistorial(videoId);
+        const urls = {
+          max: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+          hq:  `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+          mq:  `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
+        };
+        document.getElementById('img-max').src = urls.max;
+        document.getElementById('img-hq').src  = urls.hq;
+        document.getElementById('img-mq').src  = urls.mq;
+        document.getElementById('results').style.display = 'block';
+        document.getElementById('tags-results').style.display = 'block';
+        document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⏳ Extrayendo etiquetas…</span>';
+
+        const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+        fetch(`https://noembed.com/embed?url=${videoUrl}`)
+          .then(r => r.json())
+          .then(data => {
+            const t = data.title ? data.title.replace(/[^a-zA-Z0-9]/g, '_') : 'Miniatura';
+            setupDownloadButton('btn-max', urls.max, `${t}_HD.jpg`);
+            setupDownloadButton('btn-hq',  urls.hq,  `${t}_HQ.jpg`);
+            setupDownloadButton('btn-mq',  urls.mq,  `${t}_Normal.jpg`);
+          })
+          .catch(() => {
+            setupDownloadButton('btn-max', urls.max, 'Miniatura_HD.jpg');
+            setupDownloadButton('btn-hq',  urls.hq,  'Miniatura_HQ.jpg');
+            setupDownloadButton('btn-mq',  urls.mq,  'Miniatura_Normal.jpg');
+          });
+
+        fetch(`https://api.codetabs.com/v1/proxy?quest=https://www.youtube.com/watch?v=${videoId}`)
+          .then(r => { if (r.ok) return r.text(); throw new Error(); })
+          .then(html => {
+            const m = html.match(/<meta\s+name="keywords"\s+content="([^"]+)"/i);
+            if (m && m[1]) {
+              currentTagsText = m[1];
+              document.getElementById('tags-list').innerHTML = m[1].split(',').map(t => t.trim()).filter(Boolean).map(t => `<span class="tag-pill">${t}</span>`).join('');
+            } else {
+              document.getElementById('tags-list').innerHTML = '<span class="tag-pill">❌ Sin etiquetas configuradas</span>';
+            }
+          })
+          .catch(() => { document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⚠️ Error al extraer etiquetas</span>'; });
+
+        setTimeout(() => document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      } else {
+        alert('URL no válida. Asegúrate de copiar un enlace de YouTube correcto.');
+      }
+    }
+
+    function copyTags() {
+      if (currentTagsText) {
+        navigator.clipboard.writeText(currentTagsText).then(() => alert('✅ Etiquetas copiadas al portapapeles'));
+      } else {
+        alert('No hay etiquetas para copiar.');
+      }
+    }
+
+    async function setupDownloadButton(btnId, imageUrl, fileName) {
+      const btn = document.getElementById(btnId);
+      btn.onclick = async function(e) {
+        e.preventDefault();
+        const orig = btn.innerHTML;
+        btn.innerHTML = '⏳ Descargando…';
+        const proxies = [
+          `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(imageUrl)}`,
+          `https://corsproxy.io/?${encodeURIComponent(imageUrl)}`,
+          `https://api.allorigins.win/raw?url=${encodeURIComponent(imageUrl)}`
+        ];
+        let ok = false;
+        for (const proxy of proxies) {
+          try {
+            const res = await fetch(proxy);
+            if (!res.ok) continue;
+            const blob = await res.blob();
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = fileName;
+            document.body.appendChild(a); a.click();
+            URL.revokeObjectURL(a.href); document.body.removeChild(a);
+            btn.innerHTML = '✅ ¡Descargada!';
+            setTimeout(() => btn.innerHTML = orig, 2000);
+            ok = true; break;
+          } catch(err) {}
+        }
+        if (!ok) { btn.innerHTML = '❌ Error'; setTimeout(() => btn.innerHTML = orig, 2000); window.open(imageUrl, '_blank'); }
+      };
+    }
+
+    function cargarHistorial() {
+      const h = JSON.parse(localStorage.getItem('tubeToolsHistorial') || '[]');
+      const sec = document.getElementById('historial-section');
+      const grid = document.getElementById('historial-grid');
+      if (!h.length) { sec.style.display = 'none'; return; }
+      sec.style.display = 'block';
+      grid.innerHTML = h.map(item => `
+        <div class="history-thumb" onclick="document.getElementById('youtube-url').value='https://www.youtube.com/watch?v=${item.id}';extractThumbnails()">
+          <img src="${item.img}" alt="Miniatura reciente" loading="lazy">
+        </div>`).join('');
+    }
+
+    function guardarEnHistorial(id) {
+      let h = JSON.parse(localStorage.getItem('tubeToolsHistorial') || '[]');
+      h = h.filter(i => i.id !== id);
+      h.unshift({ id, img: `https://img.youtube.com/vi/${id}/mqdefault.jpg` });
+      if (h.length > 5) h.pop();
+      localStorage.setItem('tubeToolsHistorial', JSON.stringify(h));
+      cargarHistorial();
+    }
+
+    function limpiarHistorial() {
+      localStorage.removeItem('tubeToolsHistorial');
+      cargarHistorial();
+    }
+
+    window.addEventListener('load', cargarHistorial);
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
