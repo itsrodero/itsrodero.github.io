@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found – TubeTools</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Find free YouTube thumbnail tools, CPM guides, and creator resources at TubeTools.">
   <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://tubetools.online/404.html">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; color: #1c1e21; display: flex; flex-direction: column; min-height: 100vh; }
@@ -30,20 +33,34 @@
     footer a { color: #bbb; text-decoration: none; margin: 0 10px; }
   </style>
   <meta name="description" content="Página no encontrada. Vuelve a la página principal de TubeTools para acceder a todas las herramientas gratuitas para YouTubers.">
+  <style>
+    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
+    .skip-link:focus{top:0;}
+  </style>
 </head>
 <body>
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(28,30,33,.97);color:#fff;padding:16px 20px;text-align:center;z-index:9999;border-top:2px solid #d32f2f;">
+    <p style="margin-bottom:10px;font-size:.88rem;color:#ccc;">🍪 Usamos cookies para mejorar tu experiencia y mostrar anuncios. <a href="/privacidad.html" style="color:#ff8a80;">Política de Privacidad</a></p>
+    <button onclick="localStorage.setItem('cookieConsent','accepted');this.parentElement.style.display='none';" style="background:#d32f2f;color:#fff;border:none;padding:8px 20px;border-radius:6px;font-weight:700;cursor:pointer;margin-right:8px;">Aceptar</button>
+    <button onclick="localStorage.setItem('cookieConsent','rejected');this.parentElement.style.display='none';" style="background:#444;color:#ccc;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;">Rechazar</button>
+  </div>
+  <script>if(!localStorage.getItem('cookieConsent'))document.getElementById('cookie-banner').style.display='block';</script>
+
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
 
 <nav>
-  <a href="/en/index.html" style="font-size:22px;">🚀 TubeTools</a>
-  <div>
-    <a href="/en/index.html">Home</a>
-    <a href="/en/blog.html">Blog</a>
-    <a href="/en/calculator.html">Calculator</a>
-    <a href="/en/contact.html">Contact</a>
-  </div>
-</nav>
+    <a href="index.html" class="logo">🚀 TubeTools</a>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="generador-titulos-youtube.html">🎯 Herramientas</a>
+      <a href="calculadora.html">Calculadora</a>
+      <a href="blog.html">Blog</a>
+    </div>
+  </nav>
 
-<main>
+<main id="main-content">
   <div class="error-box">
     <div class="error-code">404</div>
     <h1>Page Not Found</h1>
@@ -69,9 +86,10 @@
 <footer>
   <p>© 2026 TubeTools.online — All rights reserved.</p>
   <div style="margin-top:8px;">
-    <a href="/en/privacy.html">Privacy</a>
+    <a href="/en/privacy.html">Privacy</a> | <a href="/privacidad.html">Privacidad</a>
     <a href="/en/terms.html">Terms</a>
     <a href="/en/contact.html">Contact</a>
+      <a href="/contacto.html">Contacto</a>
   </div>
 </footer>
 

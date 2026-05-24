@@ -65,10 +65,24 @@
   <meta name="twitter:title" content="Diseño Mobile-First para Miniaturas YouTube 2026">
   <meta name="twitter:description" content="Guía de diseño mobile-first para miniaturas de YouTube: si no funciona en una pantalla de 6 pulgadas, no funciona en absoluto. Reglas y técnicas para el 70">
   <meta name="twitter:image" content="https://tubetools.online/og_image_es.png">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://tubetools.online/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://tubetools.online/blog.html"},{"@type":"ListItem","position":3,"name":"Diseño Mobile-First para Miniaturas YouTube 2026","item":"https://tubetools.online/articulo13.html"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo debo diseñar miniaturas de YouTube para móvil?","acceptedAnswer":{"@type":"Answer","text":"Para diseñar miniaturas de YouTube pensando en móvil: usa un tamaño mínimo de fuente de 40pt (a resolución 1280×720), asegúrate de que el texto tiene un trazo de contorno grueso en lugar de sombra paralela, mantén el sujeto principal en los dos tercios izquierdo o central del encuadre, y prueba visualizando la miniatura a 120×68 píxeles — su tamaño en la barra lateral de YouTube en móvil."}},{"@type":"Question","name":"¿Qué porcentaje de visualizaciones de YouTube proviene de móvil?","acceptedAnswer":{"@type":"Answer","text":"En 2026, aproximadamente el 70% de las visualizaciones de YouTube provienen de dispositivos móviles. Esto hace que la optimización de miniaturas para móvil sea crítica: una miniatura diseñada solo para visualización en escritorio a tamaño completo aparecerá borrosa, ilegible o indistinta en las pantallas pequeñas que generan la mayoría de las impresiones."}},{"@type":"Question","name":"¿Qué tamaño de fuente debo usar para las miniaturas de YouTube?","acceptedAnswer":{"@type":"Answer","text":"A resolución 1280×720, usa un mínimo de 40-50pt para el texto principal y 30pt para el texto secundario. Después de diseñar, comprueba siempre redimensionando la miniatura a 320×180px y verificando que el texto sigue siendo legible. Si no se lee a un cuarto de tamaño, fallará en móvil."}}]}
+  </script>
+  <style>
+    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
+    .skip-link:focus{top:0;}
+  </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
     <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
-  <p style="margin-bottom:15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia. <a href="../privacidad.html" style="color:#ff4757;">Política de Privacidad</a>.</p>
+  <p style="margin-bottom:15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia. <a href="privacidad.html" style="color:#ff4757;">Política de Privacidad</a>.</p>
   <button onclick="localStorage.setItem('cookieConsent','accepted');this.parentElement.style.display='none';" style="background:#d32f2f;color:white;border:none;padding:10px 20px;border-radius:5px;margin-right:10px;cursor:pointer;">Aceptar</button>
   <button onclick="localStorage.setItem('cookieConsent','rejected');this.parentElement.style.display='none';" style="background:#555;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">Rechazar</button>
 </div>
@@ -76,12 +90,13 @@
 
 <nav style="background-color:#1c1e21;padding:15px 25px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,0.1);">
   <a href="index.html" style="font-weight:bold;font-size:22px;text-decoration:none;color:white;">🚀 TubeTools</a>
-  <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
-    <a href="en/article13.html" style="color:white;text-decoration:none;font-weight:bold;font-size:15px;">🇬🇧 EN</a>
+  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Toggle menu">☰</button>
+  <div class="nav-links" style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+    <a href="en/article13.html" style="color:#4CAF50;text-decoration:none;font-weight:bold;font-size:15px;">🇬🇧 EN</a>
     <a href="index.html" style="color:white;text-decoration:none;font-weight:bold;font-size:15px;">Inicio</a>
+    <a href="generador-titulos-youtube.html" style="color:#ff6b6b;text-decoration:none;font-weight:bold;font-size:15px;">🎯 Herramientas</a>
     <a href="calculadora.html" style="color:white;text-decoration:none;font-weight:bold;font-size:15px;">Calculadora</a>
     <a href="blog.html" style="color:white;text-decoration:none;font-weight:bold;font-size:15px;">Blog</a>
-    <a href="glosario.html" style="color:white;text-decoration:none;font-weight:bold;font-size:15px;">Glosario</a>
     <a href="contacto.html" style="color:white;text-decoration:none;font-weight:bold;font-size:15px;">Contacto</a>
   </div>
 </nav>
@@ -93,7 +108,7 @@
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="main-content">
         <article class="article-body">
             <p class="text-muted small mb-4 text-uppercase fw-bold">Lectura de 12 Minutos • Diseño UX</p>
             
@@ -124,7 +139,89 @@
                 <a href="index.html" class="btn btn-dark btn-lg rounded-pill px-5 py-3 fw-bold mt-3">INICIAR INSPECCIÓN VISUAL</a>
             </div>
         </article>
-    </main>
+      
+  <section style="margin:40px 0;">
+    <h2 style="color:#d32f2f;font-size:1.4rem;font-weight:700;border-left:5px solid #d32f2f;padding-left:14px;margin-bottom:18px;">4. Los 5 Contextos Móviles donde tu Miniatura Compite</h2>
+    <p style="color:#444;line-height:1.8;margin-bottom:14px;">En móvil, tu miniatura no aparece siempre del mismo tamaño ni en el mismo contexto. Existen cinco formatos de visualización distintos, cada uno con sus propios retos y oportunidades, y una miniatura mobile-first debe funcionar bien en todos ellos:</p>
+    <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:.93rem;">
+      <tr style="background:#d32f2f;color:#fff;"><th style="padding:12px 14px;text-align:left;">Contexto</th><th style="padding:12px 14px;text-align:left;">Tamaño aprox.</th><th style="padding:12px 14px;text-align:left;">Reto principal</th></tr>
+      <tr><td style="padding:11px 14px;border-bottom:1px solid #eee;">Feed principal (home)</td><td style="padding:11px 14px;border-bottom:1px solid #eee;">~320×180 px</td><td style="padding:11px 14px;border-bottom:1px solid #eee;">Competir con otros vídeos en grid compacto</td></tr>
+      <tr style="background:#f9f9f9;"><td style="padding:11px 14px;border-bottom:1px solid #eee;">Resultados de búsqueda</td><td style="padding:11px 14px;border-bottom:1px solid #eee;">~160×90 px</td><td style="padding:11px 14px;border-bottom:1px solid #eee;">Legibilidad del texto a tamaño muy reducido</td></tr>
+      <tr><td style="padding:11px 14px;border-bottom:1px solid #eee;">Vídeos sugeridos (lateral)</td><td style="padding:11px 14px;border-bottom:1px solid #eee;">~120×68 px</td><td style="padding:11px 14px;border-bottom:1px solid #eee;">El más pequeño: solo el elemento principal</td></tr>
+      <tr style="background:#f9f9f9;"><td style="padding:11px 14px;border-bottom:1px solid #eee;">Canal del creador</td><td style="padding:11px 14px;border-bottom:1px solid #eee;">~160×90 px</td><td style="padding:11px 14px;border-bottom:1px solid #eee;">Consistencia visual entre todos los vídeos</td></tr>
+      <tr><td style="padding:11px 14px;">Pantalla completa (preview)</td><td style="padding:11px 14px;">Ancho completo</td><td style="padding:11px 14px;">Calidad al 100%: nitidez y resolución</td></tr>
+    </table>
+    <p style="color:#444;line-height:1.8;margin-bottom:14px;">La implicación práctica es que el elemento visual más importante de tu miniatura debe ser legible a 120×68 px (el contexto de vídeos sugeridos en móvil). Esto no significa que el texto deba ser readable a ese tamaño, sino que el <em>elemento principal</em> (un rostro, un objeto llamativo, un número grande) debe ser identificable con solo mirarlo un segundo.</p>
+
+    <h2 style="color:#d32f2f;font-size:1.4rem;font-weight:700;border-left:5px solid #d32f2f;padding-left:14px;margin:40px 0 18px;">5. El Test de los 3 Segundos: La Validación Mobile Definitiva</h2>
+    <p style="color:#444;line-height:1.8;margin-bottom:14px;">El cerebro humano procesa imágenes en 13 milisegundos y toma decisiones de clic en menos de 3 segundos. El test de los 3 segundos es el método más efectivo para validar una miniatura móvil antes de publicarla, y requiere cero herramientas especiales:</p>
+    <ol style="color:#444;line-height:2.4;margin-left:22px;margin-bottom:20px;">
+      <li>Muéstrale la miniatura a alguien que no sepa de qué trata el vídeo (un familiar, un amigo). Dales exactamente 3 segundos para verla.</li>
+      <li>Pídeles que te digan: ¿De qué crees que trata este vídeo? ¿Harías clic?</li>
+      <li>Si no pueden responder la primera pregunta o si dudan en la segunda, la miniatura necesita trabajo antes de publicarse.</li>
+    </ol>
+    <p style="color:#444;line-height:1.8;margin-bottom:14px;">Este test es brutal pero honesto. Las miniaturas que superan el test de los 3 segundos con personas no familiarizadas con tu nicho tienen sistemáticamente CTRs más altos que las que solo fueron validadas por el propio creador.</p>
+
+    <h2 style="color:#d32f2f;font-size:1.4rem;font-weight:700;border-left:5px solid #d32f2f;padding-left:14px;margin:40px 0 18px;">6. Herramientas Mobile-First para Diseñar y Validar Miniaturas</h2>
+    <p style="color:#444;line-height:1.8;margin-bottom:14px;">Diseñar miniaturas en el escritorio y solo verlas en pantalla grande es el origen del problema. Estas herramientas y técnicas permiten diseñar y validar desde la perspectiva móvil real:</p>
+    <ul style="color:#444;line-height:2.2;margin-left:22px;margin-bottom:20px;">
+      <li><strong>Canva Mobile:</strong> Diseña directamente desde el móvil para ver el resultado en el contexto real de consumo. Lo que es legible en el móvil, lo es en cualquier pantalla.</li>
+      <li><strong>Vista previa de YouTube:</strong> Antes de publicar, usa la opción de vista previa de la miniatura en YouTube Studio (móvil) para ver exactamente cómo aparecerá en la app.</li>
+      <li><strong>Zoom al 25%:</strong> En cualquier programa de edición de escritorio, reduce el zoom a 25% para simular el tamaño de vídeo sugerido en móvil. Si el texto se lee, adelante.</li>
+      <li><strong>TubeTools:</strong> Extrae las miniaturas de los creadores más exitosos de tu nicho en alta resolución y estúdialas específicamente pensando en cómo se verán reducidas en móvil. Los patrones que identificas en las miniaturas ganadoras son los que debes replicar.</li>
+    </ul>
+
+    <h2 style="color:#d32f2f;font-size:1.4rem;font-weight:700;border-left:5px solid #d32f2f;padding-left:14px;margin:40px 0 18px;">7. El Checklist Mobile-First Definitivo</h2>
+    <p style="color:#444;line-height:1.8;margin-bottom:14px;">Antes de publicar cualquier miniatura, verifica estos 10 puntos. Una miniatura que supera este checklist tiene todas las condiciones técnicas y visuales para maximizar el CTR en dispositivos móviles:</p>
+    <ul style="color:#444;line-height:2.2;margin-left:22px;margin-bottom:20px;">
+      <li>✅ Resolución mínima 1280×720 px</li>
+      <li>✅ Archivo por debajo de 800 KB</li>
+      <li>✅ Ningún elemento importante en las esquinas (duración y logo del canal tapan esquinas)</li>
+      <li>✅ Tipografía Bold o ExtraBold, sin serifas, mínimo 40pt a 1280×720</li>
+      <li>✅ Texto con contorno grueso o caja de fondo de color sólido detrás</li>
+      <li>✅ Sujeto principal ocupa mínimo el 60% del lienzo</li>
+      <li>✅ Contraste texto/fondo verificado (ratio mínimo 4.5:1)</li>
+      <li>✅ Legible al reducir al 25% del tamaño (320×180 px)</li>
+      <li>✅ Verificado en modo oscuro de YouTube</li>
+      <li>✅ Superado el test de los 3 segundos con una persona externa</li>
+    </ul>
+    <div style="background:linear-gradient(135deg,#d32f2f,#b71c1c);border-radius:12px;padding:24px;text-align:center;margin:24px 0;">
+      <strong style="color:#fff;font-size:1rem;display:block;margin-bottom:10px;">📱 Analiza cómo se ven las miniaturas ganadoras en tu nicho</strong>
+      <a href="index.html" style="display:inline-block;background:#fff;color:#d32f2f;font-weight:700;padding:11px 24px;border-radius:8px;text-decoration:none;margin-top:8px;">Extractor de Miniaturas Gratis</a>
+    </div>
+  </section>
+<section style="margin:30px 0;padding:20px 25px;background:linear-gradient(135deg,#1c1e21,#d32f2f);border-radius:12px;color:#fff;">
+    <strong style="font-size:1rem;">🛠️ Herramientas gratuitas para creadores:</strong>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;">
+      <a href="generador-titulos-youtube.html" style="padding:9px 16px;background:#fff;border-radius:6px;text-decoration:none;color:#d32f2f;font-weight:600;font-size:.85rem;">🎯 Generador de Títulos</a>
+      <a href="calculadora-puntuacion-ctr.html" style="padding:9px 16px;background:#fff;border-radius:6px;text-decoration:none;color:#d32f2f;font-weight:600;font-size:.85rem;">📊 Calculadora CTR Score</a>
+      <a href="calculadora.html" style="padding:9px 16px;background:#fff;border-radius:6px;text-decoration:none;color:#d32f2f;font-weight:600;font-size:.85rem;">🧮 Calculadora de Ingresos</a>
+    </div>
+  </section>
+  
+    <section style="margin:35px 0;padding:22px;background:#f9f9f9;border-radius:12px;">
+      <h2 style="color:#d32f2f;margin-bottom:18px;">❓ Preguntas Frecuentes</h2>
+      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Cómo debo diseñar miniaturas de YouTube para móvil?</h3>
+        <p style="color:#555;line-height:1.7;">Para diseñar miniaturas de YouTube pensando en móvil: usa un tamaño mínimo de fuente de 40pt (a resolución 1280×720), asegúrate de que el texto tiene un trazo de contorno grueso en lugar de sombra paralela, mantén el sujeto principal en los dos tercios izquierdo o central del encuadre, y prueba visualizando la miniatura a 120×68 píxeles — su tamaño en la barra lateral de YouTube en móvil.</p>
+      </div>
+      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué porcentaje de visualizaciones de YouTube proviene de móvil?</h3>
+        <p style="color:#555;line-height:1.7;">En 2026, aproximadamente el 70% de las visualizaciones de YouTube provienen de dispositivos móviles. Esto hace que la optimización de miniaturas para móvil sea crítica: una miniatura diseñada solo para visualización en escritorio a tamaño completo aparecerá borrosa, ilegible o indistinta en las pantallas pequeñas que generan la mayoría de las impresiones.</p>
+      </div>
+      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué tamaño de fuente debo usar para las miniaturas de YouTube?</h3>
+        <p style="color:#555;line-height:1.7;">A resolución 1280×720, usa un mínimo de 40-50pt para el texto principal y 30pt para el texto secundario. Después de diseñar, comprueba siempre redimensionando la miniatura a 320×180px y verificando que el texto sigue siendo legible. Si no se lee a un cuarto de tamaño, fallará en móvil.</p>
+      </div>
+    </section>
+  
+    <section style="margin:35px 0;padding:22px;border-top:2px solid #d32f2f;">
+      <h2 style="color:#d32f2f;margin-bottom:18px;">📚 Artículos Relacionados</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+        <a href="articulo6.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Tamaños de Miniatura 2026</strong></a><a href="articulo14.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Tipografía para Miniaturas</strong></a><a href="articulo11.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Teoría del Color Avanzada</strong></a>
+      </div>
+    </section>
+  </main>
     <footer style="background:#1c1e21;color:#888;text-align:center;padding:30px;margin-top:40px;">
   <p>© 2026 TubeTools.online — Todos los derechos reservados.</p>
   <div style="margin-top:10px;">

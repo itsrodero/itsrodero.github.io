@@ -61,8 +61,16 @@
   <meta name="twitter:title" content="Sobre TubeTools | Herramientas para creadores de YouTube">
   <meta name="twitter:description" content="Conoce la historia de TubeTools: por qué Daniel creó esta herramienta gratuita de análisis de miniaturas para ayudar a creadores de YouTube a mejorar su CT">
   <meta name="twitter:image" content="https://tubetools.online/og_image_es.png">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <style>
+    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
+    .skip-link:focus{top:0;}
+  </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
  
 <!-- BANNER DE COOKIES -->
 <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
@@ -79,15 +87,16 @@
 </script>
  
 <nav>
-  <a href="index.html" style="font-size:22px;">🚀 TubeTools</a>
-  <div>
-    <a href="en/about.html">🇬🇧 EN</a>
-    <a href="index.html">Inicio</a>
-    <a href="calculadora.html">Calculadora</a>
-    <a href="blog.html">Blog</a>
-    <a href="contacto.html">Contacto</a>
-  </div>
-</nav>
+    <a href="index.html" class="logo">🚀 TubeTools</a>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="generador-titulos-youtube.html">🎯 Herramientas</a>
+      <a href="calculadora.html">Calculadora</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </nav>
  
 <div class="about-hero">
   <div class="container">
@@ -96,7 +105,7 @@
   </div>
 </div>
  
-<main class="container">
+<main class="container" id="main-content">
   <div class="about-body">
  
     <h2>¿Quiénes somos?</h2>
@@ -132,6 +141,18 @@
     <h2>¿Por qué es gratuito?</h2>
     <p>TubeTools se financia mediante publicidad no intrusiva de Google AdSense. Esto nos permite mantener todas las herramientas completamente gratis para los usuarios sin modelos de suscripción ni paywalls. Creemos que el conocimiento y las herramientas básicas para crecer en internet deben ser accesibles para todos.</p>
  
+    <h2>La Investigación Detrás del Contenido de TubeTools</h2>
+    <p>Las guías, artículos y datos de TubeTools no son resúmenes genéricos copiados de otros sitios. Son el resultado de cientos de horas analizando canales reales de YouTube, estudiando cómo los cambios en las miniaturas afectan al CTR en la práctica, investigando los recursos oficiales de YouTube Creator Academy, y compilando datos de CPM y RPM de comunidades de creadores verificados e informes del sector.</p>
+    <p>Cada dato publicado en TubeTools, ya sea un rango de CPM para un nicho concreto o un benchmark de lo que constituye un "buen" CTR, está basado en datos públicos de creadores, recursos oficiales de YouTube, y análisis directo de patrones de rendimiento de canales. Cuando los datos son inciertos o varían significativamente, presentamos rangos en lugar de falsas precisiones.</p>
+
+    <h2>¿Qué Diferencia a TubeTools de Otras Herramientas?</h2>
+    <p>El mercado de herramientas para creadores de YouTube está saturado de productos que cobran suscripciones mensuales por funciones básicas o esconden cada herramienta detrás de muros de registro y pago. TubeTools fue construido con una filosofía diferente: cada herramienta que un creador necesita para mejorar su CTR y entender el rendimiento de su canal debe ser completamente gratuita, accesible al instante y funcionar perfectamente en móvil.</p>
+    <p>Hay también un compromiso de transparencia que distingue a TubeTools: explicamos exactamente cómo se financia el proyecto (mediante publicidad no intrusiva de Google AdSense), qué datos recopilamos (analítica estándar anónima, nada personal sin consentimiento), y qué no hacemos (no vendemos datos de usuarios, no requerimos registro, no tenemos ningún nivel premium oculto).</p>
+
+    <h2>Compromiso con la Privacidad del Creador</h2>
+    <p>TubeTools no requiere ningún tipo de registro ni envío de datos personales para usar ninguna de sus herramientas. El extractor de miniaturas funciona procesando URLs de YouTube de acceso público, sin almacenar las URLs introducidas ni las imágenes descargadas. La calculadora de ingresos funciona completamente en tu navegador: los números que introduces no salen de tu dispositivo.</p>
+    <p>Los únicos datos que recopilamos son analítica anónima estándar (páginas vistas, país de origen, tipo de dispositivo) a través de Google Analytics, de la que puedes optar por no participar mediante el banner de consentimiento de cookies. Estos datos nos ayudan a entender qué herramientas y guías son más útiles para priorizar mejoras. Nunca compartimos ni vendemos datos a terceros.</p>
+
     <h2>Contacto</h2>
     <p>¿Tienes sugerencias, encontraste un error o quieres proponer una nueva funcionalidad? Escríbeme directamente. Leo todos los mensajes y respondo en menos de 48 horas.</p>
     <a href="contacto.html" class="btn btn-danger btn-lg rounded-pill px-5 fw-bold">✉️ Enviar mensaje</a>
