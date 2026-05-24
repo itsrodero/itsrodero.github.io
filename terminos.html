@@ -72,20 +72,29 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebPage","name":"Términos de Uso - TubeTools","url":"https://tubetools.online/terminos.html","publisher":{"@type":"Organization","name":"TubeTools","url":"https://tubetools.online"}}
   </script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <style>
+    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
+    .skip-link:focus{top:0;}
+  </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
     <nav>
-        <a href="index.html" style="font-weight: bold; font-size: 22px; text-decoration: none; color: white;">🚀 TubeTools</a>
-        <div>
-            <a href="en/terms.html" style="color: #4CAF50;">🇬🇧 EN</a>
-            <a href="index.html">Inicio</a>
-            <a href="calculadora.html">Calculadora</a>
-            <a href="blog.html">Blog</a>
-            <a href="glosario.html">Glosario</a>
-            <a href="contacto.html">Contacto</a>
-        </div>
-    </nav>
-    <main>
+    <a href="index.html" class="logo">🚀 TubeTools</a>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+      <a href="en/terms.html" style="color:#4CAF50;font-weight:600;">🇬🇧 EN</a>
+      <a href="index.html">Inicio</a>
+      <a href="generador-titulos-youtube.html">🎯 Herramientas</a>
+      <a href="calculadora.html">Calculadora</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </nav>
+    <main id="main-content">
         <h1>Términos y Condiciones de Uso</h1>
         <p><em>Última actualización: 16 de marzo de 2026</em></p>
 
@@ -113,13 +122,30 @@
         <p>Nuestro sitio puede contener enlaces a sitios web externos (por ejemplo, Canva, OBS). No tenemos control sobre el contenido o prácticas de esos sitios y no asumimos responsabilidad alguna por ellos.</p>
 
         <h2>6. Modificaciones</h2>
-        <p>Nos reservamos el derecho a modificar estos términos en cualquier momento. Los cambios serán efectivos desde su publicación en esta página. Es tu responsabilidad revisarlos periódicamente.</p>
+        <p>Nos reservamos el derecho a modificar estos términos en cualquier momento. Los cambios serán efectivos desde su publicación en esta página. Es tu responsabilidad revisarlos periódicamente. Si continúas usando TubeTools después de la publicación de cambios materiales, se considerará que has aceptado los nuevos términos.</p>
 
         <h2>7. Legislación aplicable</h2>
-        <p>Estos términos se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de Madrid, España.</p>
+        <p>Estos términos se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de Madrid, España, con renuncia expresa a cualquier otro fuero que pudiera corresponderles.</p>
 
-        <h2>8. Contacto</h2>
-        <p>Si tienes preguntas sobre estos términos, puedes escribirnos a: <strong>contacto@tubetools.online</strong></p>
+        <h2>8. Publicidad y Servicios de Terceros</h2>
+        <p>TubeTools muestra anuncios a través de Google AdSense para financiar el servicio gratuito. Estos anuncios pueden ser personalizados según el comportamiento de navegación del usuario, sujeto a sus preferencias de cookies. Google, como proveedor de tecnología publicitaria, tiene sus propias políticas de privacidad y términos de uso independientes de los de TubeTools. Al usar TubeTools con las cookies de publicidad aceptadas, aceptas también los <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" style="color:#d32f2f;">términos publicitarios de Google</a>.</p>
+        <p>TubeTools puede integrar servicios de terceros como Google Analytics (analítica web), Formspree (formulario de contacto) y YouTube Data API (extracción de miniaturas). Cada uno de estos servicios tiene sus propias políticas de privacidad y términos de servicio. TubeTools no es responsable del contenido ni de las prácticas de privacidad de estos servicios externos.</p>
+
+        <h2>9. Privacidad y Protección de Datos</h2>
+        <p>El tratamiento de datos personales de los usuarios de TubeTools se rige por nuestra <a href="privacidad.html" style="color:#d32f2f;">Política de Privacidad</a>, que forma parte integrante de estos Términos de Uso. Al utilizar TubeTools, aceptas el tratamiento de tus datos de acuerdo con dicha política.</p>
+        <p>En cumplimiento del Reglamento General de Protección de Datos (RGPD) de la Unión Europea y la Ley Orgánica de Protección de Datos y Garantía de los Derechos Digitales (LOPDGDD) de España, los usuarios tienen derecho a acceder, rectificar, suprimir y oponerse al tratamiento de sus datos personales. Para ejercer estos derechos, puedes contactar con nosotros a través de <a href="contacto.html" style="color:#d32f2f;">nuestro formulario de contacto</a>.</p>
+
+        <h2>10. Exención de Garantías</h2>
+        <p>TubeTools se proporciona "tal como está" y "según disponibilidad", sin garantías de ningún tipo, ya sean expresas o implícitas. En particular, TubeTools no garantiza que el servicio sea ininterrumpido, libre de errores o que los resultados obtenidos sean precisos, completos o actuales. La disponibilidad de las miniaturas de YouTube depende directamente de los servidores de YouTube, sobre los cuales TubeTools no tiene control alguno.</p>
+
+        <h2>11. Requisitos de Edad</h2>
+        <p>TubeTools está diseñado para usuarios de 13 años o más. Si tienes menos de 13 años, no debes usar este servicio. Si tienes entre 13 y 16 años, es recomendable que uses TubeTools bajo supervisión o con el consentimiento de un padre, madre o tutor legal, conforme a la normativa de protección de menores aplicable en tu país.</p>
+
+        <h2>12. Propiedad de las Miniaturas Extraídas</h2>
+        <p>Las miniaturas de YouTube son obras protegidas por derechos de autor que pertenecen a sus creadores originales o a quienes estos hayan cedido los derechos. TubeTools actúa exclusivamente como intermediario técnico que facilita el acceso a imágenes públicamente disponibles a través de las APIs de YouTube, con fines de análisis y estudio comparativo. El usuario es el único responsable del uso que haga de las imágenes descargadas, debiendo respetar en todo momento los derechos de propiedad intelectual aplicables.</p>
+
+        <h2>13. Contacto</h2>
+        <p>Si tienes preguntas sobre estos términos, puedes escribirnos a: <strong>contacto@tubetools.online</strong> o usar nuestro <a href="contacto.html" style="color:#d32f2f;">formulario de contacto</a>. Responderemos en un plazo máximo de 48 horas en días laborables.</p>
     </main>
     <footer>
         <p>© 2026 TubeTools.online - <a href="privacidad.html">Privacidad</a> | <a href="terminos.html">Términos</a> | <a href="contacto.html">Contacto</a></p>
