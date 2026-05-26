@@ -464,4 +464,46 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://tubetools.online/mapa-sitio.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://tubetools.online/en/sitemap-page.html"/>
   </url>
+
+  <url>
+    <loc>https://tubetools.online/en/thumbnail-checklist.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tubetools.online/en/thumbnail-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tubetools.online/checklist-miniaturas.html"/>
+  </url>
+  <url>
+    <loc>https://tubetools.online/mejores-nichos-youtube-adsense.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tubetools.online/mejores-nichos-youtube-adsense.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tubetools.online/en/best-youtube-niches-adsense.html"/>
+  </url>
+  <url>
+    <loc>https://tubetools.online/rpm-vs-cpm-youtube.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tubetools.online/rpm-vs-cpm-youtube.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tubetools.online/en/youtube-rpm-vs-cpm.html"/>
+  </url>
+
+  <url>
+    <loc>https://tubetools.online/en/thumbnail-analyzer.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tubetools.online/en/thumbnail-analyzer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tubetools.online/analizador-miniaturas.html"/>
+  </url>
+  <url>
+    <loc>https://tubetools.online/analizador-miniaturas.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tubetools.online/analizador-miniaturas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tubetools.online/en/thumbnail-analyzer.html"/>
+  </url>
 </urlset>
