@@ -112,8 +112,17 @@ s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); }
         footer a:hover { color: white; }
         @media (max-width: 600px) { h1 { font-size: 1.8rem; } article { padding: 25px; } }
     </style>
+  <style>
+    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
+    .skip-link:focus{top:0;}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How often should I analyze competitor thumbnails?","acceptedAnswer":{"@type":"Answer","text":"A weekly review of the top 5 videos in your niche is the professional standard. The minimum effective frequency is monthly."}},{"@type":"Question","name":"Can I legally use insights from competitor thumbnails?","acceptedAnswer":{"@type":"Answer","text":"Yes. Analyzing design principles, color choices, and composition strategies is completely legal. Learning from design patterns is the foundation of every design discipline."}},{"@type":"Question","name":"Does thumbnail analysis work the same way for YouTube Shorts?","acceptedAnswer":{"@type":"Answer","text":"Shorts use a vertical format so the criteria differ slightly. Emotional signal and high-saturation colors tend to perform best in Shorts thumbnails."}}]}
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
     
     <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
         <p style="margin-bottom: 15px;">🍪 We use our own and third-party cookies to improve your experience, analyze traffic, and show personalized ads. <a href="privacy.html" style="color: #ff4757; text-decoration: underline;">Read our Privacy Policy</a>.</p>
@@ -129,16 +138,18 @@ s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); }
     </script>
 
     <nav>
-        <a href="index.html" class="logo">🚀 TubeTools</a>
+    <a href="index.html" class="logo">🚀 TubeTools</a>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Toggle menu">☰</button>
         <div class="nav-links">
-            <a href="../index.html" style="color: #4CAF50;">🇪🇸 ES</a>
-            <a href="index.html">Home</a>
-            <a href="calculator.html">Calculator</a>
-            <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
-    <main>
+      <a href="../index.html" style="color:#4CAF50;font-weight:600;">🇪🇸 ES</a>
+      <a href="index.html">Home</a>
+      <a href="youtube-title-generator.html">🎯 Tools</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+    <main id="main-content">
         <article>
             <h1>How to Analyze Your Competition's Thumbnails (2026 Technical Guide)</h1>
             <div class="meta">
@@ -200,15 +211,24 @@ s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); }
       </div>
     </section>
   </main>
-    <footer>
-        <p>© 2026 TubeTools.online - All rights reserved.</p>
-        <div class="footer-links" style="margin-top: 10px;">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Use</a>
-            <a href="contact.html">Contact</a>
-            <a href="blog.html">Blog</a>
-        </div>
-    </footer>
+    <footer style="background:#1c1e21;color:#888;text-align:center;padding:36px 20px;margin-top:40px;">
+  <div style="font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:16px;">🚀 Tube<span style="color:#ff5252">Tools</span></div>
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:6px 16px;margin-bottom:16px;">
+    <a href="index.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Home</a>
+    <a href="youtube-title-generator.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Title Generator</a>
+    <a href="calculator.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Calculator</a>
+    <a href="ctr-score-calculator.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">CTR Score</a>
+    <a href="thumbnail-checklist.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Checklist</a>
+    <a href="blog.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Blog</a>
+    <a href="glossary.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Glossary</a>
+    <a href="about.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">About</a>
+    <a href="privacy.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Privacy</a>
+    <a href="terms.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Terms</a>
+    <a href="contact.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Contact</a>
+    <a href="../index.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">🇪🇸 Español</a>
+  </div>
+  <p style="font-size:.78rem;color:#666;">&copy; 2026 TubeTools.online — All rights reserved.</p>
+</footer>
     <!-- ✅ Service Worker para cache eficiente -->
 <script>
   if ('serviceWorker' in navigator) {
@@ -219,5 +239,35 @@ s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); }
     });
   }
 </script>
+
+  <section style="max-width:860px;margin:40px auto 60px;padding:0 20px;">
+    <div style="background:#fff;border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
+      <h2 style="font-size:1.4rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin-bottom:20px;">The Professional 5-Point Analysis Framework</h2>
+      <p style="color:#555;line-height:1.8;margin-bottom:14px;">Downloading a competitor's thumbnail in HD is just the first step. What separates creators who grow consistently from those who stagnate is what they do with the image after extraction. This five-point framework turns raw thumbnail data into actionable design intelligence.</p>
+      
+      <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:20px 0 8px;">Point 1: Primary Attention Anchor</h3>
+      <p style="color:#555;line-height:1.8;margin-bottom:12px;">Every high-performing thumbnail has one dominant element that captures the eye in under 150 milliseconds. Identify it: a face with an extreme expression, a specific object against a contrasting background, or a bold text statement. The primary anchor determines whether a viewer pauses their scroll at all.</p>
+      
+      <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:20px 0 8px;">Point 2: Color Contrast Mechanics</h3>
+      <p style="color:#555;line-height:1.8;margin-bottom:12px;">Viral thumbnails almost never use more than three dominant colors. The pattern is consistent: a warm high-brightness primary color against a cool dark background — or the reverse. The human visual system is wired to detect contrast, not color. When you extract a thumbnail in HD with TubeTools, zoom into the background: you will consistently find it has been darkened, desaturated, or blurred specifically to make the subject pop.</p>
+      
+      <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:20px 0 8px;">Point 3: Typography Intent</h3>
+      <p style="color:#555;line-height:1.8;margin-bottom:12px;">Thumbnail text is not a summary — it is a psychological trigger. Analyze the font weight (always bold to extra-bold), the stroke or shadow (always present for legibility), and the word count (almost never more than five). Most critically: does the text complete the visual, contradict it, or pose a question? The highest-CTR thumbnails use text that creates cognitive tension with the image — the brain must click to resolve it.</p>
+      
+      <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:20px 0 8px;">Point 4: Facial Expression Calibration</h3>
+      <p style="color:#555;line-height:1.8;margin-bottom:12px;">Human faces trigger faster unconscious attention than any other visual stimulus. But not all expressions convert equally. Is the expression legible at 120×68px — thumbnail size in the sidebar? Surprise, joy, and concern outperform neutral expressions in A/B tests. The best creators exaggerate expressions 20–30% beyond natural, specifically because compression and small size reduce emotional intensity.</p>
+      
+      <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:20px 0 8px;">Point 5: Niche Convention vs. Pattern Interrupt</h3>
+      <p style="color:#555;line-height:1.8;margin-bottom:20px;">Every niche has visual conventions: the color palettes that dominate, the composition styles that repeat. The strategic move is to follow niche conventions in four of five points and break one convention in a distinctive, memorable way. Use HD thumbnail extractions to map what "conventional" looks like in your niche — then identify which convention is ripe for breaking.</p>
+
+      <div style="background:#f4f5f7;border-radius:10px;padding:20px 22px;">
+        <strong style="color:#1c1e21;font-size:.95rem;">❓ Frequently Asked Questions</strong>
+        <p style="margin-top:12px;color:#555;font-size:.9rem;"><strong>How often should I analyze competitor thumbnails?</strong><br>A weekly review of the top 5 videos in your niche is the professional standard. The minimum effective frequency is monthly. Less than that and you will miss trend shifts that happen in real time.</p>
+        <p style="color:#555;font-size:.9rem;margin-bottom:8px;"><strong>Is it legal to download YouTube thumbnails for analysis?</strong><br>Yes. Thumbnails are publicly accessible images. Using them for competitive analysis and design research is completely legal. Rights belong to the original creator — you cannot reproduce or repurpose their images, but studying design patterns is the foundation of every design discipline.</p>
+        <p style="color:#555;font-size:.9rem;margin-bottom:0;"><strong>Does thumbnail analysis work the same way for YouTube Shorts?</strong><br>Shorts use a vertical cover format shown in a scrolling feed, so the criteria differ slightly. The primary anchor and emotional signal remain critical, but text usage is even more restricted due to the narrow format. Facial expressions and high-saturation colors tend to perform best in Shorts thumbnails.</p>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
