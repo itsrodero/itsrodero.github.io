@@ -149,15 +149,24 @@
     </section>
   </div>
 
-  <footer>
-    <p>&copy; 2026 TubeTools.online — Todos los derechos reservados.</p>
-    <div style="margin-top:10px;">
-      <a href="privacidad.html">Política de Privacidad</a>
-      <a href="terminos.html">Términos de Uso</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="blog.html">Blog</a>
-    </div>
-  </footer>
+  <footer style="background:#1c1e21;color:#888;text-align:center;padding:36px 20px;margin-top:40px;">
+  <div style="font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:16px;">🚀 Tube<span style="color:#ff5252">Tools</span></div>
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:6px 16px;margin-bottom:16px;">
+    <a href="index.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Inicio</a>
+    <a href="generador-titulos-youtube.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Generador Títulos</a>
+    <a href="calculadora.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Calculadora</a>
+    <a href="calculadora-puntuacion-ctr.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Puntuación CTR</a>
+    <a href="checklist-miniaturas.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Checklist</a>
+    <a href="analizador-miniaturas.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Analizador</a>
+    <a href="blog.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Blog</a>
+    <a href="glosario.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Glosario</a>
+    <a href="privacidad.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Privacidad</a>
+    <a href="terminos.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Términos</a>
+    <a href="contacto.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Contacto</a>
+    <a href="en/index.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">🇬🇧 English</a>
+  </div>
+  <p style="font-size:.78rem;color:#666;">&copy; 2026 TubeTools.online — Todos los derechos reservados.</p>
+</footer>
 
   <script>
     const questions = [
@@ -301,5 +310,26 @@
     document.getElementById('accept-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');document.getElementById('cookie-banner').style.display='none';});
     document.getElementById('reject-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','rejected');document.getElementById('cookie-banner').style.display='none';});
   </script>
+
+  <section style="max-width:860px;margin:40px auto 60px;padding:0 20px;">
+    <div style="background:#fff;border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
+      <h2 style="font-size:1.4rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin-bottom:20px;">Cómo se Calcula la Puntuación CTR</h2>
+      <p style="color:#555;line-height:1.8;margin-bottom:14px;">La Calculadora de Puntuación CTR evalúa tu miniatura en 12 factores técnicos y psicológicos que la investigación de YouTube y los datos de creadores identifican consistentemente como los predictores más fuertes del rendimiento de clics. Cada factor está ponderado según su impacto medido en miles de tests A/B en múltiples nichos.</p>
+      
+      <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:20px 0 8px;">Los 12 Factores CTR Explicados</h3>
+      <p style="color:#555;line-height:1.8;margin-bottom:14px;">La calculadora evalúa: <strong>Contraste visual</strong> (el factor individual más impactante), <strong>claridad del elemento focal</strong>, <strong>fuerza de la señal emocional</strong>, <strong>legibilidad del texto en tamaño móvil</strong>, <strong>número de elementos en competencia</strong>, <strong>presencia facial y calidad de expresión</strong>, <strong>distintividad del color</strong> frente a convenciones del nicho, <strong>alineación texto-imagen</strong>, <strong>jerarquía de composición</strong>, <strong>calidad de resolución técnica</strong>, <strong>cumplimiento de zona segura</strong> y <strong>consistencia de marca</strong>.</p>
+      <p style="color:#555;line-height:1.8;margin-bottom:14px;">El contraste y la claridad focal tienen la mayor ponderación porque determinan si una miniatura genera algún engagement: una miniatura que falla en estos dos criterios es efectivamente invisible independientemente de la calidad del resto de elementos.</p>
+      
+      <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:20px 0 8px;">Cómo Interpretar Tu Puntuación</h3>
+      <p style="color:#555;line-height:1.8;margin-bottom:14px;">Una puntuación por debajo de 40/100 indica problemas fundamentales que suprimirán el CTR predeciblemente. Puntuaciones de 40–65 indican una miniatura funcional con oportunidades de optimización identificables. Puntuaciones por encima de 65 indican una miniatura técnicamente sólida — el rendimiento de CTR a este nivel depende principalmente de la demanda del tema y el ajuste de audiencia más que de la mecánica de la miniatura.</p>
+      
+      <div style="background:#f4f5f7;border-radius:10px;padding:20px 22px;margin-top:20px;">
+        <strong style="color:#1c1e21;font-size:.95rem;">❓ Preguntas frecuentes</strong>
+        <p style="margin-top:12px;color:#555;font-size:.9rem;"><strong>¿Qué tan precisa es la Calculadora de Puntuación CTR?</strong><br>La calculadora evalúa factores cualitativos con una correlación empírica fuerte con el rendimiento de CTR. Es una herramienta de diagnóstico, no un modelo predictivo: una puntuación de 80 no garantiza un CTR del 8%. Sin embargo, las miniaturas que puntúan por debajo de 40 rinden consistentemente mal, y mejorar los factores específicos señalados produce mejoras medibles en la mayoría de casos.</p>
+        <p style="color:#555;font-size:.9rem;margin-bottom:0;"><strong>¿Debo apuntar a una puntuación perfecta?</strong><br>Apunta a 65+, no a la perfección. Los factores que diferencian una miniatura de 65 de una de 100 son refinamientos técnicos menores. Los que diferencian una de 65 de una de 40 son problemas fundamentales (contraste pobre, demasiados elementos) que producen un gran impacto medible en el CTR real.</p>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>

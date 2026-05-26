@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TubeTools: Free YouTube Thumbnail Analyzer & Creator Tools</title>
-  <meta name="description" content="Extract any YouTube thumbnail in HD instantly. Analyze competitors, boost your CTR and grow your channel. Free, no sign-up required.">
-  <link rel="canonical" href="https://tubetools.online/en/">
-  <link rel="alternate" hreflang="en" href="https://tubetools.online/en/">
+  <title>TubeTools: Analizador de Miniaturas YouTube Gratis</title>
+  <meta name="description" content="Extrae cualquier miniatura de YouTube en HD al instante. Analiza la competencia, mejora tu CTR y haz crecer tu canal. Gratis, sin registro.">
+  <link rel="canonical" href="https://tubetools.online/">
   <link rel="alternate" hreflang="es" href="https://tubetools.online/">
+  <link rel="alternate" hreflang="en" href="https://tubetools.online/en/">
   <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/">
-  <link rel="manifest" href="../manifest.json">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="theme-color" content="#d32f2f">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tubetools.online/en/">
-  <meta property="og:title" content="TubeTools: Free YouTube Thumbnail Analyzer">
-  <meta property="og:description" content="Extract any YouTube thumbnail in HD instantly. Analyze competitors and boost your CTR. Free, no sign-up.">
-  <meta property="og:image" content="https://tubetools.online/og_image_en.png">
+  <meta property="og:url" content="https://tubetools.online/">
+  <meta property="og:title" content="TubeTools: Analizador de Miniaturas YouTube Gratis">
+  <meta property="og:description" content="Extrae cualquier miniatura de YouTube en HD al instante. Analiza la competencia y mejora tu CTR. Gratis, sin registro.">
+  <meta property="og:image" content="https://tubetools.online/og_image_es.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TubeTools: Free YouTube Thumbnail Analyzer">
-  <meta name="twitter:description" content="Extract any YouTube thumbnail in HD instantly. Free, no sign-up required.">
-  <meta name="twitter:image" content="https://tubetools.online/og_image_en.png">
+  <meta name="twitter:title" content="TubeTools: Analizador de Miniaturas YouTube Gratis">
+  <meta name="twitter:description" content="Extrae cualquier miniatura de YouTube en HD al instante. Gratis, sin registro.">
+  <meta name="twitter:image" content="https://tubetools.online/og_image_es.png">
   <meta name="google-site-verification" content="VL9NkPgXLuB5ytJr-X7bzO4QmTEgRIn7TCK3vDmgAtw">
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="preconnect" href="https://img.youtube.com" crossorigin>
@@ -38,164 +38,398 @@
   </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube Thumbnail Extractor","url":"https://tubetools.online/en/","description":"Free tool to extract and analyze YouTube thumbnails in HD. Improve your CTR without signing up.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Extractor de Miniaturas de YouTube","url":"https://tubetools.online/","description":"Herramienta gratuita para extraer y analizar miniaturas de YouTube en HD. Mejora tu CTR sin registro.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"TubeTools","url":"https://tubetools.online","description":"Herramientas gratuitas para creadores de YouTube: analizador de miniaturas, calculadora de ingresos, guías de CTR y más."}
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --red: #d32f2f; --red-dark: #b71c1c; --red-light: #ff5252;
-      --dark: #1c1e21; --dark2: #2c2e33;
-      --gray: #f4f5f7; --gray2: #e9eaec;
-      --text: #1c1e21; --text2: #555; --white: #fff;
-      --radius: 14px; --shadow: 0 4px 24px rgba(0,0,0,.08); --shadow-lg: 0 8px 40px rgba(0,0,0,.13);
+      --red: #d32f2f;
+      --red-dark: #b71c1c;
+      --red-light: #ff5252;
+      --dark: #1c1e21;
+      --dark2: #2c2e33;
+      --gray: #f4f5f7;
+      --gray2: #e9eaec;
+      --text: #1c1e21;
+      --text2: #555;
+      --white: #fff;
+      --radius: 14px;
+      --shadow: 0 4px 24px rgba(0,0,0,.08);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,.13);
     }
     html { scroll-behavior: smooth; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--gray); color: var(--text); line-height: 1.7; }
+
+    /* ── Skip link ── */
     .skip-link { position:absolute;top:-100px;left:0;background:var(--red);color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s; }
     .skip-link:focus { top:0; }
-    nav { position:sticky;top:0;z-index:1000;background:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .nav-logo { color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px; }
-    .nav-logo span { color:var(--red-light); }
-    .nav-links { display:flex;gap:6px;align-items:center; }
-    .nav-links a { color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;transition:background .2s,color .2s;white-space:nowrap; }
-    .nav-links a:hover { background:rgba(255,255,255,.08);color:#fff; }
-    .nav-links a.es-btn { color:#a5d6a7;border:1px solid rgba(165,214,167,.35); }
-    .nav-toggle { display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px; }
-    @media(max-width:680px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:var(--dark2);flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}.nav-links.open{display:flex}.nav-links a{padding:11px 14px;border-radius:8px}}
-    .hero{background:linear-gradient(135deg,var(--dark) 0%,#2d1515 50%,#1a0a0a 100%);padding:64px 20px 72px;text-align:center;position:relative;overflow:hidden;}
-    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(211,47,47,.22) 0%,transparent 70%);pointer-events:none;}
-    .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(211,47,47,.18);border:1px solid rgba(211,47,47,.4);color:#ff8a80;font-size:.8rem;font-weight:700;letter-spacing:.06em;padding:5px 14px;border-radius:999px;margin-bottom:22px;text-transform:uppercase;}
-    .hero h1{font-size:clamp(1.9rem,5vw,3rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:16px;max-width:760px;margin-left:auto;margin-right:auto;}
-    .hero h1 em{color:var(--red-light);font-style:normal;}
-    .hero-sub{font-size:clamp(.95rem,2vw,1.15rem);color:#bbb;max-width:560px;margin:0 auto 40px;}
-    .tool-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-lg);max-width:720px;margin:0 auto;padding:32px 28px 28px;position:relative;}
-    .tool-card-label{position:absolute;top:-13px;left:24px;background:var(--red);color:#fff;font-size:.75rem;font-weight:800;letter-spacing:.07em;padding:4px 14px;border-radius:999px;text-transform:uppercase;}
-    .input-row{display:flex;gap:10px;margin-bottom:14px;}
-    .url-input{flex:1;padding:14px 18px;border:2px solid var(--gray2);border-radius:10px;font-size:1rem;color:var(--text);transition:border-color .2s,box-shadow .2s;outline:none;}
-    .url-input:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(211,47,47,.12);}
-    .url-input::placeholder{color:#aaa;}
-    .btn-analyze{padding:14px 24px;background:var(--red);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s,transform .15s;}
-    .btn-analyze:hover{background:var(--red-dark);transform:translateY(-1px);}
-    .btn-clear{padding:14px 16px;background:var(--gray2);color:#666;border:none;border-radius:10px;font-size:.95rem;cursor:pointer;transition:background .2s;}
-    .btn-clear:hover{background:#ddd;}
-    @media(max-width:540px){.input-row{flex-wrap:wrap}.url-input{flex-basis:100%}.btn-analyze{flex:1}}
-    .tool-hints{display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;color:#999;padding-top:4px;}
-    .tool-hints span{display:flex;align-items:center;gap:5px;}
-    .stats-bar{background:var(--white);border-bottom:1px solid var(--gray2);padding:22px 20px;}
-    .stats-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px;text-align:center;}
-    .stat-item{flex:1;min-width:120px;}
-    .stat-num{font-size:1.55rem;font-weight:900;color:var(--red);}
-    .stat-label{font-size:.8rem;color:var(--text2);margin-top:2px;}
-    .results-section{display:none;max-width:720px;margin:32px auto 0;padding:0 20px;}
-    .results-title{font-size:1.1rem;font-weight:700;color:var(--dark);margin-bottom:18px;}
-    .result-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:20px;overflow:hidden;}
-    .result-card-header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--gray2);}
-    .result-card-header h3{font-size:.95rem;font-weight:700;color:var(--dark);}
-    .badge-rec{background:#e8f5e9;color:#2e7d32;font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:999px;text-transform:uppercase;}
-    .result-card img{width:100%;display:block;background:var(--gray2);}
-    .result-card-footer{padding:14px 18px;}
-    .btn-download{display:block;width:100%;padding:12px;background:#1b5e20;color:#fff;text-align:center;text-decoration:none;border-radius:8px;font-weight:700;font-size:.9rem;transition:background .2s;}
-    .btn-download:hover{background:#2e7d32;}
-    .results-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-    @media(max-width:500px){.results-grid{grid-template-columns:1fr}}
-    .history-section{display:none;max-width:720px;margin:24px auto 0;padding:0 20px;}
-    .history-inner{background:#fff;border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);}
-    .history-inner h3{font-size:.9rem;font-weight:700;color:var(--dark);margin-bottom:14px;}
-    .history-grid{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;}
-    .history-thumb{min-width:96px;cursor:pointer;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .2s;}
-    .history-thumb:hover{transform:scale(1.06);}
-    .history-thumb img{width:96px;height:54px;object-fit:cover;display:block;}
-    .btn-clear-history{background:none;border:1px solid #ddd;color:#999;padding:5px 12px;border-radius:6px;font-size:.75rem;cursor:pointer;margin-top:10px;}
-    .tags-section{display:none;max-width:720px;margin:20px auto 0;padding:0 20px;}
-    .tags-inner{background:#fff;border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow);}
-    .tags-inner h3{font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:4px;}
-    .tags-inner p{font-size:.83rem;color:#888;margin-bottom:14px;}
-    .tag-pill{display:inline-block;background:var(--gray);color:var(--text);padding:6px 14px;border-radius:999px;margin:0 6px 8px 0;font-size:.82rem;border:1px solid var(--gray2);}
-    .btn-copy-tags{background:var(--dark);color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:.88rem;font-weight:700;cursor:pointer;margin-top:12px;}
-    .section{max-width:960px;margin:0 auto;padding:56px 20px;}
-    .section-title{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:800;color:var(--dark);text-align:center;margin-bottom:8px;}
-    .section-sub{text-align:center;color:var(--text2);margin-bottom:36px;font-size:.97rem;}
-    .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
-    .tool-tile{background:#fff;border-radius:var(--radius);padding:26px 22px;box-shadow:var(--shadow);text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:10px;border:2px solid transparent;transition:border-color .2s,transform .2s,box-shadow .2s;}
-    .tool-tile:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:var(--shadow-lg);}
-    .tool-tile-icon{font-size:2rem;line-height:1;}
-    .tool-tile h3{font-size:1rem;font-weight:800;color:var(--dark);}
-    .tool-tile p{font-size:.85rem;color:var(--text2);line-height:1.6;flex:1;}
-    .tool-tile-cta{font-size:.82rem;font-weight:700;color:var(--red);margin-top:6px;}
-    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
-    .blog-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;text-decoration:none;color:var(--text);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;}
-    .blog-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
-    .blog-card-cat{background:var(--red);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.06em;padding:6px 14px;text-transform:uppercase;}
-    .blog-card-body{padding:18px 18px 20px;flex:1;display:flex;flex-direction:column;gap:8px;}
-    .blog-card-body h3{font-size:.97rem;font-weight:700;color:var(--dark);line-height:1.4;}
-    .blog-card-body p{font-size:.83rem;color:var(--text2);line-height:1.6;flex:1;}
-    .blog-card-link{font-size:.82rem;font-weight:700;color:var(--red);}
-    .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
-    .why-card{background:#fff;border-radius:var(--radius);padding:24px 20px;box-shadow:var(--shadow);border-left:4px solid var(--red);}
-    .why-card h3{font-size:.97rem;font-weight:700;color:var(--dark);margin-bottom:8px;}
-    .why-card p{font-size:.85rem;color:var(--text2);line-height:1.6;}
-    .seo-section{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:36px 32px;max-width:860px;margin:0 auto;}
-    .seo-section h2{font-size:1.3rem;font-weight:800;color:var(--dark);margin-bottom:14px;border-left:4px solid var(--red);padding-left:14px;}
-    .seo-section h3{font-size:1.05rem;font-weight:700;color:var(--dark);margin:22px 0 10px;}
-    .seo-section p{font-size:.93rem;color:var(--text2);line-height:1.8;margin-bottom:12px;}
-    .seo-section ul,.seo-section ol{margin:10px 0 14px 22px;}
-    .seo-section li{color:var(--text2);font-size:.93rem;line-height:2.1;}
-    .seo-section li strong{color:var(--dark);}
-    footer{background:var(--dark);color:#888;text-align:center;padding:40px 20px;margin-top:60px;}
-    .footer-logo{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:16px;}
-    .footer-logo span{color:var(--red-light);}
-    .footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:20px;}
-    .footer-links a{color:#bbb;text-decoration:none;font-size:.88rem;transition:color .2s;}
-    .footer-links a:hover{color:#fff;}
-    .footer-copy{font-size:.8rem;color:#666;}
-    #cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(28,30,33,.97);backdrop-filter:blur(6px);color:#fff;padding:18px 20px;text-align:center;z-index:9999;border-top:2px solid var(--red);}
-    #cookie-banner p{font-size:.88rem;margin-bottom:12px;color:#ccc;}
-    #cookie-banner a{color:#ff8a80;}
-    .cookie-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
-    .cookie-btn-accept{background:var(--red);color:#fff;border:none;padding:9px 22px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.88rem;}
-    .cookie-btn-reject{background:#444;color:#ccc;border:none;padding:9px 22px;border-radius:8px;cursor:pointer;font-size:.88rem;}
-    .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--dark);border-top:1px solid #333;padding:10px 16px;z-index:990;text-align:center;}
-    .sticky-cta a{color:var(--red-light);font-weight:700;font-size:.88rem;text-decoration:none;}
-    @media(max-width:768px){.sticky-cta{display:block}body{padding-bottom:46px}}
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--dark);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 58px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
+    .nav-logo { color: #fff; text-decoration: none; font-size: 1.15rem; font-weight: 800; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+    .nav-logo span { color: var(--red-light); }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a { color: #ccc; text-decoration: none; font-size: .88rem; font-weight: 500; padding: 6px 11px; border-radius: 8px; transition: background .2s, color .2s; white-space: nowrap; }
+    .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
+    .nav-links a.en-btn { color: #90caf9; border: 1px solid rgba(144,202,249,.35); }
+    .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; padding: 6px; }
+    @media(max-width:680px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0; background: var(--dark2); flex-direction: column; align-items: stretch; padding: 10px 16px 16px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 11px 14px; border-radius: 8px; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--dark) 0%, #2d1515 50%, #1a0a0a 100%);
+      padding: 64px 20px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(211,47,47,.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(211,47,47,.18); border: 1px solid rgba(211,47,47,.4);
+      color: #ff8a80; font-size: .8rem; font-weight: 700; letter-spacing: .06em;
+      padding: 5px 14px; border-radius: 999px; margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 900; color: #fff;
+      line-height: 1.15; margin-bottom: 16px;
+      max-width: 760px; margin-left: auto; margin-right: auto;
+    }
+    .hero h1 em { color: var(--red-light); font-style: normal; }
+    .hero-sub {
+      font-size: clamp(.95rem, 2vw, 1.15rem);
+      color: #bbb; max-width: 560px;
+      margin: 0 auto 40px;
+    }
+
+    /* ── TOOL CARD ── */
+    .tool-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 28px 28px;
+      position: relative;
+    }
+    .tool-card-label {
+      position: absolute; top: -13px; left: 24px;
+      background: var(--red); color: #fff;
+      font-size: .75rem; font-weight: 800; letter-spacing: .07em;
+      padding: 4px 14px; border-radius: 999px; text-transform: uppercase;
+    }
+    .input-row {
+      display: flex; gap: 10px; margin-bottom: 14px;
+    }
+    .url-input {
+      flex: 1; padding: 14px 18px;
+      border: 2px solid var(--gray2); border-radius: 10px;
+      font-size: 1rem; color: var(--text);
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .url-input:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(211,47,47,.12); }
+    .url-input::placeholder { color: #aaa; }
+    .btn-analyze {
+      padding: 14px 24px; background: var(--red); color: #fff;
+      border: none; border-radius: 10px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; white-space: nowrap; transition: background .2s, transform .15s;
+    }
+    .btn-analyze:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .btn-clear {
+      padding: 14px 16px; background: var(--gray2); color: #666;
+      border: none; border-radius: 10px; font-size: .95rem;
+      cursor: pointer; transition: background .2s;
+    }
+    .btn-clear:hover { background: #ddd; }
+    @media(max-width:540px) {
+      .input-row { flex-wrap: wrap; }
+      .url-input { flex-basis: 100%; }
+      .btn-analyze { flex: 1; }
+    }
+    .tool-hints {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      font-size: .8rem; color: #999; padding-top: 4px;
+    }
+    .tool-hints span { display: flex; align-items: center; gap: 5px; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray2);
+      padding: 22px 20px;
+    }
+    .stats-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; justify-content: space-around; flex-wrap: wrap; gap: 16px;
+      text-align: center;
+    }
+    .stat-item { flex: 1; min-width: 120px; }
+    .stat-num { font-size: 1.55rem; font-weight: 900; color: var(--red); }
+    .stat-label { font-size: .8rem; color: var(--text2); margin-top: 2px; }
+
+    /* ── RESULTS ── */
+    .results-section {
+      display: none; max-width: 720px; margin: 32px auto 0;
+      padding: 0 20px;
+    }
+    .results-title { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 18px; }
+    .result-card {
+      background: #fff; border-radius: var(--radius);
+      box-shadow: var(--shadow); margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .result-card-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 18px; border-bottom: 1px solid var(--gray2);
+    }
+    .result-card-header h3 { font-size: .95rem; font-weight: 700; color: var(--dark); }
+    .badge-rec {
+      background: #e8f5e9; color: #2e7d32;
+      font-size: .72rem; font-weight: 800; padding: 3px 10px;
+      border-radius: 999px; text-transform: uppercase;
+    }
+    .result-card img {
+      width: 100%; display: block;
+      background: var(--gray2);
+    }
+    .result-card-footer { padding: 14px 18px; }
+    .btn-download {
+      display: block; width: 100%; padding: 12px;
+      background: #1b5e20; color: #fff; text-align: center;
+      text-decoration: none; border-radius: 8px; font-weight: 700; font-size: .9rem;
+      transition: background .2s;
+    }
+    .btn-download:hover { background: #2e7d32; }
+    .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media(max-width:500px) { .results-grid { grid-template-columns: 1fr; } }
+
+    /* ── HISTORIAL ── */
+    .history-section {
+      display: none; max-width: 720px; margin: 24px auto 0;
+      padding: 0 20px;
+    }
+    .history-inner {
+      background: #fff; border-radius: var(--radius);
+      padding: 18px 20px; box-shadow: var(--shadow);
+    }
+    .history-inner h3 { font-size: .9rem; font-weight: 700; color: var(--dark); margin-bottom: 14px; }
+    .history-grid { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 6px; }
+    .history-thumb {
+      min-width: 96px; cursor: pointer; border-radius: 8px;
+      overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.12);
+      transition: transform .2s;
+    }
+    .history-thumb:hover { transform: scale(1.06); }
+    .history-thumb img { width: 96px; height: 54px; object-fit: cover; display: block; }
+    .btn-clear-history {
+      background: none; border: 1px solid #ddd; color: #999;
+      padding: 5px 12px; border-radius: 6px; font-size: .75rem;
+      cursor: pointer; margin-top: 10px; transition: border-color .2s;
+    }
+    .btn-clear-history:hover { border-color: #aaa; color: #666; }
+
+    /* ── TAGS ── */
+    .tags-section {
+      display: none; max-width: 720px; margin: 20px auto 0;
+      padding: 0 20px;
+    }
+    .tags-inner {
+      background: #fff; border-radius: var(--radius);
+      padding: 20px 22px; box-shadow: var(--shadow);
+    }
+    .tags-inner h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+    .tags-inner p { font-size: .83rem; color: #888; margin-bottom: 14px; }
+    .tag-pill {
+      display: inline-block; background: var(--gray); color: var(--text);
+      padding: 6px 14px; border-radius: 999px; margin: 0 6px 8px 0;
+      font-size: .82rem; border: 1px solid var(--gray2);
+    }
+    .btn-copy-tags {
+      background: var(--dark); color: #fff; border: none;
+      padding: 10px 20px; border-radius: 8px; font-size: .88rem;
+      font-weight: 700; cursor: pointer; margin-top: 12px; transition: background .2s;
+    }
+    .btn-copy-tags:hover { background: #333; }
+
+    /* ── TOOLS GRID ── */
+    .section { max-width: 960px; margin: 0 auto; padding: 56px 20px; }
+    .section-title {
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 800; color: var(--dark);
+      text-align: center; margin-bottom: 8px;
+    }
+    .section-sub { text-align: center; color: var(--text2); margin-bottom: 36px; font-size: .97rem; }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .tool-tile {
+      background: #fff; border-radius: var(--radius);
+      padding: 26px 22px; box-shadow: var(--shadow);
+      text-decoration: none; color: var(--text);
+      display: flex; flex-direction: column; gap: 10px;
+      border: 2px solid transparent;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .tool-tile:hover { border-color: var(--red); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .tool-tile-icon { font-size: 2rem; line-height: 1; }
+    .tool-tile h3 { font-size: 1rem; font-weight: 800; color: var(--dark); }
+    .tool-tile p { font-size: .85rem; color: var(--text2); line-height: 1.6; flex: 1; }
+    .tool-tile-cta { font-size: .82rem; font-weight: 700; color: var(--red); margin-top: 6px; }
+
+    /* ── BLOG PREVIEW ── */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .blog-card {
+      background: #fff; border-radius: var(--radius);
+      box-shadow: var(--shadow); overflow: hidden;
+      text-decoration: none; color: var(--text);
+      transition: transform .2s, box-shadow .2s;
+      display: flex; flex-direction: column;
+    }
+    .blog-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .blog-card-cat {
+      background: var(--red); color: #fff;
+      font-size: .72rem; font-weight: 800; letter-spacing: .06em;
+      padding: 6px 14px; text-transform: uppercase;
+    }
+    .blog-card-body { padding: 18px 18px 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .blog-card-body h3 { font-size: .97rem; font-weight: 700; color: var(--dark); line-height: 1.4; }
+    .blog-card-body p { font-size: .83rem; color: var(--text2); line-height: 1.6; flex: 1; }
+    .blog-card-link { font-size: .82rem; font-weight: 700; color: var(--red); }
+
+    /* ── WHY SECTION ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .why-card {
+      background: #fff; border-radius: var(--radius);
+      padding: 24px 20px; box-shadow: var(--shadow);
+      border-left: 4px solid var(--red);
+    }
+    .why-card h3 { font-size: .97rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .why-card p { font-size: .85rem; color: var(--text2); line-height: 1.6; }
+
+    /* ── SEO CONTENT ── */
+    .seo-section {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px 32px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .seo-section h2 { font-size: 1.3rem; font-weight: 800; color: var(--dark); margin-bottom: 14px; border-left: 4px solid var(--red); padding-left: 14px; }
+    .seo-section h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin: 22px 0 10px; }
+    .seo-section p { font-size: .93rem; color: var(--text2); line-height: 1.8; margin-bottom: 12px; }
+    .seo-section ul, .seo-section ol { margin: 10px 0 14px 22px; }
+    .seo-section li { color: var(--text2); font-size: .93rem; line-height: 2.1; }
+    .seo-section li strong { color: var(--dark); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); color: #888;
+      text-align: center; padding: 40px 20px;
+      margin-top: 60px;
+    }
+    .footer-logo { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 16px; }
+    .footer-logo span { color: var(--red-light); }
+    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 20px; }
+    .footer-links a { color: #bbb; text-decoration: none; font-size: .88rem; transition: color .2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: .8rem; color: #666; }
+
+    /* ── COOKIE BANNER ── */
+    #cookie-banner {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      background: rgba(28,30,33,.97); backdrop-filter: blur(6px);
+      color: #fff; padding: 18px 20px; text-align: center; z-index: 9999;
+      border-top: 2px solid var(--red);
+    }
+    #cookie-banner p { font-size: .88rem; margin-bottom: 12px; color: #ccc; }
+    #cookie-banner a { color: #ff8a80; }
+    .cookie-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .cookie-btn-accept { background: var(--red); color: #fff; border: none; padding: 9px 22px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: .88rem; }
+    .cookie-btn-reject { background: #444; color: #ccc; border: none; padding: 9px 22px; border-radius: 8px; cursor: pointer; font-size: .88rem; }
+
+    /* ── MOBILE STICKY ── */
+    .sticky-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      background: var(--dark); border-top: 1px solid #333;
+      padding: 10px 16px; z-index: 990; text-align: center;
+    }
+    .sticky-cta a { color: var(--red-light); font-weight: 700; font-size: .88rem; text-decoration: none; }
+    @media(max-width:768px) { .sticky-cta { display: block; } body { padding-bottom: 46px; } }
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
+  <!-- COOKIE BANNER -->
   <div id="cookie-banner">
-    <p>🍪 We use cookies to improve your experience and show ads. <a href="../privacidad.html">Privacy Policy</a></p>
+    <p>🍪 Usamos cookies propias y de terceros para mejorar tu experiencia y mostrar anuncios. <a href="privacidad.html">Política de Privacidad</a></p>
     <div class="cookie-btns">
-      <button class="cookie-btn-accept" id="accept-cookies">Accept all</button>
-      <button class="cookie-btn-reject" id="reject-cookies">Reject</button>
+      <button class="cookie-btn-accept" id="accept-cookies">Aceptar todo</button>
+      <button class="cookie-btn-reject" id="reject-cookies">Rechazar</button>
     </div>
   </div>
 
+  <!-- NAV -->
   <nav>
     <a href="index.html" class="nav-logo">🚀 Tube<span>Tools</span></a>
-    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Toggle menu">☰</button>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menú">☰</button>
     <div class="nav-links">
-      <a href="../index.html" class="es-btn">🇪🇸 ES</a>
-      <a href="index.html">Home</a>
-      <a href="calculator.html">Calculator</a>
+      <a href="en/index.html" class="en-btn">🇬🇧 EN</a>
+      <a href="index.html">Inicio</a>
+      <a href="calculadora.html">Calculadora</a>
+      <a href="generador-titulos-youtube.html">Herramientas</a>
       <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="contacto.html">Contacto</a>
     </div>
   </nav>
 
+  <!-- HERO -->
   <section class="hero" id="main-content">
-    <div class="hero-badge">⚡ 100% Free · No Sign-up</div>
-    <h1>Extract any YouTube thumbnail<br><em>in HD</em> — instantly</h1>
-    <p class="hero-sub">Download thumbnails from any YouTube video. Study your competitors' visuals and improve your click-through rate with real data.</p>
+    <div class="hero-badge">⚡ 100% Gratis · Sin Registro</div>
+    <h1>Analiza cualquier miniatura de<br><em>YouTube en HD</em> al instante</h1>
+    <p class="hero-sub">Extrae, estudia y descarga miniaturas de tu competencia. Mejora tu CTR y haz crecer tu canal con datos visuales reales.</p>
 
     <div class="tool-card">
-      <span class="tool-card-label">🔍 Thumbnail Analyzer</span>
+      <span class="tool-card-label">🔍 Analizador de Miniaturas</span>
       <div class="input-row">
         <input type="text" id="youtube-url" class="url-input"
-          placeholder="Paste any YouTube video URL here…"
-          aria-label="YouTube video URL">
-        <button class="btn-analyze" onclick="extractThumbnails()">Analyze</button>
-        <button class="btn-clear" onclick="document.getElementById('youtube-url').value=''" title="Clear">✕</button>
+          placeholder="Pega aquí el enlace del vídeo de YouTube…"
+          aria-label="URL de YouTube">
+        <button class="btn-analyze" onclick="extractThumbnails()">Analizar</button>
+        <button class="btn-clear" onclick="document.getElementById('youtube-url').value=''" title="Limpiar">✕</button>
       </div>
       <div class="tool-hints">
         <span>✅ youtube.com/watch?v=…</span>
@@ -205,220 +439,240 @@
     </div>
   </section>
 
+  <!-- STATS BAR -->
   <div class="stats-bar">
     <div class="stats-inner">
-      <div class="stat-item"><div class="stat-num">HD 1080p</div><div class="stat-label">Max resolution</div></div>
-      <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Quality options</div></div>
-      <div class="stat-item"><div class="stat-num">$0</div><div class="stat-label">No hidden costs</div></div>
-      <div class="stat-item"><div class="stat-num">0 data</div><div class="stat-label">No account needed</div></div>
+      <div class="stat-item"><div class="stat-num">HD 1080p</div><div class="stat-label">Máxima resolución</div></div>
+      <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Calidades disponibles</div></div>
+      <div class="stat-item"><div class="stat-num">0€</div><div class="stat-label">Sin costes ocultos</div></div>
+      <div class="stat-item"><div class="stat-num">0 datos</div><div class="stat-label">Sin registro requerido</div></div>
     </div>
   </div>
 
+  <!-- HISTORIAL -->
   <div class="history-section" id="historial-section">
     <div class="history-inner">
-      <h3>🕒 Recent extractions</h3>
+      <h3>🕒 Últimas extracciones</h3>
       <div class="history-grid" id="historial-grid"></div>
-      <button class="btn-clear-history" onclick="limpiarHistorial()">Clear history</button>
+      <button class="btn-clear-history" onclick="limpiarHistorial()">Limpiar historial</button>
     </div>
   </div>
 
+  <!-- RESULTS -->
   <div class="results-section" id="results">
-    <p class="results-title">Results — choose the quality you need:</p>
+    <p class="results-title">Resultados — elige la calidad que necesitas:</p>
     <div class="result-card">
       <div class="result-card-header">
-        <h3>1. High Resolution (HD 1080p)</h3>
-        <span class="badge-rec">⭐ Recommended</span>
+        <h3>1. Alta Resolución (HD 1080p)</h3>
+        <span class="badge-rec">⭐ Recomendado</span>
       </div>
-      <img id="img-max" src="" alt="HD 1080p thumbnail" loading="lazy">
+      <img id="img-max" src="" alt="Miniatura HD 1080p" loading="lazy">
       <div class="result-card-footer">
-        <a id="btn-max" class="btn-download" href="#">⬇ Download HD (1080p)</a>
+        <a id="btn-max" class="btn-download" href="#">⬇ Descargar HD (1080p)</a>
       </div>
     </div>
     <div class="results-grid">
       <div class="result-card">
-        <div class="result-card-header"><h3>2. High Quality (720p)</h3></div>
-        <img id="img-hq" src="" alt="720p thumbnail" loading="lazy">
-        <div class="result-card-footer"><a id="btn-hq" class="btn-download" href="#">⬇ Download 720p</a></div>
+        <div class="result-card-header"><h3>2. Alta calidad (720p)</h3></div>
+        <img id="img-hq" src="" alt="Miniatura 720p" loading="lazy">
+        <div class="result-card-footer">
+          <a id="btn-hq" class="btn-download" href="#">⬇ Descargar 720p</a>
+        </div>
       </div>
       <div class="result-card">
-        <div class="result-card-header"><h3>3. Standard Quality (480p)</h3></div>
-        <img id="img-mq" src="" alt="480p thumbnail" loading="lazy">
-        <div class="result-card-footer"><a id="btn-mq" class="btn-download" href="#">⬇ Download 480p</a></div>
+        <div class="result-card-header"><h3>3. Calidad media (480p)</h3></div>
+        <img id="img-mq" src="" alt="Miniatura 480p" loading="lazy">
+        <div class="result-card-footer">
+          <a id="btn-mq" class="btn-download" href="#">⬇ Descargar 480p</a>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- TAGS -->
   <div class="tags-section" id="tags-results">
     <div class="tags-inner">
-      <h3>🏷️ Video SEO Tags</h3>
-      <p>The exact keywords this video uses in its code. Use them to analyze the creator's positioning strategy.</p>
+      <h3>🏷️ Etiquetas SEO del vídeo</h3>
+      <p>Palabras clave que este vídeo usa en su código. Úsalas para analizar la estrategia de posicionamiento.</p>
       <div id="tags-list"></div>
-      <button class="btn-copy-tags" onclick="copyTags()">📋 Copy tags</button>
+      <button class="btn-copy-tags" onclick="copyTags()">📋 Copiar etiquetas</button>
     </div>
   </div>
 
-  <div style="background:#fff;margin-top:48px;">
+  <!-- TOOLS GRID -->
+  <div style="background:#fff; margin-top: 48px;">
     <div class="section">
-      <h2 class="section-title">All tools, completely free</h2>
-      <p class="section-sub">Everything you need to analyze, optimize, and monetize your YouTube channel.</p>
+      <h2 class="section-title">Todas las herramientas, gratis</h2>
+      <p class="section-sub">Todo lo que necesitas para analizar, optimizar y monetizar tu canal de YouTube.</p>
       <div class="tools-grid">
-        <a href="index.html" class="tool-tile">
+        <a href="analizador-miniaturas.html" class="tool-tile">
           <div class="tool-tile-icon">🖼️</div>
-          <h3>Thumbnail Analyzer</h3>
-          <p>Extract any thumbnail in HD 1080p. Study your competitors and improve your click-through rate.</p>
-          <span class="tool-tile-cta">Use now →</span>
+          <h3>Analizador de Miniaturas</h3>
+          <p>Extrae cualquier miniatura en HD 1080p. Estudia a tu competencia y mejora tu CTR.</p>
+          <span class="tool-tile-cta">Usar ahora →</span>
         </a>
-        <a href="calculator.html" class="tool-tile">
+        <a href="calculadora.html" class="tool-tile">
           <div class="tool-tile-icon">🧮</div>
-          <h3>Revenue Calculator</h3>
-          <p>Estimate your YouTube earnings based on views, RPM, and niche. No complicated formulas.</p>
-          <span class="tool-tile-cta">Calculate →</span>
+          <h3>Calculadora de Ingresos</h3>
+          <p>Estima cuánto puedes ganar según tus visualizaciones, RPM y nicho. Sin fórmulas complicadas.</p>
+          <span class="tool-tile-cta">Calcular →</span>
         </a>
-        <a href="guide-thumbnails-ctr.html" class="tool-tile">
+        <a href="generador-titulos-youtube.html" class="tool-tile">
           <div class="tool-tile-icon">🎯</div>
-          <h3>CTR & Thumbnail Guide</h3>
-          <p>The definitive guide to thumbnail psychology, design, and the algorithm. Data-driven, not generic advice.</p>
-          <span class="tool-tile-cta">Read guide →</span>
+          <h3>Generador de Títulos</h3>
+          <p>Crea títulos optimizados para el algoritmo que atraigan clics y posicionen en búsqueda.</p>
+          <span class="tool-tile-cta">Generar →</span>
         </a>
-        <a href="glossary.html" class="tool-tile">
+        <a href="checklist-miniaturas.html" class="tool-tile">
+          <div class="tool-tile-icon">✅</div>
+          <h3>Checklist de Miniaturas</h3>
+          <p>Valida tu miniatura antes de publicar con los 10 puntos clave que garantizan mayor CTR.</p>
+          <span class="tool-tile-cta">Ver checklist →</span>
+        </a>
+        <a href="calculadora-puntuacion-ctr.html" class="tool-tile">
+          <div class="tool-tile-icon">📊</div>
+          <h3>Puntuación CTR</h3>
+          <p>Puntúa el potencial de CTR de tu miniatura antes de publicarla con 12 criterios técnicos.</p>
+          <span class="tool-tile-cta">Puntuar →</span>
+        </a>
+        <a href="glosario.html" class="tool-tile">
           <div class="tool-tile-icon">📖</div>
-          <h3>YouTube Glossary</h3>
-          <p>80+ terms from the YouTube ecosystem explained clearly: RPM, CTR, CPM, YPP, and more.</p>
-          <span class="tool-tile-cta">Browse →</span>
-        </a>
-        <a href="how-to-increase-youtube-rpm.html" class="tool-tile">
-          <div class="tool-tile-icon">📈</div>
-          <h3>RPM Growth Guide</h3>
-          <p>10 proven strategies to increase your YouTube RPM in 2026. With real data and niche-specific examples.</p>
-          <span class="tool-tile-cta">Read →</span>
-        </a>
-        <a href="best-youtube-niches-adsense.html" class="tool-tile">
-          <div class="tool-tile-icon">💰</div>
-          <h3>Best Niches for AdSense</h3>
-          <p>Which YouTube niches pay the most in 2026? Finance, tech, gaming — ranked with real CPM data.</p>
-          <span class="tool-tile-cta">See ranking →</span>
+          <h3>Glosario YouTube</h3>
+          <p>Más de 80 términos del ecosistema YouTube explicados en español: RPM, CTR, CPM y mucho más.</p>
+          <span class="tool-tile-cta">Ver glosario →</span>
         </a>
       </div>
     </div>
   </div>
 
+  <!-- WHY TUBETOOLS -->
   <div class="section">
-    <h2 class="section-title">Why TubeTools?</h2>
-    <p class="section-sub">Real tools for real creators — no paywalls, no tricks.</p>
+    <h2 class="section-title">¿Por qué TubeTools?</h2>
+    <p class="section-sub">Herramientas reales para creadores reales, sin barreras.</p>
     <div class="why-grid">
       <div class="why-card">
-        <h3>⚡ Instant, no account</h3>
-        <p>No tool on TubeTools requires creating an account. Paste the URL, get the result. Zero friction.</p>
+        <h3>⚡ Instantáneo y sin registro</h3>
+        <p>Ninguna herramienta de TubeTools requiere crear una cuenta. Pegas la URL, obtienes el resultado. Sin fricciones.</p>
       </div>
       <div class="why-card">
-        <h3>📱 Built for mobile</h3>
-        <p>Designed mobile-first. Works perfectly on any device, screen size, and slow connection.</p>
+        <h3>📱 Optimizado para móvil</h3>
+        <p>Diseñado mobile-first. Funciona perfectamente en cualquier dispositivo, tamaño de pantalla y conexión lenta.</p>
       </div>
       <div class="why-card">
-        <h3>🔒 Your privacy respected</h3>
-        <p>We don't store the URLs you enter or the images you download. Everything is processed in real time.</p>
+        <h3>🔒 Tu privacidad, respetada</h3>
+        <p>No almacenamos las URLs que introduces ni las imágenes descargadas. Todo se procesa en tiempo real.</p>
       </div>
       <div class="why-card">
-        <h3>🎓 Data-driven content</h3>
-        <p>Articles written with real CPM, CTR, and RPM data — not generic advice. Learn what actually works.</p>
+        <h3>🎓 Guías basadas en datos</h3>
+        <p>Artículos escritos con datos reales de CPM, CTR y RPM, no consejos genéricos. Aprende qué funciona de verdad.</p>
       </div>
     </div>
   </div>
 
-  <div style="background:#fff;padding-top:1px;padding-bottom:1px;">
+  <!-- BLOG PREVIEW -->
+  <div style="background:#fff; padding-top:1px; padding-bottom:1px;">
     <div class="section">
-      <h2 class="section-title">Learn to monetize your channel</h2>
-      <p class="section-sub">Data-driven guides for YouTube creators in 2026.</p>
+      <h2 class="section-title">Aprende a monetizar tu canal</h2>
+      <p class="section-sub">Guías basadas en datos reales para creadores de YouTube en 2026.</p>
       <div class="blog-grid">
-        <a href="guide-thumbnails-ctr.html" class="blog-card">
-          <div class="blog-card-cat">Definitive Guide</div>
+        <a href="guia-miniaturas-ctr.html" class="blog-card">
+          <div class="blog-card-cat">Guía Definitiva</div>
           <div class="blog-card-body">
-            <h3>The Definitive CTR & Thumbnail Guide for YouTube 2026</h3>
-            <p>Everything about thumbnail design, click psychology, and algorithm optimization. With real data.</p>
-            <span class="blog-card-link">Read guide →</span>
+            <h3>La Guía Definitiva de CTR y Miniaturas para YouTube 2026</h3>
+            <p>Todo lo que necesitas saber sobre diseño de miniaturas, psicología del clic y optimización del algoritmo.</p>
+            <span class="blog-card-link">Leer guía →</span>
           </div>
         </a>
-        <a href="how-to-increase-youtube-rpm.html" class="blog-card">
-          <div class="blog-card-cat">Monetization</div>
+        <a href="aumentar-rpm-youtube.html" class="blog-card">
+          <div class="blog-card-cat">Monetización</div>
           <div class="blog-card-body">
-            <h3>How to Increase Your YouTube RPM: 10 Proven Strategies for 2026</h3>
-            <p>From high-CPM niches to US audience targeting and mid-roll optimization. Real data included.</p>
-            <span class="blog-card-link">Read →</span>
+            <h3>Cómo Aumentar tu RPM en YouTube: 10 Estrategias Probadas para 2026</h3>
+            <p>Desde nichos de alto CPM hasta audiencia de EEUU y optimización de mid-rolls. Con datos reales.</p>
+            <span class="blog-card-link">Leer →</span>
           </div>
         </a>
-        <a href="youtube-cpm-by-niche.html" class="blog-card">
-          <div class="blog-card-cat">CPM & Data</div>
+        <a href="cpm-youtube-por-nicho.html" class="blog-card">
+          <div class="blog-card-cat">CPM & Datos</div>
           <div class="blog-card-body">
-            <h3>YouTube CPM by Niche 2026: Complete Ranking with Real Data</h3>
-            <p>Finance, gaming, education, tech — which niches pay the most and why. Tables with real figures.</p>
-            <span class="blog-card-link">Read →</span>
+            <h3>CPM de YouTube por Nicho en 2026: Ranking Completo con Datos Reales</h3>
+            <p>Finanzas, gaming, educación, tecnología… qué nichos pagan más y por qué. Tablas con cifras reales.</p>
+            <span class="blog-card-link">Leer →</span>
           </div>
         </a>
-        <a href="youtube-monetization-requirements.html" class="blog-card">
-          <div class="blog-card-cat">Monetization</div>
+        <a href="requisitos-monetizacion-youtube.html" class="blog-card">
+          <div class="blog-card-cat">Monetización</div>
           <div class="blog-card-body">
-            <h3>YouTube Monetization Requirements 2026: Complete Step-by-Step Guide</h3>
-            <p>YPP tiers, subscribers, watch hours, the application process, and rejection mistakes to avoid.</p>
-            <span class="blog-card-link">Read →</span>
+            <h3>Requisitos para Monetizar YouTube en 2026: Guía Completa Paso a Paso</h3>
+            <p>YPP niveles, suscriptores, horas, proceso de solicitud y los errores que te harán rechazar.</p>
+            <span class="blog-card-link">Leer →</span>
           </div>
         </a>
         <a href="blog.html" class="blog-card" style="justify-content:center;align-items:center;min-height:140px;background:linear-gradient(135deg,#1c1e21,#2d1515);color:#fff;">
           <div style="text-align:center;padding:24px;">
             <div style="font-size:2rem;margin-bottom:8px;">📚</div>
-            <div style="font-weight:800;font-size:1rem;color:#fff;">View all articles</div>
-            <div style="font-size:.83rem;color:#bbb;margin-top:6px;">15+ guides for creators</div>
+            <div style="font-weight:800;font-size:1rem;color:#fff;">Ver todos los artículos</div>
+            <div style="font-size:.83rem;color:#bbb;margin-top:6px;">15+ guías para creadores</div>
           </div>
         </a>
       </div>
     </div>
   </div>
 
+  <!-- SEO CONTENT -->
   <div class="section">
     <div class="seo-section">
-      <h2>How to Analyze YouTube Thumbnails to Improve Your CTR</h2>
-      <p>TubeTools lets you extract and study any YouTube video's thumbnail at maximum available resolution in seconds. Simply paste the video URL into the tool above and click "Analyze". You'll get the image in <strong>HD 1080p</strong>, 720p, and 480p so you can study every detail of composition, typography, and color.</p>
+      <h2>Guía Completa: Cómo Analizar Miniaturas de YouTube para Mejorar tu CTR</h2>
+      <p>Con TubeTools puedes visualizar y estudiar la miniatura de cualquier vídeo de YouTube en su máxima resolución disponible en segundos. Solo copia la URL del vídeo, pégala en la herramienta y haz clic en "Analizar". Obtendrás la imagen en <strong>HD 1080p</strong>, 720p y 480p para estudiar todos los detalles de composición, tipografía y color.</p>
 
-      <h3>Why Analyzing Competitor Thumbnails Matters</h3>
-      <p>The <strong>CTR (Click-Through Rate)</strong> determines whether YouTube's algorithm distributes your video to more people or ignores it. Channels in the Top 1% of their niche consistently achieve CTRs between 8% and 15%, while the average sits at 2%–5%. The single biggest factor separating those ranges is thumbnail design.</p>
-      <p>Studying the thumbnails of the top-performing videos in your niche lets you identify the visual patterns your specific audience responds to best: color schemes, subject positioning, text usage, facial expressions. These patterns aren't accidental — they're the result of months or years of A/B testing by the largest channels in your category.</p>
+      <h3>¿Por qué analizar las miniaturas de tu competencia?</h3>
+      <p>El <strong>CTR (Click-Through Rate)</strong> es la métrica que determina si el algoritmo de YouTube distribuye tu vídeo a más personas o lo ignora. Los canales del Top 1% de su nicho tienen CTRs entre el 8% y el 15%, mientras que la media está entre el 2% y el 5%. La diferencia entre esos rangos la hace principalmente el diseño de la miniatura.</p>
+      <p>Estudiar las miniaturas de los vídeos más vistos de tu nicho te permite identificar los patrones visuales que tu audiencia específica responde mejor: esquemas de color, posición del sujeto, uso del texto, tipo de expresión facial. Estos patrones no son accidentales — son el resultado de meses o años de A/B testing de los canales más grandes.</p>
 
-      <h3>How to Use TubeTools' Thumbnail Analyzer</h3>
+      <h3>Cómo usar el analizador de miniaturas de TubeTools</h3>
       <ol>
-        <li><strong>Find the 5 most-viewed videos in your niche</strong> from the last 30 days using YouTube's search filtered by "This month".</li>
-        <li><strong>Copy each video URL</strong> and paste it into TubeTools' analyzer above.</li>
-        <li><strong>Download the HD thumbnail</strong> and analyze: dominant colors, subject position, font size and weight, amount of text, accent elements.</li>
-        <li><strong>Identify the 3 most common patterns</strong> across the highest-performing thumbnails.</li>
-        <li><strong>Design your next thumbnail</strong> replicating those patterns with one distinctive element of your own.</li>
+        <li><strong>Localiza los 5 vídeos más vistos de tu nicho</strong> en el último mes usando la búsqueda de YouTube filtrada por "Este mes".</li>
+        <li><strong>Copia la URL de cada vídeo</strong> y pégala en el analizador de TubeTools.</li>
+        <li><strong>Descarga la miniatura en HD</strong> y analiza: colores dominantes, posición del sujeto, tamaño y tipo de fuente, presencia de texto, elementos de acento.</li>
+        <li><strong>Identifica los 3 patrones más repetidos</strong> entre las miniaturas que más visualizaciones tienen.</li>
+        <li><strong>Diseña tu próxima miniatura</strong> replicando esos patrones con un elemento diferenciador propio.</li>
       </ol>
 
-      <h3>Frequently Asked Questions</h3>
-      <p><strong>Is it legal to download YouTube thumbnails?</strong><br>
-      Yes. Thumbnails are public images accessible through YouTube's public APIs. TubeTools uses them exclusively for educational and competitive analysis purposes. Copyright for each thumbnail belongs to the original video creator.</p>
-      <p><strong>Why doesn't the 1080p version always appear?</strong><br>
-      YouTube only generates the maxresdefault (1080p) version for videos uploaded in high resolution. If the video was uploaded in standard quality or is very old, the maximum available resolution may be 720p or 480p. This is a YouTube limitation, not TubeTools.</p>
+      <h3>Preguntas frecuentes sobre el extractor de miniaturas</h3>
+      <p><strong>¿Es legal descargar miniaturas de YouTube?</strong><br>
+      Sí. Las miniaturas son imágenes públicas accesibles a través de las APIs de YouTube. TubeTools las usa exclusivamente con fines educativos y de análisis competitivo. Los derechos de autor de cada miniatura pertenecen a su creador original.</p>
+      <p><strong>¿Por qué a veces no aparece la versión 1080p?</strong><br>
+      YouTube solo genera la versión maxresdefault (1080p) para vídeos que han sido subidos en alta resolución. Si el vídeo fue subido en calidad estándar o es muy antiguo, la máxima resolución disponible puede ser 720p o 480p. Esto es una limitación de YouTube, no de TubeTools.</p>
     </div>
   </div>
 
-  <footer>
-    <div class="footer-logo">🚀 Tube<span>Tools</span></div>
-    <div class="footer-links">
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="glossary.html">Glossary</a>
-      <a href="calculator.html">Calculator</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="contact.html">Contact</a>
-      <a href="../index.html">🇪🇸 Español</a>
-    </div>
-    <p class="footer-copy">&copy; 2026 TubeTools.online — All rights reserved.</p>
-  </footer>
+  <!-- FOOTER -->
+  <footer style="background:#1c1e21;color:#888;text-align:center;padding:36px 20px;margin-top:40px;">
+  <div style="font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:16px;">🚀 Tube<span style="color:#ff5252">Tools</span></div>
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:6px 16px;margin-bottom:16px;">
+    <a href="index.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Inicio</a>
+    <a href="generador-titulos-youtube.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Generador Títulos</a>
+    <a href="calculadora.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Calculadora</a>
+    <a href="calculadora-puntuacion-ctr.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Puntuación CTR</a>
+    <a href="checklist-miniaturas.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Checklist</a>
+    <a href="analizador-miniaturas.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Analizador</a>
+    <a href="blog.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Blog</a>
+    <a href="glosario.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Glosario</a>
+    <a href="privacidad.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Privacidad</a>
+    <a href="terminos.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Términos</a>
+    <a href="contacto.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Contacto</a>
+    <a href="en/index.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">🇬🇧 English</a>
+  </div>
+  <p style="font-size:.78rem;color:#666;">&copy; 2026 TubeTools.online — Todos los derechos reservados.</p>
+</footer>
 
+  <!-- MOBILE STICKY -->
   <div class="sticky-cta">
-    <a href="#main-content" onclick="document.getElementById('youtube-url').focus()">🔍 Extract thumbnail free →</a>
+    <a href="#main-content" onclick="document.getElementById('youtube-url').focus()">🔍 Analizar miniatura gratis →</a>
   </div>
 
+  <!-- SCRIPTS -->
   <script>
+    // Cookie banner
     if (!localStorage.getItem('cookieConsent')) document.getElementById('cookie-banner').style.display = 'block';
     document.getElementById('accept-cookies').addEventListener('click', function() {
       localStorage.setItem('cookieConsent', 'accepted');
@@ -428,10 +682,14 @@
       localStorage.setItem('cookieConsent', 'rejected');
       document.getElementById('cookie-banner').style.display = 'none';
     });
+
+    // Enter key on input
     document.getElementById('youtube-url').addEventListener('keydown', function(e) {
       if (e.key === 'Enter') extractThumbnails();
     });
+
     let currentTagsText = '';
+
     function extractThumbnails() {
       const url = document.getElementById('youtube-url').value.trim();
       const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|shorts\/|watch\?v=|\&v=)([^#\&\?]*).*/;
@@ -439,44 +697,123 @@
       if (match && match[2].length === 11) {
         const videoId = match[2];
         guardarEnHistorial(videoId);
-        const urls = { max:`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`, hq:`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`, mq:`https://img.youtube.com/vi/${videoId}/mqdefault.jpg` };
+        const urls = {
+          max: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+          hq:  `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+          mq:  `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
+        };
         document.getElementById('img-max').src = urls.max;
         document.getElementById('img-hq').src  = urls.hq;
         document.getElementById('img-mq').src  = urls.mq;
         document.getElementById('results').style.display = 'block';
         document.getElementById('tags-results').style.display = 'block';
-        document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⏳ Extracting tags…</span>';
-        fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`)
+        document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⏳ Extrayendo etiquetas…</span>';
+
+        const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+        fetch(`https://noembed.com/embed?url=${videoUrl}`)
           .then(r => r.json())
           .then(data => {
-            const t = data.title ? data.title.replace(/[^a-zA-Z0-9]/g,'_') : 'Thumbnail';
-            setupDownloadButton('btn-max',urls.max,`${t}_HD.jpg`);
-            setupDownloadButton('btn-hq',urls.hq,`${t}_HQ.jpg`);
-            setupDownloadButton('btn-mq',urls.mq,`${t}_Normal.jpg`);
-          }).catch(()=>{ setupDownloadButton('btn-max',urls.max,'Thumbnail_HD.jpg'); setupDownloadButton('btn-hq',urls.hq,'Thumbnail_HQ.jpg'); setupDownloadButton('btn-mq',urls.mq,'Thumbnail_Normal.jpg'); });
+            const t = data.title ? data.title.replace(/[^a-zA-Z0-9]/g, '_') : 'Miniatura';
+            setupDownloadButton('btn-max', urls.max, `${t}_HD.jpg`);
+            setupDownloadButton('btn-hq',  urls.hq,  `${t}_HQ.jpg`);
+            setupDownloadButton('btn-mq',  urls.mq,  `${t}_Normal.jpg`);
+          })
+          .catch(() => {
+            setupDownloadButton('btn-max', urls.max, 'Miniatura_HD.jpg');
+            setupDownloadButton('btn-hq',  urls.hq,  'Miniatura_HQ.jpg');
+            setupDownloadButton('btn-mq',  urls.mq,  'Miniatura_Normal.jpg');
+          });
+
         fetch(`https://api.codetabs.com/v1/proxy?quest=https://www.youtube.com/watch?v=${videoId}`)
-          .then(r=>{if(r.ok)return r.text();throw new Error();})
-          .then(html=>{const m=html.match(/<meta\s+name="keywords"\s+content="([^"]+)"/i);if(m&&m[1]){currentTagsText=m[1];document.getElementById('tags-list').innerHTML=m[1].split(',').map(t=>t.trim()).filter(Boolean).map(t=>`<span class="tag-pill">${t}</span>`).join('');}else{document.getElementById('tags-list').innerHTML='<span class="tag-pill">❌ No tags found</span>';}})
-          .catch(()=>{document.getElementById('tags-list').innerHTML='<span class="tag-pill">⚠️ Could not extract tags</span>';});
-        setTimeout(()=>document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'}),100);
-      } else { alert('Invalid URL. Please paste a valid YouTube video link.'); }
+          .then(r => { if (r.ok) return r.text(); throw new Error(); })
+          .then(html => {
+            const m = html.match(/<meta\s+name="keywords"\s+content="([^"]+)"/i);
+            if (m && m[1]) {
+              currentTagsText = m[1];
+              document.getElementById('tags-list').innerHTML = m[1].split(',').map(t => t.trim()).filter(Boolean).map(t => `<span class="tag-pill">${t}</span>`).join('');
+            } else {
+              document.getElementById('tags-list').innerHTML = '<span class="tag-pill">❌ Sin etiquetas configuradas</span>';
+            }
+          })
+          .catch(() => { document.getElementById('tags-list').innerHTML = '<span class="tag-pill">⚠️ Error al extraer etiquetas</span>'; });
+
+        setTimeout(() => document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      } else {
+        alert('URL no válida. Asegúrate de copiar un enlace de YouTube correcto.');
+      }
     }
-    function copyTags(){ if(currentTagsText){navigator.clipboard.writeText(currentTagsText).then(()=>alert('✅ Tags copied!'));}else{alert('No tags to copy.');} }
-    async function setupDownloadButton(btnId,imageUrl,fileName){
-      const btn=document.getElementById(btnId);
-      btn.onclick=async function(e){
-        e.preventDefault();const orig=btn.innerHTML;btn.innerHTML='⏳ Downloading…';
-        const proxies=[`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(imageUrl)}`,`https://corsproxy.io/?${encodeURIComponent(imageUrl)}`,`https://api.allorigins.win/raw?url=${encodeURIComponent(imageUrl)}`];
-        let ok=false;
-        for(const proxy of proxies){try{const res=await fetch(proxy);if(!res.ok)continue;const blob=await res.blob();const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=fileName;document.body.appendChild(a);a.click();URL.revokeObjectURL(a.href);document.body.removeChild(a);btn.innerHTML='✅ Downloaded!';setTimeout(()=>btn.innerHTML=orig,2000);ok=true;break;}catch(err){}}
-        if(!ok){btn.innerHTML='❌ Error';setTimeout(()=>btn.innerHTML=orig,2000);window.open(imageUrl,'_blank');}
+
+    function copyTags() {
+      if (currentTagsText) {
+        navigator.clipboard.writeText(currentTagsText).then(() => alert('✅ Etiquetas copiadas al portapapeles'));
+      } else {
+        alert('No hay etiquetas para copiar.');
+      }
+    }
+
+    async function setupDownloadButton(btnId, imageUrl, fileName) {
+      const btn = document.getElementById(btnId);
+      btn.onclick = async function(e) {
+        e.preventDefault();
+        const orig = btn.innerHTML;
+        btn.innerHTML = '⏳ Descargando…';
+        const proxies = [
+          `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(imageUrl)}`,
+          `https://corsproxy.io/?${encodeURIComponent(imageUrl)}`,
+          `https://api.allorigins.win/raw?url=${encodeURIComponent(imageUrl)}`
+        ];
+        let ok = false;
+        for (const proxy of proxies) {
+          try {
+            const res = await fetch(proxy);
+            if (!res.ok) continue;
+            const blob = await res.blob();
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = fileName;
+            document.body.appendChild(a); a.click();
+            URL.revokeObjectURL(a.href); document.body.removeChild(a);
+            btn.innerHTML = '✅ ¡Descargada!';
+            setTimeout(() => btn.innerHTML = orig, 2000);
+            ok = true; break;
+          } catch(err) {}
+        }
+        if (!ok) { btn.innerHTML = '❌ Error'; setTimeout(() => btn.innerHTML = orig, 2000); window.open(imageUrl, '_blank'); }
       };
     }
-    function cargarHistorial(){const h=JSON.parse(localStorage.getItem('tubeToolsHistorial')||'[]');const sec=document.getElementById('historial-section');const grid=document.getElementById('historial-grid');if(!h.length){sec.style.display='none';return;}sec.style.display='block';grid.innerHTML=h.map(item=>`<div class="history-thumb" onclick="document.getElementById('youtube-url').value='https://www.youtube.com/watch?v=${item.id}';extractThumbnails()"><img src="${item.img}" alt="Recent thumbnail" loading="lazy"></div>`).join('');}
-    function guardarEnHistorial(id){let h=JSON.parse(localStorage.getItem('tubeToolsHistorial')||'[]');h=h.filter(i=>i.id!==id);h.unshift({id,img:`https://img.youtube.com/vi/${id}/mqdefault.jpg`});if(h.length>5)h.pop();localStorage.setItem('tubeToolsHistorial',JSON.stringify(h));cargarHistorial();}
-    function limpiarHistorial(){localStorage.removeItem('tubeToolsHistorial');cargarHistorial();}
-    window.addEventListener('load',cargarHistorial);
+
+    function cargarHistorial() {
+      const h = JSON.parse(localStorage.getItem('tubeToolsHistorial') || '[]');
+      const sec = document.getElementById('historial-section');
+      const grid = document.getElementById('historial-grid');
+      if (!h.length) { sec.style.display = 'none'; return; }
+      sec.style.display = 'block';
+      grid.innerHTML = h.map(item => `
+        <div class="history-thumb" onclick="document.getElementById('youtube-url').value='https://www.youtube.com/watch?v=${item.id}';extractThumbnails()">
+          <img src="${item.img}" alt="Miniatura reciente" loading="lazy">
+        </div>`).join('');
+    }
+
+    function guardarEnHistorial(id) {
+      let h = JSON.parse(localStorage.getItem('tubeToolsHistorial') || '[]');
+      h = h.filter(i => i.id !== id);
+      h.unshift({ id, img: `https://img.youtube.com/vi/${id}/mqdefault.jpg` });
+      if (h.length > 5) h.pop();
+      localStorage.setItem('tubeToolsHistorial', JSON.stringify(h));
+      cargarHistorial();
+    }
+
+    function limpiarHistorial() {
+      localStorage.removeItem('tubeToolsHistorial');
+      cargarHistorial();
+    }
+
+    window.addEventListener('load', cargarHistorial);
   </script>
-  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{});}</script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  </script>
 </body>
 </html>
