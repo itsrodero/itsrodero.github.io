@@ -72,21 +72,8 @@
   <!-- Performance hints -->
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How should I design YouTube thumbnails for mobile?","acceptedAnswer":{"@type":"Answer","text":"To design mobile-first YouTube thumbnails: use a minimum font size of 40pt (at 1280×720 resolution), ensure text has a thick outline stroke instead of drop shadow, keep the primary subject in the left or center two-thirds of the frame, and test by viewing the thumbnail at 120×68 pixels — its size in YouTube's sidebar on mobile."}},{"@type":"Question","name":"What percentage of YouTube views come from mobile?","acceptedAnswer":{"@type":"Answer","text":"In 2026, approximately 70% of YouTube views come from mobile devices. This makes mobile optimization of thumbnails critical — a thumbnail designed only for desktop viewing at full size will appear blurry, unreadable, or indistinct on the small screens that deliver the majority of impressions."}},{"@type":"Question","name":"What font size should I use for YouTube thumbnails?","acceptedAnswer":{"@type":"Answer","text":"At 1280×720 resolution, use a minimum of 40-50pt for primary text and 30pt for secondary text. After designing, always test by resizing your thumbnail to 320×180px (quarter size) and verifying the text remains legible. If it's not readable at quarter size, it will fail on mobile."}}]}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tubetools.online/en/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://tubetools.online/en/blog.html"},{"@type":"ListItem","position":3,"name":"Mobile-First Thumbnail Design: The 70% Rule","item":"https://tubetools.online/en/article13.html"}]}
-  </script>
-  <style>
-    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
-    .skip-link:focus{top:0;}
-  </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
 <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
   <p style="margin-bottom:15px;">🍪 We use cookies to improve your experience and show personalized ads. <a href="privacy.html" style="color:#ff4757;">Privacy Policy</a>.</p>
   <button onclick="localStorage.setItem('cookieConsent','accepted');this.parentElement.style.display='none';" style="background:#d32f2f;color:white;border:none;padding:10px 20px;border-radius:5px;margin-right:10px;cursor:pointer;">Accept</button>
@@ -96,11 +83,9 @@
 
 <nav style="background-color:#1c1e21;padding:15px 25px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,0.1);">
   <a href="index.html" style="font-weight:bold;font-size:22px;text-decoration:none;color:white;">🚀 TubeTools</a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Toggle menu">☰</button>
-  <div class="nav-links" style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+  <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
     <a href="../articulo13.html" style="color:#4CAF50;text-decoration:none;font-weight:bold;font-size:15px;">🇪🇸 ES</a>
     <a href="index.html" style="color:white;text-decoration:none;font-weight:bold;font-size:15px;">Home</a>
-    <a href="youtube-title-generator.html" style="color:#ff6b6b;text-decoration:none;font-weight:bold;font-size:15px;">🎯 Tools</a>
     <a href="calculator.html" style="color:white;text-decoration:none;font-weight:bold;font-size:15px;">Calculator</a>
     <a href="blog.html" style="color:white;text-decoration:none;font-weight:bold;font-size:15px;">Blog</a>
     <a href="contact.html" style="color:white;text-decoration:none;font-weight:bold;font-size:15px;">Contact</a>
@@ -114,7 +99,7 @@
   </div>
 </header>
 
-<main class="container" id="main-content">
+<main class="container">
   <article class="article-body">
     <p class="text-muted small mb-4 text-uppercase fw-bold">12 Minute Read • UX Design</p>
 
@@ -170,71 +155,17 @@
       <p>Use our free <strong>HD Thumbnail Extractor</strong> to pull competitor thumbnails at full 1280×720 resolution, then scale them down manually on your device to simulate the mobile browsing experience. Understanding what works at real mobile scale is the fastest way to calibrate your own designs.</p>
       <a href="index.html" class="btn btn-info btn-lg rounded-pill px-5 py-3 fw-bold mt-3" style="color:white;">START FREE VISUAL INSPECTION</a>
     </div>
-  
-            <div style="margin-top:36px;padding-top:28px;border-top:2px solid #eee;">
-              <h2 style="font-size:1.25rem;font-weight:800;color:#1c1e21;margin-bottom:16px;">Designing Thumbnails for the 70% Mobile Majority</h2>
-              <p>In 2026, mobile devices account for over 70% of YouTube's total viewing time. This statistic alone should fundamentally change how creators approach thumbnail design — yet the majority still design thumbnails on desktop monitors and evaluate them at full resolution, then wonder why performance data from mobile-dominant audiences is disappointing. Mobile-first thumbnail design means making decisions for the smallest display context first, then verifying quality at larger sizes.</p>
-      <p>The fundamental difference between mobile and desktop thumbnail evaluation is scale. At desktop sidebar size (196×110px), a moderately complex thumbnail is readable. At mobile browse size on a 5-inch screen (approximately 130×72px), only thumbnails with extreme contrast, minimal text, and bold visual hierarchy remain legible. Every design decision — font size, stroke weight, number of elements, color contrast — must be validated at this size before the thumbnail is considered complete.</p>
-      <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:20px 0 8px;">Mobile Design Principles That Drive CTR</h3>
-      <p>Four principles specifically optimize thumbnails for mobile viewing: <strong>Single-point focus</strong> — mobile thumbnails cannot support multiple competing focal points. Design with one dominant element that captures attention even at 130px width. <strong>Extreme contrast</strong> — aim for a contrast ratio of at least 4.5:1 between text and background. Low-contrast designs become unreadable on budget Android devices with uncalibrated screens. <strong>Bold typography</strong> — minimum 36px at 1280×720 for any text element, with stroke weights that survive compression. <strong>Emotion at scale</strong> — facial expressions must be legible at 130px width. Close-cropped faces with exaggerated expressions outperform wide-shot faces at mobile size.</p>
-      <div style="background:#f4f5f7;border-radius:10px;padding:18px 22px;margin-top:20px;">
-        <strong style="color:#1c1e21;font-size:.95rem;">❓ Frequently Asked Questions</strong>
-        <p style="margin-top:12px;color:#555;font-size:.9rem;"><strong>How do I test my thumbnail at mobile size?</strong><br>The most reliable method: upload the thumbnail to YouTube Studio and view it in the mobile preview mode. Alternatively, paste the image into a design tool and resize it to 130×72px, or view it on your own smartphone at YouTube's browse display size. The 2-second test — showing a resized thumbnail to someone for 2 seconds and asking what the video is about — remains the most practical mobile legibility test.</p>
-        <p style="color:#555;font-size:.9rem;margin-bottom:0;"><strong>Should I design different thumbnails for mobile and desktop?</strong><br>YouTube doesn't support device-specific thumbnails, so you must design one thumbnail that works at all sizes. The solution is mobile-first design: start at the small size, ensure all elements are legible, then verify quality at desktop size. A thumbnail designed mobile-first will almost always work on desktop; the reverse is not true.</p>
-      </div>
-            </div>
-        </article>
+  </article>
+</main>
 
-    <section style="margin:40px 0;padding:25px;background:#f9f9f9;border-radius:12px;">
-      <h2 style="color:#d32f2f;margin-bottom:20px;">❓ Frequently Asked Questions</h2>
-      <div style="margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:18px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">How should I design YouTube thumbnails for mobile?</h3>
-        <p style="color:#555;line-height:1.7;">To design mobile-first YouTube thumbnails: use a minimum font size of 40pt (at 1280×720 resolution), ensure text has a thick outline stroke instead of drop shadow, keep the primary subject in the left or center two-thirds of the frame, and test by viewing the thumbnail at 120×68 pixels — its size in YouTube's sidebar on mobile.</p>
-      </div>
-      <div style="margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:18px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">What percentage of YouTube views come from mobile?</h3>
-        <p style="color:#555;line-height:1.7;">In 2026, approximately 70% of YouTube views come from mobile devices. This makes mobile optimization of thumbnails critical — a thumbnail designed only for desktop viewing at full size will appear blurry, unreadable, or indistinct on the small screens that deliver the majority of impressions.</p>
-      </div>
-      <div style="margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:18px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">What font size should I use for YouTube thumbnails?</h3>
-        <p style="color:#555;line-height:1.7;">At 1280×720 resolution, use a minimum of 40-50pt for primary text and 30pt for secondary text. After designing, always test by resizing your thumbnail to 320×180px (quarter size) and verifying the text remains legible. If it's not readable at quarter size, it will fail on mobile.</p>
-      </div>
-    </section>
-  
-    <section style="margin:40px 0;padding:25px;border-top:2px solid #d32f2f;">
-      <h2 style="color:#d32f2f;margin-bottom:20px;">📚 Related Articles</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;">
-        <a href="article6.html" style="display:block;padding:15px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;">
-          <strong style="font-size:.9rem;">YouTube Thumbnail Sizes & Formats 2026</strong>
-        </a>
-        <a href="article14.html" style="display:block;padding:15px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;">
-          <strong style="font-size:.9rem;">Typography for Thumbnails: The 1.5-Second Rule</strong>
-        </a>
-        <a href="article11.html" style="display:block;padding:15px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;">
-          <strong style="font-size:.9rem;">Advanced Thumbnail Color Theory Beyond Neon</strong>
-        </a>
-      </div>
-    </section>
-    <section style="margin:30px 0;padding:20px 25px;background:linear-gradient(135deg,#1c1e21,#d32f2f);border-radius:12px;color:#fff;">
-    <strong style="font-size:1rem;">🛠️ Free tools for creators:</strong>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;">
-      <a href="youtube-title-generator.html" style="padding:9px 16px;background:#fff;border-radius:6px;text-decoration:none;color:#d32f2f;font-weight:600;font-size:.85rem;">🎯 Title Generator</a>
-      <a href="ctr-score-calculator.html" style="padding:9px 16px;background:#fff;border-radius:6px;text-decoration:none;color:#d32f2f;font-weight:600;font-size:.85rem;">📊 CTR Score Calculator</a>
-      <a href="calculator.html" style="padding:9px 16px;background:#fff;border-radius:6px;text-decoration:none;color:#d32f2f;font-weight:600;font-size:.85rem;">🧮 Revenue Calculator</a>
-    </div>
-  </section>
-  </main>
-
-<footer style="background:#1c1e21;color:#888;text-align:center;padding:28px 20px;margin-top:40px;">
-  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:5px 14px;margin-bottom:12px;">
-    <a href="index.html" style="color:#bbb;text-decoration:none;font-size:.82rem;">Home</a>
-    <a href="youtube-title-generator.html" style="color:#bbb;text-decoration:none;font-size:.82rem;">Tools</a>
-    <a href="blog.html" style="color:#bbb;text-decoration:none;font-size:.82rem;">Blog</a>
-    <a href="calculator.html" style="color:#bbb;text-decoration:none;font-size:.82rem;">Calculator</a>
-    <a href="privacy.html" style="color:#bbb;text-decoration:none;font-size:.82rem;">Privacy</a>
-    <a href="contact.html" style="color:#bbb;text-decoration:none;font-size:.82rem;">Contact</a>
+<footer style="background:#1c1e21;color:#888;text-align:center;padding:30px;margin-top:40px;">
+  <p>&copy; 2026 TubeTools.online — All rights reserved.</p>
+  <div style="margin-top:10px;">
+    <a href="privacy.html" style="color:#bbb;text-decoration:none;margin:0 10px;">Privacy</a>
+    <a href="terms.html" style="color:#bbb;text-decoration:none;margin:0 10px;">Terms</a>
+    <a href="contact.html" style="color:#bbb;text-decoration:none;margin:0 10px;">Contact</a>
+    <a href="blog.html" style="color:#bbb;text-decoration:none;margin:0 10px;">Blog</a>
   </div>
-  <p style="font-size:.76rem;color:#666;">&copy; 2026 TubeTools.online — All rights reserved.</p>
 </footer>
 <script>
   if ('serviceWorker' in navigator) {
