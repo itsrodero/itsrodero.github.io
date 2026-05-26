@@ -253,17 +253,29 @@
     });
 </script>
 <nav>
-    <a href="index.html" style="font-weight: bold; font-size: 22px; text-decoration: none; color: white;">🚀 TubeTools</a>
-    <div>
-        <a href="../index.html" style="color: #4CAF50;">🇪🇸 ES</a>
-        <a href="index.html">Home</a>
-        <a href="calculator.html">Calculator</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-        <a href="about.html">About</a>
-     <a href="glossary.html" style="color:white;text-decoration:none;font-weight:bold;font-size:15px;">Glossary</a>
+    <a href="index.html" style="font-weight:800;font-size:1.1rem;text-decoration:none;color:white;display:flex;align-items:center;gap:6px;">🚀 Tube<span style="color:#ff5252">Tools</span></a>
+    <button onclick="this.nextElementSibling.classList.toggle('open')" id="nav-tog" style="display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;">☰</button>
+    <div id="nav-m" style="display:flex;gap:4px;align-items:center;flex-wrap:wrap;">
+        <a href="../index.html" style="color:#a5d6a7;border:1px solid rgba(165,214,167,.35);padding:6px 11px;border-radius:8px;font-size:.88rem;font-weight:500;text-decoration:none;white-space:nowrap;">🇪🇸 ES</a>
+        <a href="index.html" style="color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;">Home</a>
+        <div style="position:relative;" onmouseenter="this.querySelector('.dm').style.display='block'" onmouseleave="this.querySelector('.dm').style.display='none'">
+          <a href="tools.html" style="color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;display:flex;align-items:center;gap:4px;">🎯 Tools <span style="font-size:.7rem;opacity:.7">▾</span></a>
+          <div class="dm" style="display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#2c2e33;border-radius:12px;padding:10px 8px;min-width:240px;box-shadow:0 8px 32px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.07);z-index:2000;margin-top:4px;">
+            <a href="index.html" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;white-space:nowrap;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,.09)'" onmouseout="this.style.background=''"><span style="width:22px;text-align:center">🖼️</span>Thumbnail Extractor</a>
+            <a href="../thumbnail-analyzer.html" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;white-space:nowrap;" onmouseover="this.style.background='rgba(255,255,255,.09)'" onmouseout="this.style.background=''"><span style="width:22px;text-align:center">🔬</span>Thumbnail Analyzer</a>
+            <a href="../youtube-title-generator.html" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;white-space:nowrap;" onmouseover="this.style.background='rgba(255,255,255,.09)'" onmouseout="this.style.background=''"><span style="width:22px;text-align:center">✍️</span>Title Generator</a>
+            <a href="calculator.html" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;white-space:nowrap;" onmouseover="this.style.background='rgba(255,255,255,.09)'" onmouseout="this.style.background=''"><span style="width:22px;text-align:center">🧮</span>Revenue Calculator</a>
+            <a href="../ctr-score-calculator.html" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;white-space:nowrap;" onmouseover="this.style.background='rgba(255,255,255,.09)'" onmouseout="this.style.background=''"><span style="width:22px;text-align:center">📊</span>CTR Score Calculator</a>
+            <a href="../thumbnail-checklist.html" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;white-space:nowrap;" onmouseover="this.style.background='rgba(255,255,255,.09)'" onmouseout="this.style.background=''"><span style="width:22px;text-align:center">✅</span>Thumbnail Checklist</a>
+          </div>
+        </div>
+        <a href="calculator.html" style="color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;">Calculator</a>
+        <a href="blog.html" style="color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;">Blog</a>
+        <a href="glossary.html" style="color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;">Glossary</a>
+        <a href="contact.html" style="color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;">Contact</a>
     </div>
 </nav>
+<style>@media(max-width:720px){#nav-tog{display:block!important}#nav-m{display:none!important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column!important;align-items:stretch!important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}#nav-m.open{display:flex!important}#nav-m a{padding:11px 14px!important}.dm{display:none!important}}</style>
 
     
     <header style="background:linear-gradient(135deg,#1c1e21 0%,#d32f2f 100%);padding:40px 20px;text-align:center;color:white;">
@@ -594,15 +606,44 @@ imgMax.setAttribute('decoding', 'async');
     <p style="font-size: 1.05rem; margin-bottom: 0;">To beat the algorithm, you need the right tools. Our <strong>HD Thumbnail Analyzer</strong> allows you to extract and study your direct competitors' thumbnails in maximum resolution to reverse-engineer their contrast tactics. Plus, with our integrated <strong>Revenue Calculator</strong> and <strong>CTR Checklist</strong>, you can stop relying on guesswork and start making data-driven decisions to grow your channel predictably.</p>
 </section>
  
- <footer style="text-align: center; padding: 30px 10px; margin-top: 60px; border-top: 1px solid #eaeaeb; font-family: sans-serif; font-size: 14px; color: #666; background-color: #f9f9f9;">
-    <p>&copy; 2026 TubeTools.online - All rights reserved.</p>
-    <div style="margin-top: 10px;">
-        <a href="privacy.html" style="color: #555; text-decoration: none; margin: 0 15px;">Privacy Policy</a>
-        <a href="terms.html" style="color: #555; text-decoration: none; margin: 0 15px;">Terms of Use</a>
-        <a href="contact.html" style="color: #555; text-decoration: none; margin: 0 15px;">Contact</a>
-        <a href="about.html" style="color: #555; text-decoration: none; margin: 0 15px;">About</a>
-        <a href="blog.html" style="color: #d32f2f; font-weight: bold; text-decoration: none; margin: 0 15px;">Our Blog</a>
+ <footer style="background:#1c1e21;color:#888;padding:48px 20px 32px;margin-top:60px;">
+  <div style="max-width:960px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1fr repeat(3,auto);gap:40px;margin-bottom:36px;">
+      <div>
+        <div style="font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:10px;">🚀 Tube<span style="color:#ff5252">Tools</span></div>
+        <p style="font-size:.83rem;color:#666;line-height:1.6;max-width:220px;">Free tools for YouTube creators who want to grow with data, not luck.</p>
+      </div>
+      <div>
+        <h4 style="font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;">Tools</h4>
+        <a href="index.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Thumbnail Extractor</a>
+        <a href="../thumbnail-analyzer.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Analyzer</a>
+        <a href="../youtube-title-generator.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Title Generator</a>
+        <a href="calculator.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Calculator</a>
+        <a href="../ctr-score-calculator.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">CTR Score</a>
+        <a href="../thumbnail-checklist.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Checklist</a>
+      </div>
+      <div>
+        <h4 style="font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;">Guides</h4>
+        <a href="guide-thumbnails-ctr.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">CTR Guide</a>
+        <a href="../how-to-increase-youtube-rpm.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Increase RPM</a>
+        <a href="../youtube-cpm-by-niche.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">CPM by Niche</a>
+        <a href="../youtube-monetization-requirements.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Monetization</a>
+        <a href="blog.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">All Articles</a>
+        <a href="glossary.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Glossary</a>
+      </div>
+      <div>
+        <h4 style="font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;">Legal</h4>
+        <a href="privacy.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Privacy</a>
+        <a href="terms.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Terms</a>
+        <a href="contact.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Contact</a>
+        <a href="about.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">About</a>
+      </div>
     </div>
+    <div style="border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <p style="font-size:.78rem;color:#555;">&copy; 2026 TubeTools.online — All rights reserved.</p>
+      <a href="../index.html" style="background:rgba(165,214,167,.1);color:#a5d6a7;border:1px solid rgba(165,214,167,.3);padding:5px 14px;border-radius:999px;text-decoration:none;font-size:.82rem;font-weight:600;">🇪🇸 Cambiar a Español</a>
+    </div>
+  </div>
 </footer>
  
  <!-- ✅ Service Worker para cache eficiente -->
