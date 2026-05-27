@@ -227,6 +227,104 @@
   ]
 }
 </script>
+
+<style id='tt-global'>
+
+/* ── TubeTools Global Fix ── */
+*, *::before, *::after { box-sizing: border-box; }
+a { color: inherit; }
+a:not([class]):not([style]) { color: inherit; text-decoration: none; }
+.read-more, .btn-read-more {
+  display: inline-block; background: #d32f2f; color: #fff !important;
+  text-decoration: none; padding: 9px 18px; border-radius: 8px;
+  font-size: .85rem; font-weight: 700; transition: background .2s; margin-top: 8px;
+}
+.read-more:hover, .btn-read-more:hover { background: #b71c1c !important; }
+.article-card h3 a, .article-title a, .card-title a, .blog-card h3 a {
+  color: #1c1e21 !important; text-decoration: none !important; font-weight: 700;
+}
+.article-card h3 a:hover, .blog-card h3 a:hover { color: #d32f2f !important; }
+footer a { color: #888 !important; text-decoration: none !important; }
+footer a:hover { color: #fff !important; }
+nav a { text-decoration: none; }
+/* Nav fix */
+nav { position: sticky; top: 0; z-index: 1000; background: #1c1e21;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; height: 58px; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
+nav .nav-logo { color: #fff; text-decoration: none; font-size: 1.1rem;
+  font-weight: 800; display: flex; align-items: center; gap: 6px; }
+nav .nav-logo .logo-accent { color: #ff5252; }
+nav .nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+nav .nav-links a { color: #ccc; text-decoration: none; font-size: .88rem;
+  font-weight: 500; padding: 6px 11px; border-radius: 8px;
+  transition: background .2s, color .2s; white-space: nowrap; }
+nav .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
+nav .nav-links a.lang-btn-en { color: #90caf9; border: 1px solid rgba(144,202,249,.35); }
+nav .nav-links a.lang-btn-es { color: #a5d6a7; border: 1px solid rgba(165,214,167,.35); }
+nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
+.nav-toggle { display: none; background: none; border: none; color: #fff;
+  font-size: 1.4rem; cursor: pointer; padding: 6px; }
+/* Tools dropdown */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+.nav-dropdown > a::after { content: '▾'; font-size: .7rem; opacity: .7; }
+.dropdown-panel { display: none; position: absolute; top: calc(100% + 6px);
+  left: 50%; transform: translateX(-50%); background: #2c2e33;
+  border-radius: 12px; padding: 10px 8px; min-width: 240px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.4); border: 1px solid rgba(255,255,255,.07);
+  z-index: 2000; }
+.nav-dropdown:hover .dropdown-panel,
+.nav-dropdown:focus-within .dropdown-panel { display: block; }
+.dropdown-panel a { display: flex; align-items: center; gap: 10px; color: #ccc !important;
+  text-decoration: none !important; font-size: .85rem; padding: 9px 14px;
+  border-radius: 8px; transition: background .2s; width: 100%; }
+.dropdown-panel a:hover { background: rgba(255,255,255,.09) !important; color: #fff !important; }
+.dp-icon { width: 22px; text-align: center; font-size: 1.05rem; flex-shrink: 0; }
+/* Mobile nav */
+@media(max-width: 720px) {
+  .nav-toggle { display: block !important; }
+  .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0;
+    background: #2c2e33; flex-direction: column; align-items: stretch;
+    padding: 10px 16px 16px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 11px 14px; border-radius: 8px; }
+  .nav-dropdown > a::after { display: none; }
+  .dropdown-panel { display: block; position: static; transform: none;
+    background: rgba(255,255,255,.04); border: none; box-shadow: none;
+    border-radius: 8px; padding: 4px 0 4px 12px; min-width: auto; margin-top: 2px; }
+  .dropdown-panel a { font-size: .83rem; padding: 7px 10px; }
+}
+/* Footer fix */
+.site-footer { background: #1c1e21; color: #888; padding: 48px 20px 32px; margin-top: 60px; }
+.site-footer .footer-inner { max-width: 960px; margin: 0 auto; }
+.site-footer .footer-grid { display: grid; grid-template-columns: 1fr repeat(3, auto);
+  gap: 40px; margin-bottom: 36px; }
+@media(max-width: 700px) { .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
+@media(max-width: 440px) { .site-footer .footer-grid { grid-template-columns: 1fr; } }
+.site-footer .footer-brand .footer-logo { font-size: 1.1rem; font-weight: 800;
+  color: #fff; margin-bottom: 10px; }
+.site-footer .footer-brand .footer-logo .logo-accent { color: #ff5252; }
+.site-footer .footer-brand p { font-size: .83rem; color: #666; line-height: 1.6; max-width: 220px; }
+.site-footer .footer-col h4 { font-size: .8rem; font-weight: 700; color: #fff;
+  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+.site-footer .footer-col a { display: block; color: #888 !important;
+  text-decoration: none !important; font-size: .85rem; margin-bottom: 8px;
+  transition: color .2s; }
+.site-footer .footer-col a:hover { color: #fff !important; }
+.site-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.07);
+  padding-top: 20px; display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 10px; }
+.site-footer .footer-bottom p { font-size: .78rem; color: #555; }
+.site-footer .footer-lang-btn { padding: 5px 14px; border-radius: 999px;
+  text-decoration: none !important; font-size: .82rem; font-weight: 600; transition: background .2s; }
+.site-footer .footer-lang-btn.en-fb { background: rgba(144,202,249,.12);
+  color: #90caf9 !important; border: 1px solid rgba(144,202,249,.3); }
+.site-footer .footer-lang-btn.en-fb:hover { background: rgba(144,202,249,.22) !important; }
+.site-footer .footer-lang-btn.es-fb { background: rgba(165,214,167,.1);
+  color: #a5d6a7 !important; border: 1px solid rgba(165,214,167,.3); }
+.site-footer .footer-lang-btn.es-fb:hover { background: rgba(165,214,167,.2) !important; }
+
+</style>
 </head>
 <body>
  
@@ -253,27 +351,23 @@
     });
 </script>
 <nav>
-    <a href="index.html" style="font-weight:800;font-size:1.1rem;text-decoration:none;color:white;display:flex;align-items:center;gap:6px;">🚀 Tube<span style="color:#ff5252">Tools</span></a>
-    <button onclick="this.nextElementSibling.classList.toggle('open')" id="nav-tog" style="display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;">☰</button>
-    <div id="nav-m" style="display:flex;gap:4px;align-items:center;flex-wrap:wrap;">
-        <a href="../index.html" style="color:#a5d6a7;border:1px solid rgba(165,214,167,.35);padding:6px 11px;border-radius:8px;font-size:.88rem;font-weight:500;text-decoration:none;white-space:nowrap;">🇪🇸 ES</a>
-        <a href="index.html" style="color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;">Home</a>
-        <div style="position:relative;" onmouseenter="this.querySelector('.dm').style.display='block'" onmouseleave="this.querySelector('.dm').style.display='none'">
-          <a href="tools.html" style="color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;display:flex;align-items:center;gap:4px;">🎯 Tools <span style="font-size:.7rem;opacity:.7">▾</span></a>
-          <div class="dm" style="display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#2c2e33;border-radius:12px;padding:10px 8px;min-width:240px;box-shadow:0 8px 32px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.07);z-index:2000;margin-top:4px;">
-            <a href="index.html" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;white-space:nowrap;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,.09)'" onmouseout="this.style.background=''"><span style="width:22px;text-align:center">🖼️</span>Thumbnail Extractor</a>
-            <a href="../thumbnail-analyzer.html" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;white-space:nowrap;" onmouseover="this.style.background='rgba(255,255,255,.09)'" onmouseout="this.style.background=''"><span style="width:22px;text-align:center">🔬</span>Thumbnail Analyzer</a>
-            <a href="../youtube-title-generator.html" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;white-space:nowrap;" onmouseover="this.style.background='rgba(255,255,255,.09)'" onmouseout="this.style.background=''"><span style="width:22px;text-align:center">✍️</span>Title Generator</a>
-            <a href="calculator.html" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;white-space:nowrap;" onmouseover="this.style.background='rgba(255,255,255,.09)'" onmouseout="this.style.background=''"><span style="width:22px;text-align:center">🧮</span>Revenue Calculator</a>
-            <a href="../ctr-score-calculator.html" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;white-space:nowrap;" onmouseover="this.style.background='rgba(255,255,255,.09)'" onmouseout="this.style.background=''"><span style="width:22px;text-align:center">📊</span>CTR Score Calculator</a>
-            <a href="../thumbnail-checklist.html" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;white-space:nowrap;" onmouseover="this.style.background='rgba(255,255,255,.09)'" onmouseout="this.style.background=''"><span style="width:22px;text-align:center">✅</span>Thumbnail Checklist</a>
-          </div>
-        </div>
-        <a href="calculator.html" style="color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;">Calculator</a>
-        <a href="blog.html" style="color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;">Blog</a>
-        <a href="glossary.html" style="color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;">Glossary</a>
-        <a href="contact.html" style="color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;">Contact</a>
-    </div>
+  <a href="index.html" class="nav-logo">🚀 Tube<span class="logo-accent">Tools</span></a>
+  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <div class="nav-links">
+    <a href="/" class="lang-btn-es">🇪🇸 ES</a>
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown">
+          <a href="tools.html">🎯 Tools</a>
+          <div class="dropdown-panel">
+            <a href="index.html"><span class="dp-icon">🖼️</span>Thumbnail Extractor</a>
+            <a href="../thumbnail-analyzer.html"><span class="dp-icon">🔬</span>Thumbnail Analyzer</a>
+            <a href="../youtube-title-generator.html"><span class="dp-icon">✍️</span>Title Generator</a>
+            <a href="calculator.html"><span class="dp-icon">🧮</span>Revenue Calculator</a>
+            <a href="../ctr-score-calculator.html"><span class="dp-icon">📊</span>CTR Score</a>
+            <a href="../thumbnail-checklist.html"><span class="dp-icon">✅</span>Checklist</a>
+          </div></div>
+    <a href="calculator.html">Calculator</a><a href="blog.html">Blog</a><a href="glossary.html">Glossary</a><a href="contact.html">Contact</a>
+  </div>
 </nav>
 <style>@media(max-width:720px){#nav-tog{display:block!important}#nav-m{display:none!important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column!important;align-items:stretch!important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}#nav-m.open{display:flex!important}#nav-m a{padding:11px 14px!important}.dm{display:none!important}}</style>
 
@@ -606,42 +700,42 @@ imgMax.setAttribute('decoding', 'async');
     <p style="font-size: 1.05rem; margin-bottom: 0;">To beat the algorithm, you need the right tools. Our <strong>HD Thumbnail Analyzer</strong> allows you to extract and study your direct competitors' thumbnails in maximum resolution to reverse-engineer their contrast tactics. Plus, with our integrated <strong>Revenue Calculator</strong> and <strong>CTR Checklist</strong>, you can stop relying on guesswork and start making data-driven decisions to grow your channel predictably.</p>
 </section>
  
- <footer style="background:#1c1e21;color:#888;padding:48px 20px 32px;margin-top:60px;">
-  <div style="max-width:960px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:1fr repeat(3,auto);gap:40px;margin-bottom:36px;">
-      <div>
-        <div style="font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:10px;">🚀 Tube<span style="color:#ff5252">Tools</span></div>
-        <p style="font-size:.83rem;color:#666;line-height:1.6;max-width:220px;">Free tools for YouTube creators who want to grow with data, not luck.</p>
+ <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">🚀 Tube<span class="logo-accent">Tools</span></div>
+        <p>Free tools for YouTube creators who want to grow with data, not luck.</p>
       </div>
-      <div>
-        <h4 style="font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;">Tools</h4>
-        <a href="index.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Thumbnail Extractor</a>
-        <a href="../thumbnail-analyzer.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Analyzer</a>
-        <a href="../youtube-title-generator.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Title Generator</a>
-        <a href="calculator.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Calculator</a>
-        <a href="../ctr-score-calculator.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">CTR Score</a>
-        <a href="../thumbnail-checklist.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Checklist</a>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <a href="/en/">Thumbnail Extractor</a>
+        <a href="/thumbnail-analyzer.html">Analyzer</a>
+        <a href="/youtube-title-generator.html">Title Generator</a>
+        <a href="/en/calculator.html">Calculator</a>
+        <a href="/ctr-score-calculator.html">CTR Score</a>
+        <a href="/thumbnail-checklist.html">Checklist</a>
       </div>
-      <div>
-        <h4 style="font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;">Guides</h4>
-        <a href="guide-thumbnails-ctr.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">CTR Guide</a>
-        <a href="../how-to-increase-youtube-rpm.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Increase RPM</a>
-        <a href="../youtube-cpm-by-niche.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">CPM by Niche</a>
-        <a href="../youtube-monetization-requirements.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Monetization</a>
-        <a href="blog.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">All Articles</a>
-        <a href="glossary.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Glossary</a>
+      <div class="footer-col">
+        <h4>Guides</h4>
+        <a href="/en/guide-thumbnails-ctr.html">CTR Guide</a>
+        <a href="/how-to-increase-youtube-rpm.html">Increase RPM</a>
+        <a href="/youtube-cpm-by-niche.html">CPM by Niche</a>
+        <a href="/youtube-monetization-requirements.html">Monetization</a>
+        <a href="/best-youtube-niches-adsense.html">Best Niches</a>
+        <a href="/en/glossary.html">Glossary</a>
       </div>
-      <div>
-        <h4 style="font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;">Legal</h4>
-        <a href="privacy.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Privacy</a>
-        <a href="terms.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Terms</a>
-        <a href="contact.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">Contact</a>
-        <a href="about.html" style="display:block;color:#888;text-decoration:none;font-size:.85rem;margin-bottom:8px;">About</a>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/en/privacy.html">Privacy</a>
+        <a href="/en/terms.html">Terms</a>
+        <a href="/en/contact.html">Contact</a>
+        <a href="/en/about.html">About</a>
       </div>
     </div>
-    <div style="border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-      <p style="font-size:.78rem;color:#555;">&copy; 2026 TubeTools.online — All rights reserved.</p>
-      <a href="../index.html" style="background:rgba(165,214,167,.1);color:#a5d6a7;border:1px solid rgba(165,214,167,.3);padding:5px 14px;border-radius:999px;text-decoration:none;font-size:.82rem;font-weight:600;">🇪🇸 Cambiar a Español</a>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TubeTools.online — All rights reserved.</p>
+      <a href="/" class="footer-lang-btn es-fb">🇪🇸 Cambiar a Español</a>
     </div>
   </div>
 </footer>
