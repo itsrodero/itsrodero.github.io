@@ -107,7 +107,7 @@ nav .nav-logo { color: #fff; text-decoration: none; font-size: 1.1rem;
   font-weight: 800; display: flex; align-items: center; gap: 6px; }
 nav .nav-logo .logo-accent { color: #ff5252; }
 nav .nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
-nav .nav-links a { color: #ccc; text-decoration: none; font-size: .88rem;
+nav .nav-links a { color: #ccc !important; text-decoration: none; font-size: .88rem;
   font-weight: 500; padding: 6px 11px; border-radius: 8px;
   transition: background .2s, color .2s; white-space: nowrap; }
 nav .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
@@ -197,7 +197,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
             <a href="calculadora-puntuacion-ctr.html"><span class="dp-icon">📊</span>CTR Score</a>
             <a href="checklist-miniaturas.html"><span class="dp-icon">✅</span>Checklist</a>
           </div></div>
-    <a href="calculadora.html">Calculadora</a><a href="blog.html">Blog</a><a href="glosario.html">Glosario</a><a href="contacto.html">Contacto</a>
+    <a href="blog.html">Blog</a><a href="glosario.html">Glosario</a><a href="contacto.html">Contacto</a>
   </div>
 </nav>
 
@@ -244,6 +244,46 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
             <div class="item-content">
                 <h3>5. Expresión Facial Exagerada</h3>
                 <p>Si aparece una persona, su rostro muestra una emoción exagerada (sorpresa, miedo, alegría extrema, confusión) que conecta con la psicología del espectador.</p>
+            </div>
+        </div>
+
+        <div class="checklist-item" id="item6" onclick="toggleCheck('item6')">
+            <div class="custom-checkbox"></div>
+            <div class="item-content">
+                <h3>6. Jerarquía Visual Clara</h3>
+                <p>El ojo tiene claro adónde ir primero, luego adónde ir después. El orden debe ser: sujeto principal → texto de apoyo → fondo. Si todos los elementos compiten por la atención al mismo nivel, la miniatura pierde.</p>
+            </div>
+        </div>
+
+        <div class="checklist-item" id="item7" onclick="toggleCheck('item7')">
+            <div class="custom-checkbox"></div>
+            <div class="item-content">
+                <h3>7. Resolución Técnica Correcta</h3>
+                <p>El archivo es de 1280×720 píxeles (16:9), guardado como JPG o PNG y pesa menos de 2 MB. YouTube puede comprimir automáticamente las miniaturas que superen los 2 MB, degradando la calidad visual en pantallas HD.</p>
+            </div>
+        </div>
+
+        <div class="checklist-item" id="item8" onclick="toggleCheck('item8')">
+            <div class="custom-checkbox"></div>
+            <div class="item-content">
+                <h3>8. El Texto Añade Info que la Imagen No Puede</h3>
+                <p>Si hay texto, complementa la imagen: no repite lo que la imagen ya muestra. El buen texto en una miniatura añade una promesa específica ("En 30 Días"), crea tensión ("Me Equivoqué") o añade contexto que hace el visual más claro.</p>
+            </div>
+        </div>
+
+        <div class="checklist-item" id="item9" onclick="toggleCheck('item9')">
+            <div class="custom-checkbox"></div>
+            <div class="item-content">
+                <h3>9. El Sujeto No Está Cortado por los Bordes</h3>
+                <p>El sujeto principal (cara, cuerpo, objeto clave) tiene espacio de respiración en todos los lados. La interfaz de YouTube añade esquinas redondeadas y overlays sobre las miniaturas: si tu sujeto está demasiado cerca del borde, puede quedar cortado.</p>
+            </div>
+        </div>
+
+        <div class="checklist-item" id="item10" onclick="toggleCheck('item10')">
+            <div class="custom-checkbox"></div>
+            <div class="item-content">
+                <h3>10. Supera el Test de los 2 Segundos</h3>
+                <p>Muestra la miniatura a alguien que no conozca el vídeo durante exactamente 2 segundos y pregúntale: "¿De qué trata este vídeo?". Si no puede responder correctamente, la miniatura está fallando en su trabajo principal. Puedes hacer esta prueba con un colega, un amigo o en la pantalla de bloqueo de tu móvil.</p>
             </div>
         </div>
 
