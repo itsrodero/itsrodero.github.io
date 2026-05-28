@@ -126,7 +126,7 @@ nav .nav-logo { color: #fff; text-decoration: none; font-size: 1.1rem;
   font-weight: 800; display: flex; align-items: center; gap: 6px; }
 nav .nav-logo .logo-accent { color: #ff5252; }
 nav .nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
-nav .nav-links a { color: #ccc; text-decoration: none; font-size: .88rem;
+nav .nav-links a { color: #ccc !important; text-decoration: none; font-size: .88rem;
   font-weight: 500; padding: 6px 11px; border-radius: 8px;
   transition: background .2s, color .2s; white-space: nowrap; }
 nav .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
@@ -215,7 +215,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
             <a href="calculadora-puntuacion-ctr.html"><span class="dp-icon">📊</span>CTR Score</a>
             <a href="checklist-miniaturas.html"><span class="dp-icon">✅</span>Checklist</a>
           </div></div>
-    <a href="calculadora.html">Calculadora</a><a href="blog.html">Blog</a><a href="glosario.html">Glosario</a><a href="contacto.html">Contacto</a>
+    <a href="blog.html">Blog</a><a href="glosario.html">Glosario</a><a href="contacto.html">Contacto</a>
   </div>
 </nav>
 
@@ -269,7 +269,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
       </div>
       <!-- Brillo -->
       <div class="result-card">
-        <div class="rc-label">Brightness</div>
+        <div class="rc-label">Brillo</div>
         <div class="rc-val" id="brightnessVal">–</div>
         <div class="meter"><div class="meter-fill" id="brightnessBar" style="width:0%;background:#f57c00"></div></div>
         <div class="rc-sub" id="brightnessSub">–</div>
@@ -329,7 +329,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     <h3>Complejidad Visual</h3>
     <p>Estimates the density of visual edges in the image — a proxy for the number of distinct elements. High complexity (too many edges) corresponds to a cluttered thumbnail with competing focal points. Optimal thumbnails have medium complexity: enough visual interest to attract attention, few enough elements to have a clear focal hierarchy.</p>
 
-    <h3>Dominant Color Palette</h3>
+    <h3>Paleta de Colores Dominante</h3>
     <p>Extracts the 6 most dominant colors using a pixel-sampling algorithm. Use this to identify whether your thumbnail has a clear color story (2–3 dominant colors) or a fragmented palette (5–6 competing colors of similar weight). The most effective thumbnails have one dominant color, one contrasting accent, and neutral fill — the palette reveals whether yours follows this pattern.</p>
 
     <div class="faq-item" style="margin-top:24px;">
@@ -681,18 +681,18 @@ function generateRecs(m, score) {
 
   if(m.brightness < 20) recs.push({icon:'💡',title:'Thumbnail Too Dark',urgency:'red',desc:'Average brightness is very low. Dark thumbnails lose detail on OLED screens and in dark-mode interfaces. Increase overall exposure or use a brighter background.'});
   else if(m.brightness > 85) recs.push({icon:'☀️',title:'Thumbnail Too Bright',urgency:'amber',desc:'High overall brightness can cause detail loss and appear "blown out" in the feed. Consider adding more visual contrast with darker elements.'});
-  else recs.push({icon:'✅',title:'Brightness in Optimal Range',urgency:'green',desc:'Brightness levels are well-balanced for most screen types.'});
+  else recs.push({icon:'✅',title:'Brillo en Rango Óptimo',urgency:'green',desc:'Los niveles de brillo están bien equilibrados para la mayoría de los tipos de pantalla.'});
 
   if(m.saturation < 25) recs.push({icon:'🌈',title:'Colors Are Too Muted',urgency:'amber',desc:'Low saturation makes thumbnails blend into the feed. Increase color vibrancy in your editing tool — especially for the primary subject or any text overlays.'});
   else if(m.saturation > 90) recs.push({icon:'🎨',title:'Colors May Be Oversaturated',urgency:'amber',desc:'Extremely high saturation can appear garish. Consider reducing saturation slightly, especially for skin tones, to maintain a professional look.'});
-  else recs.push({icon:'✅',title:'Color Saturation is Good',urgency:'green',desc:'Color vibrancy is in the range that captures attention without appearing unnatural.'});
+  else recs.push({icon:'✅',title:'La Saturación de Color es Buena',urgency:'green',desc:'La viveza del color está en el rango que capta la atención sin parecer artificial.'});
 
   if(m.complexity > 0.72) recs.push({icon:'🗂️',title:'Too Many Visual Elements',urgency:'red',desc:'High visual complexity means too many competing focal points. Viewers cannot process cluttered thumbnails in under 2 seconds. Remove non-essential elements and focus on one primary subject.'});
   else if(m.complexity < 0.1) recs.push({icon:'➕',title:'Add a Focal Element',urgency:'amber',desc:'The thumbnail is very sparse. Adding a clear focal element — a face with expression, a key object, or bold text — can significantly improve click-through intent.'});
   else recs.push({icon:'✅',title:'Visual Complexity is Balanced',urgency:'green',desc:'Good balance between simplicity and visual interest. Viewers should be able to identify the primary subject quickly.'});
 
   if(m.palette.length > 4) recs.push({icon:'🎭',title:'Simplify Color Palette',urgency:'amber',desc:`${m.palette.length} dominant colors is too many. Effective thumbnails use 2–3 dominant colors. Neutralize or desaturate non-essential color areas to create a cleaner visual story.`});
-  else recs.push({icon:'✅',title:'Color Palette is Focused',urgency:'green',desc:'Dominant color count is within the optimal range for thumbnail legibility.'});
+  else recs.push({icon:'✅',title:'La Paleta de Colores es Enfocada',urgency:'green',desc:'El número de colores dominantes está dentro del rango óptimo para la legibilidad de la miniatura.'});
 
   return recs;
 }
