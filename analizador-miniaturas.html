@@ -311,29 +311,29 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <div class="info-section">
   <div class="info-card">
-    <h2>How the Thumbnail Analyzer Works</h2>
-    <p>The analyzer processes your thumbnail entirely within your browser using the Canvas API. No image is ever sent to a server. Here is what each metric measures and why it matters for your YouTube CTR.</p>
+    <h2>Cómo Funciona el Analizador de Miniaturas</h2>
+    <p>El analizador procesa tu miniatura completamente en tu navegador usando la Canvas API. No se envía ninguna imagen a ningún servidor. Aquí te explicamos qué mide cada métrica y por qué importa para tu CTR en YouTube.</p>
 
-    <h3>CTR Score (0–100)</h3>
-    <p>A composite score calculated from all analyzed metrics. It reflects the thumbnail's technical quality across the factors most correlated with click-through performance. A score above 65 indicates a technically strong thumbnail. Below 40 signals fundamental issues that predictably suppress CTR regardless of creative execution.</p>
+    <h3>Puntuación CTR (0–100)</h3>
+    <p>Una puntuación compuesta calculada a partir de todas las métricas analizadas. Refleja la calidad técnica de la miniatura en los factores más correlacionados con el rendimiento de clics. Una puntuación superior a 65 indica una miniatura técnicamente sólida. Por debajo de 40 señala problemas fundamentales que predeciblemente suprimen el CTR independientemente de la ejecución creativa.</p>
 
-    <h3>Contrast Score</h3>
-    <p>Measures the luminance difference between the brightest and darkest regions of the image. High contrast (score 70+) ensures your thumbnail remains visually distinct in a scrolling feed, especially on mobile devices under various lighting conditions. Low contrast (below 40) is the most common reason thumbnails fail on mid-range smartphones.</p>
+    <h3>Puntuación de Contraste</h3>
+    <p>Mide la diferencia de luminancia entre las regiones más brillantes y más oscuras de la imagen. Un alto contraste (puntuación 70+) garantiza que tu miniatura permanezca visualmente distinta en un feed al desplazarse, especialmente en dispositivos móviles bajo distintas condiciones de iluminación. El bajo contraste (por debajo de 40) es la razón más común por la que las miniaturas fallan en smartphones de gama media.</p>
 
-    <h3>Brightness</h3>
-    <p>Average luminance across the entire image. Thumbnails that are too dark (under 20%) are invisible in dark-mode interfaces and on OLED screens. Thumbnails that are too bright (over 85%) lose detail and look "blown out" in the feed. The optimal range is 35–75%, with the key subject brighter than the background.</p>
+    <h3>Brillo</h3>
+    <p>Luminancia media de toda la imagen. Las miniaturas demasiado oscuras (por debajo del 20%) son invisibles en interfaces de modo oscuro y en pantallas OLED. Las demasiado brillantes (por encima del 85%) pierden detalle y parecen "quemadas" en el feed. El rango óptimo es 35–75%, con el sujeto principal más brillante que el fondo.</p>
 
-    <h3>Color Saturation</h3>
+    <h3>Color Saturación</h3>
     <p>Measures color intensity across the image. Highly saturated thumbnails (70%+) are more eye-catching in a neutral feed. Desaturated or grey-heavy thumbnails (under 30%) tend to disappear visually. However, extremely high saturation (95%+) can appear garish and signal low production quality.</p>
 
-    <h3>Visual Complexity</h3>
+    <h3>Complejidad Visual</h3>
     <p>Estimates the density of visual edges in the image — a proxy for the number of distinct elements. High complexity (too many edges) corresponds to a cluttered thumbnail with competing focal points. Optimal thumbnails have medium complexity: enough visual interest to attract attention, few enough elements to have a clear focal hierarchy.</p>
 
     <h3>Dominant Color Palette</h3>
     <p>Extracts the 6 most dominant colors using a pixel-sampling algorithm. Use this to identify whether your thumbnail has a clear color story (2–3 dominant colors) or a fragmented palette (5–6 competing colors of similar weight). The most effective thumbnails have one dominant color, one contrasting accent, and neutral fill — the palette reveals whether yours follows this pattern.</p>
 
     <div class="faq-item" style="margin-top:24px;">
-      <div class="faq-q">Is this thumbnail analyzer really free with no limits?</div>
+      <div class="faq-q">Is this thumbnail analyzer really free with sin límites?</div>
       <div class="faq-a">Yes. All processing runs locally in your browser using the Canvas API. There are no server calls, no accounts, no API keys, and no usage limits. You can analyze as many thumbnails as you want.</div>
     </div>
     <div class="faq-item">
@@ -341,12 +341,12 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
       <div class="faq-a">Yes. Paste any YouTube URL and the tool will extract and analyze the thumbnail. You can also download competitor thumbnails using the main TubeTools extractor, then upload them here for analysis.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">How accurate is the CTR Score?</div>
+      <div class="faq-q">¿Qué tan precisa es la Puntuación CTR?</div>
       <div class="faq-a">The CTR Score is a technical quality rating, not a CTR prediction. It identifies measurable weaknesses (low contrast, poor saturation, excessive complexity) that consistently correlate with lower CTR. A high score eliminates avoidable technical weaknesses; actual CTR still depends on topic demand, audience fit, and creative strategy.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">What image formats are supported?</div>
-      <div class="faq-a">JPG, PNG, WebP, and GIF are supported. For best results, upload at the full 1280×720 resolution. The analyzer will scale images for processing but always evaluates at the proportions of the original.</div>
+      <div class="faq-a">Se admiten JPG, PNG, WebP y GIF. Para mejores resultados, sube en la resolución completa de 1280×720. The analyzer will scale images for processing but always evaluates at the proportions of the original.</div>
     </div>
   </div>
 </div>
