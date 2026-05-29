@@ -242,20 +242,15 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 </nav>
 
     <main id="main-content">
-
-      <!-- Hero header -->
       <div style="background:linear-gradient(135deg,#1c1e21 0%,#2d1515 60%,#1a0a0a 100%);padding:48px 20px 52px;text-align:center;position:relative;overflow:hidden;">
         <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(211,47,47,.18) 0%,transparent 70%);pointer-events:none;"></div>
         <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(211,47,47,.18);border:1px solid rgba(211,47,47,.4);color:#ff8a80;font-size:.78rem;font-weight:700;letter-spacing:.07em;padding:4px 13px;border-radius:999px;margin-bottom:16px;text-transform:uppercase;">💸 Herramienta Gratuita · Sin Registro</div>
         <h1 style="font-size:clamp(1.7rem,4vw,2.6rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:10px;">Calculadora de Ingresos<br><span style="color:#ff5252;">de YouTube 2026</span></h1>
-        <p style="font-size:clamp(.9rem,2vw,1.05rem);color:#bbb;max-width:520px;margin:0 auto;">Descubre cuánto puede ganar tu canal en base a tus visitas y tu nicho. Proyecciones diarias, mensuales y anuales.</p>
+        <p style="font-size:clamp(.9rem,2vw,1.05rem);color:#bbb;max-width:520px;margin:0 auto;">Descubre cuánto puede ganar tu canal. Proyecciones diarias, mensuales y anuales por nicho.</p>
       </div>
-
-      <!-- Tool card -->
       <div style="max-width:760px;margin:-28px auto 0;padding:0 20px;">
         <div style="background:#fff;border-radius:18px;box-shadow:0 8px 40px rgba(0,0,0,.13);padding:36px 32px 32px;position:relative;">
           <div style="position:absolute;top:-13px;left:24px;background:#d32f2f;color:#fff;font-size:.74rem;font-weight:800;letter-spacing:.07em;padding:4px 14px;border-radius:999px;text-transform:uppercase;">🔢 Ajusta los parámetros</div>
-
           <div style="margin-bottom:28px;">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
               <label style="font-size:.9rem;font-weight:700;color:#1c1e21;">👁️ Visitas Diarias Estimadas</label>
@@ -264,7 +259,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
             <input type="range" id="visitas" class="slider" min="100" max="500000" step="100" value="10000" style="width:100%;accent-color:#d32f2f;height:6px;border-radius:3px;cursor:pointer;">
             <div style="display:flex;justify-content:space-between;font-size:.75rem;color:#aaa;margin-top:4px;"><span>100</span><span>500K</span></div>
           </div>
-
           <div style="margin-bottom:32px;">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
               <label style="font-size:.9rem;font-weight:700;color:#1c1e21;">📈 CPM Estimado <span style="font-weight:400;color:#888;">($/1.000 visitas)</span></label>
@@ -273,7 +267,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
             <input type="range" id="cpm" class="slider" min="0.1" max="25" step="0.1" value="2.5" style="width:100%;accent-color:#d32f2f;height:6px;border-radius:3px;cursor:pointer;">
             <div style="display:flex;justify-content:space-between;font-size:.75rem;color:#aaa;margin-top:4px;"><span>$0.10</span><span>$25.00</span></div>
           </div>
-
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;" class="resultados-grid">
             <div style="background:linear-gradient(135deg,#1c1e21,#2d1515);border-radius:12px;padding:20px 16px;text-align:center;">
               <div style="font-size:.75rem;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Diario</div>
@@ -288,8 +281,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
               <div style="font-size:1.5rem;font-weight:900;color:#fff;" id="res-anual">$0.00</div>
             </div>
           </div>
-
-          <!-- CPM reference table -->
           <div style="margin-top:24px;background:#f4f5f7;border-radius:10px;padding:16px 18px;">
             <div style="font-size:.8rem;font-weight:700;color:#1c1e21;margin-bottom:10px;">📊 Referencia de CPM por nicho:</div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:.8rem;">
@@ -303,12 +294,9 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
           </div>
         </div>
       </div>
-
-      <div style="max-width:760px;margin:32px auto 0;padding:0 20px 48px;">
+      <div style="max-width:760px;margin:32px auto 0;padding:0 20px 0;">
         <div style="background:#fff;border-radius:18px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
-        <div class="seo-text">
-
-        <div class="seo-text">
+        <div class="seo-text" style="margin:0;border:none;padding:0;">
             <h2>¿Cómo funciona esta Calculadora de Ingresos de YouTube?</h2>
             <p>Nuestra herramienta utiliza un algoritmo sencillo pero preciso basado en el modelo de monetización del Programa para Partners de YouTube (YPP). YouTube paga a los creadores por las reproducciones de anuncios en sus vídeos, y esta calculadora estima tu parte de los ingresos basándose en dos factores clave: el volumen de tu tráfico y tu CPM.</p>
             <p>Debes tener en cuenta que YouTube se queda con aproximadamente el 45% de los ingresos publicitarios, entregando el 55% restante al creador. Nuestra calculadora ya refleja estimaciones realistas de lo que llegaría a tu bolsillo.</p>
@@ -324,6 +312,8 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
             <h2>¿Cómo aumentar tus ingresos en YouTube en 2026?</h2>
             <p>Si las cifras de la calculadora te parecen bajas, la estrategia no siempre es conseguir más visitas, sino <strong>mejorar la calidad de esas visitas</strong>. Optimizar el CTR de tus miniaturas usando herramientas como nuestro <a href="analizador-miniaturas.html" style="color: #d32f2f; font-weight: bold;">Analizador de Miniaturas</a> te permitirá competir contra canales más grandes, atraer a un público más adulto y, en consecuencia, subir el CPM global de tu canal.</p>
         </div>
+        </div>
+      </div>
     </main>
 
     <section class="seo-tool-guide mt-5 p-5 bg-white rounded-4 shadow-sm border">
@@ -388,7 +378,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         <a href="/index.html">Extractor Miniaturas</a>
         <a href="/analizador-miniaturas.html">Analizador</a>
         <a href="/generador-titulos-youtube.html">Generador Títulos</a>
-        <a href="/calculadora.html">Calculadora</a>
         <a href="/calculadora-puntuacion-ctr.html">CTR Score</a>
         <a href="/checklist-miniaturas.html">Checklist</a>
       </div>
