@@ -210,6 +210,17 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does the first 48 hours matter so much for YouTube CTR?","acceptedAnswer":{"@type":"Answer","text":"YouTube uses initial CTR to determine whether to expand distribution to broader audiences. If the algorithm sees high CTR in the first 24-48 hours among your subscribers and browse feed impressions, it begins pushing the video to non-subscribers. Poor initial CTR means limited reach, regardless of the video's quality."}},{"@type":"Question","name":"What happens if my CTR drops after the first week?","acceptedAnswer":{"@type":"Answer","text":"Normal. CTR always decreases over time as a video moves from your engaged subscriber base to cold audiences via browse and search. A good initial CTR spike, followed by a gradual decline, is the healthy pattern. A flat low CTR from day one means the algorithm never picked up the video."}},{"@type":"Question","name":"Can I recover a video with low initial CTR?","acceptedAnswer":{"@type":"Answer","text":"Yes — change the thumbnail immediately. YouTube re-evaluates CTR after a thumbnail change. If the new thumbnail gets 2%+ higher CTR than the old one in the first 72 hours after the change, the algorithm may restart wider distribution. This works best within the first 30 days of publishing."}},{"@type":"Question","name":"How do I maximize CTR in the critical first 48 hours?","acceptedAnswer":{"@type":"Answer","text":"Upload when your subscribers are most active (check YouTube Analytics > Audience tab). Notify subscribers via community posts and social media immediately after publishing. Use your absolute best thumbnail — not a placeholder — from the first minute the video is live."}}]}</script>
+
+<style id="mobile-nav-fix">
+@media(max-width:720px){
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-links.open{display:flex !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-dropdown>a::after{display:none !important}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+}
+</style>
 </head>
 <body>
 <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
@@ -221,7 +232,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <nav>
   <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="nav-links">
     <a href="/ctr-inicial-y-alcance-youtube.html" class="lang-btn-es">🇪🇸 ES</a>
     <a href="/en/">Home</a>
@@ -407,6 +418,25 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         .catch(err => console.log('SW error:', err));
     });
   }
+</script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if(!btn || !links) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = links.classList.toggle('open');
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+  document.addEventListener('click', function(e){
+    if(!links.contains(e.target) && e.target !== btn){
+      links.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+})();
 </script>
 </body>
 </html>

@@ -211,6 +211,17 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is CTR on YouTube and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"CTR (Click-Through Rate) is the percentage of people who click your video after seeing it in their feed. If 100 people see your thumbnail and 5 click, your CTR is 5%. It matters because YouTube uses CTR as a primary signal to decide whether to show your video to more people — or stop distributing it."}},{"@type":"Question","name":"What is a good CTR for a new YouTube channel?","acceptedAnswer":{"@type":"Answer","text":"New channels typically see 2-6% CTR. Above 6% in your first month means your thumbnails are already outperforming most of the platform. Below 2% is a warning sign. The most important metric at the start is the trend — is CTR improving video over video as you refine your thumbnail and title formula?"}},{"@type":"Question","name":"How do I check my YouTube CTR?","acceptedAnswer":{"@type":"Answer","text":"In YouTube Studio, go to Analytics > Reach > Impressions click-through rate. You can see CTR by video, by time period, and by traffic source. The most useful filter is by Browse Features — this shows CTR on suggested and home feed impressions, where thumbnail design has the highest impact."}},{"@type":"Question","name":"How quickly can I improve my CTR?","acceptedAnswer":{"@type":"Answer","text":"With intentional thumbnail redesigns, most channels see measurable CTR improvement within 4-8 weeks. The fastest improvements come from fixing the most common mistakes: reducing text to 3-5 words, increasing face size in frame, and maximizing contrast with the YouTube background."}}]}</script>
+
+<style id="mobile-nav-fix">
+@media(max-width:720px){
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-links.open{display:flex !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-dropdown>a::after{display:none !important}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+}
+</style>
 </head>
 <body>
 <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
@@ -222,7 +233,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <nav>
   <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="nav-links">
     <a href="/guia-ctr-youtube-para-principiantes.html" class="lang-btn-es">🇪🇸 ES</a>
     <a href="/en/">Home</a>
@@ -398,6 +409,25 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         .catch(err => console.log('SW error:', err));
     });
   }
+</script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if(!btn || !links) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = links.classList.toggle('open');
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+  document.addEventListener('click', function(e){
+    if(!links.contains(e.target) && e.target !== btn){
+      links.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+})();
 </script>
 </body>
 </html>

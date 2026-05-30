@@ -210,6 +210,17 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What size is a YouTube thumbnail on mobile?","acceptedAnswer":{"@type":"Answer","text":"On a mobile phone feed, thumbnails display at approximately 168×94 pixels — about the size of a postage stamp. Everything in your 1280×720 design gets scaled down by 86%. Any text smaller than 80pt, or any detail smaller than 15% of the frame, will be invisible."}},{"@type":"Question","name":"How do I test my thumbnail at mobile size?","acceptedAnswer":{"@type":"Answer","text":"In Canva or Photoshop, scale your design to 20% of original size and view it on screen. Or upload the video to YouTube Studio and check the thumbnail preview in the mobile mockup. Always test before publishing — what looks good at 100% often fails completely at mobile scale."}},{"@type":"Question","name":"Should thumbnails look different for mobile vs desktop?","acceptedAnswer":{"@type":"Answer","text":"Design for mobile, then verify it still works on desktop — not the other way around. Mobile is where 70%+ of YouTube views happen. The design constraints of mobile (small size, crowded feed, auto-play) are stricter, so a mobile-optimized thumbnail always works on desktop too."}},{"@type":"Question","name":"What is the minimum contrast ratio for thumbnail text on mobile?","acceptedAnswer":{"@type":"Answer","text":"A minimum 4.5:1 contrast ratio between text and background for legibility on mid-range screens in various lighting conditions. In practice, use white text on dark backgrounds or dark text on bright backgrounds, with a shadow or outline to separate them at small sizes."}}]}</script>
+
+<style id="mobile-nav-fix">
+@media(max-width:720px){
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-links.open{display:flex !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-dropdown>a::after{display:none !important}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+}
+</style>
 </head>
 <body>
 <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
@@ -221,7 +232,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <nav>
   <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="nav-links">
     <a href="/diseno-mobile-first-miniaturas-youtube.html" class="lang-btn-es">🇪🇸 ES</a>
     <a href="/en/">Home</a>
@@ -385,6 +396,25 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         .catch(err => console.log('SW error:', err));
     });
   }
+</script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if(!btn || !links) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = links.classList.toggle('open');
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+  document.addEventListener('click', function(e){
+    if(!links.contains(e.target) && e.target !== btn){
+      links.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+})();
 </script>
 </body>
 </html>

@@ -234,6 +234,17 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good YouTube CTR?","acceptedAnswer":{"@type":"Answer","text":"A CTR between 4-7% is average. Above 8% is excellent. Below 2% signals the algorithm will reduce distribution of your video. The first 48 hours after publishing are the most critical window."}},{"@type":"Question","name":"Does thumbnail design really affect YouTube revenue?","acceptedAnswer":{"@type":"Answer","text":"Yes, directly. A higher CTR means more views for the same content, which multiplies ad impressions, RPM and total revenue. A 1% CTR increase on a channel with 100K daily impressions adds roughly 1,000 extra views per day."}},{"@type":"Question","name":"How often should I change my thumbnail?","acceptedAnswer":{"@type":"Answer","text":"If a video gets fewer than 3% CTR in the first 7 days, change the thumbnail immediately. For evergreen content, A/B test a new thumbnail every 3-6 months. YouTube now allows testing up to 3 thumbnail variants natively."}},{"@type":"Question","name":"Can I use the same thumbnail style for every video?","acceptedAnswer":{"@type":"Answer","text":"Consistent visual branding is good — same color palette, font, subject position — but each thumbnail must communicate a unique promise. Template consistency plus fresh messaging per video is the optimal strategy."}}]}</script>
+
+<style id="mobile-nav-fix">
+@media(max-width:720px){
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-links.open{display:flex !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-dropdown>a::after{display:none !important}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+}
+</style>
 </head>
 <body>
 
@@ -251,7 +262,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 <!-- Navbar -->
 <nav>
   <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="nav-links">
     <a href="/guia-miniaturas-ctr.html" class="lang-btn-es">🇪🇸 ES</a>
     <a href="/en/">Home</a>
@@ -557,6 +568,25 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         .catch(err => console.log('SW error:', err));
     });
   }
+</script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if(!btn || !links) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = links.classList.toggle('open');
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+  document.addEventListener('click', function(e){
+    if(!links.contains(e.target) && e.target !== btn){
+      links.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+})();
 </script>
 </body>
 </html>

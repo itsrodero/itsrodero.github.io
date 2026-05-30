@@ -212,6 +212,17 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What font size should I use in YouTube thumbnails?","acceptedAnswer":{"@type":"Answer","text":"Minimum 80-90pt at 1280×720 resolution. At mobile display size, this renders as roughly 10-12pt — the absolute minimum for legibility. Most successful thumbnails use 120-200pt for their primary text element, with no more than 3-5 words total."}},{"@type":"Question","name":"Should I use serif or sans-serif fonts in thumbnails?","acceptedAnswer":{"@type":"Answer","text":"Sans-serif fonts consistently outperform serif fonts in thumbnails because they remain legible at small sizes and have cleaner contrast against complex backgrounds. Use bold weights (700+) only. Thin or light font weights become invisible at thumbnail scale."}},{"@type":"Question","name":"How many words maximum in a thumbnail?","acceptedAnswer":{"@type":"Answer","text":"3-5 words maximum. Every additional word reduces the visual impact of the others. The most effective thumbnail text is a single powerful phrase — a number, an outcome, or a tension — that adds information the image alone can't convey."}},{"@type":"Question","name":"How do I make text readable on any background?","acceptedAnswer":{"@type":"Answer","text":"Use a solid drop shadow (4-6px offset, 50% opacity), a subtle dark stroke outline (2-3px), or place text on a high-contrast color block. Never place unstyled white text directly on a light background or unstyled dark text on a dark background."}}]}</script>
+
+<style id="mobile-nav-fix">
+@media(max-width:720px){
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-links.open{display:flex !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-dropdown>a::after{display:none !important}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+}
+</style>
 </head>
 <body>
 <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
@@ -223,7 +234,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <nav>
   <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="nav-links">
     <a href="/tipografia-para-miniaturas-youtube.html" class="lang-btn-es">🇪🇸 ES</a>
     <a href="/en/">Home</a>
@@ -393,6 +404,25 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         .catch(err => console.log('SW error:', err));
     });
   }
+</script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if(!btn || !links) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = links.classList.toggle('open');
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+  document.addEventListener('click', function(e){
+    if(!links.contains(e.target) && e.target !== btn){
+      links.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+})();
 </script>
 </body>
 </html>

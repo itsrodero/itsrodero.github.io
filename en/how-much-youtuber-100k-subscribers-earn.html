@@ -204,6 +204,17 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a YouTuber with 100K subscribers earn per month?","acceptedAnswer":{"@type":"Answer","text":"It varies enormously by niche and geography. Finance or tech channels with US-heavy audiences: $1,500-$8,000/month. Gaming or entertainment channels: $300-$1,500/month. The subscriber count is less important than the RPM (Revenue Per Mille) your niche and audience geography generate."}},{"@type":"Question","name":"Is 100K subscribers enough to make a living from YouTube?","acceptedAnswer":{"@type":"Answer","text":"Potentially, but only in high-CPM niches with consistent uploads. Most 100K channels earn between $500-$3,000/month from AdSense alone — not enough to replace a full salary in most countries. Diversifying with sponsorships, memberships and merchandise is essential at this stage."}},{"@type":"Question","name":"What RPM should a 100K YouTube channel aim for?","acceptedAnswer":{"@type":"Answer","text":"Above $4 RPM is good. Above $8 RPM means you're in a high-CPM niche (finance, B2B, investing, legal, medical). Below $2 RPM means your audience geography skews toward lower-CPM regions, or your niche attracts low-value advertisers. Geography optimization is the fastest lever to increase RPM."}},{"@type":"Question","name":"Do YouTubers with 100K subscribers earn more from sponsors than ads?","acceptedAnswer":{"@type":"Answer","text":"Often yes — especially in niches where brands pay $15-$50 CPM for sponsor slots vs $3-$8 RPM from AdSense. A single sponsor integration on a 100K channel can generate $500-$2,000 per video, sometimes exceeding a month's AdSense revenue from a single sponsored upload."}}]}</script>
+
+<style id="mobile-nav-fix">
+@media(max-width:720px){
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-links.open{display:flex !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-dropdown>a::after{display:none !important}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+}
+</style>
 </head>
 <body>
 
@@ -216,7 +227,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <nav>
   <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="nav-links">
     <a href="/cuanto-gana-youtuber-100k-suscriptores.html" class="lang-btn-es">🇪🇸 ES</a>
     <a href="/en/">Home</a>
@@ -419,6 +430,25 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         .catch(err => console.log('SW error:', err));
     });
   }
+</script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if(!btn || !links) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = links.classList.toggle('open');
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+  document.addEventListener('click', function(e){
+    if(!links.contains(e.target) && e.target !== btn){
+      links.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+})();
 </script>
 </body>
 </html>

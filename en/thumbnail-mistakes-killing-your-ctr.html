@@ -208,6 +208,17 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the most common thumbnail mistake?","acceptedAnswer":{"@type":"Answer","text":"Too much visual clutter. Most thumbnails fail because they try to communicate 5 things at once. The viewer's eye needs one clear focal point within 1.5 seconds. Every element competing for attention reduces the impact of all of them."}},{"@type":"Question","name":"Does thumbnail text help or hurt CTR?","acceptedAnswer":{"@type":"Answer","text":"It depends on how much and what it says. Text that adds context the image can't convey (a number, an outcome, a tension) helps. Text that repeats what the title already says, or that's unreadable at thumbnail size on mobile, hurts."}},{"@type":"Question","name":"How small is a YouTube thumbnail on mobile?","acceptedAnswer":{"@type":"Answer","text":"On a mobile feed, thumbnails display at roughly 168×94 pixels. This means text must be at least 30-36pt in the original 1280×720 design to remain legible. Most creators design at full size and forget to test at small size."}},{"@type":"Question","name":"Should every thumbnail have a face?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily, but data shows thumbnails with human faces showing clear emotion outperform faceless thumbnails in most niches by 20-40%. The exception is data-driven or tutorial niches where text-and-graphic thumbnails can outperform face thumbnails."}}]}</script>
+
+<style id="mobile-nav-fix">
+@media(max-width:720px){
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-links.open{display:flex !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-dropdown>a::after{display:none !important}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+}
+</style>
 </head>
 <body>
 <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
@@ -219,7 +230,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <nav>
   <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="nav-links">
     <a href="/errores-miniatura-que-matan-tu-ctr.html" class="lang-btn-es">🇪🇸 ES</a>
     <a href="/en/">Home</a>
@@ -383,6 +394,25 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         .catch(err => console.log('SW error:', err));
     });
   }
+</script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if(!btn || !links) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = links.classList.toggle('open');
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+  document.addEventListener('click', function(e){
+    if(!links.contains(e.target) && e.target !== btn){
+      links.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+})();
 </script>
 </body>
 </html>

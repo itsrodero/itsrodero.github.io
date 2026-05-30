@@ -210,6 +210,17 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is negativity bias in YouTube thumbnails?","acceptedAnswer":{"@type":"Answer","text":"Negativity bias is the psychological tendency for humans to pay more attention to negative or threatening stimuli than neutral or positive ones. In thumbnails, this manifests as shock expressions, warning imagery, and loss-framing outperforming equivalent positive content."}},{"@type":"Question","name":"Is using negativity bias in thumbnails ethical?","acceptedAnswer":{"@type":"Answer","text":"It depends on delivery. Using negative framing to highlight a real problem your video solves is honest marketing. Creating thumbnail fear or shock that has no relationship to the video content is clickbait — and YouTube's algorithm penalizes it through watch time and audience satisfaction signals."}},{"@type":"Question","name":"Does negativity bias work in all YouTube niches?","acceptedAnswer":{"@type":"Answer","text":"It's strongest in news, personal finance, health and relationship content. It's weakest in cooking, travel and children's content where positive emotions drive more clicks. Gaming content is mixed — competitive or horror content benefits from it, while casual gaming does not."}},{"@type":"Question","name":"What words trigger negativity bias in titles?","acceptedAnswer":{"@type":"Answer","text":"Words like 'mistake', 'warning', 'never', 'stop', 'worst', 'failed', 'too late' and 'dangerous' consistently generate higher CTR than their positive equivalents in most informational niches. Pair them with a thumbnail expression that matches the emotional tone."}}]}</script>
+
+<style id="mobile-nav-fix">
+@media(max-width:720px){
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-links.open{display:flex !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-dropdown>a::after{display:none !important}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+}
+</style>
 </head>
 <body>
 <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
@@ -221,7 +232,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <nav>
   <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="nav-links">
     <a href="/sesgo-negatividad-miniaturas-youtube.html" class="lang-btn-es">🇪🇸 ES</a>
     <a href="/en/">Home</a>
@@ -406,6 +417,25 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         .catch(err => console.log('SW error:', err));
     });
   }
+</script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if(!btn || !links) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = links.classList.toggle('open');
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+  document.addEventListener('click', function(e){
+    if(!links.contains(e.target) && e.target !== btn){
+      links.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+})();
 </script>
 </body>
 </html>

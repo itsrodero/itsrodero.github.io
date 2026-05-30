@@ -208,6 +208,17 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can small channels compete with big channels on thumbnails?","acceptedAnswer":{"@type":"Answer","text":"Yes. Thumbnail quality is not determined by budget or subscriber count — it's determined by design decisions. Many small channels out-click large channels because they're more focused, use stronger visual contrast, and have cleaner single-message thumbnails."}},{"@type":"Question","name":"Should small channels copy big channels' thumbnail style?","acceptedAnswer":{"@type":"Answer","text":"Study it, don't copy it. Analyze why top thumbnails in your niche work — their color palette, subject framing, text use — and apply those principles with your own visual identity. Copying creates confusion, not recognition."}},{"@type":"Question","name":"How long does it take to improve CTR with better thumbnails?","acceptedAnswer":{"@type":"Answer","text":"Changes are visible within 48-72 hours on new uploads. For existing videos, YouTube may take 1-2 weeks to update impression data after a thumbnail change. Channels that redesign thumbnails consistently report 30-80% CTR improvements within 30 days."}},{"@type":"Question","name":"Is thumbnail design or video quality more important for growth?","acceptedAnswer":{"@type":"Answer","text":"For discovery (getting clicks), thumbnail and title dominate. For retention and algorithmic promotion after the click, video quality dominates. Both matter, but channels with poor thumbnails and good content grow slower than channels with great thumbnails and average content."}}]}</script>
+
+<style id="mobile-nav-fix">
+@media(max-width:720px){
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-links.open{display:flex !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-dropdown>a::after{display:none !important}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+}
+</style>
 </head>
 <body>
 <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
@@ -219,7 +230,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <nav>
   <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="nav-links">
     <a href="/formula-viral-miniaturas-canales-pequenos.html" class="lang-btn-es">🇪🇸 ES</a>
     <a href="/en/">Home</a>
@@ -393,6 +404,25 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         .catch(err => console.log('SW error:', err));
     });
   }
+</script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if(!btn || !links) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = links.classList.toggle('open');
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+  document.addEventListener('click', function(e){
+    if(!links.contains(e.target) && e.target !== btn){
+      links.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+})();
 </script>
 </body>
 </html>

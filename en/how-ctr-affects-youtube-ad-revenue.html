@@ -213,6 +213,17 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does a higher CTR directly increase YouTube ad revenue?","acceptedAnswer":{"@type":"Answer","text":"Yes, indirectly but significantly. A higher CTR generates more views for the same number of impressions, which means more ad plays, more ad revenue and a higher RPM. The algorithm also distributes higher-CTR videos to more users, creating a compounding effect on total revenue."}},{"@type":"Question","name":"What CTR should I aim for to maximize ad revenue?","acceptedAnswer":{"@type":"Answer","text":"Above 6% CTR in the first 48 hours signals to the algorithm that your content is highly clickable, triggering wider distribution. Channels consistently above 8% CTR across their catalog earn significantly more per subscriber than channels at 3-4% because they monetize a larger portion of their impressions."}},{"@type":"Question","name":"How much more revenue does 1% more CTR generate?","acceptedAnswer":{"@type":"Answer","text":"On a channel with 500,000 monthly impressions and a $4 RPM: going from 4% to 5% CTR adds 5,000 monthly views, generating approximately $20 extra per month — or $240 per year — from that single percentage point improvement, compounded across every video."}},{"@type":"Question","name":"Can low CTR be offset by high watch time?","acceptedAnswer":{"@type":"Answer","text":"Partially. YouTube's algorithm weights both CTR and watch time. High watch time can partially compensate for low CTR by signaling content quality to the algorithm. However, a video with poor CTR receives fewer initial impressions to begin with, limiting the total views watch time can generate."}}]}</script>
+
+<style id="mobile-nav-fix">
+@media(max-width:720px){
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-links.open{display:flex !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-dropdown>a::after{display:none !important}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+}
+</style>
 </head>
 <body>
 <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
@@ -224,7 +235,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <nav>
   <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="nav-links">
     <a href="/como-el-ctr-afecta-tus-ingresos-youtube.html" class="lang-btn-es">🇪🇸 ES</a>
     <a href="/en/">Home</a>
@@ -403,6 +414,25 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         .catch(err => console.log('SW error:', err));
     });
   }
+</script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if(!btn || !links) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = links.classList.toggle('open');
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+  document.addEventListener('click', function(e){
+    if(!links.contains(e.target) && e.target !== btn){
+      links.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+})();
 </script>
 </body>
 </html>
