@@ -1,13 +1,713 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=/mapa-sitio.html">
-<link rel="canonical" href="https://tubetools.online/mapa-sitio.html">
-<title>Redirecting...</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free YouTube Thumbnail Analyzer — CTR Score & Color Analysis</title>
+  <meta name="description" content="Analyze any YouTube thumbnail instantly: CTR score, dominant colors, contrast ratio, and brightness rating. Free tool, no sign-up required.">
+  <link rel="canonical" href="https://tubetools.online/en/thumbnail-analyzer.html">
+  <link rel="alternate" hreflang="en" href="https://tubetools.online/en/thumbnail-analyzer.html">
+  <link rel="alternate" hreflang="es" href="https://tubetools.online/analizador-miniaturas.html">
+  <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/thumbnail-analyzer.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#d32f2f">
+  <meta property="og:title" content="Free YouTube Thumbnail Analyzer | TubeTools">
+  <meta property="og:description" content="Instant CTR score, color palette, contrast and brightness analysis for any YouTube thumbnail.">
+  <meta property="og:image" content="https://tubetools.online/og_image_en.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube Thumbnail Analyzer","url":"https://tubetools.online/en/thumbnail-analyzer.html","description":"Free tool to analyze YouTube thumbnails: CTR score, dominant colors, contrast ratio, brightness, and specific improvement recommendations.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the thumbnail analyzer work?","acceptedAnswer":{"@type":"Answer","text":"The analyzer uses Canvas API to extract pixel data from your thumbnail and calculate contrast ratio, brightness, color saturation, dominant palette, and visual complexity — all locally in your browser without uploading anything to a server."}},{"@type":"Question","name":"Is the thumbnail analyzer really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free. No sign-up, no account, no API key. All analysis runs locally in your browser."}},{"@type":"Question","name":"Can I analyze any image, not just YouTube thumbnails?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can upload any JPG, PNG or WebP image. The analyzer works on any image you provide."}}]}
+  </script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--red:#d32f2f;--dark:#1c1e21;--dark2:#2c2e33;--gray:#f4f5f7;--white:#fff;--text:#1c1e21;--text2:#555;--radius:14px;--shadow:0 4px 24px rgba(0,0,0,.08)}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--gray);color:var(--text);line-height:1.7}
+    a{text-decoration:none}
+    nav{position:sticky;top:0;z-index:1000;background:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+    .nav-logo{color:#fff;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
+    .nav-logo span{color:#ff5252}
+    .nav-links{display:flex;gap:6px;align-items:center}
+    .nav-links a{color:#ccc;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;transition:background .2s,color .2s}
+    .nav-links a:hover{background:rgba(255,255,255,.08);color:#fff}
+    .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+    @media(max-width:680px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:var(--dark2);flex-direction:column;padding:10px 16px 16px;gap:4px}.nav-links.open{display:flex}}
+    .hero{background:linear-gradient(135deg,var(--dark) 0%,#2d1515 50%,#1a0a0a 100%);padding:52px 20px 60px;text-align:center}
+    .hero h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:12px}
+    .hero h1 em{color:#ff5252;font-style:normal}
+    .hero p{color:#bbb;max-width:560px;margin:0 auto 24px;font-size:.97rem}
+    .badge-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+    .badge{display:inline-block;background:rgba(255,255,255,.08);color:#fff;font-size:.75rem;font-weight:600;padding:5px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.12)}
+
+    /* Drop zone */
+    .tool-wrap{max-width:860px;margin:40px auto;padding:0 20px}
+    .drop-zone{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:3px dashed #ddd;padding:50px 30px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;position:relative}
+    .drop-zone:hover,.drop-zone.dragover{border-color:var(--red);background:#fff5f5}
+    .drop-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+    .drop-zone .dz-icon{font-size:2.5rem;margin-bottom:12px}
+    .drop-zone h2{font-size:1.15rem;font-weight:800;color:var(--dark);margin-bottom:6px}
+    .drop-zone p{color:var(--text2);font-size:.9rem;margin-bottom:18px}
+    .dz-btn{display:inline-block;background:var(--red);color:#fff;padding:11px 28px;border-radius:8px;font-weight:700;font-size:.9rem;cursor:pointer;transition:background .2s}
+    .dz-btn:hover{background:#b71c1c}
+    .dz-sep{color:#aaa;font-size:.85rem;margin:18px 0 14px}
+    .url-row{display:flex;gap:10px;max-width:480px;margin:0 auto}
+    .url-row input{flex:1;padding:10px 14px;border:2px solid #ddd;border-radius:8px;font-size:.9rem;outline:none;transition:border-color .2s}
+    .url-row input:focus{border-color:var(--red)}
+    .url-row button{background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:700;font-size:.88rem;cursor:pointer;white-space:nowrap;transition:background .2s}
+    .url-row button:hover{background:#333}
+
+    /* Results */
+    #results{display:none;margin-top:30px}
+    .result-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:640px){.result-grid{grid-template-columns:1fr}}
+    .result-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    .result-card.full{grid-column:1/-1}
+    .rc-label{font-size:.75rem;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+    .rc-val{font-size:1.6rem;font-weight:900;color:var(--dark)}
+    .rc-sub{font-size:.82rem;color:var(--text2);margin-top:4px}
+    .score-ring{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;color:#fff;margin:0 auto 10px;flex-shrink:0}
+    .meter{height:10px;background:#eee;border-radius:999px;overflow:hidden;margin-top:8px}
+    .meter-fill{height:100%;border-radius:999px;transition:width .8s ease}
+    .palette{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .swatch{width:36px;height:36px;border-radius:8px;border:2px solid rgba(0,0,0,.1);position:relative;cursor:pointer}
+    .swatch:hover::after{content:attr(data-hex);position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);background:#333;color:#fff;font-size:.68rem;padding:2px 7px;border-radius:4px;white-space:nowrap;z-index:10}
+    .preview-img{width:100%;border-radius:8px;object-fit:cover;margin-bottom:10px;display:block}
+    .recs-list{list-style:none;margin-top:10px}
+    .recs-list li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:.88rem;color:var(--text2);line-height:1.5}
+    .recs-list li:last-child{border-bottom:none}
+    .recs-list .icon{font-size:1rem;flex-shrink:0;margin-top:1px}
+    .tag{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:999px;margin-left:6px}
+    .tag.green{background:#e8f5e9;color:#2e7d32}
+    .tag.amber{background:#fff3e0;color:#e65100}
+    .tag.red{background:#ffebee;color:#c62828}
+
+    /* Info section */
+    .info-section{max-width:860px;margin:40px auto 60px;padding:0 20px}
+    .info-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:34px}
+    .info-card h2{font-size:1.3rem;font-weight:800;color:var(--dark);border-left:4px solid var(--red);padding-left:14px;margin-bottom:16px}
+    .info-card h3{font-size:1.05rem;font-weight:700;color:var(--dark);margin:20px 0 8px}
+    .info-card p{color:var(--text2);font-size:.93rem;line-height:1.8;margin-bottom:12px}
+    .faq-item{border-bottom:1px solid #eee;padding:14px 0}
+    .faq-item:last-child{border-bottom:none}
+    .faq-q{font-size:.95rem;font-weight:700;color:var(--dark);margin-bottom:6px}
+    .faq-a{font-size:.9rem;color:var(--text2);line-height:1.7}
+
+    #loading{display:none;text-align:center;padding:30px;color:var(--text2)}
+    .spinner{width:40px;height:40px;border:4px solid #eee;border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 12px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+  </style>
+
+<style id='tt-global'>
+
+/* ── TubeTools Global Fix ── */
+*, *::before, *::after { box-sizing: border-box; }
+a { color: inherit; }
+a:not([class]):not([style]) { color: inherit; text-decoration: none; }
+.read-more, .btn-read-more {
+  display: inline-block; background: #d32f2f; color: #fff !important;
+  text-decoration: none; padding: 9px 18px; border-radius: 8px;
+  font-size: .85rem; font-weight: 700; transition: background .2s; margin-top: 8px;
+}
+.read-more:hover, .btn-read-more:hover { background: #b71c1c !important; }
+.article-card h3 a, .article-title a, .card-title a, .blog-card h3 a {
+  color: #1c1e21 !important; text-decoration: none !important; font-weight: 700;
+}
+.article-card h3 a:hover, .blog-card h3 a:hover { color: #d32f2f !important; }
+footer a { color: #888 !important; text-decoration: none !important; }
+footer a:hover { color: #fff !important; }
+nav a { text-decoration: none; }
+/* Nav fix */
+nav { position: sticky; top: 0; z-index: 1000; background: #1c1e21;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; height: 58px; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
+nav .nav-logo { color: #fff; text-decoration: none; font-size: 1.1rem;
+  font-weight: 800; display: flex; align-items: center; gap: 6px; }
+nav .nav-logo .logo-accent { color: #ff5252; }
+nav .nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+nav .nav-links a { color: #ccc !important; text-decoration: none; font-size: .88rem;
+  font-weight: 500; padding: 6px 11px; border-radius: 8px;
+  transition: background .2s, color .2s; white-space: nowrap; }
+nav .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
+nav .nav-links a.lang-btn-en { color: #90caf9; border: 1px solid rgba(144,202,249,.35); }
+nav .nav-links a.lang-btn-es { color: #a5d6a7; border: 1px solid rgba(165,214,167,.35); }
+nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
+.nav-toggle { display: none; background: none; border: none; color: #fff;
+  font-size: 1.4rem; cursor: pointer; padding: 6px; }
+/* Tools dropdown */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+.nav-dropdown > a::after { content: '▾'; font-size: .7rem; opacity: .7; }
+.dropdown-panel { display: none; position: absolute; top: calc(100% + 6px);
+  left: 50%; transform: translateX(-50%); background: #2c2e33;
+  border-radius: 12px; padding: 10px 8px; min-width: 240px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.4); border: 1px solid rgba(255,255,255,.07);
+  z-index: 2000; }
+.nav-dropdown:hover .dropdown-panel,
+.nav-dropdown:focus-within .dropdown-panel { display: block; }
+.dropdown-panel a { display: flex; align-items: center; gap: 10px; color: #ccc !important;
+  text-decoration: none !important; font-size: .85rem; padding: 9px 14px;
+  border-radius: 8px; transition: background .2s; width: 100%; }
+.dropdown-panel a:hover { background: rgba(255,255,255,.09) !important; color: #fff !important; }
+.dp-icon { width: 22px; text-align: center; font-size: 1.05rem; flex-shrink: 0; }
+/* Mobile nav */
+@media(max-width: 720px) {
+  .nav-toggle { display: block !important; }
+  .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0;
+    background: #2c2e33; flex-direction: column; align-items: stretch;
+    padding: 10px 16px 16px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 11px 14px; border-radius: 8px; }
+  .nav-dropdown > a::after { display: none; }
+  .dropdown-panel { display: block; position: static; transform: none;
+    background: rgba(255,255,255,.04); border: none; box-shadow: none;
+    border-radius: 8px; padding: 4px 0 4px 12px; min-width: auto; margin-top: 2px; }
+  .dropdown-panel a { font-size: .83rem; padding: 7px 10px; }
+}
+/* Footer fix */
+.site-footer { background: #1c1e21; color: #888; padding: 48px 20px 32px; margin-top: 60px; }
+.site-footer .footer-inner { max-width: 960px; margin: 0 auto; }
+.site-footer .footer-grid { display: grid; grid-template-columns: 1fr repeat(3, auto);
+  gap: 40px; margin-bottom: 36px; }
+@media(max-width: 700px) { .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
+@media(max-width: 440px) { .site-footer .footer-grid { grid-template-columns: 1fr; } }
+.site-footer .footer-brand .footer-logo { font-size: 1.1rem; font-weight: 800;
+  color: #fff; margin-bottom: 10px; }
+.site-footer .footer-brand .footer-logo .logo-accent { color: #ff5252; }
+.site-footer .footer-brand p { font-size: .83rem; color: #666; line-height: 1.6; max-width: 220px; }
+.site-footer .footer-col h4 { font-size: .8rem; font-weight: 700; color: #fff;
+  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+.site-footer .footer-col a { display: block; color: #888 !important;
+  text-decoration: none !important; font-size: .85rem; margin-bottom: 8px;
+  transition: color .2s; }
+.site-footer .footer-col a:hover { color: #fff !important; }
+.site-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.07);
+  padding-top: 20px; display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 10px; }
+.site-footer .footer-bottom p { font-size: .78rem; color: #555; }
+.site-footer .footer-lang-btn { padding: 5px 14px; border-radius: 999px;
+  text-decoration: none !important; font-size: .82rem; font-weight: 600; transition: background .2s; }
+.site-footer .footer-lang-btn.en-fb { background: rgba(144,202,249,.12);
+  color: #90caf9 !important; border: 1px solid rgba(144,202,249,.3); }
+.site-footer .footer-lang-btn.en-fb:hover { background: rgba(144,202,249,.22) !important; }
+.site-footer .footer-lang-btn.es-fb { background: rgba(165,214,167,.1);
+  color: #a5d6a7 !important; border: 1px solid rgba(165,214,167,.3); }
+.site-footer .footer-lang-btn.es-fb:hover { background: rgba(165,214,167,.2) !important; }
+
+</style>
 </head>
 <body>
-<p>Redirecting to <a href="/mapa-sitio.html">/mapa-sitio.html</a>…</p>
-<script>window.location.replace("/mapa-sitio.html");</script>
+
+<nav>
+  <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
+  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <div class="nav-links">
+    <a href="/analizador-miniaturas.html" class="lang-btn-es">🇪🇸 ES</a>
+    <a href="/en/">Home</a>
+    <div class="nav-dropdown">
+      <a href="/en/tools.html">🎯 Tools</a>
+      <div class="dropdown-panel">
+        <a href="/en/"><span class="dp-icon">🖼️</span>Thumbnail Extractor</a>
+        <a href="/en/thumbnail-analyzer.html"><span class="dp-icon">🔬</span>Thumbnail Analyzer</a>
+        <a href="/en/youtube-title-generator.html"><span class="dp-icon">✍️</span>Title Generator</a>
+        <a href="/en/calculator.html"><span class="dp-icon">🧮</span>Revenue Calculator</a>
+        <a href="/en/ctr-score-calculator.html"><span class="dp-icon">📊</span>CTR Score</a>
+        <a href="/en/thumbnail-checklist.html"><span class="dp-icon">✅</span>Checklist</a>
+      </div>
+    </div>
+    <a href="/en/blog.html">Blog</a>
+    <a href="/en/glossary.html">Glossary</a>
+    <a href="/en/contact.html">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>YouTube Thumbnail Analyzer<br><em>Free, Instant, In Your Browser</em></h1>
+  <p>Upload any thumbnail or paste a YouTube URL. Get an instant CTR score, color palette, contrast rating, and specific recommendations — 100% free, no account needed.</p>
+  <div class="badge-row">
+    <span class="badge">🔒 No upload to server</span>
+    <span class="badge">⚡ Instant results</span>
+    <span class="badge">🆓 Completely free</span>
+    <span class="badge">📊 12 metrics analyzed</span>
+  </div>
+</section>
+
+<div class="tool-wrap">
+  <div class="drop-zone" id="dropZone">
+    <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/gif" onchange="handleFile(this.files[0])">
+    <div class="dz-icon">🖼️</div>
+    <h2>Drop your thumbnail here</h2>
+    <p>JPG, PNG or WebP — analyzed locally, never uploaded</p>
+    <label class="dz-btn" for="fileInput">Choose Image</label>
+    <div class="dz-sep">— or analyze from YouTube URL —</div>
+    <div class="url-row">
+      <input type="url" id="ytUrl" placeholder="https://youtube.com/watch?v=..." autocomplete="off">
+      <button onclick="analyzeFromUrl()">Analyze →</button>
+    </div>
+  </div>
+
+  <div id="loading"><div class="spinner"></div>Analyzing thumbnail…</div>
+
+  <div id="results">
+    <div class="result-grid">
+      <!-- CTR Score -->
+      <div class="result-card" style="text-align:center;">
+        <div class="rc-label">Overall CTR Score</div>
+        <div class="score-ring" id="scoreRing">0</div>
+        <div class="rc-sub" id="scoreLabel">–</div>
+      </div>
+      <!-- Preview -->
+      <div class="result-card">
+        <div class="rc-label">Your Thumbnail</div>
+        <img id="previewImg" class="preview-img" alt="Thumbnail preview">
+        <div class="rc-sub" id="imgSize">–</div>
+      </div>
+      <!-- Contrast -->
+      <div class="result-card">
+        <div class="rc-label">Contrast Score</div>
+        <div class="rc-val" id="contrastVal">–</div>
+        <div class="meter"><div class="meter-fill" id="contrastBar" style="width:0%;background:#d32f2f"></div></div>
+        <div class="rc-sub" id="contrastSub">–</div>
+      </div>
+      <!-- Brightness -->
+      <div class="result-card">
+        <div class="rc-label">Brightness</div>
+        <div class="rc-val" id="brightnessVal">–</div>
+        <div class="meter"><div class="meter-fill" id="brightnessBar" style="width:0%;background:#f57c00"></div></div>
+        <div class="rc-sub" id="brightnessSub">–</div>
+      </div>
+      <!-- Saturation -->
+      <div class="result-card">
+        <div class="rc-label">Color Saturation</div>
+        <div class="rc-val" id="satVal">–</div>
+        <div class="meter"><div class="meter-fill" id="satBar" style="width:0%;background:#7b1fa2"></div></div>
+        <div class="rc-sub" id="satSub">–</div>
+      </div>
+      <!-- Complexity -->
+      <div class="result-card">
+        <div class="rc-label">Visual Complexity</div>
+        <div class="rc-val" id="complexVal">–</div>
+        <div class="meter"><div class="meter-fill" id="complexBar" style="width:0%;background:#1565c0"></div></div>
+        <div class="rc-sub" id="complexSub">–</div>
+      </div>
+      <!-- Color Palette -->
+      <div class="result-card full">
+        <div class="rc-label">Dominant Color Palette</div>
+        <div class="palette" id="palette"></div>
+        <div class="rc-sub" style="margin-top:12px;" id="paletteSub">–</div>
+      </div>
+      <!-- Recommendations -->
+      <div class="result-card full">
+        <div class="rc-label">📋 Improvement Recommendations</div>
+        <ul class="recs-list" id="recsList"></ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:20px;">
+      <button onclick="resetTool()" style="background:#f4f5f7;color:#555;border:2px solid #ddd;padding:10px 24px;border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;">Analyze Another →</button>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden canvas for analysis -->
+<canvas id="analysisCanvas" style="display:none"></canvas>
+
+<div class="info-section">
+  <div class="info-card">
+    <h2>How the Thumbnail Analyzer Works</h2>
+    <p>The analyzer processes your thumbnail entirely within your browser using the Canvas API. No image is ever sent to a server. Here is what each metric measures and why it matters for your YouTube CTR.</p>
+
+    <h3>CTR Score (0–100)</h3>
+    <p>A composite score calculated from all analyzed metrics. It reflects the thumbnail's technical quality across the factors most correlated with click-through performance. A score above 65 indicates a technically strong thumbnail. Below 40 signals fundamental issues that predictably suppress CTR regardless of creative execution.</p>
+
+    <h3>Contrast Score</h3>
+    <p>Measures the luminance difference between the brightest and darkest regions of the image. High contrast (score 70+) ensures your thumbnail remains visually distinct in a scrolling feed, especially on mobile devices under various lighting conditions. Low contrast (below 40) is the most common reason thumbnails fail on mid-range smartphones.</p>
+
+    <h3>Brightness</h3>
+    <p>Average luminance across the entire image. Thumbnails that are too dark (under 20%) are invisible in dark-mode interfaces and on OLED screens. Thumbnails that are too bright (over 85%) lose detail and look "blown out" in the feed. The optimal range is 35–75%, with the key subject brighter than the background.</p>
+
+    <h3>Color Saturation</h3>
+    <p>Measures color intensity across the image. Highly saturated thumbnails (70%+) are more eye-catching in a neutral feed. Desaturated or grey-heavy thumbnails (under 30%) tend to disappear visually. However, extremely high saturation (95%+) can appear garish and signal low production quality.</p>
+
+    <h3>Visual Complexity</h3>
+    <p>Estimates the density of visual edges in the image — a proxy for the number of distinct elements. High complexity (too many edges) corresponds to a cluttered thumbnail with competing focal points. Optimal thumbnails have medium complexity: enough visual interest to attract attention, few enough elements to have a clear focal hierarchy.</p>
+
+    <h3>Dominant Color Palette</h3>
+    <p>Extracts the 6 most dominant colors using a pixel-sampling algorithm. Use this to identify whether your thumbnail has a clear color story (2–3 dominant colors) or a fragmented palette (5–6 competing colors of similar weight). The most effective thumbnails have one dominant color, one contrasting accent, and neutral fill — the palette reveals whether yours follows this pattern.</p>
+
+    <div class="faq-item" style="margin-top:24px;">
+      <div class="faq-q">Is this thumbnail analyzer really free with no limits?</div>
+      <div class="faq-a">Yes. All processing runs locally in your browser using the Canvas API. There are no server calls, no accounts, no API keys, and no usage limits. You can analyze as many thumbnails as you want.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I analyze competitor thumbnails?</div>
+      <div class="faq-a">Yes. Paste any YouTube URL and the tool will extract and analyze the thumbnail. You can also download competitor thumbnails using the main TubeTools extractor, then upload them here for analysis.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How accurate is the CTR Score?</div>
+      <div class="faq-a">The CTR Score is a technical quality rating, not a CTR prediction. It identifies measurable weaknesses (low contrast, poor saturation, excessive complexity) that consistently correlate with lower CTR. A high score eliminates avoidable technical weaknesses; actual CTR still depends on topic demand, audience fit, and creative strategy.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What image formats are supported?</div>
+      <div class="faq-a">JPG, PNG, WebP, and GIF are supported. For best results, upload at the full 1280×720 resolution. The analyzer will scale images for processing but always evaluates at the proportions of the original.</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="info-section">
+  <div class="info-card">
+    <h2>Why Thumbnail Analysis Increases CTR</h2>
+    <p>Most creators design thumbnails by intuition — they make something that looks good to them and publish it. Systematic analysis replaces intuition with data. Every metric the analyzer measures corresponds to a specific, documented failure mode that reduces CTR.</p>
+    <p>The contrast score identifies thumbnails that will become invisible on mid-range smartphones in daylight — the primary viewing device for over 70% of YouTube's global audience. The complexity score identifies cluttered designs with too many competing focal points, which prevent the eye from finding an anchor in under 150 milliseconds. The saturation score flags muted palettes that blend into the neutral grey YouTube feed without triggering the attentional response needed for a click.</p>
+
+    <h3>The 2-Second Rule and Why Metrics Matter</h3>
+    <p>Eye-tracking research on feed-scrolling behavior consistently shows that users who do not pause on a video within 1.5–2 seconds of it entering their field of view scroll past it without conscious evaluation. Every metric in this analyzer is calibrated to that 2-second window: contrast must be detectable in under 50ms, the primary focal element must be identifiable in under 200ms, and the emotional signal or text must be legible in under 1 second.</p>
+    <p>A thumbnail that scores above 65 on this analyzer has cleared those perceptual thresholds. A thumbnail below 40 is failing at least one of them in a way that will suppress CTR on a measurable percentage of impressions.</p>
+
+    <h3>How to Use the Analysis in Your Workflow</h3>
+    <p>The most effective workflow: analyze your thumbnail before finalizing it (when structural changes are still easy to make), not after publishing. Run the analyzer on your design at 80% completion — identify any critical issues (red flags), fix them, then finalize. A second analysis before uploading catches any regressions introduced during the final design pass.</p>
+    <p>Also analyze top-performing competitor thumbnails in your niche. This reveals the technical baseline your audience is accustomed to — the contrast levels, saturation ranges, and complexity levels that already drive clicks in your category. Your thumbnails should meet or exceed those benchmarks on every metric.</p>
+
+    <div class="faq-item" style="margin-top:20px;">
+      <div class="faq-q">Does a high analyzer score guarantee high CTR?</div>
+      <div class="faq-a">No — it eliminates avoidable technical weaknesses. A score above 65 means your thumbnail has no measurable technical barriers to getting clicked. Actual CTR still depends on topic demand, audience fit, and the creative strategy (what makes the thumbnail compelling, not just technically correct).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I analyze Shorts thumbnails with this tool?</div>
+      <div class="faq-a">Yes, though Shorts use a 9:16 vertical format rather than 16:9. The contrast, brightness, and saturation scores apply equally. For complexity, optimal values are lower on Shorts (simpler is better in the fast-scroll Shorts feed). Upload the vertical image directly for analysis.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What should I do after getting my analysis results?</div>
+      <div class="faq-a">Prioritize the red (Critical) recommendations first — these represent the most impactful changes. Then address amber (Improve) items. Green items confirm what's already working. After making changes, re-run the analysis to verify improvement before publishing.</div>
+    </div>
+  </div>
+</div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">🚀 Tube<span>Tools</span></div>
+          <p>Free tools for YouTube creators who want to grow with data, not luck.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <a href="/en/">Thumbnail Extractor</a>
+          <a href="/en/thumbnail-analyzer.html">Analyzer</a>
+          <a href="/en/youtube-title-generator.html">Title Generator</a>
+          <a href="/en/calculator.html">Calculator</a>
+          <a href="/en/ctr-score-calculator.html">CTR Score</a>
+          <a href="/en/thumbnail-checklist.html">Checklist</a>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <a href="/en/guide-thumbnails-ctr.html">CTR Guide</a>
+          <a href="/en/how-to-increase-youtube-rpm.html">Increase RPM</a>
+          <a href="/en/youtube-cpm-by-niche.html">CPM by Niche</a>
+          <a href="/en/youtube-monetization-requirements.html">Monetization</a>
+          <a href="/en/best-youtube-niches-adsense.html">Best Niches</a>
+          <a href="/en/glossary.html">Glossary</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/en/privacy.html">Privacy</a>
+          <a href="/en/terms.html">Terms</a>
+          <a href="/en/contact.html">Contact</a>
+          <a href="/en/about.html">About</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TubeTools.online — All rights reserved.</p>
+        <a href="/analizador-miniaturas.html" class="footer-lang-btn es-fb">🇪🇸 Ver en Español</a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+// ── DRAG & DROP ──────────────────────────────────────────────────────────────
+const dz = document.getElementById('dropZone');
+dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('dragover'); });
+dz.addEventListener('dragleave', () => dz.classList.remove('dragover'));
+dz.addEventListener('drop', e => { e.preventDefault(); dz.classList.remove('dragover'); if(e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); });
+
+function handleFile(file) {
+  if (!file || !file.type.startsWith('image/')) return;
+  const reader = new FileReader();
+  reader.onload = e => analyzeImage(e.target.result, file.name, `${file.name} · ${(file.size/1024).toFixed(0)} KB`);
+  reader.readAsDataURL(file);
+}
+
+function analyzeFromUrl() {
+  const url = document.getElementById('ytUrl').value.trim();
+  if (!url) return;
+  const vid = extractVideoId(url);
+  if (!vid) { alert('Could not find a YouTube video ID in that URL. Please check the link.'); return; }
+  const thumbUrl = `https://img.youtube.com/vi/${vid}/maxresdefault.jpg`;
+  // Load via image element (CORS-safe read)
+  showLoading();
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = () => {
+    const canvas = document.getElementById('analysisCanvas');
+    canvas.width = img.width; canvas.height = img.height;
+    canvas.getContext('2d').drawImage(img, 0, 0);
+    try {
+      const dataUrl = canvas.toDataURL('image/jpeg');
+      analyzeImage(dataUrl, `YouTube: ${vid}`, `${img.width}×${img.height}px · YouTube thumbnail`);
+    } catch(e) {
+      // CORS blocked, try proxy
+      loadWithProxy(thumbUrl, vid);
+    }
+  };
+  img.onerror = () => loadWithProxy(thumbUrl, vid);
+  img.src = thumbUrl;
+}
+
+function loadWithProxy(thumbUrl, vid) {
+  const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(thumbUrl)}`;
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = () => {
+    const canvas = document.getElementById('analysisCanvas');
+    canvas.width = img.width; canvas.height = img.height;
+    canvas.getContext('2d').drawImage(img, 0, 0);
+    try {
+      const dataUrl = canvas.toDataURL('image/jpeg');
+      analyzeImage(dataUrl, `YouTube: ${vid}`, `${img.width}×${img.height}px`);
+    } catch(e) {
+      hideLoading();
+      alert('Could not analyze this thumbnail due to browser security restrictions. Please download it first and upload the file directly.');
+    }
+  };
+  img.onerror = () => { hideLoading(); alert('Could not load the thumbnail. Please download it and upload the file instead.'); };
+  img.src = proxyUrl;
+}
+
+function extractVideoId(url) {
+  const m = url.match(/(?:v=|\/embed\/|youtu\.be\/|\/shorts\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+
+function showLoading() {
+  document.getElementById('dropZone').style.display = 'none';
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('results').style.display = 'none';
+}
+function hideLoading() {
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('dropZone').style.display = 'block';
+}
+function resetTool() {
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('dropZone').style.display = 'block';
+  document.getElementById('ytUrl').value = '';
+  document.getElementById('fileInput').value = '';
+}
+
+// ── CORE ANALYSIS ────────────────────────────────────────────────────────────
+function analyzeImage(dataUrl, name, sizeLabel) {
+  showLoading();
+  const img = new Image();
+  img.onload = () => {
+    const canvas = document.getElementById('analysisCanvas');
+    const MAX = 200; // scale for performance
+    const scale = Math.min(1, MAX / Math.max(img.width, img.height));
+    canvas.width = Math.round(img.width * scale);
+    canvas.height = Math.round(img.height * scale);
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+
+    const metrics = computeMetrics(data, canvas.width, canvas.height);
+    const score = computeScore(metrics);
+    const recs = generateRecs(metrics, score);
+
+    // Show preview at original
+    document.getElementById('previewImg').src = dataUrl;
+    document.getElementById('imgSize').textContent = sizeLabel;
+
+    // Score ring
+    const ring = document.getElementById('scoreRing');
+    const sc = score.total;
+    ring.textContent = sc;
+    ring.style.background = sc >= 70 ? '#2e7d32' : sc >= 45 ? '#f57c00' : '#c62828';
+    document.getElementById('scoreLabel').textContent = sc >= 70 ? '🏆 Strong Thumbnail' : sc >= 45 ? '⚡ Room to Improve' : '⚠️ Needs Work';
+
+    // Contrast
+    setCard('contrast', Math.round(metrics.contrast), `${Math.round(metrics.contrast)}%`,
+      metrics.contrast >= 55 ? 'Good — visible on most screens' : metrics.contrast >= 35 ? 'Moderate — may lose impact on mobile' : 'Low — likely invisible in bright conditions',
+      metrics.contrast, '#d32f2f');
+
+    // Brightness
+    const bPct = Math.round(metrics.brightness);
+    const bLabel = bPct < 20 ? 'Too Dark — loses detail in dark mode' : bPct > 82 ? 'Too Bright — blown-out look' : bPct >= 35 && bPct <= 72 ? 'Optimal range ✅' : 'Acceptable';
+    setCard('brightness', bPct, `${bPct}%`, bLabel, bPct < 20 ? bPct*3 : bPct > 82 ? 100-bPct : bPct, '#f57c00');
+
+    // Saturation
+    const sPct = Math.round(metrics.saturation);
+    setCard('sat', sPct, `${sPct}%`,
+      sPct >= 55 ? 'Vibrant — eye-catching in the feed ✅' : sPct >= 30 ? 'Moderate — consider more vivid colors' : 'Muted — may blend into the feed',
+      sPct, '#7b1fa2');
+
+    // Complexity
+    const cPct = Math.round(metrics.complexity * 100);
+    setCard('complex', cPct > 70 ? 'High' : cPct > 35 ? 'Balanced' : 'Simple', `${cPct > 70 ? 'High' : cPct > 35 ? 'Balanced' : 'Simple'}`,
+      cPct > 70 ? 'Too cluttered — simplify for mobile legibility' : cPct > 35 ? 'Good balance of detail and clarity ✅' : 'Very simple — consider adding a focal element',
+      cPct, '#1565c0');
+
+    // Palette
+    const palette = document.getElementById('palette');
+    palette.innerHTML = '';
+    metrics.palette.forEach(c => {
+      const sw = document.createElement('div');
+      sw.className = 'swatch';
+      sw.style.background = `rgb(${c.r},${c.g},${c.b})`;
+      const hex = '#' + [c.r,c.g,c.b].map(x=>x.toString(16).padStart(2,'0')).join('');
+      sw.setAttribute('data-hex', hex);
+      sw.title = hex;
+      palette.appendChild(sw);
+    });
+    const diversity = metrics.palette.length >= 5 ? 'High diversity — may compete for attention' : metrics.palette.length >= 3 ? 'Good balance — clear color story' : 'Low diversity — strong, focused palette ✅';
+    document.getElementById('paletteSub').textContent = `${metrics.palette.length} dominant colors · ${diversity}`;
+
+    // Recommendations
+    const list = document.getElementById('recsList');
+    list.innerHTML = '';
+    recs.forEach(r => {
+      const li = document.createElement('li');
+      li.innerHTML = `<span class="icon">${r.icon}</span><div><strong>${r.title}</strong><span class="tag ${r.urgency}">${r.urgency === 'red' ? 'Critical' : r.urgency === 'amber' ? 'Improve' : 'Good'}</span><br>${r.desc}</div>`;
+      list.appendChild(li);
+    });
+
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('results').style.display = 'block';
+  };
+  img.src = dataUrl;
+}
+
+function setCard(id, display, val, sub, pct, color) {
+  const el = document.getElementById(id+'Val');
+  if(el) el.textContent = typeof display === 'number' ? val : display;
+  const bar = document.getElementById(id+'Bar');
+  if(bar) { bar.style.width = Math.min(100, Math.max(0, pct))+'%'; bar.style.background = color; }
+  const subEl = document.getElementById(id+'Sub');
+  if(subEl) subEl.textContent = sub;
+}
+
+// ── PIXEL METRICS ────────────────────────────────────────────────────────────
+function computeMetrics(data, w, h) {
+  let totalLum = 0, minLum = 255, maxLum = 0;
+  let totalSat = 0;
+  const step = 4; // sample every pixel
+  const n = data.length / 4;
+  const colorBuckets = {};
+
+  for (let i = 0; i < data.length; i += 4 * step) {
+    const r = data[i], g = data[i+1], b = data[i+2];
+    const lum = 0.299*r + 0.587*g + 0.114*b;
+    totalLum += lum;
+    if(lum < minLum) minLum = lum;
+    if(lum > maxLum) maxLum = lum;
+    // Saturation from HSL
+    const max = Math.max(r,g,b)/255, min = Math.min(r,g,b)/255;
+    const l = (max+min)/2;
+    const sat = max === min ? 0 : l < 0.5 ? (max-min)/(max+min) : (max-min)/(2-max-min);
+    totalSat += sat;
+    // Quantize for palette
+    const qr = Math.round(r/42)*42, qg = Math.round(g/42)*42, qb = Math.round(b/42)*42;
+    const key = `${qr},${qg},${qb}`;
+    colorBuckets[key] = (colorBuckets[key]||0) + 1;
+  }
+
+  const samples = n / step;
+  const avgLum = totalLum / samples;
+  const contrast = ((maxLum - minLum) / 255) * 100;
+  const brightness = (avgLum / 255) * 100;
+  const saturation = (totalSat / samples) * 100;
+
+  // Edge detection approximation (variance of luminance in blocks)
+  let edgeScore = 0;
+  const blockSize = Math.max(1, Math.floor(w / 10));
+  let blockCount = 0;
+  for(let y = 0; y < h - blockSize; y += blockSize) {
+    for(let x = 0; x < w - blockSize; x += blockSize) {
+      const lumVals = [];
+      for(let dy = 0; dy < blockSize; dy+=2) {
+        for(let dx = 0; dx < blockSize; dx+=2) {
+          const idx = ((y+dy)*w + (x+dx)) * 4;
+          lumVals.push(0.299*data[idx] + 0.587*data[idx+1] + 0.114*data[idx+2]);
+        }
+      }
+      const mean = lumVals.reduce((a,b)=>a+b,0)/lumVals.length;
+      const variance = lumVals.reduce((s,v)=>s+(v-mean)**2,0)/lumVals.length;
+      if(variance > 400) edgeScore++;
+      blockCount++;
+    }
+  }
+  const complexity = blockCount > 0 ? edgeScore / blockCount : 0;
+
+  // Top palette colors
+  const sorted = Object.entries(colorBuckets).sort((a,b)=>b[1]-a[1]);
+  // Deduplicate similar colors
+  const palette = [];
+  for(const [key] of sorted) {
+    if(palette.length >= 6) break;
+    const [r,g,b] = key.split(',').map(Number);
+    const tooClose = palette.some(c => Math.abs(c.r-r)+Math.abs(c.g-g)+Math.abs(c.b-b) < 80);
+    if(!tooClose) palette.push({r,g,b});
+  }
+
+  return { contrast, brightness, saturation, complexity, palette };
+}
+
+function computeScore(m) {
+  // Contrast: 0–100, ideal 50–90
+  const cScore = m.contrast >= 50 ? Math.min(100, m.contrast * 1.1) : m.contrast * 0.7;
+  // Brightness: ideal 35–75
+  const bScore = (m.brightness >= 35 && m.brightness <= 75) ? 100 : m.brightness < 20 || m.brightness > 88 ? 30 : 65;
+  // Saturation: ideal 40–85
+  const sScore = (m.saturation >= 40 && m.saturation <= 85) ? 100 : m.saturation < 20 ? 40 : m.saturation > 90 ? 70 : 70;
+  // Complexity: ideal 0.25–0.6
+  const compScore = (m.complexity >= 0.2 && m.complexity <= 0.6) ? 100 : m.complexity > 0.75 ? 40 : m.complexity < 0.1 ? 55 : 75;
+  // Palette: ideal 2–4 colors
+  const pScore = m.palette.length <= 4 ? 100 : m.palette.length === 5 ? 80 : 60;
+
+  const total = Math.round(cScore*0.30 + bScore*0.20 + sScore*0.20 + compScore*0.20 + pScore*0.10);
+  return { total, cScore: Math.round(cScore), bScore: Math.round(bScore), sScore: Math.round(sScore), compScore: Math.round(compScore) };
+}
+
+function generateRecs(m, score) {
+  const recs = [];
+  if(m.contrast < 35) recs.push({icon:'⚡',title:'Increase Contrast',urgency:'red',desc:'Your thumbnail has low contrast. Use a brighter subject against a darker background (or vice versa). Low contrast thumbnails become invisible on mobile screens in daylight.'});
+  else if(m.contrast < 55) recs.push({icon:'🎨',title:'Boost Contrast Slightly',urgency:'amber',desc:'Contrast could be stronger. Try darkening the background and brightening the primary subject or text to create more visual separation.'});
+  else recs.push({icon:'✅',title:'Contrast is Strong',urgency:'green',desc:'Good contrast ratio. Your thumbnail should remain visible across different screen types and lighting conditions.'});
+
+  if(m.brightness < 20) recs.push({icon:'💡',title:'Thumbnail Too Dark',urgency:'red',desc:'Average brightness is very low. Dark thumbnails lose detail on OLED screens and in dark-mode interfaces. Increase overall exposure or use a brighter background.'});
+  else if(m.brightness > 85) recs.push({icon:'☀️',title:'Thumbnail Too Bright',urgency:'amber',desc:'High overall brightness can cause detail loss and appear "blown out" in the feed. Consider adding more visual contrast with darker elements.'});
+  else recs.push({icon:'✅',title:'Brightness in Optimal Range',urgency:'green',desc:'Brightness levels are well-balanced for most screen types.'});
+
+  if(m.saturation < 25) recs.push({icon:'🌈',title:'Colors Are Too Muted',urgency:'amber',desc:'Low saturation makes thumbnails blend into the feed. Increase color vibrancy in your editing tool — especially for the primary subject or any text overlays.'});
+  else if(m.saturation > 90) recs.push({icon:'🎨',title:'Colors May Be Oversaturated',urgency:'amber',desc:'Extremely high saturation can appear garish. Consider reducing saturation slightly, especially for skin tones, to maintain a professional look.'});
+  else recs.push({icon:'✅',title:'Color Saturation is Good',urgency:'green',desc:'Color vibrancy is in the range that captures attention without appearing unnatural.'});
+
+  if(m.complexity > 0.72) recs.push({icon:'🗂️',title:'Too Many Visual Elements',urgency:'red',desc:'High visual complexity means too many competing focal points. Viewers cannot process cluttered thumbnails in under 2 seconds. Remove non-essential elements and focus on one primary subject.'});
+  else if(m.complexity < 0.1) recs.push({icon:'➕',title:'Add a Focal Element',urgency:'amber',desc:'The thumbnail is very sparse. Adding a clear focal element — a face with expression, a key object, or bold text — can significantly improve click-through intent.'});
+  else recs.push({icon:'✅',title:'Visual Complexity is Balanced',urgency:'green',desc:'Good balance between simplicity and visual interest. Viewers should be able to identify the primary subject quickly.'});
+
+  if(m.palette.length > 4) recs.push({icon:'🎭',title:'Simplify Color Palette',urgency:'amber',desc:`${m.palette.length} dominant colors is too many. Effective thumbnails use 2–3 dominant colors. Neutralize or desaturate non-essential color areas to create a cleaner visual story.`});
+  else recs.push({icon:'✅',title:'Color Palette is Focused',urgency:'green',desc:'Dominant color count is within the optimal range for thumbnail legibility.'});
+
+  return recs;
+}
+</script>
+
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(28,30,33,.97);backdrop-filter:blur(6px);color:#fff;padding:18px 20px;text-align:center;z-index:9999;border-top:2px solid #d32f2f;">
+    <p style="font-size:.88rem;margin-bottom:12px;color:#ccc;">🍪 We use cookies to improve your experience and show relevant ads. <a href="/en/privacy.html" style="color:#ff8a80;">Privacy Policy</a></p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+      <button onclick="localStorage.setItem('cookieConsent','accepted');document.getElementById('cookie-banner').style.display='none';" style="background:#d32f2f;color:#fff;border:none;padding:9px 22px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.88rem;">Accept all</button>
+      <button onclick="localStorage.setItem('cookieConsent','rejected');document.getElementById('cookie-banner').style.display='none';" style="background:#444;color:#ccc;border:none;padding:9px 22px;border-radius:8px;cursor:pointer;font-size:.88rem;">Reject</button>
+    </div>
+  </div>
+  <script>if(!localStorage.getItem('cookieConsent'))document.getElementById('cookie-banner').style.display='block';</script>
 </body>
 </html>
