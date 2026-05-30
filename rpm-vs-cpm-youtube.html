@@ -140,11 +140,22 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuál es la diferencia entre RPM y CPM en YouTube?","acceptedAnswer":{"@type":"Answer","text":"El CPM es lo que pagan los anunciantes por cada 1.000 impresiones de anuncio. El RPM es lo que tú ganas por cada 1.000 visualizaciones de tu vídeo, después de que YouTube se queda su 45% y descontando las visualizaciones no monetizadas. El RPM siempre es menor que el CPM y es la métrica que realmente importa al creador."}},{"@type":"Question","name":"¿Por qué mi RPM es tan bajo comparado con el CPM?","acceptedAnswer":{"@type":"Answer","text":"Porque no todas las visualizaciones generan una impresión de anuncio. Los anuncios saltados, los bloqueadores de anuncios, los países con baja monetización y los usuarios de YouTube Premium cuentan como visualizaciones pero no generan ingresos. Típicamente solo el 50-70% de las visualizaciones resultan en impresiones monetizadas."}},{"@type":"Question","name":"¿Qué RPM es bueno en YouTube en 2026?","acceptedAnswer":{"@type":"Answer","text":"Por encima de 4 dólares es sólido para la mayoría de nichos. Por encima de 8 dólares significa que estás en una categoría premium como finanzas, legal o SaaS. Por debajo de 1,50 dólares indica un nicho de CPM bajo, audiencia fuera de mercados premium o tasas altas de salto de anuncio."}},{"@type":"Question","name":"¿Cómo puedo aumentar mi RPM sin cambiar de nicho?","acceptedAnswer":{"@type":"Answer","text":"Desplaza tu audiencia hacia países con CPM alto como EEUU, Reino Unido, Australia y Canadá usando ejemplos específicos de esos mercados. Activa los anuncios mid-roll en vídeos de más de 8 minutos. Prioriza formatos de anuncio de 30-60 segundos que tienen mayor tasa de completado y mayor CPM."}}]}</script>
+
+<style id="mobile-nav-fix">
+@media(max-width:720px){
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-links.open{display:flex !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-dropdown>a::after{display:none !important}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+}
+</style>
 </head>
 <body>
   <nav>
   <a href="/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="nav-links">
     <a href="/en/youtube-rpm-vs-cpm.html" class="lang-btn-en">🇬🇧 EN</a>
     <a href="/">Inicio</a>
@@ -294,5 +305,24 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     </div>
   </div>
   <script>if(!localStorage.getItem('cookieConsent'))document.getElementById('cookie-banner').style.display='block';</script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if(!btn || !links) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = links.classList.toggle('open');
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+  document.addEventListener('click', function(e){
+    if(!links.contains(e.target) && e.target !== btn){
+      links.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+})();
+</script>
 </body>
 </html>

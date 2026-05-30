@@ -45,11 +45,22 @@
     .cta-box { background: linear-gradient(135deg, #d32f2f, #1c1e21); color: white; border-radius: 16px; padding: 40px; text-align: center; margin: 40px 0; }
     .cta-box h2 { font-size: 1.6rem; margin-bottom: 12px; }
     .cta-box p { opacity: 0.9; margin-bottom: 20px; }
-    .cta-box a { background: white; color: #d32f2f; padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; }
+    .cta-box a { background: white; color: #d32f2f !important; padding: 14px 30px; border-radius: 50px; text-decoration: none !important; font-weight: bold; display: inline-block; }
     footer { background: #1c1e21; color: #888; text-align: center; padding: 30px; margin-top: 0; }
     footer a { color: #bbb; text-decoration: none; margin: 0 10px; }
     @media(max-width:600px){ .hero h1 { font-size: 1.8rem; } .alpha-nav { justify-content: center; } }
-  </style>
+  
+    /* Mobile nav - injected fix */
+    @media(max-width:720px){
+      .nav-toggle{display:block !important}
+      .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+      .nav-links.open{display:flex !important}
+      .nav-links a{padding:11px 14px;border-radius:8px;color:#ccc !important}
+      .nav-dropdown>a::after{display:none}
+      .dropdown-panel{display:block !important;position:static;transform:none;background:rgba(255,255,255,.04);border:none;box-shadow:none;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+      .dropdown-panel a{font-size:.83rem;padding:7px 10px}
+    }
+    </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -174,6 +185,17 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 .site-footer .footer-lang-btn.es-fb:hover { background: rgba(165,214,167,.2) !important; }
 
 </style>
+
+<style id="mobile-nav-fix">
+@media(max-width:720px){
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-links.open{display:flex !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-dropdown>a::after{display:none !important}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+}
+</style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
@@ -188,7 +210,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <nav>
   <a href="/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="nav-links">
     <a href="/en/glossary.html" class="lang-btn-en">🇬🇧 EN</a>
     <a href="/">Inicio</a>
@@ -302,8 +324,8 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
   <div class="cta-box">
     <h2>🔍 ¿Quieres mejorar tu CTR ahora mismo?</h2>
-    <p>Usa nuestro extractor gratuito de miniaturas para analizar las portadas de los canales más exitosos de tu nicho en alta definición.</p>
-    <a href="index.html">Probar Gratis →</a>
+    <p>Usa nuestro analizador gratuito para obtener una puntuación CTR instantánea de cualquier miniatura — contraste, brillo, legibilidad del texto y complejidad visual. Sin registro.</p>
+    <a href="/analizador-miniaturas.html">Analizar Miniatura Gratis →</a>
   </div>
 
   <!-- M -->
@@ -446,6 +468,25 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         .catch(err => console.log('SW error:', err));
     });
   }
+</script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if(!btn || !links) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = links.classList.toggle('open');
+    btn.textContent = isOpen ? '✕' : '☰';
+  });
+  document.addEventListener('click', function(e){
+    if(!links.contains(e.target) && e.target !== btn){
+      links.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+})();
 </script>
 </body>
 </html>
