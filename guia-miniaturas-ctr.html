@@ -206,6 +206,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 .site-footer .footer-lang-btn.es-fb:hover { background: rgba(165,214,167,.2) !important; }
 
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué es un buen CTR en YouTube?","acceptedAnswer":{"@type":"Answer","text":"Un CTR entre el 4% y el 7% es la media de la plataforma. Por encima del 8% es excelente y indica que tu miniatura destaca en el feed. Por debajo del 2% es una señal de alarma: el algoritmo de YouTube lo interpreta como contenido poco atractivo y reduce su distribución independientemente de la calidad del vídeo."}},{"@type":"Question","name":"¿Con qué frecuencia debo cambiar mi miniatura?","acceptedAnswer":{"@type":"Answer","text":"Si un vídeo obtiene menos del 3% de CTR en sus primeros 7 días, cambia la miniatura inmediatamente. Para contenido evergreen, haz pruebas A/B cada 3-6 meses. YouTube permite probar hasta 3 variantes de miniatura de forma nativa en YouTube Studio, con datos de CTR por variante."}},{"@type":"Question","name":"¿El diseño de miniaturas afecta directamente a los ingresos?","acceptedAnswer":{"@type":"Answer","text":"Sí, de forma directa y multiplicativa. Más CTR genera más visualizaciones con las mismas impresiones, lo que multiplica los ingresos publicitarios, el RPM y el crecimiento del canal. Una mejora del 1% en CTR en un canal con 100.000 impresiones diarias añade unas 1.000 visualizaciones extra al día."}},{"@type":"Question","name":"¿Puedo usar el mismo estilo de miniatura para todos los vídeos?","acceptedAnswer":{"@type":"Answer","text":"Una identidad visual consistente, misma paleta de colores, tipografía y posición del sujeto, es positiva para el reconocimiento de marca. Pero cada miniatura debe comunicar una promesa única y específica del vídeo. Consistencia visual más mensaje fresco por vídeo es la estrategia óptima para canales en crecimiento."}}]}</script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
@@ -224,22 +225,25 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <!-- Navbar -->
 <nav>
-  <a href="index.html" class="nav-logo">🚀 Tube<span class="logo-accent">Tools</span></a>
+  <a href="/" class="nav-logo">🚀 Tube<span>Tools</span></a>
   <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">☰</button>
   <div class="nav-links">
     <a href="/en/guide-thumbnails-ctr.html" class="lang-btn-en">🇬🇧 EN</a>
-    <a href="index.html">Inicio</a>
+    <a href="/">Inicio</a>
     <div class="nav-dropdown">
-          <a href="herramientas.html">🎯 Herramientas</a>
-          <div class="dropdown-panel">
-            <a href="index.html"><span class="dp-icon">🖼️</span>Extractor de Miniaturas</a>
-            <a href="analizador-miniaturas.html"><span class="dp-icon">🔬</span>Analizador de Miniaturas</a>
-            <a href="generador-titulos-youtube.html"><span class="dp-icon">✍️</span>Generador de Títulos</a>
-            <a href="calculadora.html"><span class="dp-icon">🧮</span>Calculadora de Ganancias</a>
-            <a href="calculadora-puntuacion-ctr.html"><span class="dp-icon">📊</span>CTR Score</a>
-            <a href="checklist-miniaturas.html"><span class="dp-icon">✅</span>Checklist</a>
-          </div></div>
-    <a href="blog.html">Blog</a><a href="glosario.html">Glosario</a><a href="contacto.html">Contacto</a>
+      <a href="/herramientas.html">🎯 Herramientas</a>
+      <div class="dropdown-panel">
+        <a href="/"><span class="dp-icon">🖼️</span>Extractor de Miniaturas</a>
+        <a href="/analizador-miniaturas.html"><span class="dp-icon">🔬</span>Analizador de Miniaturas</a>
+        <a href="/generador-titulos-youtube.html"><span class="dp-icon">✍️</span>Generador de Títulos</a>
+        <a href="/calculadora.html"><span class="dp-icon">🧮</span>Calculadora de Ganancias</a>
+        <a href="/calculadora-puntuacion-ctr.html"><span class="dp-icon">📊</span>CTR Score</a>
+        <a href="/checklist-miniaturas.html"><span class="dp-icon">✅</span>Checklist</a>
+      </div>
+    </div>
+    <a href="/blog.html">Blog</a>
+    <a href="/glosario.html">Glosario</a>
+    <a href="/contacto.html">Contacto</a>
   </div>
 </nav>
 
@@ -436,45 +440,67 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 </div>
 
 <!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">🚀 Tube<span class="logo-accent">Tools</span></div>
-        <p>Herramientas gratuitas para creadores de YouTube que quieren crecer con datos, no con suerte.</p>
+    <section style="max-width:860px;margin:48px auto;padding:0 20px;">
+      <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
+        <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin-bottom:24px;">Preguntas Frecuentes</h2>
+        <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
+          <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Qué es un buen CTR en YouTube?</h3>
+          <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Un CTR entre el 4% y el 7% es la media de la plataforma. Por encima del 8% es excelente y indica que tu miniatura destaca en el feed. Por debajo del 2% es una señal de alarma: el algoritmo de YouTube lo interpreta como contenido poco atractivo y reduce su distribución independientemente de la calidad del vídeo.</p>
+        </div>
+        <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
+          <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Con qué frecuencia debo cambiar mi miniatura?</h3>
+          <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Si un vídeo obtiene menos del 3% de CTR en sus primeros 7 días, cambia la miniatura inmediatamente. Para contenido evergreen, haz pruebas A/B cada 3-6 meses. YouTube permite probar hasta 3 variantes de miniatura de forma nativa en YouTube Studio, con datos de CTR por variante.</p>
+        </div>
+        <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
+          <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿El diseño de miniaturas afecta directamente a los ingresos?</h3>
+          <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Sí, de forma directa y multiplicativa. Más CTR genera más visualizaciones con las mismas impresiones, lo que multiplica los ingresos publicitarios, el RPM y el crecimiento del canal. Una mejora del 1% en CTR en un canal con 100.000 impresiones diarias añade unas 1.000 visualizaciones extra al día.</p>
+        </div>
+        <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
+          <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Puedo usar el mismo estilo de miniatura para todos los vídeos?</h3>
+          <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Una identidad visual consistente, misma paleta de colores, tipografía y posición del sujeto, es positiva para el reconocimiento de marca. Pero cada miniatura debe comunicar una promesa única y específica del vídeo. Consistencia visual más mensaje fresco por vídeo es la estrategia óptima para canales en crecimiento.</p>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Herramientas</h4>
-        <a href="/index.html">Extractor Miniaturas</a>
-        <a href="/analizador-miniaturas.html">Analizador</a>
-        <a href="/generador-titulos-youtube.html">Generador Títulos</a>
-        <a href="/calculadora.html">Calculadora</a>
-        <a href="/calculadora-puntuacion-ctr.html">CTR Score</a>
-        <a href="/checklist-miniaturas.html">Checklist</a>
+    </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">🚀 Tube<span>Tools</span></div>
+          <p>Herramientas gratuitas para creadores de YouTube que quieren crecer con datos, no con suerte.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Herramientas</h4>
+          <a href="/">Extractor Miniaturas</a>
+          <a href="/analizador-miniaturas.html">Analizador</a>
+          <a href="/generador-titulos-youtube.html">Generador Títulos</a>
+          <a href="/calculadora.html">Calculadora</a>
+          <a href="/calculadora-puntuacion-ctr.html">CTR Score</a>
+          <a href="/checklist-miniaturas.html">Checklist</a>
+        </div>
+        <div class="footer-col">
+          <h4>Guías</h4>
+          <a href="/guia-miniaturas-ctr.html">Guía CTR</a>
+          <a href="/aumentar-rpm-youtube.html">Aumentar RPM</a>
+          <a href="/cpm-youtube-por-nicho.html">CPM por Nicho</a>
+          <a href="/requisitos-monetizacion-youtube.html">Monetización</a>
+          <a href="/mejores-nichos-youtube-adsense.html">Mejores Nichos</a>
+          <a href="/glosario.html">Glosario</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/privacidad.html">Privacidad</a>
+          <a href="/terminos.html">Términos</a>
+          <a href="/contacto.html">Contacto</a>
+          <a href="/about.html">Sobre Nosotros</a>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Guías</h4>
-        <a href="/guia-miniaturas-ctr.html">Guía CTR</a>
-        <a href="/aumentar-rpm-youtube.html">Aumentar RPM</a>
-        <a href="/cpm-youtube-por-nicho.html">CPM por Nicho</a>
-        <a href="/requisitos-monetizacion-youtube.html">Monetización</a>
-        <a href="/mejores-nichos-youtube-adsense.html">Mejores Nichos</a>
-        <a href="/glosario.html">Glosario</a>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <a href="/privacidad.html">Privacidad</a>
-        <a href="/terminos.html">Términos</a>
-        <a href="/contacto.html">Contacto</a>
-        <a href="/mapa-sitio.html">Mapa del Sitio</a>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TubeTools.online — Todos los derechos reservados.</p>
+        <a href="/en/guide-thumbnails-ctr.html" class="footer-lang-btn en-fb">🇬🇧 Switch to English</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 TubeTools.online — Todos los derechos reservados.</p>
-      <a href="/en/guide-thumbnails-ctr.html" class="footer-lang-btn en-fb">🇬🇧 Switch to English</a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 <script>
     // Cookie banner
