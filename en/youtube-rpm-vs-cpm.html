@@ -195,12 +195,16 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <style id="mobile-nav-fix">
 @media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
   .nav-links.open{display:flex !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
+  .nav-dropdown{width:100% !important;position:static !important}
+  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
   .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
+  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
 }
 </style>
 </head>
@@ -286,12 +290,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     <h2>How to Track and Improve Both Metrics in YouTube Studio</h2>
     <p>YouTube Analytics gives you access to both metrics under <strong>Analytics → Revenue</strong>. Here's what to look at and what each data point tells you:</p>
 
-    <div class="cta-tool">
-      <h3>🧮 Calculate Your Potential YouTube Revenue</h3>
-      <p>Use TubeTools' free revenue calculator to estimate how much your channel could earn at different view counts and CPM levels — across daily, monthly and yearly projections.</p>
-      <a href="/en/calculator.html">Open the Free Revenue Calculator</a>
-    </div>
-
 
     <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:.93rem;">
       <tr style="background:#d32f2f;color:#fff;"><th style="padding:12px 14px;text-align:left;">Metric</th><th style="padding:12px 14px;text-align:left;">What it tells you</th><th style="padding:12px 14px;text-align:left;">What to do if it's low</th></tr>
@@ -359,7 +357,14 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         
       </div>
     </section>
-  </main>
+  
+
+
+    <div class="cta-tool">
+      <h3>🧮 Calculate Your Potential YouTube Revenue</h3>
+      <p>Use TubeTools' free revenue calculator to estimate how much your channel could earn at different view counts and CPM levels — across daily, monthly and yearly projections.</p>
+      <a href="/en/calculator.html">Open the Free Revenue Calculator</a>
+    </div></main>
     <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-grid">

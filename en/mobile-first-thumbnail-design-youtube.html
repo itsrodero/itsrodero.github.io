@@ -213,12 +213,16 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <style id="mobile-nav-fix">
 @media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
   .nav-links.open{display:flex !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
+  .nav-dropdown{width:100% !important;position:static !important}
+  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
   .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
+  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
 }
 </style>
 </head>
@@ -290,12 +294,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     <h2>3. Contrast Behavior at Low Brightness and in Dark Mode</h2>
     <p>Two conditions that amateur designers almost never test, but that affect the majority of mobile viewers:</p>
 
-    <div class="cta-tool">
-      <h3>✅ Run the Pre-Publish Thumbnail Checklist</h3>
-      <p>Before uploading your next video, run it through TubeTools' 10-point thumbnail checklist. Catch the mistakes that silently suppress CTR before your video goes live.</p>
-      <a href="/en/thumbnail-checklist.html">Open the Free Checklist</a>
-    </div>
-
 
     <h3>Low Brightness Rendering</h3>
     <p>Many users browse YouTube in bed, in dark environments, or with battery-saving brightness settings. Under these conditions, subtle color gradients merge into undifferentiated grey fields. A background you designed as "dark blue" can become indistinguishable from "dark purple" or "dark green" at 20% brightness. Only colors with high saturation and strong hue separation remain distinguishable under low brightness conditions.</p>
@@ -325,7 +323,14 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
       <a href="index.html" class="btn btn-info btn-lg rounded-pill px-5 py-3 fw-bold mt-3" style="color:white;">START FREE VISUAL INSPECTION</a>
     </div>
   </article>
-</main>
+
+
+
+    <div class="cta-tool">
+      <h3>✅ Run the Pre-Publish Thumbnail Checklist</h3>
+      <p>Before uploading your next video, run it through TubeTools' 10-point thumbnail checklist. Catch the mistakes that silently suppress CTR before your video goes live.</p>
+      <a href="/en/thumbnail-checklist.html">Open the Free Checklist</a>
+    </div></main>
 
     <section style="max-width:860px;margin:48px auto;padding:0 20px;">
       <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">

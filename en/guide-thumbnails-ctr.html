@@ -237,12 +237,16 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <style id="mobile-nav-fix">
 @media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
   .nav-links.open{display:flex !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
+  .nav-dropdown{width:100% !important;position:static !important}
+  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
   .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
+  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
 }
 </style>
 </head>
@@ -428,12 +432,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     <h2 id="benchmarks">7. Real benchmarks: what CTR should you aim for?</h2>
     <p>One of the most frequent questions from creators is what constitutes a "good" CTR. The answer depends on content type and where the video is in its lifecycle:</p>
 
-    <div class="cta-tool">
-      <h3>🔍 Analyze Your Competitors' Thumbnails in HD</h3>
-      <p>TubeTools lets you extract any YouTube thumbnail in 1080p quality instantly, free and no sign-up. Study the top performers in your niche and improve your CTR with real data.</p>
-      <a href="/en/thumbnail-analyzer.html">Use the Free Thumbnail Analyzer</a>
-    </div>
-
 
 
     <table class="data-table">
@@ -484,6 +482,17 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 </div>
 
 <!-- Footer -->
+
+  
+
+
+    <div class="cta-tool">
+      <h3>🔍 Analyze Your Competitors' Thumbnails in HD</h3>
+      <p>TubeTools lets you extract any YouTube thumbnail in 1080p quality instantly, free and no sign-up. Study the top performers in your niche and improve your CTR with real data.</p>
+      <a href="/en/thumbnail-analyzer.html">Use the Free Thumbnail Analyzer</a>
+    </div>
+
+
     <section style="max-width:860px;margin:48px auto;padding:0 20px;">
       <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
         <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin-bottom:24px;">Frequently Asked Questions</h2>
@@ -504,9 +513,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
           <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Consistent visual branding is good — same color palette, font, subject position — but each thumbnail must communicate a unique promise. Template consistency plus fresh messaging per video is the optimal strategy.</p>
         </div>
       </div>
-    </section>
-
-  <footer class="site-footer">
+    </section><footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">

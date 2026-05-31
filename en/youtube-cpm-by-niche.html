@@ -199,12 +199,16 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <style id="mobile-nav-fix">
 @media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
   .nav-links.open{display:flex !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
+  .nav-dropdown{width:100% !important;position:static !important}
+  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
   .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
+  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
 }
 </style>
 </head>
@@ -299,21 +303,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     <h3>3. Improve Your CTR and Watch Time</h3>
     <p>Higher CTR and watch time improve your video's algorithmic distribution, reaching broader and often higher-income audiences. Better thumbnails and titles directly impact which demographic sees your content — and therefore which advertisers bid on your impressions. Use our <a href="calculator.html" style="color:#d32f2f;">YouTube Revenue Calculator</a> to see how CPM improvements affect your monthly income.</p>
 
-    <section style="margin:40px 0;padding:25px;background:#f9f9f9;border-radius:12px;">
-      <h2 style="color:#d32f2f;margin-bottom:20px;">❓ Frequently Asked Questions</h2>
-      <div style="margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:18px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">Which YouTube niche has the highest CPM in 2026?</h3>
-        <p style="color:#555;line-height:1.7;">Finance and investing is the highest CPM niche on YouTube in 2026, with CPM rates ranging from $15 to $40 per 1,000 ad impressions in the United States. Software/SaaS ($12-30) and business/entrepreneurship ($10-25) follow closely.</p>
-      </div>
-      <div style="margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:18px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">What is the average YouTube CPM in 2026?</h3>
-        <p style="color:#555;line-height:1.7;">The global average YouTube CPM across all niches and countries is approximately $4-$6 in 2026. US-based channels in mid-tier niches like education earn $6-$12 CPM. The average is pulled down significantly by low-CPM countries and niches like gaming.</p>
-      </div>
-      <div>
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">Does YouTube CPM change by country?</h3>
-        <p style="color:#555;line-height:1.7;">Yes, dramatically. The US delivers the highest CPM on YouTube, averaging $8-$15 across niches. The UK, Canada, and Australia follow with $5-$10. Most Asian and Latin American countries average $0.50-$2 CPM. This is why targeting US English-speaking audiences is the most profitable YouTube strategy.</p>
-      </div>
-    </section>
 
 
     <h2>Why CPM Varies So Dramatically Between Niches</h2>
@@ -322,12 +311,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
     <h2>CPM by Country: The Geographic Multiplier</h2>
     <p>Country of viewership is the second biggest CPM driver after niche. The US generates the highest CPM globally — 3 to 8 times higher than most other countries for the same content. This creates a massive income gap between creators with primarily US audiences and those with audiences in lower-CPM regions.</p>
-
-    <div class="cta-tool">
-      <h3>🧮 Calculate Your Potential YouTube Revenue</h3>
-      <p>Use TubeTools' free revenue calculator to estimate how much your channel could earn at different view counts and CPM levels — across daily, monthly and yearly projections.</p>
-      <a href="/en/calculator.html">Open the Free Revenue Calculator</a>
-    </div>
 
 
     <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:.93rem;">
@@ -379,7 +362,30 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         
       </div>
     </section>
-  </main>
+  
+
+
+    <div class="cta-tool">
+      <h3>🧮 Calculate Your Potential YouTube Revenue</h3>
+      <p>Use TubeTools' free revenue calculator to estimate how much your channel could earn at different view counts and CPM levels — across daily, monthly and yearly projections.</p>
+      <a href="/en/calculator.html">Open the Free Revenue Calculator</a>
+    </div>
+
+    <section style="margin:40px 0;padding:25px;background:#f9f9f9;border-radius:12px;">
+      <h2 style="color:#d32f2f;margin-bottom:20px;">❓ Frequently Asked Questions</h2>
+      <div style="margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:18px;">
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">Which YouTube niche has the highest CPM in 2026?</h3>
+        <p style="color:#555;line-height:1.7;">Finance and investing is the highest CPM niche on YouTube in 2026, with CPM rates ranging from $15 to $40 per 1,000 ad impressions in the United States. Software/SaaS ($12-30) and business/entrepreneurship ($10-25) follow closely.</p>
+      </div>
+      <div style="margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:18px;">
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">What is the average YouTube CPM in 2026?</h3>
+        <p style="color:#555;line-height:1.7;">The global average YouTube CPM across all niches and countries is approximately $4-$6 in 2026. US-based channels in mid-tier niches like education earn $6-$12 CPM. The average is pulled down significantly by low-CPM countries and niches like gaming.</p>
+      </div>
+      <div>
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">Does YouTube CPM change by country?</h3>
+        <p style="color:#555;line-height:1.7;">Yes, dramatically. The US delivers the highest CPM on YouTube, averaging $8-$15 across niches. The UK, Canada, and Australia follow with $5-$10. Most Asian and Latin American countries average $0.50-$2 CPM. This is why targeting US English-speaking audiences is the most profitable YouTube strategy.</p>
+      </div>
+    </section></main>
     <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-grid">
