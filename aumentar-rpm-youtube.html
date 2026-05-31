@@ -178,12 +178,16 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <style id="mobile-nav-fix">
 @media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
   .nav-links.open{display:flex !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
+  .nav-dropdown{width:100% !important;position:static !important}
+  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
   .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
+  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
 }
 </style>
 </head>
@@ -348,12 +352,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
     <p>Para mejorar tu CTR, la palanca más efectiva es el análisis de la competencia. Ver las miniaturas de los canales más grandes de tu nicho en alta resolución te permite identificar qué patrones visuales funcionan: qué expresiones faciales usan, qué esquemas de color, qué tipografía, qué elementos de composición.</p>
 
-    <div class="cta-tool">
-      <h3>🔍 Analiza las miniaturas de tu competencia en HD</h3>
-      <p>TubeTools te permite extraer cualquier miniatura de YouTube en calidad 1080p al instante, gratis y sin registro. Estudia a los mejores de tu nicho y mejora tu CTR.</p>
-      <a href="analizador-miniaturas.html">Usar el Analizador de Miniaturas Gratis</a>
-    </div>
-
     <h2>Estrategia 7: Activa las Membresías del Canal</h2>
 
     <p>Las membresías del canal tienen una ventaja única sobre los ingresos por publicidad: son recurrentes, predecibles y no dependen del CPM. Cada miembro que paga 4,99€, 9,99€ o más al mes contribuye directamente a tu RPM total sin que YouTube tenga que mostrar más anuncios.</p>
@@ -400,17 +398,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
     <p>Los patrocinios directos merecen mención especial. Una mención de marca de 60 segundos en un canal de nicho medio (50.000-200.000 suscriptores) puede valer entre $500 y $5.000 por vídeo, independientemente de tu CPM de AdSense. Para los creadores más pequeños, un único patrocinio mensual puede equivaler a los ingresos de AdSense de todo el mes.</p>
 
-    <h2>Preguntas Frecuentes sobre el RPM en YouTube</h2>
-
-    <h3>¿Por qué mi RPM baja en enero?</h3>
-    <p>Enero es históricamente el mes con el CPM más bajo del año en YouTube. Las empresas han agotado sus presupuestos publicitarios de Q4 y están comenzando a planificar el nuevo año. Este descenso es normal, puede ser del 30-50% respecto a diciembre, y se recupera gradualmente a partir de febrero-marzo.</p>
-
-    <h3>¿Cuánto RPM es bueno para un canal nuevo?</h3>
-    <p>Para un canal que acaba de entrar al Programa de Socios de YouTube, un RPM entre $1 y $3 es completamente normal. A medida que YouTube aprende quiénes son tus espectadores y qué anunciantes encajan mejor con tu audiencia, el RPM tiende a subir de forma natural durante los primeros 6-12 meses, incluso sin cambiar nada en tu estrategia.</p>
-
-    <h3>¿El RPM es el mismo para todos los vídeos de mi canal?</h3>
-    <p>No. Cada vídeo tiene su propio CPM (y por tanto contribuye de forma diferente al RPM total). Un vídeo sobre "cómo invertir en bolsa" en tu canal puede tener un CPM de $20, mientras que un vídeo de entretenimiento puro en el mismo canal tiene un CPM de $3. YouTube Analytics te permite ver el RPM desglosado por vídeo.</p>
-
     <h2>Conclusión: La Secuencia de Implementación Correcta</h2>
 
     <p>Si tuvieras que implementar estas estrategias en orden de mayor a menor impacto inmediato, la secuencia óptima sería:</p>
@@ -442,7 +429,25 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
       <a href="calculadora.html">→ 🧮 Calculadora de Ingresos YouTube</a>
       <a href="como-el-ctr-afecta-tus-ingresos-youtube.html">→ La Conexión Oculta entre CTR y RPM</a>
     </div>
-  </main>
+  
+
+
+    <div class="cta-tool">
+      <h3>🔍 Analiza las miniaturas de tu competencia en HD</h3>
+      <p>TubeTools te permite extraer cualquier miniatura de YouTube en calidad 1080p al instante, gratis y sin registro. Estudia a los mejores de tu nicho y mejora tu CTR.</p>
+      <a href="analizador-miniaturas.html">Usar el Analizador de Miniaturas Gratis</a>
+    </div
+
+<h2>Preguntas Frecuentes sobre el RPM en YouTube</h2>
+
+    <h3>¿Por qué mi RPM baja en enero?</h3>
+    <p>Enero es históricamente el mes con el CPM más bajo del año en YouTube. Las empresas han agotado sus presupuestos publicitarios de Q4 y están comenzando a planificar el nuevo año. Este descenso es normal, puede ser del 30-50% respecto a diciembre, y se recupera gradualmente a partir de febrero-marzo.</p>
+
+    <h3>¿Cuánto RPM es bueno para un canal nuevo?</h3>
+    <p>Para un canal que acaba de entrar al Programa de Socios de YouTube, un RPM entre $1 y $3 es completamente normal. A medida que YouTube aprende quiénes son tus espectadores y qué anunciantes encajan mejor con tu audiencia, el RPM tiende a subir de forma natural durante los primeros 6-12 meses, incluso sin cambiar nada en tu estrategia.</p>
+
+    <h3>¿El RPM es el mismo para todos los vídeos de mi canal?</h3>
+    <p>No. Cada vídeo tiene su propio CPM (y por tanto contribuye de forma diferente al RPM total). Un vídeo sobre "cómo invertir en bolsa" en tu canal puede tener un CPM de $20, mientras que un vídeo de entretenimiento puro en el mismo canal tiene un CPM de $3. YouTube Analytics te permite ver el RPM desglosado por vídeo.</p></main>
 
     <footer class="site-footer">
     <div class="footer-inner">

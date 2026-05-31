@@ -188,12 +188,16 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <style id="mobile-nav-fix">
 @media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
   .nav-links.open{display:flex !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
+  .nav-dropdown{width:100% !important;position:static !important}
+  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
   .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
+  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
 }
 </style>
 </head>
@@ -307,21 +311,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     </div>
   </section>
   
-    <section style="margin:35px 0;padding:22px;background:#f9f9f9;border-radius:12px;">
-      <h2 style="color:#d32f2f;margin-bottom:18px;">❓ Preguntas Frecuentes</h2>
-      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué es un buen CTR en YouTube en 2026?</h3>
-        <p style="color:#555;line-height:1.7;">Un buen CTR en YouTube en 2026 está entre el 4% y el 10%. La media en todos los canales es de aproximadamente 3-4%. Si tu CTR supera el 6%, tu miniatura rinde excepcionalmente bien. Por debajo del 2% es una señal para rediseñarla de inmediato.</p>
-      </div>
-      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Cómo afecta el CTR al algoritmo de YouTube?</h3>
-        <p style="color:#555;line-height:1.7;">YouTube usa el CTR como señal principal en las primeras 24-48 horas tras publicar un vídeo. Un CTR alto le dice al algoritmo que la miniatura y el título son atractivos, lo que hace que YouTube empuje el vídeo hacia más impresiones. Un CTR bajo causa supresión de la distribución.</p>
-      </div>
-      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Cómo veo mi CTR en YouTube?</h3>
-        <p style="color:#555;line-height:1.7;">Puedes encontrar tu CTR en YouTube Studio bajo Análisis → Alcance. Busca 'Tasa de clics en impresiones' para cualquier vídeo o período de tiempo. Los datos están disponibles desde el momento en que tu vídeo recibe sus primeras impresiones.</p>
-      </div>
-    </section>
   
     <section style="margin:35px 0;padding:22px;border-top:2px solid #d32f2f;">
       <h2 style="color:#d32f2f;margin-bottom:18px;">📚 Artículos Relacionados</h2>
@@ -347,7 +336,22 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
       </ul>
       <p>Para ver el CTR desglosado por fuente: YouTube Studio → Análisis → Alcance → desplázate hasta "Fuentes de tráfico" → selecciona una fuente → ve a la pestaña "Interacción".</p>
     </section>
-  </main>
+
+    <section style="margin:35px 0;padding:22px;background:#f9f9f9;border-radius:12px;">
+      <h2 style="color:#d32f2f;margin-bottom:18px;">❓ Preguntas Frecuentes</h2>
+      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué es un buen CTR en YouTube en 2026?</h3>
+        <p style="color:#555;line-height:1.7;">Un buen CTR en YouTube en 2026 está entre el 4% y el 10%. La media en todos los canales es de aproximadamente 3-4%. Si tu CTR supera el 6%, tu miniatura rinde excepcionalmente bien. Por debajo del 2% es una señal para rediseñarla de inmediato.</p>
+      </div>
+      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Cómo afecta el CTR al algoritmo de YouTube?</h3>
+        <p style="color:#555;line-height:1.7;">YouTube usa el CTR como señal principal en las primeras 24-48 horas tras publicar un vídeo. Un CTR alto le dice al algoritmo que la miniatura y el título son atractivos, lo que hace que YouTube empuje el vídeo hacia más impresiones. Un CTR bajo causa supresión de la distribución.</p>
+      </div>
+      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Cómo veo mi CTR en YouTube?</h3>
+        <p style="color:#555;line-height:1.7;">Puedes encontrar tu CTR en YouTube Studio bajo Análisis → Alcance. Busca 'Tasa de clics en impresiones' para cualquier vídeo o período de tiempo. Los datos están disponibles desde el momento en que tu vídeo recibe sus primeras impresiones.</p>
+      </div>
+    </section></main>
     <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">

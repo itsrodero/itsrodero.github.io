@@ -188,12 +188,16 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <style id="mobile-nav-fix">
 @media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
   .nav-links.open{display:flex !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
+  .nav-dropdown{width:100% !important;position:static !important}
+  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
   .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
+  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
 }
 </style>
 </head>
@@ -301,21 +305,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     </div>
   </section>
   
-    <section style="margin:35px 0;padding:22px;background:#f9f9f9;border-radius:12px;">
-      <h2 style="color:#d32f2f;margin-bottom:18px;">❓ Preguntas Frecuentes</h2>
-      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué hace que una miniatura de YouTube se vuelva viral?</h3>
-        <p style="color:#555;line-height:1.7;">Las miniaturas de YouTube con alto CTR comparten cuatro características: una fuerte brecha de curiosidad entre la miniatura y el título, una jerarquía visual clara con un único punto focal dominante, una señal emocional intensa (normalmente una cara con expresión fuerte) y alto contraste que funciona a tamaño miniatura en móvil.</p>
-      </div>
-      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué es la brecha de curiosidad en miniaturas de YouTube?</h3>
-        <p style="color:#555;line-height:1.7;">La brecha de curiosidad es la tensión psicológica que se crea cuando una miniatura insinúa algo interesante sin revelarlo del todo. Por ejemplo, una expresión facial de shock sin contexto, o una imagen que implica que pasó algo sorprendente. El espectador hace clic para resolver esa tensión.</p>
-      </div>
-      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué importancia tiene la cara en una miniatura de YouTube?</h3>
-        <p style="color:#555;line-height:1.7;">Extrema. Los estudios sobre miniaturas de alto rendimiento muestran que los vídeos con una cara humana en la miniatura obtienen un CTR entre un 30% y un 38% más alto de media. Las caras activan una respuesta neurológica automática: el cerebro procesa los rostros antes que el texto u otros objetos.</p>
-      </div>
-    </section>
   
     <section style="margin:35px 0;padding:22px;border-top:2px solid #d32f2f;">
       <h2 style="color:#d32f2f;margin-bottom:18px;">📚 Artículos Relacionados</h2>
@@ -339,7 +328,22 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
       <h2 style="color:#2e7d32;margin-bottom:10px;">✅ Puntuación de CTR de tu Miniatura</h2>
       <p>¿Quieres saber si tu miniatura aplica correctamente los principios del alto CTR? Usa nuestra <a href="calculadora-puntuacion-ctr.html" style="color:#2e7d32;font-weight:600;">Calculadora de Puntuación CTR</a> — responde 12 preguntas sobre tu miniatura y obtén una puntuación de 0 a 100 con los arreglos específicos por orden de prioridad.</p>
     </section>
-  </main>
+
+    <section style="margin:35px 0;padding:22px;background:#f9f9f9;border-radius:12px;">
+      <h2 style="color:#d32f2f;margin-bottom:18px;">❓ Preguntas Frecuentes</h2>
+      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué hace que una miniatura de YouTube se vuelva viral?</h3>
+        <p style="color:#555;line-height:1.7;">Las miniaturas de YouTube con alto CTR comparten cuatro características: una fuerte brecha de curiosidad entre la miniatura y el título, una jerarquía visual clara con un único punto focal dominante, una señal emocional intensa (normalmente una cara con expresión fuerte) y alto contraste que funciona a tamaño miniatura en móvil.</p>
+      </div>
+      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué es la brecha de curiosidad en miniaturas de YouTube?</h3>
+        <p style="color:#555;line-height:1.7;">La brecha de curiosidad es la tensión psicológica que se crea cuando una miniatura insinúa algo interesante sin revelarlo del todo. Por ejemplo, una expresión facial de shock sin contexto, o una imagen que implica que pasó algo sorprendente. El espectador hace clic para resolver esa tensión.</p>
+      </div>
+      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué importancia tiene la cara en una miniatura de YouTube?</h3>
+        <p style="color:#555;line-height:1.7;">Extrema. Los estudios sobre miniaturas de alto rendimiento muestran que los vídeos con una cara humana en la miniatura obtienen un CTR entre un 30% y un 38% más alto de media. Las caras activan una respuesta neurológica automática: el cerebro procesa los rostros antes que el texto u otros objetos.</p>
+      </div>
+    </section></main>
     <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">

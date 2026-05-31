@@ -189,12 +189,16 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <style id="mobile-nav-fix">
 @media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
   .nav-links.open{display:flex !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
+  .nav-dropdown{width:100% !important;position:static !important}
+  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
   .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
+  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
 }
 </style>
 </head>
@@ -329,6 +333,14 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     </div>
   </section>
   
+  
+    <section style="margin:35px 0;padding:22px;border-top:2px solid #d32f2f;">
+      <h2 style="color:#d32f2f;margin-bottom:18px;">📚 Artículos Relacionados</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+        <a href="tamano-formato-miniatura-youtube-2026.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Tamaños de Miniatura 2026</strong></a><a href="tipografia-para-miniaturas-youtube.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Tipografía para Miniaturas</strong></a><a href="teoria-del-color-miniaturas-youtube.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Teoría del Color Avanzada</strong></a>
+      </div>
+    </section>
+
     <section style="margin:35px 0;padding:22px;background:#f9f9f9;border-radius:12px;">
       <h2 style="color:#d32f2f;margin-bottom:18px;">❓ Preguntas Frecuentes</h2>
       <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
@@ -343,15 +355,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué tamaño de fuente debo usar para las miniaturas de YouTube?</h3>
         <p style="color:#555;line-height:1.7;">A resolución 1280×720, usa un mínimo de 40-50pt para el texto principal y 30pt para el texto secundario. Después de diseñar, comprueba siempre redimensionando la miniatura a 320×180px y verificando que el texto sigue siendo legible. Si no se lee a un cuarto de tamaño, fallará en móvil.</p>
       </div>
-    </section>
-  
-    <section style="margin:35px 0;padding:22px;border-top:2px solid #d32f2f;">
-      <h2 style="color:#d32f2f;margin-bottom:18px;">📚 Artículos Relacionados</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
-        <a href="tamano-formato-miniatura-youtube-2026.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Tamaños de Miniatura 2026</strong></a><a href="tipografia-para-miniaturas-youtube.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Tipografía para Miniaturas</strong></a><a href="teoria-del-color-miniaturas-youtube.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Teoría del Color Avanzada</strong></a>
-      </div>
-    </section>
-  </main>
+    </section></main>
       <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-grid">

@@ -181,12 +181,16 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <style id="mobile-nav-fix">
 @media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
   .nav-links.open{display:flex !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
+  .nav-dropdown{width:100% !important;position:static !important}
+  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
   .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
+  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
 }
 </style>
 </head>
@@ -287,21 +291,6 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     <p>Los mejores títulos de YouTube no son los más creativos ni los más informativos — son los que crean la mayor tensión psicológica entre lo que el espectador ya sabe y lo que el vídeo promete revelar. Esta tensión se llama brecha de curiosidad, y es el motor de todos los títulos virales.</p>
     <p>Además, el título debe trabajar en equipo con la miniatura, no duplicarla. Si tu miniatura muestra una cara de shock, el título debe explicar por qué. Si tu miniatura muestra un resultado sorprendente, el título debe crear la pregunta. Juntos forman una unidad que hace imposible no hacer clic.</p>
 
-    <section style="margin:40px 0;padding:25px;background:#f9f9f9;border-radius:12px;">
-      <h2 style="color:#d32f2f;margin-bottom:20px;">❓ Preguntas Frecuentes</h2>
-      <div style="margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:18px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué hace que un título de YouTube tenga alto CTR?</h3>
-        <p style="color:#555;">Crea una brecha de curiosidad con la miniatura, incluye una promesa específica, se dirige directamente al problema del espectador y sitúa la keyword principal en las primeras 5 palabras.</p>
-      </div>
-      <div style="margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:18px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Cuántos caracteres debe tener un título de YouTube?</h3>
-        <p style="color:#555;">Entre 50 y 70 caracteres es el punto óptimo. YouTube muestra el título completo hasta unos 60-70 caracteres en la mayoría de vistas. Pon el gancho y la keyword en los primeros 60.</p>
-      </div>
-      <div>
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Debo cambiar el título si el CTR es bajo?</h3>
-        <p style="color:#555;">Sí. Si después de 48-72 horas el CTR está por debajo del 3-4%, cambia el título y la miniatura. Es el arreglo con mayor impacto en el corto plazo. YouTube re-evalúa el vídeo con los nuevos datos.</p>
-      </div>
-    </section>
 
     <section style="margin:40px 0;padding:25px;border-top:2px solid #d32f2f;">
       <h2 style="color:#d32f2f;margin-bottom:20px;">📚 Herramientas y Guías Relacionadas</h2>
@@ -340,7 +329,21 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     </div>
   </section>
 
-  <footer class="site-footer">
+    <section style="margin:40px 0;padding:25px;background:#f9f9f9;border-radius:12px;">
+      <h2 style="color:#d32f2f;margin-bottom:20px;">❓ Preguntas Frecuentes</h2>
+      <div style="margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:18px;">
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué hace que un título de YouTube tenga alto CTR?</h3>
+        <p style="color:#555;">Crea una brecha de curiosidad con la miniatura, incluye una promesa específica, se dirige directamente al problema del espectador y sitúa la keyword principal en las primeras 5 palabras.</p>
+      </div>
+      <div style="margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:18px;">
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Cuántos caracteres debe tener un título de YouTube?</h3>
+        <p style="color:#555;">Entre 50 y 70 caracteres es el punto óptimo. YouTube muestra el título completo hasta unos 60-70 caracteres en la mayoría de vistas. Pon el gancho y la keyword en los primeros 60.</p>
+      </div>
+      <div>
+        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Debo cambiar el título si el CTR es bajo?</h3>
+        <p style="color:#555;">Sí. Si después de 48-72 horas el CTR está por debajo del 3-4%, cambia el título y la miniatura. Es el arreglo con mayor impacto en el corto plazo. YouTube re-evalúa el vídeo con los nuevos datos.</p>
+      </div>
+    </section><footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">

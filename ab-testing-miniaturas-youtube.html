@@ -188,12 +188,16 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
 <style id="mobile-nav-fix">
 @media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
+  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
+  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
   .nav-links.open{display:flex !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important}
+  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
+  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
+  .nav-dropdown{width:100% !important;position:static !important}
+  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
   .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
+  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
 }
 </style>
 </head>
@@ -341,6 +345,14 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     </div>
   </section>
   
+  
+    <section style="margin:35px 0;padding:22px;border-top:2px solid #d32f2f;">
+      <h2 style="color:#d32f2f;margin-bottom:18px;">📚 Artículos Relacionados</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+        <a href="ctr-inicial-y-alcance-youtube.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">La Regla de las 24 Horas</strong></a><a href="ciencia-del-alto-ctr-en-youtube.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">La Ciencia del Alto CTR</strong></a><a href="formula-viral-miniaturas-canales-pequenos.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Fórmula Viral para Canales Pequeños</strong></a>
+      </div>
+    </section>
+
     <section style="margin:35px 0;padding:22px;background:#f9f9f9;border-radius:12px;">
       <h2 style="color:#d32f2f;margin-bottom:18px;">❓ Preguntas Frecuentes</h2>
       <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
@@ -355,15 +367,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Pueden los canales pequeños hacer A/B testing de miniaturas?</h3>
         <p style="color:#555;line-height:1.7;">Sí, pero con limitaciones. Los canales pequeños necesitan más tiempo para acumular suficientes impresiones para resultados válidos. Una alternativa es cambiar la miniatura manualmente cada 48-72 horas en YouTube Studio y registrar la diferencia de CTR en Analytics. Es menos preciso pero sigue siendo útil como orientación.</p>
       </div>
-    </section>
-  
-    <section style="margin:35px 0;padding:22px;border-top:2px solid #d32f2f;">
-      <h2 style="color:#d32f2f;margin-bottom:18px;">📚 Artículos Relacionados</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
-        <a href="ctr-inicial-y-alcance-youtube.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">La Regla de las 24 Horas</strong></a><a href="ciencia-del-alto-ctr-en-youtube.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">La Ciencia del Alto CTR</strong></a><a href="formula-viral-miniaturas-canales-pequenos.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Fórmula Viral para Canales Pequeños</strong></a>
-      </div>
-    </section>
-  </main>
+    </section></main>
     <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
