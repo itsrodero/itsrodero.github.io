@@ -342,29 +342,29 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     <p>Luminancia media de toda la imagen. Las miniaturas demasiado oscuras (por debajo del 20%) son invisibles en interfaces de modo oscuro y en pantallas OLED. Las demasiado brillantes (por encima del 85%) pierden detalle y parecen "quemadas" en el feed. El rango óptimo es 35–75%, con el sujeto principal más brillante que el fondo.</p>
 
     <h3>Color Saturación</h3>
-    <p>Measures color intensity across the image. Highly saturated thumbnails (70%+) are more eye-catching in a neutral feed. Desaturated or grey-heavy thumbnails (under 30%) tend to disappear visually. However, extremely high saturation (95%+) can appear garish and signal low production quality.</p>
+    <p>Mide la intensidad del color en toda la imagen. Las miniaturas muy saturadas (70% o más) llaman más la atención en un feed neutral. Las miniaturas desaturadas o con un fuerte predominio del gris (menos del 30%) tienden a desaparecer visualmente. Sin embargo, una saturación extremadamente alta (95% o más) puede resultar estridente y dar una sensación de baja calidad de producción.</p>
 
     <h3>Complejidad Visual</h3>
-    <p>Estimates the density of visual edges in the image — a proxy for the number of distinct elements. High complexity (too many edges) corresponds to a cluttered thumbnail with competing focal points. Optimal thumbnails have medium complexity: enough visual interest to attract attention, few enough elements to have a clear focal hierarchy.</p>
+    <p>Estima la densidad de los bordes visuales en la imagen, lo que sirve como un indicador de la cantidad de elementos distintos. Una complejidad alta (demasiados bordes) se corresponde con una miniatura saturada y con puntos focales que compiten entre sí. Las miniaturas óptimas tienen una complejidad media: el interés visual suficiente para atraer la atención, pero con los elementos justos para mantener una jerarquía focal clara.</p>
 
     <h3>Paleta de Colores Dominante</h3>
-    <p>Extracts the 6 most dominant colors using a pixel-sampling algorithm. Use this to identify whether your thumbnail has a clear color story (2–3 dominant colors) or a fragmented palette (5–6 competing colors of similar weight). The most effective thumbnails have one dominant color, one contrasting accent, and neutral fill — the palette reveals whether yours follows this pattern.</p>
+    <p>Extrae los 6 colores más dominantes mediante un algoritmo de muestreo de píxeles. Utiliza esto para identificar si tu miniatura tiene una historia cromática clara (2 o 3 colores dominantes) o una paleta fragmentada (5 o 6 colores que compiten con un peso similar). Las miniaturas más efectivas tienen un color dominante, un acento de contraste y un relleno neutro; la paleta revela si la tuya sigue este patrón.</p>
 
     <div class="faq-item" style="margin-top:24px;">
-      <div class="faq-q">Is this thumbnail analyzer really free with sin límites?</div>
-      <div class="faq-a">Yes. All processing runs locally in your browser using the Canvas API. There are no server calls, no accounts, no API keys, and no usage limits. You can analyze as many thumbnails as you want.</div>
+      <div class="faq-q">¿Es este analizador de miniaturas realmente gratuito y sin límites?</div>
+      <div class="faq-a">Sí. Todo el procesamiento se ejecuta localmente en tu navegador utilizando la API Canvas. No hay llamadas al servidor, ni cuentas, ni claves API, ni límites de uso. Puedes analizar tantas miniaturas como quieras.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Can I analyze competitor thumbnails?</div>
-      <div class="faq-a">Yes. Paste any YouTube URL and the tool will extract and analyze the thumbnail. You can also download competitor thumbnails using the main TubeTools extractor, then upload them here for analysis.</div>
+      <div class="faq-q">¿Puedo analizar miniaturas de la competencia?</div>
+      <div class="faq-a">Sí. Pega cualquier URL de YouTube y la herramienta extraerá y analizará la miniatura. También puedes descargar las miniaturas de la competencia utilizando el extractor principal de TubeTools y luego subirlas aquí para su análisis.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">¿Qué tan precisa es la Puntuación CTR?</div>
-      <div class="faq-a">The CTR Score is a technical quality rating, not a CTR prediction. It identifies measurable weaknesses (low contrast, poor saturation, excessive complexity) that consistently correlate with lower CTR. A high score eliminates avoidable technical weaknesses; actual CTR still depends on topic demand, audience fit, and creative strategy.</div>
+      <div class="faq-a">La puntuación CTR (porcentaje de clics) es una calificación de calidad técnica, no una predicción del CTR real. Identifica debilidades medibles (bajo contraste, mala saturación, complejidad excesiva) que se correlacionan sistemáticamente con un CTR más bajo. Una puntuación alta elimina los puntos débiles técnicos que se pueden evitar; el CTR real seguirá dependiendo de la demanda del tema, el encaje con la audiencia y la estrategia creativa.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">What image formats are supported?</div>
-      <div class="faq-a">Se admiten JPG, PNG, WebP y GIF. Para mejores resultados, sube en la resolución completa de 1280×720. The analyzer will scale images for processing but always evaluates at the proportions of the original.</div>
+      <div class="faq-q">¿Qué formatos de imagen son compatibles?</div>
+      <div class="faq-a">Se admiten JPG, PNG, WebP y GIF. Para mejores resultados, sube en la resolución completa de 1280×720. El analizador escalará las imágenes para su procesamiento, pero siempre las evaluará respetando las proporciones de la original.</div>
     </div>
   </div>
 </div>
