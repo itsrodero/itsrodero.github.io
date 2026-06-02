@@ -218,7 +218,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
   <a href="/" class="nav-logo">🚀 Tube<span>Tools</span></a>
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <div class="nav-links">
-    <a href="/en/thumbnail-analyzer.html" class="lang-btn-en">🇬🇧 EN</a>
+    <a href="/en/analyze-thumbnail.html" class="lang-btn-en">🇬🇧 EN</a>
     <a href="/">Inicio</a>
     <div class="nav-dropdown">
       <a href="/herramientas.html">🎯 Herramientas</a>
@@ -398,6 +398,29 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     </div>
   </div>
 </div>
+  
+  <section style="max-width:860px;margin:48px auto;padding:0 20px;">
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
+      <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin-bottom:24px;">Preguntas Frecuentes</h2>
+      <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
+        <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Qué significa la puntuación CTR del analizador?</h3>
+        <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">La puntuación CTR es una calificación técnica de 0 a 100 basada en contraste, brillo, saturación y complejidad visual. No predice el CTR real, pero identifica debilidades técnicas que estadísticamente suprimen los clics. Una puntuación superior a 65 indica una miniatura técnicamente sólida.</p>
+      </div>
+      <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
+        <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Es seguro subir mis miniaturas al analizador?</h3>
+        <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Sí, el análisis se ejecuta completamente en tu navegador mediante la Canvas API. Ninguna imagen se envía a ningún servidor. Tus archivos nunca salen de tu dispositivo.</p>
+      </div>
+      <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
+        <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Qué formatos admite el analizador?</h3>
+        <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">JPG, PNG, WebP y GIF. También puedes pegar directamente la URL de cualquier vídeo de YouTube para analizar su miniatura sin descargarla. El tamaño máximo recomendado es 2 MB.</p>
+      </div>
+      <div style="padding:18px 0;">
+        <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Con qué frecuencia debo analizar mis miniaturas?</h3>
+        <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Analiza cada miniatura antes de publicar el vídeo. También es útil analizar las 5-10 miniaturas con mejor rendimiento de los canales líderes de tu nicho para identificar los patrones visuales que generan más clics en tu categoría.</p>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-grid">
@@ -693,23 +716,23 @@ function computeScore(m) {
 
 function generateRecs(m, score) {
   const recs = [];
-  if(m.contrast < 35) recs.push({icon:'⚡',title:'Increase Contrast',urgency:'red',desc:'Your thumbnail has low contrast. Use a brighter subject against a darker background (or vice versa). Low contrast thumbnails become invisible on mobile screens in daylight.'});
-  else if(m.contrast < 55) recs.push({icon:'🎨',title:'Boost Contrast Slightly',urgency:'amber',desc:'Contrast could be stronger. Try darkening the background and brightening the primary subject or text to create more visual separation.'});
-  else recs.push({icon:'✅',title:'Contrast is Strong',urgency:'green',desc:'Good contrast ratio. Your thumbnail should remain visible across different screen types and lighting conditions.'});
+  if(m.contrast < 35) recs.push({icon:'⚡',title:'Aumenta el Contraste',urgency:'red',desc:'Your thumbnail has low contrast. Use a brighter subject against a darker background (or vice versa). Low contrast thumbnails become invisible on mobile screens in daylight.'});
+  else if(m.contrast < 55) recs.push({icon:'🎨',title:'Mejora el Contraste Ligeramente',urgency:'amber',desc:'Contrast could be stronger. Try darkening the background and brightening the primary subject or text to create more visual separation.'});
+  else recs.push({icon:'✅',title:'El Contraste es Sólido',urgency:'green',desc:'Good contrast ratio. Your thumbnail should remain visible across different screen types and lighting conditions.'});
 
-  if(m.brightness < 20) recs.push({icon:'💡',title:'Thumbnail Too Dark',urgency:'red',desc:'Average brightness is very low. Dark thumbnails lose detail on OLED screens and in dark-mode interfaces. Increase overall exposure or use a brighter background.'});
-  else if(m.brightness > 85) recs.push({icon:'☀️',title:'Thumbnail Too Bright',urgency:'amber',desc:'High overall brightness can cause detail loss and appear "blown out" in the feed. Consider adding more visual contrast with darker elements.'});
+  if(m.brightness < 20) recs.push({icon:'💡',title:'Miniatura Demasiado Oscura',urgency:'red',desc:'Average brightness is very low. Dark thumbnails lose detail on OLED screens and in dark-mode interfaces. Increase overall exposure or use a brighter background.'});
+  else if(m.brightness > 85) recs.push({icon:'☀️',title:'Miniatura Demasiado Brillante',urgency:'amber',desc:'High overall brightness can cause detail loss and appear "blown out" in the feed. Consider adding more visual contrast with darker elements.'});
   else recs.push({icon:'✅',title:'Brillo en Rango Óptimo',urgency:'green',desc:'Los niveles de brillo están bien equilibrados para la mayoría de los tipos de pantalla.'});
 
-  if(m.saturation < 25) recs.push({icon:'🌈',title:'Colors Are Too Muted',urgency:'amber',desc:'Low saturation makes thumbnails blend into the feed. Increase color vibrancy in your editing tool — especially for the primary subject or any text overlays.'});
-  else if(m.saturation > 90) recs.push({icon:'🎨',title:'Colors May Be Oversaturated',urgency:'amber',desc:'Extremely high saturation can appear garish. Consider reducing saturation slightly, especially for skin tones, to maintain a professional look.'});
+  if(m.saturation < 25) recs.push({icon:'🌈',title:'Los Colores son Demasiado Apagados',urgency:'amber',desc:'Low saturation makes thumbnails blend into the feed. Increase color vibrancy in your editing tool — especially for the primary subject or any text overlays.'});
+  else if(m.saturation > 90) recs.push({icon:'🎨',title:'Los Colores Pueden Estar Sobresaturados',urgency:'amber',desc:'Extremely high saturation can appear garish. Consider reducing saturation slightly, especially for skin tones, to maintain a professional look.'});
   else recs.push({icon:'✅',title:'La Saturación de Color es Buena',urgency:'green',desc:'La viveza del color está en el rango que capta la atención sin parecer artificial.'});
 
-  if(m.complexity > 0.72) recs.push({icon:'🗂️',title:'Too Many Visual Elements',urgency:'red',desc:'High visual complexity means too many competing focal points. Viewers cannot process cluttered thumbnails in under 2 seconds. Remove non-essential elements and focus on one primary subject.'});
-  else if(m.complexity < 0.1) recs.push({icon:'➕',title:'Add a Focal Element',urgency:'amber',desc:'The thumbnail is very sparse. Adding a clear focal element — a face with expression, a key object, or bold text — can significantly improve click-through intent.'});
-  else recs.push({icon:'✅',title:'Visual Complexity is Balanced',urgency:'green',desc:'Good balance between simplicity and visual interest. Viewers should be able to identify the primary subject quickly.'});
+  if(m.complexity > 0.72) recs.push({icon:'🗂️',title:'Demasiados Elementos Visuales',urgency:'red',desc:'High visual complexity means too many competing focal points. Viewers cannot process cluttered thumbnails in under 2 seconds. Remove non-essential elements and focus on one primary subject.'});
+  else if(m.complexity < 0.1) recs.push({icon:'➕',title:'Añade un Elemento Focal',urgency:'amber',desc:'The thumbnail is very sparse. Adding a clear focal element — a face with expression, a key object, or bold text — can significantly improve click-through intent.'});
+  else recs.push({icon:'✅',title:'La Complejidad Visual es Equilibrada',urgency:'green',desc:'Good balance between simplicity and visual interest. Viewers should be able to identify the primary subject quickly.'});
 
-  if(m.palette.length > 4) recs.push({icon:'🎭',title:'Simplify Color Palette',urgency:'amber',desc:`${m.palette.length} dominant colors is too many. Effective thumbnails use 2–3 dominant colors. Neutralize or desaturate non-essential color areas to create a cleaner visual story.`});
+  if(m.palette.length > 4) recs.push({icon:'🎭',title:'Simplifica la Paleta de Colores',urgency:'amber',desc:`${m.palette.length} dominant colors is too many. Effective thumbnails use 2–3 dominant colors. Neutralize or desaturate non-essential color areas to create a cleaner visual story.`});
   else recs.push({icon:'✅',title:'La Paleta de Colores es Enfocada',urgency:'green',desc:'El número de colores dominantes está dentro del rango óptimo para la legibilidad de la miniatura.'});
 
   return recs;

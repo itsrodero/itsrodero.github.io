@@ -1,514 +1,350 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-if (localStorage.getItem("cookieConsent") === "accepted") {
-var s = document.createElement("script");
-s.async = true;
-s.src = "https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR";
-document.head.appendChild(s);
-s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); };
-}
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checklist Definitiva: La Miniatura Perfecta - TubeTools</title>
-    <meta name="description" content="Asegúrate de que tu miniatura de YouTube está optimizada para el máximo CTR antes de publicarla.">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; }
-        body { background-color: #f4f6f8; color: #1c1e21; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
-        
-        /* Contenedor principal que se exportará */
-        #documento-pdf { background: white; max-width: 800px; width: 100%; padding: 50px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-top: 8px solid #d32f2f; }
-        
-        .header-doc { text-align: center; margin-bottom: 40px; border-bottom: 2px solid #f0f0f0; padding-bottom: 20px; }
-        .header-doc h1 { color: #1c1e21; font-size: 32px; margin-bottom: 10px; }
-        .header-doc p { color: #666; font-size: 18px; }
-        
-        /* Estilos de la Checklist Interactiva */
-        .checklist-item { display: flex; align-items: flex-start; margin-bottom: 20px; padding: 20px; background: #fafafa; border-radius: 8px; border-left: 4px solid transparent; transition: all 0.3s ease; }
-        .checklist-item:hover { background: #f0f2f5; }
-        .checklist-item.completado { border-left-color: #4CAF50; background: #f0fdf4; }
-        
-        /* Checkbox personalizado */
-        .custom-checkbox { width: 28px; height: 28px; border: 2px solid #ccc; border-radius: 6px; margin-right: 20px; cursor: pointer; display: flex; justify-content: center; align-items: center; flex-shrink: 0; background: white; transition: all 0.2s; }
-        .checklist-item.completado .custom-checkbox { background: #4CAF50; border-color: #4CAF50; }
-        .custom-checkbox::after { content: '✓'; color: white; font-size: 18px; font-weight: bold; display: none; }
-        .checklist-item.completado .custom-checkbox::after { display: block; }
-
-        .item-content h3 { font-size: 19px; color: #1c1e21; margin-bottom: 8px; }
-        .item-content p { color: #555; line-height: 1.6; font-size: 15px; }
-
-        .footer-doc { margin-top: 40px; text-align: center; color: #888; font-size: 14px; padding-top: 20px; border-top: 1px solid #eee; }
-        .footer-doc a { color: #d32f2f; text-decoration: none; font-weight: bold; }
-
-        /* Botón Flotante de Acción */
-        .panel-accion { position: sticky; bottom: 20px; background: #1c1e21; padding: 20px 30px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: flex; gap: 20px; margin-top: 40px; z-index: 100; align-items: center; color: #fff; }
-        .btn-exportar { background: #d32f2f; color: white; border: none; padding: 12px 25px; border-radius: 30px; font-weight: bold; font-size: 16px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: transform 0.2s; }
-        .btn-exportar:hover { transform: scale(1.05); }
-        .progreso-texto { color: white; font-weight: bold; font-size: 16px; }
-
-        /* Ocultar elementos UI al exportar a PDF */
-        .html2pdf__container .panel-accion { display: none !important; }
-        .html2pdf__container .custom-checkbox { border-color: #333; }
-        
-        @media (max-width: 600px) { #documento-pdf { padding: 30px 20px; } .panel-accion { flex-direction: column; border-radius: 20px; padding: 15px; text-align: center; } }
-    
-    /* Mobile nav - injected fix */
-    @media(max-width:720px){
-      .nav-toggle{display:block !important}
-      .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
-      .nav-links.open{display:flex !important}
-      .nav-links a{padding:11px 14px;border-radius:8px;color:#ccc !important}
-      .nav-dropdown>a::after{display:none}
-      .dropdown-panel{display:block !important;position:static;transform:none;background:rgba(255,255,255,.04);border:none;box-shadow:none;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
-      .dropdown-panel a{font-size:.83rem;padding:7px 10px}
-    }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist de Miniatura YouTube — 10 Puntos Pre-Publicación | TubeTools</title>
+  <meta name="description" content="Valida cada miniatura antes de publicar con este checklist de 10 puntos. Las miniaturas que pasan los 10 criterios tienen un CTR 1,5–3× mayor.">
   <link rel="canonical" href="https://tubetools.online/checklist-miniaturas.html">
   <link rel="alternate" hreflang="es" href="https://tubetools.online/checklist-miniaturas.html">
-  <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/index.html">
+  <link rel="alternate" hreflang="en" href="https://tubetools.online/en/thumbnail-checklist.html">
+  <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/thumbnail-checklist.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#d32f2f">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tubetools.online/checklist-miniaturas.html">
-  <meta property="og:title" content="Checklist Definitiva: La Miniatura Perfecta - TubeTools">
-  <meta property="og:description" content="Asegúrate de que tu miniatura de YouTube está optimizada para el máximo CTR antes de publicarla.">
+  <meta property="og:title" content="Checklist Miniatura YouTube — 10 Puntos Pre-Publicación">
+  <meta property="og:description" content="Valida cada miniatura antes de publicar. 10 criterios que predicen el CTR.">
   <meta property="og:image" content="https://tubetools.online/og_image_es.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Checklist Definitiva: La Miniatura Perfecta - TubeTools">
-  <meta name="twitter:description" content="Asegúrate de que tu miniatura de YouTube está optimizada para el máximo CTR antes de publicarla.">
-  <meta name="twitter:image" content="https://tubetools.online/og_image_es.png">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"Checklist de Miniaturas YouTube 2026 | TubeTools","url":"https://tubetools.online/checklist-miniaturas.html","publisher":{"@type":"Organization","name":"TubeTools","url":"https://tubetools.online"}}
-  </script>
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}if(localStorage.getItem("cookieConsent")==="accepted"){var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR";document.head.appendChild(s);s.onload=function(){gtag("js",new Date());gtag("config","G-MKM07L3RLR");};}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Checklist de Miniatura YouTube","url":"https://tubetools.online/checklist-miniaturas.html","description":"Herramienta gratuita para validar miniaturas de YouTube con 10 criterios CTR.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"es"}</script>
+  <style id="mobile-nav-fix">@media(max-width:720px){.nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}.nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}.nav-links.open{display:flex !important}.nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}.nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}.nav-dropdown{width:100% !important;position:static !important}.nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}.nav-dropdown>a::after{display:none !important}.dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}.dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}}</style>
   <style>
-    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
-    .skip-link:focus{top:0;}
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --red: #d32f2f; --dark: #1c1e21; --dark2: #2c2e33; --gray: #f4f5f7; --gray2: #e9eaec; --text: #1c1e21; --text2: #555; --white: #fff; --radius: 14px; --shadow: 0 4px 24px rgba(0,0,0,.08); }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--gray); color: var(--text); line-height: 1.7; }
+    .skip-link { position:absolute;top:-100px;left:0;background:var(--red);color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;transition:top .2s; }
+    .skip-link:focus { top:0; }
+    nav { position:sticky;top:0;z-index:1000;background:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25); }
+    .nav-logo { color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px; }
+    .nav-logo span { color:#ff5252; }
+    .nav-links { display:flex;gap:6px;align-items:center; }
+    .nav-links a { color:#ccc;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;transition:background .2s,color .2s; }
+    .nav-links a:hover { background:rgba(255,255,255,.08);color:#fff; }
+    .nav-toggle { display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px; }
+    @media(max-width:680px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:var(--dark2);flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}.nav-links.open{display:flex}}
+    .hero { background:linear-gradient(135deg,var(--dark) 0%,#2d1515 50%,#1a0a0a 100%);padding:52px 20px 60px;text-align:center; }
+    .hero h1 { font-size:clamp(1.7rem,4vw,2.5rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:14px; }
+    .hero h1 em { color:#ff5252;font-style:normal; }
+    .hero p { color:#bbb;max-width:560px;margin:0 auto;font-size:.97rem; }
+    .checklist-wrap { max-width:780px;margin:40px auto;padding:0 20px 60px; }
+    .checklist-item { background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin-bottom:14px;display:flex;gap:18px;align-items:flex-start;cursor:pointer;transition:box-shadow .2s,border-color .2s;border:2px solid transparent; }
+    .checklist-item:hover { border-color:var(--red);box-shadow:0 8px 40px rgba(0,0,0,.13); }
+    .checklist-item.checked { border-color:#2e7d32;background:#f1f8f1; }
+    .check-box { width:26px;height:26px;border:2px solid #ddd;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;transition:background .2s,border-color .2s;font-size:1.1rem; }
+    .checklist-item.checked .check-box { background:#2e7d32;border-color:#2e7d32;color:#fff; }
+    .check-content { flex:1; }
+    .check-title { font-size:1rem;font-weight:800;color:var(--dark);margin-bottom:6px; }
+    .check-desc { font-size:.88rem;color:var(--text2);line-height:1.65; }
+    .check-tip { display:inline-block;background:#fff3e0;color:#e65100;font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:999px;margin-top:8px; }
+    .score-bar { background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 28px;max-width:780px;margin:0 auto 40px;text-align:center; }
+    .score-label { font-size:.88rem;color:var(--text2);margin-bottom:8px; }
+    .score-num { font-size:2.5rem;font-weight:900;color:var(--red);transition:color .3s; }
+    .score-num.good { color:#2e7d32; }
+    .score-num.ok { color:#f57c00; }
+    .score-msg { font-size:.9rem;color:var(--text2);margin-top:6px; }
+    .content-section { max-width:780px;margin:0 auto;padding:0 20px 60px; }
+    .content-card { background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:32px; }
+    h2 { font-size:1.3rem;font-weight:800;color:var(--dark);border-left:4px solid var(--red);padding-left:14px;margin-bottom:16px; }
+    h3 { font-size:1.05rem;font-weight:700;color:var(--dark);margin:20px 0 8px; }
+    p { color:var(--text2);font-size:.93rem;line-height:1.8;margin-bottom:12px; }
+    ul,ol { margin:8px 0 12px 22px; }
+    li { color:var(--text2);font-size:.93rem;line-height:2.1; }
+    li strong { color:var(--dark); }
+    footer { background:var(--dark);color:#888;text-align:center;padding:36px 20px;margin-top:40px; }
+    .footer-logo { font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:14px; }
+    .footer-logo span { color:#ff5252; }
+    .footer-links { display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;margin-bottom:16px; }
+    .footer-links a { color:#bbb;text-decoration:none;font-size:.85rem;transition:color .2s; }
+    .footer-links a:hover { color:#fff; }
+    .footer-copy { font-size:.78rem;color:#666; }
+  
+    nav{position:sticky;top:0;z-index:1000;background:#1c1e21;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+    .nav-logo{color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
+    .nav-logo span{color:#ff5252}
+    .nav-links{display:flex;gap:4px;align-items:center}
+    .nav-links a{color:#ccc !important;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;transition:background .2s,color .2s;white-space:nowrap}
+    .nav-links a:hover{background:rgba(255,255,255,.08);color:#fff !important}
+    .nav-links a.lang-btn-es{color:#a5d6a7 !important;border:1px solid rgba(165,214,167,.35)}
+    .nav-links a.active-link{color:#fff !important;background:rgba(211,47,47,.2)}
+    .nav-dropdown{position:relative}
+    .nav-dropdown>a{display:flex;align-items:center;gap:4px}
+    .nav-dropdown>a::after{content:'▾';font-size:.7rem;opacity:.7}
+    .dropdown-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#2c2e33;border-radius:12px;padding:10px 8px;min-width:240px;box-shadow:0 8px 32px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.07);z-index:2000}
+    .nav-dropdown:hover .dropdown-panel,.nav-dropdown:focus-within .dropdown-panel{display:block}
+    .dropdown-panel a{display:flex;align-items:center;gap:10px;color:#ccc !important;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;transition:background .2s;width:100%}
+    .dropdown-panel a:hover{background:rgba(255,255,255,.09);color:#fff !important}
+    .dp-icon{width:22px;text-align:center;font-size:1.05rem;flex-shrink:0}
+    .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+    @media(max-width:720px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}.nav-links.open{display:flex}.nav-links a{padding:11px 14px;border-radius:8px}.nav-dropdown>a::after{display:none}.dropdown-panel{display:block;position:static;transform:none;background:rgba(255,255,255,.04);border:none;box-shadow:none;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}.dropdown-panel a{font-size:.83rem;padding:7px 10px}}
+    .site-footer{background:#1c1e21;color:#888;padding:48px 20px 32px;margin-top:60px}
+    .footer-inner{max-width:960px;margin:0 auto}
+    .footer-grid{display:grid;grid-template-columns:1fr repeat(3,auto);gap:40px;margin-bottom:36px}
+    @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
+    @media(max-width:440px){.footer-grid{grid-template-columns:1fr}}
+    .footer-logo{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:10px}
+    .footer-logo span{color:#ff5252}
+    .footer-brand p{font-size:.83rem;color:#666;line-height:1.6;max-width:220px}
+    .footer-col h4{font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+    .footer-col a{display:block;color:#888 !important;text-decoration:none;font-size:.85rem;margin-bottom:8px;transition:color .2s}
+    .footer-col a:hover{color:#fff !important}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+    .footer-bottom p{font-size:.78rem;color:#555}
+    .footer-lang-btn{padding:5px 14px;border-radius:999px;text-decoration:none !important;font-size:.82rem;font-weight:600;transition:background .2s}
+    .footer-lang-btn.es-fb{background:rgba(165,214,167,.1);color:#a5d6a7 !important;border:1px solid rgba(165,214,167,.3)}
+    .footer-lang-btn.es-fb:hover{background:rgba(165,214,167,.2)}
+    
+    nav{position:sticky;top:0;z-index:1000;background:#1c1e21;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+    .nav-logo{color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
+    .nav-logo span{color:#ff5252}
+    .nav-links{display:flex;gap:4px;align-items:center}
+    .nav-links a{color:#ccc !important;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;transition:background .2s,color .2s;white-space:nowrap}
+    .nav-links a:hover{background:rgba(255,255,255,.08);color:#fff !important}
+    .nav-links a.lang-btn-en{color:#90caf9 !important;border:1px solid rgba(144,202,249,.35)}
+    .nav-dropdown{position:relative}
+    .nav-dropdown>a{display:flex;align-items:center;gap:4px}
+    .nav-dropdown>a::after{content:'▾';font-size:.7rem;opacity:.7}
+    .dropdown-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#2c2e33;border-radius:12px;padding:10px 8px;min-width:240px;box-shadow:0 8px 32px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.07);z-index:2000}
+    .nav-dropdown:hover .dropdown-panel,.nav-dropdown:focus-within .dropdown-panel{display:block}
+    .dropdown-panel a{display:flex;align-items:center;gap:10px;color:#ccc !important;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;transition:background .2s;width:100%}
+    .dropdown-panel a:hover{background:rgba(255,255,255,.09);color:#fff !important}
+    .dp-icon{width:22px;text-align:center;font-size:1.05rem;flex-shrink:0}
+    .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+    .site-footer{background:#1c1e21;color:#888;padding:48px 20px 32px;margin-top:60px}
+    .footer-inner{max-width:960px;margin:0 auto}
+    .footer-grid{display:grid;grid-template-columns:1fr repeat(3,auto);gap:40px;margin-bottom:36px}
+    @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
+    @media(max-width:440px){.footer-grid{grid-template-columns:1fr}}
+    .footer-logo{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:10px}
+    .footer-logo span{color:#ff5252}
+    .footer-brand p{font-size:.83rem;color:#666;line-height:1.6;max-width:220px}
+    .footer-col h4{font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+    .footer-col a{display:block;color:#888 !important;text-decoration:none;font-size:.85rem;margin-bottom:8px;transition:color .2s}
+    .footer-col a:hover{color:#fff !important}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+    .footer-bottom p{font-size:.78rem;color:#555}
+    .footer-lang-btn{padding:5px 14px;border-radius:999px;text-decoration:none !important;font-size:.82rem;font-weight:600;transition:background .2s}
+    .footer-lang-btn.en-fb{background:rgba(144,202,249,.1);color:#90caf9 !important;border:1px solid rgba(144,202,249,.3)}
+    #cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(28,30,33,.97);backdrop-filter:blur(6px);color:#fff;padding:18px 20px;text-align:center;z-index:9999;border-top:2px solid #d32f2f}
+    #cookie-banner p{font-size:.88rem;margin-bottom:12px;color:#ccc}
+    #cookie-banner a{color:#ff8a80}
+    .cookie-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .cookie-btn-accept{background:#d32f2f;color:#fff;border:none;padding:9px 22px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.88rem}
+    .cookie-btn-reject{background:#444;color:#ccc;border:none;padding:9px 22px;border-radius:8px;cursor:pointer;font-size:.88rem}
   </style>
-
-<style id='tt-global'>
-
-/* ── TubeTools Global Fix ── */
-*, *::before, *::after { box-sizing: border-box; }
-a { color: inherit; }
-a:not([class]):not([style]) { color: inherit; text-decoration: none; }
-.read-more, .btn-read-more {
-  display: inline-block; background: #d32f2f; color: #fff !important;
-  text-decoration: none; padding: 9px 18px; border-radius: 8px;
-  font-size: .85rem; font-weight: 700; transition: background .2s; margin-top: 8px;
-}
-.read-more:hover, .btn-read-more:hover { background: #b71c1c !important; }
-.article-card h3 a, .article-title a, .card-title a, .blog-card h3 a {
-  color: #1c1e21 !important; text-decoration: none !important; font-weight: 700;
-}
-.article-card h3 a:hover, .blog-card h3 a:hover { color: #d32f2f !important; }
-footer a { color: #888 !important; text-decoration: none !important; }
-footer a:hover { color: #fff !important; }
-nav a { text-decoration: none; }
-/* Nav fix */
-nav { position: sticky; top: 0; z-index: 1000; background: #1c1e21;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 24px; height: 58px; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
-nav .nav-logo { color: #fff; text-decoration: none; font-size: 1.1rem;
-  font-weight: 800; display: flex; align-items: center; gap: 6px; }
-nav .nav-logo .logo-accent { color: #ff5252; }
-nav .nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
-nav .nav-links a { color: #ccc !important; text-decoration: none; font-size: .88rem;
-  font-weight: 500; padding: 6px 11px; border-radius: 8px;
-  transition: background .2s, color .2s; white-space: nowrap; }
-nav .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
-nav .nav-links a.lang-btn-en { color: #90caf9; border: 1px solid rgba(144,202,249,.35); }
-nav .nav-links a.lang-btn-es { color: #a5d6a7; border: 1px solid rgba(165,214,167,.35); }
-nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
-.nav-toggle { display: none; background: none; border: none; color: #fff;
-  font-size: 1.4rem; cursor: pointer; padding: 6px; }
-/* Tools dropdown */
-.nav-dropdown { position: relative; }
-.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-.nav-dropdown > a::after { content: '▾'; font-size: .7rem; opacity: .7; }
-.dropdown-panel { display: none; position: absolute; top: calc(100% + 6px);
-  left: 50%; transform: translateX(-50%); background: #2c2e33;
-  border-radius: 12px; padding: 10px 8px; min-width: 240px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.4); border: 1px solid rgba(255,255,255,.07);
-  z-index: 2000; }
-.nav-dropdown:hover .dropdown-panel,
-.nav-dropdown:focus-within .dropdown-panel { display: block; }
-.dropdown-panel a { display: flex; align-items: center; gap: 10px; color: #ccc !important;
-  text-decoration: none !important; font-size: .85rem; padding: 9px 14px;
-  border-radius: 8px; transition: background .2s; width: 100%; }
-.dropdown-panel a:hover { background: rgba(255,255,255,.09) !important; color: #fff !important; }
-.dp-icon { width: 22px; text-align: center; font-size: 1.05rem; flex-shrink: 0; }
-/* Mobile nav */
-@media(max-width: 720px) {
-  .nav-toggle { display: block !important; }
-  .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0;
-    background: #2c2e33; flex-direction: column; align-items: stretch;
-    padding: 10px 16px 16px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
-  .nav-links.open { display: flex; }
-  .nav-links a { padding: 11px 14px; border-radius: 8px; }
-  .nav-dropdown > a::after { display: none; }
-  .dropdown-panel { display: block; position: static; transform: none;
-    background: rgba(255,255,255,.04); border: none; box-shadow: none;
-    border-radius: 8px; padding: 4px 0 4px 12px; min-width: auto; margin-top: 2px; }
-  .dropdown-panel a { font-size: .83rem; padding: 7px 10px; }
-}
-/* Footer fix */
-.site-footer { background: #1c1e21; color: #888; padding: 48px 20px 32px; margin-top: 60px; }
-.site-footer .footer-inner { max-width: 960px; margin: 0 auto; }
-.site-footer .footer-grid { display: grid; grid-template-columns: 1fr repeat(3, auto);
-  gap: 40px; margin-bottom: 36px; }
-@media(max-width: 700px) { .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
-@media(max-width: 440px) { .site-footer .footer-grid { grid-template-columns: 1fr; } }
-.site-footer .footer-brand .footer-logo { font-size: 1.1rem; font-weight: 800;
-  color: #fff; margin-bottom: 10px; }
-.site-footer .footer-brand .footer-logo .logo-accent { color: #ff5252; }
-.site-footer .footer-brand p { font-size: .83rem; color: #666; line-height: 1.6; max-width: 220px; }
-.site-footer .footer-col h4 { font-size: .8rem; font-weight: 700; color: #fff;
-  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
-.site-footer .footer-col a { display: block; color: #888 !important;
-  text-decoration: none !important; font-size: .85rem; margin-bottom: 8px;
-  transition: color .2s; }
-.site-footer .footer-col a:hover { color: #fff !important; }
-.site-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.07);
-  padding-top: 20px; display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 10px; }
-.site-footer .footer-bottom p { font-size: .78rem; color: #555; }
-.site-footer .footer-lang-btn { padding: 5px 14px; border-radius: 999px;
-  text-decoration: none !important; font-size: .82rem; font-weight: 600; transition: background .2s; }
-.site-footer .footer-lang-btn.en-fb { background: rgba(144,202,249,.12);
-  color: #90caf9 !important; border: 1px solid rgba(144,202,249,.3); }
-.site-footer .footer-lang-btn.en-fb:hover { background: rgba(144,202,249,.22) !important; }
-.site-footer .footer-lang-btn.es-fb { background: rgba(165,214,167,.1);
-  color: #a5d6a7 !important; border: 1px solid rgba(165,214,167,.3); }
-.site-footer .footer-lang-btn.es-fb:hover { background: rgba(165,214,167,.2) !important; }
-
-</style>
-
-<style id="mobile-nav-fix">
-@media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
-  .nav-links.open{display:flex !important}
-  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
-  .nav-dropdown{width:100% !important;position:static !important}
-  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
-  .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
-  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
-}
-</style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <div id="cookie-banner">
+    <p>🍪 Usamos cookies para mejorar tu experiencia y mostrar anuncios. <a href="/privacidad.html">Política de privacidad</a></p>
+    <div class="cookie-btns"><button class="cookie-btn-accept" id="accept-cookies">Aceptar todo</button><button class="cookie-btn-reject" id="reject-cookies">Rechazar</button></div>
+  </div>
+  <nav>
+    <a href="/" class="nav-logo">🚀 Tube<span>Tools</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="/en/thumbnail-checklist.html" class="lang-btn-en">🇬🇧 EN</a>
+      <a href="/">Inicio</a>
+      <div class="nav-dropdown">
+        <a href="/herramientas.html">🎯 Herramientas</a>
+        <div class="dropdown-panel">
+          <a href="/"><span class="dp-icon">🖼️</span>Extractor de Miniaturas</a>
+          <a href="/analizador-miniaturas.html"><span class="dp-icon">🔬</span>Analizador de Miniaturas</a>
+          <a href="/generador-titulos-youtube.html"><span class="dp-icon">✍️</span>Generador de Títulos</a>
+          <a href="/calculadora.html"><span class="dp-icon">🧮</span>Calculadora de Ganancias</a>
+          <a href="/calculadora-puntuacion-ctr.html"><span class="dp-icon">📊</span>CTR Score</a>
+          <a href="/checklist-miniaturas.html"><span class="dp-icon">✅</span>Checklist</a>
+        </div>
+      </div>
+      <a href="/blog.html">Blog</a>
+      <a href="/glosario.html">Glosario</a>
+      <a href="/contacto.html">Contacto</a>
+    </div>
+  </nav>
+  <section class="hero" id="main-content">
+    <h1>La Miniatura Perfecta de YouTube<br><em>Checklist de 10 Puntos Pre-Publicación</em></h1>
+    <p>Repasa cada punto antes de publicar. Las miniaturas que superan los 10 criterios tienen un CTR 1,5–3× mayor que las que no.</p>
+  </section>
 
-<nav>
-  <a href="/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="nav-links">
-    <a href="/en/thumbnail-checklist.html" class="lang-btn-en">🇬🇧 EN</a>
-    <a href="/">Inicio</a>
-    <div class="nav-dropdown">
-      <a href="/herramientas.html">🎯 Herramientas</a>
-      <div class="dropdown-panel">
-        <a href="/"><span class="dp-icon">🖼️</span>Extractor de Miniaturas</a>
-        <a href="/analizador-miniaturas.html"><span class="dp-icon">🔬</span>Analizador de Miniaturas</a>
-        <a href="/generador-titulos-youtube.html"><span class="dp-icon">✍️</span>Generador de Títulos</a>
-        <a href="/calculadora.html"><span class="dp-icon">🧮</span>Calculadora de Ganancias</a>
-        <a href="/calculadora-puntuacion-ctr.html"><span class="dp-icon">📊</span>CTR Score</a>
-        <a href="/checklist-miniaturas.html"><span class="dp-icon">✅</span>Checklist</a>
+  <div class="score-bar">
+    <div class="score-label">Puntuación</div>
+    <div class="score-num" id="score-display">0/10</div>
+    <div class="score-msg" id="score-msg">Marca cada punto para ver tu puntuación</div>
+  </div>
+
+  <div class="checklist-wrap">
+    <div class="checklist-item" onclick="toggleCheck(this,0)">
+      <div class="check-box">☐</div>
+      <div class="check-content">
+        <h3>1. La Regla de los 3 Elementos</h3>
+        <p>La miniatura tiene un máximo de 3 focos de atención visual (ej: Rostro + Objeto + Texto). Está limpia y no satura la vista del usuario.</p>
       </div>
     </div>
-    <a href="/blog.html">Blog</a>
-    <a href="/glosario.html">Glosario</a>
-    <a href="/contacto.html">Contacto</a>
+    <div class="checklist-item" onclick="toggleCheck(this,1)">
+      <div class="check-box">☐</div>
+      <div class="check-content">
+        <h3>2. Prueba de Reducción Móvil</h3>
+        <p>He alejado la pantalla o reducido la miniatura al 20% de su tamaño y todavía se distingue perfectamente qué está pasando en la imagen.</p>
+      </div>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this,2)">
+      <div class="check-box">☐</div>
+      <div class="check-content">
+        <h3>3. Contraste Brutal</h3>
+        <p>He usado colores que rompen el patrón de YouTube. El texto y el sujeto principal resaltan fuertemente sobre el fondo (no se camuflan).</p>
+      </div>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this,3)">
+      <div class="check-box">☐</div>
+      <div class="check-content">
+        <h3>4. Texto "Gancho", NO Descriptivo</h3>
+        <p>Las palabras de la miniatura generan intriga o urgencia. NO repiten el título del vídeo. Tienen un máximo de 4 palabras en una fuente gruesa y legible.</p>
+      </div>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this,4)">
+      <div class="check-box">☐</div>
+      <div class="check-content">
+        <h3>5. Expresión Facial Exagerada</h3>
+        <p>Si aparece una persona, su rostro muestra una emoción exagerada (sorpresa, miedo, alegría extrema, confusión) que conecta con la psicología del espectador.</p>
+      </div>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this,5)">
+      <div class="check-box">☐</div>
+      <div class="check-content">
+        <h3>6. Jerarquía Visual Clara</h3>
+        <p>El ojo tiene claro adónde ir primero, luego adónde ir después. El orden debe ser: sujeto principal → texto de apoyo → fondo. Si todos los elementos compiten por la atención al mismo nivel, la miniatura pierde.</p>
+      </div>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this,6)">
+      <div class="check-box">☐</div>
+      <div class="check-content">
+        <h3>7. Resolución Técnica Correcta</h3>
+        <p>El archivo es de 1280×720 píxeles (16:9), guardado como JPG o PNG y pesa menos de 2 MB. YouTube puede comprimir automáticamente las miniaturas que superen los 2 MB, degradando la calidad visual en pantallas HD.</p>
+      </div>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this,7)">
+      <div class="check-box">☐</div>
+      <div class="check-content">
+        <h3>8. El Texto Añade Info que la Imagen No Puede</h3>
+        <p>Si hay texto, complementa la imagen: no repite lo que la imagen ya muestra. El buen texto en una miniatura añade una promesa específica ("En 30 Días"), crea tensión ("Me Equivoqué") o añade contexto que hace el visual más claro.</p>
+      </div>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this,8)">
+      <div class="check-box">☐</div>
+      <div class="check-content">
+        <h3>9. El Sujeto No Está Cortado por los Bordes</h3>
+        <p>El sujeto principal (cara, cuerpo, objeto clave) tiene espacio de respiración en todos los lados. La interfaz de YouTube añade esquinas redondeadas y overlays sobre las miniaturas: si tu sujeto está demasiado cerca del borde, puede quedar cortado.</p>
+      </div>
+    </div>
+    <div class="checklist-item" onclick="toggleCheck(this,9)">
+      <div class="check-box">☐</div>
+      <div class="check-content">
+        <h3>10. Supera el Test de los 2 Segundos</h3>
+        <p>Muestra la miniatura a alguien que no conozca el vídeo durante exactamente 2 segundos y pregúntale: "¿De qué trata este vídeo?". Si no puede responder correctamente, la miniatura está fallando en su trabajo principal. Puedes hacer esta prueba con un colega, un amigo o en la pantalla de bloqueo de tu móvil.</p>
+      </div>
+    </div>
   </div>
-</nav>
 
-    <div id="documento-pdf">
-        <div class="header-doc">
-            <h1>La Miniatura Perfecta</h1>
-            <p>Checklist Definitiva para reventar el CTR en YouTube</p>
-        </div>
+  
 
-        <div class="checklist-item" id="item1" onclick="toggleCheck('item1')">
-            <div class="custom-checkbox"></div>
-            <div class="item-content">
-                <h3>1. La Regla de los 3 Elementos</h3>
-                <p>La miniatura tiene un máximo de 3 focos de atención visual (ej: Rostro + Objeto + Texto). Está limpia y no satura la vista del usuario.</p>
-            </div>
-        </div>
-
-        <div class="checklist-item" id="item2" onclick="toggleCheck('item2')">
-            <div class="custom-checkbox"></div>
-            <div class="item-content">
-                <h3>2. Prueba de Reducción Móvil</h3>
-                <p>He alejado la pantalla o reducido la miniatura al 20% de su tamaño y todavía se distingue perfectamente qué está pasando en la imagen.</p>
-            </div>
-        </div>
-
-        <div class="checklist-item" id="item3" onclick="toggleCheck('item3')">
-            <div class="custom-checkbox"></div>
-            <div class="item-content">
-                <h3>3. Contraste Brutal</h3>
-                <p>He usado colores que rompen el patrón de YouTube. El texto y el sujeto principal resaltan fuertemente sobre el fondo (no se camuflan).</p>
-            </div>
-        </div>
-
-        <div class="checklist-item" id="item4" onclick="toggleCheck('item4')">
-            <div class="custom-checkbox"></div>
-            <div class="item-content">
-                <h3>4. Texto "Gancho", NO Descriptivo</h3>
-                <p>Las palabras de la miniatura generan intriga o urgencia. NO repiten el título del vídeo. Tienen un máximo de 4 palabras en una fuente gruesa y legible.</p>
-            </div>
-        </div>
-
-        <div class="checklist-item" id="item5" onclick="toggleCheck('item5')">
-            <div class="custom-checkbox"></div>
-            <div class="item-content">
-                <h3>5. Expresión Facial Exagerada</h3>
-                <p>Si aparece una persona, su rostro muestra una emoción exagerada (sorpresa, miedo, alegría extrema, confusión) que conecta con la psicología del espectador.</p>
-            </div>
-        </div>
-
-        <div class="checklist-item" id="item6" onclick="toggleCheck('item6')">
-            <div class="custom-checkbox"></div>
-            <div class="item-content">
-                <h3>6. Jerarquía Visual Clara</h3>
-                <p>El ojo tiene claro adónde ir primero, luego adónde ir después. El orden debe ser: sujeto principal → texto de apoyo → fondo. Si todos los elementos compiten por la atención al mismo nivel, la miniatura pierde.</p>
-            </div>
-        </div>
-
-        <div class="checklist-item" id="item7" onclick="toggleCheck('item7')">
-            <div class="custom-checkbox"></div>
-            <div class="item-content">
-                <h3>7. Resolución Técnica Correcta</h3>
-                <p>El archivo es de 1280×720 píxeles (16:9), guardado como JPG o PNG y pesa menos de 2 MB. YouTube puede comprimir automáticamente las miniaturas que superen los 2 MB, degradando la calidad visual en pantallas HD.</p>
-            </div>
-        </div>
-
-        <div class="checklist-item" id="item8" onclick="toggleCheck('item8')">
-            <div class="custom-checkbox"></div>
-            <div class="item-content">
-                <h3>8. El Texto Añade Info que la Imagen No Puede</h3>
-                <p>Si hay texto, complementa la imagen: no repite lo que la imagen ya muestra. El buen texto en una miniatura añade una promesa específica ("En 30 Días"), crea tensión ("Me Equivoqué") o añade contexto que hace el visual más claro.</p>
-            </div>
-        </div>
-
-        <div class="checklist-item" id="item9" onclick="toggleCheck('item9')">
-            <div class="custom-checkbox"></div>
-            <div class="item-content">
-                <h3>9. El Sujeto No Está Cortado por los Bordes</h3>
-                <p>El sujeto principal (cara, cuerpo, objeto clave) tiene espacio de respiración en todos los lados. La interfaz de YouTube añade esquinas redondeadas y overlays sobre las miniaturas: si tu sujeto está demasiado cerca del borde, puede quedar cortado.</p>
-            </div>
-        </div>
-
-        <div class="checklist-item" id="item10" onclick="toggleCheck('item10')">
-            <div class="custom-checkbox"></div>
-            <div class="item-content">
-                <h3>10. Supera el Test de los 2 Segundos</h3>
-                <p>Muestra la miniatura a alguien que no conozca el vídeo durante exactamente 2 segundos y pregúntale: "¿De qué trata este vídeo?". Si no puede responder correctamente, la miniatura está fallando en su trabajo principal. Puedes hacer esta prueba con un colega, un amigo o en la pantalla de bloqueo de tu móvil.</p>
-            </div>
-        </div>
-
-        <div class="footer-doc">
-            <p>Este es un recurso exclusivo generado por <a href="https://tubetools.online" target="_blank">TubeTools.online</a></p>
-            <p style="margin-top: 5px;">Extrae miniaturas de tu competencia, analiza canales y domina el algoritmo.</p>
-        </div>
+  <div style="max-width:860px;margin:0 auto 48px;padding:0 20px;">
+    <div style="background:linear-gradient(135deg,#d32f2f,#b71c1c);color:#fff !important;border-radius:12px;padding:28px 32px;text-align:center;">
+      <h3 style="color:#fff !important;margin:0 0 10px;">🔬 Analiza el rendimiento técnico de tu miniatura</h3>
+      <p style="color:rgba(255,255,255,.92) !important;margin:0 0 16px;">Después del checklist, usa el Analizador para obtener una puntuación CTR objetiva — contraste, brillo, saturación y complejidad visual en segundos.</p>
+      <a href="/analizador-miniaturas.html" style="display:inline-block;background:#fff;color:#d32f2f !important;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none !important;">Abrir Analizador Gratis →</a>
     </div>
+  </div>
 
-    <div class="panel-accion">
-        <span class="progreso-texto">Progreso: <span id="contador">0</span>/5 completado</span>
-        <button class="btn-exportar" onclick="exportarPDF()">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            Exportar a PDF
-        </button>
-    </div>
+  
+  <section style="max-width:860px;margin:32px auto;padding:0 20px;">
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
+      <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin-bottom:20px;">El Proceso Completo: De la Idea a la Miniatura Publicada</h2>
+      <p style="font-size:.93rem;color:#555;line-height:1.8;margin-bottom:14px;">El checklist funciona mejor cuando se integra en un proceso de diseño estructurado. Antes de abrir tu editor de diseño, define los tres elementos principales que incluirá tu miniatura. Escríbelos en papel: el sujeto principal, el elemento de texto (si aplica) y el fondo o contexto. Este paso previo te ahorra revisar el checklist con una miniatura que ya tiene problemas estructurales difíciles de corregir.</p>
+      <p style="font-size:.93rem;color:#555;line-height:1.8;margin-bottom:14px;">Durante el diseño, trabaja siempre con la ventana del editor a tamaño reducido — aproximadamente el 20% del tamaño real — mientras diseñas. Esta práctica, conocida como diseño en contexto real, te permite tomar decisiones de tamaño de texto, contraste y composición basadas en cómo se verá la miniatura realmente, no cómo se ve a pantalla completa en tu monitor.</p>
+      <p style="font-size:.93rem;color:#555;line-height:1.8;margin-bottom:14px;">Cuando termines el diseño, abre el checklist antes de exportar. Revisa los 10 puntos en orden. Para los puntos de contraste y reducción móvil, haz capturas de pantalla de la miniatura a tamaño real y ábrelas en tu móvil. Para el punto de texto, pide a alguien que lea el texto de la miniatura a 2 metros de distancia de la pantalla — si no puede leerlo cómodamente, el tamaño de fuente es insuficiente.</p>
 
-    <script>
-        // 1. Lógica para marcar/desmarcar con Memoria (LocalStorage)
-        function toggleCheck(id) {
-            const elemento = document.getElementById(id);
-            elemento.classList.toggle('completado');
-            guardarProgreso();
-            actualizarContador();
-        }
-
-        function actualizarContador() {
-            const marcados = document.querySelectorAll('.completado').length;
-            document.getElementById('contador').innerText = marcados;
-        }
-
-        function guardarProgreso() {
-            const estado = {};
-            document.querySelectorAll('.checklist-item').forEach(item => {
-                estado[item.id] = item.classList.contains('completado');
-            });
-            localStorage.setItem('tubeToolsChecklist', JSON.stringify(estado));
-        }
-
-        function cargarProgreso() {
-            const estadoGuardado = JSON.parse(localStorage.getItem('tubeToolsChecklist'));
-            if (estadoGuardado) {
-                for (const [id, completado] of Object.entries(estadoGuardado)) {
-                    if (completado) document.getElementById(id).classList.add('completado');
-                }
-                actualizarContador();
-            }
-        }
-
-        // Cargar progreso al iniciar la página
-        window.onload = cargarProgreso;
-
-        // 2. Lógica PRO para generar el PDF pixel-perfect (VERSIÓN DEFINITIVA)
-        function exportarPDF() {
-            const elemento = document.getElementById('documento-pdf');
-            
-            // Guardamos su aspecto original
-            const sombraOriginal = elemento.style.boxShadow;
-            const bordeOriginal = elemento.style.borderTop;
-            
-            // Lo ponemos "plano" para el PDF
-            elemento.style.boxShadow = 'none';
-            elemento.style.borderTop = 'none';
-
-            const opciones = {
-                margin:       10,
-                filename:     'TubeTools_Checklist_Miniaturas.pdf',
-                image:        { type: 'jpeg', quality: 1 },
-                html2canvas:  { 
-                    scale: 2, 
-                    useCORS: true,
-                    // ESTA ES LA CLAVE: Forzar coordenadas a 0 para que no recorte si la pantalla es grande
-                    scrollX: 0, 
-                    scrollY: 0 
-                },
-                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-            
-            html2pdf().set(opciones).from(elemento).save().then(() => {
-                // Le devolvemos el diseño a la web
-                elemento.style.boxShadow = sombraOriginal;
-                elemento.style.borderTop = bordeOriginal;
-            });
-        }
-    </script>
-    <div id="cookie-banner" style="position: fixed; bottom: 20px; left: 20px; right: 20px; background: #fff; border: 1px solid #ccc; padding: 20px; z-index: 10000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-radius: 8px; display: none;">
-    <p style="margin-bottom: 15px; color: #333;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y mostrar anuncios personalizados. <a href="privacidad.html" style="color: #d32f2f; text-decoration: underline;">Lee nuestra Política de Privacidad</a>.</p>
-    <button onclick="acceptCookies()" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">Aceptar</button>
-</div>
-
-<script>
-function acceptCookies() {
-    localStorage.setItem('cookieConsent', 'accepted'); // <- 'cookieConsent' NO 'cookiesAccepted'
-    document.getElementById('cookie-banner').style.display = 'none';
-}
-
-window.addEventListener('load', function() {
-    if (!localStorage.getItem('cookieConsent')) {  // <- mismo key
-        document.getElementById('cookie-banner').style.display = 'block';
-    }
-});
-</script>
-    <!-- ✅ Service Worker para cache eficiente -->
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('SW registrado', reg.scope))
-        .catch(err => console.log('SW error:', err));
-    });
-  }
-</script>
-
-<div style="max-width:750px;margin:30px auto;padding:20px;font-family:sans-serif;">
-  <h2 style="color:#d32f2f;">¿Por qué usar este checklist antes de subir tu miniatura?</h2>
-  <p style="line-height:1.8;color:#444;">El CTR es la métrica que más impacto tiene en el crecimiento de un canal de YouTube. Una miniatura que no supera la verificación de los 10 puntos de esta lista tiene hasta un 60% más de probabilidades de ser ignorada por el algoritmo en las primeras 24 horas tras la publicación.</p>
-  <p style="line-height:1.8;color:#444;margin-top:12px;">Usa este checklist cada vez que vayas a subir un vídeo. El proceso completo te llevará menos de 3 minutos y puede marcar la diferencia entre un vídeo que despega y uno que se queda sin impresiones.</p>
-
-  <h2 style="color:#d32f2f;margin-top:32px;">Los 3 errores más comunes que detecta este checklist</h2>
-  <ul style="line-height:2.2;color:#444;margin-left:20px;">
-    <li><strong>Texto ilegible en móvil:</strong> más del 70% de las visualizaciones ocurren en pantallas pequeñas. Si el texto no se lee a 120×68px, pierdes la mitad de tus clics potenciales.</li>
-    <li><strong>Contraste insuficiente:</strong> el ojo humano necesita un ratio de contraste mínimo de 4.5:1 para procesar texto sobre imagen en menos de 1.5 segundos — el tiempo exacto que tienes para captar la atención.</li>
-    <li><strong>Sin punto focal claro:</strong> una miniatura donde todo compite por la atención al mismo tiempo no retiene la vista. El checklist te obliga a identificar y priorizar tu elemento visual principal.</li>
-  </ul>
-
-  <h2 style="color:#d32f2f;margin-top:32px;">Cómo Interpretar tu Puntuación del Checklist</h2>
-  <p style="line-height:1.8;color:#444;">Cada punto del checklist representa un factor que el algoritmo de YouTube y el cerebro humano procesan de forma diferente. Aquí tienes la guía de interpretación:</p>
-  <ul style="line-height:2.2;color:#444;margin-left:20px;margin-top:10px;">
-    <li><strong>10/10 puntos:</strong> Tu miniatura está técnica y visualmente optimizada. Publícala con confianza. El CTR depende ahora de la calidad del contenido y la fortaleza del título.</li>
-    <li><strong>7-9/10 puntos:</strong> Miniatura en buen estado pero con margen de mejora. Revisa los puntos no completados y valora si son correcciones rápidas (menos de 5 minutos) antes de publicar.</li>
-    <li><strong>4-6/10 puntos:</strong> La miniatura tiene deficiencias significativas que afectarán al CTR. Es recomendable hacer ajustes antes de publicar, especialmente si es un vídeo en el que has invertido mucho tiempo de producción.</li>
-    <li><strong>Menos de 4/10:</strong> La miniatura necesita una revisión profunda. Un CTR bajo en las primeras 24 horas después de la publicación es muy difícil de revertir una vez que el algoritmo ha etiquetado el vídeo como de bajo rendimiento.</li>
-  </ul>
-
-  <h2 style="color:#d32f2f;margin-top:32px;">La Conexión entre el Checklist y tu RPM</h2>
-  <p style="line-height:1.8;color:#444;">Existe una conexión directa entre el CTR de tus miniaturas y tus ingresos por visualización (RPM). Un CTR más alto significa que el algoritmo distribuye tu vídeo a más personas. Esa distribución más amplia alcanza audiencias estadísticamente más valiosas para los anunciantes — incluyendo más espectadores de EEUU y del Reino Unido, que tienen CPMs 3 a 5 veces superiores a la media global.</p>
-  <p style="line-height:1.8;color:#444;margin-top:12px;">En otras palabras: mejorar tu miniatura no solo te da más visitas. Te da visitas de mayor valor económico. Un canal con un CTR del 8% puede ganar el doble que uno con el mismo número de impresiones pero un CTR del 3%, simplemente porque el algoritmo lo lleva a mejores audiencias.</p>
-
-  <h2 style="color:#d32f2f;margin-top:32px;">Herramientas Complementarias al Checklist</h2>
-  <p style="line-height:1.8;color:#444;">Este checklist te ayuda a verificar tu propia miniatura, pero también necesitas analizar las miniaturas de tu competencia para entender qué estándares visuales domina tu nicho. Las herramientas gratuitas de TubeTools que complementan este proceso:</p>
-  <ul style="line-height:2.2;color:#444;margin-left:20px;margin-top:10px;">
-    <li><a href="index.html" style="color:#d32f2f;font-weight:600;">Extractor de Miniaturas en HD</a> — Descarga cualquier miniatura de YouTube en 1080p para estudiarla a fondo.</li>
-    <li><a href="calculadora-puntuacion-ctr.html" style="color:#d32f2f;font-weight:600;">Calculadora de Puntuación CTR</a> — Puntúa el potencial de CTR de tu miniatura con 12 criterios técnicos específicos.</li>
-    <li><a href="guia-miniaturas-ctr.html" style="color:#d32f2f;font-weight:600;">Guía Definitiva de CTR y Miniaturas</a> — La guía más completa sobre diseño de miniaturas y psicología del clic para 2026.</li>
-  </ul>
-</div>
-
-  <section style="max-width:780px;margin:40px auto 60px;padding:0 20px;">
-    <div style="background:#fff;border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
-      <h2 style="font-size:1.4rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin-bottom:20px;">Por Qué Este Checklist Aumenta Tu CTR</h2>
-      <p style="color:#555;line-height:1.8;margin-bottom:14px;">El algoritmo de YouTube es fundamentalmente una máquina de predicción de clics. Muestra tu miniatura a una audiencia de prueba de pocos cientos de espectadores primero. Si hacen clic a una tasa superior al umbral predicho para tu nicho, la distribución se expande. Si no, el vídeo se estanca. La miniatura es la primera y más crítica variable en esa prueba.</p>
-      <p style="color:#555;line-height:1.8;margin-bottom:14px;">Los 10 puntos anteriores no son preferencias estilísticas — se derivan de patrones consistentes observados en miniaturas de alto CTR en nichos de gaming, educación, finanzas, lifestyle y tecnología. Cada punto aborda un modo de fallo específico que predeciblemente reduce las tasas de clics.</p>
-      
-      <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:20px 0 8px;">Cómo Usar Este Checklist en tu Flujo de Trabajo</h3>
-      <p style="color:#555;line-height:1.8;margin-bottom:14px;">El enfoque más efectivo es ejecutar este checklist en dos etapas: una cuando el diseño de la miniatura está al 80% (para detectar problemas estructurales mientras aún son fáciles de corregir) y otra en su forma final antes de subir. Los problemas estructurales — contraste pobre, resolución incorrecta, demasiados elementos — deben detectarse antes del trabajo de acabado detallado.</p>
-      <p style="color:#555;line-height:1.8;margin-bottom:14px;">Crea el hábito de guardar las miniaturas rechazadas — las que fallaron este checklist. Con el tiempo, esta colección revela tu error más común, que casi siempre es uno de estos tres: demasiados elementos, contraste insuficiente, o texto demasiado pequeño para móvil.</p>
-      
-      <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:20px 0 8px;">Preguntas Frecuentes</h3>
-      <p style="color:#555;line-height:1.8;margin-bottom:8px;"><strong style="color:#1c1e21;">¿Cuántos elementos debe tener una miniatura de YouTube?</strong><br>El máximo probado es 3 elementos focales: típicamente una cara, un objeto o contexto de fondo, y texto corto. Más de 3 crea desorden visual que reduce el CTR significativamente. Menos de 3 a menudo funciona bien — algunas de las miniaturas con mayor CTR usan una sola cara convincente sin texto.</p>
-      <p style="color:#555;line-height:1.8;margin-bottom:8px;"><strong style="color:#1c1e21;">¿Cuál es la resolución correcta para miniaturas en 2026?</strong><br>YouTube recomienda 1280×720 píxeles (relación de aspecto 16:9) con un tamaño máximo de 2MB. Usa JPG o PNG. Diseña siempre en esta resolución y prueba a 120×68px para confirmar la legibilidad.</p>
-      <p style="color:#555;line-height:1.8;margin-bottom:0;"><strong style="color:#1c1e21;">¿Toda miniatura de YouTube necesita texto?</strong><br>No. Caras con alta emoción y objetos convincentes pueden generar clics sin texto. El texto es más útil cuando añade contexto que la imagen sola no puede transmitir, o cuando crea tensión cognitiva con el elemento visual. La pregunta no es "¿uso texto?" sino "¿este texto hace la miniatura más clickeable?"</p>
+      <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin:28px 0 16px;">Qué Hacer Cuando Fallas un Criterio</h2>
+      <p style="font-size:.93rem;color:#555;line-height:1.8;margin-bottom:14px;">Si algún criterio del checklist no se supera, no publiques hasta corregirlo. Cada punto no superado tiene una solución específica y generalmente rápida:</p>
+      <ul style="font-size:.93rem;color:#555;line-height:2.1;margin:0 0 14px 20px;">
+        <li><strong>Contraste insuficiente:</strong> Añade un borde o sombra al sujeto principal, o cambia el color de fondo a uno más opuesto en la rueda de color.</li>
+        <li><strong>Texto ilegible en móvil:</strong> Aumenta el tamaño de fuente al menos un 40% y añade una sombra de texto de 4-6px en color oscuro.</li>
+        <li><strong>Sujeto demasiado pequeño:</strong> Recorta la imagen para que el sujeto ocupe más del 40% del encuadre. En fotografías, usa la herramienta de recorte manteniendo el ratio 16:9.</li>
+        <li><strong>Demasiados elementos:</strong> Elimina el elemento de menor importancia visual. Si no puedes decidir cuál eliminar, elimina los dos menores y conserva solo el principal.</li>
+        <li><strong>Expresión facial plana:</strong> Amplifica la expresión en postproducción (más contraste en ojos, ligero aumento de saturación en piel) o cambia la fotografía por una con mayor intensidad emocional.</li>
+      </ul>
+      <p style="font-size:.93rem;color:#555;line-height:1.8;">Recuerda: corregir un problema antes de publicar tarda entre 5 y 20 minutos. Publicar con el problema y perder CTR durante semanas cuesta cientos o miles de visualizaciones que el algoritmo de YouTube nunca recuperará automáticamente para ese vídeo.</p>
     </div>
   </section>
 
-  <footer class="site-footer">
+  <section style="max-width:860px;margin:32px auto;padding:0 20px;">
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
+      <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin-bottom:20px;">Por Qué Este Checklist Funciona: La Ciencia Detrás del CTR</h2>
+      <p style="font-size:.93rem;color:#555;line-height:1.8;margin-bottom:14px;">El CTR de una miniatura no es aleatorio. Está determinado por factores visuales medibles que el ojo humano procesa en menos de 150 milisegundos — antes de que el espectador sea consciente de haber tomado una decisión. Cada criterio del checklist aborda uno de estos factores.</p>
+      <p style="font-size:.93rem;color:#555;line-height:1.8;margin-bottom:14px;"><strong>La Regla de los 3 Elementos</strong> se basa en el principio de la carga cognitiva: el cerebro solo puede procesar eficientemente 3 elementos visuales simultáneos a alta velocidad. Más elementos fragmentan la atención y reducen el impacto de todos ellos. Los mejores diseñadores de miniaturas no añaden elementos — eliminan los que sobran.</p>
+      <p style="font-size:.93rem;color:#555;line-height:1.8;margin-bottom:14px;"><strong>La Prueba de Reducción Móvil</strong> es crítica porque el 70%+ del tráfico de YouTube llega desde móvil. En una pantalla de 5 pulgadas, tu miniatura se muestra en aproximadamente 168×94 píxeles. Todo lo que no sea visible a esa escala no existe para el 70% de tu audiencia potencial.</p>
+      <p style="font-size:.93rem;color:#555;line-height:1.8;margin-bottom:14px;"><strong>El Contraste Brutal</strong> es el factor técnico más correlacionado con el CTR según estudios de eye-tracking en YouTube. Una miniatura con ratio de contraste inferior a 3:1 se fusiona visualmente con el fondo de YouTube en dispositivos móviles de gama media bajo luz directa — exactamente las condiciones en que más del 60% de los vídeos se consumen.</p>
+
+      <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin:28px 0 16px;">Los 3 Errores Más Comunes que Detecta Este Checklist</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:16px;">
+        <div style="background:#fff5f5;border-radius:10px;padding:18px;border-left:3px solid #d32f2f;">
+          <div style="font-size:1.4rem;margin-bottom:8px;">❌</div>
+          <h3 style="font-size:.95rem;font-weight:700;color:#1c1e21;margin-bottom:6px;">Texto que repite el título</h3>
+          <p style="font-size:.83rem;color:#555;line-height:1.6;margin:0;">El 68% de las miniaturas con bajo CTR tiene texto que duplica la información del título. El texto en una miniatura debe añadir información nueva — una cifra, una emoción, una promesa — no repetir lo que YouTube ya muestra debajo.</p>
+        </div>
+        <div style="background:#fff5f5;border-radius:10px;padding:18px;border-left:3px solid #d32f2f;">
+          <div style="font-size:1.4rem;margin-bottom:8px;">❌</div>
+          <h3 style="font-size:.95rem;font-weight:700;color:#1c1e21;margin-bottom:6px;">Sujeto demasiado pequeño</h3>
+          <p style="font-size:.83rem;color:#555;line-height:1.6;margin:0;">En móvil, si tu sujeto principal ocupa menos del 30% del encuadre, desaparece visualmente en el feed. Los planos medios y abiertos que se ven bien en el monitor del editor quedan irreconocibles a tamaño de miniatura real.</p>
+        </div>
+        <div style="background:#fff5f5;border-radius:10px;padding:18px;border-left:3px solid #d32f2f;">
+          <div style="font-size:1.4rem;margin-bottom:8px;">❌</div>
+          <h3 style="font-size:.95rem;font-weight:700;color:#1c1e21;margin-bottom:6px;">Inconsistencia visual</h3>
+          <p style="font-size:.83rem;color:#555;line-height:1.6;margin:0;">Cambiar de estilo en cada vídeo destruye el reconocimiento de marca. Un espectador que reconoce tu miniatura sin leer el nombre del canal tiene el doble de probabilidades de hacer clic, incluso en temas que le interesan moderadamente.</p>
+        </div>
+      </div>
+
+      <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin:28px 0 16px;">Artículos Relacionados</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+        <a href="/analizador-miniaturas.html" style="display:block;padding:14px;background:#f4f5f7;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;"><strong style="font-size:.9rem;">🔬 Analizador de Miniaturas</strong><br><span style="font-size:.82rem;color:#555;">Obtén una puntuación CTR técnica instantánea</span></a>
+        <a href="/errores-miniatura-que-matan-tu-ctr.html" style="display:block;padding:14px;background:#f4f5f7;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;"><strong style="font-size:.9rem;">❌ 10 Errores de Miniatura</strong><br><span style="font-size:.82rem;color:#555;">Los fallos más frecuentes y cómo evitarlos</span></a>
+        <a href="/guia-miniaturas-ctr.html" style="display:block;padding:14px;background:#f4f5f7;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;"><strong style="font-size:.9rem;">📖 Guía Definitiva de CTR</strong><br><span style="font-size:.82rem;color:#555;">Todo sobre diseño de miniaturas y CTR</span></a>
+      </div>
+    </div>
+  </section>
+
+<section style="max-width:860px;margin:48px auto;padding:0 20px;">
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
+      <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin-bottom:20px;">Cómo Usar Este Checklist en Tu Flujo de Trabajo</h2>
+      <p style="font-size:.93rem;color:#555;line-height:1.8;margin-bottom:12px;">Úsalo como el último paso antes de pulsar publicar en YouTube Studio. Abre tu miniatura en el editor junto al checklist y revisa cada punto en orden. El objetivo no es obtener 10/10 siempre, sino identificar la debilidad específica que está suprimiendo tu CTR.</p>
+      <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:22px 0 10px;">¿Qué Significa una Puntuación Perfecta?</h3>
+      <p style="font-size:.93rem;color:#555;line-height:1.8;margin-bottom:12px;">Una miniatura que supera los 10 criterios técnicos elimina todas las razones técnicas por las que un espectador podría ignorarla. Los canales que combinan criterios técnicos sólidos con un mensaje emocionalmente relevante son los que generan CTR sostenido por encima del 6%.</p>
+      <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin:28px 0 16px;">Preguntas Frecuentes</h2>
+      <div style="border-bottom:1px solid #f0f0f0;padding:16px 0;"><h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Con qué frecuencia debo usar el checklist?</h3><p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">En cada vídeo, sin excepción. Tarda menos de 3 minutos y puede evitar publicar una miniatura con CTR suprimido desde el primer día.</p></div>
+      <div style="border-bottom:1px solid #f0f0f0;padding:16px 0;"><h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Qué pasa si no supero algún criterio?</h3><p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Identifica cuál es el más fácil de mejorar y corrígelo antes de publicar. Un criterio crítico no superado puede costar miles de visualizaciones en las primeras 48 horas.</p></div>
+      <div style="padding:16px 0;"><h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Puedo usar el checklist en miniaturas ya publicadas?</h3><p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Sí. Revisar el checklist en vídeos con bajo CTR es una de las formas más rápidas de identificar qué corregir. YouTube permite cambiar la miniatura en cualquier momento desde Studio.</p></div>
+    </div>
+  </section><footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">🚀 Tube<span>Tools</span></div>
-          <p>Herramientas gratuitas para creadores de YouTube que quieren crecer con datos, no con suerte.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Herramientas</h4>
-          <a href="/">Extractor Miniaturas</a>
-          <a href="/analizador-miniaturas.html">Analizador</a>
-          <a href="/generador-titulos-youtube.html">Generador Títulos</a>
-          <a href="/calculadora.html">Calculadora</a>
-          <a href="/calculadora-puntuacion-ctr.html">CTR Score</a>
-          <a href="/checklist-miniaturas.html">Checklist</a>
-        </div>
-        <div class="footer-col">
-          <h4>Guías</h4>
-          <a href="/guia-miniaturas-ctr.html">Guía CTR</a>
-          <a href="/aumentar-rpm-youtube.html">Aumentar RPM</a>
-          <a href="/cpm-youtube-por-nicho.html">CPM por Nicho</a>
-          <a href="/requisitos-monetizacion-youtube.html">Monetización</a>
-          <a href="/mejores-nichos-youtube-adsense.html">Mejores Nichos</a>
-          <a href="/glosario.html">Glosario</a>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/privacidad.html">Privacidad</a>
-          <a href="/terminos.html">Términos</a>
-          <a href="/contacto.html">Contacto</a>
-          <a href="/about.html">Sobre Nosotros</a>
-        </div>
+        <div class="footer-brand"><div class="footer-logo">🚀 Tube<span>Tools</span></div><p>Herramientas gratuitas para creadores de YouTube que quieren crecer con datos, no con suerte.</p></div>
+        <div class="footer-col"><h4>Herramientas</h4><a href="/">Extractor Miniaturas</a><a href="/analizador-miniaturas.html">Analizador</a><a href="/generador-titulos-youtube.html">Generador Títulos</a><a href="/calculadora.html">Calculadora</a><a href="/calculadora-puntuacion-ctr.html">CTR Score</a><a href="/checklist-miniaturas.html">Checklist</a></div>
+        <div class="footer-col"><h4>Guías</h4><a href="/guia-miniaturas-ctr.html">Guía CTR</a><a href="/aumentar-rpm-youtube.html">Aumentar RPM</a><a href="/cpm-youtube-por-nicho.html">CPM por Nicho</a><a href="/requisitos-monetizacion-youtube.html">Monetización</a><a href="/mejores-nichos-youtube-adsense.html">Mejores Nichos</a><a href="/glosario.html">Glosario</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/privacidad.html">Privacidad</a><a href="/terminos.html">Términos</a><a href="/contacto.html">Contacto</a><a href="/about.html">Sobre Nosotros</a></div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 TubeTools.online — Todos los derechos reservados.</p>
@@ -517,23 +353,34 @@ window.addEventListener('load', function() {
     </div>
   </footer>
 
-<script>
-(function(){
-  var btn = document.querySelector('.nav-toggle');
-  var links = document.querySelector('.nav-links');
-  if(!btn || !links) return;
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isOpen = links.classList.toggle('open');
-    btn.textContent = isOpen ? '✕' : '☰';
-  });
-  document.addEventListener('click', function(e){
-    if(!links.contains(e.target) && e.target !== btn){
-      links.classList.remove('open');
-      btn.textContent = '☰';
+  <div id="cookie-banner" style="display:none"></div>
+  <script>
+    if(!localStorage.getItem('cookieConsent'))document.getElementById('cookie-banner').style.display='block';
+    document.getElementById('accept-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');document.getElementById('cookie-banner').style.display='none';});
+    document.getElementById('reject-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','rejected');document.getElementById('cookie-banner').style.display='none';});
+    var total=10;
+    function toggleCheck(el,idx){
+      var box=el.querySelector('.check-box');
+      var checked=el.classList.toggle('done');
+      box.textContent=checked?'✓':'☐';
+      var score=document.querySelectorAll('.checklist-item.done').length;
+      document.getElementById('score-display').textContent=score+'/'+total;
+      var msg=document.getElementById('score-msg');
+      var pct=score/total;
+      if(pct===0)msg.textContent='Marca cada punto para ver tu puntuación';
+      else if(pct<0.5)msg.textContent='Sigue revisando — hay puntos críticos sin marcar';
+      else if(pct<0.8)msg.textContent='Casi lista — revisa los puntos que faltan';
+      else if(pct<1)msg.textContent='¡Muy bien! Uno o dos ajustes y lista para publicar';
+      else msg.textContent='✅ Miniatura perfecta — lista para publicar';
     }
-  });
-})();
-</script>
+    (function(){
+      var btn=document.querySelector('.nav-toggle');
+      var links=document.querySelector('.nav-links');
+      if(!btn||!links)return;
+      btn.addEventListener('click',function(e){e.stopPropagation();var isOpen=links.classList.toggle('open');btn.textContent=isOpen?'✕':'☰';});
+      document.addEventListener('click',function(e){if(!links.contains(e.target)&&e.target!==btn){links.classList.remove('open');btn.textContent='☰';}});
+    })();
+  </script>
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}</script>
 </body>
 </html>
