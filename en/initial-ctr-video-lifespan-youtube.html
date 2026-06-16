@@ -1,45 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    if (localStorage.getItem("cookieConsent") === "accepted") {
-      var s = document.createElement("script");
-      s.async = true;
-      s.src = "https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR";
-      document.head.appendChild(s);
-      s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); };
-    }
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How Initial CTR Dictates Your Video's Lifespan | TubeTools</title>
-  <meta name="description" content="Why your thumbnail must perform perfectly on Day 1: the 24-hour velocity rule, traffic sources, and how to read your YouTube Studio data to act fast.">
+  <title>Initial CTR and Video Lifespan on YouTube 2026 | TubeTools</title>
+  <meta name="description" content="How initial CTR in the first 6 hours determines a YouTube video's entire lifespan. The algorithm's test-and-expand mechanism explained with data and actionable steps.">
+  <link rel="canonical" href="https://tubetools.online/en/initial-ctr-video-lifespan-youtube.html">
   <link rel="alternate" hreflang="en" href="https://tubetools.online/en/initial-ctr-video-lifespan-youtube.html">
   <link rel="alternate" hreflang="es" href="https://tubetools.online/ctr-inicial-y-alcance-youtube.html">
   <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/initial-ctr-video-lifespan-youtube.html">
-  <link rel="canonical" href="https://tubetools.online/en/initial-ctr-video-lifespan-youtube.html">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Initial CTR and Video Lifespan on YouTube 2026 | TubeTools">
+  <meta property="og:description" content="Why the first 6 hours of CTR determine your video's entire lifespan — and exactly how to maximize that critical window.">
+  <meta property="og:image" content="https://tubetools.online/og_image_en.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Initial CTR and Video Lifespan on YouTube 2026","description":"How initial CTR in the first 6 hours determines a YouTube video's lifespan and how to maximize that window.","datePublished":"2026-04-10","dateModified":"2026-06-01","author":{"@type":"Person","name":"Daniel","url":"https://tubetools.online/en/contact.html"},"publisher":{"@type":"Organization","name":"TubeTools","url":"https://tubetools.online"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://tubetools.online/en/initial-ctr-video-lifespan-youtube.html"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does YouTube's initial CTR evaluation window last?","acceptedAnswer":{"@type":"Answer","text":"YouTube evaluates initial CTR performance primarily within the first 2-6 hours after upload. This is when the algorithm runs its test-and-expand mechanism: showing the video to a small batch, measuring CTR and early watch time, then deciding whether to expand distribution or suppress it. The decisions made in this window largely determine the video's total lifetime views."}},{"@type":"Question","name":"Can a video recover after a bad initial CTR?","acceptedAnswer":{"@type":"Answer","text":"Sometimes. Changing the thumbnail on an underperforming video can restart the algorithm's evaluation. YouTube re-serves updated thumbnails to new impression batches. However, recovery is harder than getting it right from the start — the algorithm has already accumulated negative signals about the video. Prevention through pre-upload thumbnail optimization is significantly more effective than post-upload recovery."}},{"@type":"Question","name":"What is the best time to publish a YouTube video for maximum initial CTR?","acceptedAnswer":{"@type":"Answer","text":"For US-targeting English-language channels, publishing between 2-4 PM Eastern Time on Tuesday, Wednesday, or Thursday maximizes initial exposure to US audiences during peak browse time. This increases the quality of the initial impression batch, which can improve initial CTR performance even with the same thumbnail."}}]}
+  </script>
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.9; color: #2d3436; background-color: #fdfdfd; }
-    .article-header { background: linear-gradient(135deg, #1a1a2e 0%, #e94560 100%); color: white; padding: 100px 0; text-align: center; }
-    .article-body { max-width: 900px; margin: -60px auto 60px; background: white; padding: 60px; border-radius: 24px; box-shadow: 0 25px 50px rgba(0,0,0,0.05); }
-    h2 { color: #e94560; margin-top: 50px; font-weight: 800; font-size: 1.9rem; border-left: 6px solid #e94560; padding-left: 20px; }
-    h3 { color: #2d3436; margin-top: 30px; font-weight: 700; font-size: 1.3rem; }
-    img { width: 100%; border-radius: 16px; margin: 30px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-    p { font-size: 1.05rem; margin-bottom: 20px; }
-    .warning-box { background-color: #fdecea; border-radius: 12px; padding: 30px; margin: 30px 0; border-left: 5px solid #e94560; }
-    .tip-box { background-color: #e8f4fd; border-radius: 12px; padding: 30px; margin: 30px 0; border-left: 5px solid #2980b9; }
-    .timeline { background: #f8f9fa; border-radius: 12px; padding: 30px; margin: 30px 0; }
-    .timeline-item { display: flex; gap: 20px; margin-bottom: 20px; align-items: flex-start; }
-    .timeline-dot { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; flex-shrink: 0; }
-    .cta-section { background: linear-gradient(135deg, #fdecea, #fff); border-radius: 20px; padding: 50px; text-align: center; margin-top: 60px; border: 2px solid #e94560; }
-    ul li { margin-bottom: 10px; font-size: 1.05rem; }
-    @media (max-width: 600px) { .article-body { padding: 25px; } .timeline-item { flex-direction: column; } }
-  
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1c1e21;background:#f7f8fa;line-height:1.7}
     nav{position:sticky;top:0;z-index:1000;background:#1c1e21;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
     .nav-logo{color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
     .nav-logo span{color:#ff5252}
@@ -47,7 +33,6 @@
     .nav-links a{color:#ccc !important;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;transition:background .2s,color .2s;white-space:nowrap}
     .nav-links a:hover{background:rgba(255,255,255,.08);color:#fff !important}
     .nav-links a.lang-btn-es{color:#a5d6a7 !important;border:1px solid rgba(165,214,167,.35)}
-    .nav-links a.active-link{color:#fff !important;background:rgba(211,47,47,.2)}
     .nav-dropdown{position:relative}
     .nav-dropdown>a{display:flex;align-items:center;gap:4px}
     .nav-dropdown>a::after{content:'▾';font-size:.7rem;opacity:.7}
@@ -57,7 +42,91 @@
     .dropdown-panel a:hover{background:rgba(255,255,255,.09);color:#fff !important}
     .dp-icon{width:22px;text-align:center;font-size:1.05rem;flex-shrink:0}
     .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-    @media(max-width:720px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}.nav-links.open{display:flex}.nav-links a{padding:11px 14px;border-radius:8px}.nav-dropdown>a::after{display:none}.dropdown-panel{display:block;position:static;transform:none;background:rgba(255,255,255,.04);border:none;box-shadow:none;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}.dropdown-panel a{font-size:.83rem;padding:7px 10px}}
+    @media(max-width:720px){
+      .nav-toggle{display:block}
+      .nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:11px 14px;border-radius:8px}
+      .nav-dropdown>a::after{display:none}
+      .dropdown-panel{display:block;position:static;transform:none;background:rgba(255,255,255,.04);border:none;box-shadow:none;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
+      .dropdown-panel a{font-size:.83rem;padding:7px 10px}
+    }
+    .hero{background:linear-gradient(135deg,#1a0d0d 0%,#2d1515 60%,#1a0d0d 100%);padding:60px 24px 80px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(211,47,47,.18) 0%,transparent 65%);pointer-events:none}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(211,47,47,.15);border:1px solid rgba(211,47,47,.3);border-radius:999px;padding:5px 16px;font-size:.78rem;font-weight:700;color:#ef9a9a;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px}
+    .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;line-height:1.15;max-width:720px;margin:0 auto 18px}
+    .hero h1 em{color:#ff5252;font-style:normal}
+    .hero-sub{color:rgba(255,255,255,.65);font-size:1.05rem;max-width:580px;margin:0 auto 36px}
+    .hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;max-width:640px;margin:0 auto}
+    .hstat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 22px;text-align:center;min-width:120px}
+    .hstat-val{font-size:1.6rem;font-weight:900;color:#ff5252;display:block;line-height:1}
+    .hstat-label{font-size:.72rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.07em;margin-top:4px;display:block;line-height:1.4}
+    .breadcrumb{max-width:900px;margin:0 auto;padding:14px 24px 0;font-size:.8rem;color:#888}
+    .breadcrumb a{color:#888;text-decoration:none}
+    .breadcrumb a:hover{color:#d32f2f}
+    .breadcrumb span{margin:0 6px}
+    .article-wrap{max-width:900px;margin:0 auto;padding:0 24px 80px}
+    .article-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:20px 0 28px;border-bottom:1px solid #eee;margin-bottom:36px}
+    .meta-badge{background:#fdecea;color:#c62828;border:1px solid rgba(198,40,40,.2);border-radius:6px;padding:3px 10px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+    .meta-text{font-size:.83rem;color:#888}
+    .article-body h2{font-size:1.4rem;font-weight:800;color:#1c1e21;margin:46px 0 16px;padding-left:16px;border-left:4px solid #d32f2f;line-height:1.3}
+    .article-body h3{font-size:1.05rem;font-weight:700;color:#2d3436;margin:22px 0 8px}
+    .article-body p{color:#444;font-size:1.02rem;margin-bottom:16px;line-height:1.75}
+    .article-body ul{color:#444;font-size:1.02rem;margin:0 0 18px 22px;line-height:1.9}
+    .article-body li{margin-bottom:4px}
+    .article-body a{color:#d32f2f}
+    /* TIMELINE */
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:28px 0}
+    @media(max-width:600px){.timeline{grid-template-columns:1fr 1fr}}
+    .tl-step{border-radius:12px;padding:16px 14px;text-align:center;border:1px solid}
+    .tl-0{background:#fdecea;border-color:#ef9a9a}
+    .tl-1{background:#fff3e0;border-color:#ffcc80}
+    .tl-2{background:#fff8e1;border-color:#ffe082}
+    .tl-3{background:#e8f5e9;border-color:#a5d6a7}
+    .tl-time{font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;display:block;margin-bottom:6px}
+    .tl-0 .tl-time{color:#c62828}
+    .tl-1 .tl-time{color:#e65100}
+    .tl-2 .tl-time{color:#f57f17}
+    .tl-3 .tl-time{color:#2e7d32}
+    .tl-title{font-size:.88rem;font-weight:800;color:#1c1e21;display:block;margin-bottom:4px}
+    .tl-desc{font-size:.75rem;color:#666;line-height:1.4}
+    /* ACTION CARDS */
+    .action-grid{display:grid;gap:12px;margin:24px 0}
+    .action-card{background:#fff;border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;border:1px solid #eee;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+    .ac-num{width:40px;height:40px;border-radius:8px;background:#d32f2f;color:#fff;font-size:1rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .action-card h3{font-size:.93rem;font-weight:700;color:#1c1e21;margin-bottom:3px}
+    .action-card p{font-size:.87rem;color:#555;line-height:1.6;margin:0}
+    /* RECOVERY */
+    .recovery-steps{display:grid;gap:10px;margin:24px 0}
+    .rec-step{background:#fff8e1;border-radius:12px;padding:14px 18px;border:1px solid #ffe082;display:flex;gap:12px;align-items:flex-start}
+    .rec-step h3{font-size:.9rem;font-weight:700;color:#1c1e21;margin-bottom:3px}
+    .rec-step p{font-size:.85rem;color:#555;line-height:1.55;margin:0}
+    /* BOXES */
+    .box{border-radius:14px;padding:22px 26px;margin:28px 0}
+    .box-insight{background:#fff8e1;border-left:4px solid #f59e0b}
+    .box-tip{background:#e8f5e9;border-left:4px solid #2e7d32}
+    .box-warning{background:#fdecea;border-left:4px solid #d32f2f}
+    .box-icon{font-size:1rem;font-weight:800;margin-bottom:6px;display:block;color:#f59e0b}
+    .box-tip .box-icon{color:#2e7d32}
+    .box-warning .box-icon{color:#d32f2f}
+    .box p{margin-bottom:0;font-size:.97rem}
+    /* CTA */
+    .cta-tool{background:linear-gradient(135deg,#d32f2f,#b71c1c);border-radius:16px;padding:32px;text-align:center;margin:36px 0}
+    .cta-tool h3{color:#fff;font-size:1.2rem;font-weight:800;margin-bottom:8px}
+    .cta-tool p{color:rgba(255,255,255,.85);font-size:.95rem;margin-bottom:20px}
+    .cta-tool a{display:inline-block;background:#fff;color:#d32f2f !important;font-weight:800;padding:13px 30px;border-radius:10px;text-decoration:none;font-size:.97rem;transition:transform .15s}
+    .cta-tool a:hover{transform:translateY(-2px)}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:20px 0}
+    .related-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:16px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;transition:box-shadow .2s,transform .2s}
+    .related-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);transform:translateY(-2px)}
+    .related-card strong{font-size:.88rem;display:block;line-height:1.4}
+    .related-card.tool-card{border-left-color:#f57f17;background:#fff8e1}
+    .faq-section{background:#fff;border-radius:16px;padding:32px;margin:40px 0;border:1px solid #eee}
+    .faq-section h2{font-size:1.2rem;font-weight:800;color:#1c1e21;margin-bottom:24px}
+    .faq-item{border-bottom:1px solid #f0f0f0;padding:18px 0}
+    .faq-item:last-child{border-bottom:none;padding-bottom:0}
+    .faq-item h3{font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px}
+    .faq-item p{font-size:.93rem;color:#555;line-height:1.7;margin:0}
     .site-footer{background:#1c1e21;color:#888;padding:48px 20px 32px;margin-top:60px}
     .footer-inner{max-width:960px;margin:0 auto}
     .footer-grid{display:grid;grid-template-columns:1fr repeat(3,auto);gap:40px;margin-bottom:36px}
@@ -71,310 +140,203 @@
     .footer-col a:hover{color:#fff !important}
     .footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
     .footer-bottom p{font-size:.78rem;color:#555}
-    .footer-lang-btn{padding:5px 14px;border-radius:999px;text-decoration:none !important;font-size:.82rem;font-weight:600;transition:background .2s}
+    .footer-lang-btn{padding:5px 14px;border-radius:999px;text-decoration:none !important;font-size:.82rem;font-weight:600}
     .footer-lang-btn.es-fb{background:rgba(165,214,167,.1);color:#a5d6a7 !important;border:1px solid rgba(165,214,167,.3)}
-    .footer-lang-btn.es-fb:hover{background:rgba(165,214,167,.2)}
-        .cta-tool{background:linear-gradient(135deg,#d32f2f,#b71c1c);color:#fff !important;border-radius:12px;padding:28px 32px;margin:36px 0;text-align:center}
-    .cta-tool h3{color:#fff !important;margin-top:0}
-    .cta-tool p{color:rgba(255,255,255,.92) !important}
-    .cta-tool a{display:inline-block;background:#fff;color:#d32f2f !important;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none !important;margin-top:12px}
-    </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The 24-Hour Algorithm: How Initial CTR Dictates Your Video's Lifespan",
-  "description": "Why your thumbnail must perform on Day 1: the seed audience test, impressions cliff, upload timing strategy, and engineering immediate clicks on YouTube in 2026.",
-  "datePublished": "2026-04-17",
-  "dateModified": "2026-05-05",
-  "author": { "@type": "Person", "name": "Daniel", "url": "https://tubetools.online/en/contact.html" },
-  "publisher": { "@type": "Organization", "name": "TubeTools", "url": "https://tubetools.online", "logo": { "@type": "ImageObject", "url": "https://tubetools.online/favicon.svg" } },
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://tubetools.online/og_image_en.png",
-    "width": 1200,
-    "height": 630
-  },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://tubetools.online/en/initial-ctr-video-lifespan-youtube.html" }
-}
-</script>
-  <!-- Open Graph / Social -->
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://tubetools.online/en/initial-ctr-video-lifespan-youtube.html">
-  <meta property="og:title" content="How Initial CTR Dictates Your Video's Lifespan | TubeTools">
-  <meta property="og:description" content="Why your thumbnail must perform perfectly on Day 1: the 24-hour velocity rule, traffic sources, and how to read your YouTube Studio data to act fast.">
-  <meta property="og:image" content="https://tubetools.online/og_image_en.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="How Initial CTR Dictates Your Video's Lifespan | TubeTools">
-  <meta name="twitter:description" content="Why your thumbnail must perform perfectly on Day 1: the 24-hour velocity rule, traffic sources, and how to read your YouTube Studio data to act fast.">
-  <meta name="twitter:image" content="https://tubetools.online/og_image_en.png">
-  <!-- Performance hints -->
-  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-<style id='tt-global'>
-
-/* ── TubeTools Global Fix ── */
-*, *::before, *::after { box-sizing: border-box; }
-a { color: inherit; }
-a:not([class]):not([style]) { color: inherit; text-decoration: none; }
-.read-more, .btn-read-more {
-  display: inline-block; background: #d32f2f; color: #fff !important;
-  text-decoration: none; padding: 9px 18px; border-radius: 8px;
-  font-size: .85rem; font-weight: 700; transition: background .2s; margin-top: 8px;
-}
-.read-more:hover, .btn-read-more:hover { background: #b71c1c !important; }
-.article-card h3 a, .article-title a, .card-title a, .blog-card h3 a {
-  color: #1c1e21 !important; text-decoration: none !important; font-weight: 700;
-}
-.article-card h3 a:hover, .blog-card h3 a:hover { color: #d32f2f !important; }
-footer a { color: #888 !important; text-decoration: none !important; }
-footer a:hover { color: #fff !important; }
-nav a { text-decoration: none; }
-/* Nav fix */
-nav { position: sticky; top: 0; z-index: 1000; background: #1c1e21;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 24px; height: 58px; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
-nav .nav-logo { color: #fff; text-decoration: none; font-size: 1.1rem;
-  font-weight: 800; display: flex; align-items: center; gap: 6px; }
-nav .nav-logo .logo-accent { color: #ff5252; }
-nav .nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
-nav .nav-links a { color: #ccc !important; text-decoration: none; font-size: .88rem;
-  font-weight: 500; padding: 6px 11px; border-radius: 8px;
-  transition: background .2s, color .2s; white-space: nowrap; }
-nav .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
-nav .nav-links a.lang-btn-en { color: #90caf9; border: 1px solid rgba(144,202,249,.35); }
-nav .nav-links a.lang-btn-es { color: #a5d6a7; border: 1px solid rgba(165,214,167,.35); }
-nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
-.nav-toggle { display: none; background: none; border: none; color: #fff;
-  font-size: 1.4rem; cursor: pointer; padding: 6px; }
-/* Tools dropdown */
-.nav-dropdown { position: relative; }
-.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-.nav-dropdown > a::after { content: '▾'; font-size: .7rem; opacity: .7; }
-.dropdown-panel { display: none; position: absolute; top: calc(100% + 6px);
-  left: 50%; transform: translateX(-50%); background: #2c2e33;
-  border-radius: 12px; padding: 10px 8px; min-width: 240px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.4); border: 1px solid rgba(255,255,255,.07);
-  z-index: 2000; }
-.nav-dropdown:hover .dropdown-panel,
-.nav-dropdown:focus-within .dropdown-panel { display: block; }
-.dropdown-panel a { display: flex; align-items: center; gap: 10px; color: #ccc !important;
-  text-decoration: none !important; font-size: .85rem; padding: 9px 14px;
-  border-radius: 8px; transition: background .2s; width: 100%; }
-.dropdown-panel a:hover { background: rgba(255,255,255,.09) !important; color: #fff !important; }
-.dp-icon { width: 22px; text-align: center; font-size: 1.05rem; flex-shrink: 0; }
-/* Mobile nav */
-@media(max-width: 720px) {
-  .nav-toggle { display: block !important; }
-  .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0;
-    background: #2c2e33; flex-direction: column; align-items: stretch;
-    padding: 10px 16px 16px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
-  .nav-links.open { display: flex; }
-  .nav-links a { padding: 11px 14px; border-radius: 8px; }
-  .nav-dropdown > a::after { display: none; }
-  .dropdown-panel { display: block; position: static; transform: none;
-    background: rgba(255,255,255,.04); border: none; box-shadow: none;
-    border-radius: 8px; padding: 4px 0 4px 12px; min-width: auto; margin-top: 2px; }
-  .dropdown-panel a { font-size: .83rem; padding: 7px 10px; }
-}
-/* Footer fix */
-.site-footer { background: #1c1e21; color: #888; padding: 48px 20px 32px; margin-top: 60px; }
-.site-footer .footer-inner { max-width: 960px; margin: 0 auto; }
-.site-footer .footer-grid { display: grid; grid-template-columns: 1fr repeat(3, auto);
-  gap: 40px; margin-bottom: 36px; }
-@media(max-width: 700px) { .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
-@media(max-width: 440px) { .site-footer .footer-grid { grid-template-columns: 1fr; } }
-.site-footer .footer-brand .footer-logo { font-size: 1.1rem; font-weight: 800;
-  color: #fff; margin-bottom: 10px; }
-.site-footer .footer-brand .footer-logo .logo-accent { color: #ff5252; }
-.site-footer .footer-brand p { font-size: .83rem; color: #666; line-height: 1.6; max-width: 220px; }
-.site-footer .footer-col h4 { font-size: .8rem; font-weight: 700; color: #fff;
-  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
-.site-footer .footer-col a { display: block; color: #888 !important;
-  text-decoration: none !important; font-size: .85rem; margin-bottom: 8px;
-  transition: color .2s; }
-.site-footer .footer-col a:hover { color: #fff !important; }
-.site-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.07);
-  padding-top: 20px; display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 10px; }
-.site-footer .footer-bottom p { font-size: .78rem; color: #555; }
-.site-footer .footer-lang-btn { padding: 5px 14px; border-radius: 999px;
-  text-decoration: none !important; font-size: .82rem; font-weight: 600; transition: background .2s; }
-.site-footer .footer-lang-btn.en-fb { background: rgba(144,202,249,.12);
-  color: #90caf9 !important; border: 1px solid rgba(144,202,249,.3); }
-.site-footer .footer-lang-btn.en-fb:hover { background: rgba(144,202,249,.22) !important; }
-.site-footer .footer-lang-btn.es-fb { background: rgba(165,214,167,.1);
-  color: #a5d6a7 !important; border: 1px solid rgba(165,214,167,.3); }
-.site-footer .footer-lang-btn.es-fb:hover { background: rgba(165,214,167,.2) !important; }
-
-</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does the first 48 hours matter so much for YouTube CTR?","acceptedAnswer":{"@type":"Answer","text":"YouTube uses initial CTR to determine whether to expand distribution to broader audiences. If the algorithm sees high CTR in the first 24-48 hours among your subscribers and browse feed impressions, it begins pushing the video to non-subscribers. Poor initial CTR means limited reach, regardless of the video's quality."}},{"@type":"Question","name":"What happens if my CTR drops after the first week?","acceptedAnswer":{"@type":"Answer","text":"Normal. CTR always decreases over time as a video moves from your engaged subscriber base to cold audiences via browse and search. A good initial CTR spike, followed by a gradual decline, is the healthy pattern. A flat low CTR from day one means the algorithm never picked up the video."}},{"@type":"Question","name":"Can I recover a video with low initial CTR?","acceptedAnswer":{"@type":"Answer","text":"Yes — change the thumbnail immediately. YouTube re-evaluates CTR after a thumbnail change. If the new thumbnail gets 2%+ higher CTR than the old one in the first 72 hours after the change, the algorithm may restart wider distribution. This works best within the first 30 days of publishing."}},{"@type":"Question","name":"How do I maximize CTR in the critical first 48 hours?","acceptedAnswer":{"@type":"Answer","text":"Upload when your subscribers are most active (check YouTube Analytics > Audience tab). Notify subscribers via community posts and social media immediately after publishing. Use your absolute best thumbnail — not a placeholder — from the first minute the video is live."}}]}</script>
-
-<style id="mobile-nav-fix">
-@media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
-  .nav-links.open{display:flex !important}
-  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
-  .nav-dropdown{width:100% !important;position:static !important}
-  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
-  .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
-  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
-}
-</style>
+    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s}
+    .skip-link:focus{top:0}
+  </style>
 </head>
 <body>
-<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
-  <p style="margin-bottom:15px;">🍪 We use cookies to improve your experience and show personalized ads. <a href="privacy.html" style="color:#ff4757;">Privacy Policy</a>.</p>
-  <button onclick="localStorage.setItem('cookieConsent','accepted');this.parentElement.style.display='none';" style="background:#d32f2f;color:white;border:none;padding:10px 20px;border-radius:5px;margin-right:10px;cursor:pointer;">Accept</button>
-  <button onclick="localStorage.setItem('cookieConsent','rejected');this.parentElement.style.display='none';" style="background:#555;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">Reject</button>
-</div>
-<script>if(!localStorage.getItem('cookieConsent'))document.getElementById('cookie-banner').style.display='block';</script>
-
-<nav>
-  <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="nav-links">
-    <a href="/ctr-inicial-y-alcance-youtube.html" class="lang-btn-es">🇪🇸 ES</a>
-    <a href="/en/">Home</a>
-    <div class="nav-dropdown">
-      <a href="/en/tools.html">🎯 Tools</a>
-      <div class="dropdown-panel">
-        <a href="/en/"><span class="dp-icon">🖼️</span>Thumbnail Extractor</a>
-        <a href="/en/thumbnail-analyzer.html"><span class="dp-icon">🔬</span>Thumbnail Analyzer</a>
-        <a href="/en/youtube-title-generator.html"><span class="dp-icon">✍️</span>Title Generator</a>
-        <a href="/en/calculator.html"><span class="dp-icon">🧮</span>Revenue Calculator</a>
-        <a href="/en/ctr-score-calculator.html"><span class="dp-icon">📊</span>CTR Score</a>
-        <a href="/en/thumbnail-checklist.html"><span class="dp-icon">✅</span>Checklist</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav>
+    <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="/ctr-inicial-y-alcance-youtube.html" class="lang-btn-es">🇪🇸 ES</a>
+      <a href="/en/">Home</a>
+      <div class="nav-dropdown">
+        <a href="/en/tools.html">🎯 Tools</a>
+        <div class="dropdown-panel">
+          <a href="/en/"><span class="dp-icon">🖼️</span>Thumbnail Extractor</a>
+          <a href="/en/thumbnail-analyzer.html"><span class="dp-icon">🔬</span>Thumbnail Analyzer</a>
+          <a href="/en/youtube-title-generator.html"><span class="dp-icon">✍️</span>Title Generator</a>
+          <a href="/en/calculator.html"><span class="dp-icon">🧮</span>Revenue Calculator</a>
+          <a href="/en/ctr-score-calculator.html"><span class="dp-icon">📊</span>CTR Score</a>
+          <a href="/en/thumbnail-checklist.html"><span class="dp-icon">✅</span>Checklist</a>
+        </div>
       </div>
+      <a href="/en/blog.html">Blog</a>
+      <a href="/en/glossary.html">Glossary</a>
+      <a href="/en/contact.html">Contact</a>
     </div>
-    <a href="/en/blog.html">Blog</a>
-    <a href="/en/glossary.html">Glossary</a>
-    <a href="/en/contact.html">Contact</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-eyebrow">⏱️ Algorithm Timing · Updated June 2026</div>
+    <h1><em>Initial CTR</em> and<br>Video Lifespan on YouTube</h1>
+    <p class="hero-sub">The first 6 hours after upload largely determine your video's total lifetime views. Here's exactly how the algorithm evaluates that window — and how to maximize it.</p>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-val">6h</span><span class="hstat-label">Critical evaluation window</span></div>
+      <div class="hstat"><span class="hstat-val">2–3×</span><span class="hstat-label">Lifetime views from strong start</span></div>
+      <div class="hstat"><span class="hstat-val">48h</span><span class="hstat-label">Thumbnail change impact</span></div>
+      <div class="hstat"><span class="hstat-val">Tue–Thu</span><span class="hstat-label">Best publish days (US)</span></div>
+    </div>
   </div>
-</nav>
 
-<header class="article-header">
-  <div class="container">
-    <h1 class="display-3 fw-bold">The 24-Hour Velocity Rule</h1>
-    <p class="lead opacity-75">Why your thumbnail needs to perform perfectly on Day 1 — or never</p>
+  <div class="breadcrumb">
+    <a href="/en/">Home</a><span>›</span><a href="/en/blog.html">Blog</a><span>›</span>Initial CTR and Video Lifespan
   </div>
-</header>
 
-<main class="container">
-  <article class="article-body">
-    <p class="text-muted small mb-4 text-uppercase fw-bold">10 Minute Read • Algorithm Insights</p>
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="meta-badge">Algorithm</span>
+      <span class="meta-text">By TubeTools Team · Updated June 2026 · 8 min read</span>
+    </div>
 
-    <p class="lead fw-bold">YouTube's recommendation engine is a momentum machine. It doesn't judge your video on its lifetime potential — it judges it on its initial velocity. If your thumbnail fails to capture enough clicks in the first 24 hours, the algorithm treats the content as irrelevant and permanently throttles its reach. Understanding this single fact changes everything about how you approach thumbnail creation.</p>
+    <div class="article-body" id="main-content">
 
-    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=900&auto=format" alt="YouTube 24-hour algorithm velocity and CTR" loading="lazy" decoding="async">
+      <p>YouTube's algorithm doesn't evaluate all videos equally over time. It runs a rapid test-and-expand sequence in the first hours after upload that largely determines whether a video will accumulate thousands or millions of views. Understanding the mechanics of this sequence — and designing your upload strategy around it — is one of the highest-leverage optimizations available to any creator.</p>
 
-    <h2>1. The "Seed Audience" Test: YouTube's Internal Quality Check</h2>
-    <p>When you publish a video, YouTube doesn't immediately push it to millions of people. Instead, it runs a controlled experiment using your "seed audience" — typically your 200-500 most active, most engaged subscribers, plus a small random sample of viewers in your niche.</p>
-    <p>This group is YouTube's canary in the coal mine. The algorithm's logic is brutally simple: <em>"If their own most loyal fans won't click this thumbnail, a broader cold audience definitely won't."</em> The CTR performance during this seed phase directly determines how aggressively YouTube expands the video's distribution in the following hours.</p>
+      <h2>The Algorithm's Test-and-Expand Mechanism</h2>
+      <p>When you upload a video, YouTube doesn't immediately show it to your full subscriber base or push it to browse feeds at scale. Instead, it runs a staged evaluation:</p>
 
-    <div class="timeline">
-      <strong style="font-size:1.1rem;">📅 The 72-Hour Distribution Timeline:</strong>
-      <br><br>
-      <div class="timeline-item">
-        <div class="timeline-dot" style="background:#e94560;">0-6h</div>
-        <div><strong>Seed Phase:</strong> Shown to your most active subscribers. CTR benchmark: above 5% to advance. Below 3% = algorithm flags as low-quality and restricts further distribution.</div>
+      <div class="timeline">
+        <div class="tl-step tl-0">
+          <span class="tl-time">0–2 hours</span>
+          <span class="tl-title">Test Batch</span>
+          <span class="tl-desc">Small impression batch to mixed audience. CTR and early retention measured.</span>
+        </div>
+        <div class="tl-step tl-1">
+          <span class="tl-time">2–6 hours</span>
+          <span class="tl-title">Decision Point</span>
+          <span class="tl-desc">Algorithm evaluates test results. Expand or suppress decision made here.</span>
+        </div>
+        <div class="tl-step tl-2">
+          <span class="tl-time">6–24 hours</span>
+          <span class="tl-title">Distribution</span>
+          <span class="tl-desc">Strong CTR → aggressive push. Weak CTR → limited distribution maintained.</span>
+        </div>
+        <div class="tl-step tl-3">
+          <span class="tl-time">24h+</span>
+          <span class="tl-title">Long-Tail</span>
+          <span class="tl-desc">Ongoing distribution based on established performance signal and watch time.</span>
+        </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot" style="background:#e67e22;">6-24h</div>
-        <div><strong>Expansion Phase:</strong> If seed CTR is strong, YouTube begins pushing to your broader subscriber base plus similar-interest viewers. The thumbnail must now work without brand recognition.</div>
+
+      <div class="box box-insight">
+        <span class="box-icon">💡 WHY THIS MATTERS</span>
+        <p>Videos that achieve strong CTR in the 0–6 hour window receive 2–3× more lifetime impressions than equivalent videos with weak initial CTR. The algorithm interprets early strong CTR as evidence that the content deserves wider distribution. <strong>This decision is made before most of your subscribers have even seen the notification.</strong></p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot" style="background:#27ae60;">24-72h</div>
-        <div><strong>Viral Phase:</strong> Strong performers get distributed to cold audiences via Browse Features, Suggested Videos, and YouTube Search. This is where most views come from for trending videos.</div>
+
+      <h2>How to Maximize Your Initial CTR Window</h2>
+
+      <div class="action-grid">
+        <div class="action-card">
+          <div class="ac-num">1</div>
+          <div>
+            <h3>Publish at peak US browse time</h3>
+            <p>2–4 PM Eastern Time on Tuesday, Wednesday, or Thursday maximizes initial exposure to US audiences — who generate the highest CPM and are most likely to click during their afternoon YouTube session. The quality of your initial impression batch affects CTR even with the same thumbnail.</p>
+          </div>
+        </div>
+        <div class="action-card">
+          <div class="ac-num">2</div>
+          <div>
+            <h3>Finalize the thumbnail before publishing — not after</h3>
+            <p>The most common strategic mistake is publishing with a placeholder or rushed thumbnail, then updating it later. The algorithm evaluates CTR from the first impression. Every impression with a weak thumbnail is a wasted signal — you cannot get those back. The thumbnail must be final before the video goes live.</p>
+          </div>
+        </div>
+        <div class="action-card">
+          <div class="ac-num">3</div>
+          <div>
+            <h3>Notify your most engaged subscribers immediately</h3>
+            <p>Your subscriber base — especially recent subscribers with high engagement history — produces better CTR than cold audiences. Posting the video link in your community tab, email list, or social channels within the first hour adds warm-audience impressions to the test batch, improving your overall initial CTR average.</p>
+          </div>
+        </div>
+        <div class="action-card">
+          <div class="ac-num">4</div>
+          <div>
+            <h3>Don't publish and leave — monitor for the first 2 hours</h3>
+            <p>Check CTR in YouTube Studio → Analytics → Reach every 30 minutes for the first 2 hours. If CTR is dramatically below your channel average within the first hour (indicating a thumbnail problem), you have a window to change the thumbnail before the algorithm's evaluation is complete.</p>
+          </div>
+        </div>
+        <div class="action-card">
+          <div class="ac-num">5</div>
+          <div>
+            <h3>Align the title hook with the thumbnail hook</h3>
+            <p>The thumbnail and title must work together as a compound curiosity signal. A strong thumbnail with a weak title, or vice versa, produces lower CTR than either could achieve alone. The combination's click intent is multiplicative — both elements should amplify, not compete with, each other.</p>
+          </div>
+        </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot" style="background:#7f8c8d;">72h+</div>
-        <div><strong>Long-tail Phase:</strong> The video settles into its "evergreen" state, primarily discoverable through Search. CTR still matters but has less impact on active distribution at this stage.</div>
+
+      <h2>Can a Video Recover After Bad Initial CTR?</h2>
+      <p>Yes — but it's harder than getting it right the first time. If a video underperforms in the initial window, several approaches can partially restart the algorithm's evaluation:</p>
+
+      <div class="recovery-steps">
+        <div class="rec-step">
+          <span style="font-size:1.2rem;flex-shrink:0">🖼️</span>
+          <div>
+            <h3>Replace the thumbnail entirely</h3>
+            <p>A new thumbnail prompts YouTube to re-evaluate the video with new impression batches. The impact is visible within 24–48 hours. This is the most reliable recovery action and should be the first thing you try on any underperforming video.</p>
+          </div>
+        </div>
+        <div class="rec-step">
+          <span style="font-size:1.2rem;flex-shrink:0">📝</span>
+          <div>
+            <h3>Update the title with stronger framing</h3>
+            <p>A title change also prompts re-evaluation by changing the text signal YouTube uses for categorization. Combine a title update with a thumbnail update for maximum impact.</p>
+          </div>
+        </div>
+        <div class="rec-step">
+          <span style="font-size:1.2rem;flex-shrink:0">🔗</span>
+          <div>
+            <h3>Drive external traffic to the video</h3>
+            <p>External clicks from Reddit, Twitter, or email campaigns generate impressions outside YouTube's usual distribution system. If enough external viewers watch and retain, YouTube may reclassify the video as worth distributing more broadly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box box-warning">
+        <span class="box-icon">⚠️ THE PREVENTION IS EASIER</span>
+        <p>Recovery from bad initial CTR requires significantly more effort than preventing it. Run the thumbnail through a CTR diagnostic before every upload. The 5 minutes it takes to validate a thumbnail pre-upload is worth more than hours of post-upload optimization work.</p>
+      </div>
+
+      <h2>The Long-Tail: Videos That Keep Performing</h2>
+      <p>Not all videos rely entirely on initial CTR. Content optimized for search — "how to" tutorials, evergreen guides, technical explanations — can accumulate views for months or years through search traffic regardless of initial browse performance. These videos need a different optimization strategy: keyword-rich titles, clear descriptions, and consistent content delivery rather than maximum emotional impact in the thumbnail.</p>
+      <p>Browse-optimized content (entertainment, opinion, trending topics) is much more dependent on initial CTR, because its distribution window is shorter and it competes in real-time with new content. The initial CTR window is most critical for browse-first content.</p>
+
+      <div class="cta-tool">
+        <h3>📊 Validate Your Thumbnail Before Upload</h3>
+        <p>Score it across 12 CTR criteria and get a fix list in 2 minutes. Prevention is worth every second before the algorithm makes its evaluation.</p>
+        <a href="ctr-score-calculator.html">Use CTR Score Calculator Free →</a>
+      </div>
+
+      <h2>Related Articles &amp; Tools</h2>
+      <div class="related-grid">
+        <a href="ctr-vs-watch-time-youtube-growth.html" class="related-card"><strong>CTR vs Watch Time for Channel Growth</strong></a>
+        <a href="youtube-ctr-guide-for-beginners.html" class="related-card"><strong>YouTube CTR Guide for Beginners</strong></a>
+        <a href="how-ctr-affects-youtube-ad-revenue.html" class="related-card"><strong>How CTR Affects Your Ad Revenue</strong></a>
+        <a href="guide-thumbnails-ctr.html" class="related-card"><strong>Ultimate CTR &amp; Thumbnail Guide</strong></a>
+        <a href="ctr-score-calculator.html" class="related-card tool-card"><strong>📊 CTR Score Calculator</strong></a>
+        <a href="thumbnail-checklist.html" class="related-card tool-card"><strong>✅ Pre-Publish Checklist</strong></a>
       </div>
     </div>
 
-    <h2>2. The Impressions Cliff: What It Looks Like and How to Avoid It</h2>
-    <p>Have you ever seen your impressions spike immediately after upload and then flatline after exactly 24-48 hours? That is the Impressions Cliff — and it happens when your CTR drops below your channel's historical average during the initial push.</p>
-    <p>The algorithm is comparing your new video's performance against your channel's average CTR benchmark. If your new video performs significantly below your historical average, it interprets this as a step backward in content quality and reduces distribution accordingly.</p>
-
-    <div class="warning-box">
-      <strong>⚠️ The Metadata Trap:</strong> Changing your thumbnail 3-5 days after upload rarely saves a dead video. The initial algorithmic momentum is already gone — the algorithm has already made its distribution decision and moving on to newer content. You must audit your visual assets <em>before</em> you hit publish, not after the video is already underperforming.
-    </div>
-
-    <h2>3. Upload Timing Strategy: When to Publish for Maximum Seed CTR</h2>
-    <p>The seed audience test happens immediately after publishing. This means the time you publish determines which of your subscribers are active during those critical first hours.</p>
-    <h3>Optimal Upload Windows (by region)</h3>
-    <ul>
-      <li><strong>US-focused channels:</strong> Tuesday–Thursday, 2-4 PM EST. This catches the after-work/after-school peak scroll window when your subscribers are most likely to be browsing.</li>
-      <li><strong>European-focused channels:</strong> Tuesday–Thursday, 4-6 PM CET for maximum prime-time overlap.</li>
-      <li><strong>Global audiences:</strong> Aim for 12-2 PM EST — this creates a rolling window that catches both US morning viewers and European evening viewers in the same initial push.</li>
-    </ul>
-    <p>Check your own YouTube Analytics under "When your viewers are on YouTube" to find your channel-specific peak hours. This data trumps any general recommendation.</p>
-
-    <h2>4. Engineering Immediate Clicks: The Pre-Publish Checklist</h2>
-    <p>To win the 24-hour race, your thumbnail must communicate urgency and relevance instantly. Before you publish any video, verify these five non-negotiables:</p>
-
-
-    <ul>
-      <li><strong>Readability at 10% size:</strong> Shrink your thumbnail to sidebar size (approximately 70x40 pixels). If you can't identify the main subject in under one second, your contrast is insufficient.</li>
-      <li><strong>No text in the bottom-right corner:</strong> YouTube's duration timestamp overlays in this zone. Any critical information placed here will be hidden.</li>
-      <li><strong>High-arousal expression (if using a face):</strong> Neutral expressions do not register in the sub-200ms decision window. You need extreme shock, joy, concern, or disgust.</li>
-      <li><strong>Curiosity gap present:</strong> The thumbnail should raise a question, not answer it. Showing "the after" without "the how" forces a click.</li>
-      <li><strong>Contrast differential above 30%:</strong> Your foreground subject must be measurably brighter and more saturated than the background.</li>
-    </ul>
-
-    <h2>5. Recovery Strategies When a Video Is Already Underperforming</h2>
-    <p>If you check your analytics 48 hours after upload and see the impressions cliff, you're not completely out of options — but you must act fast and set realistic expectations:</p>
-    <ul>
-      <li><strong>Redesign the thumbnail completely</strong> (not just change colors) and republish within 48 hours. Some recovery is possible if you catch it early.</li>
-      <li><strong>Use YouTube Community posts</strong> to drive your existing subscriber base back to the video, artificially boosting CTR data and potentially re-triggering the algorithm.</li>
-      <li><strong>Optimize the title and description</strong> for YouTube Search, since SEO-driven traffic is not affected by the initial velocity algorithm in the same way.</li>
-    </ul>
-
-    <div class="tip-box">
-      <strong>💡 Long-Game Strategy:</strong> Channels that consistently hit high CTR in their first 24 hours build a compounding advantage. YouTube's algorithm "remembers" channel-level CTR history and gives newer videos from high-performing channels preferentially larger seed audiences. Every successful launch makes the next one easier.
-    </div>
-
-    <div class="cta-section">
-      <h3 class="fw-bold mb-3">Audit Your Velocity Potential Before You Publish</h3>
-      <p>Don't leave your first 24 hours to chance. Use our free <strong>HD Thumbnail Extractor</strong> to analyze the visual structure of top-performing videos in your niche — before you design your own thumbnail. Understanding what winning looks like at full resolution is the most effective way to ensure you clear the 24-hour CTR threshold.</p>
-      <a href="index.html" class="btn btn-danger btn-lg rounded-pill px-5 py-3 fw-bold mt-3">INSPECT COMPETITOR THUMBNAILS FREE</a>
-    </div>
-  </article>
-
-
-
-    <div class="cta-tool">
-      <h3>📊 Score Your Thumbnail Before Publishing</h3>
-      <p>Use TubeTools' free CTR Score Calculator to get an instant quality rating across 12 criteria — contrast, text legibility, visual complexity and more. Fix issues before they cost you views.</p>
-      <a href="/en/ctr-score-calculator.html">Get Your CTR Score Free</a>
-    </div></main>
-
-    <section style="max-width:860px;margin:48px auto;padding:0 20px;">
-      <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
-        <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin-bottom:24px;">Frequently Asked Questions</h2>
-        <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
-          <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">Why does the first 48 hours matter so much for YouTube CTR?</h3>
-          <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">YouTube uses initial CTR to determine whether to expand distribution to broader audiences. If the algorithm sees high CTR in the first 24-48 hours among your subscribers and browse feed impressions, it begins pushing the video to non-subscribers. Poor initial CTR means limited reach, regardless of the video's quality.</p>
-        </div>
-        <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
-          <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">What happens if my CTR drops after the first week?</h3>
-          <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Normal. CTR always decreases over time as a video moves from your engaged subscriber base to cold audiences via browse and search. A good initial CTR spike, followed by a gradual decline, is the healthy pattern. A flat low CTR from day one means the algorithm never picked up the video.</p>
-        </div>
-        <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
-          <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">Can I recover a video with low initial CTR?</h3>
-          <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Yes — change the thumbnail immediately. YouTube re-evaluates CTR after a thumbnail change. If the new thumbnail gets 2%+ higher CTR than the old one in the first 72 hours after the change, the algorithm may restart wider distribution. This works best within the first 30 days of publishing.</p>
-        </div>
-        <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
-          <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">How do I maximize CTR in the critical first 48 hours?</h3>
-          <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Upload when your subscribers are most active (check YouTube Analytics > Audience tab). Notify subscribers via community posts and social media immediately after publishing. Use your absolute best thumbnail — not a placeholder — from the first minute the video is live.</p>
-        </div>
+    <div class="faq-section">
+      <h2>❓ Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How long does YouTube's initial CTR evaluation window last?</h3>
+        <p>YouTube evaluates initial CTR performance primarily within the first 2–6 hours after upload. This is when the algorithm runs its test-and-expand mechanism: showing the video to a small batch, measuring CTR and early watch time, then deciding whether to expand distribution or suppress it. The decisions made in this window largely determine the video's total lifetime views.</p>
       </div>
-    </section>
+      <div class="faq-item">
+        <h3>Can a video recover after bad initial CTR?</h3>
+        <p>Sometimes. Changing the thumbnail on an underperforming video can restart the algorithm's evaluation — YouTube re-serves updated thumbnails to new impression batches. However, recovery is harder than getting it right from the start. Prevention through pre-upload thumbnail optimization is significantly more effective than post-upload recovery.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the best time to publish a YouTube video for maximum initial CTR?</h3>
+        <p>For US-targeting English-language channels, 2–4 PM Eastern Time on Tuesday, Wednesday, or Thursday maximizes initial exposure to US audiences during peak browse time. This improves the quality of the initial impression batch, which can improve initial CTR performance even with the same thumbnail.</p>
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -416,33 +378,19 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
       </div>
     </div>
   </footer>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('SW registrado', reg.scope))
-        .catch(err => console.log('SW error:', err));
-    });
-  }
-</script>
-
-<script>
-(function(){
-  var btn = document.querySelector('.nav-toggle');
-  var links = document.querySelector('.nav-links');
-  if(!btn || !links) return;
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isOpen = links.classList.toggle('open');
-    btn.textContent = isOpen ? '✕' : '☰';
-  });
-  document.addEventListener('click', function(e){
-    if(!links.contains(e.target) && e.target !== btn){
-      links.classList.remove('open');
-      btn.textContent = '☰';
-    }
-  });
-})();
-</script>
+  <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:18px 20px;text-align:center;z-index:9999;display:none;">
+    <p style="margin-bottom:12px;">🍪 We use cookies to improve your experience and show personalized ads. <a href="privacy.html" style="color:#ff4757;text-decoration:underline;">Privacy Policy</a>.</p>
+    <div>
+      <button id="accept-cookies" style="background:#d32f2f;color:white;border:none;padding:10px 20px;border-radius:5px;margin-right:10px;cursor:pointer;font-weight:600;">Accept</button>
+      <button id="reject-cookies" style="background:#555;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">Reject</button>
+    </div>
+  </div>
+  <script>
+    if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').style.display='block';}
+    document.getElementById('accept-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');document.getElementById('cookie-banner').style.display='none';});
+    document.getElementById('reject-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','rejected');document.getElementById('cookie-banner').style.display='none';});
+    (function(){var btn=document.querySelector('.nav-toggle');var links=document.querySelector('.nav-links');if(!btn||!links)return;btn.addEventListener('click',function(e){e.stopPropagation();var o=links.classList.toggle('open');btn.textContent=o?'✕':'☰';btn.setAttribute('aria-expanded',o);});document.addEventListener('click',function(e){if(!links.contains(e.target)&&e.target!==btn){links.classList.remove('open');btn.textContent='☰';btn.setAttribute('aria-expanded','false');}});})();
+  </script>
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}</script>
 </body>
 </html>
