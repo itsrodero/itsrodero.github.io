@@ -152,12 +152,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/tools.html"/>
   </url>
 
-  <!-- EN-ONLY ARTICLES (no ES counterpart) -->
   <url>
     <loc>https://tubetools.online/en/analyze-thumbnail.html</loc>
-    <lastmod>2026-05-22</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tubetools.online/en/analyze-thumbnail.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tubetools.online/analizar-miniaturas-competencia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/analyze-thumbnail.html"/>
+  </url>
+  <url>
+    <loc>https://tubetools.online/analizar-miniaturas-competencia.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tubetools.online/analizar-miniaturas-competencia.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://tubetools.online/en/analyze-thumbnail.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/analyze-thumbnail.html"/>
   </url>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Not Found – TubeTools</title>
-  <meta name="description" content="The page you're looking for doesn't exist. Find free YouTube thumbnail tools, CPM guides, and creator resources at TubeTools.">
+  <title>Página No Encontrada – TubeTools</title>
+  <meta name="description" content="La página que buscas no existe. Encuentra herramientas gratuitas para miniaturas de YouTube, guías de CPM y recursos para creadores en TubeTools.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://tubetools.online/404.html">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -12,9 +12,6 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; color: #1c1e21; display: flex; flex-direction: column; min-height: 100vh; }
-    nav { background-color: #1c1e21; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; }
-    nav a { color: white; text-decoration: none; font-weight: bold; font-size: 15px; margin-left: 20px; }
-    nav a:hover { color: #d32f2f; }
     main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
     .error-box { background: white; border-radius: 24px; padding: 60px 40px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.07); max-width: 600px; width: 100%; }
     .error-code { font-size: 8rem; font-weight: 900; color: #f0f2f5; line-height: 1; text-shadow: 0 4px 15px rgba(0,0,0,0.1); }
@@ -29,13 +26,41 @@
     .suggestions a { display: block; color: #d32f2f; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 0.95rem; }
     .suggestions a:hover { text-decoration: underline; }
     .suggestions a:last-child { border-bottom: none; }
-    footer { background: #1c1e21; color: #888; text-align: center; padding: 25px; font-size: 0.9rem; }
-    footer a { color: #bbb; text-decoration: none; margin: 0 10px; }
-  </style>
-  <meta name="description" content="Página no encontrada. Vuelve a la página principal de TubeTools para acceder a todas las herramientas gratuitas para YouTubers.">
-  <style>
-    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
-    .skip-link:focus{top:0;}
+    nav { position: sticky; top: 0; z-index: 1000; background: #1c1e21; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 58px; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
+    nav .nav-logo { color: #fff; text-decoration: none; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 6px; }
+    nav .nav-logo span { color: #ff5252; }
+    .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; padding: 6px; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a { color: #ccc; text-decoration: none; font-size: .88rem; font-weight: 600; padding: 8px 12px; border-radius: 8px; transition: background .2s, color .2s; }
+    .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
+    .nav-links a.lang-btn-en { color: #90caf9; font-weight: 700; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+    .nav-dropdown > a::after { content: '▾'; font-size: .7rem; opacity: .7; }
+    .dropdown-panel { display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: #2c2e33; border-radius: 12px; padding: 10px 8px; min-width: 240px; box-shadow: 0 8px 32px rgba(0,0,0,.4); border: 1px solid rgba(255,255,255,.07); z-index: 2000; }
+    .nav-dropdown:hover .dropdown-panel, .nav-dropdown:focus-within .dropdown-panel { display: block; }
+    .dropdown-panel a { display: flex; align-items: center; gap: 10px; color: #ccc; text-decoration: none; font-size: .85rem; padding: 9px 14px; border-radius: 8px; transition: background .2s; width: 100%; }
+    .dropdown-panel a:hover { background: rgba(255,255,255,.09); color: #fff; }
+    .dp-icon { width: 22px; text-align: center; font-size: 1.05rem; flex-shrink: 0; }
+    @media (max-width:720px) { .nav-toggle{display:block} .nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)} .nav-links.open{display:flex} .nav-links a{padding:11px 14px;border-radius:8px} .nav-dropdown>a::after{display:none} .dropdown-panel{display:block;position:static;transform:none;background:rgba(255,255,255,.04);border:none;box-shadow:none;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px} .dropdown-panel a{font-size:.83rem;padding:7px 10px} }
+    .site-footer { background: #1c1e21; color: #888; padding: 48px 20px 32px; margin-top: 60px; }
+    .footer-inner { max-width: 960px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 1fr repeat(3,auto); gap: 40px; margin-bottom: 36px; }
+    @media (max-width:700px) { .footer-grid{grid-template-columns:1fr 1fr;gap:28px} }
+    @media (max-width:440px) { .footer-grid{grid-template-columns:1fr} }
+    .footer-logo { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .footer-logo span { color: #ff5252; }
+    .footer-brand p { font-size: .83rem; color: #666; line-height: 1.6; max-width: 220px; }
+    .footer-col h4 { font-size: .8rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+    .footer-col a { display: block; color: #888; text-decoration: none; font-size: .85rem; margin-bottom: 8px; transition: color .2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.07); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { font-size: .78rem; color: #555; }
+    .footer-lang-btn { padding: 5px 14px; border-radius: 999px; text-decoration: none; font-size: .82rem; font-weight: 600; transition: background .2s; }
+    .footer-lang-btn.en-fb { background: rgba(144,202,249,.1); color: #90caf9; border: 1px solid rgba(144,202,249,.3); }
+    .footer-lang-btn.en-fb:hover { background: rgba(144,202,249,.2); }
+    .skip-link { position: absolute; top: -100px; left: 0; background: #d32f2f; color: #fff; padding: 8px 15px; z-index: 100000; font-weight: 600; font-size: .9rem; text-decoration: none; border-radius: 0 0 6px 0; transition: top .2s; }
+    .skip-link:focus { top: 0; }
   </style>
 </head>
 <body>
@@ -48,60 +73,115 @@
 
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-
-<nav>
-    <a href="index.html" class="logo">🚀 TubeTools</a>
-    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Toggle menu">☰</button>
-        <div class="nav-links">
-    <a href="en/index.html" style="color:#90caf9;font-weight:600;">🇬🇧 EN</a>
-      <a href="index.html">Inicio</a>
-      <a href="generador-titulos-youtube.html">🎯 Herramientas</a>
-      <a href="calculadora.html">Calculadora</a>
-      <a href="blog.html">Blog</a>
+  <nav>
+    <a href="/" class="nav-logo">🚀 Tube<span>Tools</span></a>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menú">☰</button>
+    <div class="nav-links">
+      <a href="/en/404.html" class="lang-btn-en">🇬🇧 EN</a>
+      <a href="/">Inicio</a>
+      <div class="nav-dropdown">
+        <a href="/herramientas.html">🎯 Herramientas</a>
+        <div class="dropdown-panel">
+          <a href="/"><span class="dp-icon">🖼️</span>Extractor de Miniaturas</a>
+          <a href="/analizador-miniaturas.html"><span class="dp-icon">🔬</span>Analizador de Miniaturas</a>
+          <a href="/generador-titulos-youtube.html"><span class="dp-icon">✍️</span>Generador de Títulos</a>
+          <a href="/calculadora.html"><span class="dp-icon">🧮</span>Calculadora de Ganancias</a>
+          <a href="/calculadora-puntuacion-ctr.html"><span class="dp-icon">📊</span>CTR Score</a>
+          <a href="/checklist-miniaturas.html"><span class="dp-icon">✅</span>Checklist</a>
+        </div>
+      </div>
+      <a href="/blog.html">Blog</a>
+      <a href="/glosario.html">Glosario</a>
+      <a href="/contacto.html">Contacto</a>
     </div>
   </nav>
 
-<main id="main-content">
-  <div class="error-box">
-    <div class="error-code">404</div>
-    <h1>Page Not Found</h1>
-    <p>Oops! The page you're looking for doesn't exist or has been moved. Don't worry — our free YouTube tools are still here and ready to help you boost your CTR.</p>
+  <main id="main-content">
+    <div class="error-box">
+      <div class="error-code">404</div>
+      <h1>Página No Encontrada</h1>
+      <p>¡Ups! La página que buscas no existe o ha sido movida. No te preocupes — nuestras herramientas gratuitas para YouTube siguen aquí, listas para ayudarte a mejorar tu CTR.</p>
 
-    <div>
-      <a href="/en/index.html" class="btn-home">🏠 Go to Home</a>
-      <a href="/en/blog.html" class="btn-secondary">📖 Browse Articles</a>
+      <div>
+        <a href="/" class="btn-home">🏠 Ir al Inicio</a>
+        <a href="/blog.html" class="btn-secondary">📖 Ver Artículos</a>
+      </div>
+
+      <div class="suggestions">
+        <h3>Puede que estés buscando:</h3>
+        <a href="/">🔍 Extractor de Miniaturas de YouTube (Gratis HD)</a>
+        <a href="/calculadora.html">💰 Calculadora de Ingresos de YouTube</a>
+        <a href="/guia-miniaturas-ctr.html">📚 Guía Completa de CTR y Miniaturas</a>
+        <a href="/blog.html">📝 Todos los Artículos y Guías</a>
+        <a href="/about.html">👋 Sobre TubeTools</a>
+        <a href="/contacto.html">✉️ Contacto</a>
+      </div>
     </div>
+  </main>
 
-    <div class="suggestions">
-      <h3>You might be looking for:</h3>
-      <a href="/en/index.html">🔍 YouTube Thumbnail Extractor (Free HD)</a>
-      <a href="/en/calculator.html">💰 YouTube Revenue Calculator</a>
-      <a href="/en/guide-thumbnails-ctr.html">📚 Complete Thumbnail CTR Guide</a>
-      <a href="/en/blog.html">📝 All Articles and Guides</a>
-      <a href="/en/about.html">👋 About TubeTools</a>
-      <a href="/en/contact.html">✉️ Contact Us</a>
+  <div style='max-width:700px;margin:0 auto 40px;padding:0 20px;'>
+    <div style='background:#fff;border-radius:14px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-top:32px;'>
+      <h2 style='font-size:1.1rem;font-weight:800;color:#1c1e21;margin-bottom:16px;'>Enlaces Rápidos a las Herramientas Más Populares</h2>
+      <div style='display:grid;grid-template-columns:1fr 1fr;gap:12px;'>
+        <a href="/" style='display:block;background:#f4f5f7;border-radius:10px;padding:16px;text-decoration:none;color:#1c1e21;font-weight:700;font-size:.9rem;border:2px solid transparent;transition:border-color .2s;' onmouseover="this.style.borderColor='#d32f2f'" onmouseout="this.style.borderColor='transparent'">🖼️ Extractor de Miniaturas</a>
+        <a href="/analizador-miniaturas.html" style='display:block;background:#f4f5f7;border-radius:10px;padding:16px;text-decoration:none;color:#1c1e21;font-weight:700;font-size:.9rem;border:2px solid transparent;' onmouseover="this.style.borderColor='#d32f2f'" onmouseout="this.style.borderColor='transparent'">🔬 Analizador de Miniaturas</a>
+        <a href="/generador-titulos-youtube.html" style='display:block;background:#f4f5f7;border-radius:10px;padding:16px;text-decoration:none;color:#1c1e21;font-weight:700;font-size:.9rem;border:2px solid transparent;' onmouseover="this.style.borderColor='#d32f2f'" onmouseout="this.style.borderColor='transparent'">✍️ Generador de Títulos</a>
+        <a href="/calculadora.html" style='display:block;background:#f4f5f7;border-radius:10px;padding:16px;text-decoration:none;color:#1c1e21;font-weight:700;font-size:.9rem;border:2px solid transparent;' onmouseover="this.style.borderColor='#d32f2f'" onmouseout="this.style.borderColor='transparent'">🧮 Calculadora de Ganancias</a>
+      </div>
+      <p style='margin-top:18px;font-size:.9rem;color:#888;line-height:1.6;'>Si seguiste un enlace que te trajo hasta aquí, puede que se haya movido o actualizado. Usa la navegación de arriba para encontrar lo que buscas, o empieza desde la <a href="/" style='color:#d32f2f;font-weight:600;'>página de inicio</a>.</p>
     </div>
   </div>
-</main>
 
-<footer style="background:#1c1e21;color:#888;text-align:center;padding:36px 20px;margin-top:40px;">
-  <div style="font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:16px;">🚀 Tube<span style="color:#ff5252">Tools</span></div>
-  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:6px 16px;margin-bottom:16px;">
-    <a href="index.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Inicio</a>
-    <a href="generador-titulos-youtube.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Generador Títulos</a>
-    <a href="calculadora.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Calculadora</a>
-    <a href="calculadora-puntuacion-ctr.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Puntuación CTR</a>
-    <a href="checklist-miniaturas.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Checklist</a>
-    <a href="analizador-miniaturas.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Analizador</a>
-    <a href="blog.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Blog</a>
-    <a href="glosario.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Glosario</a>
-    <a href="privacidad.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Privacidad</a>
-    <a href="terminos.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Términos</a>
-    <a href="contacto.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">Contacto</a>
-    <a href="en/index.html" style="color:#bbb;text-decoration:none;font-size:.85rem;">🇬🇧 English</a>
+  <div style="max-width:700px;margin:0 auto 40px;padding:0 20px;">
+    <div style="background:#fff;border-radius:14px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,.08);">
+      <h2 style="font-size:1.1rem;font-weight:800;color:#1c1e21;margin-bottom:16px;">¿Qué Puedes Hacer en TubeTools?</h2>
+      <p style="font-size:.9rem;color:#555;line-height:1.8;margin-bottom:12px;">TubeTools ofrece un conjunto completo de herramientas gratuitas para creadores de YouTube. Nuestra herramienta más popular es el <a href="/" style="color:#d32f2f;font-weight:600;">Extractor de Miniaturas</a>, que te permite descargar cualquier miniatura de vídeo de YouTube en resolución HD 1080p al instante. Solo pega la URL de YouTube y pulsa Analizar — sin registro.</p>
+      <p style="font-size:.9rem;color:#555;line-height:1.8;margin-bottom:12px;">El <a href="/analizador-miniaturas.html" style="color:#d32f2f;font-weight:600;">Analizador de Miniaturas</a> te da una puntuación CTR instantánea, paleta de colores dominantes, ratio de contraste y análisis de brillo para cualquier miniatura. Sube tu propio diseño o pega una URL de YouTube para analizar directamente la miniatura de un competidor.</p>
+      <p style="font-size:.9rem;color:#555;line-height:1.8;margin-bottom:12px;">El <a href="/generador-titulos-youtube.html" style="color:#d32f2f;font-weight:600;">Generador de Títulos de YouTube</a> usa fórmulas probadas de alto CTR basadas en patrones reales del algoritmo para generar diez variaciones de título para tu vídeo. Combinado con una buena miniatura, el título correcto puede duplicar tu tasa de clics.</p>
+      <p style="font-size:.9rem;color:#555;line-height:1.8;">La <a href="/calculadora.html" style="color:#d32f2f;font-weight:600;">Calculadora de Ingresos</a> estima tus ganancias de YouTube según tus visitas, RPM y nicho — ayudándote a entender cómo las mejoras en CTR se traducen directamente en más ingresos. Todas las herramientas son completamente gratis, sin necesidad de cuenta.</p>
+    </div>
   </div>
-  <p style="font-size:.78rem;color:#666;">&copy; 2026 TubeTools.online — Todos los derechos reservados.</p>
-</footer>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">🚀 Tube<span>Tools</span></div>
+          <p>Herramientas gratuitas para creadores de YouTube que quieren crecer con datos, no con suerte.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Herramientas</h4>
+          <a href="/">Extractor de Miniaturas</a>
+          <a href="/analizador-miniaturas.html">Analizador</a>
+          <a href="/generador-titulos-youtube.html">Generador de Títulos</a>
+          <a href="/calculadora.html">Calculadora</a>
+          <a href="/calculadora-puntuacion-ctr.html">CTR Score</a>
+          <a href="/checklist-miniaturas.html">Checklist</a>
+        </div>
+        <div class="footer-col">
+          <h4>Guías</h4>
+          <a href="/guia-miniaturas-ctr.html">Guía CTR</a>
+          <a href="/aumentar-rpm-youtube.html">Aumentar RPM</a>
+          <a href="/cpm-youtube-por-nicho.html">CPM por Nicho</a>
+          <a href="/requisitos-monetizacion-youtube.html">Monetización</a>
+          <a href="/mejores-nichos-youtube-adsense.html">Mejores Nichos</a>
+          <a href="/glosario.html">Glosario</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/privacidad.html">Privacidad</a>
+          <a href="/terminos.html">Términos</a>
+          <a href="/contacto.html">Contacto</a>
+          <a href="/about.html">Sobre mí</a>
+          <a href="/mapa-sitio.html">Mapa del sitio</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TubeTools.online — Todos los derechos reservados.</p>
+        <a href="/en/404.html" class="footer-lang-btn en-fb">🇬🇧 View in English</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
