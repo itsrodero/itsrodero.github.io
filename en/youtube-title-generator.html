@@ -389,10 +389,11 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     });
 
     function normalize(raw) {
-      let t = raw.trim().toLowerCase();
+      let original = raw.trim();
+      let lower = original.toLowerCase();
       const prefixes = ['how to ','what is ','what are ','why is ','why do ','when to ','where to ','who is '];
-      for (const p of prefixes) { if (t.startsWith(p)) { t = t.slice(p.length); break; } }
-      return t.trim();
+      for (const p of prefixes) { if (lower.startsWith(p)) { original = original.slice(p.length); break; } }
+      return original.trim();
     }
 
     function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }

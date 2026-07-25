@@ -120,6 +120,9 @@
     /* BOXES */
     .box{border-radius:14px;padding:22px 26px;margin:28px 0}
     .box-insight{background:#fff8e1;border-left:4px solid #f59e0b}
+    .mistake-list{background:#fff;border-radius:12px;padding:22px 24px;border:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .mistake-list p{margin-bottom:14px}
+    .mistake-list p:last-child{margin-bottom:0}
     .box-tip{background:#e8f5e9;border-left:4px solid #2e7d32}
     .box-warning{background:#fdecea;border-left:4px solid #d32f2f}
     .box-dark{background:#1c1e21}
@@ -346,6 +349,37 @@
         <p>Upload or paste a URL to get an instant CTR score, dominant color analysis, contrast ratio, and brightness rating — all in your browser.</p>
         <a href="thumbnail-analyzer.html">Open Thumbnail Analyzer →</a>
       </div>
+
+      <h2>How to Calculate Your Own CTR-to-Revenue Impact</h2>
+      <p>Understanding the mechanism is one thing — quantifying it for your own channel is what actually helps you prioritize your time. Here's a practical formula you can run with your own YouTube Studio numbers.</p>
+      <p>Pull your average impressions, current CTR, and current RPM from YouTube Studio's Reach and Revenue tabs for the last 90 days. Multiply impressions × CTR to get your current views from impressions. Then estimate what a 1-point CTR increase would do: multiply impressions × (CTR + 1%) to get your projected views. The difference between the two view counts, multiplied by your RPM, is your estimated monthly revenue gain from that single percentage point.</p>
+      <div class="box box-insight">
+        <span class="box-icon">💡 WORKED EXAMPLE</span>
+        <p>A channel with 200,000 monthly impressions at 3% CTR gets 6,000 views. At 4% CTR (just 1 point higher), the same impressions produce 8,000 views — a 33% view increase from one thumbnail improvement. At a modest $4 RPM, that's an extra $8 per video purely from the CTR gain, before accounting for the algorithmic distribution boost that typically comes with it.</p>
+      </div>
+      <p>This calculation deliberately ignores the compounding distribution effect described above — real gains are usually larger, because YouTube doesn't just serve the same impressions at a higher CTR, it serves <em>more</em> impressions to videos that prove they convert well. Treat this formula as a conservative floor, not a ceiling.</p>
+
+      <h2>Common CTR-Revenue Mistakes Creators Make</h2>
+      <p>Even creators who understand that CTR matters often misapply that understanding in ways that limit their revenue growth. These are the four most common mistakes:</p>
+      <div class="mistake-list">
+        <p><strong>1. Chasing CTR at the expense of retention.</strong> A misleading, clickbait-y thumbnail can spike CTR while tanking average view duration — and YouTube weighs both signals. A video with 8% CTR but 20% average view duration will get throttled faster than one with 5% CTR and 60% average view duration. Optimize for CTR that resolves honestly into the actual content.</p>
+        <p><strong>2. Ignoring niche-specific CTR norms.</strong> Comparing your 3% CTR against a "5-7% is good" benchmark without adjusting for niche is misleading. Highly competitive niches like finance and tech often see healthy CTR in the 2-4% range simply because the competition for the same search terms and suggested slots is denser.</p>
+        <p><strong>3. Treating every video's thumbnail as a one-time decision.</strong> The compound effect described above means a thumbnail swap on an underperforming video weeks after publishing can meaningfully change its trajectory — many creators only think about thumbnail quality at upload time and never revisit it.</p>
+        <p><strong>4. Not separating impressions-CTR from views-CTR.</strong> YouTube Studio shows both metrics. Impressions CTR (from the homepage/browse feed) and views-based CTR from search or suggested behave differently and respond to different thumbnail strategies — a thumbnail optimized for cold browse-feed discovery isn't always the same one that performs best in search results for your existing keyword.</p>
+      </div>
+
+      <h2>How This Plays Out Across a Full Year</h2>
+      <p>The mechanisms described above compound differently depending on where a channel is in its growth cycle, and understanding the full-year picture helps set realistic expectations for how quickly CTR improvements translate into visible revenue changes.</p>
+      <p>In the first month after a meaningful thumbnail strategy change, most creators see CTR improve on new uploads but notice little revenue difference yet — the algorithm needs several upload cycles to recalibrate its distribution confidence in the channel. By month two to three, if the CTR improvement holds consistently across multiple videos (not just one lucky upload), distribution measurably widens: impressions per video increase even without any change in upload frequency or promotion effort. By month four to six, the compound effect becomes clearly visible in channel-level analytics — average views per video, average RPM, and total monthly revenue all trend upward together, because the channel has built a track record the algorithm trusts.</p>
+      <div class="box box-insight">
+        <span class="box-icon">💡 WHY PATIENCE MATTERS HERE</span>
+        <p>Creators who abandon a thumbnail strategy after two or three videos because "it didn't work" are almost always quitting before the compound effect has had time to register. The algorithm evaluates channel-level CTR trends over weeks, not individual video performance over days. A consistent, disciplined approach across 10-15 uploads gives a far more accurate read than any single video's results.</p>
+      </div>
+
+      <h2>Applying This to Different Channel Sizes</h2>
+      <p>The CTR-to-revenue relationship described in this article holds directionally true at any channel size, but the practical levers available differ meaningfully between small and established channels.</p>
+      <p>Small channels (under 10,000 subscribers) benefit most from mechanism 1 — the raw impressions-to-views conversion — because they have the most room to grow distribution. A CTR improvement here can be the difference between a video getting discovered at all versus disappearing into the algorithm's "insufficient interest" bucket within the first 48 hours. For small channels, thumbnail CTR is arguably the single highest-leverage lever available, above even content quality, simply because content quality can't be evaluated by the algorithm if the video never gets enough impressions to build a watch-time signal.</p>
+      <p>Established channels (100,000+ subscribers) benefit more from mechanism 2 — audience quality — because they already have baseline distribution through their subscriber base and search rankings. For these channels, CTR improvements matter more for the quality of NEW viewers reached beyond the existing subscriber base, which is what drives the RPM improvements described in the ad auction section above.</p>
 
       <h2>Related Articles &amp; Tools</h2>
       <div class="related-grid">

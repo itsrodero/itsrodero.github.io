@@ -585,10 +585,21 @@
             setupDownloadButton('btn-hq',urls.hq,`${t}_HQ.jpg`);
             setupDownloadButton('btn-mq',urls.mq,`${t}_Normal.jpg`);
           }).catch(()=>{ setupDownloadButton('btn-max',urls.max,'Thumbnail_HD.jpg'); setupDownloadButton('btn-hq',urls.hq,'Thumbnail_HQ.jpg'); setupDownloadButton('btn-mq',urls.mq,'Thumbnail_Normal.jpg'); });
-        fetch(`https://api.codetabs.com/v1/proxy?quest=https://www.youtube.com/watch?v=${videoId}`)
-          .then(r=>{if(r.ok)return r.text();throw new Error();})
-          .then(html=>{const m=html.match(/<meta\s+name="keywords"\s+content="([^"]+)"/i);if(m&&m[1]){currentTagsText=m[1];document.getElementById('tags-list').innerHTML=m[1].split(',').map(t=>t.trim()).filter(Boolean).map(t=>`<span class="tag-pill">${t}</span>`).join('');}else{document.getElementById('tags-list').innerHTML='<span class="tag-pill">❌ This video has no tags configured</span>';}})
-          .catch(()=>{document.getElementById('tags-list').innerHTML='<span class="tag-pill">⚠️ Could not extract tags</span>';});
+        (async function extractTags(){
+          const tagProxies=[`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent('https://www.youtube.com/watch?v='+videoId)}`,`https://api.allorigins.win/raw?url=${encodeURIComponent('https://www.youtube.com/watch?v='+videoId)}`,`https://corsproxy.io/?${encodeURIComponent('https://www.youtube.com/watch?v='+videoId)}`];
+          for(const proxy of tagProxies){
+            try{
+              const controller=new AbortController();const timeoutId=setTimeout(()=>controller.abort(),7000);
+              const r=await fetch(proxy,{signal:controller.signal});clearTimeout(timeoutId);
+              if(!r.ok)continue;
+              const html=await r.text();
+              const m=html.match(/<meta\s+name="keywords"\s+content="([^"]+)"/i);
+              if(m&&m[1]){currentTagsText=m[1];document.getElementById('tags-list').innerHTML=m[1].split(',').map(t=>t.trim()).filter(Boolean).map(t=>`<span class="tag-pill">${t}</span>`).join('');return;}
+              else{document.getElementById('tags-list').innerHTML='<span class="tag-pill">❌ This video has no tags configured</span>';return;}
+            }catch(err){}
+          }
+          document.getElementById('tags-list').innerHTML='<span class="tag-pill">⚠️ Could not extract tags (try again in a few seconds)</span>';
+        })();
         setTimeout(()=>document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'}),100);
       } else { alert('Invalid URL. Please paste a valid YouTube link.'); }
     }
@@ -599,7 +610,7 @@
         e.preventDefault();const orig=btn.innerHTML;btn.innerHTML='⏳ Downloading…';
         const proxies=[`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(imageUrl)}`,`https://corsproxy.io/?${encodeURIComponent(imageUrl)}`,`https://api.allorigins.win/raw?url=${encodeURIComponent(imageUrl)}`];
         let ok=false;
-        for(const proxy of proxies){try{const res=await fetch(proxy);if(!res.ok)continue;const blob=await res.blob();const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=fileName;document.body.appendChild(a);a.click();URL.revokeObjectURL(a.href);document.body.removeChild(a);btn.innerHTML='✅ Downloaded!';setTimeout(()=>btn.innerHTML=orig,2000);ok=true;break;}catch(err){}}
+        for(const proxy of proxies){try{const controller=new AbortController();const timeoutId=setTimeout(()=>controller.abort(),7000);const res=await fetch(proxy,{signal:controller.signal});clearTimeout(timeoutId);if(!res.ok)continue;const blob=await res.blob();const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=fileName;document.body.appendChild(a);a.click();URL.revokeObjectURL(a.href);document.body.removeChild(a);btn.innerHTML='✅ Downloaded!';setTimeout(()=>btn.innerHTML=orig,2000);ok=true;break;}catch(err){}}
         if(!ok){btn.innerHTML='❌ Error';setTimeout(()=>btn.innerHTML=orig,2000);window.open(imageUrl,'_blank');}
       };
     }
