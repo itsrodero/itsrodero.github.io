@@ -107,6 +107,12 @@ s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); }
         /* Badges numerados para errores */
         .num-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #d32f2f; color: #fff; border-radius: 50%; font-weight: 800; font-size: .85rem; margin-right: 8px; flex-shrink: 0; }
 
+        /* Artículos relacionados */
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(210px,1fr)); gap: 12px; margin: 20px 0; }
+        .related-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 16px; text-decoration: none; color: #1c1e21; border-left: 3px solid #d32f2f; box-shadow: 0 2px 8px rgba(0,0,0,.04); transition: box-shadow .2s, transform .2s; display: block; font-size: .92rem; }
+        .related-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); transform: translateY(-2px); }
+        .related-card.tool-card { border-left-color: #f57f17; background: #fff8e1; }
+
         /* Footer */
         footer { background: #1c1e21; border-top: 1px solid #30363d; padding: 28px 0; text-align: center; color: #888; font-size: 0.85rem; }
         footer a { color: #ff8a80; text-decoration: none; margin: 0 8px; }
@@ -554,6 +560,18 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     </table>
 
     <p>La inversión real que exige este proceso no es económica, es de tiempo y disciplina: aplicar el mismo flujo de trabajo en cada vídeo, sin saltarse pasos cuando hay prisa por publicar. Los canales que ven mejoras sostenidas de CTR a lo largo de meses son casi siempre los que convierten este proceso en un hábito repetible, no los que lo aplican una vez con mucho esfuerzo y luego lo abandonan.</p>
+
+    <h2>Artículos Relacionados</h2>
+    <div class="related-grid">
+      <a href="ab-testing-miniaturas-youtube.html" class="related-card"><strong>A/B Testing de Miniaturas en YouTube</strong></a>
+      <a href="teoria-del-color-miniaturas-youtube.html" class="related-card"><strong>Teoría Avanzada del Color para Miniaturas</strong></a>
+      <a href="tipografia-para-miniaturas-youtube.html" class="related-card"><strong>Tipografía para Miniaturas de YouTube</strong></a>
+      <a href="errores-miniatura-que-matan-tu-ctr.html" class="related-card"><strong>10 Errores de Miniatura que Matan tu CTR</strong></a>
+      <a href="diseno-mobile-first-miniaturas-youtube.html" class="related-card"><strong>Diseño Mobile-First para Miniaturas</strong></a>
+      <a href="expresiones-faciales-miniaturas-youtube.html" class="related-card"><strong>Expresiones Faciales en Miniaturas</strong></a>
+      <a href="analizador-miniaturas.html" class="related-card tool-card"><strong>🔬 Analizador de Miniaturas</strong></a>
+      <a href="calculadora-puntuacion-ctr.html" class="related-card tool-card"><strong>📊 Calculadora de CTR Score</strong></a>
+    </div>
 
     <h2>Conclusión</h2>
     <p>Dominar el CTR de tus miniaturas no es un talento artístico, es una <strong>disciplina analítica</strong>. Los creadores que consiguen hacer crecer sus canales de forma consistente no son necesariamente los mejores diseñadores; son los que tienen los procesos más rigurosos de investigación, prueba y optimización.</p>
