@@ -25,7 +25,8 @@
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the most common thumbnail mistake?","acceptedAnswer":{"@type":"Answer","text":"The most common thumbnail mistake is using text that repeats the video title. This wastes the thumbnail's primary information space. The thumbnail and title should complement each other — one providing the visual hook, the other providing the verbal promise."}},{"@type":"Question","name":"Does thumbnail text help or hurt CTR?","acceptedAnswer":{"@type":"Answer","text":"Text on thumbnails can help CTR when used sparingly (3-4 words maximum) with high contrast and large font size. It hurts CTR when it's too long, too small to read at mobile size, or simply repeats the video title without adding new information."}},{"@type":"Question","name":"How small is a YouTube thumbnail on mobile?","acceptedAnswer":{"@type":"Answer","text":"On a typical smartphone, YouTube thumbnails appear at approximately 180x100 pixels in the browse feed and even smaller in some layouts. Before publishing any thumbnail, shrink it to 120x68px in your design tool and verify it's still legible and compelling at that size."}},{"@type":"Question","name":"Should every thumbnail have a face?","acceptedAnswer":{"@type":"Answer","text":"No. Faces perform well because humans are wired to notice them, but a thumbnail with a mediocre face performs worse than one without a face but with a strong visual concept. Use faces when the expression adds emotional information — curiosity, surprise, disbelief. Avoid neutral or forced expressions."}}]}
   </script>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
+    .reading-bar{height:3px;background:#d32f2f;width:0%;position:fixed;top:0;left:0;z-index:10000;transition:width .1s}
+*{margin:0;padding:0;box-sizing:border-box}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1c1e21;background:#f7f8fa;line-height:1.7}
     nav{position:sticky;top:0;z-index:1000;background:#1c1e21;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
     .nav-logo{color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
@@ -140,6 +141,7 @@
   </style>
 </head>
 <body>
+<div class="reading-bar" id="readingBar"></div>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav>
     <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
@@ -460,5 +462,14 @@
     (function(){var btn=document.querySelector('.nav-toggle');var links=document.querySelector('.nav-links');if(!btn||!links)return;btn.addEventListener('click',function(e){e.stopPropagation();var o=links.classList.toggle('open');btn.textContent=o?'✕':'☰';btn.setAttribute('aria-expanded',o);});document.addEventListener('click',function(e){if(!links.contains(e.target)&&e.target!==btn){links.classList.remove('open');btn.textContent='☰';btn.setAttribute('aria-expanded','false');}});})();
   </script>
   <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}</script>
+<script>
+window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+});
+</script>
 </body>
 </html>

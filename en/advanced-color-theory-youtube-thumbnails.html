@@ -25,7 +25,8 @@
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What colors get the highest CTR on YouTube thumbnails?","acceptedAnswer":{"@type":"Answer","text":"Red and orange-yellow thumbnails consistently generate the highest CTR because they create maximum contrast against both YouTube's white light mode and dark grey dark mode backgrounds. Red also triggers urgency and attention responses in the brain. Blue is one of the worst performing thumbnail colors because it blends with YouTube's own interface elements."}},{"@type":"Question","name":"How many colors should a YouTube thumbnail use?","acceptedAnswer":{"@type":"Answer","text":"Two to three colors maximum for most thumbnails. A dominant color (60% of the visual), an accent color (30%), and optionally a neutral (10%). More than three colors creates visual confusion that slows processing speed — the brain takes longer to identify what the thumbnail is about, reducing click probability."}},{"@type":"Question","name":"Does YouTube compress thumbnail colors?","acceptedAnswer":{"@type":"Answer","text":"Yes, YouTube applies JPEG compression to uploaded thumbnails, which slightly desaturates colors and can introduce compression artifacts. To compensate, design thumbnails with slightly higher saturation and contrast than feels ideal on your design canvas. The compression will bring it back toward your intended look."}}]}
   </script>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
+    .reading-bar{height:3px;background:#d32f2f;width:0%;position:fixed;top:0;left:0;z-index:10000;transition:width .1s}
+*{margin:0;padding:0;box-sizing:border-box}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1c1e21;background:#f7f8fa;line-height:1.7}
     nav{position:sticky;top:0;z-index:1000;background:#1c1e21;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
     .nav-logo{color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
@@ -160,6 +161,7 @@
   </style>
 </head>
 <body>
+<div class="reading-bar" id="readingBar"></div>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav>
     <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
@@ -466,5 +468,14 @@
     (function(){var btn=document.querySelector('.nav-toggle');var links=document.querySelector('.nav-links');if(!btn||!links)return;btn.addEventListener('click',function(e){e.stopPropagation();var o=links.classList.toggle('open');btn.textContent=o?'✕':'☰';btn.setAttribute('aria-expanded',o);});document.addEventListener('click',function(e){if(!links.contains(e.target)&&e.target!==btn){links.classList.remove('open');btn.textContent='☰';btn.setAttribute('aria-expanded','false');}});})();
   </script>
   <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}</script>
+<script>
+window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+});
+</script>
 </body>
 </html>

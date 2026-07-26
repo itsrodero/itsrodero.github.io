@@ -25,7 +25,8 @@
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good YouTube CTR?","acceptedAnswer":{"@type":"Answer","text":"A CTR of 4-6% is considered good on YouTube. Above 6% is excellent. Below 2% indicates a thumbnail or title problem. Benchmarks vary by niche, channel size, and traffic source — browse feed CTR is typically lower than subscriber notification CTR."}},{"@type":"Question","name":"Does thumbnail design really affect YouTube revenue?","acceptedAnswer":{"@type":"Answer","text":"Yes, significantly. Higher CTR generates more views, which generates more ad impressions and more ad revenue. Additionally, higher CTR distributes content to broader, often higher-income audiences that attract higher-paying advertisers, increasing RPM. Thumbnail optimization is both a growth strategy and a monetization strategy."}},{"@type":"Question","name":"How often should I change my thumbnail?","acceptedAnswer":{"@type":"Answer","text":"Change a thumbnail whenever its CTR is significantly below your channel average. Review your bottom 5 CTR videos monthly and consider redesigning. You can change thumbnails on existing videos at any time — YouTube will show the new version immediately and you'll see CTR data change within 24-48 hours."}},{"@type":"Question","name":"Can I use the same thumbnail style for every video?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it's recommended for brand consistency. Using consistent fonts, colors, and layout across thumbnails builds channel recognition — returning subscribers can identify your content at a glance in the feed. Consistency within a style doesn't mean being identical; it means having a recognizable visual language."}}]}
   </script>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
+    .reading-bar{height:3px;background:#d32f2f;width:0%;position:fixed;top:0;left:0;z-index:10000;transition:width .1s}
+*{margin:0;padding:0;box-sizing:border-box}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1c1e21;background:#f7f8fa;line-height:1.7}
     nav{position:sticky;top:0;z-index:1000;background:#1c1e21;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
     .nav-logo{color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
@@ -196,6 +197,7 @@
   </style>
 </head>
 <body>
+<div class="reading-bar" id="readingBar"></div>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav>
     <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
@@ -722,5 +724,14 @@
     (function(){var btn=document.querySelector('.nav-toggle');var links=document.querySelector('.nav-links');if(!btn||!links)return;btn.addEventListener('click',function(e){e.stopPropagation();var o=links.classList.toggle('open');btn.textContent=o?'✕':'☰';btn.setAttribute('aria-expanded',o);});document.addEventListener('click',function(e){if(!links.contains(e.target)&&e.target!==btn){links.classList.remove('open');btn.textContent='☰';btn.setAttribute('aria-expanded','false');}});})();
   </script>
   <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}</script>
+<script>
+window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+});
+</script>
 </body>
 </html>
