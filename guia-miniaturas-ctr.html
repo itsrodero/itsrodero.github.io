@@ -45,7 +45,7 @@ s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); }
         /* Contenido */
         .article-body { max-width: 780px; margin: 0 auto; padding: 50px 20px 80px; }
         .article-body h2 { font-size: 1.6rem; font-weight: 700; color: #1c1e21; margin: 50px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #e9eaec; }
-        .article-body h3 { font-size: 1.2rem; font-weight: 600; color: #1c1e21; margin: 30px 0 12px; }
+        .article-body h3 { font-size: 1.2rem; font-weight: 600; color: #1c1e21; margin: 30px 0 12px; display: flex; align-items: center; }
         .article-body p { color: #555; line-height: 1.8; margin-bottom: 18px; font-size: 1.02rem; }
         .article-body p strong { color: #1c1e21; }
         .article-body ul, .article-body ol { color: #555; line-height: 1.8; margin-bottom: 18px; padding-left: 24px; }
@@ -84,6 +84,28 @@ s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); }
         .toc li { margin-bottom: 6px; }
         .toc a { color: #d32f2f; text-decoration: none; font-size: 0.93rem; }
         .toc a:hover { text-decoration: underline; }
+
+        /* Tarjetas de disparadores psicológicos */
+        .trigger-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+        @media(max-width:600px){ .trigger-grid{ grid-template-columns: 1fr; } }
+        .trigger-card { background: #fff; border-radius: 14px; padding: 20px; border: 1px solid #eee; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+        .trigger-card h4 { font-size: 1rem; font-weight: 700; color: #1c1e21; margin-bottom: 8px; }
+        .trigger-card p { color: #555; font-size: .92rem; line-height: 1.7; margin-bottom: 0; }
+        .ex { font-size: .87rem; color: #777; font-style: italic; border-top: 1px dashed #e0e0e0; margin-top: 10px; padding-top: 10px; }
+
+        /* Grid de estadísticas */
+        .stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 24px 0; }
+        @media(max-width:600px){ .stat-grid{ grid-template-columns: 1fr 1fr; } }
+        .stat-card { background: #fff; border-radius: 12px; padding: 18px; text-align: center; border: 1px solid #eee; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+        .stat-card .num { font-size: 1.6rem; font-weight: 800; color: #d32f2f; display: block; }
+        .stat-card .label { font-size: .78rem; color: #777; margin-top: 4px; display: block; }
+
+        /* Cita destacada (pull-quote) */
+        .pull-quote { font-size: 1.3rem; font-weight: 700; color: #1c1e21; line-height: 1.5; margin: 32px 0; padding: 4px 0 4px 22px; border-left: 4px solid #d32f2f; }
+        .pull-quote span { color: #d32f2f; }
+
+        /* Badges numerados para errores */
+        .num-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #d32f2f; color: #fff; border-radius: 50%; font-weight: 800; font-size: .85rem; margin-right: 8px; flex-shrink: 0; }
 
         /* Footer */
         footer { background: #1c1e21; border-top: 1px solid #30363d; padding: 28px 0; text-align: center; color: #888; font-size: 0.85rem; }
@@ -308,6 +330,8 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
             <li><a href="#errores">Los 5 errores que destruyen tu CTR</a></li>
             <li><a href="#benchmark">Benchmarks reales: ¿qué CTR deberías tener?</a></li>
             <li><a href="#flujo">El flujo de trabajo profesional paso a paso</a></li>
+            <li><a href="#canales">Cómo se adapta la estrategia según tu tamaño de canal</a></li>
+            <li><a href="#herramientas">Las herramientas que necesitas (todas gratuitas)</a></li>
         </ol>
     </div>
 
@@ -339,22 +363,41 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
     <!-- Sección 2 -->
     <h2 id="psicologia">2. La psicología del clic: cómo funciona el cerebro</h2>
-    <p>El usuario medio no decide conscientemente si hace clic en un vídeo. Su cerebro toma esa decisión en <strong>menos de 200 milisegundos</strong>, antes de que la parte racional del pensamiento entre en juego. Entender qué activa ese mecanismo automático es la base de todo diseño de miniatura efectivo.</p>
+    <p>El usuario medio no decide conscientemente si hace clic en un vídeo. Su cerebro toma esa decisión en <strong>menos de 200 milisegundos</strong>, antes de que la parte racional del pensamiento entre en juego. Entender qué activa ese mecanismo automático es la base de todo diseño de miniatura efectivo. No son cuatro trucos aislados — son cuatro atajos evolutivos que el cerebro humano lleva usando miles de años, y que las mejores miniaturas combinan entre sí en vez de aplicar uno solo.</p>
 
-    <h3>El Curiosity Gap (Brecha de Curiosidad)</h3>
-    <p>El concepto más poderoso en el diseño de miniaturas. El cerebro humano tiene una necesidad biológica de cerrar las brechas de información incompleta. Si tu miniatura plantea una pregunta visual que el usuario no puede responder sin ver el vídeo, has creado un impulso de clic casi irresistible.</p>
-    <p>La clave no es el clickbait (que daña la retención y penaliza el canal a largo plazo), sino la <strong>omisión estratégica</strong>: mostrar el resultado, pero no el proceso; mostrar la reacción, pero no la causa.</p>
-
-    <h3>La respuesta facial automatizada</h3>
-    <p>El cerebro humano tiene un sistema neurológico dedicado exclusivamente a detectar y procesar rostros. Esta respuesta es involuntaria y prioritaria: cuando el ojo detecta una cara, el cerebro la procesa antes que cualquier otro elemento visual.</p>
+    <div class="trigger-grid">
+      <div class="trigger-card">
+        <h4>🎯 El Curiosity Gap (Brecha de Curiosidad)</h4>
+        <p>El concepto más poderoso en el diseño de miniaturas. El cerebro tiene una necesidad biológica de cerrar brechas de información incompleta. Si tu miniatura plantea una pregunta visual que el usuario no puede responder sin ver el vídeo, has creado un impulso de clic casi irresistible. La clave no es el clickbait, que daña la retención y penaliza el canal a largo plazo, sino la <strong>omisión estratégica</strong>: mostrar el resultado, pero no el proceso; mostrar la reacción, pero no la causa.</p>
+        <p class="ex">Ejemplo: una miniatura con una hoja de cálculo y una celda marcada en rojo junto al texto "encontré el error" genera curiosidad real. Si la miniatura ya explica cuál es el error, el hueco de curiosidad desaparece antes del clic.</p>
+      </div>
+      <div class="trigger-card">
+        <h4>😲 La respuesta facial automatizada</h4>
+        <p>El cerebro tiene un sistema neurológico dedicado exclusivamente a detectar y procesar rostros. Esta respuesta es involuntaria y prioritaria: cuando el ojo detecta una cara, el cerebro la procesa antes que cualquier otro elemento visual de la miniatura, incluido el texto.</p>
+        <p class="ex">Ejemplo: dos canales de cocina publican la misma receta. Uno enseña solo el plato terminado; el otro muestra la cara de sorpresa genuina del creador al probarlo. El segundo supera consistentemente en CTR al primero.</p>
+      </div>
+      <div class="trigger-card">
+        <h4>⚡ Interrupción de patrón</h4>
+        <p>El cerebro ignora activamente lo que ya espera ver. Una miniatura que rompe el patrón visual de las que la rodean en resultados de búsqueda — un color inusual, una composición inesperada — detiene el scroll porque el cerebro la registra como algo nuevo que merece atención.</p>
+        <p class="ex">Ejemplo: en una página llena de miniaturas azules de tecnología, una sola miniatura en naranja cálido destaca al instante — no por ser más bonita, sino por romper el ritmo visual del resto.</p>
+      </div>
+      <div class="trigger-card">
+        <h4>⚠️ El sesgo de negatividad</h4>
+        <p>Evolutivamente, el cerebro prioriza la información negativa sobre la positiva. La amenaza de perder algo activa una respuesta de atención mucho más poderosa que la promesa de ganar algo equivalente. Los títulos y miniaturas que implican pérdida, peligro o urgencia suelen superar a los positivos en CTR.</p>
+        <p class="ex">Ejemplo: "Cómo mejoré mi sueño" se queda corto frente a "El error de sueño que me estaba dejando agotado" — mismo contenido, tirón psicológico muy distinto.</p>
+      </div>
+    </div>
 
     <div class="callout success">
         <div class="callout-title">✅ Aplícalo</div>
-        <p>Coloca un rostro con una emoción extrema (sorpresa genuina, terror, alegría desbordante) como elemento central de tu miniatura. Los estudios del laboratorio de neuromarketing de YouTube muestran que las miniaturas con rostros expresivos tienen un CTR un 38% superior a las que no los incluyen.</p>
+        <p>Coloca un rostro con una emoción extrema (sorpresa genuina, terror, alegría desbordante) como elemento central de tu miniatura. Los canales que usan rostros expresivos consistentemente ven un CTR hasta un 38% superior a los que no los incluyen. Combinar esto con interrupción de patrón — un color o composición que rompe con las miniaturas vecinas — multiplica el efecto porque activa dos sistemas de atención del cerebro casi al mismo tiempo.</p>
     </div>
 
-    <h3>El sesgo de negatividad</h3>
-    <p>Evolutivamente, el cerebro prioriza la información negativa sobre la positiva. La amenaza de perder algo activa una respuesta de atención mucho más poderosa que la promesa de ganar algo equivalente. Por eso los títulos y miniaturas que implican pérdida, peligro o urgencia suelen superar a los positivos en CTR.</p>
+    <div class="stat-grid">
+      <div class="stat-card"><span class="num">200ms</span><span class="label">Tiempo real de decisión de clic</span></div>
+      <div class="stat-card"><span class="num">30-38%</span><span class="label">Más CTR con cara emocional visible</span></div>
+      <div class="stat-card"><span class="num">70%</span><span class="label">Tráfico de YouTube desde móvil</span></div>
+    </div>
 
     <!-- Sección 3 -->
     <h2 id="composicion">3. Composición visual y la Regla de los Tercios</h2>
@@ -363,6 +406,8 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&auto=format" alt="Composición visual regla de los tercios miniaturas YouTube">
 
     <p>En el contexto de YouTube, esto se traduce en una regla práctica: coloca el sujeto principal (el rostro, el objeto protagonista) en el tercio izquierdo de la miniatura. Esto se debe a que el ojo humano escanea de izquierda a derecha, y el lado derecho de la miniatura es donde YouTube superpone la duración del vídeo en dispositivos móviles.</p>
+
+    <p class="pull-quote">El ojo humano escanea en menos de un segundo. <span>Todo lo que no esté en su camino, se pierde.</span></p>
 
     <h3>El patrón Z de escaneo en móvil</h3>
     <p>En smartphones, donde sucede más del <strong>70% del tráfico de YouTube</strong>, los usuarios escanean la pantalla siguiendo un patrón en forma de Z. El ojo comienza en la esquina superior izquierda, barre hacia la derecha, desciende en diagonal y termina en la esquina inferior derecha.</p>
@@ -399,21 +444,33 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 
     <!-- Sección 6 -->
     <h2 id="errores">6. Los 5 errores que destruyen tu CTR</h2>
+    <p>Estos cinco errores aparecen una y otra vez al analizar miniaturas de bajo rendimiento, independientemente del nicho. Lo interesante es que rara vez aparecen solos — la mayoría de miniaturas que fallan combinan dos o tres de estos errores a la vez, lo que hace que el impacto negativo se multiplique en vez de sumarse.</p>
 
-    <h3>Error 1: Texto ilegible en móvil</h3>
+    <h3><span class="num-badge">1</span>Texto ilegible en móvil</h3>
     <p>Diseñas en una pantalla grande y el texto se ve perfecto. Pero en un móvil, tu miniatura tiene el tamaño de una tarjeta de crédito. Antes de publicar, reduce la vista al 25% de su tamaño original. Si el texto no se lee con claridad, no lo leerá nadie.</p>
+    <p class="ex">Ejemplo real: un tutorial con el texto "5 Fórmulas Avanzadas de Excel que No Conocías" en una fuente fina se lee bien en portátil, pero se convierte en una mancha gris ilegible en móvil. Reducirlo a "5 SECRETOS DE EXCEL" en una fuente gruesa soluciona el problema en ambos tamaños.</p>
 
-    <h3>Error 2: Fondos que se mimetizan con la UI</h3>
+    <h3><span class="num-badge">2</span>Fondos que se mimetizan con la UI</h3>
     <p>Los fondos grises, azules oscuros y negros desaparecen en la interfaz de YouTube en Modo Oscuro. El resultado: una miniatura invisible. Usa siempre un fondo que contraste con la paleta de la plataforma.</p>
+    <p class="ex">Este error es especialmente común en canales de gaming y tecnología, donde el diseño "oscuro y cinematográfico" resulta atractivo a pantalla completa pero se vuelve casi indistinguible del fondo de la app cuando se reduce a tamaño miniatura.</p>
 
-    <h3>Error 3: Expresiones faciales neutras o sonrisas posadas</h3>
+    <h3><span class="num-badge">3</span>Expresiones faciales neutras o sonrisas posadas</h3>
     <p>La sonrisa estándar de "foto de perfil" no activa la respuesta neurológica de atención. El cerebro está entrenado para ignorar expresiones sociales convencionales. Solo las emociones extremas (sorpresa real, shock, risa genuina, miedo) generan el nivel de activación necesario para detener el scroll.</p>
+    <p class="ex">La solución práctica: en vez de posar una sonrisa después de grabar, captura el fotograma exacto de una reacción genuina durante la grabación — a algo que realmente te sorprendió. Esa autenticidad se nota, incluso a tamaño miniatura.</p>
 
-    <h3>Error 4: Demasiados elementos compitiendo</h3>
+    <h3><span class="num-badge">4</span>Demasiados elementos compitiendo</h3>
     <p>Cada elemento adicional en tu miniatura divide la atención del cerebro. Una miniatura con un sujeto, un texto y un fondo claro supera consistentemente a una miniatura con logos, marcos decorativos, múltiples textos y efectos visuales complejos.</p>
+    <p class="ex">Pregúntate siempre: "¿cuál es la única cosa que quiero que el espectador note primero?" Ese elemento debe ocupar entre el 50% y el 70% del encuadre. Todo lo demás es secundario, y si compite en el mismo peso visual, ambos pierden.</p>
 
-    <h3>Error 5: No analizar a la competencia</h3>
+    <h3><span class="num-badge">5</span>No analizar a la competencia</h3>
     <p>Los mejores creadores dedican tiempo a estudiar las miniaturas de los vídeos más virales de su nicho antes de diseñar las suyas. Extraer y analizar esas miniaturas en alta resolución es el primer paso de cualquier proceso de diseño profesional.</p>
+    <p class="ex">No se trata de copiar, sino de entender patrones: ¿qué colores dominan en tu nicho ahora mismo? ¿Qué expresiones faciales se repiten? ¿Qué tipografías usan los canales con más visitas? Esa investigación de 15 minutos antes de diseñar ahorra horas de prueba y error después.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card"><span class="num">2-3</span><span class="label">Errores combinados en la miniatura media que falla</span></div>
+      <div class="stat-card"><span class="num">25%</span><span class="label">Tamaño de vista recomendado para el test móvil</span></div>
+      <div class="stat-card"><span class="num">50-70%</span><span class="label">Del encuadre que debe ocupar el elemento principal</span></div>
+    </div>
 
     <div class="cta-box">
         <h3>🔍 Analiza las miniaturas de tu competencia ahora</h3>
@@ -458,6 +515,45 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
         <div class="callout-title">✅ Herramienta recomendada</div>
         <p>Usa nuestro <a href="https://tubetools.online/checklist-miniaturas.html" style="color:#d32f2f;font-weight:600;">Checklist de Pre-publicación</a> para verificar todos estos puntos antes de subir cada vídeo. Te ahorrará errores costosos.</p>
     </div>
+
+    <h2 id="canales">9. Cómo se adapta esta estrategia según tu tamaño de canal</h2>
+    <p>Los principios psicológicos y técnicos de esta guía se aplican igual en cualquier canal, pero la prioridad práctica de cada palanca cambia según cuántos suscriptores tengas. Aplicar la estrategia equivocada para tu etapa actual es una de las razones más comunes por las que un creador siente que "hace todo bien" y aun así no ve resultados.</p>
+
+    <div class="trigger-grid">
+      <div class="trigger-card">
+        <h4>🌱 Canales pequeños <span style="color:#999;font-weight:400;font-size:.8rem;">(&lt; 10.000 suscriptores)</span></h4>
+        <p>Aquí el CTR es, con diferencia, la palanca de mayor impacto disponible — más incluso que la calidad del contenido en sí. Sin suficientes visitas iniciales, el algoritmo nunca reúne suficiente información sobre retención como para evaluar si tu contenido es bueno.</p>
+        <p class="ex">Un canal pequeño con una miniatura mediocre puede tener un vídeo excelente que YouTube nunca llega a distribuir lo suficiente como para demostrarlo.</p>
+      </div>
+      <div class="trigger-card">
+        <h4>📈 Canales medianos <span style="color:#999;font-weight:400;font-size:.8rem;">(10K – 100K)</span></h4>
+        <p>El CTR sigue importando, pero empieza a compartir protagonismo con la retención y la consistencia de publicación. El canal ya tiene una base de suscriptores que genera tráfico inicial fiable.</p>
+        <p class="ex">La miniatura ahora decide principalmente cuánto tráfico adicional capta el vídeo más allá de esa base — en búsqueda y en sugeridos.</p>
+      </div>
+      <div class="trigger-card">
+        <h4>🏆 Canales grandes <span style="color:#999;font-weight:400;font-size:.8rem;">(&gt; 100.000)</span></h4>
+        <p>El CTR determina sobre todo la <strong>calidad</strong> de la audiencia nueva alcanzada, no solo la cantidad. Un canal grande con buena reputación algorítmica va a recibir distribución de todas formas.</p>
+        <p class="ex">La miniatura decide si esa distribución llega a espectadores realmente interesados o a espectadores de paso que inflan las visitas sin aportar valor real.</p>
+      </div>
+    </div>
+
+    <h2 id="herramientas">10. Las herramientas que necesitas (todas gratuitas)</h2>
+    <p>No hace falta invertir en software de pago para aplicar todo lo explicado en esta guía. Este es el stack mínimo con el que se puede ejecutar el flujo de trabajo completo de principio a fin:</p>
+
+    <table class="data-table">
+        <thead>
+            <tr><th>Herramienta</th><th>Para qué sirve</th><th>Coste</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Extractor de Miniaturas de TubeTools</td><td>Descargar miniaturas de la competencia en HD para analizarlas</td><td>Gratis</td></tr>
+            <tr><td>Analizador de Miniaturas de TubeTools</td><td>Puntuación CTR automática, contraste y paleta de color</td><td>Gratis</td></tr>
+            <tr><td>Canva o Photopea</td><td>Diseño y edición de la miniatura final</td><td>Gratis</td></tr>
+            <tr><td>YouTube Studio</td><td>Monitorización de CTR real por vídeo tras publicar</td><td>Gratis</td></tr>
+            <tr><td>Checklist de Pre-publicación de TubeTools</td><td>Verificación final antes de subir cada vídeo</td><td>Gratis</td></tr>
+        </tbody>
+    </table>
+
+    <p>La inversión real que exige este proceso no es económica, es de tiempo y disciplina: aplicar el mismo flujo de trabajo en cada vídeo, sin saltarse pasos cuando hay prisa por publicar. Los canales que ven mejoras sostenidas de CTR a lo largo de meses son casi siempre los que convierten este proceso en un hábito repetible, no los que lo aplican una vez con mucho esfuerzo y luego lo abandonan.</p>
 
     <h2>Conclusión</h2>
     <p>Dominar el CTR de tus miniaturas no es un talento artístico, es una <strong>disciplina analítica</strong>. Los creadores que consiguen hacer crecer sus canales de forma consistente no son necesariamente los mejores diseñadores; son los que tienen los procesos más rigurosos de investigación, prueba y optimización.</p>
