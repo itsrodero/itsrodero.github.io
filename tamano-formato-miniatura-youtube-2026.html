@@ -25,7 +25,8 @@
     <title>Tamaños y Formatos de Miniatura YouTube 2026 | TubeTools</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #444; }
+        .reading-bar{height:3px;background:#d32f2f;width:0%;position:fixed;top:0;left:0;z-index:10000;transition:width .1s}
+body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #444; }
         .tech-header { background: #2d3436; color: white; padding: 60px 0; border-bottom: 5px solid #d32f2f; }
         .specs-table { background: #f8f9fa; border-radius: 10px; padding: 25px; margin: 30px 0; border: 1px solid #dee2e6; }
         .blog-content { max-width: 900px; margin: 40px auto; padding: 20px; }
@@ -201,6 +202,7 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
 </style>
 </head>
 <body>
+<div class="reading-bar" id="readingBar"></div>
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
     <!-- BANNER DE COOKIES -->
@@ -467,6 +469,15 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
     }
   });
 })();
+</script>
+<script>
+window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+});
 </script>
 </body>
 </html>

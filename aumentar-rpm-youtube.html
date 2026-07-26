@@ -43,6 +43,7 @@
   </script>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
+    .reading-bar{height:3px;background:#e65100;width:0%;position:fixed;top:0;left:0;z-index:10000;transition:width .1s}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1c1e21;background:#f7f8fa;line-height:1.7}
     nav{position:sticky;top:0;z-index:1000;background:#1c1e21;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
     .nav-logo{color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
@@ -94,6 +95,7 @@
     .impact-high{background:#fdecea;color:#c62828}
     .impact-mid{background:#fff8e1;color:#e65100}
     .strat-body{color:#555;font-size:.95rem;line-height:1.7;padding-left:54px}
+    .strat-ex{font-size:.85rem;color:#888;font-style:italic;margin-top:10px;padding-top:10px;border-top:1px dashed #e5e5e5}
     .table-wrap{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);margin:28px 0;border:1px solid #eee}
     .table-label{background:#1c1e21;color:#fff;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:8px 18px}
     table{width:100%;border-collapse:collapse}
@@ -146,6 +148,7 @@
   </style>
 </head>
 <body>
+<div class="reading-bar" id="readingBar"></div>
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
   <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:#fff;padding:18px 20px;text-align:center;z-index:9999;">
     <p style="margin-bottom:12px">🍪 Usamos cookies propias y de terceros. <a href="privacidad.html" style="color:#ff4757">Política de Privacidad</a>.</p>
@@ -210,7 +213,7 @@
 
     <div class="article-body" id="main-content">
 
-      <p>La mayoría de guías sobre "cómo aumentar tu RPM en YouTube" están escritas pensando en el mercado anglohablante. Te dicen que construyas audiencia en EEUU, sin explicar cómo hacerlo realmente si tu contenido es en español. Esta guía es distinta: está pensada específicamente para creadores que publican en español y quieren maximizar sus ingresos dentro de ese mercado, sin necesidad de cambiar de idioma.</p>
+      <p>La mayoría de guías sobre "cómo aumentar tu RPM en YouTube" están escritas pensando en el mercado anglohablante. Te dicen que construyas audiencia en EEUU, sin explicar cómo hacerlo realmente si tu contenido es en español. Esta guía es distinta: está pensada específicamente para creadores que publican en español y quieren maximizar sus ingresos dentro de ese mercado, sin necesidad de cambiar de idioma. Cada estrategia está ordenada por impacto real medido en canales hispanohablantes, no por popularidad genérica en foros de creadores angloparlantes, y viene acompañada de un ejemplo concreto de cómo se aplica en la práctica.</p>
 
       <div class="box box-insight">
         <span class="box-icon">💡 LA REALIDAD QUE NADIE TE DICE</span>
@@ -228,7 +231,7 @@
             </div>
           </div>
           <div class="strat-body">
-            <p>España genera entre 3 y 8 veces más RPM que la mayoría de países de LATAM para el mismo nicho. Si tu contenido es aplicable a ambos mercados, menciona explícitamente casos españoles: bancos, impuestos, normativa, productos disponibles en España. YouTube detecta el engagement geográfico y favorece mostrar tu contenido a más audiencia española con el tiempo, lo que sube tu RPM medio sin perder alcance total.</p>
+            <p>España genera entre 3 y 8 veces más RPM que la mayoría de países de LATAM para el mismo nicho. Si tu contenido es aplicable a ambos mercados, menciona explícitamente casos españoles: bancos, impuestos, normativa, productos disponibles en España. YouTube detecta el engagement geográfico y favorece mostrar tu contenido a más audiencia española con el tiempo, lo que sube tu RPM medio sin perder alcance total.</p><p class="strat-ex">💡 En la práctica: Un canal de finanzas personales que en cada vídeo menciona "en España" al hablar de impuestos, bancos o inversión (en vez de generalizar para "toda Latinoamérica") ve cómo YouTube empieza a mostrarle progresivamente más a audiencia española en las recomendaciones — el algoritmo detecta qué segmento retiene mejor ese contenido específico y refuerza esa distribución con el tiempo.</p>
           </div>
         </div>
 
@@ -241,7 +244,7 @@
             </div>
           </div>
           <div class="strat-body">
-            <p>Plataformas como DEGIRO, Trade Republic, Holded, Factorial, Hotmart o Domestika tienen programas activos de colaboración con creadores hispanohablantes. Un patrocinio en un vídeo de 50.000 vistas puede generar entre 3 y 8 veces más que el AdSense del mismo vídeo. No necesitas cientos de miles de suscriptores: muchas marcas trabajan con canales de nicho desde 5.000-10.000 suscriptores si la audiencia es muy específica.</p>
+            <p>Plataformas como DEGIRO, Trade Republic, Holded, Factorial, Hotmart o Domestika tienen programas activos de colaboración con creadores hispanohablantes. Un patrocinio en un vídeo de 50.000 vistas puede generar entre 3 y 8 veces más que el AdSense del mismo vídeo. No necesitas cientos de miles de suscriptores: muchas marcas trabajan con canales de nicho desde 5.000-10.000 suscriptores si la audiencia es muy específica.</p><p class="strat-ex">💡 En la práctica: Un canal de 15.000 suscriptores centrado en inversión para principiantes puede cerrar un patrocinio con un neobanco o app de trading por 400-600€ un solo vídeo — una cifra que en AdSense puro requeriría varias decenas de miles de visitas adicionales para igualar.</p>
           </div>
         </div>
 
@@ -254,7 +257,7 @@
             </div>
           </div>
           <div class="strat-body">
-            <p>En YouTube Studio, asegúrate de tener activados: anuncios saltables, no saltables, display, overlay y mid-roll. Para vídeos de más de 8 minutos, los mid-rolls bien colocados (en pausas naturales del contenido, no interrumpiendo momentos clave) pueden duplicar las impresiones publicitarias del vídeo sin afectar significativamente la retención si se colocan con cuidado.</p>
+            <p>En YouTube Studio, asegúrate de tener activados: anuncios saltables, no saltables, display, overlay y mid-roll. Para vídeos de más de 8 minutos, los mid-rolls bien colocados (en pausas naturales del contenido, no interrumpiendo momentos clave) pueden duplicar las impresiones publicitarias del vídeo sin afectar significativamente la retención si se colocan con cuidado.</p><p class="strat-ex">💡 En la práctica: Un vídeo de 12 minutos con un solo anuncio pre-roll genera una fracción de los ingresos del mismo vídeo con 2-3 mid-rolls bien colocados en las pausas naturales del contenido — sin que la retención se resienta si se colocan en el momento adecuado, no a mitad de una explicación importante.</p>
           </div>
         </div>
 
@@ -267,7 +270,7 @@
             </div>
           </div>
           <div class="strat-body">
-            <p>Amazon Afiliados funciona en España, México y otros países con comisiones del 1-10%. Hotmart y ClickBank en español pagan comisiones del 30-70% en productos digitales. Domestika tiene programa de afiliados para cursos creativos. Para un canal con 50.000 visualizaciones mensuales, los afiliados bien integrados pueden generar entre $200 y $2.000 adicionales al mes, independientemente del RPM de AdSense.</p>
+            <p>Amazon Afiliados funciona en España, México y otros países con comisiones del 1-10%. Hotmart y ClickBank en español pagan comisiones del 30-70% en productos digitales. Domestika tiene programa de afiliados para cursos creativos. Para un canal con 50.000 visualizaciones mensuales, los afiliados bien integrados pueden generar entre $200 y $2.000 adicionales al mes, independientemente del RPM de AdSense.</p><p class="strat-ex">💡 En la práctica: Un canal de tecnología que recomienda productos con enlaces de Amazon España y México simultáneamente capta comisión sin importar desde qué país compre el espectador — algo que un enlace de afiliado limitado a un solo país deja escapar.</p>
           </div>
         </div>
 
@@ -280,7 +283,7 @@
             </div>
           </div>
           <div class="strat-body">
-            <p>El cuarto trimestre (Black Friday + Navidad) sube el RPM entre un 50% y 200% en prácticamente todos los nichos. Pero el mercado hispano tiene una segunda ventana específica: la <strong>campaña de la Declaración de la Renta en España (febrero-junio)</strong>, que dispara la demanda publicitaria en el nicho de finanzas y fiscalidad. Planifica tu contenido de mayor potencial para coincidir con estas ventanas.</p>
+            <p>El cuarto trimestre (Black Friday + Navidad) sube el RPM entre un 50% y 200% en prácticamente todos los nichos. Pero el mercado hispano tiene una segunda ventana específica: la <strong>campaña de la Declaración de la Renta en España (febrero-junio)</strong>, que dispara la demanda publicitaria en el nicho de finanzas y fiscalidad. Planifica tu contenido de mayor potencial para coincidir con estas ventanas.</p><p class="strat-ex">💡 En la práctica: Un canal de finanzas que publica su contenido más trabajado sobre deducciones fiscales en abril, coincidiendo con la campaña de la Renta, puede ver un RPM notablemente superior al mismo tipo de contenido publicado en un mes cualquiera — la demanda publicitaria del sector fiscal se dispara en esa ventana concreta.</p>
           </div>
         </div>
 
@@ -293,7 +296,7 @@
             </div>
           </div>
           <div class="strat-body">
-            <p>No necesitas abandonar tu nicho actual. Un canal de lifestyle puede introducir contenido de finanzas personales. Un canal de tecnología puede añadir reviews de software empresarial. Cada vídeo en el sub-nicho premium puede tener un RPM 3-5 veces superior al resto del canal, elevando la media general sin perder identidad.</p>
+            <p>No necesitas abandonar tu nicho actual. Un canal de lifestyle puede introducir contenido de finanzas personales. Un canal de tecnología puede añadir reviews de software empresarial. Cada vídeo en el sub-nicho premium puede tener un RPM 3-5 veces superior al resto del canal, elevando la media general sin perder identidad.</p><p class="strat-ex">💡 En la práctica: Un canal de lifestyle que introduce un vídeo mensual sobre "cómo organicé mis finanzas personales" sin cambiar su identidad principal puede ver que ese vídeo concreto gana varias veces más RPM que el resto del catálogo — suficiente para notarse en la media mensual sin alienar a la audiencia habitual.</p>
           </div>
         </div>
 
@@ -306,7 +309,7 @@
             </div>
           </div>
           <div class="strat-body">
-            <p>Publicar entre las 18:00 y 20:00 hora de España (CET/CEST) captura el prime time español justo cuando empieza a activarse la audiencia de tarde en México y Colombia (6-7 horas por detrás). Es la ventana donde puedes maximizar el engagement inicial de tu audiencia de mayor valor sin sacrificar alcance en LATAM.</p>
+            <p>Publicar entre las 18:00 y 20:00 hora de España (CET/CEST) captura el prime time español justo cuando empieza a activarse la audiencia de tarde en México y Colombia (6-7 horas por detrás). Es la ventana donde puedes maximizar el engagement inicial de tu audiencia de mayor valor sin sacrificar alcance en LATAM.</p><p class="strat-ex">💡 En la práctica: Publicar a las 19:00 hora española significa que el vídeo lleva ya un par de horas activo cuando empieza el prime time en México — capturando así el pico de actividad de ambos mercados con una sola ventana de publicación, en vez de tener que elegir entre uno u otro.</p>
           </div>
         </div>
 
@@ -319,7 +322,7 @@
             </div>
           </div>
           <div class="strat-body">
-            <p>Las membresías de canal funcionan especialmente bien en nichos de comunidad fuerte (finanzas, fitness, gaming con comunidad fiel). En el mercado hispano, precios de membresía de 2-5€/mes son más accesibles que el equivalente en dólares y generan tasas de conversión decentes si ofreces contenido exclusivo real (no solo una insignia).</p>
+            <p>Las membresías de canal funcionan especialmente bien en nichos de comunidad fuerte (finanzas, fitness, gaming con comunidad fiel). En el mercado hispano, precios de membresía de 2-5€/mes son más accesibles que el equivalente en dólares y generan tasas de conversión decentes si ofreces contenido exclusivo real (no solo una insignia).</p><p class="strat-ex">💡 En la práctica: Un canal con 30.000 suscriptores y solo un 1% de conversión a membresía de 3€/mes genera unos 900€ mensuales recurrentes — un ingreso mucho más predecible mes a mes que el AdSense, que fluctúa con las visitas.</p>
           </div>
         </div>
 
@@ -332,7 +335,7 @@
             </div>
           </div>
           <div class="strat-body">
-            <p>Un canal con audiencia comprometida puede vender plantillas, mini-cursos o ebooks usando Hotmart o Gumroad. Esta es la estrategia con mayor techo de ingresos a largo plazo para creadores hispanohablantes, ya que no depende del CPM del mercado publicitario sino del valor percibido por tu audiencia. Requiere más esfuerzo inicial pero escala sin límite de RPM.</p>
+            <p>Un canal con audiencia comprometida puede vender plantillas, mini-cursos o ebooks usando Hotmart o Gumroad. Esta es la estrategia con mayor techo de ingresos a largo plazo para creadores hispanohablantes, ya que no depende del CPM del mercado publicitario sino del valor percibido por tu audiencia. Requiere más esfuerzo inicial pero escala sin límite de RPM.</p><p class="strat-ex">💡 En la práctica: Un canal de finanzas con audiencia fiel que lanza una plantilla de Excel de presupuesto personal a 9€ puede generar en una sola semana de lanzamiento más que varios meses de AdSense del canal — sin depender en absoluto del RPM ni de las visitas del vídeo.</p>
           </div>
         </div>
 
@@ -345,7 +348,7 @@
             </div>
           </div>
           <div class="strat-body">
-            <p>Vídeos con mejor retención completan más anuncios y generan mejores señales para el algoritmo de recomendación, lo que indirectamente aumenta el volumen de vistas de calidad. Usa nuestra <a href="/calculadora-puntuacion-ctr.html" style="color:#e65100;font-weight:700">calculadora de CTR Score</a> para identificar qué miniaturas y títulos están funcionando mejor en tu canal.</p>
+            <p>Vídeos con mejor retención completan más anuncios y generan mejores señales para el algoritmo de recomendación, lo que indirectamente aumenta el volumen de vistas de calidad. Usa nuestra <a href="/calculadora-puntuacion-ctr.html" style="color:#e65100;font-weight:700">calculadora de CTR Score</a> para identificar qué miniaturas y títulos están funcionando mejor en tu canal.</p><p class="strat-ex">💡 En la práctica: Dos vídeos con el mismo tema y duración, pero con miniaturas de distinta calidad, pueden terminar con una diferencia de RPM notable simplemente porque el de mejor CTR recibe más impresiones publicitarias totales al ser mostrado a más audiencia por el algoritmo.</p>
           </div>
         </div>
 
@@ -374,6 +377,117 @@
         <h3>🧮 Calcula tu RPM potencial</h3>
         <p>Estima cuánto podrías ganar combinando AdSense, patrocinios y afiliados según tu nicho y tamaño de audiencia.</p>
         <a href="/calculadora.html">Abrir Calculadora de Ingresos →</a>
+      </div>
+
+      <h2>Errores Comunes al Intentar Aumentar el RPM</h2>
+      <p>Incluso creadores que conocen estas 10 estrategias cometen errores de ejecución que anulan gran parte de su efecto. Estos son los más frecuentes en canales hispanohablantes, y suelen repetirse independientemente del nicho o del tamaño del canal — vale la pena revisarlos antes de aplicar cualquiera de las estrategias anteriores, para no arrancar con el pie cambiado.</p>
+
+      <div class="strategy-list">
+        <div class="strat-card">
+          <div class="strat-head">
+            <div class="strat-num">⚠️</div>
+            <div>
+              <div class="strat-title">Perseguir patrocinios antes de tener audiencia definida</div>
+              <span class="strat-impact impact-mid">Error frecuente</span>
+            </div>
+          </div>
+          <div class="strat-body">
+            <p>Contactar marcas sin haber demostrado antes qué tipo de audiencia tienes (nicho, edad, país predominante) reduce drásticamente la tasa de respuesta. Las marcas necesitan ver claridad de nicho antes de invertir, no solo número de suscriptores.</p>
+          </div>
+        </div>
+        <div class="strat-card">
+          <div class="strat-head">
+            <div class="strat-num">⚠️</div>
+            <div>
+              <div class="strat-title">Desactivar anuncios "para no molestar" a la audiencia</div>
+              <span class="strat-impact impact-mid">Error frecuente</span>
+            </div>
+          </div>
+          <div class="strat-body">
+            <p>Muchos creadores nuevos desactivan mid-rolls o anuncios no saltables pensando que mejoran la experiencia del espectador. El impacto real en retención suele ser mínimo, mientras que el impacto en ingresos es inmediato y significativo.</p>
+          </div>
+        </div>
+        <div class="strat-card">
+          <div class="strat-head">
+            <div class="strat-num">⚠️</div>
+            <div>
+              <div class="strat-title">Diluir el nicho intentando abarcar todo el mercado hispano</div>
+              <span class="strat-impact impact-mid">Error frecuente</span>
+            </div>
+          </div>
+          <div class="strat-body">
+            <p>Intentar hablar simultáneamente a España, México, Argentina y Colombia con contenido genérico suele generar un canal sin identidad clara para ninguno de esos públicos. Es más rentable dominar un mercado específico y expandir después.</p>
+          </div>
+        </div>
+        <div class="strat-card">
+          <div class="strat-head">
+            <div class="strat-num">⚠️</div>
+            <div>
+              <div class="strat-title">No medir el RPM por vídeo, solo el total mensual</div>
+              <span class="strat-impact impact-mid">Error frecuente</span>
+            </div>
+          </div>
+          <div class="strat-body">
+            <p>Mirar solo el ingreso total del canal esconde qué formatos, temas o duraciones generan mejor RPM individualmente. Sin ese desglose es imposible saber qué replicar y qué abandonar.</p>
+          </div>
+        </div>
+        <div class="strat-card">
+          <div class="strat-head">
+            <div class="strat-num">⚠️</div>
+            <div>
+              <div class="strat-title">Abandonar una estrategia tras probarla en un solo vídeo</div>
+              <span class="strat-impact impact-mid">Error frecuente</span>
+            </div>
+          </div>
+          <div class="strat-body">
+            <p>El RPM de un vídeo individual puede variar mucho según qué anunciantes concretos se activaron ese día, independientemente de la estrategia aplicada. Juzgar una táctica (como la orientación a España o un nuevo formato de anuncio) por un solo vídeo lleva a conclusiones erróneas. Se necesitan al menos 8-10 vídeos aplicando la misma estrategia para ver una tendencia fiable.</p>
+          </div>
+        </div>
+        <div class="strat-card">
+          <div class="strat-head">
+            <div class="strat-num">⚠️</div>
+            <div>
+              <div class="strat-title">Aceptar cualquier patrocinio sin evaluar el ajuste con la audiencia</div>
+              <span class="strat-impact impact-mid">Error frecuente</span>
+            </div>
+          </div>
+          <div class="strat-body">
+            <p>Un patrocinio mal ajustado a la audiencia (por ejemplo, un producto financiero de alto riesgo en un canal familiar y conservador) puede generar más rechazo que beneficio, dañando la confianza acumulada con los suscriptores. El ingreso puntual de un patrocinio mal elegido rara vez compensa la pérdida de credibilidad a largo plazo.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Cómo Hacer Seguimiento de tus Resultados</h2>
+      <p>Aplicar estas 10 estrategias sin medir su efecto real es la forma más común de abandonar tácticas que sí estaban funcionando, simplemente porque no se veía el resultado con claridad. Un seguimiento simple pero constante marca la diferencia entre mejorar de forma sostenida o estancarse.</p>
+
+      <div class="box box-insight">
+        <span class="box-icon">💡 LA RUTINA MENSUAL RECOMENDADA</span>
+        <p>El primer día de cada mes, anota en una hoja de cálculo: RPM medio del mes anterior, ingresos por AdSense, ingresos por patrocinios/afiliados, y qué estrategia nueva probaste ese mes. En 3-4 meses, este registro simple revela con mucha más claridad qué está moviendo realmente la aguja en tu canal que la memoria o la intuición.</p>
+      </div>
+
+      <p>Presta especial atención a los vídeos con RPM más alto y más bajo de cada mes. Casi siempre hay un patrón identificable — tema, duración, o si el vídeo incluía o no un patrocinio — que explica la diferencia y que puedes replicar o evitar conscientemente en las siguientes publicaciones. Con el tiempo, este hábito de seguimiento se convierte en la herramienta de decisión más fiable que tienes, mucho más precisa que la sensación subjetiva de "este mes me fue bien" o "este mes me fue mal" sin datos concretos detrás.</p>
+
+      <h2>Ejemplo Ilustrativo: Combinando Varias Estrategias a la Vez</h2>
+      <p>Para ver cómo encajan estas estrategias en la práctica, es útil seguir un ejemplo hipotético pero realista de un canal mediano que las va aplicando progresivamente a lo largo de varios meses.</p>
+      <p>Un canal de finanzas personales en español con 40.000 suscriptores empieza únicamente con AdSense, generando un RPM de $2 y unos $200 al mes con 100.000 visualizaciones. En el primer mes, activa todos los formatos de anuncio y empieza a mencionar explícitamente casos y normativa española en cada vídeo — el RPM sube gradualmente a medida que YouTube redirige más audiencia española hacia el canal. En el tercer mes, cierra su primer patrocinio pequeño con una app de ahorro, sumando un ingreso puntual que por sí solo iguala varios meses de AdSense. Hacia el sexto mes, ya tiene 2-3 patrocinios recurrentes al mes y ha lanzado una plantilla de presupuesto como primer infoproducto.</p>
+      <div class="box box-green">
+        <span class="box-icon">✅ LA LECCIÓN DEL EJEMPLO</span>
+        <p>Ninguna de estas palancas por separado transforma los ingresos del canal. Es la combinación progresiva — optimizar primero lo técnico y de contenido, después sumar patrocinios, y finalmente diversificar con producto propio — lo que produce el salto real. Intentar saltar directamente a patrocinios grandes o infoproductos sin la base previa suele fallar porque falta la claridad de nicho y el volumen de audiencia que las marcas y los propios seguidores necesitan ver antes de comprometerse.</p>
+      </div>
+      <p>Es importante señalar que este orden no es rígido — un canal con una propuesta muy clara desde el primer vídeo puede acelerar el proceso, mientras que uno que tarda en encontrar su identidad de nicho puede necesitar más tiempo en las primeras fases antes de ver resultados en las posteriores. Lo que sí se mantiene constante en la mayoría de casos es la secuencia lógica: primero maximizar lo que ya tienes bajo control directo (configuración técnica, orientación de contenido), y solo después construir sobre esa base con fuentes de ingreso que dependen de terceros (marcas, plataformas de afiliados) o de un producto propio que requiere tiempo de desarrollo.</p>
+
+      <h2>Preguntas Adicionales Sobre RPM en Español</h2>
+      <div class="faq-item">
+        <h3>¿Cuánto tiempo tarda en notarse una mejora real de RPM?</h3>
+        <p>Los cambios técnicos (activar formatos de anuncio, mid-rolls) tienen efecto inmediato, visible en el mismo mes. Los cambios de orientación de contenido hacia España tardan más — normalmente entre 2 y 4 meses en verse reflejados de forma clara, porque el algoritmo necesita varios vídeos consistentes para redirigir la distribución de audiencia.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Vale la pena aprender inglés para monetizar mejor si mi canal es en español?</h3>
+        <p>No es necesario, y para la mayoría de creadores no es la estrategia más eficiente. Cambiar de idioma implica perder toda la audiencia y el posicionamiento SEO acumulado en español para empezar de cero compitiendo en un mercado mucho más saturado. Las 10 estrategias de esta guía suelen producir un retorno más rápido que ese cambio de idioma completo.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Cuál de las 10 estrategias debería probar primero si solo puedo aplicar una?</h3>
+        <p>Revisar la configuración de formatos de anuncio en YouTube Studio (estrategia 3) es la de menor esfuerzo y mayor impacto inmediato — se hace en cinco minutos y el efecto se ve en el mismo mes. Si ya la tienes activada, la siguiente prioridad depende de tu tamaño de canal: orientación de contenido hacia España si eres pequeño, o buscar tu primer patrocinio de nicho si ya tienes una audiencia mínima definida.</p>
       </div>
 
       <h2>Artículos Relacionados</h2>
@@ -456,5 +570,14 @@
     (function(){var btn=document.querySelector('.nav-toggle');var links=document.querySelector('.nav-links');if(!btn||!links)return;btn.addEventListener('click',function(e){e.stopPropagation();var isOpen=links.classList.toggle('open');btn.textContent=isOpen?'✕':'☰';btn.setAttribute('aria-expanded',isOpen);});document.addEventListener('click',function(e){if(!links.contains(e.target)&&e.target!==btn){links.classList.remove('open');btn.textContent='☰';btn.setAttribute('aria-expanded','false');}});})();
   </script>
   <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}</script>
+  <script>
+    window.addEventListener('scroll', () => {
+        const doc = document.documentElement;
+        const scrollTop = doc.scrollTop || document.body.scrollTop;
+        const scrollHeight = doc.scrollHeight - doc.clientHeight;
+        const progress = (scrollTop / scrollHeight) * 100;
+        document.getElementById('readingBar').style.width = progress + '%';
+    });
+  </script>
 </body>
 </html>
