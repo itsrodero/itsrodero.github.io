@@ -2,370 +2,482 @@
 <html lang="es">
 <head>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    if (localStorage.getItem("cookieConsent") === "accepted") {
-      var s = document.createElement("script");
-      s.async = true;
-      s.src = "https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR";
-      document.head.appendChild(s);
-      s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); };
-    }
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  if (localStorage.getItem("cookieConsent") === "accepted") {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR";
+    document.head.appendChild(s);
+    s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); };
+  }
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tipografía para Miniaturas: La Regla de 1.5 Segundos</title>
-  <meta name="description" content="Cómo la psicología tipográfica decide tu CTR en YouTube: el fin de la sombra paralela, kerning negativo, la regla de máximo 3 palabras, fuentes para miniatur...">
+  <meta name="description" content="Cómo la psicología tipográfica decide tu CTR en YouTube: el fin de la sombra paralela, kerning negativo, la regla de 3 palabras, fuentes recomendadas y la prueba del 10%.">
+  <link rel="canonical" href="https://tubetools.online/tipografia-para-miniaturas-youtube.html">
   <link rel="alternate" hreflang="es" href="https://tubetools.online/tipografia-para-miniaturas-youtube.html">
   <link rel="alternate" hreflang="en" href="https://tubetools.online/en/typography-for-youtube-thumbnails.html">
   <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/typography-for-youtube-thumbnails.html">
-  <link rel="canonical" href="https://tubetools.online/tipografia-para-miniaturas-youtube.html">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <style>
-    body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.9; color: #2d3436; background-color: #fdfdfd; }
-    .article-header { background: linear-gradient(135deg, #2c3e50 0%, #4a235a 100%); color: white; padding: 100px 0; text-align: center; }
-    .article-body { max-width: 900px; margin: -60px auto 60px; background: white; padding: 60px; border-radius: 24px; box-shadow: 0 25px 50px rgba(0,0,0,0.05); }
-    h2 { color: #4a235a; margin-top: 50px; font-weight: 800; font-size: 1.9rem; border-left: 6px solid #9b59b6; padding-left: 20px; }
-    h3 { color: #2d3436; margin-top: 30px; font-weight: 700; font-size: 1.3rem; }
-    img { width: 100%; border-radius: 16px; margin: 30px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-    p { font-size: 1.05rem; margin-bottom: 20px; }
-    .tip-box { background-color: #f5eef8; border-radius: 12px; padding: 30px; margin: 30px 0; border-left: 5px solid #9b59b6; }
-    .warning-box { background-color: #fef9e7; border-radius: 12px; padding: 30px; margin: 30px 0; border-left: 5px solid #f39c12; }
-    .font-demo { background: #1c1e21; border-radius: 12px; padding: 30px; margin: 25px 0; text-align: center; }
-    .cta-section { background: linear-gradient(135deg, #f5eef8, #fff); border-radius: 20px; padding: 50px; text-align: center; margin-top: 60px; border: 2px solid #9b59b6; }
-    ul li { margin-bottom: 10px; font-size: 1.05rem; }
-    table { width: 100%; border-collapse: collapse; margin: 25px 0; }
-    table th { background: #4a235a; color: white; padding: 12px 15px; text-align: left; }
-    table td { padding: 12px 15px; border-bottom: 1px solid #eee; }
-    table tr:nth-child(even) { background: #f5eef8; }
-    @media (max-width: 600px) { .article-body { padding: 25px; } }
-  
-    /* Mobile nav - injected fix */
-    @media(max-width:720px){
-      .nav-toggle{display:block !important}
-      .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
-      .nav-links.open{display:flex !important}
-      .nav-links a{padding:11px 14px;border-radius:8px;color:#ccc !important}
-      .nav-dropdown>a::after{display:none}
-      .dropdown-panel{display:block !important;position:static;transform:none;background:rgba(255,255,255,.04);border:none;box-shadow:none;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
-      .dropdown-panel a{font-size:.83rem;padding:7px 10px}
-    }
-    </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Secretos de Tipografía: La Regla de 1.5 Segundos en Miniaturas YouTube",
-  "description": "Cómo la psicología tipográfica decide tu CTR: el fin de la sombra paralela, kerning negativo, la regla de 3 palabras y fuentes para miniaturas en 2026.",
-  "datePublished": "2026-04-20",
-  "dateModified": "2026-05-05",
-  "author": { "@type": "Person", "name": "Daniel", "url": "https://tubetools.online/contacto.html" },
-  "publisher": { "@type": "Organization", "name": "TubeTools", "url": "https://tubetools.online", "logo": { "@type": "ImageObject", "url": "https://tubetools.online/favicon.svg" } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://tubetools.online/tipografia-para-miniaturas-youtube.html" }
-}
-</script>
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://tubetools.online/tipografia-para-miniaturas-youtube.html">
-  <meta property="og:title" content="Tipografía para Miniaturas: La Regla de 1.5 Segundos">
-  <meta property="og:description" content="Cómo la psicología tipográfica decide tu CTR en YouTube: el fin de la sombra paralela, kerning negativo, la regla de máximo 3 palabras, fuentes para miniat">
+  <meta property="og:title" content="Tipografía para Miniaturas: La Regla de 1.5 Segundos | TubeTools">
+  <meta property="og:description" content="Cómo la psicología tipográfica decide tu CTR en YouTube: el fin de la sombra paralela, kerning negativo, la regla de 3 palabras y la prueba del 10%.">
   <meta property="og:image" content="https://tubetools.online/og_image_es.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tipografía para Miniaturas: La Regla de 1.5 Segundos">
-  <meta name="twitter:description" content="Cómo la psicología tipográfica decide tu CTR en YouTube: el fin de la sombra paralela, kerning negativo, la regla de máximo 3 palabras, fuentes para miniat">
+  <meta name="twitter:title" content="Tipografía para Miniaturas: La Regla de 1.5 Segundos | TubeTools">
+  <meta name="twitter:description" content="Cómo la psicología tipográfica decide tu CTR en YouTube: el fin de la sombra paralela, kerning negativo, la regla de 3 palabras y la prueba del 10%.">
   <meta name="twitter:image" content="https://tubetools.online/og_image_es.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Secretos de Tipografía: La Regla de 1.5 Segundos en Miniaturas YouTube","description":"Cómo la psicología tipográfica decide tu CTR: el fin de la sombra paralela, kerning negativo, la regla de 3 palabras y fuentes para miniaturas en 2026.","datePublished":"2026-04-20","dateModified":"2026-08-02","author":{"@type":"Person","name":"Daniel","url":"https://tubetools.online/contacto.html"},"publisher":{"@type":"Organization","name":"TubeTools","url":"https://tubetools.online","logo":{"@type":"ImageObject","url":"https://tubetools.online/favicon.svg"}},"image":{"@type":"ImageObject","url":"https://tubetools.online/og_image_es.png","width":1200,"height":630},"mainEntityOfPage":{"@type":"WebPage","@id":"https://tubetools.online/tipografia-para-miniaturas-youtube.html"}}
+  </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://tubetools.online/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://tubetools.online/blog.html"},{"@type":"ListItem","position":3,"name":"Tipografía para Miniaturas: La Regla de 1,5 Segundos","item":"https://tubetools.online/tipografia-para-miniaturas-youtube.html"}]}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué fuente es mejor para las miniaturas de YouTube?","acceptedAnswer":{"@type":"Answer","text":"Las mejores fuentes para miniaturas de YouTube son las tipografías sans-serif en negrita y gruesa: Impact, Bebas Neue, Montserrat ExtraBold y Anton. Estas fuentes mantienen la legibilidad a tamaños pequeños y en condiciones de bajo contraste. Evita las fuentes finas o de script, que se vuelven ilegibles a tamaño miniatura."}},{"@type":"Question","name":"¿Debo usar sombras o contornos en el texto de la miniatura?","acceptedAnswer":{"@type":"Answer","text":"Los contornos (trazos) son significativamente más efectivos que las sombras paralelas para el texto en miniaturas de YouTube. Un trazo negro o blanco de 3-5pt alrededor del texto mantiene la legibilidad en cualquier color de fondo. Las sombras crean un efecto de desenfoque que degrada la legibilidad a tamaños pequeños y en móvil."}},{"@type":"Question","name":"¿Cómo hago el texto legible en cualquier fondo de miniatura?","acceptedAnswer":{"@type":"Answer","text":"La técnica más fiable es un trazo de contorno sólido: texto blanco con trazo negro de 4pt, o texto negro con trazo blanco de 4pt. Esto garantiza la legibilidad en cualquier color de fondo. Para legibilidad adicional, añade un rectángulo semitransparente oscuro detrás del texto como medida secundaria."}}]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué fuente es mejor para las miniaturas de YouTube?","acceptedAnswer":{"@type":"Answer","text":"Las mejores fuentes para miniaturas de YouTube son las tipografías sans-serif en negrita y gruesa: Impact, Bebas Neue, Montserrat ExtraBold y Anton. Estas fuentes mantienen la legibilidad a tamaños pequeños y en condiciones de bajo contraste. Evita las fuentes finas o de script, que se vuelven ilegibles a tamaño miniatura."}},{"@type":"Question","name":"¿Debo usar sombras o contornos en el texto de la miniatura?","acceptedAnswer":{"@type":"Answer","text":"Los contornos (trazos) son significativamente más efectivos que las sombras paralelas para el texto en miniaturas de YouTube. Un trazo negro o blanco de 3-5pt alrededor del texto mantiene la legibilidad en cualquier color de fondo. Las sombras crean un efecto de desenfoque que degrada la legibilidad a tamaños pequeños y en móvil."}},{"@type":"Question","name":"¿Cómo hago el texto legible en cualquier fondo de miniatura?","acceptedAnswer":{"@type":"Answer","text":"La técnica más fiable es un trazo de contorno sólido: texto blanco con trazo negro de 4pt, o texto negro con trazo blanco de 4pt. Esto garantiza la legibilidad en cualquier color de fondo. Para legibilidad adicional, añade un rectángulo semitransparente oscuro detrás del texto como medida secundaria."}},{"@type":"Question","name":"¿Cuántas palabras debería tener el texto de una miniatura?","acceptedAnswer":{"@type":"Answer","text":"Un máximo de 3 palabras. El texto de la miniatura no debe repetir el título del vídeo, sino aportar un número impactante, una emoción poderosa o un contraste sorprendente que genere disonancia con la imagen y obligue al espectador a leer el título para obtener el contexto completo."}},{"@type":"Question","name":"¿Qué es la prueba del 10% para el texto de miniaturas?","acceptedAnswer":{"@type":"Answer","text":"Consiste en reducir la miniatura al 10% de su tamaño original, aproximadamente 128x72 píxeles, y comprobar si el texto sigue siendo legible a ese tamaño. Si no se puede leer, el texto es demasiado pequeño para el 70% de la audiencia que consume YouTube en móvil. Como referencia, el texto debe ocupar al menos el 25-30% de la altura de la imagen."}},{"@type":"Question","name":"¿Puedo combinar dos fuentes distintas en una miniatura?","acceptedAnswer":{"@type":"Answer","text":"Sí, pero con límites estrictos: nunca más de 2 fuentes, con una diferencia de tamaño de al menos el 40% entre la principal y la secundaria. Es preferible usar la misma familia tipográfica en distintos pesos, como Bold y Regular, antes que combinar dos familias completamente distintas, que suele generar ruido visual."}},{"@type":"Question","name":"¿La tipografía de las miniaturas debe adaptarse para audiencia hispana en Estados Unidos?","acceptedAnswer":{"@type":"Answer","text":"Los principios de legibilidad, kerning y contraste son universales, pero un canal con audiencia relevante en Estados Unidos compite en un feed con más miniaturas en inglés y mayor presupuesto de producción, por lo que un texto extremadamente legible y bien ejecutado técnicamente ayuda a destacar frente a esa competencia, especialmente relevante dado que el CPM de EE.UU. suele ser varias veces superior al de Latinoamérica."}}]}
   </script>
   <style>
-    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
-    .skip-link:focus{top:0;}
+    *{margin:0;padding:0;box-sizing:border-box}
+    .reading-bar{height:3px;background:#455a64;width:0%;position:fixed;top:0;left:0;z-index:10000;transition:width .1s}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1c1e21;background:#f7f8fa;line-height:1.7}
+    nav{position:sticky;top:0;z-index:1000;background:#1c1e21;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+    .nav-logo{color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
+    .nav-logo span{color:#ff5252}
+    .nav-links{display:flex;gap:4px;align-items:center}
+    .nav-links a{color:#ccc !important;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;transition:background .2s,color .2s;white-space:nowrap}
+    .nav-links a:hover{background:rgba(255,255,255,.08);color:#fff !important}
+    .nav-links a.lang-btn-en{color:#90caf9 !important;border:1px solid rgba(144,202,249,.35)}
+    .nav-dropdown{position:relative}
+    .nav-dropdown>a{display:flex;align-items:center;gap:4px}
+    .nav-dropdown>a::after{content:'▾';font-size:.7rem;opacity:.7}
+    .dropdown-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#2c2e33;border-radius:12px;padding:10px 8px;min-width:240px;box-shadow:0 8px 32px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.07);z-index:2000}
+    .nav-dropdown:hover .dropdown-panel,.nav-dropdown:focus-within .dropdown-panel{display:block}
+    .dropdown-panel a{display:flex;align-items:center;gap:10px;color:#ccc !important;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;transition:background .2s;width:100%}
+    .dropdown-panel a:hover{background:rgba(255,255,255,.09);color:#fff !important}
+    .dp-icon{width:22px;text-align:center;font-size:1.05rem;flex-shrink:0}
+    .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
+    @media(max-width:720px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}.nav-links.open{display:flex}.nav-links a{padding:11px 14px;border-radius:8px}.nav-dropdown>a::after{display:none}.dropdown-panel{display:block;position:static;transform:none;background:rgba(255,255,255,.04);border:none;box-shadow:none;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}.dropdown-panel a{font-size:.83rem;padding:7px 10px}}
+    .hero{background:linear-gradient(135deg,#1c1e21 0%,#20282d 60%,#263238 100%);padding:60px 24px 80px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 0%,rgba(69,90,100,.3) 0%,transparent 70%);pointer-events:none}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(69,90,100,.22);border:1px solid rgba(120,144,156,.4);border-radius:999px;padding:5px 16px;font-size:.78rem;font-weight:700;color:#b0bec5;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px}
+    .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;line-height:1.15;max-width:720px;margin:0 auto 18px}
+    .hero h1 em{color:#90a4ae;font-style:normal}
+    .hero-sub{color:rgba(255,255,255,.65);font-size:1.05rem;max-width:580px;margin:0 auto 36px}
+    .hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;max-width:680px;margin:0 auto}
+    .hstat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 22px;text-align:center;min-width:130px}
+    .hstat-val{font-size:1.6rem;font-weight:900;color:#90a4ae;display:block;line-height:1}
+    .hstat-label{font-size:.72rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.07em;margin-top:4px;display:block}
+    .breadcrumb{max-width:900px;margin:0 auto;padding:14px 24px 0;font-size:.8rem;color:#888}
+    .breadcrumb a{color:#888;text-decoration:none}
+    .breadcrumb a:hover{color:#455a64}
+    .breadcrumb span{margin:0 6px}
+    .article-wrap{max-width:900px;margin:0 auto;padding:0 24px 80px}
+    .article-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:20px 0 28px;border-bottom:1px solid #eee;margin-bottom:36px}
+    .meta-badge{background:#eceff1;color:#37474f;border:1px solid rgba(69,90,100,.25);border-radius:6px;padding:3px 10px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+    .meta-text{font-size:.83rem;color:#888}
+    .article-body h2{font-size:1.45rem;font-weight:800;color:#1c1e21;margin:48px 0 16px;padding-left:16px;border-left:4px solid #455a64;line-height:1.3}
+    .article-body h3{font-size:1.1rem;font-weight:700;color:#2d3436;margin:28px 0 10px}
+    .article-body p{color:#444;font-size:1.02rem;margin-bottom:16px;line-height:1.75}
+    .article-body ul,.article-body ol{color:#444;font-size:1.02rem;margin:0 0 18px 22px;line-height:1.8}
+    .article-body li{margin-bottom:6px}
+    .article-body img{width:100%;border-radius:16px;margin:32px 0;box-shadow:0 10px 20px rgba(0,0,0,.06)}
+    .font-demo{background:#1c1e21;border-radius:14px;padding:30px;margin:26px 0;text-align:center}
+    .font-demo p{margin-bottom:12px}
+    .font-demo p:last-child{margin-bottom:0}
+    .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:28px 0}
+    .stat-card{background:#fff;border:1px solid #eee;border-radius:14px;padding:20px 18px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .stat-card .sv{font-size:1.9rem;font-weight:900;color:#455a64;line-height:1;display:block}
+    .stat-card .sl{font-size:.75rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-top:6px;display:block;line-height:1.4}
+    .table-wrap{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);margin:28px 0;border:1px solid #eee}
+    .table-label{background:#1c1e21;color:#fff;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:8px 18px}
+    table{width:100%;border-collapse:collapse}
+    th{background:#455a64;color:#fff;padding:13px 16px;text-align:left;font-size:.88rem;font-weight:700}
+    td{padding:12px 16px;border-bottom:1px solid #f0f0f0;font-size:.93rem;color:#333}
+    tr:last-child td{border-bottom:none}
+    tr:nth-child(even) td{background:#fafafa}
+    .badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:.75rem;font-weight:700;white-space:nowrap}
+    .badge-high{background:#e8f5e9;color:#2e7d32}
+    .badge-mid{background:#fff8e1;color:#e65100}
+    .badge-low{background:#fce4ec;color:#c62828}
+    .badge-slate{background:#eceff1;color:#37474f}
+    .box{border-radius:14px;padding:22px 26px;margin:28px 0}
+    .box-insight{background:#fff8e1;border-left:4px solid #f59e0b}
+    .box-insight .box-icon{color:#f59e0b}
+    .box-tip{background:#e3f2fd;border-left:4px solid #1976d2}
+    .box-tip .box-icon{color:#1976d2}
+    .box-warning{background:#fdecea;border-left:4px solid #d32f2f}
+    .box-warning .box-icon{color:#d32f2f}
+    .box-green{background:#e8f5e9;border-left:4px solid #2e7d32}
+    .box-green .box-icon{color:#2e7d32}
+    .box-slate{background:#eceff1;border-left:4px solid #455a64}
+    .box-slate .box-icon{color:#37474f}
+    .box-icon{font-size:1.1rem;font-weight:800;margin-bottom:6px;display:block}
+    .box p{margin-bottom:0;font-size:.97rem}
+    .box strong{color:#1c1e21}
+    .strategy-steps{margin:28px 0;display:flex;flex-direction:column;gap:16px}
+    .step{display:flex;gap:18px;align-items:flex-start;background:#fff;border-radius:14px;padding:20px;border:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .step-num{width:36px;height:36px;border-radius:50%;background:#455a64;color:#fff;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .step-body h3{font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:6px;margin-top:0}
+    .step-body p{font-size:.92rem;color:#555;margin:0;line-height:1.6}
+    .mistake-list{margin:28px 0;display:flex;flex-direction:column;gap:14px}
+    .mistake{display:flex;gap:16px;background:#fff;border-radius:14px;padding:18px 22px;border:1px solid #eee;border-left:4px solid #d32f2f;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .mistake-icon{font-size:1.3rem;flex-shrink:0}
+    .mistake-body h3{font-size:.95rem;font-weight:700;color:#1c1e21;margin-bottom:4px}
+    .mistake-body p{font-size:.9rem;color:#555;margin:0;line-height:1.6}
+    .cta-tool{background:linear-gradient(135deg,#455a64,#263238);border-radius:16px;padding:32px;text-align:center;margin:36px 0}
+    .cta-tool h3{color:#fff;font-size:1.2rem;font-weight:800;margin-bottom:8px}
+    .cta-tool p{color:rgba(255,255,255,.85);font-size:.95rem;margin-bottom:20px}
+    .cta-tool a{display:inline-block;background:#fff;color:#37474f !important;font-weight:800;padding:13px 30px;border-radius:10px;text-decoration:none;font-size:.97rem;transition:transform .15s,box-shadow .15s}
+    .cta-tool a:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:20px 0}
+    .related-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:16px;text-decoration:none;color:#1c1e21;border-left:3px solid #455a64;transition:box-shadow .2s,transform .2s}
+    .related-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);transform:translateY(-2px)}
+    .related-card strong{font-size:.88rem;display:block;line-height:1.4;color:#1c1e21}
+    .related-card.tool-card{border-left-color:#f57f17;background:#fff8e1}
+    .faq-section{background:#fff;border-radius:16px;padding:32px;margin:40px 0;border:1px solid #eee}
+    .faq-section h2{font-size:1.2rem;font-weight:800;color:#1c1e21;margin-bottom:24px;border-left:none;padding-left:0}
+    .faq-item{border-bottom:1px solid #f0f0f0;padding:18px 0}
+    .faq-item:last-child{border-bottom:none;padding-bottom:0}
+    .faq-item h3{font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px}
+    .faq-item p{font-size:.93rem;color:#555;line-height:1.7;margin:0}
+    .site-footer{background:#1c1e21;color:#888;padding:48px 20px 32px;margin-top:60px}
+    .footer-inner{max-width:960px;margin:0 auto}
+    .footer-grid{display:grid;grid-template-columns:1fr repeat(3,auto);gap:40px;margin-bottom:36px}
+    @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
+    @media(max-width:440px){.footer-grid{grid-template-columns:1fr}}
+    .footer-logo{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:10px}
+    .footer-logo span{color:#ff5252}
+    .footer-brand p{font-size:.83rem;color:#666;line-height:1.6;max-width:220px}
+    .footer-col h4{font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+    .footer-col a{display:block;color:#888 !important;text-decoration:none;font-size:.85rem;margin-bottom:8px;transition:color .2s}
+    .footer-col a:hover{color:#fff !important}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+    .footer-bottom p{font-size:.78rem;color:#555}
+    .footer-lang-btn{padding:5px 14px;border-radius:999px;text-decoration:none !important;font-size:.82rem;font-weight:600;transition:background .2s}
+    .footer-lang-btn.en-fb{background:rgba(144,202,249,.12);color:#90caf9 !important;border:1px solid rgba(144,202,249,.3)}
+    .footer-lang-btn.en-fb:hover{background:rgba(144,202,249,.22) !important}
+    .skip-link{position:absolute;top:-100px;left:0;background:#455a64;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s}
+    .skip-link:focus{top:0}
+    #cookie-banner{display:none}
   </style>
-
-<style id='tt-global'>
-
-/* ── TubeTools Global Fix ── */
-*, *::before, *::after { box-sizing: border-box; }
-a { color: inherit; }
-a:not([class]):not([style]) { color: inherit; text-decoration: none; }
-.read-more, .btn-read-more {
-  display: inline-block; background: #d32f2f; color: #fff !important;
-  text-decoration: none; padding: 9px 18px; border-radius: 8px;
-  font-size: .85rem; font-weight: 700; transition: background .2s; margin-top: 8px;
-}
-.read-more:hover, .btn-read-more:hover { background: #b71c1c !important; }
-.article-card h3 a, .article-title a, .card-title a, .blog-card h3 a {
-  color: #1c1e21 !important; text-decoration: none !important; font-weight: 700;
-}
-.article-card h3 a:hover, .blog-card h3 a:hover { color: #d32f2f !important; }
-footer a { color: #888 !important; text-decoration: none !important; }
-footer a:hover { color: #fff !important; }
-nav a { text-decoration: none; }
-/* Nav fix */
-nav { position: sticky; top: 0; z-index: 1000; background: #1c1e21;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 24px; height: 58px; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
-nav .nav-logo { color: #fff; text-decoration: none; font-size: 1.1rem;
-  font-weight: 800; display: flex; align-items: center; gap: 6px; }
-nav .nav-logo .logo-accent { color: #ff5252; }
-nav .nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
-nav .nav-links a { color: #ccc !important; text-decoration: none; font-size: .88rem;
-  font-weight: 500; padding: 6px 11px; border-radius: 8px;
-  transition: background .2s, color .2s; white-space: nowrap; }
-nav .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
-nav .nav-links a.lang-btn-en { color: #90caf9; border: 1px solid rgba(144,202,249,.35); }
-nav .nav-links a.lang-btn-es { color: #a5d6a7; border: 1px solid rgba(165,214,167,.35); }
-nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
-.nav-toggle { display: none; background: none; border: none; color: #fff;
-  font-size: 1.4rem; cursor: pointer; padding: 6px; }
-/* Tools dropdown */
-.nav-dropdown { position: relative; }
-.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-.nav-dropdown > a::after { content: '▾'; font-size: .7rem; opacity: .7; }
-.dropdown-panel { display: none; position: absolute; top: calc(100% + 6px);
-  left: 50%; transform: translateX(-50%); background: #2c2e33;
-  border-radius: 12px; padding: 10px 8px; min-width: 240px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.4); border: 1px solid rgba(255,255,255,.07);
-  z-index: 2000; }
-.nav-dropdown:hover .dropdown-panel,
-.nav-dropdown:focus-within .dropdown-panel { display: block; }
-.dropdown-panel a { display: flex; align-items: center; gap: 10px; color: #ccc !important;
-  text-decoration: none !important; font-size: .85rem; padding: 9px 14px;
-  border-radius: 8px; transition: background .2s; width: 100%; }
-.dropdown-panel a:hover { background: rgba(255,255,255,.09) !important; color: #fff !important; }
-.dp-icon { width: 22px; text-align: center; font-size: 1.05rem; flex-shrink: 0; }
-/* Mobile nav */
-@media(max-width: 720px) {
-  .nav-toggle { display: block !important; }
-  .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0;
-    background: #2c2e33; flex-direction: column; align-items: stretch;
-    padding: 10px 16px 16px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
-  .nav-links.open { display: flex; }
-  .nav-links a { padding: 11px 14px; border-radius: 8px; }
-  .nav-dropdown > a::after { display: none; }
-  .dropdown-panel { display: block; position: static; transform: none;
-    background: rgba(255,255,255,.04); border: none; box-shadow: none;
-    border-radius: 8px; padding: 4px 0 4px 12px; min-width: auto; margin-top: 2px; }
-  .dropdown-panel a { font-size: .83rem; padding: 7px 10px; }
-}
-/* Footer fix */
-.site-footer { background: #1c1e21; color: #888; padding: 48px 20px 32px; margin-top: 60px; }
-.site-footer .footer-inner { max-width: 960px; margin: 0 auto; }
-.site-footer .footer-grid { display: grid; grid-template-columns: 1fr repeat(3, auto);
-  gap: 40px; margin-bottom: 36px; }
-@media(max-width: 700px) { .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
-@media(max-width: 440px) { .site-footer .footer-grid { grid-template-columns: 1fr; } }
-.site-footer .footer-brand .footer-logo { font-size: 1.1rem; font-weight: 800;
-  color: #fff; margin-bottom: 10px; }
-.site-footer .footer-brand .footer-logo .logo-accent { color: #ff5252; }
-.site-footer .footer-brand p { font-size: .83rem; color: #666; line-height: 1.6; max-width: 220px; }
-.site-footer .footer-col h4 { font-size: .8rem; font-weight: 700; color: #fff;
-  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
-.site-footer .footer-col a { display: block; color: #888 !important;
-  text-decoration: none !important; font-size: .85rem; margin-bottom: 8px;
-  transition: color .2s; }
-.site-footer .footer-col a:hover { color: #fff !important; }
-.site-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.07);
-  padding-top: 20px; display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 10px; }
-.site-footer .footer-bottom p { font-size: .78rem; color: #555; }
-.site-footer .footer-lang-btn { padding: 5px 14px; border-radius: 999px;
-  text-decoration: none !important; font-size: .82rem; font-weight: 600; transition: background .2s; }
-.site-footer .footer-lang-btn.en-fb { background: rgba(144,202,249,.12);
-  color: #90caf9 !important; border: 1px solid rgba(144,202,249,.3); }
-.site-footer .footer-lang-btn.en-fb:hover { background: rgba(144,202,249,.22) !important; }
-.site-footer .footer-lang-btn.es-fb { background: rgba(165,214,167,.1);
-  color: #a5d6a7 !important; border: 1px solid rgba(165,214,167,.3); }
-.site-footer .footer-lang-btn.es-fb:hover { background: rgba(165,214,167,.2) !important; }
-
-</style>
-
-<style id="mobile-nav-fix">
-@media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
-  .nav-links.open{display:flex !important}
-  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
-  .nav-dropdown{width:100% !important;position:static !important}
-  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
-  .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
-  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
-}
-</style>
 </head>
 <body>
+<div class="reading-bar" id="readingBar"></div>
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
-  <p style="margin-bottom:15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia y mostrar anuncios. <a href="privacidad.html" style="color:#ff4757;">Política de Privacidad</a>.</p>
-  <button onclick="localStorage.setItem('cookieConsent','accepted');this.parentElement.style.display='none';" style="background:#d32f2f;color:white;border:none;padding:10px 20px;border-radius:5px;margin-right:10px;cursor:pointer;">Aceptar</button>
-  <button onclick="localStorage.setItem('cookieConsent','rejected');this.parentElement.style.display='none';" style="background:#555;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">Rechazar</button>
-</div>
-<script>if(!localStorage.getItem('cookieConsent'))document.getElementById('cookie-banner').style.display='block';</script>
-
-<nav>
-  <a href="/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="nav-links">
-    <a href="/en/typography-for-youtube-thumbnails.html" class="lang-btn-en">🇬🇧 EN</a>
-    <a href="/">Inicio</a>
-    <div class="nav-dropdown">
-      <a href="/herramientas.html">🎯 Herramientas</a>
-      <div class="dropdown-panel">
-        <a href="/"><span class="dp-icon">🖼️</span>Extractor de Miniaturas</a>
-        <a href="/analizador-miniaturas.html"><span class="dp-icon">🔬</span>Analizador de Miniaturas</a>
-        <a href="/generador-titulos-youtube.html"><span class="dp-icon">✍️</span>Generador de Títulos</a>
-        <a href="/calculadora.html"><span class="dp-icon">🧮</span>Calculadora de Ganancias</a>
-        <a href="/calculadora-puntuacion-ctr.html"><span class="dp-icon">📊</span>CTR Score</a>
-        <a href="/checklist-miniaturas.html"><span class="dp-icon">✅</span>Checklist</a>
-      </div>
-    </div>
-    <a href="/blog.html">Blog</a>
-    <a href="/glosario.html">Glosario</a>
-    <a href="/contacto.html">Contacto</a>
+  <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:#fff;padding:18px 20px;text-align:center;z-index:9999;">
+    <p style="margin-bottom:12px">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia y mostrar anuncios. <a href="privacidad.html" style="color:#ff4757">Política de Privacidad</a>.</p>
+    <button id="accept-cookies" style="background:#455a64;color:#fff;border:none;padding:9px 20px;border-radius:5px;margin-right:8px;cursor:pointer;font-weight:600">Aceptar</button>
+    <button id="reject-cookies" style="background:#555;color:#fff;border:none;padding:9px 20px;border-radius:5px;cursor:pointer">Rechazar</button>
   </div>
-</nav>
+
+  <nav>
+    <a href="/" class="nav-logo">🚀 Tube<span>Tools</span></a>
+    <button class="nav-toggle" aria-label="Menú" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="/en/typography-for-youtube-thumbnails.html" class="lang-btn-en">🇬🇧 EN</a>
+      <a href="/">Inicio</a>
+      <div class="nav-dropdown">
+        <a href="/herramientas.html">🎯 Herramientas</a>
+        <div class="dropdown-panel">
+          <a href="/"><span class="dp-icon">🖼️</span>Extractor de Miniaturas</a>
+          <a href="/analizador-miniaturas.html"><span class="dp-icon">🔬</span>Analizador de Miniaturas</a>
+          <a href="/generador-titulos-youtube.html"><span class="dp-icon">✍️</span>Generador de Títulos</a>
+          <a href="/calculadora.html"><span class="dp-icon">🧮</span>Calculadora de Ganancias</a>
+          <a href="/calculadora-puntuacion-ctr.html"><span class="dp-icon">📊</span>CTR Score</a>
+          <a href="/checklist-miniaturas.html"><span class="dp-icon">✅</span>Checklist</a>
+        </div>
+      </div>
+      <a href="/blog.html">Blog</a>
+      <a href="/glosario.html">Glosario</a>
+      <a href="/contacto.html">Contacto</a>
+    </div>
+  </nav>
 
 <div style="max-width:760px;margin:24px auto 0;padding:0 20px;display:flex;align-items:center;gap:14px">
   <img src="/daniel-avatar.jpg" alt="Daniel, creador de TubeTools" width="44" height="44" style="border-radius:50%;object-fit:cover;flex-shrink:0">
   <div style="font-size:.85rem;color:#666;line-height:1.5">
-    Escrito por <a href="/about.html" style="color:#d32f2f;font-weight:700;text-decoration:none">Daniel</a>, creador de TubeTools &middot; Actualizado el 5 de mayo de 2026
+    Escrito por <a href="/about.html" style="color:#37474f;font-weight:700;text-decoration:none">Daniel</a>, creador de TubeTools &middot; Actualizado el 2 de agosto de 2026
   </div>
 </div>
 
-
-<header class="article-header">
-  <div class="container">
-    <h1 class="display-3 fw-bold">La Regla de 1.5 Segundos</h1>
-    <p class="lead opacity-75">Cómo la psicología tipográfica decide tu CTR en YouTube en 2026</p>
+  <div class="hero">
+    <div class="hero-eyebrow">🔤 Psicología del Diseño · Miniaturas de YouTube</div>
+    <h1>Tipografía para Miniaturas<br><em>La Regla de 1.5 Segundos</em></h1>
+    <p class="hero-sub">Tienes exactamente 1.5 segundos para convencer a un usuario de que deje de hacer scroll. Si tu tipografía introduce un solo microsegundo de fricción cognitiva, has perdido al espectador para siempre.</p>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-val">1.5s</span><span class="hstat-label">Ventana de decisión</span></div>
+      <div class="hstat"><span class="hstat-val">3</span><span class="hstat-label">Palabras máximo en texto</span></div>
+      <div class="hstat"><span class="hstat-val">10%</span><span class="hstat-label">Prueba de legibilidad</span></div>
+      <div class="hstat"><span class="hstat-val">70%</span><span class="hstat-label">De tu audiencia ve en móvil</span></div>
+    </div>
   </div>
-</header>
 
-<main class="container" id="main-content">
-  <article class="article-body">
-    <p class="text-muted small mb-4 text-uppercase fw-bold">6 Minutos de Lectura • Psicología del Diseño</p>
+  <div class="breadcrumb">
+    <a href="/">Inicio</a><span>›</span>
+    <a href="/blog.html">Blog</a><span>›</span>
+    Tipografía para Miniaturas
+  </div>
 
-    <p class="lead fw-bold">Tienes exactamente 1.5 segundos para convencer a un usuario de que deje de hacer scroll y haga clic. Si tu miniatura contiene texto, el cerebro humano debe renderizar, procesar y comprender esas palabras en una fracción de ese tiempo. Si tu tipografía introduce un solo microsegundo de fricción cognitiva, has perdido al espectador para siempre. Esto es lo que separa las miniaturas que convierten del 2% de las que lo hacen al 10%.</p>
-
-    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&auto=format" alt="Tipografía para miniaturas de YouTube CTR" loading="lazy" decoding="async">
-
-    <h2>1. El Fin de la Sombra Paralela (Drop Shadow)</h2>
-    <p>Durante una década, el consejo estándar era añadir una sombra paralela negra al texto blanco para hacerlo legible sobre fondos complejos. En 2026, esta técnica está oficialmente obsoleta y está perjudicando tu CTR.</p>
-    <p>El problema es matemático: las sombras crean un área de degradado borrosa y sucia alrededor de las letras. Cuando la miniatura se reduce al tamaño de móvil (aproximadamente el 70% de tus visualizaciones), esa área borrosa destruye la definición de los bordes de las letras, haciendo que el texto sea más difícil de leer rápidamente, no más fácil.</p>
-    <p>El estándar de élite en 2026 se basa en dos técnicas alternativas superiores:</p>
-    <ul>
-      <li><strong>Trazos gruesos (Strokes/Outlines):</strong> Un borde duro de 3-5 píxeles alrededor de cada letra, del color opuesto al fondo. Los bordes crean un límite innegable entre el texto y la imagen sin el desenfoque de las sombras.</li>
-      <li><strong>Cajas de fondo geométricas sólidas:</strong> Colocar el texto sobre un rectángulo o franja de color sólido garantiza el 100% de legibilidad en cualquier fondo, a cualquier tamaño. Los creadores de mayor RPM, especialmente en nichos de finanzas, usan esta técnica consistentemente.</li>
-    </ul>
-
-    <div class="font-demo">
-      <p style="color:white;font-size:1.3rem;font-weight:900;letter-spacing:-1px;text-shadow:3px 3px 6px black;">❌ Texto con sombra: difícil de leer en móvil</p>
-      <p style="color:white;font-size:1.3rem;font-weight:900;letter-spacing:-1px;-webkit-text-stroke:2px black;">✅ Texto con trazo: legible a cualquier escala</p>
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="meta-badge">Diseño</span>
+      <span class="meta-text">Por Daniel · Actualizado agosto 2026 · 15 min de lectura</span>
     </div>
 
-    <h2>2. Kerning y Carga Cognitiva</h2>
-    <p>El kerning es el espacio entre las letras individuales. Al diseñar una miniatura, el espaciado estándar que usan programas como Canva o Photoshop por defecto es literalmente tu enemigo.</p>
-    <p>El algoritmo de YouTube recompensa a los creadores cuyo texto se procesa en menos tiempo. Cuando las letras están demasiado separadas, el ojo las procesa como formas individuales en lugar de como un solo concepto cohesionado, aumentando el tiempo de procesamiento cognitivo y destruyendo la ventana de 1.5 segundos.</p>
-    <p>La técnica correcta es el kerning negativo: apretar el espacio entre las letras para que las palabras formen un bloque visual denso y unitario. En Canva, ajusta el "Letter spacing" a valores entre -20 y -50 para títulos cortos. En Photoshop, usa la opción de "Metrics" o kerning manual con Alt+Flecha izquierda.</p>
+    <div class="article-body" id="main-content">
 
-    <div class="tip-box">
-      <strong>🔤 Regla de Fuentes: El Dominio Sans-Serif</strong>
-      <p style="margin-top:15px;margin-bottom:0;">Nunca uses fuentes con serifas (Times New Roman, Georgia) en una miniatura. Fueron diseñadas para leer largos párrafos en papel impreso, con iluminación controlada. Para el micro-copy digital que debe ser legible en 1.5 segundos y a escala reducida, necesitas fuentes sans-serif ultra-gruesas. Las mejores opciones:</p>
-      <ul style="margin-top:10px;">
-        <li><strong>Impact</strong> (gratuita, nativa): La fuente estándar del meme y de millones de miniaturas exitosas. Alta densidad visual, legible a cualquier escala.</li>
-        <li><strong>Montserrat Black / ExtraBold</strong> (Google Fonts, gratuita): Moderna, limpia y disponible en Canva. Ideal para canales que buscan imagen premium.</li>
-        <li><strong>Bebas Neue</strong> (Google Fonts, gratuita): Mayúsculas únicamente, pero de impacto máximo. Muy usada en canales de fitness, motivación y entretenimiento.</li>
-        <li><strong>Anton</strong> (Google Fonts, gratuita): Condensada y de peso extremo. Perfecta para texto largo que debe caber en poco espacio.</li>
+      <p>Tienes exactamente 1.5 segundos para convencer a un usuario de que deje de hacer scroll y haga clic. Si tu miniatura contiene texto, el cerebro humano debe renderizar, procesar y comprender esas palabras en una fracción de ese tiempo. Si tu tipografía introduce un solo microsegundo de fricción cognitiva, has perdido al espectador para siempre. Esto es lo que separa las miniaturas que convierten al 2% de las que convierten al 10%.</p>
+
+      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1000&auto=format" alt="Tipografía para miniaturas de YouTube y CTR" loading="lazy" decoding="async">
+
+      <h2>El Fin de la Sombra Paralela (Drop Shadow)</h2>
+      <p>Durante una década, el consejo estándar era añadir una sombra paralela negra al texto blanco para hacerlo legible sobre fondos complejos. En 2026, esta técnica está oficialmente obsoleta y está perjudicando tu CTR.</p>
+      <p>El problema es matemático: las sombras crean un área de degradado borrosa y sucia alrededor de las letras. Cuando la miniatura se reduce al tamaño de móvil, aproximadamente el 70% de tus visualizaciones, esa área borrosa destruye la definición de los bordes de las letras, haciendo que el texto sea más difícil de leer rápidamente, no más fácil.</p>
+      <p>El estándar de élite en 2026 se basa en dos técnicas alternativas superiores:</p>
+      <ul>
+        <li><strong>Trazos gruesos (strokes/outlines):</strong> un borde duro de 3-5 píxeles alrededor de cada letra, del color opuesto al fondo. Los bordes crean un límite innegable entre el texto y la imagen sin el desenfoque de las sombras.</li>
+        <li><strong>Cajas de fondo geométricas sólidas:</strong> colocar el texto sobre un rectángulo o franja de color sólido garantiza el 100% de legibilidad en cualquier fondo, a cualquier tamaño. Los creadores de mayor RPM, especialmente en nichos de finanzas, usan esta técnica de forma consistente.</li>
       </ul>
+
+      <div class="font-demo">
+        <p style="color:white;font-size:1.3rem;font-weight:900;letter-spacing:-1px;text-shadow:3px 3px 6px black;">❌ Texto con sombra: difícil de leer en móvil</p>
+        <p style="color:white;font-size:1.3rem;font-weight:900;letter-spacing:-1px;-webkit-text-stroke:2px black;">✅ Texto con trazo: legible a cualquier escala</p>
+      </div>
+
+      <h2>Kerning y Carga Cognitiva</h2>
+      <p>El kerning es el espacio entre las letras individuales. Al diseñar una miniatura, el espaciado estándar que usan por defecto programas como Canva o Photoshop es, literalmente, tu enemigo. Estos programas están optimizados para texto de párrafo largo, donde un espaciado generoso mejora la lectura sostenida, pero ese mismo espaciado generoso perjudica precisamente el tipo de lectura instantánea que necesita una miniatura, donde el objetivo no es leer con comodidad sino reconocer el mensaje de un solo vistazo.</p>
+      <p>El algoritmo de YouTube favorece a los creadores cuyo texto se procesa en menos tiempo. Cuando las letras están demasiado separadas, el ojo las procesa como formas individuales en lugar de como un solo concepto cohesionado, aumentando el tiempo de procesamiento cognitivo y destruyendo la ventana de 1.5 segundos.</p>
+      <p>La técnica correcta es el kerning negativo: apretar el espacio entre las letras para que las palabras formen un bloque visual denso y unitario. En Canva, ajusta el espaciado entre letras a valores entre -20 y -50 para títulos cortos. En Photoshop, usa la opción de kerning "Metrics" o kerning manual con Alt+Flecha izquierda.</p>
+
+      <div class="box box-tip">
+        <span class="box-icon">🔤 REGLA DE FUENTES: EL DOMINIO SANS-SERIF</span>
+        <p>Nunca uses fuentes con serifas (Times New Roman, Georgia) en una miniatura. Fueron diseñadas para leer largos párrafos en papel impreso, con iluminación controlada. Para el micro-copy digital que debe ser legible en 1.5 segundos y a escala reducida, necesitas fuentes sans-serif ultra-gruesas.</p>
+      </div>
+
+      <div class="table-wrap">
+        <div class="table-label">🔠 Fuentes gratuitas recomendadas para miniaturas</div>
+        <table>
+          <tr><th>Fuente</th><th>Estilo</th><th>Mejor para</th></tr>
+          <tr><td>Impact</td><td>Nativa, alta densidad visual</td><td>Uso universal, cualquier nicho</td></tr>
+          <tr><td>Montserrat Black / ExtraBold</td><td>Moderna, limpia, disponible en Canva</td><td>Canales con imagen premium</td></tr>
+          <tr><td>Bebas Neue</td><td>Mayúsculas únicamente, impacto máximo</td><td>Fitness, motivación, entretenimiento</td></tr>
+          <tr><td>Anton</td><td>Condensada, peso extremo</td><td>Texto largo en poco espacio</td></tr>
+        </table>
+      </div>
+
+      <h2>La Regla del Máximo de 3 Palabras</h2>
+      <p>El texto de tu miniatura no es un subtítulo. No es un resumen. No es una descripción. Es el remate de un chiste cuya introducción es la imagen visual. Si necesitas más de 3 palabras para comunicar tu gancho, no has encontrado el gancho correcto todavía.</p>
+      <p>Las 3 palabras de tu miniatura nunca deben repetir el título del vídeo. Eso es redundancia de información y desperdicia el único espacio visual que tienes. En su lugar, deben ofrecer:</p>
+      <ul>
+        <li><strong>Un número impactante:</strong> "37 DÍAS", "10.000€", "3 ERRORES".</li>
+        <li><strong>Una emoción poderosa:</strong> "NUNCA MÁS", "TODO CAMBIÓ", "SE ACABÓ".</li>
+        <li><strong>Un contraste sorprendente:</strong> "YO PERDÍ", "NADIE LO DICE", "FUNCIONA SIEMPRE".</li>
+      </ul>
+      <p>La función de estas palabras es crear una disonancia cognitiva con la imagen visual que obligue al espectador a leer el título del vídeo para obtener el contexto completo. La miniatura hace la pregunta; el título da la respuesta.</p>
+
+      <h2>Tamaño de Texto: La Prueba del 10%</h2>
+      <p>El error más común entre creadores emergentes es diseñar el texto a un tamaño que se ve bien en su pantalla de escritorio pero que se vuelve ilegible en móvil. Para evitar este error fatal, aplica la prueba del 10%:</p>
+      <ul>
+        <li>Reduce tu miniatura al 10% de su tamaño original, aproximadamente 128x72 píxeles.</li>
+        <li>Si puedes leer el texto en ese tamaño, es suficientemente grande.</li>
+        <li>Si no puedes, el texto es demasiado pequeño para el 70% de tu audiencia que te ve en móvil.</li>
+      </ul>
+      <p>Como regla general, el texto de miniatura debe ocupar como mínimo el 25-30% de la altura de la imagen. Si tu texto ocupa menos que eso, es demasiado pequeño para ser efectivo.</p>
+
+      <div class="box box-warning">
+        <span class="box-icon">⚠️ TRAMPA COMÚN</span>
+        <p>Canva muestra tu diseño en una resolución muy alta que puede hacer que el texto se vea legible cuando en realidad es demasiado pequeño. Descarga siempre tu miniatura y ábrela en una pestaña nueva, luego reduce el zoom del navegador al 10-15% para simular el tamaño real en el feed de móvil.</p>
+      </div>
+
+      <h2>La Ciencia de la Legibilidad a Tamaño Reducido</h2>
+      <p>Detrás de la regla del 10% hay un principio de percepción visual bien documentado: la capacidad del ojo para reconocer una letra depende de su altura de x, es decir, la altura de las letras minúsculas sin ascendentes ni descendentes, en relación con el tamaño total de visualización. Las fuentes con una altura de x generosa, como la mayoría de las sans-serif gruesas recomendadas en este artículo, mantienen la legibilidad a tamaños donde fuentes con una altura de x más reducida ya se han vuelto ilegibles.</p>
+      <p>Otro factor determinante es el grosor del trazo relativo al tamaño de la letra. A tamaño miniatura, un trazo fino se degrada visualmente hasta casi desaparecer, mientras que un trazo grueso conserva su forma reconocible incluso con la compresión de imagen que aplica YouTube al generar las miniaturas en distintas resoluciones. Esta es la razón técnica, no solo estética, por la que las fuentes ultra-negrita dominan las miniaturas de alto rendimiento: no es una moda, es una consecuencia directa de cómo se degrada la información visual al reducir la escala.</p>
+      <p>La compresión de imagen de YouTube añade una variable adicional. El códec de compresión tiende a suavizar bordes de alto contraste para reducir el peso del archivo, lo que puede erosionar ligeramente la nitidez de trazos finos. Un trazo de contorno grueso actúa como margen de seguridad frente a esta compresión: aunque pierda algo de definición, sigue siendo claramente legible, mientras que un trazo fino puede desaparecer casi por completo.</p>
+
+      <h2>Jerarquía Tipográfica: Cuándo Usar Dos Fuentes</h2>
+      <p>Algunos creadores logran el máximo impacto usando una combinación de dos fuentes: una fuente muy grande para el elemento principal, como un número o palabra clave, y una fuente secundaria ligeramente más pequeña para el contexto. Esta técnica crea jerarquía visual que guía al ojo a través del texto en el orden correcto.</p>
+      <ul>
+        <li>Nunca uses más de 2 fuentes distintas en una miniatura.</li>
+        <li>La diferencia de tamaño entre la fuente primaria y la secundaria debe ser de al menos el 40%.</li>
+        <li>Usa la misma familia tipográfica en distintos pesos, como Bold y Regular, en lugar de dos familias completamente distintas.</li>
+        <li>Combina una fuente sans-serif pesada para el título y una ligeramente más ligera para el subtexto.</li>
+      </ul>
+
+      <h2>Mayúsculas: Por Qué Casi Todo el Mundo las Usa</h2>
+      <p>Si te fijas en las miniaturas de mayor rendimiento en cualquier nicho, notarás un patrón casi universal: el texto está en mayúsculas. No es casualidad ni pereza de diseño. Las palabras en mayúsculas forman bloques rectangulares uniformes, mientras que el texto en minúsculas tiene una silueta irregular por las ascendentes y descendentes de letras como "b", "d", "p" o "g". A tamaño reducido, esa silueta irregular añade complejidad visual que ralentiza el reconocimiento, mientras que el bloque uniforme de las mayúsculas se procesa como una sola forma reconocible.</p>
+      <p>Hay una excepción a tener en cuenta: usar mayúsculas para toda la miniatura de forma sistemática, sin variación, puede perder impacto por pura habituación visual, igual que ocurre con las expresiones faciales repetidas. Una técnica que usan algunos canales de alto rendimiento es reservar la minúscula, o una palabra en formato distinto, para un único término dentro del texto que se quiere destacar por contraste tipográfico, no solo por color o tamaño. Es un recurso que conviene usar con moderación, no como regla por defecto.</p>
+
+      <h2>Alineación y Composición del Texto en la Miniatura</h2>
+      <p>Dónde colocas el texto dentro del encuadre importa casi tanto como qué dice y con qué fuente está escrito. La composición tipográfica en miniaturas sigue algunas reglas prácticas que se repiten en los canales con mejor rendimiento consistente.</p>
+      <ul>
+        <li><strong>Evita el centro exacto del rostro:</strong> si tu miniatura incluye una cara, el texto no debe superponerse a los ojos ni a la boca, las zonas que más atención capturan según los patrones de seguimiento ocular. Colócalo en el tercio superior o inferior, dejando el rostro despejado.</li>
+        <li><strong>Alinea con la regla de los tercios:</strong> divide mentalmente la miniatura en una cuadrícula de 3x3 y coloca el bloque de texto sobre una de las líneas o intersecciones, no pegado a un borde ni exactamente centrado, para lograr una composición que el ojo recorre con más naturalidad.</li>
+        <li><strong>Deja aire alrededor del texto:</strong> un margen de seguridad de al menos el 5% del ancho de la imagen entre el texto y los bordes evita que el recorte automático de YouTube en distintos formatos, como Shorts o la vista de escritorio, corte parte de las letras.</li>
+        <li><strong>Mantén el texto en una sola línea cuando sea posible:</strong> dos líneas de texto reducen el tamaño disponible para cada una y añaden un salto de lectura adicional. Si tu gancho no cabe en una línea a tamaño legible, probablemente sea demasiado largo.</li>
+      </ul>
+
+      <div class="box box-slate">
+        <span class="box-icon">📐 COMPOSICIÓN RÁPIDA</span>
+        <p>Una plantilla de composición que funciona en la mayoría de nichos: sujeto principal ocupando dos tercios del encuadre a un lado, texto en mayúsculas de una sola línea en el tercio restante, y un elemento de acento, como una flecha o un icono, opcional, conectando visualmente ambos elementos.</p>
+      </div>
+
+      <h2>Colores de Texto: Los 3 Combos que Siempre Funcionan</h2>
+      <div class="table-wrap">
+        <div class="table-label">🎨 Combinaciones de texto con mejor legibilidad</div>
+        <table>
+          <tr><th>Fondo del texto</th><th>Color del texto</th><th>Trazo (stroke)</th><th>Resultado</th></tr>
+          <tr><td>Oscuro (azul, negro)</td><td>Blanco puro</td><td>Negro 2-3px</td><td><span class="badge badge-high">Universal</span></td></tr>
+          <tr><td>Claro (beige, gris)</td><td>Negro</td><td>Blanco 2px</td><td>Premium, sobrio</td></tr>
+          <tr><td>Medio (azul medio)</td><td>Amarillo</td><td>Negro 3px</td><td>Alta energía, muy visible</td></tr>
+        </table>
+      </div>
+
+      <h2>Cómo Hacer A/B Testing de tu Tipografía</h2>
+      <p>La teoría tipográfica de este artículo es un punto de partida sólido, pero la validación definitiva siempre viene de los datos de tu propio canal. Antes de asumir que una fuente o combinación de color "funciona mejor" de forma universal, conviene probarla de forma controlada con tu audiencia específica, que puede tener particularidades de dispositivo, edad o hábito de consumo distintas a la media.</p>
+      <p>Un test tipográfico bien diseñado cambia una sola variable a la vez: mantén la misma imagen de fondo, el mismo mensaje y la misma composición, y varía únicamente la fuente, el color del trazo o el tamaño del texto entre las dos versiones. Publica ambas variantes en vídeos comparables, con temática y audiencia potencial similares, y compara el CTR resultante tras un volumen de impresiones suficiente, normalmente varios miles, antes de sacar conclusiones definitivas.</p>
+      <p>Documenta cada test en una hoja de seguimiento simple: fecha, variable probada, CTR de cada variante y conclusión. Con el tiempo, este historial se convierte en una guía de estilo tipográfico basada en datos reales de tu canal, mucho más valiosa que cualquier recomendación genérica, incluida la de este artículo.</p>
+
+      <h2>Errores Comunes de Tipografía en Miniaturas</h2>
+      <p>Incluso conociendo la teoría, es fácil caer en errores de ejecución que anulan el impacto de una buena estrategia tipográfica. Estos son los más frecuentes entre creadores que empiezan a trabajar su texto de forma más deliberada.</p>
+
+      <div class="mistake-list">
+        <div class="mistake">
+          <span class="mistake-icon">🌫️</span>
+          <div class="mistake-body">
+            <h3>Seguir usando sombras paralelas</h3>
+            <p>La sombra difumina los bordes y reduce la legibilidad a tamaño reducido. Sustitúyela siempre por un trazo de contorno sólido o una caja de fondo geométrica.</p>
+          </div>
+        </div>
+        <div class="mistake">
+          <span class="mistake-icon">📏</span>
+          <div class="mistake-body">
+            <h3>Diseñar el texto solo en pantalla de escritorio</h3>
+            <p>Un texto que se ve perfecto ampliado en el editor puede ser ilegible a tamaño real en móvil. Aplica siempre la prueba del 10% antes de publicar.</p>
+          </div>
+        </div>
+        <div class="mistake">
+          <span class="mistake-icon">🔤</span>
+          <div class="mistake-body">
+            <h3>Usar fuentes con serifas o de trazo fino</h3>
+            <p>Diseñadas para párrafos largos impresos, no para micro-copy digital. Se degradan rápidamente al comprimirse a tamaño miniatura.</p>
+          </div>
+        </div>
+        <div class="mistake">
+          <span class="mistake-icon">📝</span>
+          <div class="mistake-body">
+            <h3>Repetir el título del vídeo en el texto de la miniatura</h3>
+            <p>Desperdicia el único espacio visual disponible. El texto de la miniatura debe aportar información nueva, no duplicar lo que ya dice el título.</p>
+          </div>
+        </div>
+        <div class="mistake">
+          <span class="mistake-icon">🎨</span>
+          <div class="mistake-body">
+            <h3>Combinar más de 2 fuentes distintas</h3>
+            <p>Cada fuente adicional añade ruido visual y reduce la cohesión de la miniatura. Ciñe siempre la jerarquía a una sola familia tipográfica en distintos pesos cuando sea posible.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Tipografía y Audiencia Hispana en Estados Unidos</h2>
+      <p>Un matiz relevante si una parte de tu audiencia se conecta desde Estados Unidos: este público navega un feed donde conviven miniaturas en español y en inglés, muchas de ellas con un tratamiento tipográfico muy pulido. Aplicar con disciplina el sistema de trazo, kerning negativo y la prueba del 10% ayuda a que tu texto en español compita en igualdad de condiciones visuales frente a canales angloparlantes con más recursos de producción.</p>
+      <p>Esto tiene una implicación económica directa: el CPM en Estados Unidos suele ser varias veces superior al CPM medio en Latinoamérica, así que perfeccionar la ejecución tipográfica de tu canal tiene un retorno proporcionalmente mayor cuando una parte relevante de tu audiencia se conecta desde allí.</p>
+
+      <div class="box box-insight">
+        <span class="box-icon">💰 IMPLICACIÓN PARA TU ESTRATEGIA</span>
+        <p>Si detectas una proporción significativa de audiencia en Estados Unidos, prioriza la legibilidad extrema por encima de la originalidad tipográfica: en un feed más competitivo, un texto que se lee en una fracción de segundo pesa más que una fuente vistosa pero menos clara.</p>
+      </div>
+
+      <h2>Flujo de Trabajo para Diseñar el Texto de tu Miniatura</h2>
+      <p>Tener un proceso repetible evita depender de la inspiración del momento y garantiza que cada miniatura cumpla los estándares mínimos de legibilidad antes de publicarse.</p>
+
+      <div class="strategy-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Define el gancho en 3 palabras o menos</h3>
+            <p>Antes de abrir el editor, escribe el número, la emoción o el contraste que quieres comunicar, sin repetir el título del vídeo.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Elige una fuente sans-serif ultra-gruesa</h3>
+            <p>Usa una de las fuentes recomendadas de la tabla y aplica kerning negativo para compactar el bloque de texto.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Aplica trazo de contorno, no sombra</h3>
+            <p>Añade un trazo sólido de 3-5px del color opuesto al fondo, o una caja geométrica sólida si el fondo es muy variable.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>Aplica la prueba del 10% antes de publicar</h3>
+            <p>Descarga la miniatura, ábrela en una pestaña nueva y reduce el zoom al 10-15% para confirmar que el texto sigue siendo legible a tamaño real.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-tool">
+        <h3>🔬 Audita tu legibilidad tipográfica</h3>
+        <p>Utiliza el Extractor de Miniaturas en HD para analizar las portadas de los canales más exitosos de tu nicho en resolución completa y estudiar sus configuraciones exactas de trazo, kerning y tipografía.</p>
+        <a href="/analizador-miniaturas.html">Iniciar Auditoría Visual Gratis →</a>
+      </div>
+
+      <h2>Artículos Relacionados</h2>
+      <div class="related-grid">
+        <a href="expresiones-faciales-miniaturas-youtube.html" class="related-card"><strong>Expresiones Faciales y CTR</strong></a>
+        <a href="diseno-mobile-first-miniaturas-youtube.html" class="related-card"><strong>Diseño Mobile-First para Miniaturas</strong></a>
+        <a href="teoria-del-color-miniaturas-youtube.html" class="related-card"><strong>Teoría del Color Avanzada</strong></a>
+        <a href="ciencia-del-alto-ctr-en-youtube.html" class="related-card"><strong>La Ciencia del Alto CTR en YouTube</strong></a>
+        <a href="generador-titulos-youtube.html" class="related-card tool-card"><strong>✍️ Generador de Títulos</strong></a>
+        <a href="calculadora-puntuacion-ctr.html" class="related-card tool-card"><strong>📊 Calculadora de CTR Score</strong></a>
+      </div>
+
     </div>
 
-    <h2>3. La Regla del Máximo de 3 Palabras</h2>
-    <p>El texto de tu miniatura no es un subtítulo. No es un resumen. No es una descripción. Es el <em>remate de un chiste</em> cuya introducción es la imagen visual. Si necesitas más de 3 palabras para comunicar tu gancho, no has encontrado el gancho correcto todavía.</p>
-    <p>Las 3 palabras de tu miniatura nunca deben repetir el título del vídeo. Eso es redundancia de información y desperdicia el único espacio visual que tienes. En su lugar, deben ofrecer:</p>
-    <ul>
-      <li><strong>Un número impactante:</strong> "37 DÍAS", "$10,000", "3 ERRORES"</li>
-      <li><strong>Una emoción poderosa:</strong> "NUNCA MÁS", "TODO CAMBIÓ", "SE ACABÓ"</li>
-      <li><strong>Un contraste sorprendente:</strong> "YO PERDÍ", "NADIE LO DICE", "FUNCIONA SIEMPRE"</li>
-    </ul>
-    <p>La función de estas palabras es crear una disonancia cognitiva con la imagen visual que obligue al espectador a leer el título del vídeo para obtener el contexto completo. La miniatura hace la pregunta; el título da la respuesta.</p>
-
-    <h2>4. Tamaño de Texto: La Prueba del 10%</h2>
-    <p>El error más común entre creadores emergentes es diseñar el texto a un tamaño que se ve bien en su pantalla de escritorio pero que se vuelve ilegible en móvil. Para evitar este error fatal, aplica la Prueba del 10%:</p>
-    <ul>
-      <li>Reduce tu miniatura al 10% de su tamaño original (aproximadamente 128x72 píxeles)</li>
-      <li>Si puedes leer el texto en ese tamaño, es suficientemente grande</li>
-      <li>Si no puedes, el texto es demasiado pequeño para el 70% de tu audiencia (que te ve en móvil)</li>
-    </ul>
-    <p>Como regla general, el texto de miniatura debe ocupar como mínimo el 25-30% de la altura de la imagen. Si tu texto ocupa menos que eso, es demasiado pequeño para ser efectivo.</p>
-
-    <div class="warning-box">
-      <strong>⚠️ Trampa Común:</strong> Canva muestra tu diseño en una resolución muy alta que puede hacer que el texto se vea legible cuando en realidad es demasiado pequeño. Siempre descarga tu miniatura y ábrela en una pestaña nueva, luego reduce el zoom del navegador al 10-15% para simular el tamaño real en la feed de móvil.
+    <div class="faq-section">
+      <h2>❓ Preguntas Frecuentes</h2>
+      <div class="faq-item">
+        <h3>¿Qué fuente es mejor para las miniaturas de YouTube?</h3>
+        <p>Las mejores fuentes para miniaturas de YouTube son las tipografías sans-serif en negrita y gruesa: Impact, Bebas Neue, Montserrat ExtraBold y Anton. Estas fuentes mantienen la legibilidad a tamaños pequeños y en condiciones de bajo contraste. Evita las fuentes finas o de script, que se vuelven ilegibles a tamaño miniatura.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Debo usar sombras o contornos en el texto de la miniatura?</h3>
+        <p>Los contornos (trazos) son significativamente más efectivos que las sombras paralelas para el texto en miniaturas de YouTube. Un trazo negro o blanco de 3-5pt alrededor del texto mantiene la legibilidad en cualquier color de fondo. Las sombras crean un efecto de desenfoque que degrada la legibilidad a tamaños pequeños y en móvil.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Cómo hago el texto legible en cualquier fondo de miniatura?</h3>
+        <p>La técnica más fiable es un trazo de contorno sólido: texto blanco con trazo negro de 4pt, o texto negro con trazo blanco de 4pt. Esto garantiza la legibilidad en cualquier color de fondo. Para legibilidad adicional, añade un rectángulo semitransparente oscuro detrás del texto como medida secundaria.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Cuántas palabras debería tener el texto de una miniatura?</h3>
+        <p>Un máximo de 3 palabras. El texto de la miniatura no debe repetir el título del vídeo, sino aportar un número impactante, una emoción poderosa o un contraste sorprendente que genere disonancia con la imagen y obligue al espectador a leer el título para obtener el contexto completo.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Qué es la prueba del 10% para el texto de miniaturas?</h3>
+        <p>Consiste en reducir la miniatura al 10% de su tamaño original, aproximadamente 128x72 píxeles, y comprobar si el texto sigue siendo legible a ese tamaño. Si no se puede leer, el texto es demasiado pequeño para el 70% de la audiencia que consume YouTube en móvil. Como referencia, el texto debe ocupar al menos el 25-30% de la altura de la imagen.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Puedo combinar dos fuentes distintas en una miniatura?</h3>
+        <p>Sí, pero con límites estrictos: nunca más de 2 fuentes, con una diferencia de tamaño de al menos el 40% entre la principal y la secundaria. Es preferible usar la misma familia tipográfica en distintos pesos, como Bold y Regular, antes que combinar dos familias completamente distintas, que suele generar ruido visual.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿La tipografía de las miniaturas debe adaptarse para audiencia hispana en Estados Unidos?</h3>
+        <p>Los principios de legibilidad, kerning y contraste son universales, pero un canal con audiencia relevante en Estados Unidos compite en un feed con más miniaturas en inglés y mayor presupuesto de producción, por lo que un texto extremadamente legible y bien ejecutado técnicamente ayuda a destacar frente a esa competencia, especialmente relevante dado que el CPM de EE.UU. suele ser varias veces superior al de Latinoamérica.</p>
+      </div>
     </div>
 
-    <h2>5. Jerarquía Tipográfica: Cuándo Usar Dos Fuentes</h2>
-    <p>Algunos creadores logran el máximo impacto usando una combinación de dos fuentes: una fuente muy grande para el elemento principal (número, palabra clave) y una fuente secundaria ligeramente más pequeña para el contexto. Esta técnica crea jerarquía visual que guía al ojo a través del texto en el orden correcto.</p>
-    <p>Reglas para combinar fuentes en miniaturas:</p>
-    <ul>
-      <li>Nunca uses más de 2 fuentes distintas en una miniatura</li>
-      <li>La diferencia de tamaño entre la fuente primaria y la secundaria debe ser al menos del 40%</li>
-      <li>Usa la misma familia tipográfica en distintos pesos (Bold + Regular) en lugar de dos familias completamente distintas</li>
-      <li>Combina una fuente sans-serif pesada para el título y una ligeramente más ligera para el subtexto</li>
-    </ul>
-
-    <h2>6. Colores de Texto: Los 3 Combos que Siempre Funcionan</h2>
-    <table>
-      <tr><th>Fondo del texto</th><th>Color del texto</th><th>Trazo (stroke)</th><th>Resultado</th></tr>
-      <tr><td>Oscuro (azul, negro)</td><td>Blanco puro #FFFFFF</td><td>Negro 2-3px</td><td>Universal, máxima legibilidad</td></tr>
-      <tr><td>Claro (beige, gris)</td><td>Negro #1c1e21</td><td>Blanco 2px</td><td>Premium, sobrio</td></tr>
-      <tr><td>Medio (azul medio)</td><td>Amarillo #FFD700</td><td>Negro 3px</td><td>Alta energía, muy visible</td></tr>
-    </table>
-
-    <div class="cta-section">
-      <h3 class="fw-bold mb-3">Audita tu Legibilidad Tipográfica</h3>
-      <p>¿Tus fuentes superan la prueba del 10%? Utiliza nuestro <strong>Extractor de Miniaturas en HD</strong> para analizar las portadas de los canales más exitosos de tu nicho en resolución completa y estudiar sus configuraciones exactas de trazo, kerning y tipografía.</p>
-      <a href="index.html" class="btn btn-lg rounded-pill px-5 py-3 fw-bold mt-3" style="background:#9b59b6;color:white;">INICIAR AUDITORÍA VISUAL GRATIS</a>
-    </div>
-  </article>
-  <section style="margin:30px 0;padding:20px 25px;background:linear-gradient(135deg,#1c1e21,#d32f2f);border-radius:12px;color:#fff;">
-    <strong style="font-size:1rem;">🛠️ Herramientas gratuitas para creadores:</strong>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;">
-      <a href="generador-titulos-youtube.html" style="padding:9px 16px;background:#fff;border-radius:6px;text-decoration:none;color:#d32f2f;font-weight:600;font-size:.85rem;">🎯 Generador de Títulos</a>
-      <a href="calculadora-puntuacion-ctr.html" style="padding:9px 16px;background:#fff;border-radius:6px;text-decoration:none;color:#d32f2f;font-weight:600;font-size:.85rem;">📊 Calculadora CTR Score</a>
-      <a href="calculadora.html" style="padding:9px 16px;background:#fff;border-radius:6px;text-decoration:none;color:#d32f2f;font-weight:600;font-size:.85rem;">🧮 Calculadora de Ingresos</a>
-    </div>
-  </section>
-  
-  
-    <section style="margin:35px 0;padding:22px;border-top:2px solid #d32f2f;">
-      <h2 style="color:#d32f2f;margin-bottom:18px;">📚 Artículos Relacionados</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
-        <a href="expresiones-faciales-miniaturas-youtube.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Expresiones Faciales y CTR</strong></a><a href="diseno-mobile-first-miniaturas-youtube.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Diseño Mobile-First</strong></a><a href="teoria-del-color-miniaturas-youtube.html" style="display:block;padding:14px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;margin-bottom:10px;"><strong style="font-size:.9rem;">Teoría del Color Avanzada</strong></a>
-      </div>
-    </section>
-
-    <section style="margin:35px 0;padding:22px;background:#f9f9f9;border-radius:12px;">
-      <h2 style="color:#d32f2f;margin-bottom:18px;">❓ Preguntas Frecuentes</h2>
-      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Qué fuente es mejor para las miniaturas de YouTube?</h3>
-        <p style="color:#555;line-height:1.7;">Las mejores fuentes para miniaturas de YouTube son las tipografías sans-serif en negrita y gruesa: Impact, Bebas Neue, Montserrat ExtraBold y Anton. Estas fuentes mantienen la legibilidad a tamaños pequeños y en condiciones de bajo contraste. Evita las fuentes finas o de script, que se vuelven ilegibles a tamaño miniatura.</p>
-      </div>
-      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Debo usar sombras o contornos en el texto de la miniatura?</h3>
-        <p style="color:#555;line-height:1.7;">Los contornos (trazos) son significativamente más efectivos que las sombras paralelas para el texto en miniaturas de YouTube. Un trazo negro o blanco de 3-5pt alrededor del texto mantiene la legibilidad en cualquier color de fondo. Las sombras crean un efecto de desenfoque que degrada la legibilidad a tamaños pequeños y en móvil.</p>
-      </div>
-      <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:16px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">¿Cómo hago el texto legible en cualquier fondo de miniatura?</h3>
-        <p style="color:#555;line-height:1.7;">La técnica más fiable es un trazo de contorno sólido: texto blanco con trazo negro de 4pt, o texto negro con trazo blanco de 4pt. Esto garantiza la legibilidad en cualquier color de fondo. Para legibilidad adicional, añade un rectángulo semitransparente oscuro detrás del texto como medida secundaria.</p>
-      </div>
-    </section></main>
+  </div>
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -407,33 +519,24 @@ nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
       </div>
     </div>
   </footer>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('SW registrado', reg.scope))
-        .catch(err => console.log('SW error:', err));
-    });
-  }
-</script>
 
+  <script>
+    if(!localStorage.getItem('cookieConsent')) document.getElementById('cookie-banner').style.display='block';
+    document.getElementById('accept-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');document.getElementById('cookie-banner').style.display='none';});
+    document.getElementById('reject-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','rejected');document.getElementById('cookie-banner').style.display='none';});
+  </script>
+  <script>
+    (function(){var btn=document.querySelector('.nav-toggle');var links=document.querySelector('.nav-links');if(!btn||!links)return;btn.addEventListener('click',function(e){e.stopPropagation();var isOpen=links.classList.toggle('open');btn.textContent=isOpen?'✕':'☰';btn.setAttribute('aria-expanded',isOpen);});document.addEventListener('click',function(e){if(!links.contains(e.target)&&e.target!==btn){links.classList.remove('open');btn.textContent='☰';btn.setAttribute('aria-expanded','false');}});})();
+  </script>
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}</script>
 <script>
-(function(){
-  var btn = document.querySelector('.nav-toggle');
-  var links = document.querySelector('.nav-links');
-  if(!btn || !links) return;
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isOpen = links.classList.toggle('open');
-    btn.textContent = isOpen ? '✕' : '☰';
-  });
-  document.addEventListener('click', function(e){
-    if(!links.contains(e.target) && e.target !== btn){
-      links.classList.remove('open');
-      btn.textContent = '☰';
-    }
-  });
-})();
+window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('readingBar').style.width = progress + '%';
+});
 </script>
 </body>
 </html>
