@@ -1,0 +1,96 @@
+---
+type: tool
+title: YouTube Watch Hours Calculator (4,000 vs 8,000 Hours)
+description: Estimate when your channel will reach 4,000 or 8,000 watch hours and 1,000 subscribers, how many daily views you need, and whether you can qualify before the February 2027 change.
+h1: YouTube Watch Hours Calculator
+lead: Find out when your channel will reach the Partner Program's watch-time threshold — 4,000 hours today, 8,000 hours for new applicants from February 1, 2027 — and how many views a day it takes.
+alt: calculadora-horas-visualizacion
+nav: tools
+tool_order: 7
+icon: clock
+card_title: Watch Hours Calculator
+card_short: When you'll hit 4,000 / 8,000 hours
+card_desc: Project when you'll reach the YPP watch-hour and subscriber thresholds, before and after the 2027 change.
+crumb: Watch Hours Calculator
+script: watchhours
+---
+<script type="application/json" id="tool-i18n">{
+"reached":"Already reached.","noPace":"Add your daily views and average view duration.","tooLong":"More than 10 years at this pace.",
+"done":"Reached","inDays":"in about {d} days at your current pace",
+"t4000":"4,000 watch hours (current rule)","t8000":"8,000 watch hours (from Feb 1, 2027)","t1000subs":"1,000 subscribers",
+"verdict":"What this means for you",
+"vNow":"You already meet the current watch-hour and subscriber thresholds. If you're not in the Partner Program yet, apply now in YouTube Studio → Earn.",
+"vBefore":"At this pace you could reach 4,000 hours and 1,000 subscribers before February 1, 2027 — so you may be able to apply under the current rules. Keep your videos public and prioritize long-form uploads.",
+"vSubs":"You're on track for 4,000 hours before February 2027, but not for 1,000 subscribers. Focus on converting viewers to subscribers to apply under the current rules.",
+"vAfter":"At this pace you'll probably apply after February 1, 2027, when new applicants need 8,000 watch hours (or 20M Shorts views). Use the 8,000-hour date as your real target.",
+"sOk":"Your Shorts pace covers this threshold (it needs about {need} Shorts views a day).","sNo":"Needs about {need} Shorts views a day, every day, for 90 days."
+}</script>
+
+<div class="container">
+  <div class="two-col" style="margin-top:28px">
+    <form class="tool-panel" id="wh-form" style="margin:0" novalidate>
+      <h2>Your channel today</h2>
+      <p class="small muted">Find these in YouTube Studio → Earn (eligibility progress) and Analytics.</p>
+      <div class="form-grid">
+        <div class="field"><label for="wh-hours">Public watch hours (last 365 days)</label><input class="input" id="wh-hours" type="number" min="0" step="10" value="850"></div>
+        <div class="field"><label for="wh-subs">Subscribers</label><input class="input" id="wh-subs" type="number" min="0" step="10" value="420"></div>
+        <div class="field"><label for="wh-views">Long-form views per day</label><input class="input" id="wh-views" type="number" min="0" step="10" value="300"><span class="hint">Average over the last 28 days, excluding Shorts.</span></div>
+        <div class="field"><label for="wh-avd">Average view duration</label><input class="input" id="wh-avd" type="text" value="3:30" inputmode="numeric"><span class="hint">Minutes:seconds, e.g. 3:30</span></div>
+        <div class="field"><label for="wh-subgain">New subscribers per month</label><input class="input" id="wh-subgain" type="number" min="0" step="5" value="60"></div>
+      </div>
+      <h2 style="margin-top:8px">Shorts path <span class="muted small">(optional)</span></h2>
+      <div class="form-grid">
+        <div class="field"><label for="wh-shorts90">Shorts views (last 90 days)</label><input class="input" id="wh-shorts90" type="number" min="0" step="10000" value="0"></div>
+        <div class="field"><label for="wh-shortsday">Shorts views per day</label><input class="input" id="wh-shortsday" type="number" min="0" step="1000" value="0"></div>
+      </div>
+    </form>
+
+    <aside class="sticky-score" aria-live="polite">
+      <div class="tool-panel" style="margin:0">
+        <p class="label">At your current pace</p>
+        <div class="kpis" style="margin:8px 0 14px">
+          <div class="kpi"><b id="wh-daily">0</b><span>watch hours / day</span></div>
+          <div class="kpi"><b id="wh-yearly">0</b><span>watch hours / year</span></div>
+        </div>
+        <div class="result-grid" id="wh-results" style="grid-template-columns:1fr"></div>
+      </div>
+    </aside>
+  </div>
+
+  <div id="wh-verdict" class="callout callout-tip"></div>
+
+  <div class="tool-panel">
+    <h2>Daily views you need</h2>
+    <p>With your average view duration, you need about <strong id="wh-need4">—</strong> long-form views per day to earn 4,000 hours in a year, and about <strong id="wh-need">—</strong> views per day for 8,000 hours.</p>
+    <h2 style="margin-top:20px">Shorts thresholds (90-day window)</h2>
+    <ul class="recs" id="wh-shorts" style="list-style:none;padding-left:0"></ul>
+    <p class="panel-note">Estimates assume your current pace stays the same and that hours already earned stay within the rolling 365-day window. In reality, old watch time drops out of the window and pace changes, so re-check monthly.</p>
+  </div>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>How the calculator works</h2>
+    <p>Watch hours are simply views multiplied by how long people watch:</p>
+    <p class="formula">Daily watch hours = daily long-form views &times; average view duration (minutes) &divide; 60</p>
+    <p>The calculator adds that daily figure to the public watch hours you already have and estimates the date you'll pass each threshold. It does the same for subscribers using your monthly growth.</p>
+
+    <h2>The rules it's based on</h2>
+    <ul>
+      <li><strong>Until January 31, 2027:</strong> 1,000 subscribers plus 4,000 public watch hours in the last 12 months, or 10 million public Shorts views in the last 90 days.</li>
+      <li><strong>From February 1, 2027 (new applicants):</strong> 1,000 subscribers plus 8,000 qualified watch hours in the last 365 days, or 20 million qualified Shorts views in the last 90 days.</li>
+      <li><strong>What doesn't count:</strong> watch time from Shorts in the Shorts feed, private or unlisted videos, and deleted videos. Watch time from public live streams that are saved as videos does count.</li>
+    </ul>
+    <p>Full details and sources are in our guide to <a href="@youtube-monetization-requirements">YouTube monetization requirements</a>. For practical ways to speed things up, read <a href="@how-to-get-watch-hours">how to get watch hours faster (without breaking the rules)</a>.</p>
+
+    <h2>Why average view duration matters so much</h2>
+    <p>Doubling your average view duration has the same effect on watch hours as doubling your views — and it's often easier. A channel with 300 views a day at 2 minutes earns 10 hours a day; at 4 minutes, 20 hours. Better openings, clearer structure and longer (but not padded) videos all move this number. See <a href="@ctr-vs-watch-time-youtube-growth">CTR vs. watch time</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>Do Shorts count toward watch hours?</summary><p>No. Watch time from Shorts in the Shorts feed doesn't count toward the long-form watch-hours threshold. Shorts have their own path based on Shorts views over 90 days.</p></details>
+      <details><summary>What happens if I make a video private?</summary><p>Its watch time stops counting toward your public watch hours. If you want to hide an old video, it's usually better to wait until after you've been accepted.</p></details>
+      <details><summary>Can I buy watch hours?</summary><p>No. Bought or artificial watch time violates YouTube's policies, is filtered out of the count, and can get a channel rejected or terminated.</p></details>
+    </div>
+  </div>
+</section>

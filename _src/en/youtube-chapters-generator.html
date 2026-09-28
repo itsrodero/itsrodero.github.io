@@ -1,0 +1,75 @@
+---
+type: tool
+title: YouTube Chapters Generator & Timestamp Checker (Free)
+description: Paste your timestamps and get correctly formatted YouTube chapters, checked against YouTube's rules — start at 0:00, at least three chapters, 10 seconds minimum.
+h1: YouTube Chapters Generator
+lead: Paste your timestamps in any format. We'll turn them into chapters YouTube recognizes, fix the order, and flag anything that would stop chapters from appearing.
+alt: generador-capitulos-youtube
+nav: tools
+tool_order: 9
+icon: list
+card_title: Chapters Generator
+card_short: Format and validate video chapters
+card_desc: Turn messy timestamps into YouTube chapters and check them against YouTube's rules.
+crumb: Chapters Generator
+script: chapters
+---
+<script type="application/json" id="tool-i18n">{
+"noTime":"Line {n} has no timestamp and was skipped: \"{t}\"","introTitle":"Intro","empty":"Paste your timestamps to start.",
+"first":"The first chapter must start at 0:00.","three":"YouTube needs at least three chapters.",
+"order":"Timestamps must go in ascending order (check {t}).","short":"The chapter at {t} is shorter than 10 seconds.",
+"beyond":"The chapter at {t} starts after the end of the video.","noTitle":"The chapter at {t} has no title.",
+"added":"A 0:00 chapter was added and the list was sorted. Rename \"Intro\" if you like.",
+"valid":"Looks good: {n} chapters that follow YouTube's rules.","copied":"Copied ✓",
+"bOk":"OK","bWarn":"Check","bBad":"Fix","bInfo":"Info",
+"example":"Intro 0:00\n1:12 - Why most thumbnails fail\n(03:40) The one-sentence test\nDesign for small screens 6:05\n9:30 Testing with Test & Compare\n12:02 Recap"
+}</script>
+
+<div class="container">
+  <div class="form-grid" style="margin-top:28px;align-items:start">
+    <div class="tool-panel" style="margin:0">
+      <div class="toolbar" style="margin-bottom:8px"><label class="label" for="ch-input">Your timestamps</label><button type="button" class="btn btn-ghost btn-sm" id="ch-example">Load example</button></div>
+      <textarea class="textarea" id="ch-input" rows="12" spellcheck="false" placeholder="0:00 Intro&#10;1:12 First topic&#10;3:40 Second topic"></textarea>
+      <div class="form-grid" style="margin-top:12px">
+        <div class="field"><label for="ch-length">Video length <span class="muted">(optional)</span></label><input class="input" id="ch-length" type="text" placeholder="12:45" inputmode="numeric"></div>
+        <div class="field"><span class="label">Options</span><label class="check" style="margin-top:8px"><input type="checkbox" id="ch-fix" checked> <span>Sort and add a 0:00 chapter if missing</span></label></div>
+      </div>
+    </div>
+    <div class="tool-panel" style="margin:0">
+      <div class="toolbar" style="margin-bottom:8px"><label class="label" for="ch-output">Chapters for your description</label><button type="button" class="btn btn-primary btn-sm" id="ch-copy">Copy</button></div>
+      <textarea class="textarea" id="ch-output" rows="12" readonly spellcheck="false"></textarea>
+      <ul class="recs" id="ch-issues" style="list-style:none;padding-left:0;margin-top:12px" aria-live="polite"></ul>
+    </div>
+  </div>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>YouTube's rules for chapters</h2>
+    <p>Chapters appear on the progress bar and let viewers jump to a section. YouTube creates them from timestamps in your description, but only when these rules are met:</p>
+    <ol class="steps">
+      <li><strong>The first timestamp is 0:00.</strong> This is the most common reason chapters don't show up.</li>
+      <li><strong>There are at least three timestamps</strong>, listed in ascending order.</li>
+      <li><strong>Each chapter lasts at least 10 seconds.</strong></li>
+    </ol>
+    <p>Chapters can take a while to appear after you save the description. You can also let YouTube generate automatic chapters in YouTube Studio, but writing your own gives you control over the titles.</p>
+
+    <h2>What the generator accepts</h2>
+    <p>You can paste timestamps in almost any common format: <code>1:12 Title</code>, <code>Title 1:12</code>, <code>(01:12) Title</code>, <code>1:12 - Title</code>, or hour-long videos like <code>1:02:30 Title</code>. The output uses the format YouTube recognizes: one chapter per line, time first.</p>
+
+    <h2>Writing chapter titles that help</h2>
+    <ul>
+      <li><strong>Describe the content</strong>, not the format: "Choosing a microphone" beats "Part 2".</li>
+      <li><strong>Use the words people search for.</strong> Chapters can appear in Google search results as "key moments", so clear titles can bring extra visits.</li>
+      <li><strong>Keep them short</strong> so they fit on the progress bar on phones.</li>
+    </ul>
+    <p>Read our full guide to <a href="@youtube-chapters-guide">YouTube chapters and timestamps</a>, and see how chapters fit into <a href="@youtube-seo-guide">YouTube SEO</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>Why aren't my chapters showing?</summary><p>Check that the first timestamp is 0:00, that you have at least three, that they're in order and that each chapter is at least 10 seconds long. Chapters may also be turned off in the video's settings, or take some time to appear.</p></details>
+      <details><summary>Do chapters help SEO?</summary><p>They make videos easier to navigate and can appear as key moments in Google search. They won't rescue a video people don't want to watch, but they do help viewers find the part they came for.</p></details>
+      <details><summary>Is my text stored?</summary><p>Your last timestamps are saved only in your browser so you don't lose them. Nothing is sent to us.</p></details>
+    </div>
+  </div>
+</section>

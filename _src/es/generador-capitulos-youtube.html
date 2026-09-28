@@ -1,0 +1,75 @@
+---
+type: tool
+title: Generador de capítulos de YouTube y comprobador de marcas de tiempo
+description: Pega tus marcas de tiempo y obtén capítulos de YouTube bien formateados y revisados según las normas de YouTube: empezar en 0:00, al menos tres capítulos y 10 segundos mínimo.
+h1: Generador de capítulos de YouTube
+lead: Pega tus marcas de tiempo en cualquier formato. Las convertimos en capítulos que YouTube reconoce, corregimos el orden y avisamos de todo lo que impediría que aparezcan.
+alt: youtube-chapters-generator
+nav: tools
+tool_order: 9
+icon: list
+card_title: Generador de capítulos
+card_short: Formatea y valida capítulos del vídeo
+card_desc: Convierte marcas de tiempo desordenadas en capítulos de YouTube y revísalas según sus normas.
+crumb: Generador de capítulos
+script: chapters
+---
+<script type="application/json" id="tool-i18n">{
+"noTime":"La línea {n} no tiene marca de tiempo y se ha omitido: \"{t}\"","introTitle":"Introducción","empty":"Pega tus marcas de tiempo para empezar.",
+"first":"El primer capítulo debe empezar en 0:00.","three":"YouTube necesita al menos tres capítulos.",
+"order":"Las marcas de tiempo deben ir en orden ascendente (revisa {t}).","short":"El capítulo de {t} dura menos de 10 segundos.",
+"beyond":"El capítulo de {t} empieza después del final del vídeo.","noTitle":"El capítulo de {t} no tiene título.",
+"added":"Se ha añadido un capítulo en 0:00 y se ha ordenado la lista. Cambia «Introducción» si quieres.",
+"valid":"Todo bien: {n} capítulos que cumplen las normas de YouTube.","copied":"Copiado ✓",
+"bOk":"OK","bWarn":"Revisar","bBad":"Corregir","bInfo":"Info",
+"example":"Introducción 0:00\n1:12 - Por qué fallan la mayoría de miniaturas\n(03:40) La prueba de una frase\nDiseñar para pantallas pequeñas 6:05\n9:30 Probar con Probar y comparar\n12:02 Resumen"
+}</script>
+
+<div class="container">
+  <div class="form-grid" style="margin-top:28px;align-items:start">
+    <div class="tool-panel" style="margin:0">
+      <div class="toolbar" style="margin-bottom:8px"><label class="label" for="ch-input">Tus marcas de tiempo</label><button type="button" class="btn btn-ghost btn-sm" id="ch-example">Cargar ejemplo</button></div>
+      <textarea class="textarea" id="ch-input" rows="12" spellcheck="false" placeholder="0:00 Introducción&#10;1:12 Primer tema&#10;3:40 Segundo tema"></textarea>
+      <div class="form-grid" style="margin-top:12px">
+        <div class="field"><label for="ch-length">Duración del vídeo <span class="muted">(opcional)</span></label><input class="input" id="ch-length" type="text" placeholder="12:45" inputmode="numeric"></div>
+        <div class="field"><span class="label">Opciones</span><label class="check" style="margin-top:8px"><input type="checkbox" id="ch-fix" checked> <span>Ordenar y añadir un capítulo en 0:00 si falta</span></label></div>
+      </div>
+    </div>
+    <div class="tool-panel" style="margin:0">
+      <div class="toolbar" style="margin-bottom:8px"><label class="label" for="ch-output">Capítulos para tu descripción</label><button type="button" class="btn btn-primary btn-sm" id="ch-copy">Copiar</button></div>
+      <textarea class="textarea" id="ch-output" rows="12" readonly spellcheck="false"></textarea>
+      <ul class="recs" id="ch-issues" style="list-style:none;padding-left:0;margin-top:12px" aria-live="polite"></ul>
+    </div>
+  </div>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>Las normas de YouTube para los capítulos</h2>
+    <p>Los capítulos aparecen en la barra de progreso y permiten saltar a una sección. YouTube los crea a partir de las marcas de tiempo de la descripción, pero solo si se cumplen estas normas:</p>
+    <ol class="steps">
+      <li><strong>La primera marca es 0:00.</strong> Es el motivo más habitual por el que no aparecen los capítulos.</li>
+      <li><strong>Hay al menos tres marcas de tiempo</strong>, en orden ascendente.</li>
+      <li><strong>Cada capítulo dura al menos 10 segundos.</strong></li>
+    </ol>
+    <p>Los capítulos pueden tardar un poco en aparecer después de guardar la descripción. También puedes dejar que YouTube cree capítulos automáticos desde YouTube Studio, pero escribirlos tú te da control sobre los títulos.</p>
+
+    <h2>Qué formatos acepta el generador</h2>
+    <p>Puedes pegar marcas en casi cualquier formato habitual: <code>1:12 Título</code>, <code>Título 1:12</code>, <code>(01:12) Título</code>, <code>1:12 - Título</code> o vídeos de más de una hora como <code>1:02:30 Título</code>. El resultado usa el formato que reconoce YouTube: un capítulo por línea, con el tiempo primero.</p>
+
+    <h2>Cómo escribir títulos de capítulo útiles</h2>
+    <ul>
+      <li><strong>Describe el contenido</strong>, no el formato: «Elegir micrófono» es mejor que «Parte 2».</li>
+      <li><strong>Usa las palabras que busca la gente.</strong> Los capítulos pueden aparecer en Google como «momentos clave», así que unos títulos claros pueden traerte visitas extra.</li>
+      <li><strong>Que sean cortos</strong>, para que quepan en la barra de progreso del móvil.</li>
+    </ul>
+    <p>Lee nuestra guía completa de <a href="@capitulos-youtube-marcas-de-tiempo">capítulos y marcas de tiempo en YouTube</a> y cómo encajan en el <a href="@seo-youtube-guia">SEO para YouTube</a>.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>¿Por qué no aparecen mis capítulos?</summary><p>Comprueba que la primera marca es 0:00, que hay al menos tres, que están en orden y que cada capítulo dura al menos 10 segundos. También pueden estar desactivados en la configuración del vídeo o tardar un poco en aparecer.</p></details>
+      <details><summary>¿Los capítulos ayudan al SEO?</summary><p>Hacen los vídeos más fáciles de recorrer y pueden aparecer como momentos clave en Google. No salvarán un vídeo que nadie quiere ver, pero ayudan a que el espectador encuentre la parte que busca.</p></details>
+      <details><summary>¿Se guarda mi texto?</summary><p>Tus últimas marcas se guardan solo en tu navegador para que no las pierdas. No se nos envía nada.</p></details>
+    </div>
+  </div>
+</section>

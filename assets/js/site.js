@@ -47,6 +47,48 @@
     });
   });
 
+  // Highlight the current section in the side table of contents.
+  var sideLinks = document.querySelectorAll('.toc-side a');
+  if (sideLinks.length && 'IntersectionObserver' in window) {
+    var byId = {};
+    sideLinks.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting && byId[en.target.id]) {
+          sideLinks.forEach(function (a) { a.classList.remove('is-current'); });
+          byId[en.target.id].classList.add('is-current');
+        }
+      });
+    }, { rootMargin: '-80px 0px -70% 0px' });
+    Object.keys(byId).forEach(function (id) { var h = document.getElementById(id); if (h) io.observe(h); });
+  }
+
+  // Suggest the other language version when the browser prefers it (never redirects).
+  (function () {
+    var pageLang = (document.documentElement.lang || 'en').slice(0, 2);
+    var other = pageLang === 'es' ? 'en' : 'es';
+    var alt = document.querySelector('link[rel="alternate"][hreflang="' + other + '"]');
+    if (!alt) return;
+    var prefs = (navigator.languages || [navigator.language || '']).map(function (l) { return String(l).slice(0, 2).toLowerCase(); });
+    var first = prefs[0];
+    if (first !== other || prefs.indexOf(pageLang) === 0) return;
+    try { if (localStorage.getItem('tt.langbar') === 'closed') return; } catch (e) { /* ignore */ }
+    var text = other === 'en'
+      ? { msg: 'This page is also available in English.', link: 'Read in English', close: 'Close' }
+      : { msg: 'Esta página también está disponible en español.', link: 'Leer en español', close: 'Cerrar' };
+    var bar = document.createElement('div');
+    bar.className = 'lang-bar';
+    bar.setAttribute('lang', other);
+    bar.innerHTML = '<div class="container"><span>' + text.msg + ' <a href="' + new URL(alt.href).pathname + '" hreflang="' + other + '">' +
+      text.link + ' →</a></span><button type="button" aria-label="' + text.close + '">×</button></div>';
+    bar.querySelector('button').addEventListener('click', function () {
+      bar.remove();
+      try { localStorage.setItem('tt.langbar', 'closed'); } catch (e) { /* ignore */ }
+    });
+    var header = document.querySelector('.site-header');
+    if (header) header.insertAdjacentElement('afterend', bar);
+  })();
+
   // Shared helpers for the tools
   var TT = window.TT = {};
 

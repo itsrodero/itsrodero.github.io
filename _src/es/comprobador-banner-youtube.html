@@ -1,0 +1,97 @@
+---
+type: tool
+title: Comprobador de banner de YouTube y plantilla de zona segura (gratis)
+description: Sube el banner de tu canal de YouTube para revisar tamaño, proporción y peso, y ver qué se muestra en TV, ordenador, tablet y móvil. Incluye plantilla gratis de 2560×1440.
+h1: Comprobador de banner de YouTube
+lead: Sube el banner de tu canal para revisarlo según los requisitos de YouTube y ver qué parte se ve en televisores, ordenadores, tablets y móviles antes de publicarlo.
+alt: youtube-banner-checker
+nav: tools
+tool_order: 8
+icon: banner
+card_title: Comprobador de banner
+card_short: Qué muestra tu banner en cada dispositivo
+card_desc: Revisa el tamaño del banner de tu canal y el área visible en TV, ordenador, tablet y móvil.
+crumb: Comprobador de banner
+script: banner
+---
+<script type="application/json" id="tool-i18n">{
+"notImage":"Elige un archivo de imagen (JPG, PNG, GIF o BMP).",
+"desktop":"Ordenador","tablet":"Tablet","mobile":"Móvil / zona segura",
+"desktopCap":"Ordenador: la franja a todo el ancho","tabletCap":"Tablet: aproximado","mobileCap":"Móvil: la zona segura que se ve en todas partes",
+"cSize":"Dimensiones: {w} × {h} px","sizeGreat":"genial: igual o mayor que los 2560 × 1440 que usan muchos creadores","sizeOk":"cumple el mínimo de YouTube de 2048 × 1152","sizeBad":"por debajo del mínimo de 2048 × 1152; YouTube puede rechazar la subida",
+"cRatio":"Proporción","ratioOk":"16:9, como se recomienda","ratioBad":"no es 16:9: YouTube la recortará y puede cortar contenido importante",
+"cFile":"Peso del archivo: {mb} MB","fileOk":"dentro del límite de 6 MB","fileBad":"supera el límite de 6 MB: exporta un archivo más ligero",
+"bOk":"OK","bBad":"Corregir","tplNote":"Plantilla de banner de YouTube 2560 × 1440: mantén el texto y el logotipo dentro de la zona segura verde"
+}</script>
+
+<div class="container">
+  <div class="tool-panel">
+    <div id="bn-drop" class="dropzone" role="button" tabindex="0" aria-label="Elegir la imagen del banner">
+      <strong>Arrastra aquí tu banner o haz clic para elegir un archivo</strong>
+      <p>Se revisa en tu dispositivo: no se sube nada</p>
+    </div>
+    <input id="bn-file" type="file" accept="image/*" hidden>
+    <p id="bn-error" class="alert alert-error" role="alert" hidden></p>
+    <p class="panel-note">¿Todavía no tienes banner? <button type="button" class="btn btn-ghost btn-sm" id="bn-template">Descargar plantilla de 2560 × 1440</button></p>
+  </div>
+
+  <section id="bn-results" hidden aria-live="polite">
+    <div class="tool-panel">
+      <h2>Comprobaciones</h2>
+      <ul class="recs" id="bn-checks" style="list-style:none;padding-left:0"></ul>
+    </div>
+    <div class="tool-panel">
+      <div class="toolbar">
+        <h2 class="mt-0">Zonas visibles</h2>
+        <div class="chips">
+          <label class="chip check"><input type="checkbox" data-zone="desktop" checked> Ordenador</label>
+          <label class="chip check"><input type="checkbox" data-zone="tablet" checked> Tablet</label>
+          <label class="chip check"><input type="checkbox" data-zone="mobile" checked> Móvil</label>
+        </div>
+      </div>
+      <canvas id="bn-canvas" width="1280" height="720" style="width:100%;height:auto;border-radius:10px;display:block"></canvas>
+      <p class="panel-note">Las zonas sombreadas solo se ven en televisores. Mantén el texto, las caras y el logotipo dentro de la zona segura verde para que aparezcan en todos los dispositivos.</p>
+    </div>
+    <div class="tool-panel">
+      <h2>Cómo se recorta</h2>
+      <div class="preview-strip" id="bn-crops" style="flex-direction:column;align-items:flex-start"></div>
+    </div>
+  </section>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>Requisitos del banner de YouTube</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Especificación</th><th>Requisito</th></tr></thead>
+        <tbody>
+          <tr><td>Tamaño mínimo</td><td>2048 &times; 1152 px (16:9)</td></tr>
+          <tr><td>Tamaño de diseño habitual</td><td>2560 &times; 1440 px: más nitidez en televisores</td></tr>
+          <tr><td>Zona segura para texto y logotipos</td><td>1235 &times; 338 px en el tamaño mínimo (unos 1546 &times; 423 px en un lienzo de 2560 &times; 1440), centrada</td></tr>
+          <tr><td>Peso máximo</td><td>6 MB</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">Fuente: Ayuda de YouTube, «Gestionar el banner del canal». Los recortes por dispositivo distintos de la zona segura son aproximados y pueden cambiar cuando YouTube actualiza su diseño.</p>
+
+    <h2>Por qué se cortan los banners</h2>
+    <p>YouTube usa una sola imagen para todas las pantallas. Los televisores muestran el banner 16:9 completo, los ordenadores una franja horizontal ancha por el centro y los móviles solo el centro de esa franja. Todo lo importante fuera de la zona segura central (el nombre del canal cerca del borde, una cara arriba) desaparece en al menos un dispositivo.</p>
+
+    <h2>Consejos para un banner mejor</h2>
+    <ul>
+      <li><strong>Di de qué va el canal</strong> en pocas palabras dentro de la zona segura, y tu calendario de publicación si lo tienes.</li>
+      <li><strong>Usa todo el lienzo solo para el fondo</strong>: texturas, colores o paisajes que sigan quedando bien al recortarse.</li>
+      <li><strong>Combínalo con tus miniaturas</strong>: los mismos colores y la misma fuente dan coherencia al canal. Consulta las guías de <a href="@tipografia-para-miniaturas-youtube">tipografía</a> y de <a href="@teoria-del-color-miniaturas-youtube">color</a>.</li>
+      <li><strong>Revisa primero la vista móvil</strong>: la mayoría de las visitas a canales llegan desde el móvil.</li>
+    </ul>
+    <p>Más detalles en nuestra <a href="@tamano-banner-youtube">guía de tamaño del banner de YouTube</a>.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>¿Se sube mi banner a algún sitio?</summary><p>No. La imagen solo se lee y se dibuja en tu navegador.</p></details>
+      <details><summary>¿Uso 2048 × 1152 o 2560 × 1440?</summary><p>Los dos funcionan. 2048 &times; 1152 es el mínimo de YouTube; muchos diseñadores usan 2560 &times; 1440 para ganar nitidez en pantallas grandes. En ambos casos, mantén la proporción 16:9.</p></details>
+      <details><summary>¿Por qué YouTube dice que mi imagen es demasiado pequeña?</summary><p>Las dos dimensiones deben llegar al mínimo. Una imagen de 2048 px de ancho que no llega a 1152 px de alto (porque no es 16:9) se rechazará.</p></details>
+    </div>
+  </div>
+</section>

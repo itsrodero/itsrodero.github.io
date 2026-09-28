@@ -54,6 +54,11 @@ REDIRECTS = {
     '/como-el-ctr-afecta-tus-ingresos-youtube.html': '/rpm-vs-cpm-youtube.html',
     '/mejores-nichos-youtube-adsense.html': '/cpm-youtube-por-nicho.html',
     '/calculadora-puntuacion-ctr.html': '/checklist-miniaturas.html',
+    # Old duplicate uploads ("file (1).html")
+    '/errores-miniatura-que-matan-tu-ctr (1).html': '/errores-miniatura-que-matan-tu-ctr.html',
+    '/ctr-inicial-y-alcance-youtube (1).html': '/ctr-vs-retencion-crecimiento-youtube.html',
+    '/ctr-vs-retencion-crecimiento-youtube (1).html': '/ctr-vs-retencion-crecimiento-youtube.html',
+    '/en/blog (1).html': '/en/blog.html',
 }
 
 # EEA + UK + Switzerland: consent is denied by default until the
@@ -104,6 +109,7 @@ T = {
             'thumbnails': 'Thumbnail design',
             'ctr': 'CTR & the algorithm',
             'titles': 'Titles',
+            'growth': 'Channel growth & SEO',
             'monetization': 'Monetization',
             'resources': 'Creator resources',
         },
@@ -111,6 +117,7 @@ T = {
             'thumbnails': 'Design thumbnails that are readable, honest and easy to click.',
             'ctr': 'Understand the metrics YouTube shows you and what actually moves them.',
             'titles': 'Write titles that earn the click and keep the promise.',
+            'growth': 'Set up, optimize and grow your channel with YouTube\'s own rules in mind.',
             'monetization': 'How YouTube pays creators, and what drives your RPM.',
             'resources': 'Tools and reference material worth bookmarking.',
         },
@@ -157,6 +164,7 @@ T = {
             'thumbnails': 'Diseño de miniaturas',
             'ctr': 'CTR y algoritmo',
             'titles': 'Títulos',
+            'growth': 'Crecimiento y SEO del canal',
             'monetization': 'Monetización',
             'resources': 'Recursos para creadores',
         },
@@ -164,6 +172,7 @@ T = {
             'thumbnails': 'Miniaturas legibles, honestas y fáciles de pulsar.',
             'ctr': 'Qué significan las métricas de YouTube y qué las mueve de verdad.',
             'titles': 'Títulos que se ganan el clic y cumplen lo que prometen.',
+            'growth': 'Configura, optimiza y haz crecer tu canal siguiendo las normas de YouTube.',
             'monetization': 'Cómo paga YouTube a los creadores y de qué depende tu RPM.',
             'resources': 'Herramientas y material de consulta que merece la pena guardar.',
         },
@@ -172,7 +181,7 @@ T = {
         'sitemap_pages': 'Páginas',
     },
 }
-CATEGORY_ORDER = ['thumbnails', 'ctr', 'titles', 'monetization', 'resources']
+CATEGORY_ORDER = ['growth', 'thumbnails', 'ctr', 'titles', 'monetization', 'resources']
 
 ICONS = {
     'download': '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
@@ -181,7 +190,10 @@ ICONS = {
     'type': '<path d="M4 7V5h16v2"/><path d="M12 5v14"/><path d="M9 19h6"/>',
     'calc': '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/>',
     'check': '<path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/>',
-    'book': '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/>',
+    'clock': '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    'banner': '<rect x="2" y="5" width="20" height="14" rx="2"/><rect x="6" y="9.5" width="12" height="5" rx="1"/>',
+    'list': '<path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/>',
+    'book':'<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/>',
     'arrow': '<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>',
     'globe': '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/>',
     'chevron': '<path d="m6 9 6 6 6-6"/>',
@@ -254,6 +266,24 @@ def slugify(text):
     text = text.translate(table)
     text = re.sub(r'[^a-z0-9]+', '-', text).strip('-')
     return text[:60] or 'section'
+
+
+def cover_rel(page):
+    return f'assets/img/covers/{page["lang"]}-{page["slug"]}.jpg'
+
+
+def cover_url(page):
+    """Absolute URL of the page's cover image if it exists, else None."""
+    rel = cover_rel(page)
+    return f'{SITE_URL}/{rel}' if os.path.exists(os.path.join(ROOT, rel)) else None
+
+
+def inline_css():
+    css = open(os.path.join(ROOT, 'assets', 'css', 'site.css'), encoding='utf-8').read()
+    css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
+    css = re.sub(r'\s*\n\s*', '', css)
+    css = re.sub(r'\s{2,}', ' ', css)
+    return css
 
 
 def asset_version():
@@ -366,7 +396,10 @@ def tools_grid(pages, lang, exclude=None):
 def article_card(p, lang):
     t = T[lang]
     m = p['meta']
-    return (f'<a class="guide-card" href="{p["url"]}">'
+    cov = cover_url(p)
+    img = (f'<img class="guide-card-img" src="/{cover_rel(p)}" alt="" width="1200" height="630" loading="lazy" decoding="async">'
+           if cov else '')
+    return (f'<a class="guide-card{" has-img" if cov else ""}" href="{p["url"]}">{img}'
             f'<span class="guide-card-cat">{esc(t["cat"][m["category"]])}</span>'
             f'<span class="guide-card-title">{esc(m.get("card_title", m["h1"]))}</span>'
             f'<span class="guide-card-desc">{esc(m.get("card_desc", m["description"]))}</span>'
@@ -454,7 +487,7 @@ def head_html(page, pages, ver, title_full, canonical):
             lines.append(f'<link rel="alternate" hreflang="en" href="{SITE_URL}{en_p["url"]}">')
             lines.append(f'<link rel="alternate" hreflang="es" href="{SITE_URL}{es_p["url"]}">')
             lines.append(f'<link rel="alternate" hreflang="x-default" href="{SITE_URL}{en_p["url"]}">')
-    og_img = f'{SITE_URL}/assets/img/og-{lang}.png'
+    og_img = cover_url(page) or f'{SITE_URL}/assets/img/og-{lang}.png'
     lines += [
         '<link rel="icon" href="/favicon.svg" type="image/svg+xml">',
         '<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">',
@@ -473,6 +506,11 @@ def head_html(page, pages, ver, title_full, canonical):
     if m['type'] == 'home':
         lines.append(f'<meta name="google-site-verification" content="{SITE_VERIFICATION}">')
     regions = json.dumps(CONSENT_REGIONS)
+    ads = m.get('ads', 'true') != 'false'
+    if ads:
+        lines.append('<link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>')
+        lines.append('<link rel="preconnect" href="https://fundingchoicesmessages.google.com" crossorigin>')
+    lines.append('<link rel="dns-prefetch" href="https://www.googletagmanager.com">')
     lines += [
         '<script>'
         'window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}'
@@ -481,12 +519,14 @@ def head_html(page, pages, ver, title_full, canonical):
         "gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',"
         "analytics_storage:'granted'});"
         "gtag('js',new Date());gtag('config','" + GA_ID + "');"
+        # Analytics loads after the page has rendered so it doesn't compete with the content.
+        "addEventListener('load',function(){setTimeout(function(){var s=document.createElement('script');"
+        "s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=" + GA_ID + "';document.head.appendChild(s);},1200);});"
         '</script>',
-        f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>',
     ]
-    if m.get('ads', 'true') != 'false':
+    if ads:
         lines.append(f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_CLIENT}" crossorigin="anonymous"></script>')
-    lines.append(f'<link rel="stylesheet" href="/assets/css/site.css?v={ver}">')
+    lines.append(f'<style>{CSS}</style>')
     return '\n'.join(lines)
 
 
@@ -513,7 +553,7 @@ def structured_data(page, pages, canonical, toc_words):
             'description': m['description'], 'inLanguage': lang,
             'datePublished': m['published'], 'dateModified': m.get('updated', m['published']),
             'author': {'@type': 'Person', 'name': AUTHOR_NAME, 'url': SITE_URL + about['url'] if about else SITE_URL},
-            'publisher': publisher, 'image': f'{SITE_URL}/assets/img/og-{lang}.png',
+            'publisher': publisher, 'image': cover_url(page) or f'{SITE_URL}/assets/img/og-{lang}.png',
             'mainEntityOfPage': canonical, 'wordCount': toc_words,
         })
     if m['type'] != 'home':
@@ -670,25 +710,41 @@ def render(page, pages, ver):
     if kind == 'article':
         toc_html = ''
         if toc and m.get('toc', 'true') != 'false':
-            toc_html = (f'<details class="toc" open><summary>{t["toc"]}</summary><ol>'
+            toc_html = (f'<details class="toc toc-inline" open><summary>{t["toc"]}</summary><ol>'
                         + ''.join(f'<li><a href="#{hid}">{esc(txt)}</a></li>' for hid, txt in toc) + '</ol></details>')
         dates = f'{t["updated"]} <time datetime="{m["updated"]}">{fmt_date(m["updated"], lang)}</time>'
+        side_toc = ''
+        if toc and m.get('toc', 'true') != 'false':
+            side_toc = (f'<nav class="toc-side" aria-label="{t["toc"]}"><p class="toc-side-title">{t["toc"]}</p><ol>'
+                        + ''.join(f'<li><a href="#{hid}">{esc(txt)}</a></li>' for hid, txt in toc) + '</ol></nav>')
+        promo = ''
+        for s in [x.strip() for x in m.get('related', '').split(',') if x.strip()]:
+            rp = pages.get((lang, s))
+            if rp and rp['meta'].get('tool_order'):
+                rm = rp['meta']
+                promo = (f'<a class="side-tool" href="{rp["url"]}"><span class="tool-tile-icon">{icon(rm.get("icon", "check"))}</span>'
+                         f'<strong>{esc(rm["card_title"])}</strong><small>{esc(rm["card_short"])}</small>'
+                         f'<span class="tool-tile-cta">{t["open_tool"]} {icon("arrow", "icon icon-sm")}</span></a>')
+                break
         main = f'''<main id="main" class="article-main">
-  <article class="container narrow article">
-    {breadcrumbs_html(page, pages)}
-    <header class="article-header">
-      <p class="eyebrow">{esc(t['cat'][m['category']])}</p>
-      <h1>{m['h1']}</h1>
-      <p class="lead">{m['lead']}</p>
-      <p class="article-meta">{t['by']} <a href="{pages[(lang, 'about')]['url']}">Daniel</a> &middot; {dates} &middot; {minutes} {t['min_read']}</p>
-    </header>
-    {toc_html}
-    <div class="prose">
+  <div class="container article-layout">
+    <article class="article">
+      {breadcrumbs_html(page, pages)}
+      <header class="article-header">
+        <p class="eyebrow">{esc(t['cat'][m['category']])}</p>
+        <h1>{m['h1']}</h1>
+        <p class="lead">{m['lead']}</p>
+        <p class="article-meta">{t['by']} <a href="{pages[(lang, 'about')]['url']}">Daniel</a> &middot; {dates} &middot; {minutes} {t['min_read']}</p>
+      </header>
+      {toc_html}
+      <div class="prose">
 {body}
-    </div>
-    {author_box(page, pages)}
-    {related_html(page, pages)}
-  </article>
+      </div>
+      {author_box(page, pages)}
+      {related_html(page, pages)}
+    </article>
+    <aside class="article-aside"><div class="aside-sticky">{side_toc}{promo}</div></aside>
+  </div>
 </main>'''
     elif kind in ('tool', 'home'):
         crumbs = '' if kind == 'home' else breadcrumbs_html(page, pages)
@@ -804,9 +860,29 @@ def check_required(pages):
             print(f'  note: description length {dl} on {lang}/{slug}')
 
 
+CSS = ''
+
+
+def write_cover_jobs(pages):
+    jobs = []
+    for p in pages.values():
+        if p['meta']['type'] == 'article':
+            jobs.append({'out': cover_rel(p), 'title': strip_tags(p['meta']['h1']).replace('&amp;', '&'),
+                         'label': T[p['lang']]['cat'][p['meta']['category']], 'category': p['meta']['category']})
+    jobs.sort(key=lambda j: j['out'])
+    with open(os.path.join(ROOT, '_tools', 'covers.json'), 'w', encoding='utf-8', newline='\n') as f:
+        json.dump(jobs, f, ensure_ascii=False, indent=1)
+    missing = [j['out'] for j in jobs if not os.path.exists(os.path.join(ROOT, j['out']))]
+    if missing:
+        print(f'  note: {len(missing)} guide cover(s) missing — run: node _tools/covers.mjs')
+
+
 def main():
+    global CSS
     pages = load_pages()
     check_required(pages)
+    CSS = inline_css()
+    write_cover_jobs(pages)
     ver = asset_version()
     written = set()
     for page in pages.values():

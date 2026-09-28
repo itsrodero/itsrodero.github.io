@@ -1,0 +1,96 @@
+---
+type: tool
+title: Calculadora de horas de visualización de YouTube (4.000 vs 8.000)
+description: Calcula cuándo llegará tu canal a 4.000 u 8.000 horas de visualización y 1.000 suscriptores, cuántas visitas diarias necesitas y si puedes entrar antes del cambio de febrero de 2027.
+h1: Calculadora de horas de visualización de YouTube
+lead: Descubre cuándo alcanzará tu canal el umbral de horas del Programa de Socios (4.000 horas ahora y 8.000 para nuevas solicitudes desde el 1 de febrero de 2027) y cuántas visualizaciones al día necesitas.
+alt: watch-hours-calculator
+nav: tools
+tool_order: 7
+icon: clock
+card_title: Calculadora de horas de visualización
+card_short: Cuándo llegarás a 4.000 / 8.000 horas
+card_desc: Calcula cuándo alcanzarás las horas y los suscriptores del YPP, antes y después del cambio de 2027.
+crumb: Calculadora de horas
+script: watchhours
+---
+<script type="application/json" id="tool-i18n">{
+"reached":"Ya lo has alcanzado.","noPace":"Añade tus visualizaciones diarias y la duración media.","tooLong":"Más de 10 años a este ritmo.",
+"done":"Conseguido","inDays":"en unos {d} días a tu ritmo actual",
+"t4000":"4.000 horas (norma actual)","t8000":"8.000 horas (desde el 1 feb 2027)","t1000subs":"1.000 suscriptores",
+"verdict":"Qué significa para ti",
+"vNow":"Ya cumples los umbrales actuales de horas y suscriptores. Si todavía no estás en el Programa de Socios, solicítalo ya en YouTube Studio → Ingresos.",
+"vBefore":"A este ritmo podrías llegar a 4.000 horas y 1.000 suscriptores antes del 1 de febrero de 2027, así que podrías solicitarlo con las normas actuales. Mantén tus vídeos públicos y prioriza los vídeos largos.",
+"vSubs":"Vas camino de las 4.000 horas antes de febrero de 2027, pero no de los 1.000 suscriptores. Céntrate en convertir espectadores en suscriptores para entrar con las normas actuales.",
+"vAfter":"A este ritmo probablemente lo solicitarás después del 1 de febrero de 2027, cuando se pedirán 8.000 horas (o 20 M de visualizaciones de Shorts). Usa la fecha de las 8.000 horas como objetivo real.",
+"sOk":"Tu ritmo de Shorts cubre este umbral (hacen falta unas {need} visualizaciones de Shorts al día).","sNo":"Hacen falta unas {need} visualizaciones de Shorts al día, todos los días, durante 90 días."
+}</script>
+
+<div class="container">
+  <div class="two-col" style="margin-top:28px">
+    <form class="tool-panel" id="wh-form" style="margin:0" novalidate>
+      <h2>Tu canal hoy</h2>
+      <p class="small muted">Lo encontrarás en YouTube Studio → Ingresos (progreso de requisitos) y Estadísticas.</p>
+      <div class="form-grid">
+        <div class="field"><label for="wh-hours">Horas públicas (últimos 365 días)</label><input class="input" id="wh-hours" type="number" min="0" step="10" value="850"></div>
+        <div class="field"><label for="wh-subs">Suscriptores</label><input class="input" id="wh-subs" type="number" min="0" step="10" value="420"></div>
+        <div class="field"><label for="wh-views">Visualizaciones de vídeos largos al día</label><input class="input" id="wh-views" type="number" min="0" step="10" value="300"><span class="hint">Media de los últimos 28 días, sin Shorts.</span></div>
+        <div class="field"><label for="wh-avd">Duración media de las visualizaciones</label><input class="input" id="wh-avd" type="text" value="3:30" inputmode="numeric"><span class="hint">Minutos:segundos, p. ej. 3:30</span></div>
+        <div class="field"><label for="wh-subgain">Suscriptores nuevos al mes</label><input class="input" id="wh-subgain" type="number" min="0" step="5" value="60"></div>
+      </div>
+      <h2 style="margin-top:8px">Vía de Shorts <span class="muted small">(opcional)</span></h2>
+      <div class="form-grid">
+        <div class="field"><label for="wh-shorts90">Visualizaciones de Shorts (últimos 90 días)</label><input class="input" id="wh-shorts90" type="number" min="0" step="10000" value="0"></div>
+        <div class="field"><label for="wh-shortsday">Visualizaciones de Shorts al día</label><input class="input" id="wh-shortsday" type="number" min="0" step="1000" value="0"></div>
+      </div>
+    </form>
+
+    <aside class="sticky-score" aria-live="polite">
+      <div class="tool-panel" style="margin:0">
+        <p class="label">A tu ritmo actual</p>
+        <div class="kpis" style="margin:8px 0 14px">
+          <div class="kpi"><b id="wh-daily">0</b><span>horas al día</span></div>
+          <div class="kpi"><b id="wh-yearly">0</b><span>horas al año</span></div>
+        </div>
+        <div class="result-grid" id="wh-results" style="grid-template-columns:1fr"></div>
+      </div>
+    </aside>
+  </div>
+
+  <div id="wh-verdict" class="callout callout-tip"></div>
+
+  <div class="tool-panel">
+    <h2>Visualizaciones diarias que necesitas</h2>
+    <p>Con tu duración media, necesitas unas <strong id="wh-need4">—</strong> visualizaciones de vídeos largos al día para sumar 4.000 horas en un año, y unas <strong id="wh-need">—</strong> al día para 8.000 horas.</p>
+    <h2 style="margin-top:20px">Umbrales de Shorts (ventana de 90 días)</h2>
+    <ul class="recs" id="wh-shorts" style="list-style:none;padding-left:0"></ul>
+    <p class="panel-note">Las estimaciones suponen que tu ritmo se mantiene y que las horas ya conseguidas siguen dentro de la ventana móvil de 365 días. En la práctica, las horas antiguas van saliendo de la ventana y el ritmo cambia, así que revísalo cada mes.</p>
+  </div>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>Cómo funciona la calculadora</h2>
+    <p>Las horas de visualización son simplemente visualizaciones multiplicadas por el tiempo que se ve cada vídeo:</p>
+    <p class="formula">Horas al día = visualizaciones diarias de vídeos largos &times; duración media (minutos) &divide; 60</p>
+    <p>La calculadora suma esa cifra diaria a las horas públicas que ya tienes y estima la fecha en la que superarás cada umbral. Hace lo mismo con los suscriptores a partir de tu crecimiento mensual.</p>
+
+    <h2>Las normas en las que se basa</h2>
+    <ul>
+      <li><strong>Hasta el 31 de enero de 2027:</strong> 1.000 suscriptores más 4.000 horas públicas en los últimos 12 meses, o 10 millones de visualizaciones públicas de Shorts en los últimos 90 días.</li>
+      <li><strong>Desde el 1 de febrero de 2027 (nuevas solicitudes):</strong> 1.000 suscriptores más 8.000 horas válidas en los últimos 365 días, o 20 millones de visualizaciones válidas de Shorts en los últimos 90 días.</li>
+      <li><strong>Lo que no cuenta:</strong> el tiempo de Shorts en el feed de Shorts, los vídeos privados u ocultos y los vídeos eliminados. Sí cuenta el tiempo de los directos públicos que se guardan como vídeo.</li>
+    </ul>
+    <p>Tienes todos los detalles y las fuentes en nuestra guía de <a href="@requisitos-monetizacion-youtube">requisitos para monetizar en YouTube</a>. Para acelerar de forma práctica, lee <a href="@como-conseguir-horas-de-visualizacion">cómo conseguir horas de visualización más rápido (sin saltarte las normas)</a>.</p>
+
+    <h2>Por qué importa tanto la duración media</h2>
+    <p>Duplicar la duración media tiene el mismo efecto en las horas que duplicar las visualizaciones, y a menudo es más fácil. Un canal con 300 visualizaciones al día de 2 minutos suma 10 horas diarias; con 4 minutos, 20 horas. Mejores arranques, una estructura más clara y vídeos más largos (sin relleno) mueven esta cifra. Consulta <a href="@ctr-vs-retencion-crecimiento-youtube">CTR frente a retención</a>.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>¿Los Shorts cuentan para las horas de visualización?</summary><p>No. El tiempo de Shorts en el feed de Shorts no cuenta para el umbral de horas de vídeos largos. Los Shorts tienen su propia vía, basada en visualizaciones de Shorts en 90 días.</p></details>
+      <details><summary>¿Qué pasa si pongo un vídeo en privado?</summary><p>Su tiempo deja de contar para tus horas públicas. Si quieres ocultar un vídeo antiguo, suele ser mejor esperar a que te acepten.</p></details>
+      <details><summary>¿Puedo comprar horas de visualización?</summary><p>No. Las horas compradas o artificiales incumplen las políticas de YouTube, se filtran del recuento y pueden hacer que te rechacen o cierren el canal.</p></details>
+    </div>
+  </div>
+</section>

@@ -385,3 +385,45 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .glossary dl { margin: 0 0 8px; }
 .glossary dt { font-weight: 750; margin-top: 18px; font-size: 1.05rem; color: var(--ink); scroll-margin-top: 80px; }
 .glossary dd { margin: 4px 0 0; color: var(--ink-2); }
+
+/* ── Article layout with side table of contents ─────── */
+.article-layout { max-width: 1160px; }
+.article { max-width: 760px; margin: 0 auto; min-width: 0; }
+.article-aside { display: none; }
+@media (min-width: 1120px) {
+  .article-layout { display: grid; grid-template-columns: minmax(0, 760px) 260px; gap: 56px; justify-content: center; }
+  .article { margin: 0; }
+  .article-aside { display: block; }
+  .toc-inline { display: none; }
+}
+.aside-sticky { position: sticky; top: 88px; }
+.aside-sticky > * + * { margin-top: 24px; }
+.toc-side { max-height: calc(100vh - 330px); overflow-y: auto; border-left: 2px solid var(--line); padding: 4px 0 4px 16px; font-size: .9rem; }
+.toc-side-title { font-weight: 800; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 10px; }
+.toc-side ol { list-style: none; padding: 0; margin: 0; }
+.toc-side li { margin: 0 0 8px; line-height: 1.35; }
+.toc-side a { color: var(--ink-2); text-decoration: none; display: block; }
+.toc-side a:hover { color: var(--brand); }
+.toc-side a.is-current { color: var(--brand-dark); font-weight: 700; }
+.side-tool { display: flex; flex-direction: column; gap: 6px; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); text-decoration: none; color: var(--ink); }
+.side-tool:hover { border-color: var(--brand); color: var(--ink); }
+.side-tool small { color: var(--muted); font-size: .85rem; line-height: 1.4; }
+
+/* Guide cards with cover images */
+.guide-card.has-img { padding-top: 0; overflow: hidden; }
+.guide-card-img { display: block; width: calc(100% + 40px); max-width: none; margin: 0 -20px 6px; aspect-ratio: 1200 / 630; object-fit: cover; border-bottom: 1px solid var(--line); }
+
+/* Language suggestion bar */
+.lang-bar { background: var(--ink); color: #e2e8f0; font-size: .92rem; }
+.lang-bar .container { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 10px; padding-bottom: 10px; }
+.lang-bar a { color: #fff; font-weight: 700; }
+.lang-bar button { background: none; border: 0; color: #cbd5e1; font-size: 1.3rem; line-height: 1; cursor: pointer; padding: 2px 6px; }
+
+/* Figures and diagrams in guides */
+.diagram { margin: 1.8em 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 16px; }
+.diagram svg { display: block; width: 100%; height: auto; }
+.diagram figcaption { margin-top: 10px; }
+.takeaways { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--brand); border-radius: var(--radius); padding: 16px 20px; margin: 0 0 28px; }
+.takeaways h2 { font-size: 1rem !important; margin: 0 0 8px !important; padding: 0 !important; text-transform: uppercase; letter-spacing: .06em; color: var(--brand-dark); }
+.takeaways ul { margin: 0; padding-left: 1.2em; }
+.takeaways li { margin: .3em 0; }

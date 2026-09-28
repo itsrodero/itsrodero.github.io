@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { font-family: "Segoe UI", system-ui, -apple-system, sans-serif; background: #0f172a; color: #fff; position: relative; }
+  .glow { position: absolute; right: -180px; top: -200px; width: 700px; height: 700px; border-radius: 50%; opacity: .55; }
+  .wrap { position: absolute; inset: 0; padding: 64px 72px; display: flex; flex-direction: column; }
+  .eyebrow { display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; font-size: 22px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  h1 { margin-top: 36px; font-size: 64px; line-height: 1.08; font-weight: 800; letter-spacing: -1.5px; max-width: 860px; }
+  h1.long { font-size: 54px; }
+  .foot { margin-top: auto; display: flex; align-items: center; gap: 14px; font-size: 28px; font-weight: 800; letter-spacing: -.5px; }
+  .foot b { color: #ff5a4f; }
+  .foot span.url { margin-left: 14px; font-size: 20px; font-weight: 500; color: #94a3b8; letter-spacing: 0; }
+  .art { position: absolute; right: 64px; bottom: 60px; width: 250px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; opacity: .95; }
+  .art i { display: block; aspect-ratio: 16/9; border-radius: 10px; background: #1e293b; border: 2px solid #334155; }
+  .art i.hot { border-color: transparent; }
+</style>
+</head>
+<body>
+<div class="glow" id="glow"></div>
+<div class="art"><i></i><i class="hot" id="hot"></i><i></i><i></i></div>
+<div class="wrap">
+  <span class="eyebrow"><span class="dot" id="dot"></span><span id="cat"></span></span>
+  <h1 id="title"></h1>
+  <div class="foot">
+    <svg width="46" height="46" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#d32f2f"/><path d="M9 9h14v4.5h-4.75V24h-4.5V13.5H9z" fill="#fff"/></svg>
+    <span>Tube<b>Tools</b></span><span class="url">tubetools.online</span>
+  </div>
+</div>
+<script>
+  var p = new URLSearchParams(location.hash.slice(1));
+  var colors = { thumbnails: '#ef4444', ctr: '#3b82f6', titles: '#a855f7', growth: '#06b6d4', monetization: '#22c55e', resources: '#f59e0b', tools: '#ef4444' };
+  var c = colors[p.get('c')] || '#ef4444';
+  document.getElementById('cat').textContent = p.get('l') || '';
+  document.getElementById('title').textContent = p.get('t') || '';
+  if ((p.get('t') || '').length > 52) document.getElementById('title').className = 'long';
+  document.getElementById('dot').style.background = c;
+  document.getElementById('hot').style.background = c;
+  document.getElementById('glow').style.background = 'radial-gradient(circle, ' + c + ' 0%, rgba(15,23,42,0) 65%)';
+</script>
+</body>
+</html>
