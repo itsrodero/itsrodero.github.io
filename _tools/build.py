@@ -90,8 +90,8 @@ T = {
         'related': 'Keep reading',
         'written_by': 'Written by',
         'author_role': 'Creator of TubeTools',
-        'author_bio': 'Daniel builds and maintains the TubeTools utilities and writes the guides on this site. '
-                      'Every guide is checked against YouTube\'s official Help Center and updated when the rules change.',
+        'author_bio': 'Daniel builds and runs TubeTools. Guides are researched and drafted with the help of AI tools, '
+                      'checked against YouTube\'s official documentation and updated when the rules change.',
         'author_more': 'How we write our guides',
         'footer_tagline': 'Free, privacy-friendly tools and plain-English guides for YouTube creators.',
         'footer_guides': 'Popular guides',
@@ -143,8 +143,8 @@ T = {
         'related': 'Sigue leyendo',
         'written_by': 'Escrito por',
         'author_role': 'Creador de TubeTools',
-        'author_bio': 'Daniel desarrolla y mantiene las herramientas de TubeTools y escribe las guías de esta web. '
-                      'Cada guía se contrasta con el Centro de Ayuda oficial de YouTube y se actualiza cuando cambian las normas.',
+        'author_bio': 'Daniel desarrolla y gestiona TubeTools. Las guías se investigan y redactan con ayuda de herramientas de IA, '
+                      'se contrastan con la documentación oficial de YouTube y se actualizan cuando cambian las normas.',
         'author_more': 'Cómo escribimos nuestras guías',
         'footer_tagline': 'Herramientas gratuitas y respetuosas con tu privacidad, y guías claras para creadores de YouTube.',
         'footer_guides': 'Guías populares',
