@@ -1,533 +1,162 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    if (localStorage.getItem("cookieConsent") === "accepted") {
-      var s = document.createElement("script");
-      s.async = true;
-      s.src = "https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR";
-      document.head.appendChild(s);
-      s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); };
-    }
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de ingresos de YouTube – estima ganancias por visitas y RPM | TubeTools</title>
+<meta name="description" content="Estima lo que ganarías con la publicidad de YouTube al día, al mes y al año a partir de tus visualizaciones y tu RPM, con rangos orientativos por nicho y una línea aparte para Shorts.">
+<link rel="canonical" href="https://tubetools.online/calculadora.html">
+<link rel="alternate" hreflang="en" href="https://tubetools.online/en/calculator.html">
+<link rel="alternate" hreflang="es" href="https://tubetools.online/calculadora.html">
+<link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/calculator.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:site_name" content="TubeTools">
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculadora de ingresos de YouTube">
+<meta property="og:description" content="Estima lo que ganarías con la publicidad de YouTube al día, al mes y al año a partir de tus visualizaciones y tu RPM, con rangos orientativos por nicho y una línea aparte para Shorts.">
+<meta property="og:url" content="https://tubetools.online/calculadora.html">
+<meta property="og:image" content="https://tubetools.online/assets/img/og-es.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',region:["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"],wait_for_update:500});gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});gtag('js',new Date());gtag('config','G-MKM07L3RLR');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <link rel="alternate" hreflang="es" href="https://tubetools.online/calculadora.html">
-  <link rel="alternate" hreflang="en" href="https://tubetools.online/en/calculator.html">
-  <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/calculator.html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Ingresos de YouTube 2026 - TubeTools</title>
-    <meta name="description" content="Calcula cuánto dinero puedes ganar en YouTube en 2026 según tus visitas diarias y tu CPM estimado. Herramienta gratuita para creadores.">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="manifest" href="manifest.json">
-    <link rel="canonical" href="https://tubetools.online/calculadora.html">
-<link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<meta name="theme-color" content="#1c1e21">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f9f9f9; color: #1c1e21; line-height: 1.7; }
-        /* --- NUEVO MENÚ CON ESPACIADO PRO --- */
-        nav { 
-            background-color: #1c1e21; 
-            padding: 15px 25px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav div {
-            display: flex;
-            gap: 20px; /* El aire mágico entre botones */
-            align-items: center;
-            flex-wrap: wrap; 
-            justify-content: flex-end;
-        }
-
-        nav a { 
-            color: white !important; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 15px;
-            transition: color 0.3s;
-            padding: 5px 0; 
-        }
-
-        nav a:hover { 
-            color: #d32f2f !important; 
-        }
-        main { max-width: 850px; margin: 40px auto; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
-        h1 { color: #d32f2f; text-align: center; margin-bottom: 10px; font-size: 2.2rem; }
-        p.subtitulo { text-align: center; color: #666; margin-bottom: 40px; }
-        
-        /* Diseño de la Calculadora */
-        .calculadora-container { background: #f1f3f5; padding: 30px; border-radius: 12px; margin-bottom: 40px; border: 1px solid #e9ecef; }
-        .input-group { margin-bottom: 25px; }
-        .input-group label { display: block; font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; }
-        .slider { width: 100%; height: 8px; border-radius: 5px; background: #ddd; outline: none; appearance: none; margin-bottom: 10px; }
-        .slider::-webkit-slider-thumb { appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #d32f2f; cursor: pointer; }
-        .valor-display { font-size: 1.2rem; font-weight: bold; color: #d32f2f; background: white; padding: 5px 15px; border-radius: 8px; display: inline-block; border: 1px solid #ddd; }
-        
-        /* Tarjetas de Resultados */
-        .resultados-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 30px; }
-        .resultado-card { background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid #d32f2f; }
-        .resultado-card h3 { font-size: 1rem; color: #666; margin-bottom: 10px; }
-        .resultado-card .dinero { font-size: 1.8rem; font-weight: bold; color: #1c1e21; }
-        
-        /* Sección SEO */
-        .seo-text { margin-top: 0; border-top: none; padding-top: 0; }
-        .seo-text h2 { color: #1c1e21; margin-top: 25px; margin-bottom: 15px; font-size: 1.5rem; }
-        .seo-text p { margin-bottom: 15px; color: #444; }
-        
-        footer { background: #1c1e21; color: #888; text-align: center; padding: 30px; margin-top: 40px; }
-        footer a { color: #bbb; text-decoration: none; margin: 0 10px; }
-        footer a:hover { color: white; }
-
-        @media (max-width: 600px) {
-            .resultados-grid { grid-template-columns: 1fr; }
-        }
-    
-    /* Mobile nav - injected fix */
-    @media(max-width:720px){
-      .nav-toggle{display:block !important}
-      .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:999}
-      .nav-links.open{display:flex !important}
-      .nav-links a{padding:11px 14px;border-radius:8px;color:#ccc !important}
-      .nav-dropdown>a::after{display:none}
-      .dropdown-panel{display:block !important;position:static;transform:none;background:rgba(255,255,255,.04);border:none;box-shadow:none;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
-      .dropdown-panel a{font-size:.83rem;padding:7px 10px}
-    }
-    </style>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Calculadora de Ingresos de YouTube 2026",
-  "url": "https://tubetools.online/calculadora.html",
-  "description": "Calcula cuánto dinero puedes ganar en YouTube en 2026 según tus visitas diarias y tu CPM estimado. Herramienta gratuita para creadores.",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "EUR"
-  }
-}
-</script>
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tubetools.online/calculadora.html">
-  <meta property="og:title" content="Calculadora de Ingresos de YouTube 2026 - TubeTools">
-  <meta property="og:description" content="Calcula cuánto dinero puedes ganar en YouTube en 2026 según tus visitas diarias y tu CPM estimado. Herramienta gratuita para creadores.">
-  <meta property="og:image" content="https://tubetools.online/og_image_es.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Calculadora de Ingresos de YouTube 2026 - TubeTools">
-  <meta name="twitter:description" content="Calcula cuánto dinero puedes ganar en YouTube en 2026 según tus visitas diarias y tu CPM estimado. Herramienta gratuita para creadores.">
-  <meta name="twitter:image" content="https://tubetools.online/og_image_es.png">
-  <style>
-    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
-    .skip-link:focus{top:0;}
-  </style>
-
-<style id='tt-global'>
-
-/* ── TubeTools Global Fix ── */
-*, *::before, *::after { box-sizing: border-box; }
-a { color: inherit; }
-a:not([class]):not([style]) { color: inherit; text-decoration: none; }
-.read-more, .btn-read-more {
-  display: inline-block; background: #d32f2f; color: #fff !important;
-  text-decoration: none; padding: 9px 18px; border-radius: 8px;
-  font-size: .85rem; font-weight: 700; transition: background .2s; margin-top: 8px;
-}
-.read-more:hover, .btn-read-more:hover { background: #b71c1c !important; }
-.article-card h3 a, .article-title a, .card-title a, .blog-card h3 a {
-  color: #1c1e21 !important; text-decoration: none !important; font-weight: 700;
-}
-.article-card h3 a:hover, .blog-card h3 a:hover { color: #d32f2f !important; }
-footer a { color: #888 !important; text-decoration: none !important; }
-footer a:hover { color: #fff !important; }
-nav a { text-decoration: none; }
-/* Nav fix */
-nav { position: sticky; top: 0; z-index: 1000; background: #1c1e21;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 24px; height: 58px; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
-nav .nav-logo { color: #fff; text-decoration: none; font-size: 1.1rem;
-  font-weight: 800; display: flex; align-items: center; gap: 6px; }
-nav .nav-logo .logo-accent { color: #ff5252; }
-nav .nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
-nav .nav-links a { color: #ccc !important; text-decoration: none; font-size: .88rem;
-  font-weight: 500; padding: 6px 11px; border-radius: 8px;
-  transition: background .2s, color .2s; white-space: nowrap; }
-nav .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
-nav .nav-links a.lang-btn-en { color: #90caf9; border: 1px solid rgba(144,202,249,.35); }
-nav .nav-links a.lang-btn-es { color: #a5d6a7; border: 1px solid rgba(165,214,167,.35); }
-nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
-.nav-toggle { display: none; background: none; border: none; color: #fff;
-  font-size: 1.4rem; cursor: pointer; padding: 6px; }
-/* Tools dropdown */
-.nav-dropdown { position: relative; }
-.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-.nav-dropdown > a::after { content: '▾'; font-size: .7rem; opacity: .7; }
-.dropdown-panel { display: none; position: absolute; top: calc(100% + 6px);
-  left: 50%; transform: translateX(-50%); background: #2c2e33;
-  border-radius: 12px; padding: 10px 8px; min-width: 240px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.4); border: 1px solid rgba(255,255,255,.07);
-  z-index: 2000; }
-.nav-dropdown:hover .dropdown-panel,
-.nav-dropdown:focus-within .dropdown-panel { display: block; }
-.dropdown-panel a { display: flex; align-items: center; gap: 10px; color: #ccc !important;
-  text-decoration: none !important; font-size: .85rem; padding: 9px 14px;
-  border-radius: 8px; transition: background .2s; width: 100%; }
-.dropdown-panel a:hover { background: rgba(255,255,255,.09) !important; color: #fff !important; }
-.dp-icon { width: 22px; text-align: center; font-size: 1.05rem; flex-shrink: 0; }
-/* Mobile nav */
-@media(max-width: 720px) {
-  .nav-toggle { display: block !important; }
-  .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0;
-    background: #2c2e33; flex-direction: column; align-items: stretch;
-    padding: 10px 16px 16px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
-  .nav-links.open { display: flex; }
-  .nav-links a { padding: 11px 14px; border-radius: 8px; }
-  .nav-dropdown > a::after { display: none; }
-  .dropdown-panel { display: block; position: static; transform: none;
-    background: rgba(255,255,255,.04); border: none; box-shadow: none;
-    border-radius: 8px; padding: 4px 0 4px 12px; min-width: auto; margin-top: 2px; }
-  .dropdown-panel a { font-size: .83rem; padding: 7px 10px; }
-}
-/* Footer fix */
-.site-footer { background: #1c1e21; color: #888; padding: 48px 20px 32px; margin-top: 60px; }
-.site-footer .footer-inner { max-width: 960px; margin: 0 auto; }
-.site-footer .footer-grid { display: grid; grid-template-columns: 1fr repeat(3, auto);
-  gap: 40px; margin-bottom: 36px; }
-@media(max-width: 700px) { .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
-@media(max-width: 440px) { .site-footer .footer-grid { grid-template-columns: 1fr; } }
-.site-footer .footer-brand .footer-logo { font-size: 1.1rem; font-weight: 800;
-  color: #fff; margin-bottom: 10px; }
-.site-footer .footer-brand .footer-logo .logo-accent { color: #ff5252; }
-.site-footer .footer-brand p { font-size: .83rem; color: #666; line-height: 1.6; max-width: 220px; }
-.site-footer .footer-col h4 { font-size: .8rem; font-weight: 700; color: #fff;
-  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
-.site-footer .footer-col a { display: block; color: #888 !important;
-  text-decoration: none !important; font-size: .85rem; margin-bottom: 8px;
-  transition: color .2s; }
-.site-footer .footer-col a:hover { color: #fff !important; }
-.site-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.07);
-  padding-top: 20px; display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 10px; }
-.site-footer .footer-bottom p { font-size: .78rem; color: #555; }
-.site-footer .footer-lang-btn { padding: 5px 14px; border-radius: 999px;
-  text-decoration: none !important; font-size: .82rem; font-weight: 600; transition: background .2s; }
-.site-footer .footer-lang-btn.en-fb { background: rgba(144,202,249,.12);
-  color: #90caf9 !important; border: 1px solid rgba(144,202,249,.3); }
-.site-footer .footer-lang-btn.en-fb:hover { background: rgba(144,202,249,.22) !important; }
-.site-footer .footer-lang-btn.es-fb { background: rgba(165,214,167,.1);
-  color: #a5d6a7 !important; border: 1px solid rgba(165,214,167,.3); }
-.site-footer .footer-lang-btn.es-fb:hover { background: rgba(165,214,167,.2) !important; }
-
-</style>
-
-<style id="mobile-nav-fix">
-@media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
-  .nav-links.open{display:flex !important}
-  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
-  .nav-dropdown{width:100% !important;position:static !important}
-  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
-  .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
-  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
-}
-</style>
+<link rel="stylesheet" href="/assets/css/site.css?v=7d5d42b9">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de ingresos", "url": "https://tubetools.online/calculadora.html", "description": "Estima lo que ganarías con la publicidad de YouTube al día, al mes y al año a partir de tus visualizaciones y tu RPM, con rangos orientativos por nicho y una línea aparte para Shorts.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "inLanguage": "es"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://tubetools.online/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora de ingresos", "item": "https://tubetools.online/calculadora.html"}]}</script>
 </head>
-<body>
-  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-
-    <nav>
-  <a href="/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="nav-links">
-    <a href="/en/calculator.html" class="lang-btn-en">🇬🇧 EN</a>
-    <a href="/">Inicio</a>
-    <div class="nav-dropdown">
-      <a href="/herramientas.html">🎯 Herramientas</a>
-      <div class="dropdown-panel">
-        <a href="/"><span class="dp-icon">🖼️</span>Extractor de Miniaturas</a>
-        <a href="/analizador-miniaturas.html"><span class="dp-icon">🔬</span>Analizador de Miniaturas</a>
-        <a href="/generador-titulos-youtube.html"><span class="dp-icon">✍️</span>Generador de Títulos</a>
-        <a href="/calculadora.html"><span class="dp-icon">🧮</span>Calculadora de Ganancias</a>
-        <a href="/calculadora-puntuacion-ctr.html"><span class="dp-icon">📊</span>CTR Score</a>
-        <a href="/checklist-miniaturas.html"><span class="dp-icon">✅</span>Checklist</a>
+<body class="page-tool">
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#d32f2f"/><path d="M9 9h14v4.5h-4.75V24h-4.5V13.5H9z" fill="#fff"/></svg><span>Tube<b>Tools</b></span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="sr-only">Menú</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <div class="nav-dd">
+        <button class="nav-dd-btn is-active" aria-expanded="false">Herramientas <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="nav-dd-panel"><a href="/" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span><strong>Descargar miniaturas</strong><small>Guarda la miniatura de cualquier vídeo</small></span></a><a href="/analizador-miniaturas.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="15.5" cy="9" r="1.5"/></svg><span><strong>Analizador de miniaturas</strong><small>Contraste, color y legibilidad</small></span></a><a href="/vista-previa-miniatura-youtube.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><span><strong>Vista previa en el feed</strong><small>Tu miniatura junto a la competencia</small></span></a><a href="/checklist-miniaturas.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg><span><strong>Checklist de miniaturas</strong><small>Revisión de 15 puntos con puntuación</small></span></a><a href="/generador-titulos-youtube.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5h16v2"/><path d="M12 5v14"/><path d="M9 19h6"/></svg><span><strong>Generador de títulos</strong><small>Ideas de título y comprobador de longitud</small></span></a><a href="/calculadora.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg><span><strong>Calculadora de ingresos</strong><small>Estima ganancias según visitas y RPM</small></span></a></div>
       </div>
-    </div>
-    <a href="/blog.html">Blog</a>
-    <a href="/glosario.html">Glosario</a>
-    <a href="/contacto.html">Contacto</a>
+      <a href="/blog.html">Guías</a>
+      <a href="/glosario.html">Glosario</a>
+      <a href="/about.html">Sobre TubeTools</a>
+      <a class="lang-switch" href="/en/calculator.html" hreflang="en" lang="en" title="Read in English"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg> English</a>
+    </nav>
   </div>
-</nav>
+</header>
+<main id="main" class="tool-main">
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Inicio</a></li><li aria-current="page">Calculadora de ingresos</li></ol></nav>
+      <h1>Calculadora de ingresos de YouTube</h1>
+      <p class="lead">Estima lo que podrían generar tus visualizaciones con la publicidad de YouTube. Usa tu RPM real de YouTube Studio para la mejor estimación o elige un nicho para ver un rango orientativo. Te enseñamos el cálculo para que sepas de dónde sale la cifra.</p>
+    </div>
+  </section>
+<script type="application/json" id="tool-i18n">{}</script>
 
-    <main id="main-content">
-      <div style="background:linear-gradient(135deg,#1c1e21 0%,#2d1515 60%,#1a0a0a 100%);padding:48px 20px 52px;text-align:center;position:relative;overflow:hidden;">
-        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(211,47,47,.18) 0%,transparent 70%);pointer-events:none;"></div>
-        <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(211,47,47,.18);border:1px solid rgba(211,47,47,.4);color:#ff8a80;font-size:.78rem;font-weight:700;letter-spacing:.07em;padding:4px 13px;border-radius:999px;margin-bottom:16px;text-transform:uppercase;">💸 Herramienta Gratuita · Sin Registro</div>
-        <h1 style="font-size:clamp(1.7rem,4vw,2.6rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:10px;">Calculadora de Ingresos<br><span style="color:#ff5252;">de YouTube 2026</span></h1>
-        <p style="font-size:clamp(.9rem,2vw,1.05rem);color:#bbb;max-width:520px;margin:0 auto;">Descubre cuánto puede ganar tu canal. Proyecciones diarias, mensuales y anuales por nicho.</p>
+<div class="container">
+  <div class="two-col" style="margin-top:28px">
+    <form class="tool-panel" id="rc-form" style="margin:0" novalidate>
+      <h2 id="tus-cifras">Tus cifras</h2>
+      <div class="form-grid">
+        <div class="field"><label for="rc-views">Visualizaciones de vídeos largos</label><input class="input" id="rc-views" type="number" min="0" step="1000" value="100000" inputmode="numeric"></div>
+        <div class="field"><label for="rc-period">Por</label>
+          <select class="select" id="rc-period"><option value="day">Día</option><option value="month" selected>Mes</option><option value="year">Año</option></select></div>
       </div>
-      <div style="max-width:760px;margin:-28px auto 0;padding:0 20px;">
-        <div style="background:#fff;border-radius:18px;box-shadow:0 8px 40px rgba(0,0,0,.13);padding:36px 32px 32px;position:relative;">
-          <div style="position:absolute;top:-13px;left:24px;background:#d32f2f;color:#fff;font-size:.74rem;font-weight:800;letter-spacing:.07em;padding:4px 14px;border-radius:999px;text-transform:uppercase;">🔢 Ajusta los parámetros</div>
-          <div style="margin-bottom:28px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-              <label style="font-size:.9rem;font-weight:700;color:#1c1e21;">👁️ Visitas Diarias Estimadas</label>
-              <span style="background:#fff5f5;color:#d32f2f;font-weight:800;font-size:.95rem;padding:4px 14px;border-radius:999px;border:1px solid rgba(211,47,47,.2);" id="visitas-val">10,000 visitas/día</span>
-            </div>
-            <input type="range" id="visitas" class="slider" min="100" max="500000" step="100" value="10000" style="width:100%;accent-color:#d32f2f;height:6px;border-radius:3px;cursor:pointer;">
-            <div style="display:flex;justify-content:space-between;font-size:.75rem;color:#aaa;margin-top:4px;"><span>100</span><span>500K</span></div>
-          </div>
-          <div style="margin-bottom:32px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-              <label style="font-size:.9rem;font-weight:700;color:#1c1e21;">📈 CPM Estimado <span style="font-weight:400;color:#888;">($/1.000 visitas)</span></label>
-              <span style="background:#fff5f5;color:#d32f2f;font-weight:800;font-size:.95rem;padding:4px 14px;border-radius:999px;border:1px solid rgba(211,47,47,.2);" id="cpm-val">$2.50 CPM</span>
-            </div>
-            <input type="range" id="cpm" class="slider" min="0.1" max="25" step="0.1" value="2.5" style="width:100%;accent-color:#d32f2f;height:6px;border-radius:3px;cursor:pointer;">
-            <div style="display:flex;justify-content:space-between;font-size:.75rem;color:#aaa;margin-top:4px;"><span>$0.10</span><span>$25.00</span></div>
-          </div>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;" class="resultados-grid">
-            <div style="background:linear-gradient(135deg,#1c1e21,#2d1515);border-radius:12px;padding:20px 16px;text-align:center;">
-              <div style="font-size:.75rem;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Diario</div>
-              <div style="font-size:1.5rem;font-weight:900;color:#fff;" id="res-diario">$0.00</div>
-            </div>
-            <div style="background:linear-gradient(135deg,#d32f2f,#b71c1c);border-radius:12px;padding:20px 16px;text-align:center;box-shadow:0 4px 20px rgba(211,47,47,.35);">
-              <div style="font-size:.75rem;font-weight:600;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Mensual</div>
-              <div style="font-size:1.5rem;font-weight:900;color:#fff;" id="res-mensual">$0.00</div>
-            </div>
-            <div style="background:linear-gradient(135deg,#1c1e21,#2d1515);border-radius:12px;padding:20px 16px;text-align:center;">
-              <div style="font-size:.75rem;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Anual</div>
-              <div style="font-size:1.5rem;font-weight:900;color:#fff;" id="res-anual">$0.00</div>
-            </div>
-          </div>
-          <div style="margin-top:24px;background:#f4f5f7;border-radius:10px;padding:16px 18px;">
-            <div style="font-size:.8rem;font-weight:700;color:#1c1e21;margin-bottom:10px;">📊 Referencia de CPM por nicho:</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:.8rem;">
-              <div style="display:flex;justify-content:space-between;"><span style="color:#555;">💰 Finanzas / Inversión</span><span style="color:#d32f2f;font-weight:700;">$8–$25</span></div>
-              <div style="display:flex;justify-content:space-between;"><span style="color:#555;">💻 Tecnología</span><span style="color:#d32f2f;font-weight:700;">$4–$12</span></div>
-              <div style="display:flex;justify-content:space-between;"><span style="color:#555;">🎓 Educación</span><span style="color:#d32f2f;font-weight:700;">$3–$9</span></div>
-              <div style="display:flex;justify-content:space-between;"><span style="color:#555;">🎮 Gaming</span><span style="color:#d32f2f;font-weight:700;">$1–$4</span></div>
-              <div style="display:flex;justify-content:space-between;"><span style="color:#555;">🎭 Entretenimiento</span><span style="color:#d32f2f;font-weight:700;">$1–$3</span></div>
-              <div style="display:flex;justify-content:space-between;"><span style="color:#555;">🍳 Cocina / Lifestyle</span><span style="color:#d32f2f;font-weight:700;">$2–$6</span></div>
-            </div>
-          </div>
-        </div>
+      <div class="field"><label for="rc-mode">Origen del RPM</label>
+        <select class="select" id="rc-mode">
+          <option value="niche" selected>Estimar según mi nicho</option>
+          <option value="custom">Usar mi propio RPM (recomendado si ya monetizas)</option>
+        </select></div>
+      <div class="field" id="rc-niche-wrap"><label for="rc-niche">Nicho</label>
+        <select class="select" id="rc-niche">
+          <option value="finance">Finanzas personales e inversión</option>
+          <option value="business">Negocios, marketing y software para empresas</option>
+          <option value="tech">Tecnología y tutoriales de software</option>
+          <option value="education" selected>Educación y tutoriales</option>
+          <option value="auto">Coches y motor</option>
+          <option value="health">Salud y fitness</option>
+          <option value="lifestyle">Cocina, viajes y lifestyle</option>
+          <option value="beauty">Belleza y moda</option>
+          <option value="entertainment">Entretenimiento, humor y vlogs</option>
+          <option value="gaming">Videojuegos</option>
+          <option value="kids">Contenido creado para niños</option>
+        </select>
+        <span class="hint">Rangos orientativos para audiencias sobre todo de EE. UU. Con público de España o Latinoamérica, lo normal es ganar menos por visualización.</span></div>
+      <div class="field" id="rc-rpm-wrap" hidden><label for="rc-rpm">Tu RPM</label><input class="input" id="rc-rpm" type="number" min="0" step="0.1" value="2"><span class="hint">YouTube Studio &rarr; Estadísticas &rarr; Ingresos &rarr; RPM</span></div>
+      <div class="form-grid">
+        <div class="field"><label for="rc-shorts">Visualizaciones de Shorts al mes</label><input class="input" id="rc-shorts" type="number" min="0" step="10000" value="0"></div>
+        <div class="field"><label for="rc-srpm">RPM de Shorts</label><input class="input" id="rc-srpm" type="number" min="0" step="0.01" value="0.03"><span class="hint">Valor ilustrativo; usa el tuyo de Studio.</span></div>
       </div>
-      <div style="max-width:760px;margin:32px auto 0;padding:0 20px 0;">
-        <div style="background:#fff;border-radius:18px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
-        <div class="seo-text" style="margin:0;border:none;padding:0;">
-            <h2>¿Cómo funciona esta Calculadora de Ingresos de YouTube?</h2>
-            <p>Nuestra herramienta utiliza un algoritmo sencillo pero preciso basado en el modelo de monetización del Programa para Partners de YouTube (YPP). YouTube paga a los creadores por las reproducciones de anuncios en sus vídeos, y esta calculadora estima tu parte de los ingresos basándose en dos factores clave: el volumen de tu tráfico y tu CPM.</p>
-            <p>Debes tener en cuenta que YouTube se queda con aproximadamente el 45% de los ingresos publicitarios, entregando el 55% restante al creador. Nuestra calculadora ya refleja estimaciones realistas de lo que llegaría a tu bolsillo.</p>
+      <div class="field"><label for="rc-cur">Símbolo de moneda</label>
+        <select class="select" id="rc-cur"><option value="EUR" selected>Euro (€)</option><option value="USD">Dólar estadounidense ($)</option><option value="MXN">Peso mexicano</option><option value="GBP">Libra (£)</option></select>
+        <span class="hint">Solo cambia el símbolo. Los rangos por nicho están en dólares estadounidenses.</span></div>
+    </form>
 
-            <h2>¿Qué es el CPM y por qué es tan importante?</h2>
-            <p>El <strong>CPM (Coste por Mil)</strong> es la cantidad de dinero que los anunciantes están dispuestos a pagar por cada 1.000 visualizaciones de un anuncio en tus vídeos. No todos los canales ganan lo mismo, aunque tengan las mismas visitas. El CPM varía drásticamente según:</p>
-            <ul>
-                <li><strong>El Nicho de tu canal:</strong> Canales de finanzas, tecnología, criptomonedas o negocios tienen CPMs altísimos (a veces superando los $15 o $20), ya que los anunciantes venden productos caros. Canales de vlogs, bromas o gaming suelen tener un CPM más bajo (entre $1 y $3).</li>
-                <li><strong>La geografía de tu audiencia:</strong> Las visitas provenientes de Estados Unidos, Reino Unido, Canadá o Australia pagan mucho más que las visitas de países latinoamericanos o España, debido al poder adquisitivo local de los anunciantes.</li>
-                <li><strong>La época del año:</strong> Durante el último trimestre del año (Navidad, Black Friday), el CPM se dispara porque todas las marcas invierten agresivamente en publicidad.</li>
-            </ul>
-
-            <h2>¿Cómo aumentar tus ingresos en YouTube en 2026?</h2>
-            <p>Si las cifras de la calculadora te parecen bajas, la estrategia no siempre es conseguir más visitas, sino <strong>mejorar la calidad de esas visitas</strong>. Optimizar el CTR de tus miniaturas usando herramientas como nuestro <a href="analizador-miniaturas.html" style="color: #d32f2f; font-weight: bold;">Analizador de Miniaturas</a> te permitirá competir contra canales más grandes, atraer a un público más adulto y, en consecuencia, subir el CPM global de tu canal.</p>
+    <aside class="sticky-score" aria-live="polite">
+      <div class="tool-panel" style="margin:0">
+        <p class="label">Ingresos estimados en YouTube</p>
+        <div class="result-grid" style="grid-template-columns:1fr">
+          <div class="result-box highlight"><b id="rc-month">–</b><span>al mes</span></div>
+          <div class="result-box"><b id="rc-year">–</b><span>al año</span></div>
+          <div class="result-box"><b id="rc-day">–</b><span>al día</span></div>
         </div>
-        </div>
+        <p class="small muted" style="margin-top:12px">Con <strong id="rc-views-month">0</strong> visualizaciones de vídeos largos al mes y un RPM de <strong id="rc-rpm-used">–</strong>, más <strong id="rc-shorts-out">–</strong> al mes de Shorts. Antes de impuestos.</p>
       </div>
-    
+    </aside>
+  </div>
+</div>
 
-    <section style="max-width:760px;margin:32px auto 48px;padding:0 20px;"><div style="background:#fff;border-radius:18px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
-    <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin-bottom:20px;">Cómo utilizar la Calculadora de Ganancias de YouTube</h2>
-    <p style="font-size:.93rem;color:#555;line-height:1.8;margin-bottom:12px;">Calcular tus ingresos potenciales no es magia, es una fórmula matemática basada en dos métricas fundamentales: el <strong>RPM (Ingresos por cada mil reproducciones)</strong> y tus visualizaciones diarias. Esta herramienta te permite proyectar tus ganancias financieras y establecer metas realistas para el crecimiento de tu canal.</p>
-    
-    <h3 class="h4 mt-4 text-dark fw-bold">¿Qué factores alteran tu RPM?</h3>
-    <p style="font-size:.93rem;color:#555;line-height:1.8;">El RPM varía drásticamente dependiendo del nicho de tu contenido y la ubicación geográfica de tu audiencia. Por ejemplo, los canales de finanzas y tecnología orientados al mercado Tier 1 (Estados Unidos, Reino Unido) disfrutan de un RPM premium, mientras que el contenido de entretenimiento general suele tener cifras más bajas. Optimizar tu CTR y la retención atrae a anunciantes de mayor calidad, incrementando directamente los ingresos proyectados que ves en esta calculadora.</p>
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2 id="como-funciona-la-calculadora">Cómo funciona la calculadora</h2>
+    <p>YouTube te muestra tu <strong>RPM</strong> (ingresos por cada 1.000 visualizaciones) después de quedarse su parte y contando todas las visualizaciones, también las que no tienen anuncios. Eso simplifica el cálculo:</p>
+    <p class="formula">Ingresos estimados = visualizaciones &times; RPM &divide; 1.000</p>
+    <p>Si eliges un nicho, la calculadora usa un rango orientativo de RPM para ese nicho y muestra una estimación baja y otra alta. Estos rangos salen de cifras que los creadores comparten públicamente para audiencias en inglés, sobre todo de Estados Unidos; no son datos oficiales de YouTube. Si tu canal ya está monetizado, cambia a «Usar mi propio RPM» e introduce la cifra de YouTube Studio: siempre será más precisa que cualquier media.</p>
+    <p>Los Shorts se calculan aparte porque se pagan desde un fondo compartido y suelen generar solo céntimos por cada 1.000 visualizaciones. El RPM de Shorts por defecto es un valor ilustrativo; cámbialo por el tuyo.</p>
+
+    <h2 id="por-que-la-estimacion-puede-fallar">Por qué la estimación puede fallar</h2>
+    <ul>
+      <li><strong>Ubicación de la audiencia:</strong> los anunciantes pagan más por algunos países. En español, el público de España suele generar más por visualización que el de muchos países de Latinoamérica.</li>
+      <li><strong>Temporada:</strong> el RPM suele subir de octubre a diciembre y bajar en enero.</li>
+      <li><strong>Duración:</strong> los vídeos de 8 minutos o más pueden incluir anuncios a mitad del vídeo.</li>
+      <li><strong>Publicidad limitada:</strong> los vídeos que no son totalmente aptos para anunciantes ganan mucho menos.</li>
+      <li><strong>Otros ingresos:</strong> las membresías, los Supers y YouTube Premium se incluyen en tu RPM real, pero varían mucho de un canal a otro.</li>
+    </ul>
+    <p>Para entender estos factores, lee <a href="/rpm-vs-cpm-youtube.html">RPM vs CPM explicado</a>, <a href="/cpm-youtube-por-nicho.html">RPM por nicho</a> y <a href="/aumentar-rpm-youtube.html">cómo aumentar tu RPM</a>.</p>
+
+    <h2 id="antes-de-poder-ganar-dinero">Antes de poder ganar dinero</h2>
+    <p>Para cobrar por publicidad hay que entrar en el Programa de Socios de YouTube. Los requisitos cambian el 1 de febrero de 2027: consulta los <a href="/requisitos-monetizacion-youtube.html">requisitos de monetización</a> actuales y los nuevos.</p>
+
+    <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>¿Cuánto paga YouTube por cada 1.000 visualizaciones?</summary><p>Eso es tu RPM, y varía muchísimo según el nicho, la ubicación del público y el formato: desde bastante menos de 1 € en muchos Shorts hasta más de 10 € en algunos canales de finanzas o negocios. Tu YouTube Studio muestra tu cifra exacta.</p></details>
+      <details><summary>¿Cuánto vale un millón de visualizaciones?</summary><p>Con un RPM de 1 €, unos 1.000 €; con 3 €, unos 3.000 €; con 8 €, unos 8.000 €. En Shorts, un millón de visualizaciones suele dar bastante menos.</p></details>
+      <details><summary>¿Se guardan mis datos?</summary><p>Tus cifras se recuerdan en tu navegador para que sigan ahí la próxima vez. No se nos envía nada.</p></details>
+    </div>
+  </div>
 </section>
 
-    <section style="max-width:860px;margin:40px auto 60px;padding:0 20px;">
-  <div style="background:#fff;border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
-    <h2 style="font-size:1.4rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin-bottom:20px;">Entiende tus Ingresos de YouTube: Guía Completa</h2>
-
-    <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:0 0 8px;">RPM vs CPM: la diferencia que cambia todo</h3>
-    <p style="color:#555;line-height:1.8;margin-bottom:14px;">El error más frecuente de los creadores nuevos es confundir CPM y RPM. El <strong>CPM</strong> (Coste por Mil impresiones) es lo que pagan los anunciantes. El <strong>RPM</strong> (Ingresos por Mil visualizaciones) es lo que recibes tú tras el recorte del 45% de YouTube. Con un CPM de $10, tu RPM real es aproximadamente $5,50. Usa siempre el RPM para calcular tus ingresos reales, nunca el CPM.</p>
-
-    <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:20px 0 8px;">¿Cuánto paga YouTube por 1.000 visualizaciones en 2026?</h3>
-    <div style="overflow-x:auto;margin-bottom:16px;">
-      <table style="width:100%;border-collapse:collapse;font-size:.9rem;">
-        <thead><tr style="background:#1c1e21;color:#fff;">
-          <th style="padding:10px 14px;text-align:left;">Nicho</th>
-          <th style="padding:10px 14px;text-align:left;">RPM estimado (EEUU)</th>
-          <th style="padding:10px 14px;text-align:left;">RPM estimado (España/LATAM)</th>
-        </tr></thead>
-        <tbody>
-          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;color:#555;">Finanzas / Inversión</td><td style="padding:10px 14px;color:#555;">$12 – $25</td><td style="padding:10px 14px;color:#555;">$3 – $8</td></tr>
-          <tr style="border-bottom:1px solid #eee;background:#f9f9f9;"><td style="padding:10px 14px;color:#555;">Tecnología / Software</td><td style="padding:10px 14px;color:#555;">$8 – $18</td><td style="padding:10px 14px;color:#555;">$2 – $6</td></tr>
-          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;color:#555;">Salud y fitness</td><td style="padding:10px 14px;color:#555;">$4 – $10</td><td style="padding:10px 14px;color:#555;">$1,5 – $4</td></tr>
-          <tr style="border-bottom:1px solid #eee;background:#f9f9f9;"><td style="padding:10px 14px;color:#555;">Gaming</td><td style="padding:10px 14px;color:#555;">$2 – $5</td><td style="padding:10px 14px;color:#555;">$0,8 – $2,5</td></tr>
-          <tr style="background:#fff;"><td style="padding:10px 14px;color:#555;">Entretenimiento / Vlogs</td><td style="padding:10px 14px;color:#555;">$1,5 – $4</td><td style="padding:10px 14px;color:#555;">$0,5 – $2</td></tr>
-        </tbody>
-      </table>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo logo-invert" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#d32f2f"/><path d="M9 9h14v4.5h-4.75V24h-4.5V13.5H9z" fill="#fff"/></svg><span>Tube<b>Tools</b></span></a>
+      <p>Herramientas gratuitas y respetuosas con tu privacidad, y guías claras para creadores de YouTube.</p>
     </div>
-
-    <h3 style="font-size:1.05rem;font-weight:700;color:#1c1e21;margin:20px 0 8px;">5 formas de aumentar tus ingresos sin más suscriptores</h3>
-    <ol style="margin:0 0 16px 22px;">
-      <li style="color:#555;line-height:2.1;"><strong style="color:#1c1e21;">Activa todos los formatos de anuncio:</strong> anuncios saltables, no saltables, display y mid-rolls. Cada formato adicional aumenta la competencia de pujas en tu inventario.</li>
-      <li style="color:#555;line-height:2.1;"><strong style="color:#1c1e21;">Añade mid-rolls en vídeos de más de 8 minutos:</strong> un vídeo de 15 minutos con 2 mid-rolls puede generar 2–3× más que uno de 7 minutos con el mismo número de visualizaciones.</li>
-      <li style="color:#555;line-height:2.1;"><strong style="color:#1c1e21;">Atrae audiencia de EEUU:</strong> los títulos en inglés y el contenido orientado al mercado americano pueden multiplicar tu RPM por 3–8× comparado con audiencia latinoamericana.</li>
-      <li style="color:#555;line-height:2.1;"><strong style="color:#1c1e21;">Publica en Q4:</strong> octubre–diciembre es la temporada alta publicitaria. Los RPMs pueden subir un 50–200% respecto a enero del mismo canal.</li>
-      <li style="color:#555;line-height:2.1;"><strong style="color:#1c1e21;">Mejora el CTR de tus miniaturas:</strong> más clics = más visualizaciones del mismo pool de impresiones = más ingresos sin coste adicional de producción.</li>
-    </ol>
-
-    <div style="background:#f4f5f7;border-radius:10px;padding:20px 22px;margin-top:24px;">
-      <strong style="color:#1c1e21;font-size:.95rem;">❓ Preguntas frecuentes</strong>
-      <p style="margin-top:12px;color:#555;font-size:.9rem;"><strong>¿Cuándo paga YouTube a los creadores?</strong><br>YouTube paga a través de AdSense entre el 21 y el 26 de cada mes por los ingresos del mes anterior. El umbral mínimo es $100: hasta no alcanzarlo, los ingresos se acumulan al mes siguiente.</p>
-      <p style="color:#555;font-size:.9rem;margin-bottom:0;"><strong>¿Es precisa esta calculadora de ingresos de YouTube?</strong><br>La calculadora ofrece estimaciones basadas en el CPM y las visualizaciones que introduces. Los ingresos reales dependen de tu nicho, la geografía de tu audiencia, los formatos de anuncio activados y la estacionalidad. Úsala para entender rangos y probar escenarios distintos.</p>
-    </div>
+    <div><h2 class="footer-h">Herramientas</h2><ul><li><a href="/">Descargar miniaturas</a></li><li><a href="/analizador-miniaturas.html">Analizador de miniaturas</a></li><li><a href="/vista-previa-miniatura-youtube.html">Vista previa en el feed</a></li><li><a href="/checklist-miniaturas.html">Checklist de miniaturas</a></li><li><a href="/generador-titulos-youtube.html">Generador de títulos</a></li><li><a href="/calculadora.html">Calculadora de ingresos</a></li></ul></div>
+    <div><h2 class="footer-h">Guías populares</h2><ul><li><a href="/guia-miniaturas-ctr.html">Guía de miniaturas</a></li><li><a href="/guia-ctr-youtube-para-principiantes.html">CTR para principiantes</a></li><li><a href="/requisitos-monetizacion-youtube.html">Requisitos de monetización</a></li><li><a href="/rpm-vs-cpm-youtube.html">RPM vs CPM</a></li><li><a href="/cpm-youtube-por-nicho.html">CPM por nicho</a></li><li><a href="/tamano-formato-miniatura-youtube-2026.html">Tamaño y formato</a></li></ul></div>
+    <div><h2 class="footer-h">TubeTools</h2><ul><li><a href="/about.html">Sobre TubeTools</a></li><li><a href="/contacto.html">Contacto</a></li><li><a href="/privacidad.html">Política de privacidad</a></li><li><a href="/terminos.html">Términos de uso</a></li><li><a href="/mapa-sitio.html">Mapa del sitio</a></li><li><a href="/privacidad.html#cookies" class="js-privacy-settings">Configurar privacidad</a></li></ul></div>
   </div>
-</div></section>
-  </main>
-
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">🚀 Tube<span>Tools</span></div>
-          <p>Herramientas gratuitas para creadores de YouTube que quieren crecer con datos, no con suerte.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Herramientas</h4>
-          <a href="/">Extractor Miniaturas</a>
-          <a href="/analizador-miniaturas.html">Analizador</a>
-          <a href="/generador-titulos-youtube.html">Generador Títulos</a>
-          <a href="/calculadora.html">Calculadora</a>
-          <a href="/calculadora-puntuacion-ctr.html">CTR Score</a>
-          <a href="/checklist-miniaturas.html">Checklist</a>
-        </div>
-        <div class="footer-col">
-          <h4>Guías</h4>
-          <a href="/guia-miniaturas-ctr.html">Guía CTR</a>
-          <a href="/aumentar-rpm-youtube.html">Aumentar RPM</a>
-          <a href="/cpm-youtube-por-nicho.html">CPM por Nicho</a>
-          <a href="/requisitos-monetizacion-youtube.html">Monetización</a>
-          <a href="/mejores-nichos-youtube-adsense.html">Mejores Nichos</a>
-          <a href="/glosario.html">Glosario</a>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/privacidad.html">Privacidad</a>
-          <a href="/terminos.html">Términos</a>
-          <a href="/contacto.html">Contacto</a>
-          <a href="/about.html">Sobre Nosotros</a>
-          <a href="/mapa-sitio.html">Mapa del Sitio</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 TubeTools.online — Todos los derechos reservados.</p>
-        <a href="/en/calculator.html" class="footer-lang-btn en-fb">🇬🇧 Switch to English</a>
-      </div>
-    </div>
-  </footer>
-
-    <script>
-        const sliderVisitas = document.getElementById("visitas");
-        const sliderCpm = document.getElementById("cpm");
-        const visitasVal = document.getElementById("visitas-val");
-        const cpmVal = document.getElementById("cpm-val");
-        
-        const resDiario = document.getElementById("res-diario");
-        const resMensual = document.getElementById("res-mensual");
-        const resAnual = document.getElementById("res-anual");
-
-        function calcularGanancias() {
-            // Obtener valores actuales
-            const v = parseInt(sliderVisitas.value);
-            const c = parseFloat(sliderCpm.value);
-
-            // Actualizar textos en pantalla
-            visitasVal.textContent = v.toLocaleString('en-US') + " visitas/día";
-            cpmVal.textContent = "$" + c.toFixed(2) + " CPM";
-
-            // Matemática pura: (Visitas / 1000) * CPM = Ganancia Diaria
-            // Asumimos un RPM (lo que cobra el creador) aproximado al 55% del CPM para ser realistas
-            const rpm = c * 0.55; 
-            const diario = (v / 1000) * rpm;
-            const mensual = diario * 30;
-            const anual = mensual * 12;
-
-            // Inyectar resultados formateados
-            resDiario.textContent = "$" + diario.toFixed(2);
-            resMensual.textContent = "$" + mensual.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-            resAnual.textContent = "$" + anual.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-        }
-
-        // Escuchar cambios en los deslizadores en tiempo real
-        sliderVisitas.addEventListener("input", calcularGanancias);
-        sliderCpm.addEventListener("input", calcularGanancias);
-
-        // Calcular al cargar la página por primera vez
-        calcularGanancias();
-    </script>
-
-    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e21; color: white; padding: 20px; text-align: center; z-index: 9999; display: none;">
-        <p style="margin-bottom: 15px;">🍪 Usamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y mostrar anuncios personalizados. <a href="privacidad.html" style="color: #ff4757; text-decoration: underline;">Lee nuestra Política de Privacidad</a>.</p>
-        <div>
-            <button id="accept-cookies" style="background: #d32f2f; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">Aceptar</button>
-            <button id="reject-cookies" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Rechazar</button>
-        </div>
-    </div>
-    <script>
-        if (!localStorage.getItem('cookieConsent')) {
-            document.getElementById('cookie-banner').style.display = 'block';
-        }
-        document.getElementById('accept-cookies').addEventListener('click', function() {
-            localStorage.setItem('cookieConsent', 'accepted');
-            document.getElementById('cookie-banner').style.display = 'none';
-        });
-        document.getElementById('reject-cookies').addEventListener('click', function() {
-            localStorage.setItem('cookieConsent', 'rejected');
-            document.getElementById('cookie-banner').style.display = 'none';
-        });
-    </script>
-    
-    <!-- ✅ Service Worker para cache eficiente -->
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('SW registrado', reg.scope))
-        .catch(err => console.log('SW error:', err));
-    });
-  }
-</script>
-
-
-<script>
-(function(){
-  var btn = document.querySelector('.nav-toggle');
-  var links = document.querySelector('.nav-links');
-  if(!btn || !links) return;
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isOpen = links.classList.toggle('open');
-    btn.textContent = isOpen ? '✕' : '☰';
-  });
-  document.addEventListener('click', function(e){
-    if(!links.contains(e.target) && e.target !== btn){
-      links.classList.remove('open');
-      btn.textContent = '☰';
-    }
-  });
-})();
-</script>
+  <div class="container footer-bottom">
+    <p>&copy; 2026 TubeTools &middot; tubetools.online. Todos los derechos reservados.</p>
+    <p>TubeTools es un proyecto independiente y no está afiliado, respaldado ni patrocinado por YouTube ni por Google.</p>
+  </div>
+</footer>
+<script src="/assets/js/site.js?v=7d5d42b9" defer></script>
+<script src="/assets/js/tools/calculator.js?v=7d5d42b9" defer></script>
 </body>
 </html>

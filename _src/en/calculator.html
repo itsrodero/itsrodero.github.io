@@ -1,0 +1,100 @@
+---
+type: tool
+title: YouTube Money Calculator – Estimate Earnings From Views & RPM
+description: Estimate YouTube ad earnings per day, month and year from your views and RPM, with indicative RPM ranges by niche and a separate line for Shorts. Free, transparent math.
+h1: YouTube Revenue Calculator
+lead: Estimate what your views could earn from YouTube ads. Use your real RPM from YouTube Studio for the best estimate, or pick a niche to see an indicative range. The math is shown, so you know exactly where the number comes from.
+alt: calculadora
+nav: tools
+tool_order: 6
+icon: calc
+card_title: Revenue Calculator
+card_short: Estimate earnings from views and RPM
+card_desc: Estimate daily, monthly and yearly YouTube earnings from views and RPM, including Shorts.
+crumb: Revenue Calculator
+script: calculator
+---
+<script type="application/json" id="tool-i18n">{}</script>
+
+<div class="container">
+  <div class="two-col" style="margin-top:28px">
+    <form class="tool-panel" id="rc-form" style="margin:0" novalidate>
+      <h2>Your numbers</h2>
+      <div class="form-grid">
+        <div class="field"><label for="rc-views">Long-form views</label><input class="input" id="rc-views" type="number" min="0" step="1000" value="100000" inputmode="numeric"></div>
+        <div class="field"><label for="rc-period">Per</label>
+          <select class="select" id="rc-period"><option value="day">Day</option><option value="month" selected>Month</option><option value="year">Year</option></select></div>
+      </div>
+      <div class="field"><label for="rc-mode">RPM source</label>
+        <select class="select" id="rc-mode">
+          <option value="niche" selected>Estimate from my niche</option>
+          <option value="custom">Use my own RPM (recommended if monetized)</option>
+        </select></div>
+      <div class="field" id="rc-niche-wrap"><label for="rc-niche">Niche</label>
+        <select class="select" id="rc-niche">
+          <option value="finance">Personal finance &amp; investing</option>
+          <option value="business">Business, marketing &amp; B2B software</option>
+          <option value="tech">Technology &amp; software tutorials</option>
+          <option value="education" selected>Education &amp; how-to</option>
+          <option value="auto">Cars &amp; automotive</option>
+          <option value="health">Health &amp; fitness</option>
+          <option value="lifestyle">Food, travel &amp; lifestyle</option>
+          <option value="beauty">Beauty &amp; fashion</option>
+          <option value="entertainment">Entertainment, comedy &amp; vlogs</option>
+          <option value="gaming">Gaming</option>
+          <option value="kids">Made-for-kids content</option>
+        </select>
+        <span class="hint">Indicative ranges for mostly-US audiences. Other audiences usually earn less per view.</span></div>
+      <div class="field" id="rc-rpm-wrap" hidden><label for="rc-rpm">Your RPM</label><input class="input" id="rc-rpm" type="number" min="0" step="0.1" value="4"><span class="hint">YouTube Studio &rarr; Analytics &rarr; Revenue &rarr; RPM</span></div>
+      <div class="form-grid">
+        <div class="field"><label for="rc-shorts">Shorts views per month</label><input class="input" id="rc-shorts" type="number" min="0" step="10000" value="0"></div>
+        <div class="field"><label for="rc-srpm">Shorts RPM</label><input class="input" id="rc-srpm" type="number" min="0" step="0.01" value="0.05"><span class="hint">Illustrative default; use yours from Studio.</span></div>
+      </div>
+      <div class="field"><label for="rc-cur">Currency symbol</label>
+        <select class="select" id="rc-cur"><option value="USD" selected>US dollar ($)</option><option value="EUR">Euro (€)</option><option value="GBP">Pound (£)</option><option value="CAD">Canadian dollar</option><option value="AUD">Australian dollar</option></select>
+        <span class="hint">Only changes the symbol. Niche ranges are in US dollars.</span></div>
+    </form>
+
+    <aside class="sticky-score" aria-live="polite">
+      <div class="tool-panel" style="margin:0">
+        <p class="label">Estimated YouTube revenue</p>
+        <div class="result-grid" style="grid-template-columns:1fr">
+          <div class="result-box highlight"><b id="rc-month">–</b><span>per month</span></div>
+          <div class="result-box"><b id="rc-year">–</b><span>per year</span></div>
+          <div class="result-box"><b id="rc-day">–</b><span>per day</span></div>
+        </div>
+        <p class="small muted" style="margin-top:12px">Based on <strong id="rc-views-month">0</strong> long-form views/month at an RPM of <strong id="rc-rpm-used">–</strong>, plus <strong id="rc-shorts-out">–</strong>/month from Shorts. Before taxes.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>How the calculator works</h2>
+    <p>YouTube reports your <strong>RPM</strong> (revenue per 1,000 views) after its revenue share, across all views, including ones without ads. That makes the math simple:</p>
+    <p class="formula">Estimated revenue = views &times; RPM &divide; 1,000</p>
+    <p>If you choose a niche, the calculator uses an indicative RPM range for that niche and shows a low and high estimate. These ranges come from figures creators commonly share publicly for English-language, mostly-US audiences — they're not official YouTube data. If your channel is monetized, switch to "Use my own RPM" and enter the number from YouTube Studio: it will always be more accurate than any average.</p>
+    <p>Shorts are calculated separately because they're paid from a shared pool and usually earn only cents per 1,000 views. The default Shorts RPM is an illustrative value; replace it with your own.</p>
+
+    <h2>Why estimates can be off</h2>
+    <ul>
+      <li><strong>Audience location:</strong> advertisers pay more for some countries. A channel with most viewers outside the US, Canada, UK and Australia will typically earn less per view.</li>
+      <li><strong>Season:</strong> RPM usually rises in October–December and drops in January.</li>
+      <li><strong>Video length:</strong> videos of 8 minutes or more can include mid-roll ads.</li>
+      <li><strong>Limited ads:</strong> videos that aren't fully advertiser-friendly earn much less.</li>
+      <li><strong>Other revenue:</strong> memberships, Supers and YouTube Premium are included in your real RPM but vary a lot between channels.</li>
+    </ul>
+    <p>To understand these factors, read <a href="@youtube-rpm-vs-cpm">RPM vs. CPM explained</a>, <a href="@youtube-cpm-by-niche">RPM by niche</a> and <a href="@how-to-increase-youtube-rpm">how to increase your RPM</a>.</p>
+
+    <h2>Before you can earn</h2>
+    <p>Ad revenue requires joining the YouTube Partner Program. The thresholds are changing on February 1, 2027 — see the current and upcoming <a href="@youtube-monetization-requirements">monetization requirements</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>How much does YouTube pay per 1,000 views?</summary><p>That's your RPM, and it varies widely by niche, audience location and format — from well under $1 for many Shorts to $20 or more for some finance and business channels. Your own YouTube Studio shows your exact figure.</p></details>
+      <details><summary>How much is 1 million views worth?</summary><p>At an RPM of $2, about $2,000; at $5, about $5,000; at $12, about $12,000. For Shorts, 1 million views typically earns far less.</p></details>
+      <details><summary>Is my data saved?</summary><p>Your inputs are remembered in your browser so they're there next time. Nothing is sent to us.</p></details>
+    </div>
+  </div>
+</section>

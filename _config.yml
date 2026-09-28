@@ -1,0 +1,6 @@
+# GitHub Pages settings. Pages are pre-built by _tools/build.py, so Jekyll
+# only copies files. Folders starting with "_" are never published.
+exclude:
+  - README.md
+  - _src
+  - _tools

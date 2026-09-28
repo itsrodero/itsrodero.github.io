@@ -1,0 +1,94 @@
+---
+type: tool
+title: YouTube Thumbnail Checklist – 15-Point Pre-Publish Review
+description: An interactive 15-point checklist to review a YouTube thumbnail before publishing — idea, readability, contrast, emotion and technical specs — with a weighted score.
+h1: YouTube Thumbnail Checklist
+lead: Fifteen questions to ask about every thumbnail before you hit publish. Tick what's true, and the checklist scores your thumbnail and tells you what to fix first. Your answers are saved in your browser.
+alt: checklist-miniaturas
+nav: tools
+tool_order: 4
+icon: check
+card_title: Thumbnail Checklist
+card_short: 15-point review with a score
+card_desc: Review idea, readability, contrast, emotion and specs with a weighted score and a fix list.
+crumb: Thumbnail Checklist
+script: checklist
+---
+<script type="application/json" id="tool-i18n">{"ready":"Ready to publish or test","close":"Getting there","work":"Needs work","allDone":"Everything is checked. Consider testing two versions with Test & Compare."}</script>
+
+<div class="container">
+  <div class="two-col" style="margin-top:28px">
+    <div id="ck-list">
+      <div class="check-group">
+        <h2 class="h3">1. The idea</h2>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-idea" data-weight="3"><label for="ck-idea">I can say what the thumbnail promises in one short sentence.</label></div><p>If the idea needs a paragraph, the thumbnail will be confusing at a glance. Simplify to one promise.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-title" data-weight="2"><label for="ck-title">The thumbnail and title add to each other instead of repeating.</label></div><p>Let the image show and the title tell. Repeating the title in the image wastes space.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-honest" data-weight="3"><label for="ck-honest">The video delivers what the thumbnail shows — early.</label></div><p>Misleading thumbnails cause early drop-off and can violate YouTube's policies.</p></div>
+      </div>
+      <div class="check-group">
+        <h2 class="h3">2. Readability at small size</h2>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-small" data-weight="3"><label for="ck-small">The main subject is recognizable at 168 pixels wide.</label></div><p>That's roughly the size in the desktop "Up next" column. Check it in the <a href="@youtube-thumbnail-preview">feed preview</a>.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-elements" data-weight="2"><label for="ck-elements">There are no more than three main elements.</label></div><p>For example a face, an object and a few words. Every extra element competes for attention.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-text" data-weight="2"><label for="ck-text">Any text is four words or fewer and readable on a phone.</label></div><p>Heavy sans-serif font, large, with a stroke, shadow or block behind it. See the <a href="@typography-for-youtube-thumbnails">typography guide</a>.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-corner" data-weight="1"><label for="ck-corner">Nothing important is in the bottom-right corner.</label></div><p>The video-length badge covers it.</p></div>
+      </div>
+      <div class="check-group">
+        <h2 class="h3">3. Contrast and color</h2>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-gray" data-weight="3"><label for="ck-gray">The subject still stands out in black and white.</label></div><p>The grayscale test catches most contrast problems. The <a href="@thumbnail-analyzer">Thumbnail Analyzer</a> shows it automatically.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-modes" data-weight="1"><label for="ck-modes">It works on both white and near-black backgrounds.</label></div><p>Light mode and dark mode. Watch for edges that disappear.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-palette" data-weight="1"><label for="ck-palette">There's one dominant color and at most one strong accent.</label></div><p>Too many competing colors make the image harder to read. See the <a href="@advanced-color-theory-youtube-thumbnails">color guide</a>.</p></div>
+      </div>
+      <div class="check-group">
+        <h2 class="h3">4. Emotion and story</h2>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-face" data-weight="2"><label for="ck-face">If there's a face, it's large and the expression matches the video.</label></div><p>No face? Tick this if the subject itself carries the emotion or tension. See <a href="@facial-expressions-youtube-thumbnails">faces in thumbnails</a>.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-curiosity" data-weight="2"><label for="ck-curiosity">There's a reason to be curious — a question, a contrast or a result.</label></div><p>Curiosity that the video pays off, not a bait-and-switch.</p></div>
+      </div>
+      <div class="check-group">
+        <h2 class="h3">5. Technical and context</h2>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-specs" data-weight="1"><label for="ck-specs">It's 16:9, at least 1280×720, JPG or PNG, under the upload limit.</label></div><p>Limits: 50 MB from a computer, 2 MB from the mobile app. See the <a href="@youtube-thumbnail-size-format-guide">size guide</a>.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-different" data-weight="2"><label for="ck-different">It looks different from the top results for this topic.</label></div><p>Search your topic and compare. Blending in makes you invisible.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-brand" data-weight="1"><label for="ck-brand">It fits my channel's style but isn't a copy of my last thumbnail.</label></div><p>Consistent enough to be recognized, different enough to be noticed as new.</p></div>
+      </div>
+    </div>
+
+    <aside class="sticky-score">
+      <div class="tool-panel" style="margin:0">
+        <p class="label">Your score</p>
+        <div class="score-ring"><span class="num"><span id="ck-score">0</span><small style="font-size:1.2rem">%</small></span><span id="ck-label" class="badge badge-bad">Needs work</span></div>
+        <div class="bar" style="margin:14px 0 6px"><i id="ck-bar" style="width:0;background:var(--brand)"></i></div>
+        <p class="small muted" id="ck-count">0 / 15</p>
+        <p class="label" style="margin-top:14px">Fix these first</p>
+        <ol class="recs small" id="ck-next"></ol>
+        <div class="hero-actions" style="margin-top:12px">
+          <button type="button" class="btn btn-ghost btn-sm" id="ck-reset">Reset</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="ck-print">Print</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>How the score works</h2>
+    <p>Each item has a weight from 1 to 3 based on how much it usually affects a thumbnail's clarity and honesty. The items that matter most — a single clear idea, readability at small size, contrast in grayscale, and a video that delivers on the promise — count three times as much as small technical details. The score is simply the weighted share of items you've ticked.</p>
+    <p>It's a self-review, not a prediction. A thumbnail that scores 100% can still underperform if the topic isn't interesting to your audience, and the only reliable measure of performance is real viewers. Once your thumbnail passes the checklist, compare variants with YouTube's <a href="@youtube-thumbnail-ab-testing-guide">Test &amp; Compare</a>.</p>
+
+    <h2>Using the checklist in your workflow</h2>
+    <ol class="steps">
+      <li><strong>Design two or three options</strong> rather than one. It's easier to judge thumbnails side by side.</li>
+      <li><strong>Run the measurable checks</strong> with the <a href="@thumbnail-analyzer">Thumbnail Analyzer</a> (contrast, clutter, edges, specs).</li>
+      <li><strong>Go through this checklist</strong> for the judgment calls software can't make.</li>
+      <li><strong>Preview the best options in context</strong> with the <a href="@youtube-thumbnail-preview">feed preview</a>.</li>
+      <li><strong>Publish and test</strong> the top two with Test &amp; Compare.</li>
+    </ol>
+    <p>For the reasoning behind each point, read our <a href="@guide-thumbnails-ctr">complete thumbnail guide</a> and the list of <a href="@thumbnail-mistakes-killing-your-ctr">common thumbnail mistakes</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>Is my checklist saved?</summary><p>Yes, in your browser's local storage on this device, so you can come back to it. Press Reset to start a new thumbnail. Nothing is sent to us.</p></details>
+      <details><summary>What score should I aim for?</summary><p>80% or more means the fundamentals are covered. Below 50%, focus on the "fix these first" list — usually the idea, small-size readability or contrast.</p></details>
+      <details><summary>Can I use it for Shorts?</summary><p>Most points apply, but Shorts are vertical (9:16) and are mostly seen in the Shorts feed, where the opening frame matters more than the thumbnail.</p></details>
+    </div>
+  </div>
+</section>

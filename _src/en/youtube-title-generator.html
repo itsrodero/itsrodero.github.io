@@ -1,0 +1,123 @@
+---
+type: tool
+title: YouTube Title Generator & Length Checker (Free)
+description: Generate YouTube title ideas from proven formulas and check any title's length, truncation on mobile and desktop, caps and clickbait warnings. Free, no sign-up.
+h1: YouTube Title Generator &amp; Checker
+lead: Get a dozen title ideas built on formulas that work for tutorials, stories, reviews and explainers — then check how your final title will be cut off on phones and in the sidebar.
+alt: generador-titulos-youtube
+nav: tools
+tool_order: 5
+icon: type
+card_title: Title Generator
+card_short: Title ideas plus a length checker
+card_desc: Generate title ideas from proven formulas and see where your title gets cut off.
+crumb: Title Generator
+script: titles
+---
+<script type="application/json" id="tool-i18n">{
+"stripPrefixes":["how to ","what is ","what are ","why "],
+"defResult":"Real Results","defPeriod":"30 Days","defAudience":"Beginners",
+"chars":"characters","lenGood":"fits","lenOk":"may be cut on mobile","lenLong":"likely cut off","check":"Check","copy":"Copy","copied":"Copied ✓",
+"bOk":"Good","bWarn":"Check","bBad":"Fix",
+"nTooLong":"Over YouTube's 100-character limit.","nLong":"Long: the end will be cut off in many places. Make sure the first ~50 characters carry the idea.","nShort":"Very short. Consider adding a specific detail (a number, result or timeframe).","nGood":"Good length: the key idea should be visible almost everywhere.",
+"nCaps":"Lots of ALL-CAPS words. Capitalizing one key word adds emphasis; more reads as shouting.","nPunct":"Repeated punctuation (!!, ??) can look spammy.","nEmoji":"Several emojis take space and rarely add meaning.","nNumber":"Contains a number — specific numbers make promises concrete. Make sure it's accurate.",
+"nHype":"Contains hype words. Fine if the video truly delivers; otherwise it can hurt trust and retention.","nVague":"Starts with a vague phrase. Lead with the topic or the hook instead.",
+"hype":["you won't believe","shocking","insane","gone wrong","secret they","100% guaranteed","must watch"],
+"vague":["my thoughts","vlog","video ","update","episode"],
+"templates":[
+{"s":"howto","k":"Beginner guide","t":"{T} for {A}: Everything You Need to Know"},
+{"s":"howto","k":"Fast explainer","t":"{T} Explained in 10 Minutes"},
+{"s":"howto","k":"Tips","t":"{T} Tips That Actually Work"},
+{"s":"list","k":"Mistakes","t":"7 {T} Mistakes to Avoid"},
+{"s":"list","k":"Lessons","t":"5 Things I Learned From {P} of {T}"},
+{"s":"story","k":"Experiment","t":"I Tried {T} for {P}. Here's What Happened"},
+{"s":"story","k":"Result","t":"How I Got {R} With {T}"},
+{"s":"story","k":"Hindsight","t":"{T}: What I Wish I Knew Before Starting"},
+{"s":"question","k":"Worth it?","t":"Is {T} Worth It in {Y}? An Honest Take"},
+{"s":"question","k":"Why","t":"Why Most People Struggle With {T}"},
+{"s":"question","k":"Hidden truth","t":"What Nobody Tells You About {T}"},
+{"s":"review","k":"Comparison","t":"Cheap vs. Expensive {T}: Is There a Difference?"},
+{"s":"review","k":"Skill levels","t":"Beginner vs. Pro {T}"},
+{"s":"review","k":"Verdict","t":"{T}: My Honest Review After {P}"}
+]}</script>
+
+<div class="container">
+  <div class="tool-panel">
+    <h2>1. Generate title ideas</h2>
+    <form id="tg-form" novalidate>
+      <div class="field">
+        <label for="tg-topic">Topic <span class="muted">(a short noun phrase)</span></label>
+        <input class="input" id="tg-topic" type="text" maxlength="60" placeholder="e.g. sourdough bread, budget travel, home workouts" required>
+        <span class="hint">Write the subject, not a full sentence. "Budget travel" works better than "how to travel on a budget".</span>
+      </div>
+      <div class="form-grid">
+        <div class="field"><label for="tg-audience">Audience <span class="muted">(optional)</span></label><input class="input" id="tg-audience" type="text" maxlength="30" placeholder="Beginners"></div>
+        <div class="field"><label for="tg-style">Style</label>
+          <select class="select" id="tg-style">
+            <option value="all">All formulas</option>
+            <option value="howto">How-to &amp; guides</option>
+            <option value="list">Lists</option>
+            <option value="story">Stories &amp; experiments</option>
+            <option value="question">Questions &amp; explainers</option>
+            <option value="review">Reviews &amp; comparisons</option>
+          </select></div>
+        <div class="field"><label for="tg-result">Result <span class="muted">(optional)</span></label><input class="input" id="tg-result" type="text" maxlength="30" placeholder="e.g. My First 1,000 Subscribers"></div>
+        <div class="field"><label for="tg-period">Timeframe <span class="muted">(optional)</span></label><input class="input" id="tg-period" type="text" maxlength="20" placeholder="30 Days"></div>
+      </div>
+      <button class="btn btn-primary" type="submit">Generate ideas</button>
+    </form>
+  </div>
+
+  <section class="tool-panel" id="tg-results" hidden aria-live="polite">
+    <h2>Title ideas</h2>
+    <p class="muted small">Starting points, not finished titles. Replace general words with specifics from your video, and only use a formula if the video delivers on it.</p>
+    <ul class="title-list" id="tg-list"></ul>
+  </section>
+
+  <div class="tool-panel">
+    <h2>2. Check your title</h2>
+    <div class="field">
+      <label for="tc-input">Your title</label>
+      <input class="input" id="tc-input" type="text" maxlength="100" placeholder="Paste or type a title to check it">
+    </div>
+    <div id="tc-out" hidden>
+      <p><span class="badge" id="tc-count">0 / 100</span></p>
+      <div class="form-grid">
+        <div class="field"><span class="label">Approx. on a phone (~55 characters)</span><p class="kpi" id="tc-mobile" style="margin:0;font-weight:600"></p></div>
+        <div class="field"><span class="label">Approx. in the desktop sidebar (~70)</span><p class="kpi" id="tc-side" style="margin:0;font-weight:600"></p></div>
+      </div>
+      <ul class="recs" id="tc-notes" style="list-style:none;padding-left:0"></ul>
+      <p class="panel-note">Truncation is approximate: YouTube cuts titles by pixel width and number of lines, which varies by device, font and layout. Preview it with your thumbnail in the <a href="@youtube-thumbnail-preview">feed preview</a>.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>How to turn an idea into a great title</h2>
+    <p>Generated titles are templates. What makes a title work is the specific detail only you can add. Take "I Tried Budget Travel for 30 Days. Here's What Happened": it becomes much stronger as "I Spent 30 Days in Japan on $40 a Day. Here's What Happened" — a real place, a real number, a real promise.</p>
+    <ol class="steps">
+      <li><strong>Pick the formula that matches the video.</strong> A tutorial fits a how-to or list; a personal story fits an experiment; a buying decision fits a comparison.</li>
+      <li><strong>Replace generic words with specifics</strong>: numbers, places, prices, names, timeframes.</li>
+      <li><strong>Put the hook in the first ~50 characters.</strong> Use the checker above to see where the title gets cut.</li>
+      <li><strong>Pair it with the thumbnail.</strong> The title should add to the image, not repeat it.</li>
+      <li><strong>Test two options</strong> with YouTube's Test &amp; Compare when you're unsure.</li>
+    </ol>
+    <p>For the principles behind these formulas — including what research says about curiosity and negative framing — read <a href="@youtube-video-titles-that-get-clicks">how to write YouTube titles that get clicks</a>.</p>
+
+    <h2>What the checker looks at</h2>
+    <ul>
+      <li><strong>Length:</strong> YouTube allows 100 characters, but phones and the "Up next" column show much less. We approximate the cut at about 55 and 70 characters.</li>
+      <li><strong>Capitals and punctuation:</strong> a single capitalized word can add emphasis; many capitals and repeated "!!" or "??" look spammy.</li>
+      <li><strong>Emojis:</strong> one can add personality; several use up valuable space.</li>
+      <li><strong>Hype words:</strong> phrases like "you won't believe" aren't banned, but they set expectations your video must meet.</li>
+    </ul>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>Does this tool use AI?</summary><p>No. It combines your topic with a curated set of title formulas, entirely in your browser. That keeps it fast and private, and it means you should always edit the result with specifics from your video.</p></details>
+      <details><summary>How long should a YouTube title be?</summary><p>Up to 100 characters are allowed. Aim to make the first 50 or so characters meaningful on their own; many good titles are 40–60 characters long.</p></details>
+      <details><summary>Should I put keywords in my title?</summary><p>Yes, if people search for the topic: use the phrase they'd type, naturally, near the start. Don't stuff multiple keywords.</p></details>
+    </div>
+  </div>
+</section>

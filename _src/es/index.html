@@ -1,0 +1,109 @@
+---
+type: home
+title: Descargar miniaturas de YouTube gratis (tamaño completo) – TubeTools
+title_exact: true
+description: Pega un enlace de YouTube para ver y guardar su miniatura en todos los tamaños que guarda YouTube, hasta 1280×720. Gratis, sin registro, también para Shorts y directos.
+h1: Descargar miniaturas de YouTube
+lead: Pega cualquier enlace de YouTube para ver y guardar su miniatura en todos los tamaños que guarda YouTube, hasta 1280&times;720. Gratis, sin registro y funciona por completo en tu navegador.
+alt: index
+nav: tools
+tool_order: 1
+icon: download
+card_title: Descargar miniaturas
+card_short: Guarda la miniatura de cualquier vídeo
+card_desc: Obtén la miniatura de cualquier vídeo, Short o directo de YouTube en todas las resoluciones disponibles.
+script: downloader
+---
+<script type="application/json" id="tool-i18n">{"max":"Resolución máxima","sd":"Definición estándar","hq":"Alta calidad","mq":"Calidad media","small":"Pequeña","download":"Descargar","downloading":"Descargando…","done":"Guardada ✓","copy":"Copiar URL","copied":"Copiada ✓","altPrefix":"Miniatura del vídeo","invalid":"Eso no parece un enlace de vídeo de YouTube. Pega una URL como youtube.com/watch?v=… o youtu.be/…","analyze":"Analizar esta miniatura","preview":"Compararla en una vista previa del feed","untitled":"Vídeo de YouTube","analyzerUrl":"/analizador-miniaturas.html","previewUrl":"/vista-previa-miniatura-youtube.html"}</script>
+
+<div class="container">
+  <div class="tool-panel">
+    <form id="dl-form" novalidate>
+      <label class="label" for="dl-url">URL o ID del vídeo de YouTube</label>
+      <div class="input-row" style="margin-top:6px">
+        <input class="input" id="dl-url" name="url" type="text" inputmode="url" autocomplete="off" placeholder="https://www.youtube.com/watch?v=…" required>
+        <button class="btn btn-primary" type="submit">Obtener miniatura</button>
+      </div>
+      <div class="chips" aria-label="Enlaces compatibles">
+        <span class="chip">youtube.com/watch</span><span class="chip">youtu.be</span><span class="chip">Shorts</span><span class="chip">Directos</span><span class="chip">Embed</span>
+      </div>
+      <p id="dl-error" class="alert alert-error" role="alert" hidden></p>
+    </form>
+
+    <div id="dl-history-wrap" hidden style="margin-top:20px">
+      <div class="toolbar" style="margin-bottom:8px"><span class="label">Recientes</span><button type="button" class="btn btn-ghost btn-sm" id="dl-clear-history">Borrar</button></div>
+      <div class="history" id="dl-history"></div>
+    </div>
+  </div>
+
+  <section id="dl-results" class="tool-panel" hidden aria-live="polite">
+    <div class="toolbar">
+      <div class="video-meta" id="dl-meta"></div>
+      <div id="dl-links" class="hero-actions" style="margin-top:0"></div>
+    </div>
+    <div class="thumb-results" id="dl-grid"></div>
+    <p class="panel-note">Las miniaturas pertenecen a quienes las crearon. Úsalas como referencia, para investigar, comentar o con permiso del creador; no para volver a subirlas como tuyas.</p>
+  </section>
+</div>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>Más herramientas gratuitas para creadores</h2>
+      <p class="section-lead">Todo funciona en tu navegador. Nada que instalar y sin cuenta.</p>
+    </div>
+    [[tools_grid_other]]
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Guías que merece la pena leer antes de tu próximo vídeo</h2>
+      <p class="section-lead">Explicaciones prácticas basadas en la documentación oficial de YouTube, indicando claramente qué es un dato y qué es una estimación.</p>
+    </div>
+    [[featured_guides]]
+    <p style="margin-top:20px"><a class="btn btn-ghost" href="@blog">Ver todas las guías</a></p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>Cómo funciona el descargador de miniaturas</h2>
+    <p>Cada vídeo público de YouTube tiene un conjunto de miniaturas guardadas en los servidores de imágenes de YouTube (<code>i.ytimg.com</code>). Cuando pegas un enlace, TubeTools lee el identificador de 11 caracteres del vídeo y carga esas imágenes directamente desde YouTube en tu navegador. No hay ningún servidor nuestro en medio, así que el enlace que pegas no se nos envía ni se guarda en ningún sitio salvo en la lista de «Recientes» de tu propio navegador, que puedes borrar cuando quieras.</p>
+
+    <h3>¿Qué tamaños puedes conseguir?</h3>
+    <p>YouTube genera los mismos cinco archivos para la mayoría de vídeos. El más grande normalmente solo existe en vídeos subidos en HD, así que los vídeos antiguos o de baja resolución pueden quedarse en 640&times;480.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Archivo</th><th>Tamaño (px)</th><th>Proporción</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td><code>maxresdefault.jpg</code></td><td>1280 &times; 720</td><td>16:9</td><td>La mejor calidad. No está disponible en todos los vídeos.</td></tr>
+          <tr><td><code>sddefault.jpg</code></td><td>640 &times; 480</td><td>4:3</td><td>Las miniaturas 16:9 aparecen con bandas negras arriba y abajo.</td></tr>
+          <tr><td><code>hqdefault.jpg</code></td><td>480 &times; 360</td><td>4:3</td><td>Siempre existe; también con bandas.</td></tr>
+          <tr><td><code>mqdefault.jpg</code></td><td>320 &times; 180</td><td>16:9</td><td>Recorte limpio en 16:9, útil para vistas rápidas.</td></tr>
+          <tr><td><code>default.jpg</code></td><td>120 &times; 90</td><td>4:3</td><td>Versión antigua diminuta.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Los creadores ya pueden subir miniaturas de hasta 3840&times;2160 en YouTube Studio, pero estas URL públicas siguen ofreciendo los tamaños de la tabla. Si necesitas el archivo original de un vídeo <em>tuyo</em>, guarda siempre el archivo de diseño: YouTube no devuelve el original.</p>
+
+    <h3>¿Para qué descargar una miniatura?</h3>
+    <ul>
+      <li><strong>Investigar tu nicho.</strong> Pon los mejores vídeos de un tema uno al lado del otro y busca patrones de color, caras, texto y encuadre. Nuestra guía para <a href="@analizar-miniaturas-competencia">analizar las miniaturas de la competencia</a> explica un método sencillo.</li>
+      <li><strong>Revisar tu trabajo.</strong> Descarga tu miniatura publicada y pásala por el <a href="@analizador-miniaturas">Analizador de miniaturas</a> o la <a href="@vista-previa-miniatura-youtube">vista previa en el feed</a> para ver cómo aguanta a tamaños pequeños.</li>
+      <li><strong>Comentarios, reseñas y enseñanza.</strong> Mostrar una miniatura mientras hablas del vídeo es un uso habitual y legítimo.</li>
+      <li><strong>Recuperar un archivo perdido.</strong> Si borraste el diseño de uno de tus vídeos, la versión de máxima resolución es la mejor copia que guarda YouTube.</li>
+    </ul>
+
+    <h3>¿Es legal descargar miniaturas de YouTube?</h3>
+    <p>Ver y guardar una imagen pública para tu consulta personal suele estar bien, pero las miniaturas son obras protegidas por derechos de autor y pertenecen al canal que las creó. No subas la miniatura de otra persona como si fuera tuya, no la uses en anuncios ni la vendas. Para comentar, criticar o enseñar puede aplicarse el derecho de cita (UE) o el fair use (EE. UU.), pero depende de cada caso. Si tienes dudas, pregunta al creador. Esto no es asesoramiento legal.</p>
+
+    <h3>Solución de problemas</h3>
+    <ul>
+      <li><strong>Solo aparecen tamaños pequeños:</strong> el vídeo no tiene versión de 1280&times;720. Es una limitación de YouTube.</li>
+      <li><strong>No aparece el título:</strong> el vídeo puede ser privado, tener restricción de edad o haberse eliminado. Las miniaturas pueden seguir existiendo un tiempo después de eliminar un vídeo.</li>
+      <li><strong>El botón de descarga abre una pestaña nueva:</strong> algunos navegadores bloquean las descargas automáticas. Haz clic derecho en la imagen y elige «Guardar imagen como…».</li>
+    </ul>
+  </div>
+</section>

@@ -1,510 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Title Generator 2026 - Free Tool | TubeTools</title>
-  <meta name="description" content="Free YouTube title generator 2026. Enter your topic and get 10 high-CTR titles instantly. Smart formulas, coherent results — free, no signup.">
-  <link rel="canonical" href="https://tubetools.online/en/youtube-title-generator.html">
-  <link rel="alternate" hreflang="en" href="https://tubetools.online/en/youtube-title-generator.html">
-  <link rel="alternate" hreflang="es" href="https://tubetools.online/generador-titulos-youtube.html">
-  <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/youtube-title-generator.html">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tubetools.online/en/youtube-title-generator.html">
-  <meta property="og:title" content="YouTube Title Generator 2026 - Free Tool | TubeTools">
-  <meta property="og:description" content="Get 10 high-CTR YouTube title variations instantly. Smart formulas, coherent results — free.">
-  <meta property="og:image" content="https://tubetools.online/og_image_en.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="YouTube Title Generator 2026 - Free | TubeTools">
-  <meta name="twitter:description" content="10 high-CTR YouTube titles generated instantly from your topic. Free, no signup.">
-  <meta name="twitter:image" content="https://tubetools.online/og_image_en.png">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube Title Generator 2026","description":"Free tool to generate optimized YouTube video titles based on proven high-CTR formulas.","url":"https://tubetools.online/en/youtube-title-generator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"TubeTools","url":"https://tubetools.online"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What makes a good YouTube title?","acceptedAnswer":{"@type":"Answer","text":"A high-CTR YouTube title creates a curiosity gap with the thumbnail, includes a specific promise (number, timeframe, or outcome), addresses the viewer directly, and places the primary keyword within the first 5 words. The title and thumbnail must complement each other — not say the same thing."}},{"@type":"Question","name":"How long should a YouTube title be?","acceptedAnswer":{"@type":"Answer","text":"50-70 characters is the sweet spot. YouTube shows the full title up to about 60-70 characters in most views. Put your keyword and main hook in the first 60 characters to maximize both CTR and search ranking."}},{"@type":"Question","name":"Should I change my YouTube title if CTR is low?","acceptedAnswer":{"@type":"Answer","text":"Yes. If after 48-72 hours your CTR is below 3-4%, change both the title and thumbnail. It is the highest-impact short-term fix available. YouTube re-evaluates the video with new performance data after each change."}}]}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tubetools.online/en/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://tubetools.online/en/index.html"},{"@type":"ListItem","position":3,"name":"YouTube Title Generator","item":"https://tubetools.online/en/youtube-title-generator.html"}]}
-  </script>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1c1e21;background:#f5f5f5;line-height:1.6}
-    nav{background:#1c1e21;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-    nav a{color:#ccc !important;text-decoration:none;font-size:.9rem}
-    nav a.logo{font-weight:700;font-size:1.1rem}
-    .nav-links{display:flex;gap:20px}
-    .hero{background:linear-gradient(135deg,#1c1e21 0%,#d32f2f 100%);color:#fff;text-align:center;padding:50px 20px 40px}
-    .hero h1{font-size:2.2rem;font-weight:800;margin-bottom:12px}
-    .hero p{font-size:1.05rem;opacity:.9;max-width:600px;margin:0 auto}
-    .tool-wrap{max-width:800px;margin:-20px auto 0;padding:0 20px 60px}
-    .card{background:#fff;border-radius:16px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-bottom:20px}
-    label{font-weight:600;font-size:.9rem;color:#555;display:block;margin-bottom:8px}
-    input[type=text],select{width:100%;padding:13px 16px;border:2px solid #eee;border-radius:10px;font-size:1rem;outline:none;transition:.2s}
-    input[type=text]:focus,select:focus{border-color:#d32f2f}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:18px}
-    @media(max-width:600px){.row{grid-template-columns:1fr}}
-    .field{margin-bottom:18px}
-    .btn{width:100%;padding:15px;background:#d32f2f;color:#fff;border:none;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;transition:.2s}
-    .btn:hover{background:#b71c1c}
-    .results{display:none}
-    .title-card{background:#f9f9f9;border-left:3px solid #d32f2f;border-radius:8px;padding:14px 16px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
-    .title-text{font-size:.95rem;color:#1c1e21;font-weight:500;flex:1;min-width:180px}
-    .formula-tag{font-size:.75rem;background:#fce4ec;color:#c62828;padding:3px 8px;border-radius:20px;white-space:nowrap;font-weight:600}
-    .copy-btn{background:none;border:1px solid #ddd;border-radius:6px;padding:5px 10px;cursor:pointer;font-size:.8rem;color:#555;transition:.2s;white-space:nowrap}
-    .copy-btn:hover{background:#d32f2f;color:#fff;border-color:#d32f2f}
-    .copy-btn.copied{background:#2e7d32;color:#fff;border-color:#2e7d32}
-    .char-count{font-size:.8rem;color:#888;margin-top:4px}
-    .tips{background:#fff3e0;border-left:4px solid #f57f17;border-radius:8px;padding:16px;margin-top:15px}
-    .info-section{max-width:800px;margin:0 auto;padding:0 20px 60px}
-    .info-section h2{font-size:1.4rem;font-weight:700;color:#1c1e21;margin:30px 0 15px}
-    .info-section p{color:#444;margin-bottom:14px}
-    footer{background:#1c1e21;color:#888;text-align:center;padding:40px 20px}
-    footer a{color:#bbb;text-decoration:none;margin:0 12px}
-  
-    nav{position:sticky;top:0;z-index:1000;background:#1c1e21;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
-    .nav-logo{color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
-    .nav-logo span{color:#ff5252}
-    .nav-links{display:flex;gap:4px;align-items:center}
-    .nav-links a{color:#ccc !important;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;transition:background .2s,color .2s;white-space:nowrap}
-    .nav-links a:hover{background:rgba(255,255,255,.08);color:#fff !important}
-    .nav-links a.lang-btn-es{color:#a5d6a7 !important;border:1px solid rgba(165,214,167,.35)}
-    .nav-links a.active-link{color:#fff !important;background:rgba(211,47,47,.2)}
-    .nav-dropdown{position:relative}
-    .nav-dropdown>a{display:flex;align-items:center;gap:4px}
-    .nav-dropdown>a::after{content:'▾';font-size:.7rem;opacity:.7}
-    .dropdown-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#2c2e33;border-radius:12px;padding:10px 8px;min-width:240px;box-shadow:0 8px 32px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.07);z-index:2000}
-    .nav-dropdown:hover .dropdown-panel,.nav-dropdown:focus-within .dropdown-panel{display:block}
-    .dropdown-panel a{display:flex;align-items:center;gap:10px;color:#ccc !important;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;transition:background .2s;width:100%}
-    .dropdown-panel a:hover{background:rgba(255,255,255,.09);color:#fff !important}
-    .dp-icon{width:22px;text-align:center;font-size:1.05rem;flex-shrink:0}
-    .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-    @media(max-width:720px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}.nav-links.open{display:flex}.nav-links a{padding:11px 14px;border-radius:8px}.nav-dropdown>a::after{display:none}.dropdown-panel{display:block;position:static;transform:none;background:rgba(255,255,255,.04);border:none;box-shadow:none;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}.dropdown-panel a{font-size:.83rem;padding:7px 10px}}
-    .site-footer{background:#1c1e21;color:#888;padding:48px 20px 32px;margin-top:60px}
-    .footer-inner{max-width:960px;margin:0 auto}
-    .footer-grid{display:grid;grid-template-columns:1fr repeat(3,auto);gap:40px;margin-bottom:36px}
-    @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
-    @media(max-width:440px){.footer-grid{grid-template-columns:1fr}}
-    .footer-logo{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:10px}
-    .footer-logo span{color:#ff5252}
-    .footer-brand p{font-size:.83rem;color:#666;line-height:1.6;max-width:220px}
-    .footer-col h4{font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
-    .footer-col a{display:block;color:#888 !important;text-decoration:none;font-size:.85rem;margin-bottom:8px;transition:color .2s}
-    .footer-col a:hover{color:#fff !important}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-    .footer-bottom p{font-size:.78rem;color:#555}
-    .footer-lang-btn{padding:5px 14px;border-radius:999px;text-decoration:none !important;font-size:.82rem;font-weight:600;transition:background .2s}
-    .footer-lang-btn.es-fb{background:rgba(165,214,167,.1);color:#a5d6a7 !important;border:1px solid rgba(165,214,167,.3)}
-    .footer-lang-btn.es-fb:hover{background:rgba(165,214,167,.2)}
-    .skip-link{position:absolute;top:-100px;left:0;background:#d32f2f;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s;}
-  .skip-link:focus{top:0;}
-  </style>
-
-
-<style id='tt-global'>
-
-/* ── TubeTools Global Fix ── */
-*, *::before, *::after { box-sizing: border-box; }
-a { color: inherit; }
-a:not([class]):not([style]) { color: inherit; text-decoration: none; }
-.read-more, .btn-read-more {
-  display: inline-block; background: #d32f2f; color: #fff !important;
-  text-decoration: none; padding: 9px 18px; border-radius: 8px;
-  font-size: .85rem; font-weight: 700; transition: background .2s; margin-top: 8px;
-}
-.read-more:hover, .btn-read-more:hover { background: #b71c1c !important; }
-.article-card h3 a, .article-title a, .card-title a, .blog-card h3 a {
-  color: #1c1e21 !important; text-decoration: none !important; font-weight: 700;
-}
-.article-card h3 a:hover, .blog-card h3 a:hover { color: #d32f2f !important; }
-footer a { color: #888 !important; text-decoration: none !important; }
-footer a:hover { color: #fff !important; }
-nav a { text-decoration: none; }
-/* Nav fix */
-nav { position: sticky; top: 0; z-index: 1000; background: #1c1e21;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 24px; height: 58px; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
-nav .nav-logo { color: #fff; text-decoration: none; font-size: 1.1rem;
-  font-weight: 800; display: flex; align-items: center; gap: 6px; }
-nav .nav-logo .logo-accent { color: #ff5252; }
-nav .nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
-nav .nav-links a { color: #ccc !important; text-decoration: none; font-size: .88rem;
-  font-weight: 500; padding: 6px 11px; border-radius: 8px;
-  transition: background .2s, color .2s; white-space: nowrap; }
-nav .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
-nav .nav-links a.lang-btn-en { color: #90caf9; border: 1px solid rgba(144,202,249,.35); }
-nav .nav-links a.lang-btn-es { color: #a5d6a7; border: 1px solid rgba(165,214,167,.35); }
-nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
-.nav-toggle { display: none; background: none; border: none; color: #fff;
-  font-size: 1.4rem; cursor: pointer; padding: 6px; }
-/* Tools dropdown */
-.nav-dropdown { position: relative; }
-.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-.nav-dropdown > a::after { content: '▾'; font-size: .7rem; opacity: .7; }
-.dropdown-panel { display: none; position: absolute; top: calc(100% + 6px);
-  left: 50%; transform: translateX(-50%); background: #2c2e33;
-  border-radius: 12px; padding: 10px 8px; min-width: 240px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.4); border: 1px solid rgba(255,255,255,.07);
-  z-index: 2000; }
-.nav-dropdown:hover .dropdown-panel,
-.nav-dropdown:focus-within .dropdown-panel { display: block; }
-.dropdown-panel a { display: flex; align-items: center; gap: 10px; color: #ccc !important;
-  text-decoration: none !important; font-size: .85rem; padding: 9px 14px;
-  border-radius: 8px; transition: background .2s; width: 100%; }
-.dropdown-panel a:hover { background: rgba(255,255,255,.09) !important; color: #fff !important; }
-.dp-icon { width: 22px; text-align: center; font-size: 1.05rem; flex-shrink: 0; }
-/* Mobile nav */
-@media(max-width: 720px) {
-  .nav-toggle { display: block !important; }
-  .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0;
-    background: #2c2e33; flex-direction: column; align-items: stretch;
-    padding: 10px 16px 16px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
-  .nav-links.open { display: flex; }
-  .nav-links a { padding: 11px 14px; border-radius: 8px; }
-  .nav-dropdown > a::after { display: none; }
-  .dropdown-panel { display: block; position: static; transform: none;
-    background: rgba(255,255,255,.04); border: none; box-shadow: none;
-    border-radius: 8px; padding: 4px 0 4px 12px; min-width: auto; margin-top: 2px; }
-  .dropdown-panel a { font-size: .83rem; padding: 7px 10px; }
-}
-/* Footer fix */
-.site-footer { background: #1c1e21; color: #888; padding: 48px 20px 32px; margin-top: 60px; }
-.site-footer .footer-inner { max-width: 960px; margin: 0 auto; }
-.site-footer .footer-grid { display: grid; grid-template-columns: 1fr repeat(3, auto);
-  gap: 40px; margin-bottom: 36px; }
-@media(max-width: 700px) { .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
-@media(max-width: 440px) { .site-footer .footer-grid { grid-template-columns: 1fr; } }
-.site-footer .footer-brand .footer-logo { font-size: 1.1rem; font-weight: 800;
-  color: #fff; margin-bottom: 10px; }
-.site-footer .footer-brand .footer-logo .logo-accent { color: #ff5252; }
-.site-footer .footer-brand p { font-size: .83rem; color: #666; line-height: 1.6; max-width: 220px; }
-.site-footer .footer-col h4 { font-size: .8rem; font-weight: 700; color: #fff;
-  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
-.site-footer .footer-col a { display: block; color: #888 !important;
-  text-decoration: none !important; font-size: .85rem; margin-bottom: 8px;
-  transition: color .2s; }
-.site-footer .footer-col a:hover { color: #fff !important; }
-.site-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.07);
-  padding-top: 20px; display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 10px; }
-.site-footer .footer-bottom p { font-size: .78rem; color: #555; }
-.site-footer .footer-lang-btn { padding: 5px 14px; border-radius: 999px;
-  text-decoration: none !important; font-size: .82rem; font-weight: 600; transition: background .2s; }
-.site-footer .footer-lang-btn.en-fb { background: rgba(144,202,249,.12);
-  color: #90caf9 !important; border: 1px solid rgba(144,202,249,.3); }
-.site-footer .footer-lang-btn.en-fb:hover { background: rgba(144,202,249,.22) !important; }
-.site-footer .footer-lang-btn.es-fb { background: rgba(165,214,167,.1);
-  color: #a5d6a7 !important; border: 1px solid rgba(165,214,167,.3); }
-.site-footer .footer-lang-btn.es-fb:hover { background: rgba(165,214,167,.2) !important; }
-
-</style>
-
-<style id="mobile-nav-fix">
-@media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
-  .nav-links.open{display:flex !important}
-  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
-  .nav-dropdown{width:100% !important;position:static !important}
-  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
-  .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
-  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
-}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube Title Generator &amp; Length Checker (Free) | TubeTools</title>
+<meta name="description" content="Generate YouTube title ideas from proven formulas and check any title&#x27;s length, truncation on mobile and desktop, caps and clickbait warnings. Free, no sign-up.">
+<link rel="canonical" href="https://tubetools.online/en/youtube-title-generator.html">
+<link rel="alternate" hreflang="en" href="https://tubetools.online/en/youtube-title-generator.html">
+<link rel="alternate" hreflang="es" href="https://tubetools.online/generador-titulos-youtube.html">
+<link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/youtube-title-generator.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:site_name" content="TubeTools">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="YouTube Title Generator &amp;amp; Checker">
+<meta property="og:description" content="Generate YouTube title ideas from proven formulas and check any title&#x27;s length, truncation on mobile and desktop, caps and clickbait warnings. Free, no sign-up.">
+<meta property="og:url" content="https://tubetools.online/en/youtube-title-generator.html">
+<meta property="og:image" content="https://tubetools.online/assets/img/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',region:["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"],wait_for_update:500});gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});gtag('js',new Date());gtag('config','G-MKM07L3RLR');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/site.css?v=7d5d42b9">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Title Generator", "url": "https://tubetools.online/en/youtube-title-generator.html", "description": "Generate YouTube title ideas from proven formulas and check any title's length, truncation on mobile and desktop, caps and clickbait warnings. Free, no sign-up.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "inLanguage": "en"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tubetools.online/en/"}, {"@type": "ListItem", "position": 2, "name": "Title Generator", "item": "https://tubetools.online/en/youtube-title-generator.html"}]}</script>
 </head>
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <nav>
-  <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="nav-links">
-    <a href="/generador-titulos-youtube.html" class="lang-btn-es">🇪🇸 ES</a>
-    <a href="/en/">Home</a>
-    <div class="nav-dropdown">
-      <a href="/en/tools.html">🎯 Tools</a>
-      <div class="dropdown-panel">
-        <a href="/en/"><span class="dp-icon">🖼️</span>Thumbnail Extractor</a>
-        <a href="/en/thumbnail-analyzer.html"><span class="dp-icon">🔬</span>Thumbnail Analyzer</a>
-        <a href="/en/youtube-title-generator.html"><span class="dp-icon">✍️</span>Title Generator</a>
-        <a href="/en/calculator.html"><span class="dp-icon">🧮</span>Revenue Calculator</a>
-        <a href="/en/ctr-score-calculator.html"><span class="dp-icon">📊</span>CTR Score</a>
-        <a href="/en/thumbnail-checklist.html"><span class="dp-icon">✅</span>Checklist</a>
+<body class="page-tool">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/en/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#d32f2f"/><path d="M9 9h14v4.5h-4.75V24h-4.5V13.5H9z" fill="#fff"/></svg><span>Tube<b>Tools</b></span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="sr-only">Menu</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <div class="nav-dd">
+        <button class="nav-dd-btn is-active" aria-expanded="false">Tools <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="nav-dd-panel"><a href="/en/" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span><strong>Thumbnail Downloader</strong><small>Save any video&#x27;s thumbnail in full size</small></span></a><a href="/en/thumbnail-analyzer.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="15.5" cy="9" r="1.5"/></svg><span><strong>Thumbnail Analyzer</strong><small>Contrast, color and readability checks</small></span></a><a href="/en/youtube-thumbnail-preview.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><span><strong>Feed Preview</strong><small>See your thumbnail next to competitors</small></span></a><a href="/en/thumbnail-checklist.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg><span><strong>Thumbnail Checklist</strong><small>15-point review with a score</small></span></a><a href="/en/youtube-title-generator.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5h16v2"/><path d="M12 5v14"/><path d="M9 19h6"/></svg><span><strong>Title Generator</strong><small>Title ideas plus a length checker</small></span></a><a href="/en/calculator.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg><span><strong>Revenue Calculator</strong><small>Estimate earnings from views and RPM</small></span></a></div>
       </div>
+      <a href="/en/blog.html">Guides</a>
+      <a href="/en/glossary.html">Glossary</a>
+      <a href="/en/about.html">About</a>
+      <a class="lang-switch" href="/generador-titulos-youtube.html" hreflang="es" lang="es" title="Leer en español"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg> Español</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="tool-main">
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/en/">Home</a></li><li aria-current="page">Title Generator</li></ol></nav>
+      <h1>YouTube Title Generator &amp; Checker</h1>
+      <p class="lead">Get a dozen title ideas built on formulas that work for tutorials, stories, reviews and explainers — then check how your final title will be cut off on phones and in the sidebar.</p>
     </div>
-    <a href="/en/blog.html">Blog</a>
-    <a href="/en/glossary.html">Glossary</a>
-    <a href="/en/contact.html">Contact</a>
-  </div>
-</nav>
+  </section>
+<script type="application/json" id="tool-i18n">{
+"stripPrefixes":["how to ","what is ","what are ","why "],
+"defResult":"Real Results","defPeriod":"30 Days","defAudience":"Beginners",
+"chars":"characters","lenGood":"fits","lenOk":"may be cut on mobile","lenLong":"likely cut off","check":"Check","copy":"Copy","copied":"Copied ✓",
+"bOk":"Good","bWarn":"Check","bBad":"Fix",
+"nTooLong":"Over YouTube's 100-character limit.","nLong":"Long: the end will be cut off in many places. Make sure the first ~50 characters carry the idea.","nShort":"Very short. Consider adding a specific detail (a number, result or timeframe).","nGood":"Good length: the key idea should be visible almost everywhere.",
+"nCaps":"Lots of ALL-CAPS words. Capitalizing one key word adds emphasis; more reads as shouting.","nPunct":"Repeated punctuation (!!, ??) can look spammy.","nEmoji":"Several emojis take space and rarely add meaning.","nNumber":"Contains a number — specific numbers make promises concrete. Make sure it's accurate.",
+"nHype":"Contains hype words. Fine if the video truly delivers; otherwise it can hurt trust and retention.","nVague":"Starts with a vague phrase. Lead with the topic or the hook instead.",
+"hype":["you won't believe","shocking","insane","gone wrong","secret they","100% guaranteed","must watch"],
+"vague":["my thoughts","vlog","video ","update","episode"],
+"templates":[
+{"s":"howto","k":"Beginner guide","t":"{T} for {A}: Everything You Need to Know"},
+{"s":"howto","k":"Fast explainer","t":"{T} Explained in 10 Minutes"},
+{"s":"howto","k":"Tips","t":"{T} Tips That Actually Work"},
+{"s":"list","k":"Mistakes","t":"7 {T} Mistakes to Avoid"},
+{"s":"list","k":"Lessons","t":"5 Things I Learned From {P} of {T}"},
+{"s":"story","k":"Experiment","t":"I Tried {T} for {P}. Here's What Happened"},
+{"s":"story","k":"Result","t":"How I Got {R} With {T}"},
+{"s":"story","k":"Hindsight","t":"{T}: What I Wish I Knew Before Starting"},
+{"s":"question","k":"Worth it?","t":"Is {T} Worth It in {Y}? An Honest Take"},
+{"s":"question","k":"Why","t":"Why Most People Struggle With {T}"},
+{"s":"question","k":"Hidden truth","t":"What Nobody Tells You About {T}"},
+{"s":"review","k":"Comparison","t":"Cheap vs. Expensive {T}: Is There a Difference?"},
+{"s":"review","k":"Skill levels","t":"Beginner vs. Pro {T}"},
+{"s":"review","k":"Verdict","t":"{T}: My Honest Review After {P}"}
+]}</script>
 
-  <div class="hero">
-    <h1>🎯 YouTube Title Generator</h1>
-    <p>Enter your video topic and get 10 ready-to-use titles instantly. Smart formulas that produce coherent, high-CTR results — not mechanical templates.</p>
-  </div>
-
-  <div class="tool-wrap">
-    <div class="card">
+<div class="container">
+  <div class="tool-panel">
+    <h2 id="1-generate-title-ideas">1. Generate title ideas</h2>
+    <form id="tg-form" novalidate>
       <div class="field">
-        <label for="topic">What is your video about? *</label>
-        <input type="text" id="topic" placeholder="e.g. growing on YouTube, meal prep, Dropshipping, thumbnail CTR, investing for beginners..." maxlength="80">
-        <div class="char-count" id="topicCount">0 / 80 — describe the topic in a few words, skip "how to" or "what is"</div>
+        <label for="tg-topic">Topic <span class="muted">(a short noun phrase)</span></label>
+        <input class="input" id="tg-topic" type="text" maxlength="60" placeholder="e.g. sourdough bread, budget travel, home workouts" required>
+        <span class="hint">Write the subject, not a full sentence. "Budget travel" works better than "how to travel on a budget".</span>
       </div>
-      <div class="row">
-        <div>
-          <label for="resultado">Specific result (optional)</label>
-          <input type="text" id="resultado" placeholder="e.g. $10,000, 100K subscribers, from 0 to 1,000...">
-        </div>
-        <div>
-          <label for="plazo">Timeframe (optional)</label>
-          <input type="text" id="plazo" placeholder="e.g. in 30 days, in 3 months, in a week...">
-        </div>
+      <div class="form-grid">
+        <div class="field"><label for="tg-audience">Audience <span class="muted">(optional)</span></label><input class="input" id="tg-audience" type="text" maxlength="30" placeholder="Beginners"></div>
+        <div class="field"><label for="tg-style">Style</label>
+          <select class="select" id="tg-style">
+            <option value="all">All formulas</option>
+            <option value="howto">How-to &amp; guides</option>
+            <option value="list">Lists</option>
+            <option value="story">Stories &amp; experiments</option>
+            <option value="question">Questions &amp; explainers</option>
+            <option value="review">Reviews &amp; comparisons</option>
+          </select></div>
+        <div class="field"><label for="tg-result">Result <span class="muted">(optional)</span></label><input class="input" id="tg-result" type="text" maxlength="30" placeholder="e.g. My First 1,000 Subscribers"></div>
+        <div class="field"><label for="tg-period">Timeframe <span class="muted">(optional)</span></label><input class="input" id="tg-period" type="text" maxlength="20" placeholder="30 Days"></div>
       </div>
-      <div class="field">
-        <label for="niche">Niche / Category</label>
-        <select id="niche">
-          <option value="general">General / Any niche</option>
-          <option value="finance">Finance &amp; Investing</option>
-          <option value="tech">Technology &amp; Software</option>
-          <option value="education">Education &amp; Tutorials</option>
-          <option value="gaming">Gaming</option>
-          <option value="fitness">Health &amp; Fitness</option>
-          <option value="business">Business &amp; Entrepreneurship</option>
-          <option value="lifestyle">Lifestyle &amp; Vlogs</option>
-          <option value="cooking">Food &amp; Cooking</option>
-          <option value="youtube">YouTube Growth</option>
-        </select>
-      </div>
-      <button class="btn" onclick="generateTitles()">⚡ Generate 10 Titles</button>
-    </div>
-
-    <div class="card results" id="results">
-      <h2 style="font-size:1.2rem;margin-bottom:6px;color:#d32f2f;">📋 Your 10 Generated Titles</h2>
-      <p style="font-size:.85rem;color:#888;margin-bottom:18px;">Use these as a strong base — add your own voice before publishing.</p>
-      <div id="titleList"></div>
-      <div class="tips">
-        <strong style="color:#f57f17;">💡 Pro tip:</strong> The best title creates a curiosity gap with your thumbnail. If the thumbnail already explains everything, there's no reason to click. Pick the title with the strongest hook and, if CTR is below 4% after 48 hours, swap it for your second choice.
-      </div>
-    </div>
+      <button class="btn btn-primary" type="submit">Generate ideas</button>
+    </form>
   </div>
 
-  <div class="info-section">
-    <h2>How This Title Generator Works</h2>
-    <p>Every title generated is built on one of 10 proven high-CTR formulas, adapted grammatically to your specific topic. This isn't about mechanically inserting your keyword into a template — the generator constructs coherent, natural-sounding phrases that activate proven psychological triggers.</p>
-    <p>The formulas work because they exploit real cognitive mechanisms: negativity bias (mistakes and warnings), loss aversion (FOMO), curiosity about exclusive information, and the desire for fast, concrete results.</p>
+  <section class="tool-panel" id="tg-results" hidden aria-live="polite">
+    <h2 id="title-ideas">Title ideas</h2>
+    <p class="muted small">Starting points, not finished titles. Replace general words with specifics from your video, and only use a formula if the video delivers on it.</p>
+    <ul class="title-list" id="tg-list"></ul>
+  </section>
 
-    <h2>The 10 Formulas Used</h2>
-    <p><strong>1. The Mistake Formula:</strong> Exploits fear of getting something wrong. High conversion in competitive niches.</p>
-    <p><strong>2. The Specific Number:</strong> Specificity creates credibility. "7 ways" always outperforms "several ways".</p>
-    <p><strong>3. The Uncomfortable Truth:</strong> Contradicts a widely held belief. Curiosity from disagreement drives clicks.</p>
-    <p><strong>4. The Personal Experiment:</strong> "I tried it and here's what happened" combines social proof and curiosity.</p>
-    <p><strong>5. The Hidden Secret:</strong> Perceived exclusivity creates immediate urgency to access the content.</p>
-    <p><strong>6. The Transformation:</strong> The implied before/after activates the viewer's desire for change.</p>
-    <p><strong>7. The Direct Question:</strong> Addresses the viewer directly about their current situation.</p>
-    <p><strong>8. The Ultimate Guide:</strong> Promises exhaustiveness and complete value — ideal for evergreen content.</p>
-    <p><strong>9. The Concrete Result:</strong> Anchors the promise to a specific, verifiable number or achievement.</p>
-    <p><strong>10. The Urgent Warning:</strong> "Before you do X" triggers immediate reading out of fear of missing something critical.</p>
-
-    <h2>What Makes a YouTube Title High-CTR?</h2>
-    <p>The best YouTube titles are not the most creative or the most informative — they are the ones that create the greatest psychological tension between what the viewer already knows and what the video promises to reveal. This tension is called the curiosity gap, and it is the engine behind every viral title.</p>
-    <p>The title must also work as a team with the thumbnail, not duplicate it. If your thumbnail shows a shocked expression, the title should explain why. If your thumbnail shows a surprising result, the title should create the question. Together they form a unit that makes not clicking feel impossible.</p>
-
-  
-
-    <section style="margin:40px 0;padding:25px;background:#f9f9f9;border-radius:12px;">
-      <h2 style="color:#d32f2f;margin-bottom:20px;">❓ Frequently Asked Questions</h2>
-      <div style="margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:18px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">What makes a good YouTube title?</h3>
-        <p style="color:#555;">A strong curiosity gap with the thumbnail, a specific promise, direct address to the viewer's problem, and the primary keyword in the first 5 words. Title and thumbnail must complement each other — not say the same thing.</p>
-      </div>
-      <div style="margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:18px;">
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">How long should a YouTube title be?</h3>
-        <p style="color:#555;">50-70 characters is the sweet spot. YouTube shows the full title up to about 60-70 characters. Put the hook and keyword in the first 60 characters.</p>
-      </div>
-      <div>
-        <h3 style="font-size:1rem;color:#1c1e21;margin-bottom:8px;">Should I change my title if CTR is low?</h3>
-        <p style="color:#555;">Yes. If CTR is below 3-4% after 48-72 hours, change both title and thumbnail. YouTube re-evaluates the video with new performance data after each change — it is the highest-impact short-term fix available.</p>
-      </div>
-    </section>
-
-  </div>
-  
-
-    <section style="margin:40px 0;padding:25px;border-top:2px solid #d32f2f;">
-      <h2 style="color:#d32f2f;margin-bottom:20px;">📚 Related Tools & Guides</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;">
-        <a href="ctr-score-calculator.html" style="display:block;padding:15px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;"><strong>🎯 CTR Score Calculator</strong></a>
-        <a href="guide-thumbnails-ctr.html" style="display:block;padding:15px;background:#f9f9f9;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #d32f2f;"><strong>Complete CTR & Thumbnail Guide</strong></a>
-        <a href="calculator.html" style="display:block;padding:15px;background:#fff8e1;border-radius:8px;text-decoration:none;color:#1c1e21;border-left:3px solid #f57f17;"><strong>🧮 Revenue Calculator</strong></a>
-      </div>
-    </section><footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">🚀 Tube<span>Tools</span></div>
-          <p>Free tools for YouTube creators who want to grow with data, not luck.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Tools</h4>
-          <a href="/en/">Thumbnail Extractor</a>
-          <a href="/en/thumbnail-analyzer.html">Analyzer</a>
-          <a href="/en/youtube-title-generator.html">Title Generator</a>
-          <a href="/en/calculator.html">Calculator</a>
-          <a href="/en/ctr-score-calculator.html">CTR Score</a>
-          <a href="/en/thumbnail-checklist.html">Checklist</a>
-        </div>
-        <div class="footer-col">
-          <h4>Guides</h4>
-          <a href="/en/guide-thumbnails-ctr.html">CTR Guide</a>
-          <a href="/en/how-to-increase-youtube-rpm.html">Increase RPM</a>
-          <a href="/en/youtube-cpm-by-niche.html">CPM by Niche</a>
-          <a href="/en/youtube-monetization-requirements.html">Monetization</a>
-          <a href="/en/best-youtube-niches-adsense.html">Best Niches</a>
-          <a href="/en/glossary.html">Glossary</a>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/en/privacy.html">Privacy</a>
-          <a href="/en/terms.html">Terms</a>
-          <a href="/en/contact.html">Contact</a>
-          <a href="/en/about.html">About</a>
-          <a href="/en/sitemap-page.html">Sitemap</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 TubeTools.online — All rights reserved.</p>
-        <a href="/generador-titulos-youtube.html" class="footer-lang-btn es-fb">🇪🇸 Ver en Español</a>
-      </div>
+  <div class="tool-panel">
+    <h2 id="2-check-your-title">2. Check your title</h2>
+    <div class="field">
+      <label for="tc-input">Your title</label>
+      <input class="input" id="tc-input" type="text" maxlength="100" placeholder="Paste or type a title to check it">
     </div>
-  </footer>
-
-  <script>
-    document.getElementById('topic').addEventListener('input', function() {
-      document.getElementById('topicCount').textContent = this.value.length + ' / 80 — describe the topic in a few words, skip "how to" or "what is"';
-    });
-
-    function normalize(raw) {
-      let original = raw.trim();
-      let lower = original.toLowerCase();
-      const prefixes = ['how to ','what is ','what are ','why is ','why do ','when to ','where to ','who is '];
-      for (const p of prefixes) { if (lower.startsWith(p)) { original = original.slice(p.length); break; } }
-      return original.trim();
-    }
-
-    function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
-
-    function generateTitles() {
-      const rawTopic = document.getElementById('topic').value.trim();
-      if (!rawTopic) { document.getElementById('topic').focus(); document.getElementById('topic').style.borderColor='#d32f2f'; return; }
-      document.getElementById('topic').style.borderColor='#eee';
-
-      const niche = document.getElementById('niche').value;
-      const resultado = document.getElementById('resultado').value.trim();
-      const plazo = document.getElementById('plazo').value.trim();
-
-      const topic = normalize(rawTopic);
-      const T = cap(topic);
-
-      const R = resultado || (niche==='finance' ? '$10,000' : niche==='youtube' ? '100K subscribers' : '$5,000');
-      const P = plazo || '30 days';
-
-      const auth = {
-        finance:'financial advisors', tech:'Silicon Valley engineers',
-        education:'universities', gaming:'pro streamers',
-        fitness:'personal trainers', business:'marketing gurus',
-        lifestyle:'top influencers', cooking:'professional chefs',
-        youtube:'creators with 1M+ subscribers', general:'the experts',
-      }[niche] || 'the experts';
-
-      const consequence = {
-        finance:'money every month', tech:'time and productivity',
-        education:'real opportunities', gaming:'your performance',
-        fitness:'visible results', business:'clients and revenue',
-        lifestyle:'your quality of life', cooking:'time in the kitchen',
-        youtube:'views and subscribers', general:'real results',
-      }[niche] || 'real results';
-
-      const formulas = [
-        { tag:'Mistake',    title:`The ${T} Mistake Everyone Makes (And Exactly How to Fix It)` },
-        { tag:'List',       title:`7 Things About ${T} Nobody Ever Explains in 2026` },
-        { tag:'Hard Truth', title:`The Uncomfortable Truth About ${T} Nobody Wants to Hear` },
-        { tag:'Experiment', title:`I Tried ${T} for ${P} — Here's What Actually Happened` },
-        { tag:'Secret',     title:`The ${T} Secret Nobody in Your Niche Will Ever Tell You` },
-        { tag:'Transform',  title:`From Zero to ${R} with ${T} — My Step-by-Step Process` },
-        { tag:'Question',   title:`Does ${T} Actually Work? The Honest Answer Nobody Gives You` },
-        { tag:'Guide',      title:`${T}: The Complete 2026 Guide (Everything You Need to Know)` },
-        { tag:'Result',     title:`How I Got ${R} with ${T} in ${P} (Full Breakdown)` },
-        { tag:'Warning',    title:`Before You Start with ${T}, Watch This (Avoid These Mistakes)` },
-      ];
-
-      const list = document.getElementById('titleList');
-      list.innerHTML = '';
-      formulas.forEach(f => {
-        const len = f.title.length;
-        const color = len > 70 ? '#c62828' : len < 40 ? '#f57f17' : '#2e7d32';
-        const msg = len > 70 ? '⚠️ Consider shortening' : len < 40 ? '⚡ Could be longer' : '✅ Good length';
-        list.innerHTML += `
-          <div class="title-card">
-            <div style="flex:1">
-              <div class="title-text">${f.title}</div>
-              <div style="font-size:.75rem;color:${color};margin-top:4px;">${len} characters — ${msg}</div>
-            </div>
-            <span class="formula-tag">${f.tag}</span>
-            <button class="copy-btn" onclick="copyTitle(this,'${f.title.replace(/'/g,"\\'").replace(/"/g,'&quot;')}')">Copy</button>
-          </div>`;
-      });
-
-      document.getElementById('results').style.display = 'block';
-      document.getElementById('results').scrollIntoView({behavior:'smooth', block:'start'});
-    }
-
-    function copyTitle(btn, text) {
-      navigator.clipboard.writeText(text).then(() => {
-        btn.textContent = '✅ Copied!';
-        btn.classList.add('copied');
-        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
-      });
-    }
-
-    document.getElementById('topic').addEventListener('keypress', e => { if(e.key==='Enter') generateTitles(); });
-    if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
-  </script>
-  <!-- Cookie Banner -->
-  <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:18px 20px;text-align:center;z-index:9999;display:none;">
-    <p style="margin-bottom:12px;">🍪 We use our own and third-party cookies to improve your experience, analyze traffic, and show personalized ads. <a href="privacy.html" style="color:#ff4757;text-decoration:underline;">Read our Privacy Policy</a>.</p>
-    <div>
-      <button id="accept-cookies" style="background:#d32f2f;color:white;border:none;padding:10px 20px;border-radius:5px;margin-right:10px;cursor:pointer;font-weight:600;">Accept</button>
-      <button id="reject-cookies" style="background:#555;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">Reject</button>
+    <div id="tc-out" hidden>
+      <p><span class="badge" id="tc-count">0 / 100</span></p>
+      <div class="form-grid">
+        <div class="field"><span class="label">Approx. on a phone (~55 characters)</span><p class="kpi" id="tc-mobile" style="margin:0;font-weight:600"></p></div>
+        <div class="field"><span class="label">Approx. in the desktop sidebar (~70)</span><p class="kpi" id="tc-side" style="margin:0;font-weight:600"></p></div>
+      </div>
+      <ul class="recs" id="tc-notes" style="list-style:none;padding-left:0"></ul>
+      <p class="panel-note">Truncation is approximate: YouTube cuts titles by pixel width and number of lines, which varies by device, font and layout. Preview it with your thumbnail in the <a href="/en/youtube-thumbnail-preview.html">feed preview</a>.</p>
     </div>
   </div>
-  <script>
-    if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').style.display='block';}
-    document.getElementById('accept-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');document.getElementById('cookie-banner').style.display='none';});
-    document.getElementById('reject-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','rejected');document.getElementById('cookie-banner').style.display='none';});
-  </script>
+</div>
 
-<script>
-(function(){
-  var btn = document.querySelector('.nav-toggle');
-  var links = document.querySelector('.nav-links');
-  if(!btn || !links) return;
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isOpen = links.classList.toggle('open');
-    btn.textContent = isOpen ? '✕' : '☰';
-  });
-  document.addEventListener('click', function(e){
-    if(!links.contains(e.target) && e.target !== btn){
-      links.classList.remove('open');
-      btn.textContent = '☰';
-    }
-  });
-})();
-</script>
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2 id="how-to-turn-an-idea-into-a-great-title">How to turn an idea into a great title</h2>
+    <p>Generated titles are templates. What makes a title work is the specific detail only you can add. Take "I Tried Budget Travel for 30 Days. Here's What Happened": it becomes much stronger as "I Spent 30 Days in Japan on $40 a Day. Here's What Happened" — a real place, a real number, a real promise.</p>
+    <ol class="steps">
+      <li><strong>Pick the formula that matches the video.</strong> A tutorial fits a how-to or list; a personal story fits an experiment; a buying decision fits a comparison.</li>
+      <li><strong>Replace generic words with specifics</strong>: numbers, places, prices, names, timeframes.</li>
+      <li><strong>Put the hook in the first ~50 characters.</strong> Use the checker above to see where the title gets cut.</li>
+      <li><strong>Pair it with the thumbnail.</strong> The title should add to the image, not repeat it.</li>
+      <li><strong>Test two options</strong> with YouTube's Test &amp; Compare when you're unsure.</li>
+    </ol>
+    <p>For the principles behind these formulas — including what research says about curiosity and negative framing — read <a href="/en/youtube-video-titles-that-get-clicks.html">how to write YouTube titles that get clicks</a>.</p>
+
+    <h2 id="what-the-checker-looks-at">What the checker looks at</h2>
+    <ul>
+      <li><strong>Length:</strong> YouTube allows 100 characters, but phones and the "Up next" column show much less. We approximate the cut at about 55 and 70 characters.</li>
+      <li><strong>Capitals and punctuation:</strong> a single capitalized word can add emphasis; many capitals and repeated "!!" or "??" look spammy.</li>
+      <li><strong>Emojis:</strong> one can add personality; several use up valuable space.</li>
+      <li><strong>Hype words:</strong> phrases like "you won't believe" aren't banned, but they set expectations your video must meet.</li>
+    </ul>
+
+    <h2 id="frequently-asked-questions">Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>Does this tool use AI?</summary><p>No. It combines your topic with a curated set of title formulas, entirely in your browser. That keeps it fast and private, and it means you should always edit the result with specifics from your video.</p></details>
+      <details><summary>How long should a YouTube title be?</summary><p>Up to 100 characters are allowed. Aim to make the first 50 or so characters meaningful on their own; many good titles are 40–60 characters long.</p></details>
+      <details><summary>Should I put keywords in my title?</summary><p>Yes, if people search for the topic: use the phrase they'd type, naturally, near the start. Don't stuff multiple keywords.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo logo-invert" href="/en/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#d32f2f"/><path d="M9 9h14v4.5h-4.75V24h-4.5V13.5H9z" fill="#fff"/></svg><span>Tube<b>Tools</b></span></a>
+      <p>Free, privacy-friendly tools and plain-English guides for YouTube creators.</p>
+    </div>
+    <div><h2 class="footer-h">Tools</h2><ul><li><a href="/en/">Thumbnail Downloader</a></li><li><a href="/en/thumbnail-analyzer.html">Thumbnail Analyzer</a></li><li><a href="/en/youtube-thumbnail-preview.html">Feed Preview</a></li><li><a href="/en/thumbnail-checklist.html">Thumbnail Checklist</a></li><li><a href="/en/youtube-title-generator.html">Title Generator</a></li><li><a href="/en/calculator.html">Revenue Calculator</a></li></ul></div>
+    <div><h2 class="footer-h">Popular guides</h2><ul><li><a href="/en/guide-thumbnails-ctr.html">Thumbnail guide</a></li><li><a href="/en/youtube-ctr-guide-for-beginners.html">CTR for beginners</a></li><li><a href="/en/youtube-monetization-requirements.html">Monetization requirements</a></li><li><a href="/en/youtube-rpm-vs-cpm.html">RPM vs CPM</a></li><li><a href="/en/youtube-cpm-by-niche.html">CPM by niche</a></li><li><a href="/en/youtube-thumbnail-size-format-guide.html">Thumbnail size &amp; format</a></li></ul></div>
+    <div><h2 class="footer-h">TubeTools</h2><ul><li><a href="/en/about.html">About</a></li><li><a href="/en/contact.html">Contact</a></li><li><a href="/en/privacy.html">Privacy Policy</a></li><li><a href="/en/terms.html">Terms of Use</a></li><li><a href="/en/sitemap-page.html">Sitemap</a></li><li><a href="/en/privacy.html#cookies" class="js-privacy-settings">Privacy settings</a></li></ul></div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; 2026 TubeTools &middot; tubetools.online. All rights reserved.</p>
+    <p>TubeTools is an independent project and is not affiliated with, endorsed by, or sponsored by YouTube or Google.</p>
+  </div>
+</footer>
+<script src="/assets/js/site.js?v=7d5d42b9" defer></script>
+<script src="/assets/js/tools/titles.js?v=7d5d42b9" defer></script>
 </body>
 </html>

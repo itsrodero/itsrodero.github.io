@@ -1,0 +1,114 @@
+---
+type: article
+title: YouTube Thumbnail Size, Format & Safe Zones (2026 Specs)
+description: Current YouTube thumbnail specs — resolution, aspect ratio, file size limits for desktop and mobile, Shorts — plus how thumbnails display on phones, desktop and TV.
+h1: YouTube Thumbnail Size, Format and Safe Zones
+crumb: Thumbnail size & format
+card_title: Thumbnail size, format and safe zones
+card_desc: The current official specs, Shorts thumbnails, and how your design is displayed on every device.
+lead: YouTube updated its thumbnail specs: you can now upload up to 3840×2160 and files up to 50 MB from a computer. Here are the current requirements, what they mean in practice, and how to design for the small sizes where thumbnails are actually seen.
+alt: tamano-formato-miniatura-youtube-2026
+category: thumbnails
+order: 3
+featured: 4
+published: 2026-05-27
+updated: 2026-09-28
+nav: guides
+related: guide-thumbnails-ctr, youtube-thumbnail-preview, advanced-color-theory-youtube-thumbnails
+---
+<p>Getting the technical specs right is the easy part of thumbnail design, but it's also where small mistakes (black bars, blurry text, rejected uploads) are completely avoidable. This page summarizes the official requirements from YouTube's Help Center as of September 2026, then covers the part that matters more: how your thumbnail will actually look on the devices people use.</p>
+
+<h2>Official YouTube thumbnail specs</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Spec</th><th>Regular videos</th><th>Shorts</th></tr></thead>
+    <tbody>
+      <tr><td>Recommended resolution</td><td>3840 &times; 2160 px</td><td>2160 &times; 3840 px</td></tr>
+      <tr><td>Minimum size</td><td>640 px wide</td><td>640 px tall</td></tr>
+      <tr><td>Aspect ratio</td><td>16:9</td><td>9:16</td></tr>
+      <tr><td>File formats</td><td colspan="2">Image formats such as JPG or PNG</td></tr>
+      <tr><td>Maximum file size</td><td colspan="2">50 MB when uploading from a computer; 2 MB from the mobile app (10 MB for podcast thumbnails)</td></tr>
+      <tr><td>Account requirement</td><td colspan="2">Custom thumbnails require a verified account</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="table-note">Source: YouTube Help, "Add video thumbnails". Specs change occasionally, so check the Help Center if an upload is rejected.</p>
+
+<h3>What resolution should you actually export?</h3>
+<p>For most creators, <strong>1920&times;1080</strong> or <strong>3840&times;2160</strong> is a sensible export size. 1280&times;720 is still perfectly acceptable and was the recommended size for many years; it looks fine on phones and laptops. Larger exports mainly help on big TV screens and high-density displays, where YouTube can show a sharper image. Whatever you choose, keep the 16:9 ratio exactly so nothing gets cropped or letterboxed.</p>
+
+<h3>JPG or PNG?</h3>
+<ul>
+  <li><strong>JPG</strong> is best for photos and gradients. Export at high quality (roughly 85–95%) to avoid blocky artifacts around text and faces.</li>
+  <li><strong>PNG</strong> keeps flat colors and sharp text crisp, but files are larger. Watch the 2 MB limit if you upload from your phone.</li>
+  <li>Export in the <strong>sRGB</strong> color space. Wide-gamut profiles (Display P3, Adobe RGB) can make colors look duller than you intended once converted.</li>
+</ul>
+
+<h3>How to enable custom thumbnails</h3>
+<p>If you don't see the option to upload a thumbnail, your account probably isn't verified yet. In YouTube Studio, go to <strong>Settings &rarr; Channel &rarr; Feature eligibility</strong> and complete phone verification. Custom thumbnails can also be restricted for channels with Community Guidelines strikes.</p>
+
+<h2>How big your thumbnail really is on screen</h2>
+<p>Here's the important part: viewers almost never see your thumbnail at the size you designed it. Approximate display sizes (they vary with screen size and layout changes):</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Where it appears</th><th>Approximate width</th><th>Design implication</th></tr></thead>
+    <tbody>
+      <tr><td>Desktop "Up next" sidebar</td><td>~168 px</td><td>The hardest test. Only big shapes and 1–3 words survive.</td></tr>
+      <tr><td>Desktop home grid</td><td>~300–400 px</td><td>Shown next to 3–5 other thumbnails; contrast with neighbors matters.</td></tr>
+      <tr><td>Desktop search results</td><td>~360–500 px</td><td>Larger, but viewers compare several results at once.</td></tr>
+      <tr><td>Phone home feed</td><td>Full screen width</td><td>Fills the screen, but seen quickly while scrolling at arm's length.</td></tr>
+      <tr><td>TV app</td><td>Large</td><td>Sharpness matters; low-resolution uploads look soft.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>You can see your design at these sizes, in light and dark mode, with our <a href="@youtube-thumbnail-preview">thumbnail preview tool</a>.</p>
+
+<h2>Safe zones: where not to put important details</h2>
+<ul>
+  <li><strong>Bottom-right corner:</strong> the video duration badge covers roughly the bottom-right 15–20% of the width. Never put a number, price or punchline there.</li>
+  <li><strong>Bottom edge:</strong> a red progress bar appears across the bottom for videos a viewer has partly watched.</li>
+  <li><strong>Hover and autoplay:</strong> on the home feed, YouTube may start playing a preview of the video when someone hovers (desktop) or pauses on it (mobile). The thumbnail's first impression still decides whether they stop.</li>
+  <li><strong>Letterboxed legacy sizes:</strong> some older surfaces and third-party sites use 4:3 versions with black bars, so keep key elements away from the very top and bottom edges.</li>
+</ul>
+
+<h2>Designing mobile-first</h2>
+<p>Most YouTube watch time happens on phones and TVs, and on phones thumbnails are consumed fast. A few practical rules follow from that:</p>
+<ol class="steps">
+  <li><strong>Work at 25% zoom.</strong> Keep a small preview window open while designing and make decisions based on it.</li>
+  <li><strong>Use big shapes.</strong> One large subject beats several small ones. Faces should usually fill at least a third of the height.</li>
+  <li><strong>Cap text at about four words</strong> and make it heavy. Thin fonts and long phrases fall apart first.</li>
+  <li><strong>Increase contrast slightly more than feels necessary.</strong> Phone screens outdoors and at low brightness flatten images.</li>
+  <li><strong>Check both themes.</strong> Dark mode is common on phones; make sure the edges of your thumbnail don't dissolve into a black background.</li>
+</ol>
+
+<h2>Shorts thumbnails</h2>
+<p>Shorts are vertical (9:16), and YouTube's Help Center now lists a recommended thumbnail size of 2160&times;3840 for them. Shorts often appear in shelves and grids where the frame may be cropped, so keep the subject and any text near the center of the frame. For Shorts that mostly play in the swipeable feed, the opening frame of the video matters as much as the thumbnail, because many viewers never see the thumbnail at all.</p>
+
+<h2>Common technical problems and fixes</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Problem</th><th>Likely cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>Black bars at top and bottom</td><td>Image isn't exactly 16:9</td><td>Crop or resize the canvas to 16:9 before exporting.</td></tr>
+      <tr><td>Upload rejected on phone</td><td>File over 2 MB</td><td>Export as JPG at slightly lower quality, or upload from a computer.</td></tr>
+      <tr><td>Text looks blurry</td><td>Low resolution or heavy compression</td><td>Export at 1920&times;1080 or larger at higher quality, or use PNG.</td></tr>
+      <tr><td>Colors look dull after upload</td><td>Non-sRGB color profile</td><td>Convert to sRGB on export.</td></tr>
+      <tr><td>No thumbnail upload option</td><td>Account not verified</td><td>Verify your phone number in YouTube Studio settings.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Frequently asked questions</h2>
+<div class="faq">
+  <details><summary>Is 1280×720 still OK for a YouTube thumbnail?</summary><p>Yes. It's above the 640-pixel minimum and looks good on phones and laptops. YouTube now recommends up to 3840&times;2160, which mainly helps on large TVs and high-resolution screens.</p></details>
+  <details><summary>Does the thumbnail file name affect SEO?</summary><p>There's no evidence that the file name of a thumbnail affects how YouTube ranks a video. Name files so they're easy for you to find later.</p></details>
+  <details><summary>Can I use a GIF or animated thumbnail?</summary><p>No. Thumbnails are static images. The home feed can play a short video preview on hover or autoplay, but that comes from the video, not the thumbnail file.</p></details>
+</div>
+
+<div class="sources">
+  <h2 data-notoc>Sources</h2>
+  <ul>
+    <li>YouTube Help — <a href="https://support.google.com/youtube/answer/72431" rel="noopener">Add video thumbnails</a></li>
+    <li>YouTube Help — <a href="https://support.google.com/youtube/answer/9229980" rel="noopener">Thumbnails policy</a></li>
+  </ul>
+</div>

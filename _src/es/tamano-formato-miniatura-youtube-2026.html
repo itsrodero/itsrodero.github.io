@@ -1,0 +1,114 @@
+---
+type: article
+title: Tamaño y formato de miniaturas de YouTube (especificaciones 2026)
+description: Especificaciones actuales de las miniaturas de YouTube (resolución, proporción, peso máximo en ordenador y móvil, Shorts) y cómo se ven en móvil, ordenador y TV.
+h1: Tamaño, formato y zonas seguras de las miniaturas de YouTube
+crumb: Tamaño y formato
+card_title: Tamaño, formato y zonas seguras de las miniaturas
+card_desc: Las especificaciones oficiales actuales, las miniaturas de Shorts y cómo se ve tu diseño en cada dispositivo.
+lead: YouTube ha actualizado las especificaciones: ahora puedes subir miniaturas de hasta 3840×2160 y de hasta 50 MB desde el ordenador. Aquí tienes los requisitos actuales, qué significan en la práctica y cómo diseñar para los tamaños pequeños en los que de verdad se ven.
+alt: youtube-thumbnail-size-format-guide
+category: thumbnails
+order: 3
+featured: 4
+published: 2026-05-27
+updated: 2026-09-28
+nav: guides
+related: guia-miniaturas-ctr, vista-previa-miniatura-youtube, teoria-del-color-miniaturas-youtube
+---
+<p>Acertar con las especificaciones técnicas es la parte fácil del diseño de miniaturas, pero también es donde se cometen errores totalmente evitables: bandas negras, texto borroso o subidas rechazadas. Esta página resume los requisitos oficiales del Centro de Ayuda de YouTube a septiembre de 2026 y después se centra en lo que importa más: cómo se verá tu miniatura en los dispositivos que usa la gente.</p>
+
+<h2>Especificaciones oficiales de las miniaturas</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Especificación</th><th>Vídeos normales</th><th>Shorts</th></tr></thead>
+    <tbody>
+      <tr><td>Resolución recomendada</td><td>3840 &times; 2160 px</td><td>2160 &times; 3840 px</td></tr>
+      <tr><td>Tamaño mínimo</td><td>640 px de ancho</td><td>640 px de alto</td></tr>
+      <tr><td>Proporción</td><td>16:9</td><td>9:16</td></tr>
+      <tr><td>Formatos</td><td colspan="2">Formatos de imagen como JPG o PNG</td></tr>
+      <tr><td>Peso máximo</td><td colspan="2">50 MB al subir desde un ordenador; 2 MB desde la app móvil (10 MB para miniaturas de pódcast)</td></tr>
+      <tr><td>Requisito de cuenta</td><td colspan="2">Las miniaturas personalizadas requieren una cuenta verificada</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="table-note">Fuente: Ayuda de YouTube, «Añadir miniaturas de vídeo». Las especificaciones cambian de vez en cuando; si una subida falla, consulta el Centro de Ayuda.</p>
+
+<h3>¿A qué resolución conviene exportar?</h3>
+<p>Para la mayoría de creadores, <strong>1920&times;1080</strong> o <strong>3840&times;2160</strong> son buenas opciones. 1280&times;720 sigue siendo perfectamente válido y fue el tamaño recomendado durante años; se ve bien en móviles y portátiles. Exportar más grande ayuda sobre todo en televisores y pantallas de alta densidad, donde YouTube puede mostrar una imagen más nítida. Elijas lo que elijas, respeta exactamente la proporción 16:9 para que no se recorte ni aparezcan bandas.</p>
+
+<h3>¿JPG o PNG?</h3>
+<ul>
+  <li><strong>JPG</strong> es lo mejor para fotos y degradados. Expórtalo con calidad alta (entre el 85 % y el 95 %, aproximadamente) para evitar artefactos alrededor del texto y las caras.</li>
+  <li><strong>PNG</strong> mantiene nítidos los colores planos y el texto, pero pesa más. Vigila el límite de 2 MB si subes desde el móvil.</li>
+  <li>Exporta en el espacio de color <strong>sRGB</strong>. Los perfiles de gama amplia (Display P3, Adobe RGB) pueden hacer que los colores se vean más apagados de lo previsto tras la conversión.</li>
+</ul>
+
+<h3>Cómo activar las miniaturas personalizadas</h3>
+<p>Si no ves la opción de subir una miniatura, probablemente tu cuenta aún no está verificada. En YouTube Studio, ve a <strong>Configuración &rarr; Canal</strong>, abre la pestaña de requisitos de las funciones (<em>Feature eligibility</em>) y completa la verificación por teléfono. Las miniaturas personalizadas también pueden quedar restringidas si el canal tiene faltas por incumplir las normas de la comunidad.</p>
+
+<h2>Qué tamaño tiene de verdad tu miniatura en pantalla</h2>
+<p>Esto es lo importante: casi nadie ve tu miniatura al tamaño al que la diseñaste. Tamaños aproximados (varían según la pantalla y los cambios de diseño de YouTube):</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Dónde aparece</th><th>Ancho aproximado</th><th>Qué implica para el diseño</th></tr></thead>
+    <tbody>
+      <tr><td>Columna de sugeridos en ordenador</td><td>~168 px</td><td>La prueba más dura. Solo sobreviven formas grandes y de 1 a 3 palabras.</td></tr>
+      <tr><td>Cuadrícula de inicio en ordenador</td><td>~300–400 px</td><td>Aparece junto a otras 3–5 miniaturas; importa el contraste con las vecinas.</td></tr>
+      <tr><td>Resultados de búsqueda en ordenador</td><td>~360–500 px</td><td>Más grande, pero el usuario compara varios resultados a la vez.</td></tr>
+      <tr><td>Página de inicio en el móvil</td><td>Todo el ancho de la pantalla</td><td>Ocupa la pantalla, pero se ve de pasada y con el brazo estirado.</td></tr>
+      <tr><td>App de TV</td><td>Grande</td><td>Importa la nitidez; las subidas de baja resolución se ven blandas.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Puedes ver tu diseño a estos tamaños, en modo claro y oscuro, con nuestra <a href="@vista-previa-miniatura-youtube">herramienta de vista previa</a>.</p>
+
+<h2>Zonas seguras: dónde no poner detalles importantes</h2>
+<ul>
+  <li><strong>Esquina inferior derecha:</strong> la etiqueta de duración tapa aproximadamente el 15–20 % inferior derecho del ancho. Nunca pongas ahí un número, un precio o el remate.</li>
+  <li><strong>Borde inferior:</strong> aparece una barra roja de progreso en los vídeos que el usuario ya empezó a ver.</li>
+  <li><strong>Al pasar el ratón y reproducción automática:</strong> en la página de inicio, YouTube puede reproducir un avance del vídeo cuando el usuario pasa el ratón (ordenador) o se detiene sobre él (móvil). Aun así, la primera impresión de la miniatura decide si se detiene.</li>
+  <li><strong>Tamaños antiguos con bandas:</strong> algunas superficies antiguas y webs externas usan versiones 4:3 con bandas negras, así que aleja los elementos clave de los bordes superior e inferior.</li>
+</ul>
+
+<h2>Diseñar pensando primero en el móvil</h2>
+<p>La mayor parte del tiempo de visualización en YouTube ocurre en móviles y televisores, y en el móvil las miniaturas se consumen muy deprisa. De ahí salen algunas reglas prácticas:</p>
+<ol class="steps">
+  <li><strong>Trabaja con zoom al 25 %.</strong> Ten abierta una vista previa pequeña mientras diseñas y decide en función de ella.</li>
+  <li><strong>Usa formas grandes.</strong> Un protagonista grande gana a varios pequeños. Las caras deberían ocupar normalmente al menos un tercio de la altura.</li>
+  <li><strong>No pases de unas cuatro palabras</strong> y usa letra gruesa. Las fuentes finas y las frases largas son lo primero que se pierde.</li>
+  <li><strong>Sube el contraste un poco más de lo que parece necesario.</strong> Las pantallas de móvil al aire libre y con poco brillo aplanan las imágenes.</li>
+  <li><strong>Revisa ambos temas.</strong> El modo oscuro es muy habitual en el móvil; asegúrate de que los bordes de la miniatura no se disuelven en un fondo negro.</li>
+</ol>
+
+<h2>Miniaturas de Shorts</h2>
+<p>Los Shorts son verticales (9:16) y el Centro de Ayuda de YouTube indica ahora un tamaño recomendado de 2160&times;3840 para sus miniaturas. Los Shorts aparecen a menudo en estanterías y cuadrículas donde el encuadre puede recortarse, así que mantén el protagonista y el texto cerca del centro. En los Shorts que se ven sobre todo en el feed deslizable, el primer fotograma del vídeo importa tanto como la miniatura, porque muchos espectadores nunca llegan a verla.</p>
+
+<h2>Problemas técnicos habituales y cómo resolverlos</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Problema</th><th>Causa probable</th><th>Solución</th></tr></thead>
+    <tbody>
+      <tr><td>Bandas negras arriba y abajo</td><td>La imagen no es exactamente 16:9</td><td>Recorta o redimensiona el lienzo a 16:9 antes de exportar.</td></tr>
+      <tr><td>Subida rechazada en el móvil</td><td>Archivo de más de 2 MB</td><td>Exporta en JPG con algo menos de calidad o súbela desde un ordenador.</td></tr>
+      <tr><td>El texto se ve borroso</td><td>Baja resolución o mucha compresión</td><td>Exporta a 1920&times;1080 o más con más calidad, o usa PNG.</td></tr>
+      <tr><td>Colores apagados tras subirla</td><td>Perfil de color distinto de sRGB</td><td>Convierte a sRGB al exportar.</td></tr>
+      <tr><td>No aparece la opción de subir miniatura</td><td>Cuenta sin verificar</td><td>Verifica tu teléfono en la configuración de YouTube Studio.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq">
+  <details><summary>¿Sigue valiendo 1280×720 para una miniatura?</summary><p>Sí. Está por encima del mínimo de 640 píxeles y se ve bien en móviles y portátiles. YouTube recomienda ahora hasta 3840&times;2160, lo que ayuda sobre todo en televisores grandes y pantallas de alta resolución.</p></details>
+  <details><summary>¿El nombre del archivo de la miniatura influye en el SEO?</summary><p>No hay pruebas de que el nombre del archivo afecte a cómo YouTube posiciona un vídeo. Ponle un nombre que te ayude a encontrarlo después.</p></details>
+  <details><summary>¿Puedo usar un GIF o una miniatura animada?</summary><p>No. Las miniaturas son imágenes estáticas. La página de inicio puede reproducir un avance al pasar el ratón o de forma automática, pero eso sale del vídeo, no del archivo de la miniatura.</p></details>
+</div>
+
+<div class="sources">
+  <h2 data-notoc>Fuentes</h2>
+  <ul>
+    <li>Ayuda de YouTube — <a href="https://support.google.com/youtube/answer/72431?hl=es" rel="noopener">Añadir miniaturas de vídeo</a></li>
+    <li>Ayuda de YouTube — <a href="https://support.google.com/youtube/answer/9229980?hl=es" rel="noopener">Política de miniaturas</a></li>
+  </ul>
+</div>

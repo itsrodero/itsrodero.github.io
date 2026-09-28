@@ -1,341 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre mí — TubeTools | Herramientas Gratuitas para Creadores de YouTube</title>
-  <meta name="description" content="Soy Daniel, tengo 17 años y construyo TubeTools yo solo: extractor de miniaturas, analizador CTR, generador de títulos y calculadora de ingresos, gratis para cualquier creador.">
-  <link rel="canonical" href="https://tubetools.online/about.html">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"AboutPage","name":"Sobre mí — TubeTools","url":"https://tubetools.online/about.html","description":"Soy Daniel, tengo 17 años y construyo TubeTools yo solo, herramientas gratuitas para creadores de YouTube.","mainEntity":{"@type":"Person","name":"Daniel","url":"https://tubetools.online/about.html"}}
-  </script>
-  <link rel="alternate" hreflang="en" href="https://tubetools.online/en/about.html">
-  <link rel="alternate" hreflang="es" href="https://tubetools.online/about.html">
-  <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/about.html">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
-
-<style id='tt-global'>
-
-/* ── TubeTools Global Fix ── */
-*, *::before, *::after { box-sizing: border-box; }
-a { color: inherit; }
-a:not([class]):not([style]) { color: inherit; text-decoration: none; }
-.read-more, .btn-read-more {
-  display: inline-block; background: #d32f2f; color: #fff !important;
-  text-decoration: none; padding: 9px 18px; border-radius: 8px;
-  font-size: .85rem; font-weight: 700; transition: background .2s; margin-top: 8px;
-}
-.read-more:hover, .btn-read-more:hover { background: #b71c1c !important; }
-.article-card h3 a, .article-title a, .card-title a, .blog-card h3 a {
-  color: #1c1e21 !important; text-decoration: none !important; font-weight: 700;
-}
-.article-card h3 a:hover, .blog-card h3 a:hover { color: #d32f2f !important; }
-footer a { color: #888 !important; text-decoration: none !important; }
-footer a:hover { color: #fff !important; }
-nav a { text-decoration: none; }
-/* Nav fix */
-nav { position: sticky; top: 0; z-index: 1000; background: #1c1e21;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 24px; height: 58px; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
-nav .nav-logo { color: #fff; text-decoration: none; font-size: 1.1rem;
-  font-weight: 800; display: flex; align-items: center; gap: 6px; }
-nav .nav-logo .logo-accent { color: #ff5252; }
-nav .nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
-nav .nav-links a { color: #ccc !important; text-decoration: none; font-size: .88rem;
-  font-weight: 500; padding: 6px 11px; border-radius: 8px;
-  transition: background .2s, color .2s; white-space: nowrap; }
-nav .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
-nav .nav-links a.lang-btn-en { color: #90caf9; border: 1px solid rgba(144,202,249,.35); }
-nav .nav-links a.lang-btn-es { color: #a5d6a7; border: 1px solid rgba(165,214,167,.35); }
-nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
-.nav-toggle { display: none; background: none; border: none; color: #fff;
-  font-size: 1.4rem; cursor: pointer; padding: 6px; }
-/* Tools dropdown */
-.nav-dropdown { position: relative; }
-.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-.nav-dropdown > a::after { content: '▾'; font-size: .7rem; opacity: .7; }
-.dropdown-panel { display: none; position: absolute; top: calc(100% + 6px);
-  left: 50%; transform: translateX(-50%); background: #2c2e33;
-  border-radius: 12px; padding: 10px 8px; min-width: 240px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.4); border: 1px solid rgba(255,255,255,.07);
-  z-index: 2000; }
-.nav-dropdown:hover .dropdown-panel,
-.nav-dropdown:focus-within .dropdown-panel { display: block; }
-.dropdown-panel a { display: flex; align-items: center; gap: 10px; color: #ccc !important;
-  text-decoration: none !important; font-size: .85rem; padding: 9px 14px;
-  border-radius: 8px; transition: background .2s; width: 100%; }
-.dropdown-panel a:hover { background: rgba(255,255,255,.09) !important; color: #fff !important; }
-.dp-icon { width: 22px; text-align: center; font-size: 1.05rem; flex-shrink: 0; }
-/* Mobile nav */
-@media(max-width: 720px) {
-  .nav-toggle { display: block !important; }
-  .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0;
-    background: #2c2e33; flex-direction: column; align-items: stretch;
-    padding: 10px 16px 16px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
-  .nav-links.open { display: flex; }
-  .nav-links a { padding: 11px 14px; border-radius: 8px; }
-  .nav-dropdown > a::after { display: none; }
-  .dropdown-panel { display: block; position: static; transform: none;
-    background: rgba(255,255,255,.04); border: none; box-shadow: none;
-    border-radius: 8px; padding: 4px 0 4px 12px; min-width: auto; margin-top: 2px; }
-  .dropdown-panel a { font-size: .83rem; padding: 7px 10px; }
-}
-/* Footer fix */
-.site-footer { background: #1c1e21; color: #888; padding: 48px 20px 32px; margin-top: 60px; }
-.site-footer .footer-inner { max-width: 960px; margin: 0 auto; }
-.site-footer .footer-grid { display: grid; grid-template-columns: 1fr repeat(3, auto);
-  gap: 40px; margin-bottom: 36px; }
-@media(max-width: 700px) { .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
-@media(max-width: 440px) { .site-footer .footer-grid { grid-template-columns: 1fr; } }
-.site-footer .footer-brand .footer-logo { font-size: 1.1rem; font-weight: 800;
-  color: #fff; margin-bottom: 10px; }
-.site-footer .footer-brand .footer-logo .logo-accent { color: #ff5252; }
-.site-footer .footer-brand p { font-size: .83rem; color: #666; line-height: 1.6; max-width: 220px; }
-.site-footer .footer-col h4 { font-size: .8rem; font-weight: 700; color: #fff;
-  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
-.site-footer .footer-col a { display: block; color: #888 !important;
-  text-decoration: none !important; font-size: .85rem; margin-bottom: 8px;
-  transition: color .2s; }
-.site-footer .footer-col a:hover { color: #fff !important; }
-.site-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.07);
-  padding-top: 20px; display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 10px; }
-.site-footer .footer-bottom p { font-size: .78rem; color: #555; }
-.site-footer .footer-lang-btn { padding: 5px 14px; border-radius: 999px;
-  text-decoration: none !important; font-size: .82rem; font-weight: 600; transition: background .2s; }
-.site-footer .footer-lang-btn.en-fb { background: rgba(144,202,249,.12);
-  color: #90caf9 !important; border: 1px solid rgba(144,202,249,.3); }
-.site-footer .footer-lang-btn.en-fb:hover { background: rgba(144,202,249,.22) !important; }
-.site-footer .footer-lang-btn.es-fb { background: rgba(165,214,167,.1);
-  color: #a5d6a7 !important; border: 1px solid rgba(165,214,167,.3); }
-.site-footer .footer-lang-btn.es-fb:hover { background: rgba(165,214,167,.2) !important; }
-
-
-    nav{position:sticky;top:0;z-index:1000;background:#1c1e21;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
-    .nav-logo{color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
-    .nav-logo span{color:#ff5252}
-    .nav-links{display:flex;gap:4px;align-items:center}
-    .nav-links a{color:#ccc !important;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;transition:background .2s,color .2s;white-space:nowrap}
-    .nav-links a:hover{background:rgba(255,255,255,.08);color:#fff !important}
-    .nav-links a.lang-btn-es{color:#a5d6a7 !important;border:1px solid rgba(165,214,167,.35)}
-    .nav-links a.active-link{color:#fff !important;background:rgba(211,47,47,.2)}
-    .nav-dropdown{position:relative}
-    .nav-dropdown>a{display:flex;align-items:center;gap:4px}
-    .nav-dropdown>a::after{content:'▾';font-size:.7rem;opacity:.7}
-    .dropdown-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#2c2e33;border-radius:12px;padding:10px 8px;min-width:240px;box-shadow:0 8px 32px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.07);z-index:2000}
-    .nav-dropdown:hover .dropdown-panel,.nav-dropdown:focus-within .dropdown-panel{display:block}
-    .dropdown-panel a{display:flex;align-items:center;gap:10px;color:#ccc !important;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;transition:background .2s;width:100%}
-    .dropdown-panel a:hover{background:rgba(255,255,255,.09);color:#fff !important}
-    .dp-icon{width:22px;text-align:center;font-size:1.05rem;flex-shrink:0}
-    .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-    @media(max-width:720px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}.nav-links.open{display:flex}.nav-links a{padding:11px 14px;border-radius:8px}.nav-dropdown>a::after{display:none}.dropdown-panel{display:block;position:static;transform:none;background:rgba(255,255,255,.04);border:none;box-shadow:none;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}.dropdown-panel a{font-size:.83rem;padding:7px 10px}}
-    .site-footer{background:#1c1e21;color:#888;padding:48px 20px 32px;margin-top:60px}
-    .footer-inner{max-width:960px;margin:0 auto}
-    .footer-grid{display:grid;grid-template-columns:1fr repeat(3,auto);gap:40px;margin-bottom:36px}
-    @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
-    @media(max-width:440px){.footer-grid{grid-template-columns:1fr}}
-    .footer-logo{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:10px}
-    .footer-logo span{color:#ff5252}
-    .footer-brand p{font-size:.83rem;color:#666;line-height:1.6;max-width:220px}
-    .footer-col h4{font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
-    .footer-col a{display:block;color:#888 !important;text-decoration:none;font-size:.85rem;margin-bottom:8px;transition:color .2s}
-    .footer-col a:hover{color:#fff !important}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-    .footer-bottom p{font-size:.78rem;color:#555}
-    .footer-lang-btn{padding:5px 14px;border-radius:999px;text-decoration:none !important;font-size:.82rem;font-weight:600;transition:background .2s}
-    .footer-lang-btn.es-fb{background:rgba(165,214,167,.1);color:#a5d6a7 !important;border:1px solid rgba(165,214,167,.3)}
-    .footer-lang-btn.es-fb:hover{background:rgba(165,214,167,.2)}
-    </style>
-
-<style id="mobile-nav-fix">
-@media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
-  .nav-links.open{display:flex !important}
-  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
-  .nav-dropdown{width:100% !important;position:static !important}
-  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
-  .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
-  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
-}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sobre TubeTools – quién lo hace y cómo escribimos las guías | TubeTools</title>
+<meta name="description" content="TubeTools es un proyecto independiente de Daniel, estudiante en España, con herramientas gratuitas en el navegador y guías con fuentes para creadores de YouTube.">
+<link rel="canonical" href="https://tubetools.online/about.html">
+<link rel="alternate" hreflang="en" href="https://tubetools.online/en/about.html">
+<link rel="alternate" hreflang="es" href="https://tubetools.online/about.html">
+<link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/about.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:site_name" content="TubeTools">
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sobre TubeTools">
+<meta property="og:description" content="TubeTools es un proyecto independiente de Daniel, estudiante en España, con herramientas gratuitas en el navegador y guías con fuentes para creadores de YouTube.">
+<meta property="og:url" content="https://tubetools.online/about.html">
+<meta property="og:image" content="https://tubetools.online/assets/img/og-es.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',region:["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"],wait_for_update:500});gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});gtag('js',new Date());gtag('config','G-MKM07L3RLR');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/site.css?v=7d5d42b9">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://tubetools.online/"}, {"@type": "ListItem", "position": 2, "name": "Sobre TubeTools", "item": "https://tubetools.online/about.html"}]}</script>
 </head>
-<body>
-<nav>
-  <a href="/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="nav-links">
-    <a href="/en/about.html" class="lang-btn-en">🇬🇧 EN</a>
-    <a href="/">Inicio</a>
-    <div class="nav-dropdown">
-      <a href="/herramientas.html">🎯 Herramientas</a>
-      <div class="dropdown-panel">
-        <a href="/"><span class="dp-icon">🖼️</span>Extractor de Miniaturas</a>
-        <a href="/analizador-miniaturas.html"><span class="dp-icon">🔬</span>Analizador de Miniaturas</a>
-        <a href="/generador-titulos-youtube.html"><span class="dp-icon">✍️</span>Generador de Títulos</a>
-        <a href="/calculadora.html"><span class="dp-icon">🧮</span>Calculadora de Ganancias</a>
-        <a href="/calculadora-puntuacion-ctr.html"><span class="dp-icon">📊</span>CTR Score</a>
-        <a href="/checklist-miniaturas.html"><span class="dp-icon">✅</span>Checklist</a>
+<body class="page-page">
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#d32f2f"/><path d="M9 9h14v4.5h-4.75V24h-4.5V13.5H9z" fill="#fff"/></svg><span>Tube<b>Tools</b></span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="sr-only">Menú</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <div class="nav-dd">
+        <button class="nav-dd-btn" aria-expanded="false">Herramientas <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="nav-dd-panel"><a href="/" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span><strong>Descargar miniaturas</strong><small>Guarda la miniatura de cualquier vídeo</small></span></a><a href="/analizador-miniaturas.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="15.5" cy="9" r="1.5"/></svg><span><strong>Analizador de miniaturas</strong><small>Contraste, color y legibilidad</small></span></a><a href="/vista-previa-miniatura-youtube.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><span><strong>Vista previa en el feed</strong><small>Tu miniatura junto a la competencia</small></span></a><a href="/checklist-miniaturas.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg><span><strong>Checklist de miniaturas</strong><small>Revisión de 15 puntos con puntuación</small></span></a><a href="/generador-titulos-youtube.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5h16v2"/><path d="M12 5v14"/><path d="M9 19h6"/></svg><span><strong>Generador de títulos</strong><small>Ideas de título y comprobador de longitud</small></span></a><a href="/calculadora.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg><span><strong>Calculadora de ingresos</strong><small>Estima ganancias según visitas y RPM</small></span></a></div>
       </div>
-    </div>
-    <a href="/blog.html">Blog</a>
-    <a href="/glosario.html">Glosario</a>
-    <a href="/contacto.html">Contacto</a>
+      <a href="/blog.html">Guías</a>
+      <a href="/glosario.html">Glosario</a>
+      <a href="/about.html" class="is-active">Sobre TubeTools</a>
+      <a class="lang-switch" href="/en/about.html" hreflang="en" lang="en" title="Read in English"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg> English</a>
+    </nav>
   </div>
-</nav>>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f4f5f7;color:#1c1e21;line-height:1.7}
-a{color:inherit;text-decoration:none}
-</style>
-<div style="max-width:860px;margin:56px auto;padding:0 20px 80px">
-  <div style="text-align:center;margin-bottom:44px">
-    <span style="display:inline-block;background:rgba(211,47,47,.12);color:#d32f2f;font-size:.8rem;font-weight:700;padding:5px 16px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px">👋 Sobre mí</span>
-    <h1 style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:900;color:#1c1e21;line-height:1.15;margin-bottom:16px">Hola, soy Daniel</h1>
-    <p style="color:#555;font-size:1.05rem;max-width:580px;margin:0 auto;line-height:1.8">Tengo 17 años, voy a empezar 2º de Bachillerato, y construyo TubeTools yo solo, en mi tiempo libre.</p>
-  </div>
-
-  <div style="background:#fff;border-radius:14px;padding:36px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:24px;display:flex;gap:28px;align-items:center;flex-wrap:wrap">
-    <img src="/daniel-avatar.jpg" alt="Daniel, creador de TubeTools" width="120" height="120" style="border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 4px 16px rgba(0,0,0,.15)">
-    <div style="flex:1;min-width:240px">
-      <p style="color:#555;font-size:.95rem;line-height:1.8">Empecé a construir TubeTools porque quería herramientas de análisis de miniaturas y CTR sin pagar las suscripciones caras que no me podía permitir. Aprendí a programar por mi cuenta y desarrollo, mantengo y actualizo cada herramienta yo mismo. Las pruebo con vídeos y canales reales antes de publicarlas.</p>
-    </div>
-  </div>
-
-  <div style="background:#fff;border-radius:14px;padding:40px 36px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:24px">
-    <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;margin-bottom:16px;border-left:4px solid #d32f2f;padding-left:14px">Por qué existe TubeTools</h2>
-    <p style="color:#555;font-size:.95rem;line-height:1.8;margin-bottom:14px">Cuando empecé a interesarme en cómo funcionaba YouTube por dentro — miniaturas, CTR, monetización — me encontré con que casi todas las herramientas "profesionales" estaban detrás de suscripciones de pago, muchas pensadas para agencias o empresas, no para alguien que simplemente quiere entender por qué un vídeo funciona y otro no.</p>
-    <p style="color:#555;font-size:.95rem;line-height:1.8">Así que decidí construir mis propias versiones, gratis, y dejarlas abiertas para cualquiera que las quiera usar. Eso es TubeTools: las herramientas que yo hubiera querido tener cuando empecé.</p>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px">
-    <div style="background:#fff;border-radius:14px;padding:28px 24px;box-shadow:0 4px 24px rgba(0,0,0,.08)">
-      <div style="font-size:2rem;margin-bottom:12px">🖼️</div>
-      <h3 style="font-size:1rem;font-weight:800;color:#1c1e21;margin-bottom:8px">Extractor de Miniaturas</h3>
-      <p style="font-size:.88rem;color:#555;line-height:1.6">Descarga cualquier miniatura de YouTube en HD 1080p al instante. Estudia a la competencia y qué está funcionando en tu nicho.</p>
-    </div>
-    <div style="background:#fff;border-radius:14px;padding:28px 24px;box-shadow:0 4px 24px rgba(0,0,0,.08)">
-      <div style="font-size:2rem;margin-bottom:12px">🔬</div>
-      <h3 style="font-size:1rem;font-weight:800;color:#1c1e21;margin-bottom:8px">Analizador de Miniaturas</h3>
-      <p style="font-size:.88rem;color:#555;line-height:1.6">Obtén una puntuación CTR instantánea, análisis de paleta de color y valoración de contraste. Sube una imagen o pega una URL de YouTube.</p>
-    </div>
-    <div style="background:#fff;border-radius:14px;padding:28px 24px;box-shadow:0 4px 24px rgba(0,0,0,.08)">
-      <div style="font-size:2rem;margin-bottom:12px">✍️</div>
-      <h3 style="font-size:1rem;font-weight:800;color:#1c1e21;margin-bottom:8px">Generador de Títulos</h3>
-      <p style="font-size:.88rem;color:#555;line-height:1.6">Genera variaciones de título de alto CTR usando fórmulas basadas en patrones reales del algoritmo, no plantillas genéricas.</p>
-    </div>
-    <div style="background:#fff;border-radius:14px;padding:28px 24px;box-shadow:0 4px 24px rgba(0,0,0,.08)">
-      <div style="font-size:2rem;margin-bottom:12px">🧮</div>
-      <h3 style="font-size:1rem;font-weight:800;color:#1c1e21;margin-bottom:8px">Calculadora de Ganancias</h3>
-      <p style="font-size:.88rem;color:#555;line-height:1.6">Estima tus ingresos de YouTube según visitas, RPM y nicho. Ve cómo mejorar el CTR se traduce en más ingresos.</p>
-    </div>
-  </div>
-
-  <div style="background:#fff;border-radius:14px;padding:40px 36px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:24px">
-    <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;margin-bottom:16px;border-left:4px solid #d32f2f;padding-left:14px">Cómo se mantiene gratis</h2>
-    <p style="color:#555;font-size:.95rem;line-height:1.8;margin-bottom:14px">TubeTools se financia con publicidad de Google AdSense. No hay planes de pago, no hay registro obligatorio y no vendo datos de nadie — todo el procesamiento de miniaturas ocurre en tu propio navegador.</p>
-    <p style="color:#555;font-size:.95rem;line-height:1.8">Elegí este modelo porque es el único que me permite mantener todas las herramientas 100% gratis para cualquier creador, tenga 100 suscriptores o 100.000.</p>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#1c1e21,#2d1515);border-radius:14px;padding:40px 36px;text-align:center">
-    <h2 style="font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:12px">¿Listo para probarlo?</h2>
-    <p style="color:#bbb;font-size:.95rem;margin-bottom:24px">Prueba cualquiera de las herramientas gratis — sin cuenta, sin tarjeta, sin límites.</p>
-    <a href="/herramientas.html" style="display:inline-block;background:#d32f2f;color:#fff;padding:14px 28px;border-radius:10px;font-weight:700;font-size:1rem;transition:background .2s" onmouseover="this.style.background='#b71c1c'" onmouseout="this.style.background='#d32f2f'">Explorar todas las herramientas →</a>
+</header>
+<main id="main" class="page-main">
+  <div class="container narrow">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Inicio</a></li><li aria-current="page">Sobre TubeTools</li></ol></nav>
+    <header class="page-header">
+      <h1>Sobre TubeTools</h1>
+      <p class="lead">Herramientas gratuitas y respetuosas con tu privacidad, y guías claras y con fuentes para quienes hacen vídeos en YouTube.</p>
+    </header>
+    <div class="prose">
+<div class="about-intro">
+  <img src="/assets/img/daniel.jpg" alt="Daniel, creador de TubeTools" width="120" height="120">
+  <div>
+    <h2 class="mt-0" id="hola-soy-daniel">Hola, soy Daniel</h2>
+    <p>Soy estudiante en España y desarrollo y mantengo TubeTools yo solo. Lo empecé porque quería herramientas sencillas para estudiar miniaturas y entender las cifras de YouTube, y casi todas las buenas estaban detrás de suscripciones pensadas para agencias.</p>
   </div>
 </div>
 
-<div style="max-width:860px;margin:0 auto 40px;padding:0 20px;">
-  <div style="background:#fff;border-radius:14px;padding:36px 32px;box-shadow:0 4px 24px rgba(0,0,0,.08);">
-    <h2 style="font-size:1.15rem;font-weight:800;color:#1c1e21;margin-bottom:16px;border-left:4px solid #d32f2f;padding-left:14px;">Cómo escribo las guías del blog</h2>
-    <p style="font-size:.95rem;color:#555;line-height:1.8;margin-bottom:14px;">Las guías de este sitio las escribo yo, basándome en documentación pública de YouTube y AdSense, y en cifras de RPM/CPM que creadores comparten abiertamente en foros y redes. No tengo acceso a datos privados de canales ajenos, y cuando doy un rango de cifras es una estimación a partir de fuentes públicas, no un dato verificado de forma independiente.</p>
-    <p style="font-size:.95rem;color:#555;line-height:1.8;">Si ves algo que crees que está desactualizado o mal, <a href="/contacto.html" style="color:#d32f2f;font-weight:600;">escríbeme</a> y lo reviso.</p>
-  </div>
-</div>
+<h2 id="que-encontraras-aqui">Qué encontrarás aquí</h2>
+<ul>
+  <li><strong>Herramientas gratuitas</strong> para la parte práctica de hacer vídeos: un <a href="/">descargador de miniaturas</a>, un <a href="/analizador-miniaturas.html">analizador de miniaturas</a>, una <a href="/vista-previa-miniatura-youtube.html">vista previa en el feed</a>, un <a href="/checklist-miniaturas.html">checklist de miniaturas</a>, un <a href="/generador-titulos-youtube.html">generador de títulos</a> y una <a href="/calculadora.html">calculadora de ingresos</a>. Funcionan en tu navegador, no necesitan cuenta y no suben tus imágenes.</li>
+  <li><strong>Guías</strong> sobre miniaturas, títulos, estadísticas y monetización, escritas para responder bien a una pregunta, no para rellenar una página. Puedes verlas todas en la <a href="/blog.html">página de guías</a>.</li>
+  <li><strong>Un glosario</strong> con los términos que verás en YouTube Studio: consulta el <a href="/glosario.html">glosario de YouTube</a>.</li>
+</ul>
 
-<div style="max-width:860px;margin:0 auto 20px;padding:0 20px;">
-<div style="background:#fff3f3;border-radius:12px;padding:24px 28px;border-left:4px solid #d32f2f;">
-<p style="font-size:.93rem;color:#555;line-height:1.8;"><strong>Por qué anuncios y no suscripciones:</strong> Quería que cada herramienta fuera gratis de verdad, sin funciones "premium" escondidas detrás de un muro de pago. Los anuncios de Google AdSense son el modelo que me permite cubrir el hosting y seguir desarrollando sin cobrar a nadie. Es así de simple.</p>
-</div></div>
+<h2 id="editorial">Cómo escribimos nuestras guías</h2>
+<p>Internet está lleno de consejos sobre YouTube con cifras muy seguras y ninguna fuente. Intentamos hacer lo contrario:</p>
+<ul>
+  <li><strong>Primero, las fuentes oficiales.</strong> Las normas, los umbrales y las definiciones salen del Centro de Ayuda de YouTube, del blog oficial de YouTube y de la documentación de Google. Cada guía enumera sus fuentes al final.</li>
+  <li><strong>Las estimaciones se presentan como estimaciones.</strong> YouTube no publica datos de ingresos por nicho, así que cifras como los rangos de RPM se marcan como orientativas, explicando de dónde salen y por qué tus números pueden ser distintos.</li>
+  <li><strong>Sin casos inventados.</strong> No publicamos «ejemplos reales» que no podamos comprobar. Los ejemplos resueltos se marcan claramente como hipotéticos.</li>
+  <li><strong>Fechas fiables.</strong> Cada guía muestra cuándo se actualizó por última vez. Cuando YouTube cambia una norma, como los cambios del Programa de Socios anunciados en agosto de 2026, actualizamos las páginas afectadas.</li>
+  <li><strong>Cómo se usa la IA.</strong> Uso herramientas de IA para ayudarme a investigar, redactar y traducir entre inglés y español. Los datos se contrastan con las fuentes indicadas en cada guía y todas las páginas se revisan antes de publicarse.</li>
+</ul>
+<p>Si encuentras algo desactualizado o incorrecto, dímelo a través de la <a href="/contacto.html">página de contacto</a> o en <a href="mailto:contacto@tubetools.online">contacto@tubetools.online</a>. Las correcciones se hacen en cuanto se comprueban.</p>
 
-<div style="max-width:860px;margin:0 auto 20px;padding:0 20px;">
-  <div style="background:#fff;border-radius:14px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,.08);">
-    <h2 style="font-size:1.1rem;font-weight:800;color:#1c1e21;margin-bottom:14px;">Las herramientas, en detalle</h2>
-    <p style="font-size:.9rem;color:#555;line-height:1.8;margin-bottom:12px;">El <strong>Extractor de Miniaturas</strong> accede a la CDN de imágenes pública de YouTube, que guarda las miniaturas en varias resoluciones para cada vídeo. Las muestro en HD 1080p (maxresdefault), 720p (hqdefault) y 480p (mqdefault). La descarga ocurre directamente en tu navegador, sin que ningún dato pase por mis servidores.</p>
-    <p style="font-size:.9rem;color:#555;line-height:1.8;margin-bottom:12px;">El <strong>CTR Score</strong> puntúa tu miniatura en 12 criterios que suelen asociarse con más clics: contraste de color, presencia de cara, cantidad de texto, legibilidad, composición, visibilidad en móvil, entre otros. Es una guía orientativa, no una garantía de resultados.</p>
-    <p style="font-size:.9rem;color:#555;line-height:1.8;">La <strong>Calculadora de Ingresos</strong> usa las estructuras de pago públicas del YouTube Partner Program junto con rangos de RPM que creadores han compartido públicamente por nicho. Son estimaciones orientativas — tu RPM real depende de tu audiencia, geografía y anunciantes disponibles en cada momento.</p>
-  </div>
-</div>
+<h2 id="como-se-financia-tubetools">Cómo se financia TubeTools</h2>
+<p>TubeTools es gratuito y se financia con anuncios servidos por Google AdSense. Los anunciantes no influyen en lo que escribimos, no publicamos contenido patrocinado y no vendemos datos. Las herramientas funcionan sin recoger las imágenes ni los enlaces que usas. Tienes los detalles en nuestra <a href="/privacidad.html">política de privacidad</a>.</p>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">🚀 Tube<span>Tools</span></div>
-          <p>Herramientas gratuitas para creadores de YouTube que quieren crecer con datos, no con suerte.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Tools</h4>
-          <a href="/en/">Thumbnail Extractor</a>
-          <a href="/en/thumbnail-analyzer.html">Analyzer</a>
-          <a href="/en/youtube-title-generator.html">Title Generator</a>
-          <a href="/en/calculator.html">Calculator</a>
-          <a href="/en/ctr-score-calculator.html">CTR Score</a>
-          <a href="/en/thumbnail-checklist.html">Checklist</a>
-        </div>
-        <div class="footer-col">
-          <h4>Guides</h4>
-          <a href="/en/guide-thumbnails-ctr.html">CTR Guide</a>
-          <a href="/en/how-to-increase-youtube-rpm.html">Increase RPM</a>
-          <a href="/en/youtube-cpm-by-niche.html">CPM by Niche</a>
-          <a href="/en/youtube-monetization-requirements.html">Monetization</a>
-          <a href="/en/best-youtube-niches-adsense.html">Best Niches</a>
-          <a href="/en/glossary.html">Glossary</a>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/privacidad.html">Privacidad</a>
-          <a href="/terminos.html">Términos</a>
-          <a href="/contacto.html">Contacto</a>
-          <a href="/about.html">Sobre Nosotros</a>
-          <a href="/mapa-sitio.html">Mapa del Sitio</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 TubeTools.online — All rights reserved.</p>
-        <a href="/en/about.html" class="footer-lang-btn en-fb">🇬🇧 Switch to English</a>
-      </div>
-    </div>
-  </footer>
+<h2 id="independencia">Independencia</h2>
+<p>TubeTools es un proyecto independiente. No está afiliado, respaldado ni patrocinado por YouTube ni por Google. «YouTube» es una marca de Google LLC y aquí solo se usa para describir de qué tratan las herramientas y las guías.</p>
 
-  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(28,30,33,.97);backdrop-filter:blur(6px);color:#fff;padding:18px 20px;text-align:center;z-index:9999;border-top:2px solid #d32f2f;">
-    <p style="font-size:.88rem;margin-bottom:12px;color:#ccc;">🍪 We use cookies to improve your experience and show relevant ads. <a href="/en/privacy.html" style="color:#ff8a80;">Privacy Policy</a></p>
-    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-      <button onclick="localStorage.setItem('cookieConsent','accepted');document.getElementById('cookie-banner').style.display='none';" style="background:#d32f2f;color:#fff;border:none;padding:9px 22px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.88rem;">Accept all</button>
-      <button onclick="localStorage.setItem('cookieConsent','rejected');document.getElementById('cookie-banner').style.display='none';" style="background:#444;color:#ccc;border:none;padding:9px 22px;border-radius:8px;cursor:pointer;font-size:.88rem;">Reject</button>
+<h2 id="contacto">Contacto</h2>
+<p>Las ideas para nuevas herramientas, los avisos de errores y las correcciones siempre son bienvenidos. Usa el <a href="/contacto.html">formulario de contacto</a> o escribe a <a href="mailto:contacto@tubetools.online">contacto@tubetools.online</a>.</p>
+
     </div>
   </div>
-  <script>if(!localStorage.getItem('cookieConsent'))document.getElementById('cookie-banner').style.display='block';</script>
-
-<script>
-(function(){
-  var btn = document.querySelector('.nav-toggle');
-  var links = document.querySelector('.nav-links');
-  if(!btn || !links) return;
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isOpen = links.classList.toggle('open');
-    btn.textContent = isOpen ? '✕' : '☰';
-  });
-  document.addEventListener('click', function(e){
-    if(!links.contains(e.target) && e.target !== btn){
-      links.classList.remove('open');
-      btn.textContent = '☰';
-    }
-  });
-})();
-</script>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo logo-invert" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#d32f2f"/><path d="M9 9h14v4.5h-4.75V24h-4.5V13.5H9z" fill="#fff"/></svg><span>Tube<b>Tools</b></span></a>
+      <p>Herramientas gratuitas y respetuosas con tu privacidad, y guías claras para creadores de YouTube.</p>
+    </div>
+    <div><h2 class="footer-h">Herramientas</h2><ul><li><a href="/">Descargar miniaturas</a></li><li><a href="/analizador-miniaturas.html">Analizador de miniaturas</a></li><li><a href="/vista-previa-miniatura-youtube.html">Vista previa en el feed</a></li><li><a href="/checklist-miniaturas.html">Checklist de miniaturas</a></li><li><a href="/generador-titulos-youtube.html">Generador de títulos</a></li><li><a href="/calculadora.html">Calculadora de ingresos</a></li></ul></div>
+    <div><h2 class="footer-h">Guías populares</h2><ul><li><a href="/guia-miniaturas-ctr.html">Guía de miniaturas</a></li><li><a href="/guia-ctr-youtube-para-principiantes.html">CTR para principiantes</a></li><li><a href="/requisitos-monetizacion-youtube.html">Requisitos de monetización</a></li><li><a href="/rpm-vs-cpm-youtube.html">RPM vs CPM</a></li><li><a href="/cpm-youtube-por-nicho.html">CPM por nicho</a></li><li><a href="/tamano-formato-miniatura-youtube-2026.html">Tamaño y formato</a></li></ul></div>
+    <div><h2 class="footer-h">TubeTools</h2><ul><li><a href="/about.html">Sobre TubeTools</a></li><li><a href="/contacto.html">Contacto</a></li><li><a href="/privacidad.html">Política de privacidad</a></li><li><a href="/terminos.html">Términos de uso</a></li><li><a href="/mapa-sitio.html">Mapa del sitio</a></li><li><a href="/privacidad.html#cookies" class="js-privacy-settings">Configurar privacidad</a></li></ul></div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; 2026 TubeTools &middot; tubetools.online. Todos los derechos reservados.</p>
+    <p>TubeTools es un proyecto independiente y no está afiliado, respaldado ni patrocinado por YouTube ni por Google.</p>
+  </div>
+</footer>
+<script src="/assets/js/site.js?v=7d5d42b9" defer></script>
 </body>
 </html>

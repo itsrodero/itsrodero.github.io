@@ -1,0 +1,109 @@
+---
+type: home
+title: YouTube Thumbnail Downloader (Free, Full Size) – TubeTools
+title_exact: true
+description: Paste a YouTube link to view and save its thumbnail in every size YouTube stores, up to 1280×720. Free, no sign-up, works on Shorts and live videos.
+h1: YouTube Thumbnail Downloader
+lead: Paste any YouTube link to see and save its thumbnail in every size YouTube stores, up to 1280&times;720. Free, no sign-up, and it runs entirely in your browser.
+alt: index
+nav: tools
+tool_order: 1
+icon: download
+card_title: Thumbnail Downloader
+card_short: Save any video's thumbnail in full size
+card_desc: Get the thumbnail of any YouTube video, Short or live stream in every available resolution.
+script: downloader
+---
+<script type="application/json" id="tool-i18n">{"max":"Maximum resolution","sd":"Standard definition","hq":"High quality","mq":"Medium quality","small":"Small","download":"Download","downloading":"Downloading…","done":"Saved ✓","copy":"Copy URL","copied":"Copied ✓","altPrefix":"Video thumbnail","invalid":"That doesn't look like a YouTube video link. Paste a URL like youtube.com/watch?v=… or youtu.be/…","analyze":"Analyze this thumbnail","preview":"Compare it in a feed preview","untitled":"YouTube video","analyzerUrl":"/en/thumbnail-analyzer.html","previewUrl":"/en/youtube-thumbnail-preview.html"}</script>
+
+<div class="container">
+  <div class="tool-panel">
+    <form id="dl-form" novalidate>
+      <label class="label" for="dl-url">YouTube video URL or ID</label>
+      <div class="input-row" style="margin-top:6px">
+        <input class="input" id="dl-url" name="url" type="text" inputmode="url" autocomplete="off" placeholder="https://www.youtube.com/watch?v=…" required>
+        <button class="btn btn-primary" type="submit">Get thumbnail</button>
+      </div>
+      <div class="chips" aria-label="Supported links">
+        <span class="chip">youtube.com/watch</span><span class="chip">youtu.be</span><span class="chip">Shorts</span><span class="chip">Live</span><span class="chip">Embed</span>
+      </div>
+      <p id="dl-error" class="alert alert-error" role="alert" hidden></p>
+    </form>
+
+    <div id="dl-history-wrap" hidden style="margin-top:20px">
+      <div class="toolbar" style="margin-bottom:8px"><span class="label">Recent</span><button type="button" class="btn btn-ghost btn-sm" id="dl-clear-history">Clear</button></div>
+      <div class="history" id="dl-history"></div>
+    </div>
+  </div>
+
+  <section id="dl-results" class="tool-panel" hidden aria-live="polite">
+    <div class="toolbar">
+      <div class="video-meta" id="dl-meta"></div>
+      <div id="dl-links" class="hero-actions" style="margin-top:0"></div>
+    </div>
+    <div class="thumb-results" id="dl-grid"></div>
+    <p class="panel-note">Thumbnails belong to the people who made them. Use them for reference, research, commentary or with the creator's permission — not to re-upload as your own.</p>
+  </section>
+</div>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>More free tools for creators</h2>
+      <p class="section-lead">Everything runs in your browser. Nothing to install, no account.</p>
+    </div>
+    [[tools_grid_other]]
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Guides worth reading before your next upload</h2>
+      <p class="section-lead">Practical explanations based on YouTube's own documentation, with clear notes on what is fact and what is estimate.</p>
+    </div>
+    [[featured_guides]]
+    <p style="margin-top:20px"><a class="btn btn-ghost" href="@blog">Browse all guides</a></p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>How the thumbnail downloader works</h2>
+    <p>Every public YouTube video has a set of thumbnail images stored on YouTube's image servers (<code>i.ytimg.com</code>). When you paste a link, TubeTools reads the 11-character video ID from it and loads those images directly from YouTube into your browser. We don't run a server in the middle, so the link you paste isn't sent to us or stored anywhere except your own browser's "Recent" list, which you can clear at any time.</p>
+
+    <h3>Which sizes can you get?</h3>
+    <p>YouTube generates the same five files for most videos. The largest one is usually only created for videos uploaded in HD, so older or low-resolution videos may top out at 640&times;480.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>File name</th><th>Size (px)</th><th>Aspect</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><code>maxresdefault.jpg</code></td><td>1280 &times; 720</td><td>16:9</td><td>Best quality. Not available for every video.</td></tr>
+          <tr><td><code>sddefault.jpg</code></td><td>640 &times; 480</td><td>4:3</td><td>16:9 thumbnails get black bars top and bottom.</td></tr>
+          <tr><td><code>hqdefault.jpg</code></td><td>480 &times; 360</td><td>4:3</td><td>Always present; also letterboxed.</td></tr>
+          <tr><td><code>mqdefault.jpg</code></td><td>320 &times; 180</td><td>16:9</td><td>Clean 16:9 crop, handy for quick previews.</td></tr>
+          <tr><td><code>default.jpg</code></td><td>120 &times; 90</td><td>4:3</td><td>Tiny legacy version.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Creators can now upload thumbnails up to 3840&times;2160 in YouTube Studio, but these public image URLs still deliver the sizes above. If you need the original file of your <em>own</em> video, keep a copy of your design file — YouTube doesn't give the original back.</p>
+
+    <h3>Why would you download a thumbnail?</h3>
+    <ul>
+      <li><strong>Research your niche.</strong> Put the top videos for a topic side by side and look for patterns in color, faces, text and framing. Our guide on <a href="@analyze-thumbnail">analyzing competitor thumbnails</a> walks through a simple method.</li>
+      <li><strong>Check your own work.</strong> Download your published thumbnail and run it through the <a href="@thumbnail-analyzer">Thumbnail Analyzer</a> or the <a href="@youtube-thumbnail-preview">feed preview</a> to see how it holds up at small sizes.</li>
+      <li><strong>Commentary, reviews and teaching.</strong> Showing a thumbnail while you talk about the video is a common, legitimate use.</li>
+      <li><strong>Recover a lost file.</strong> If you deleted the design file for one of your own videos, the maximum-resolution version is the best copy YouTube keeps.</li>
+    </ul>
+
+    <h3>Is it legal to download YouTube thumbnails?</h3>
+    <p>Viewing and saving a publicly available image for personal reference is generally fine, but thumbnails are creative works protected by copyright, and the rights belong to the channel that made them. Don't re-upload someone else's thumbnail as your own, use it in ads, or sell it. For commentary, criticism or education, fair use (US) or quotation rights (EU) may apply, but they depend on the specific case. When in doubt, ask the creator. This isn't legal advice.</p>
+
+    <h3>Troubleshooting</h3>
+    <ul>
+      <li><strong>Only small sizes appear:</strong> the video doesn't have a 1280&times;720 version. That's a YouTube limitation.</li>
+      <li><strong>No title shows up:</strong> the video may be private, age-restricted or deleted. Thumbnails can still exist for a while after a video is removed.</li>
+      <li><strong>The download button opens a new tab instead:</strong> some browsers block programmatic downloads. Right-click the image and choose "Save image as…".</li>
+    </ul>
+  </div>
+</section>

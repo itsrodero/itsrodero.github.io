@@ -1,0 +1,94 @@
+---
+type: tool
+title: Checklist de miniaturas de YouTube – revisión de 15 puntos antes de publicar
+description: Un checklist interactivo de 15 puntos para revisar una miniatura de YouTube antes de publicar (idea, legibilidad, contraste, emoción y especificaciones) con una puntuación ponderada.
+h1: Checklist de miniaturas de YouTube
+lead: Quince preguntas que conviene hacerse con cada miniatura antes de publicar. Marca lo que se cumple y el checklist puntúa tu miniatura y te dice qué corregir primero. Tus respuestas se guardan en tu navegador.
+alt: thumbnail-checklist
+nav: tools
+tool_order: 4
+icon: check
+card_title: Checklist de miniaturas
+card_short: Revisión de 15 puntos con puntuación
+card_desc: Revisa idea, legibilidad, contraste, emoción y especificaciones con una puntuación y una lista de mejoras.
+crumb: Checklist de miniaturas
+script: checklist
+---
+<script type="application/json" id="tool-i18n">{"ready":"Lista para publicar o probar","close":"Casi lista","work":"Necesita trabajo","allDone":"Todo marcado. Plantéate probar dos versiones con Probar y comparar."}</script>
+
+<div class="container">
+  <div class="two-col" style="margin-top:28px">
+    <div id="ck-list">
+      <div class="check-group">
+        <h2 class="h3">1. La idea</h2>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-idea" data-weight="3"><label for="ck-idea">Puedo decir qué promete la miniatura en una frase corta.</label></div><p>Si la idea necesita un párrafo, la miniatura confundirá de un vistazo. Simplifícala a una sola promesa.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-title" data-weight="2"><label for="ck-title">Miniatura y título se complementan en lugar de repetirse.</label></div><p>Que la imagen muestre y el título cuente. Repetir el título en la imagen desperdicia espacio.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-honest" data-weight="3"><label for="ck-honest">El vídeo ofrece lo que muestra la miniatura, y pronto.</label></div><p>Las miniaturas engañosas provocan abandonos tempranos y pueden incumplir las políticas de YouTube.</p></div>
+      </div>
+      <div class="check-group">
+        <h2 class="h3">2. Legibilidad a tamaño pequeño</h2>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-small" data-weight="3"><label for="ck-small">El protagonista se reconoce a 168 píxeles de ancho.</label></div><p>Es más o menos el tamaño en la columna de sugeridos del ordenador. Compruébalo en la <a href="@vista-previa-miniatura-youtube">vista previa del feed</a>.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-elements" data-weight="2"><label for="ck-elements">No hay más de tres elementos principales.</label></div><p>Por ejemplo, una cara, un objeto y unas pocas palabras. Cada elemento extra compite por la atención.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-text" data-weight="2"><label for="ck-text">El texto, si lo hay, tiene cuatro palabras o menos y se lee en el móvil.</label></div><p>Sans serif gruesa, grande y con contorno, sombra o bloque detrás. Consulta la <a href="@tipografia-para-miniaturas-youtube">guía de tipografía</a>.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-corner" data-weight="1"><label for="ck-corner">No hay nada importante en la esquina inferior derecha.</label></div><p>La tapa la etiqueta de duración del vídeo.</p></div>
+      </div>
+      <div class="check-group">
+        <h2 class="h3">3. Contraste y color</h2>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-gray" data-weight="3"><label for="ck-gray">El protagonista sigue destacando en blanco y negro.</label></div><p>La prueba en grises detecta casi todos los problemas de contraste. El <a href="@analizador-miniaturas">Analizador de miniaturas</a> la muestra automáticamente.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-modes" data-weight="1"><label for="ck-modes">Funciona sobre fondo blanco y sobre fondo casi negro.</label></div><p>Modo claro y modo oscuro. Cuidado con los bordes que desaparecen.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-palette" data-weight="1"><label for="ck-palette">Hay un color dominante y como mucho un acento fuerte.</label></div><p>Demasiados colores compitiendo hacen la imagen más difícil de leer. Consulta la <a href="@teoria-del-color-miniaturas-youtube">guía de color</a>.</p></div>
+      </div>
+      <div class="check-group">
+        <h2 class="h3">4. Emoción e historia</h2>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-face" data-weight="2"><label for="ck-face">Si hay una cara, es grande y la expresión encaja con el vídeo.</label></div><p>¿Sin cara? Márcalo si el propio protagonista transmite la emoción o la tensión. Consulta <a href="@expresiones-faciales-miniaturas-youtube">caras en miniaturas</a>.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-curiosity" data-weight="2"><label for="ck-curiosity">Hay un motivo para sentir curiosidad: una pregunta, un contraste o un resultado.</label></div><p>Curiosidad que el vídeo resuelve, no un cebo.</p></div>
+      </div>
+      <div class="check-group">
+        <h2 class="h3">5. Técnica y contexto</h2>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-specs" data-weight="1"><label for="ck-specs">Es 16:9, de al menos 1280×720, JPG o PNG y no supera el límite de subida.</label></div><p>Límites: 50 MB desde el ordenador y 2 MB desde la app móvil. Consulta la <a href="@tamano-formato-miniatura-youtube-2026">guía de tamaños</a>.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-different" data-weight="2"><label for="ck-different">Se diferencia de los primeros resultados de este tema.</label></div><p>Busca tu tema y compara. Mimetizarse es volverse invisible.</p></div>
+        <div class="check-item"><div class="check"><input type="checkbox" id="ck-brand" data-weight="1"><label for="ck-brand">Encaja con el estilo del canal, pero no es una copia de mi última miniatura.</label></div><p>Lo bastante coherente para reconocerla y lo bastante distinta para verla como nueva.</p></div>
+      </div>
+    </div>
+
+    <aside class="sticky-score">
+      <div class="tool-panel" style="margin:0">
+        <p class="label">Tu puntuación</p>
+        <div class="score-ring"><span class="num"><span id="ck-score">0</span><small style="font-size:1.2rem">%</small></span><span id="ck-label" class="badge badge-bad">Necesita trabajo</span></div>
+        <div class="bar" style="margin:14px 0 6px"><i id="ck-bar" style="width:0;background:var(--brand)"></i></div>
+        <p class="small muted" id="ck-count">0 / 15</p>
+        <p class="label" style="margin-top:14px">Corrige esto primero</p>
+        <ol class="recs small" id="ck-next"></ol>
+        <div class="hero-actions" style="margin-top:12px">
+          <button type="button" class="btn btn-ghost btn-sm" id="ck-reset">Reiniciar</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="ck-print">Imprimir</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>Cómo funciona la puntuación</h2>
+    <p>Cada punto tiene un peso de 1 a 3 según cuánto suele influir en la claridad y la honestidad de una miniatura. Lo que más importa (una idea clara, legibilidad a tamaño pequeño, contraste en grises y un vídeo que cumple la promesa) cuenta el triple que los detalles técnicos menores. La puntuación es simplemente la proporción ponderada de puntos marcados.</p>
+    <p>Es una autoevaluación, no una predicción. Una miniatura con un 100 % puede rendir poco si el tema no interesa a tu público, y la única medida fiable es el comportamiento de espectadores reales. Cuando tu miniatura supere el checklist, compara variantes con <a href="@ab-testing-miniaturas-youtube">Probar y comparar</a> de YouTube.</p>
+
+    <h2>Cómo usar el checklist en tu flujo de trabajo</h2>
+    <ol class="steps">
+      <li><strong>Diseña dos o tres opciones</strong> en lugar de una. Es más fácil juzgar miniaturas una al lado de otra.</li>
+      <li><strong>Haz las comprobaciones medibles</strong> con el <a href="@analizador-miniaturas">Analizador de miniaturas</a> (contraste, detalle, bordes, especificaciones).</li>
+      <li><strong>Repasa este checklist</strong> para las decisiones de criterio que un programa no puede tomar.</li>
+      <li><strong>Previsualiza las mejores opciones en contexto</strong> con la <a href="@vista-previa-miniatura-youtube">vista previa del feed</a>.</li>
+      <li><strong>Publica y prueba</strong> las dos mejores con Probar y comparar.</li>
+    </ol>
+    <p>Para entender el porqué de cada punto, lee nuestra <a href="@guia-miniaturas-ctr">guía completa de miniaturas</a> y la lista de <a href="@errores-miniatura-que-matan-tu-ctr">errores de miniatura más comunes</a>.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>¿Se guarda mi checklist?</summary><p>Sí, en el almacenamiento local de tu navegador en este dispositivo, para que puedas volver a él. Pulsa Reiniciar para empezar con otra miniatura. No se nos envía nada.</p></details>
+      <details><summary>¿Qué puntuación debería buscar?</summary><p>Un 80 % o más significa que lo básico está cubierto. Por debajo del 50 %, céntrate en la lista «Corrige esto primero»: normalmente la idea, la legibilidad en pequeño o el contraste.</p></details>
+      <details><summary>¿Sirve para Shorts?</summary><p>La mayoría de puntos se aplican, pero los Shorts son verticales (9:16) y se ven sobre todo en el feed de Shorts, donde el primer fotograma importa más que la miniatura.</p></details>
+    </div>
+  </div>
+</section>

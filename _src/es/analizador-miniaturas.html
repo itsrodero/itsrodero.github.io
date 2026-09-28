@@ -1,0 +1,106 @@
+---
+type: tool
+title: Analizador de miniaturas de YouTube gratis – contraste, color y legibilidad
+description: Revisa una miniatura de YouTube antes de publicar: tamaño y formato, brillo, contraste, color, exceso de detalle, bordes en modo oscuro y vista a tamaño pequeño. En tu navegador.
+h1: Analizador de miniaturas de YouTube
+lead: Sube tu miniatura (o pega un enlace de YouTube) para revisar lo técnico que hace difícil leer una miniatura: contraste, brillo, color, exceso de detalle y cómo se ve a tamaño pequeño. Todo se procesa en tu navegador; no se sube nada.
+alt: thumbnail-analyzer
+nav: tools
+tool_order: 2
+icon: scan
+card_title: Analizador de miniaturas
+card_short: Contraste, color y legibilidad
+card_desc: Revisa contraste, brillo, color, exceso de detalle y legibilidad a tamaño pequeño antes de publicar.
+crumb: Analizador de miniaturas
+script: analyzer
+---
+<script type="application/json" id="tool-i18n">{
+"invalidUrl":"Eso no parece un enlace de vídeo de YouTube.","notImage":"Elige un archivo de imagen (JPG, PNG o WebP).","loadFailed":"No hemos podido cargar la miniatura de ese vídeo. Revisa el enlace o descarga la imagen y súbela.",
+"cAspect":"Proporción","aspectOk":"Exactamente 16:9: no se recortará ni tendrá bandas.","aspectBad":"No es 16:9. YouTube añadirá bandas negras o la recortará. Redimensiona el lienzo a 16:9.",
+"cResolution":"Resolución","resOk":"Nítida en móviles, portátiles y la mayoría de televisores.","resSmall":"Por encima del mínimo de 640 px de YouTube, pero con 1280 px de ancho o más se verá más nítida.","resTooSmall":"Por debajo del mínimo de 640 px de ancho. Exporta a 1280×720 o más.",
+"cFileSize":"Peso del archivo","sizeOk":"Menos de 2 MB: también podrás subirla desde la app móvil.","sizeMobile":"Válido desde el ordenador (límite de 50 MB), pero demasiado para la app móvil (2 MB). Exporta un JPG más ligero si subes desde el móvil.","sizeTooBig":"Supera el límite de 50 MB de YouTube. Exporta un archivo más pequeño.",
+"cBrightness":"Brillo","brightLow":"Bastante oscura en general. Las miniaturas oscuras pueden desaparecer en modo oscuro y en pantallas con poco brillo: ilumina al protagonista.","brightHigh":"Muy luminosa en general. Puede verse lavada, sobre todo en modo claro. Añade zonas oscuras para dar profundidad.","brightOk":"Un brillo general cómodo.",
+"cContrast":"Contraste","contrastLow":"Contraste bajo: la imagen puede verse plana a tamaño pequeño. Separa protagonista y fondo con luces y sombras.","contrastMid":"Contraste moderado. Mira la vista en grises: ¿el protagonista destaca con claridad?","contrastOk":"Buen contraste de luces y sombras, lo que ayuda a leerla en pequeño.",
+"cColor":"Intensidad de color","cf1":"sin color","cf2":"poco colorida","cf3":"moderadamente colorida","cf4":"colorida","cf5":"bastante colorida","cf6":"muy colorida","colorLow":"Colores apagados. Puede ser un estilo buscado, pero asegúrate de que el protagonista destaca frente a las miniaturas vecinas.","colorHigh":"Extremadamente saturada. Comprueba que los tonos de piel siguen pareciendo naturales.","colorOk":"La intensidad del color está en un rango saludable.",
+"cComplexity":"Exceso de detalle","busy":"Mucho detalle y muchos bordes. Al tamaño del feed puede parecer ruido: simplifica el fondo o quita un elemento.","plain":"Muy poco detalle. Asegúrate de que hay un protagonista claro que diga de qué va el vídeo.","complexityOk":"Una cantidad de detalle equilibrada.",
+"cEdges":"Bordes en modo claro/oscuro","edgesDark":"Los bordes son muy oscuros, así que la miniatura puede fundirse con el modo oscuro de YouTube. Añade algo de luz cerca de los bordes.","edgesLight":"Los bordes son muy claros, así que la miniatura puede fundirse con el fondo blanco de YouTube.","edgesOk":"Los bordes deberían destacar tanto en modo claro como oscuro.",
+"cCorner":"Esquina inferior derecha","cornerBusy":"Hay mucho detalle en la esquina inferior derecha, donde YouTube muestra la duración. Aparta de ahí los elementos importantes.","cornerOk":"La esquina inferior derecha (tapada por la duración) está despejada.",
+"cPalette":"Foco de la paleta","colorsValue":"{n} colores principales","paletteBusy":"Muchos colores con un peso parecido. Un color dominante más un acento suele leerse mejor.","paletteOk":"Foco de color claro: el color dominante cubre aproximadamente el {p} % de la imagen.",
+"summary":"{p} de {t} comprobaciones correctas","summaryNote":"Son comprobaciones técnicas, no una predicción del porcentaje de clics. El tema, el título y el público importan igual.",
+"bOk":"Bien","bWarn":"Revisar","bBad":"Corregir",
+"pSidebar":"Columna de sugeridos","pSearch":"Resultado de búsqueda","pHome":"Página de inicio","pGray":"Escala de grises (luces)","pLight":"Modo claro","pDark":"Modo oscuro",
+"allGood":"No hay problemas técnicos. Ahora compárala con vídeos de la competencia en la herramienta de vista previa."
+}</script>
+
+<div class="container">
+  <div class="tool-panel">
+    <div id="an-drop" class="dropzone" role="button" tabindex="0" aria-label="Elegir una imagen de miniatura">
+      <strong>Arrastra aquí tu miniatura o haz clic para elegir un archivo</strong>
+      <p>JPG, PNG o WebP · se analiza en tu dispositivo, nunca se sube</p>
+    </div>
+    <input id="an-file" type="file" accept="image/*" hidden>
+    <div class="or-sep">o analiza un vídeo publicado</div>
+    <form id="an-url-form" class="input-row" novalidate>
+      <label class="sr-only" for="an-url">URL del vídeo de YouTube</label>
+      <input class="input" id="an-url" type="text" inputmode="url" autocomplete="off" placeholder="https://www.youtube.com/watch?v=…">
+      <button class="btn btn-dark" type="submit">Analizar</button>
+    </form>
+    <p id="an-error" class="alert alert-error" role="alert" hidden></p>
+  </div>
+
+  <section id="an-results" hidden aria-live="polite">
+    <div class="tool-panel">
+      <div class="toolbar"><div id="an-summary"></div><button type="button" class="btn btn-ghost btn-sm" id="an-reset">Analizar otra</button></div>
+      <h2>Cómo se ve a tamaños reales</h2>
+      <div class="preview-strip" id="an-previews"></div>
+      <div class="preview-strip" id="an-themes" style="margin-top:16px"></div>
+    </div>
+    <div class="tool-panel">
+      <h2>Comprobaciones</h2>
+      <div class="metric-list" id="an-metrics"></div>
+    </div>
+    <div class="tool-panel">
+      <h2>Colores dominantes</h2>
+      <div class="palette" id="an-palette"></div>
+      <h2 style="margin-top:24px">Qué mejorar</h2>
+      <ul class="recs" id="an-recs"></ul>
+      <p class="panel-note">Siguiente paso: mírala junto a vídeos de la competencia en la <a href="@vista-previa-miniatura-youtube">vista previa del feed</a> o repasa el <a href="@checklist-miniaturas">checklist de miniaturas</a> para lo que un programa no puede medir (idea, emoción, honestidad).</p>
+    </div>
+  </section>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>Qué revisa el analizador y por qué</h2>
+    <p>La mayoría de las miniaturas se ven a una fracción del tamaño con el que se diseñaron, muchas veces en un móvil y junto a muchas otras. El analizador se centra en propiedades medibles que influyen en lo legible que es tu imagen en esa situación. No intenta predecir tu porcentaje de clics: ninguna herramienta puede hacerlo solo con la imagen, porque el tema, el título y el público importan igual.</p>
+
+    <h3>Comprobaciones técnicas (archivos subidos)</h3>
+    <ul>
+      <li><strong>Proporción:</strong> las miniaturas de vídeos normales deben ser exactamente 16:9. Cualquier otra cosa aparece con bandas o recortada.</li>
+      <li><strong>Resolución:</strong> YouTube exige al menos 640 píxeles de ancho y ahora recomienda hasta 3840&times;2160. Con 1280&times;720 o más se ve nítida casi en cualquier sitio.</li>
+      <li><strong>Peso:</strong> el límite de subida es de 50 MB desde el ordenador, pero de 2 MB desde la app móvil.</li>
+    </ul>
+
+    <h3>Brillo y contraste</h3>
+    <p>El brillo es la luminosidad media percibida de la imagen. El contraste se mide como cuánto varía la luminosidad en la imagen (la desviación típica de la luminosidad percibida). Un contraste bajo es el motivo más habitual por el que una miniatura se ve plana y sucia a tamaño pequeño. La vista en grises es la forma más rápida de juzgarlo a ojo: si tu protagonista no destaca en blanco y negro, tampoco destacará en color. Nuestra <a href="@teoria-del-color-miniaturas-youtube">guía de teoría del color</a> explica cómo corregirlo.</p>
+
+    <h3>Intensidad de color</h3>
+    <p>Usamos una medida de «colorido» publicada por Hasler y Süsstrunk (2003), que se corresponde bien con lo colorida que las personas consideran una imagen. Su escala va de «sin color» a «moderadamente», «bastante» y «extremadamente colorida». Las miniaturas apagadas pueden funcionar como estilo, pero necesitan mucho contraste de luminosidad para destacar.</p>
+
+    <h3>Exceso de detalle</h3>
+    <p>Se estima a partir de la densidad de bordes: la proporción de la imagen con cambios fuertes de luminosidad. Muchos bordes suelen significar muchos detalles pequeños, que se convierten en ruido en el feed. Es una aproximación, así que úsala junto a tu propio criterio y las vistas a tamaño pequeño.</p>
+
+    <h3>Bordes y esquina inferior derecha</h3>
+    <p>YouTube muestra las miniaturas sobre fondo blanco en modo claro y casi negro en modo oscuro. Si el borde exterior de tu imagen es muy oscuro o muy claro, puede fundirse con uno de ellos. El analizador también busca detalle en la esquina inferior derecha, que tapa la etiqueta de duración.</p>
+
+    <h3>Privacidad</h3>
+    <p>Tu imagen se procesa por completo en tu dispositivo con la API Canvas del navegador. Cuando analizas un enlace de YouTube, la miniatura se carga directamente desde el servidor de imágenes de YouTube. No se envía nada a TubeTools.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>¿Una buena puntuación significa que tendré más clics?</summary><p>No. Las comprobaciones eliminan fallos técnicos comunes, pero los clics dependen de la idea, el título, el público y la competencia. Usa Probar y comparar de YouTube para medir el rendimiento real; consulta nuestra <a href="@ab-testing-miniaturas-youtube">guía de pruebas A/B</a>.</p></details>
+      <details><summary>¿Por qué me avisa si mi miniatura es oscura a propósito?</summary><p>Los estilos oscuros pueden funcionar muy bien, pero los bordes oscuros tienden a desaparecer en modo oscuro. El aviso es un recordatorio para revisarlo, no una regla: mira la vista en modo oscuro y decide.</p></details>
+      <details><summary>¿Puedo analizar miniaturas de la competencia?</summary><p>Sí: pega el enlace del vídeo. Es una forma útil de comparar tu diseño con lo que ya aparece para tu tema. Las imágenes pertenecen a sus creadores, así que úsalas solo para analizar.</p></details>
+    </div>
+  </div>
+</section>

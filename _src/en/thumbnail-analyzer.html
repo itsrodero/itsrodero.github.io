@@ -1,0 +1,106 @@
+---
+type: tool
+title: Free YouTube Thumbnail Analyzer – Contrast, Color & Readability
+description: Check a YouTube thumbnail before you publish: size and format, brightness, contrast, colorfulness, clutter, dark-mode edges and a small-size preview. Runs in your browser.
+h1: YouTube Thumbnail Analyzer
+lead: Upload your thumbnail (or paste a YouTube link) to check the technical things that make thumbnails hard to read — contrast, brightness, color, clutter and how it looks at small sizes. Everything is processed in your browser; nothing is uploaded.
+alt: analizador-miniaturas
+nav: tools
+tool_order: 2
+icon: scan
+card_title: Thumbnail Analyzer
+card_short: Contrast, color and readability checks
+card_desc: Check contrast, brightness, color, clutter and small-size readability before you publish.
+crumb: Thumbnail Analyzer
+script: analyzer
+---
+<script type="application/json" id="tool-i18n">{
+"invalidUrl":"That doesn't look like a YouTube video link.","notImage":"Please choose an image file (JPG, PNG or WebP).","loadFailed":"We couldn't load a thumbnail for that video. Check the link, or download the image and upload it instead.",
+"cAspect":"Aspect ratio","aspectOk":"Exactly 16:9, so nothing will be cropped or letterboxed.","aspectBad":"Not 16:9. YouTube will add black bars or crop the image. Resize the canvas to 16:9.",
+"cResolution":"Resolution","resOk":"Sharp on phones, laptops and most TVs.","resSmall":"Above YouTube's 640 px minimum, but 1280 px wide or more will look sharper.","resTooSmall":"Below YouTube's 640 px minimum width. Export at 1280×720 or larger.",
+"cFileSize":"File size","sizeOk":"Under 2 MB, so you can upload it from the mobile app too.","sizeMobile":"Fine from a computer (50 MB limit) but too big for the mobile app (2 MB). Export a lighter JPG if you upload from your phone.","sizeTooBig":"Over YouTube's 50 MB limit. Export a smaller file.",
+"cBrightness":"Brightness","brightLow":"Quite dark overall. Dark thumbnails can disappear in dark mode and on dim phone screens — brighten the subject.","brightHigh":"Very bright overall. It may look washed out, especially in light mode. Add darker areas for depth.","brightOk":"A comfortable overall brightness.",
+"cContrast":"Contrast","contrastLow":"Low contrast: the image may look flat at small sizes. Separate the subject from the background with light and dark.","contrastMid":"Moderate contrast. Check the grayscale preview — does the subject clearly stand out?","contrastOk":"Good light/dark contrast, which helps the image read at small sizes.",
+"cColor":"Colorfulness","cf1":"not colorful","cf2":"slightly colorful","cf3":"moderately colorful","cf4":"averagely colorful","cf5":"quite colorful","cf6":"highly colorful","colorLow":"Muted colors. That can be a deliberate style, but make sure the subject still stands out from neighboring thumbnails.","colorHigh":"Extremely saturated. Check that skin tones still look natural.","colorOk":"Color intensity is in a healthy range.",
+"cComplexity":"Visual clutter","busy":"Lots of detail and edges. At feed size this can read as clutter — simplify the background or remove an element.","plain":"Very little detail. Make sure there's a clear subject that tells viewers what the video is about.","complexityOk":"A balanced amount of detail.",
+"cEdges":"Edges on light/dark mode","edgesDark":"The outer edges are very dark, so the thumbnail may blend into YouTube's dark mode. Add some light near the edges.","edgesLight":"The outer edges are very light, so the thumbnail may blend into YouTube's white background.","edgesOk":"The edges should stand out in both light and dark mode.",
+"cCorner":"Bottom-right corner","cornerBusy":"There's a lot of detail in the bottom-right corner, where YouTube shows the video length. Move important elements away from it.","cornerOk":"The bottom-right corner (covered by the duration badge) looks clear.",
+"cPalette":"Palette focus","colorsValue":"{n} main colors","paletteBusy":"Many colors of similar weight. A dominant color plus one accent usually reads more clearly.","paletteOk":"Clear color focus: the dominant color covers about {p}% of the image.",
+"summary":"{p} of {t} checks look good","summaryNote":"These are technical checks, not a prediction of click-through rate. Topic, title and audience matter just as much.",
+"bOk":"Good","bWarn":"Check","bBad":"Fix",
+"pSidebar":"Up next sidebar","pSearch":"Search result","pHome":"Home feed","pGray":"Grayscale (value check)","pLight":"Light mode","pDark":"Dark mode",
+"allGood":"No technical issues found. Now compare it with competing videos in the feed preview tool."
+}</script>
+
+<div class="container">
+  <div class="tool-panel">
+    <div id="an-drop" class="dropzone" role="button" tabindex="0" aria-label="Choose a thumbnail image">
+      <strong>Drop your thumbnail here or click to choose a file</strong>
+      <p>JPG, PNG or WebP · analyzed on your device, never uploaded</p>
+    </div>
+    <input id="an-file" type="file" accept="image/*" hidden>
+    <div class="or-sep">or analyze a published video</div>
+    <form id="an-url-form" class="input-row" novalidate>
+      <label class="sr-only" for="an-url">YouTube video URL</label>
+      <input class="input" id="an-url" type="text" inputmode="url" autocomplete="off" placeholder="https://www.youtube.com/watch?v=…">
+      <button class="btn btn-dark" type="submit">Analyze</button>
+    </form>
+    <p id="an-error" class="alert alert-error" role="alert" hidden></p>
+  </div>
+
+  <section id="an-results" hidden aria-live="polite">
+    <div class="tool-panel">
+      <div class="toolbar"><div id="an-summary"></div><button type="button" class="btn btn-ghost btn-sm" id="an-reset">Analyze another</button></div>
+      <h2>How it looks at real sizes</h2>
+      <div class="preview-strip" id="an-previews"></div>
+      <div class="preview-strip" id="an-themes" style="margin-top:16px"></div>
+    </div>
+    <div class="tool-panel">
+      <h2>Checks</h2>
+      <div class="metric-list" id="an-metrics"></div>
+    </div>
+    <div class="tool-panel">
+      <h2>Dominant colors</h2>
+      <div class="palette" id="an-palette"></div>
+      <h2 style="margin-top:24px">What to improve</h2>
+      <ul class="recs" id="an-recs"></ul>
+      <p class="panel-note">Next step: see it next to competing videos in the <a href="@youtube-thumbnail-preview">feed preview</a>, or run the <a href="@thumbnail-checklist">thumbnail checklist</a> for the things software can't measure (idea, emotion, honesty).</p>
+    </div>
+  </section>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>What the analyzer checks — and why</h2>
+    <p>Most thumbnails are seen at a fraction of their designed size, often on a phone, next to many other thumbnails. The analyzer focuses on measurable properties that affect how readable your image is in that situation. It doesn't try to predict your click-through rate: no tool can do that from the image alone, because topic, title and audience matter just as much.</p>
+
+    <h3>Technical checks (uploaded files)</h3>
+    <ul>
+      <li><strong>Aspect ratio:</strong> YouTube thumbnails for regular videos should be exactly 16:9. Anything else is letterboxed or cropped.</li>
+      <li><strong>Resolution:</strong> YouTube requires at least 640 pixels wide and now recommends up to 3840&times;2160. 1280&times;720 or larger looks sharp in most places.</li>
+      <li><strong>File size:</strong> the upload limit is 50 MB from a computer but 2 MB from the mobile app.</li>
+    </ul>
+
+    <h3>Brightness and contrast</h3>
+    <p>Brightness is the average perceived lightness of the image. Contrast is measured as how much lightness varies across the image (the standard deviation of perceived lightness). Low contrast is the most common reason a thumbnail looks flat and muddy at small sizes. The grayscale preview is the quickest way to judge it by eye: if your subject doesn't stand out in black and white, it won't stand out in color either. Our <a href="@advanced-color-theory-youtube-thumbnails">color theory guide</a> explains how to fix it.</p>
+
+    <h3>Colorfulness</h3>
+    <p>We use a colorfulness measure published by Hasler and Süsstrunk (2003), which correlates well with how colorful people judge an image to be. Their scale runs from "not colorful" through "moderately" and "quite" to "extremely colorful". Muted thumbnails can work as a deliberate style, but they need strong brightness contrast to stand out.</p>
+
+    <h3>Visual clutter</h3>
+    <p>Clutter is estimated from edge density: the share of the image with strong changes in lightness. Many edges usually means many small details, which turn into noise at feed size. It's a rough proxy, so use it together with your own eyes and the small-size previews.</p>
+
+    <h3>Edges and the bottom-right corner</h3>
+    <p>YouTube displays thumbnails on a white background in light mode and a near-black one in dark mode. If the outer edge of your image is very dark or very light, it can blend into one of them. The analyzer also looks for detail in the bottom-right corner, which is covered by the video-length badge.</p>
+
+    <h3>Privacy</h3>
+    <p>Your image is processed entirely on your device with the browser's Canvas API. When you analyze a YouTube link, the thumbnail is loaded directly from YouTube's image server. Nothing is sent to TubeTools.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>Does a good score mean my video will get more clicks?</summary><p>No. The checks remove common technical weaknesses, but clicks depend on the idea, the title, the audience and competition. Use YouTube's Test &amp; Compare to measure real performance — see our <a href="@youtube-thumbnail-ab-testing-guide">A/B testing guide</a>.</p></details>
+      <details><summary>Why is my deliberately dark thumbnail flagged?</summary><p>Dark styles can work well, but dark edges tend to disappear in dark mode. The warning is a reminder to check, not a rule — look at the dark-mode preview and decide.</p></details>
+      <details><summary>Can I analyze competitors' thumbnails?</summary><p>Yes: paste a video link. It's a useful way to compare your design with what already ranks for your topic. The images belong to their creators, so use them for analysis only.</p></details>
+    </div>
+  </div>
+</section>

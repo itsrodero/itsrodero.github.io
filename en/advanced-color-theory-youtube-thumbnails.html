@@ -1,481 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Color Theory for YouTube Thumbnails 2026 | TubeTools</title>
-  <meta name="description" content="Advanced color theory for YouTube thumbnails: complementary vs analogous colors, dark UI strategy, color psychology, brand palette building, and practical grading techniques.">
-  <link rel="canonical" href="https://tubetools.online/en/advanced-color-theory-youtube-thumbnails.html">
-  <link rel="alternate" hreflang="en" href="https://tubetools.online/en/advanced-color-theory-youtube-thumbnails.html">
-  <link rel="alternate" hreflang="es" href="https://tubetools.online/teoria-del-color-miniaturas-youtube.html">
-  <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/advanced-color-theory-youtube-thumbnails.html">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://tubetools.online/en/advanced-color-theory-youtube-thumbnails.html">
-  <meta property="og:title" content="Advanced Color Theory for YouTube Thumbnails 2026 | TubeTools">
-  <meta property="og:description" content="Color theory applied to thumbnails: complementary vs analogous, dark mode strategy, brand palette building, and practical grading without Photoshop.">
-  <meta property="og:image" content="https://tubetools.online/og_image_en.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","headline":"Advanced Color Theory for YouTube Thumbnails 2026","description":"Color theory applied to YouTube thumbnails: complementary vs analogous colors, dark mode strategy, brand palette building.","datePublished":"2026-03-05","dateModified":"2026-06-01","author":{"@type":"Person","name":"Daniel","url":"https://tubetools.online/en/contact.html"},"publisher":{"@type":"Organization","name":"TubeTools","url":"https://tubetools.online"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://tubetools.online/en/advanced-color-theory-youtube-thumbnails.html"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What colors get the highest CTR on YouTube thumbnails?","acceptedAnswer":{"@type":"Answer","text":"Red and orange-yellow thumbnails consistently generate the highest CTR because they create maximum contrast against both YouTube's white light mode and dark grey dark mode backgrounds. Red also triggers urgency and attention responses in the brain. Blue is one of the worst performing thumbnail colors because it blends with YouTube's own interface elements."}},{"@type":"Question","name":"How many colors should a YouTube thumbnail use?","acceptedAnswer":{"@type":"Answer","text":"Two to three colors maximum for most thumbnails. A dominant color (60% of the visual), an accent color (30%), and optionally a neutral (10%). More than three colors creates visual confusion that slows processing speed — the brain takes longer to identify what the thumbnail is about, reducing click probability."}},{"@type":"Question","name":"Does YouTube compress thumbnail colors?","acceptedAnswer":{"@type":"Answer","text":"Yes, YouTube applies JPEG compression to uploaded thumbnails, which slightly desaturates colors and can introduce compression artifacts. To compensate, design thumbnails with slightly higher saturation and contrast than feels ideal on your design canvas. The compression will bring it back toward your intended look."}}]}
-  </script>
-  <style>
-    .reading-bar{height:3px;background:#d32f2f;width:0%;position:fixed;top:0;left:0;z-index:10000;transition:width .1s}
-*{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1c1e21;background:#f7f8fa;line-height:1.7}
-    nav{position:sticky;top:0;z-index:1000;background:#1c1e21;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
-    .nav-logo{color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
-    .nav-logo span{color:#ff5252}
-    .nav-links{display:flex;gap:4px;align-items:center}
-    .nav-links a{color:#ccc !important;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;transition:background .2s,color .2s;white-space:nowrap}
-    .nav-links a:hover{background:rgba(255,255,255,.08);color:#fff !important}
-    .nav-links a.lang-btn-es{color:#a5d6a7 !important;border:1px solid rgba(165,214,167,.35)}
-    .nav-dropdown{position:relative}
-    .nav-dropdown>a{display:flex;align-items:center;gap:4px}
-    .nav-dropdown>a::after{content:'▾';font-size:.7rem;opacity:.7}
-    .dropdown-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#2c2e33;border-radius:12px;padding:10px 8px;min-width:240px;box-shadow:0 8px 32px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.07);z-index:2000}
-    .nav-dropdown:hover .dropdown-panel,.nav-dropdown:focus-within .dropdown-panel{display:block}
-    .dropdown-panel a{display:flex;align-items:center;gap:10px;color:#ccc !important;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;transition:background .2s;width:100%}
-    .dropdown-panel a:hover{background:rgba(255,255,255,.09);color:#fff !important}
-    .dp-icon{width:22px;text-align:center;font-size:1.05rem;flex-shrink:0}
-    .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-    @media(max-width:720px){
-      .nav-toggle{display:block}
-      .nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
-      .nav-links.open{display:flex}
-      .nav-links a{padding:11px 14px;border-radius:8px}
-      .nav-dropdown>a::after{display:none}
-      .dropdown-panel{display:block;position:static;transform:none;background:rgba(255,255,255,.04);border:none;box-shadow:none;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}
-      .dropdown-panel a{font-size:.83rem;padding:7px 10px}
-    }
-    .hero{background:linear-gradient(135deg,#0d0d0d 0%,#1a1200 50%,#0d1a0d 100%);padding:60px 24px 80px;text-align:center;position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 0%,rgba(255,193,7,.12) 0%,transparent 50%),radial-gradient(ellipse at 70% 0%,rgba(211,47,47,.1) 0%,transparent 50%);pointer-events:none}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,193,7,.15);border:1px solid rgba(255,193,7,.3);border-radius:999px;padding:5px 16px;font-size:.78rem;font-weight:700;color:#ffe082;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px}
-    .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;line-height:1.15;max-width:720px;margin:0 auto 18px}
-    .hero h1 em{color:#ffd54f;font-style:normal}
-    .hero-sub{color:rgba(255,255,255,.65);font-size:1.05rem;max-width:580px;margin:0 auto 36px}
-    .hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;max-width:640px;margin:0 auto}
-    .hstat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 22px;text-align:center;min-width:120px}
-    .hstat-val{font-size:1.6rem;font-weight:900;color:#ffd54f;display:block;line-height:1}
-    .hstat-label{font-size:.72rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.07em;margin-top:4px;display:block;line-height:1.4}
-    .breadcrumb{max-width:900px;margin:0 auto;padding:14px 24px 0;font-size:.8rem;color:#888}
-    .breadcrumb a{color:#888;text-decoration:none}
-    .breadcrumb a:hover{color:#d32f2f}
-    .breadcrumb span{margin:0 6px}
-    .article-wrap{max-width:900px;margin:0 auto;padding:0 24px 80px}
-    .article-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:20px 0 28px;border-bottom:1px solid #eee;margin-bottom:36px}
-    .meta-badge{background:#fff8e1;color:#e65100;border:1px solid rgba(230,81,0,.2);border-radius:6px;padding:3px 10px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-    .meta-text{font-size:.83rem;color:#888}
-    .article-body h2{font-size:1.4rem;font-weight:800;color:#1c1e21;margin:46px 0 16px;padding-left:16px;border-left:4px solid #f59e0b;line-height:1.3}
-    .article-body h3{font-size:1.05rem;font-weight:700;color:#2d3436;margin:22px 0 8px}
-    .article-body p{color:#444;font-size:1.02rem;margin-bottom:16px;line-height:1.75}
-    .article-body ul{color:#444;font-size:1.02rem;margin:0 0 18px 22px;line-height:1.9}
-    .article-body li{margin-bottom:4px}
-    .article-body a{color:#e65100}
-    /* COLOR SCHEMES */
-    .scheme-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
-    @media(max-width:560px){.scheme-grid{grid-template-columns:1fr}}
-    .scheme-card{background:#fff;border-radius:14px;padding:20px;border:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-    .scheme-swatches{display:flex;gap:8px;margin-bottom:14px}
-    .swatch{width:40px;height:40px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
-    .scheme-card h3{font-size:.95rem;font-weight:800;color:#1c1e21;margin-bottom:6px}
-    .scheme-card p{font-size:.85rem;color:#666;line-height:1.55;margin:0}
-    .scheme-tag{display:inline-block;background:#f0f0f0;border-radius:6px;padding:2px 8px;font-size:.72rem;font-weight:700;color:#555;margin-top:8px}
-    /* PSYCHOLOGY TABLE */
-    .table-wrap{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);margin:24px 0;border:1px solid #eee}
-    .table-label{background:#1c1e21;color:#fff;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:8px 18px}
-    table{width:100%;border-collapse:collapse}
-    th{background:#f59e0b;color:#fff;padding:12px 16px;text-align:left;font-size:.88rem;font-weight:700}
-    td{padding:11px 16px;border-bottom:1px solid #f0f0f0;font-size:.9rem;color:#333}
-    tr:last-child td{border-bottom:none}
-    tr:nth-child(even) td{background:#fafafa}
-    /* DARK/LIGHT COMPARE */
-    .mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
-    @media(max-width:560px){.mode-grid{grid-template-columns:1fr}}
-    .mode-card{border-radius:14px;padding:20px;border:2px solid}
-    .mode-light{background:#f7f7f7;border-color:#ddd}
-    .mode-dark{background:#212121;border-color:#444}
-    .mode-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:8px}
-    .mode-light .mode-label{color:#555}
-    .mode-dark .mode-label{color:#aaa}
-    .mode-card h3{font-size:.95rem;font-weight:800;margin-bottom:8px}
-    .mode-light h3{color:#1c1e21}
-    .mode-dark h3{color:#fff}
-    .mode-card ul{margin:0 0 0 16px;font-size:.88rem;line-height:1.8}
-    .mode-light ul{color:#444}
-    .mode-dark ul{color:#bbb}
-    /* PALETTE BUILDER */
-    .palette-steps{display:grid;gap:12px;margin:24px 0}
-    .ps-step{background:#fff;border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;border:1px solid #eee}
-    .ps-num{width:36px;height:36px;border-radius:8px;background:#f59e0b;color:#fff;font-size:.95rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .ps-step h3{font-size:.93rem;font-weight:700;color:#1c1e21;margin-bottom:4px}
-    .ps-step p{font-size:.88rem;color:#555;line-height:1.55;margin:0}
-    /* BOXES */
-    .box{border-radius:14px;padding:22px 26px;margin:28px 0}
-    .box-insight{background:#fff8e1;border-left:4px solid #f59e0b}
-    .box-tip{background:#e8f5e9;border-left:4px solid #2e7d32}
-    .box-warning{background:#fdecea;border-left:4px solid #d32f2f}
-    .box-icon{font-size:1rem;font-weight:800;margin-bottom:6px;display:block;color:#f59e0b}
-    .box-tip .box-icon{color:#2e7d32}
-    .box-warning .box-icon{color:#d32f2f}
-    .box p{margin-bottom:0;font-size:.97rem}
-    /* CTA */
-    .cta-tool{background:linear-gradient(135deg,#d32f2f,#b71c1c);border-radius:16px;padding:32px;text-align:center;margin:36px 0}
-    .cta-tool h3{color:#fff;font-size:1.2rem;font-weight:800;margin-bottom:8px}
-    .cta-tool p{color:rgba(255,255,255,.85);font-size:.95rem;margin-bottom:20px}
-    .cta-tool a{display:inline-block;background:#fff;color:#d32f2f !important;font-weight:800;padding:13px 30px;border-radius:10px;text-decoration:none;font-size:.97rem;transition:transform .15s}
-    .cta-tool a:hover{transform:translateY(-2px)}
-    .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:20px 0}
-    .related-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:16px;text-decoration:none;color:#1c1e21;border-left:3px solid #f59e0b;transition:box-shadow .2s,transform .2s}
-    .related-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);transform:translateY(-2px)}
-    .related-card strong{font-size:.88rem;display:block;line-height:1.4}
-    .related-card.tool-card{border-left-color:#d32f2f;background:#fff5f5}
-    .faq-section{background:#fff;border-radius:16px;padding:32px;margin:40px 0;border:1px solid #eee}
-    .faq-section h2{font-size:1.2rem;font-weight:800;color:#1c1e21;margin-bottom:24px}
-    .faq-item{border-bottom:1px solid #f0f0f0;padding:18px 0}
-    .faq-item:last-child{border-bottom:none;padding-bottom:0}
-    .faq-item h3{font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px}
-    .faq-item p{font-size:.93rem;color:#555;line-height:1.7;margin:0}
-    .site-footer{background:#1c1e21;color:#888;padding:48px 20px 32px;margin-top:60px}
-    .footer-inner{max-width:960px;margin:0 auto}
-    .footer-grid{display:grid;grid-template-columns:1fr repeat(3,auto);gap:40px;margin-bottom:36px}
-    @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
-    @media(max-width:440px){.footer-grid{grid-template-columns:1fr}}
-    .footer-logo{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:10px}
-    .footer-logo span{color:#ff5252}
-    .footer-brand p{font-size:.83rem;color:#666;line-height:1.6;max-width:220px}
-    .footer-col h4{font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
-    .footer-col a{display:block;color:#888 !important;text-decoration:none;font-size:.85rem;margin-bottom:8px;transition:color .2s}
-    .footer-col a:hover{color:#fff !important}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-    .footer-bottom p{font-size:.78rem;color:#555}
-    .footer-lang-btn{padding:5px 14px;border-radius:999px;text-decoration:none !important;font-size:.82rem;font-weight:600}
-    .footer-lang-btn.es-fb{background:rgba(165,214,167,.1);color:#a5d6a7 !important;border:1px solid rgba(165,214,167,.3)}
-    .skip-link{position:absolute;top:-100px;left:0;background:#f59e0b;color:#fff;padding:8px 15px;z-index:100000;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s}
-    .skip-link:focus{top:0}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Color Theory for YouTube Thumbnails – Contrast That Stands Out | TubeTools</title>
+<meta name="description" content="How to use value, hue and saturation so your thumbnail stands out in a crowded feed, works in light and dark mode, and stays readable for color-blind viewers.">
+<link rel="canonical" href="https://tubetools.online/en/advanced-color-theory-youtube-thumbnails.html">
+<link rel="alternate" hreflang="en" href="https://tubetools.online/en/advanced-color-theory-youtube-thumbnails.html">
+<link rel="alternate" hreflang="es" href="https://tubetools.online/teoria-del-color-miniaturas-youtube.html">
+<link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/advanced-color-theory-youtube-thumbnails.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:site_name" content="TubeTools">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Color Theory for YouTube Thumbnails">
+<meta property="og:description" content="How to use value, hue and saturation so your thumbnail stands out in a crowded feed, works in light and dark mode, and stays readable for color-blind viewers.">
+<meta property="og:url" content="https://tubetools.online/en/advanced-color-theory-youtube-thumbnails.html">
+<meta property="og:image" content="https://tubetools.online/assets/img/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',region:["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"],wait_for_update:500});gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});gtag('js',new Date());gtag('config','G-MKM07L3RLR');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/site.css?v=7d5d42b9">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Color Theory for YouTube Thumbnails", "description": "How to use value, hue and saturation so your thumbnail stands out in a crowded feed, works in light and dark mode, and stays readable for color-blind viewers.", "inLanguage": "en", "datePublished": "2026-05-27", "dateModified": "2026-09-28", "author": {"@type": "Person", "name": "Daniel", "url": "https://tubetools.online/en/about.html"}, "publisher": {"@type": "Organization", "name": "TubeTools", "url": "https://tubetools.online/", "logo": {"@type": "ImageObject", "url": "https://tubetools.online/assets/img/logo-512.png"}}, "image": "https://tubetools.online/assets/img/og-en.png", "mainEntityOfPage": "https://tubetools.online/en/advanced-color-theory-youtube-thumbnails.html", "wordCount": 1089}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tubetools.online/en/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://tubetools.online/en/blog.html"}, {"@type": "ListItem", "position": 3, "name": "Color theory", "item": "https://tubetools.online/en/advanced-color-theory-youtube-thumbnails.html"}]}</script>
 </head>
-<body>
-<div class="reading-bar" id="readingBar"></div>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <nav>
-    <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-    <div class="nav-links">
-      <a href="/teoria-del-color-miniaturas-youtube.html" class="lang-btn-es">🇪🇸 ES</a>
-      <a href="/en/">Home</a>
-      <div class="nav-dropdown">
-        <a href="/en/tools.html">🎯 Tools</a>
-        <div class="dropdown-panel">
-          <a href="/en/"><span class="dp-icon">🖼️</span>Thumbnail Extractor</a>
-          <a href="/en/thumbnail-analyzer.html"><span class="dp-icon">🔬</span>Thumbnail Analyzer</a>
-          <a href="/en/youtube-title-generator.html"><span class="dp-icon">✍️</span>Title Generator</a>
-          <a href="/en/calculator.html"><span class="dp-icon">🧮</span>Revenue Calculator</a>
-          <a href="/en/ctr-score-calculator.html"><span class="dp-icon">📊</span>CTR Score</a>
-          <a href="/en/thumbnail-checklist.html"><span class="dp-icon">✅</span>Checklist</a>
-        </div>
+<body class="page-article">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/en/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#d32f2f"/><path d="M9 9h14v4.5h-4.75V24h-4.5V13.5H9z" fill="#fff"/></svg><span>Tube<b>Tools</b></span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="sr-only">Menu</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <div class="nav-dd">
+        <button class="nav-dd-btn" aria-expanded="false">Tools <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="nav-dd-panel"><a href="/en/" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span><strong>Thumbnail Downloader</strong><small>Save any video&#x27;s thumbnail in full size</small></span></a><a href="/en/thumbnail-analyzer.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="15.5" cy="9" r="1.5"/></svg><span><strong>Thumbnail Analyzer</strong><small>Contrast, color and readability checks</small></span></a><a href="/en/youtube-thumbnail-preview.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><span><strong>Feed Preview</strong><small>See your thumbnail next to competitors</small></span></a><a href="/en/thumbnail-checklist.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg><span><strong>Thumbnail Checklist</strong><small>15-point review with a score</small></span></a><a href="/en/youtube-title-generator.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5h16v2"/><path d="M12 5v14"/><path d="M9 19h6"/></svg><span><strong>Title Generator</strong><small>Title ideas plus a length checker</small></span></a><a href="/en/calculator.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg><span><strong>Revenue Calculator</strong><small>Estimate earnings from views and RPM</small></span></a></div>
       </div>
-      <a href="/en/blog.html">Blog</a>
+      <a href="/en/blog.html" class="is-active">Guides</a>
       <a href="/en/glossary.html">Glossary</a>
-      <a href="/en/contact.html">Contact</a>
-    </div>
-  </nav>
-
-<div style="max-width:760px;margin:24px auto 0;padding:0 20px;display:flex;align-items:center;gap:14px">
-  <img src="/daniel-avatar.jpg" alt="Daniel, creator of TubeTools" width="44" height="44" style="border-radius:50%;object-fit:cover;flex-shrink:0">
-  <div style="font-size:.85rem;color:#666;line-height:1.5">
-    Written by <a href="/en/about.html" style="color:#d32f2f;font-weight:700;text-decoration:none">Daniel</a>, creator of TubeTools &middot; Updated June 1, 2026
+      <a href="/en/about.html">About</a>
+      <a class="lang-switch" href="/teoria-del-color-miniaturas-youtube.html" hreflang="es" lang="es" title="Leer en español"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg> Español</a>
+    </nav>
   </div>
+</header>
+<main id="main" class="article-main">
+  <article class="container narrow article">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/en/">Home</a></li><li><a href="/en/blog.html">Guides</a></li><li aria-current="page">Color theory</li></ol></nav>
+    <header class="article-header">
+      <p class="eyebrow">Thumbnail design</p>
+      <h1>Color Theory for YouTube Thumbnails</h1>
+      <p class="lead">Color is the fastest signal in a thumbnail — it's noticed before faces or words. But "use bright colors" isn't a strategy. Here's how to think about brightness, hue and saturation so your thumbnail separates from the interface and from the videos around it.</p>
+      <p class="article-meta">By <a href="/en/about.html">Daniel</a> &middot; Updated <time datetime="2026-09-28">September 28, 2026</time> &middot; 5 min read</p>
+    </header>
+    <details class="toc" open><summary>On this page</summary><ol><li><a href="#start-with-value-the-grayscale-test">Start with value: the grayscale test</a></li><li><a href="#hue-choose-relationships-not-individual-colors">Hue: choose relationships, not individual colors</a></li><li><a href="#saturation-be-selective">Saturation: be selective</a></li><li><a href="#designing-for-youtube-s-interface">Designing for YouTube&#x27;s interface</a></li><li><a href="#text-color-and-readability">Text color and readability</a></li><li><a href="#color-blindness">Color blindness</a></li><li><a href="#does-color-psychology-matter">Does &quot;color psychology&quot; matter?</a></li><li><a href="#a-quick-color-workflow">A quick color workflow</a></li><li><a href="#frequently-asked-questions">Frequently asked questions</a></li></ol></details>
+    <div class="prose">
+<p>Designers usually describe color with three properties: <strong>value</strong> (how light or dark), <strong>hue</strong> (red, blue, green…) and <strong>saturation</strong> (how intense). Most thumbnail color problems come from getting them in the wrong order — picking exciting hues first and only later noticing that the subject blends into the background. This guide works through them in the order that matters for a feed.</p>
+
+<h2 id="start-with-value-the-grayscale-test">Start with value: the grayscale test</h2>
+<p>At small sizes, the eye separates shapes mainly by light and dark, not by hue. That's why a thumbnail can be full of vivid colors and still look muddy: if the subject and background have similar brightness, they merge.</p>
+<p><strong>The test:</strong> convert your thumbnail to black and white (any editor can do this, and the <a href="/en/thumbnail-analyzer.html">Thumbnail Analyzer</a> shows a grayscale preview automatically). Then ask:</p>
+<ul>
+  <li>Is the main subject the lightest (or darkest) area, clearly separated from what's behind it?</li>
+  <li>Can you still read the text?</li>
+  <li>Is there a clear hierarchy — one dominant shape, then secondary elements?</li>
+</ul>
+<p>If the answer to any of these is no, fix the value structure before touching colors. Common fixes are brightening the subject, darkening or blurring the background, and adding a thin light outline around a cut-out subject.</p>
+
+<h2 id="hue-choose-relationships-not-individual-colors">Hue: choose relationships, not individual colors</h2>
+<p>Once values work, hue helps elements separate even further and sets the mood. What matters is how colors relate to each other:</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Scheme</th><th>What it is</th><th>When it works</th></tr></thead>
+    <tbody>
+      <tr><td>Complementary</td><td>Opposites on the color wheel: blue/orange, purple/yellow, red/cyan</td><td>Maximum separation between subject and background. The classic thumbnail choice.</td></tr>
+      <tr><td>Analogous</td><td>Neighbors: yellow/orange/red, blue/teal/green</td><td>Calm, cohesive looks (cooking, travel, lifestyle). Needs value contrast to avoid flatness.</td></tr>
+      <tr><td>Monochrome + accent</td><td>One hue in several shades plus one contrasting accent</td><td>Clean, branded looks; the accent pulls the eye to one element.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>A useful rule of thumb borrowed from interior design is <strong>60–30–10</strong>: roughly 60% of the image in a dominant color, 30% in a secondary color, and 10% in a strong accent reserved for the thing you want noticed first.</p>
+
+<h3 id="warm-and-cool-colors">Warm and cool colors</h3>
+<p>Warm colors (reds, oranges, yellows) tend to feel closer and more energetic; cool colors (blues, teals, purples) tend to recede. A warm subject on a cool background is an easy way to create depth. Skin tones are warm, which is one reason blue and teal backgrounds are so common behind faces.</p>
+
+<h2 id="saturation-be-selective">Saturation: be selective</h2>
+<p>Saturation draws attention, but only relative to what's around it. If everything is saturated, nothing stands out, and skin starts to look orange or plastic. A better approach:</p>
+<ul>
+  <li>Keep the <strong>subject</strong> naturally saturated (especially skin).</li>
+  <li>Push saturation on <strong>one accent</strong> — an object, an arrow, a word.</li>
+  <li>Let the <strong>background</strong> be less saturated or darker so the subject pops.</li>
+</ul>
+
+<h2 id="designing-for-youtube-s-interface">Designing for YouTube's interface</h2>
+<p>Your thumbnail never appears alone. It sits on YouTube's background — white in light mode, near-black in dark mode — surrounded by other thumbnails.</p>
+<ul>
+  <li><strong>Light mode:</strong> very light thumbnails with white edges can blend into the page. A slightly darker border area or a strong subject near the edge helps.</li>
+  <li><strong>Dark mode:</strong> dark, moody thumbnails can lose their edges entirely. Make sure some bright area reaches near the frame edge, or lift the background a little.</li>
+  <li><strong>Neighbors:</strong> look at what already ranks for your topic. If the results are dominated by one color (a lot of niches drift toward yellow and red), choosing a different dominant hue can help your thumbnail be noticed. Our guide to <a href="/en/analyze-thumbnail.html">analyzing competitor thumbnails</a> explains how to review a feed.</li>
+</ul>
+<p>You can check both themes and a realistic feed layout with the <a href="/en/youtube-thumbnail-preview.html">thumbnail preview tool</a>.</p>
+
+<h2 id="text-color-and-readability">Text color and readability</h2>
+<p>Text needs strong contrast with whatever is directly behind it. The web accessibility guideline WCAG asks for a contrast ratio of at least 4.5:1 for normal text; thumbnail text is displayed small and seen quickly, so aim for well above that. Reliable combinations:</p>
+<ul>
+  <li>White or yellow text on a dark background.</li>
+  <li>Black text on a bright yellow or white block.</li>
+  <li>Any color with a thick dark stroke or drop shadow to separate it from a busy photo.</li>
+</ul>
+<p>Avoid red text on dark backgrounds and blue text on black — both look vivid on a monitor but have low brightness contrast. For font advice, see the <a href="/en/typography-for-youtube-thumbnails.html">typography guide</a>.</p>
+
+<h2 id="color-blindness">Color blindness</h2>
+<p>According to Colour Blind Awareness, around 1 in 12 men and 1 in 200 women have some form of color vision deficiency, most often affecting red and green. A thumbnail that depends on red-versus-green (for example "red = bad, green = good" with no other cue) can be confusing for those viewers. Pair color with another signal — an icon, a symbol, a word, or a clear difference in brightness. The grayscale test above catches most of these problems.</p>
+
+<h2 id="does-color-psychology-matter">Does "color psychology" matter?</h2>
+<p>You'll often read that red creates urgency, blue builds trust and yellow grabs attention. Color associations do exist, but they depend heavily on culture and context, and there's little solid evidence that picking a specific hue raises click-through rate on its own. Treat color primarily as a tool for <strong>contrast, hierarchy and mood</strong>. If you want to know which palette your audience prefers, test it with YouTube's <a href="/en/youtube-thumbnail-ab-testing-guide.html">Test &amp; Compare</a> feature rather than relying on general rules.</p>
+
+<h2 id="a-quick-color-workflow">A quick color workflow</h2>
+<ol class="steps">
+  <li><strong>Block out values in grayscale</strong> until subject and text separate clearly.</li>
+  <li><strong>Pick a scheme</strong> (complementary is a safe default) and a dominant color that differs from the thumbnails around yours.</li>
+  <li><strong>Reserve one accent</strong> for the element that must be seen first.</li>
+  <li><strong>Check light and dark mode</strong> at small size.</li>
+  <li><strong>Check the palette</strong> in the Thumbnail Analyzer: two or three dominant colors usually read more clearly than six of equal weight.</li>
+</ol>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<div class="faq">
+  <details><summary>What is the best color for a YouTube thumbnail?</summary><p>There isn't one. The best color is the one that contrasts with your subject and with the other thumbnails your video appears next to. Start from value contrast, then choose hues.</p></details>
+  <details><summary>Should I avoid red because YouTube's logo is red?</summary><p>No, red works fine. Just avoid putting important red details along the bottom edge, where YouTube's red progress bar can appear.</p></details>
+  <details><summary>How many colors should a thumbnail have?</summary><p>Most clear thumbnails have one dominant color, one secondary color and one accent, plus neutrals. Many more than that usually makes the image harder to read at small size.</p></details>
 </div>
 
+<div class="sources">
+  <h2 data-notoc id="sources">Sources</h2>
+  <ul>
+    <li>W3C — <a href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html" rel="noopener">Understanding WCAG 2.1: Contrast (Minimum)</a></li>
+    <li>Colour Blind Awareness — <a href="https://www.colourblindawareness.org/colour-blindness/" rel="noopener">About colour blindness</a></li>
+    <li>YouTube Help — <a href="https://support.google.com/youtube/answer/13861714" rel="noopener">Test &amp; Compare thumbnails and titles</a></li>
+  </ul>
+</div>
 
-  <div class="hero">
-    <div class="hero-eyebrow">🎨 Color Science · Updated June 2026</div>
-    <h1>Advanced <em>Color Theory</em> for<br>YouTube Thumbnails</h1>
-    <p class="hero-sub">Color is the fastest visual signal the brain processes. The right palette makes your thumbnail stand out before the viewer consciously evaluates it. Here's the complete color playbook.</p>
-    <div class="hero-stats">
-      <div class="hstat"><span class="hstat-val">2–3</span><span class="hstat-label">Max colors per thumbnail</span></div>
-      <div class="hstat"><span class="hstat-val">30%</span><span class="hstat-label">Min contrast ratio</span></div>
-      <div class="hstat"><span class="hstat-val">❌</span><span class="hstat-label">Avoid blue (blends with UI)</span></div>
-      <div class="hstat"><span class="hstat-val">+15%</span><span class="hstat-label">Saturation for compression</span></div>
     </div>
+    <aside class="author-box">
+  <img src="/assets/img/daniel.jpg" alt="Daniel" width="64" height="64" loading="lazy">
+  <div>
+    <p class="author-name">Written by <a href="/en/about.html">Daniel</a> &middot; <span>Creator of TubeTools</span></p>
+    <p>Daniel builds and maintains the TubeTools utilities and writes the guides on this site. Every guide is checked against YouTube's official Help Center and updated when the rules change. <a href="/en/about.html#editorial">How we write our guides</a>.</p>
   </div>
-
-  <div class="breadcrumb">
-    <a href="/en/">Home</a><span>›</span><a href="/en/blog.html">Blog</a><span>›</span>Advanced Color Theory for YouTube Thumbnails
+</aside>
+    <section class="related"><h2 data-notoc>Keep reading</h2><div class="guide-grid"><a class="guide-card" href="/en/guide-thumbnails-ctr.html"><span class="guide-card-cat">Thumbnail design</span><span class="guide-card-title">The complete YouTube thumbnail guide</span><span class="guide-card-desc">A step-by-step system for thumbnails that read on a phone, match the video and earn the click.</span><span class="guide-card-cta">Read guide <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></a><a class="guide-card" href="/en/typography-for-youtube-thumbnails.html"><span class="guide-card-cat">Thumbnail design</span><span class="guide-card-title">Thumbnail text and fonts</span><span class="guide-card-desc">How many words, which free fonts, and how to size and place text so it reads on a phone.</span><span class="guide-card-cta">Read guide <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></a><a class="guide-card guide-card-tool" href="/en/thumbnail-analyzer.html"><span class="guide-card-cat">Tools</span><span class="guide-card-title">Thumbnail Analyzer</span><span class="guide-card-desc">Check contrast, brightness, color, clutter and small-size readability before you publish.</span><span class="guide-card-cta">Open tool <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></a></div></section>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo logo-invert" href="/en/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#d32f2f"/><path d="M9 9h14v4.5h-4.75V24h-4.5V13.5H9z" fill="#fff"/></svg><span>Tube<b>Tools</b></span></a>
+      <p>Free, privacy-friendly tools and plain-English guides for YouTube creators.</p>
+    </div>
+    <div><h2 class="footer-h">Tools</h2><ul><li><a href="/en/">Thumbnail Downloader</a></li><li><a href="/en/thumbnail-analyzer.html">Thumbnail Analyzer</a></li><li><a href="/en/youtube-thumbnail-preview.html">Feed Preview</a></li><li><a href="/en/thumbnail-checklist.html">Thumbnail Checklist</a></li><li><a href="/en/youtube-title-generator.html">Title Generator</a></li><li><a href="/en/calculator.html">Revenue Calculator</a></li></ul></div>
+    <div><h2 class="footer-h">Popular guides</h2><ul><li><a href="/en/guide-thumbnails-ctr.html">Thumbnail guide</a></li><li><a href="/en/youtube-ctr-guide-for-beginners.html">CTR for beginners</a></li><li><a href="/en/youtube-monetization-requirements.html">Monetization requirements</a></li><li><a href="/en/youtube-rpm-vs-cpm.html">RPM vs CPM</a></li><li><a href="/en/youtube-cpm-by-niche.html">CPM by niche</a></li><li><a href="/en/youtube-thumbnail-size-format-guide.html">Thumbnail size &amp; format</a></li></ul></div>
+    <div><h2 class="footer-h">TubeTools</h2><ul><li><a href="/en/about.html">About</a></li><li><a href="/en/contact.html">Contact</a></li><li><a href="/en/privacy.html">Privacy Policy</a></li><li><a href="/en/terms.html">Terms of Use</a></li><li><a href="/en/sitemap-page.html">Sitemap</a></li><li><a href="/en/privacy.html#cookies" class="js-privacy-settings">Privacy settings</a></li></ul></div>
   </div>
-
-  <div class="article-wrap">
-    <div class="article-meta">
-      <span class="meta-badge">Thumbnail Design</span>
-      <span class="meta-text">By Daniel · Updated June 2026 · 9 min read</span>
-    </div>
-
-    <div class="article-body" id="main-content">
-
-      <p>Color is the first thing the brain processes when scanning a YouTube feed — before text, before faces, before composition. The right color choices make your thumbnail visually separate from everything around it in milliseconds. The wrong choices make it invisible. This guide covers the applied color theory that top-performing thumbnail designers use in 2026.</p>
-
-      <h2>Color Scheme Strategies: Complementary vs Analogous</h2>
-      <p>Two fundamental color strategies dominate high-CTR thumbnail design. Each has strengths and appropriate use cases.</p>
-
-      <div class="scheme-grid">
-        <div class="scheme-card">
-          <div class="scheme-swatches">
-            <div class="swatch" style="background:#d32f2f"></div>
-            <div class="swatch" style="background:#1c1e21"></div>
-            <div class="swatch" style="background:#2e7d32"></div>
-          </div>
-          <h3>Complementary Colors</h3>
-          <p>Colors opposite on the color wheel (red/green, blue/orange, yellow/purple). Creates maximum visual contrast — the two colors vibrate against each other, making both appear more vivid. High-energy, attention-grabbing.</p>
-          <p><strong>Best for:</strong> High-stakes content, reveals, challenges, news, controversy. Any content where the primary goal is to stop the scroll.</p>
-          <span class="scheme-tag">High CTR · High Energy</span>
-        </div>
-        <div class="scheme-card">
-          <div class="scheme-swatches">
-            <div class="swatch" style="background:#e65100"></div>
-            <div class="swatch" style="background:#f57f17"></div>
-            <div class="swatch" style="background:#fdd835"></div>
-          </div>
-          <h3>Analogous Colors</h3>
-          <p>Colors adjacent on the color wheel (orange/yellow, blue/teal, red/pink). Creates harmony and visual comfort. Less contrast than complementary, but more sophisticated and easier to look at.</p>
-          <p><strong>Best for:</strong> Educational content, lifestyle, personal brand channels where trustworthiness and approachability matter as much as click rate.</p>
-          <span class="scheme-tag">Brand Consistency · Trust</span>
-        </div>
-      </div>
-
-      <div class="box box-insight">
-        <span class="box-icon">💡 THE RULE OF THREE</span>
-        <p>Maximum three colors per thumbnail: one dominant (60% of the visual), one accent (30%), one neutral (10%). More than three creates visual confusion — the brain slows down trying to process competing colors, which reduces CTR. When in doubt, reduce the palette rather than expand it.</p>
-      </div>
-
-      <h2>Designing for Dark Mode: The Strategy Most Creators Miss</h2>
-      <p>Over 50% of YouTube users browse in dark mode — but most creators design thumbnails exclusively on light backgrounds. A thumbnail that looks perfect on a white background can become invisible on YouTube's dark grey (#212121) interface.</p>
-
-      <div class="mode-grid">
-        <div class="mode-card mode-light">
-          <span class="mode-label">☀️ Light Mode (#FFFFFF background)</span>
-          <h3>What stands out:</h3>
-          <ul>
-            <li>Dark subjects and backgrounds</li>
-            <li>Red, orange, yellow high-contrast colors</li>
-            <li>Dark text on light elements</li>
-            <li>Shadows visible, depth clear</li>
-          </ul>
-        </div>
-        <div class="mode-card mode-dark">
-          <span class="mode-label">🌙 Dark Mode (#212121 background)</span>
-          <h3>What stands out:</h3>
-          <ul>
-            <li>Bright, saturated colors</li>
-            <li>Yellow, orange, white — high luminance</li>
-            <li>Light-colored subjects with glow</li>
-            <li>High saturation colors vs dark background</li>
-          </ul>
-        </div>
-      </div>
-
-      <p><strong>The solution:</strong> Test every thumbnail on both backgrounds before publishing. The quickest method — place your thumbnail image in a Canva slide with a white background, then duplicate it and change to #212121. If the thumbnail is clearly visible and compelling in both versions, it's ready to upload.</p>
-
-      <h2>The Psychology of Specific Colors</h2>
-
-      <div class="table-wrap">
-        <div class="table-label">🎨 Color Psychology for YouTube Thumbnails</div>
-        <table>
-          <tr><th>Color</th><th>Psychological Response</th><th>Best Content Types</th><th>CTR Performance</th></tr>
-          <tr><td><span style="color:#d32f2f;font-weight:900">● Red</span></td><td>Urgency, danger, importance</td><td>News, challenges, reveals, controversy</td><td style="color:#2e7d32;font-weight:700">Excellent</td></tr>
-          <tr><td><span style="color:#e65100;font-weight:900">● Orange</span></td><td>Energy, enthusiasm, warmth</td><td>Motivation, entertainment, lifestyle</td><td style="color:#2e7d32;font-weight:700">Very High</td></tr>
-          <tr><td><span style="color:#f9a825;font-weight:900">● Yellow</span></td><td>Optimism, attention, caution</td><td>Finance, education, tutorials</td><td style="color:#2e7d32;font-weight:700">Very High</td></tr>
-          <tr><td><span style="color:#2e7d32;font-weight:900">● Green</span></td><td>Growth, money, nature, calm</td><td>Finance, health, environment</td><td style="color:#1565c0;font-weight:700">High</td></tr>
-          <tr><td><span style="color:#7b1fa2;font-weight:900">● Purple</span></td><td>Mystery, luxury, creativity</td><td>Tech, creator content, premium</td><td style="color:#1565c0;font-weight:700">High</td></tr>
-          <tr><td><span style="color:#1565c0;font-weight:900">● Blue</span></td><td>Trust, authority, calm</td><td>Business, corporate — but risky</td><td style="color:#c62828;font-weight:700">Low (blends with UI)</td></tr>
-          <tr><td><span style="color:#555;font-weight:900">● Gray/White</span></td><td>Neutral, minimal</td><td>Design-forward content only</td><td style="color:#c62828;font-weight:700">Very Low</td></tr>
-        </table>
-      </div>
-
-      <h2>Building Your Brand Color Palette</h2>
-      <p>Consistent color across thumbnails builds channel recognition — subscribers identify your content instantly in the feed, increasing their click probability before they've even read the title. This is the long-term CTR advantage of brand consistency.</p>
-
-      <div class="palette-steps">
-        <div class="ps-step">
-          <div class="ps-num">1</div>
-          <div>
-            <h3>Choose one dominant brand color</h3>
-            <p>Pick one color that will appear in 80%+ of your thumbnails. It should work on both light and dark backgrounds. Red, orange, and green are the most reliable choices. This becomes your channel's visual signature.</p>
-          </div>
-        </div>
-        <div class="ps-step">
-          <div class="ps-num">2</div>
-          <div>
-            <h3>Choose one accent color (complementary preferred)</h3>
-            <p>Select a color that complements your dominant color. If your dominant is red, consider a dark teal or deep green accent. If dominant is orange, consider a deep blue-black. This accent appears in 50–60% of thumbnails as a supporting element.</p>
-          </div>
-        </div>
-        <div class="ps-step">
-          <div class="ps-num">3</div>
-          <div>
-            <h3>Define your neutral (black, white, or dark grey)</h3>
-            <p>The neutral anchors the palette and provides contrast for text. Most high-CTR channels use near-black (#1c1e21) rather than pure black, and warm white (#f7f7f7) rather than pure white. Pure black and white can feel harsh at thumbnail scale.</p>
-          </div>
-        </div>
-        <div class="ps-step">
-          <div class="ps-num">4</div>
-          <div>
-            <h3>Create a Canva or Photoshop brand kit</h3>
-            <p>Save your exact hex codes as brand colors in your design tool. Apply them consistently without eyeballing. Variation of even 10–15% in hue or saturation breaks visual consistency across thumbnails over time.</p>
-          </div>
-        </div>
-        <div class="ps-step">
-          <div class="ps-num">5</div>
-          <div>
-            <h3>Compensate for JPEG compression</h3>
-            <p>YouTube applies JPEG compression that slightly desaturates colors and reduces contrast. Design at 10–15% higher saturation than your target — the compression brings it back toward your intended look. Colors that appear slightly oversaturated on your screen will look correct after YouTube processes the file.</p>
-          </div>
-        </div>
-      </div>
-
-      <h2>Practical Color Grading Without Photoshop</h2>
-      <h3>In Canva (Free)</h3>
-      <p>Upload your thumbnail photo. Click "Edit Image" → "Adjust." Increase Saturation by 15–25%, increase Contrast by 10–15%, and slightly increase Warmth if targeting a warmer emotional tone. For a sharper, more urgent feel, increase Contrast more and reduce Warmth slightly.</p>
-
-      <h3>In Photoshop / GIMP (Free)</h3>
-      <p>Use Image → Adjustments → Hue/Saturation to increase saturation by 20–30 points. Then use Curves to increase overall contrast by pulling the shadows down slightly and the highlights up. Apply a selective color adjustment to boost your brand colors specifically without affecting the entire image.</p>
-
-      <div class="box box-warning">
-        <span class="box-icon">⚠️ OVER-SATURATION WARNING</span>
-        <p>Excessive saturation makes skin tones look unnatural and can trigger negative reactions. Increase saturation on backgrounds and objects freely, but keep skin tone saturation increases below 15 points. If faces start looking orange or pink, reduce the saturation adjustment for the red/orange channel specifically.</p>
-      </div>
-
-      <div class="cta-tool">
-        <h3>🔬 Check Your Thumbnail's Color and Contrast</h3>
-        <p>Our Thumbnail Analyzer instantly shows dominant colors, contrast ratio, brightness rating, and CTR score — free, no signup.</p>
-        <a href="thumbnail-analyzer.html">Analyze Your Thumbnail Free →</a>
-      </div>
-
-      <h2>Color Theory Mistakes That Undermine Otherwise Good Thumbnails</h2>
-      <p>Even creators who understand color psychology in theory make a handful of predictable execution mistakes that neutralize its benefits in practice. Recognizing these patterns in your own work is often more valuable than learning new color theory concepts.</p>
-      <p>The most common mistake is choosing colors based on personal aesthetic preference rather than functional contrast and psychological fit. A creator who loves muted pastels might apply that palette to a high-urgency "breaking news" style video, undermining the emotional message the content is trying to send before a single word of the title is read. The color choice should serve the content's emotional register, not the creator's general design taste.</p>
-      <p>The second common mistake is inconsistent color grading between the thumbnail and the actual video content. When a thumbnail uses dramatically different color treatment than what viewers see once they click — an oversaturated, high-contrast thumbnail followed by flat, naturally-lit footage — it creates a subtle sense of mismatch that can hurt retention even if it doesn't consciously register with viewers. The best-performing channels apply a similar (if intensified) color treatment to both their thumbnails and their actual video grading.</p>
-      <p>The third mistake is failing to test color choices against the specific platform context where they'll actually be viewed. A color combination that looks striking in a design tool's white canvas can behave completely differently against YouTube's actual interface, which varies between light mode and dark mode, and between desktop and mobile rendering.</p>
-
-      <div class="box box-warning">
-        <span class="box-icon">⚠️ THE OVER-SATURATION TRAP</span>
-        <p>Pushing saturation to maximum in an attempt to stand out often backfires — thumbnails that read as artificially neon or oversaturated can trigger a subconscious "clickbait" association in viewers who have learned to associate that visual style with low-quality content. The goal is vivid, not maximal — there's a meaningful difference between a color that pops and one that looks digitally assaulted.</p>
-      </div>
-
-      <h2>Color Theory Applied by Content Format</h2>
-      <p>Different video formats benefit from different color approaches, and applying a one-size-fits-all color strategy across every upload type on a channel often underperforms format-specific choices.</p>
-      <p><strong>Tutorial and educational content</strong> generally benefits from calmer, more controlled color palettes — blues, teals, and moderate saturation communicate competence and trustworthiness, which matters when viewers are deciding whether to trust your instruction. Overly aggressive, high-urgency color treatment can actually undermine credibility in this format by signaling entertainment content rather than genuine expertise.</p>
-      <p><strong>Reaction and commentary content</strong> benefits from higher saturation and more dramatic contrast, since the entire value proposition is emotional engagement and real-time reaction — muted, restrained color treatment undersells the energy the format promises.</p>
-      <p><strong>News and current events content</strong> often benefits from red-dominant or high-contrast black-and-white treatment, which has become a near-universal visual shorthand for urgency and importance across the platform — viewers recognize this color language instantly even before reading any text.</p>
-      <p><strong>Product reviews and unboxing content</strong> should generally let the product's actual colors dominate the frame rather than overlaying heavy color grading, since accuracy and trustworthiness matter more here than emotional intensity — viewers are evaluating a purchase decision, not seeking entertainment.</p>
-
-      <h2>Testing Your Color Choices Systematically</h2>
-      <p>Rather than relying purely on intuition, a simple systematic testing approach removes much of the guesswork from color decisions over time.</p>
-      <p>Maintain a simple spreadsheet tracking each published video's dominant thumbnail color, its niche-relative CTR performance, and any notable context (competing thumbnails in the same search results, time of year, content type). After 20-30 videos, patterns typically become visible: certain colors will consistently outperform others for your specific audience and niche, independent of general color psychology principles. This channel-specific data is ultimately more valuable than any universal color theory guidance, since your actual audience's response is the only test that matters for your specific channel.</p>
-      <div class="box box-tip">
-        <span class="box-icon">✅ A SIMPLE STARTING TEST</span>
-        <p>If you're unsure where to start, alternate between warm (red/orange) and cool (blue/teal) dominant colors across your next 10 uploads while keeping composition and subject matter consistent. Compare average CTR between the two groups. This single test often reveals a clear directional preference for your specific audience that you can then refine further.</p>
-      </div>
-
-      <h2>Related Articles &amp; Tools</h2>
-      <div class="related-grid">
-        <a href="science-of-high-ctr-thumbnails.html" class="related-card"><strong>The Science of High-CTR Thumbnails</strong></a>
-        <a href="typography-for-youtube-thumbnails.html" class="related-card"><strong>Typography for YouTube Thumbnails</strong></a>
-        <a href="mobile-first-thumbnail-design-youtube.html" class="related-card"><strong>Mobile-First Thumbnail Design Guide</strong></a>
-        <a href="guide-thumbnails-ctr.html" class="related-card"><strong>Ultimate CTR &amp; Thumbnail Guide</strong></a>
-        <a href="thumbnail-analyzer.html" class="related-card tool-card"><strong>🔬 Thumbnail Analyzer</strong></a>
-        <a href="ctr-score-calculator.html" class="related-card tool-card"><strong>📊 CTR Score Calculator</strong></a>
-      </div>
-    </div>
-
-    <div class="faq-section">
-      <h2>❓ Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <h3>What colors get the highest CTR on YouTube thumbnails?</h3>
-        <p>Red and orange-yellow thumbnails consistently generate the highest CTR because they create maximum contrast against both YouTube's white light mode and dark grey dark mode backgrounds. Red also triggers urgency and attention responses. Blue is one of the worst performing thumbnail colors because it blends with YouTube's own interface elements.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How many colors should a YouTube thumbnail use?</h3>
-        <p>Two to three colors maximum. A dominant color (60% of the visual), an accent color (30%), and optionally a neutral (10%). More than three creates visual confusion that slows processing speed — the brain takes longer to identify what the thumbnail is about, reducing click probability.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Does YouTube compress thumbnail colors?</h3>
-        <p>Yes, YouTube applies JPEG compression that slightly desaturates colors and can introduce compression artifacts. To compensate, design thumbnails at 10–15% higher saturation than your target — the compression will bring it back toward your intended look. Colors that appear slightly oversaturated on your screen typically look correct after YouTube processes the file.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Should I use different colors for different video topics?</h3>
-        <p>Not for channel consistency reasons. Your brand color palette should remain consistent across all topics — this builds the subscriber recognition advantage over time. You can vary which brand colors appear in which positions, or adjust the emotional tone of the palette slightly, but maintaining 2–3 consistent brand colors across all thumbnails is more valuable than color-coding by topic.</p>
-      </div>
-    </div>
+  <div class="container footer-bottom">
+    <p>&copy; 2026 TubeTools &middot; tubetools.online. All rights reserved.</p>
+    <p>TubeTools is an independent project and is not affiliated with, endorsed by, or sponsored by YouTube or Google.</p>
   </div>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">🚀 Tube<span>Tools</span></div>
-          <p>Free tools for YouTube creators who want to grow with data, not luck.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Tools</h4>
-          <a href="/en/">Thumbnail Extractor</a>
-          <a href="/en/thumbnail-analyzer.html">Analyzer</a>
-          <a href="/en/youtube-title-generator.html">Title Generator</a>
-          <a href="/en/calculator.html">Calculator</a>
-          <a href="/en/ctr-score-calculator.html">CTR Score</a>
-          <a href="/en/thumbnail-checklist.html">Checklist</a>
-        </div>
-        <div class="footer-col">
-          <h4>Guides</h4>
-          <a href="/en/guide-thumbnails-ctr.html">CTR Guide</a>
-          <a href="/en/how-to-increase-youtube-rpm.html">Increase RPM</a>
-          <a href="/en/youtube-cpm-by-niche.html">CPM by Niche</a>
-          <a href="/en/youtube-monetization-requirements.html">Monetization</a>
-          <a href="/en/best-youtube-niches-adsense.html">Best Niches</a>
-          <a href="/en/glossary.html">Glossary</a>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/en/privacy.html">Privacy</a>
-          <a href="/en/terms.html">Terms</a>
-          <a href="/en/contact.html">Contact</a>
-          <a href="/en/about.html">About</a>
-          <a href="/en/sitemap-page.html">Sitemap</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 TubeTools.online — All rights reserved.</p>
-        <a href="/teoria-del-color-miniaturas-youtube.html" class="footer-lang-btn es-fb">🇪🇸 Ver en Español</a>
-      </div>
-    </div>
-  </footer>
-  <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:18px 20px;text-align:center;z-index:9999;display:none;">
-    <p style="margin-bottom:12px;">🍪 We use cookies to improve your experience and show personalized ads. <a href="privacy.html" style="color:#ff4757;text-decoration:underline;">Privacy Policy</a>.</p>
-    <div>
-      <button id="accept-cookies" style="background:#f59e0b;color:white;border:none;padding:10px 20px;border-radius:5px;margin-right:10px;cursor:pointer;font-weight:600;">Accept</button>
-      <button id="reject-cookies" style="background:#555;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">Reject</button>
-    </div>
-  </div>
-  <script>
-    if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').style.display='block';}
-    document.getElementById('accept-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');document.getElementById('cookie-banner').style.display='none';});
-    document.getElementById('reject-cookies').addEventListener('click',function(){localStorage.setItem('cookieConsent','rejected');document.getElementById('cookie-banner').style.display='none';});
-    (function(){var btn=document.querySelector('.nav-toggle');var links=document.querySelector('.nav-links');if(!btn||!links)return;btn.addEventListener('click',function(e){e.stopPropagation();var o=links.classList.toggle('open');btn.textContent=o?'✕':'☰';btn.setAttribute('aria-expanded',o);});document.addEventListener('click',function(e){if(!links.contains(e.target)&&e.target!==btn){links.classList.remove('open');btn.textContent='☰';btn.setAttribute('aria-expanded','false');}});})();
-  </script>
-  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}</script>
-<script>
-window.addEventListener('scroll', () => {
-    const doc = document.documentElement;
-    const scrollTop = doc.scrollTop || document.body.scrollTop;
-    const scrollHeight = doc.scrollHeight - doc.clientHeight;
-    const progress = (scrollTop / scrollHeight) * 100;
-    document.getElementById('readingBar').style.width = progress + '%';
-});
-</script>
+</footer>
+<script src="/assets/js/site.js?v=7d5d42b9" defer></script>
 </body>
 </html>

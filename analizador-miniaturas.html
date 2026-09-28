@@ -1,771 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analizador de Miniaturas YouTube Gratis — Puntuación CTR</title>
-  <meta name="description" content="Analiza cualquier miniatura de YouTube al instante: puntuación CTR, colores dominantes, contraste y brillo. Gratis, sin registro.">
-  <link rel="canonical" href="https://tubetools.online/analizador-miniaturas.html">
-  <link rel="alternate" hreflang="en" href="https://tubetools.online/en/thumbnail-analyzer.html">
-  <link rel="alternate" hreflang="es" href="https://tubetools.online/analizador-miniaturas.html">
-  <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/thumbnail-analyzer.html">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <meta name="theme-color" content="#d32f2f">
-  <meta property="og:title" content="Free YouTube Thumbnail Analyzer | TubeTools">
-  <meta property="og:description" content="Instant CTR score, color palette, contrast and brightness analysis for any YouTube thumbnail.">
-  <meta property="og:image" content="https://tubetools.online/og_image_en.png">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube Thumbnail Analyzer","url":"https://tubetools.online/en/thumbnail-analyzer.html","description":"Free tool to analyze YouTube thumbnails: CTR score, dominant colors, contrast ratio, brightness, and specific improvement recommendations.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the thumbnail analyzer work?","acceptedAnswer":{"@type":"Answer","text":"The analyzer uses Canvas API to extract pixel data from your thumbnail and calculate contrast ratio, brightness, color saturation, dominant palette, and visual complexity — all locally in your browser without uploading anything to a server."}},{"@type":"Question","name":"Is the thumbnail analyzer really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free. No sign-up, no account, no API key. All analysis runs locally in your browser."}},{"@type":"Question","name":"Can I analyze any image, not just YouTube thumbnails?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can upload any JPG, PNG or WebP image. The analyzer works on any image you provide."}}]}
-  </script>
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--red:#d32f2f;--dark:#1c1e21;--dark2:#2c2e33;--gray:#f4f5f7;--white:#fff;--text:#1c1e21;--text2:#555;--radius:14px;--shadow:0 4px 24px rgba(0,0,0,.08)}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--gray);color:var(--text);line-height:1.7}
-    a{text-decoration:none}
-    nav{position:sticky;top:0;z-index:1000;background:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
-    .nav-logo{color:#fff;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
-    .nav-logo span{color:#ff5252}
-    .nav-links{display:flex;gap:6px;align-items:center}
-    .nav-links a{color:#ccc;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;transition:background .2s,color .2s}
-    .nav-links a:hover{background:rgba(255,255,255,.08);color:#fff}
-    .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-    @media(max-width:680px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:var(--dark2);flex-direction:column;padding:10px 16px 16px;gap:4px}.nav-links.open{display:flex}}
-    .hero{background:linear-gradient(135deg,var(--dark) 0%,#2d1515 50%,#1a0a0a 100%);padding:52px 20px 60px;text-align:center}
-    .hero h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:12px}
-    .hero h1 em{color:#ff5252;font-style:normal}
-    .hero p{color:#bbb;max-width:560px;margin:0 auto 24px;font-size:.97rem}
-    .badge-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-    .badge{display:inline-block;background:rgba(255,255,255,.08);color:#fff;font-size:.75rem;font-weight:600;padding:5px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.12)}
-
-    /* Drop zone */
-    .tool-wrap{max-width:860px;margin:40px auto;padding:0 20px}
-    .drop-zone{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:3px dashed #ddd;padding:50px 30px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;position:relative}
-    .drop-zone:hover,.drop-zone.dragover{border-color:var(--red);background:#fff5f5}
-    .drop-zone input[type=file]{position:absolute;top:0;left:0;right:0;bottom:80px;opacity:0;cursor:pointer;width:100%}
-    .drop-zone .dz-icon{font-size:2.5rem;margin-bottom:12px}
-    .drop-zone h2{font-size:1.15rem;font-weight:800;color:var(--dark);margin-bottom:6px}
-    .drop-zone p{color:var(--text2);font-size:.9rem;margin-bottom:18px}
-    .dz-btn{display:inline-block;background:var(--red);color:#fff;padding:11px 28px;border-radius:8px;font-weight:700;font-size:.9rem;cursor:pointer;transition:background .2s}
-    .dz-btn:hover{background:#b71c1c}
-    .dz-sep{color:#aaa;font-size:.85rem;margin:18px 0 14px}
-    .url-row{display:flex;gap:10px;max-width:480px;margin:0 auto;position:relative;z-index:10}
-    .url-row input{flex:1;padding:10px 14px;border:2px solid #ddd;border-radius:8px;font-size:.9rem;outline:none;transition:border-color .2s;position:relative;z-index:10;pointer-events:all}
-    .url-row input:focus{border-color:var(--red)}
-    .url-row button{background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:700;font-size:.88rem;cursor:pointer;white-space:nowrap;transition:background .2s;position:relative;z-index:10;pointer-events:all}
-    .url-row button:hover{background:#333}
-
-    /* Results */
-    #results{display:none;margin-top:30px}
-    .result-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    @media(max-width:640px){.result-grid{grid-template-columns:1fr}}
-    .result-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
-    .result-card.full{grid-column:1/-1}
-    .rc-label{font-size:.75rem;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-    .rc-val{font-size:1.6rem;font-weight:900;color:var(--dark)}
-    .rc-sub{font-size:.82rem;color:var(--text2);margin-top:4px}
-    .score-ring{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;color:#fff;margin:0 auto 10px;flex-shrink:0}
-    .meter{height:10px;background:#eee;border-radius:999px;overflow:hidden;margin-top:8px}
-    .meter-fill{height:100%;border-radius:999px;transition:width .8s ease}
-    .palette{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .swatch{width:36px;height:36px;border-radius:8px;border:2px solid rgba(0,0,0,.1);position:relative;cursor:pointer}
-    .swatch:hover::after{content:attr(data-hex);position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);background:#333;color:#fff;font-size:.68rem;padding:2px 7px;border-radius:4px;white-space:nowrap;z-index:10}
-    .preview-img{width:100%;border-radius:8px;object-fit:cover;margin-bottom:10px;display:block}
-    .recs-list{list-style:none;margin-top:10px}
-    .recs-list li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:.88rem;color:var(--text2);line-height:1.5}
-    .recs-list li:last-child{border-bottom:none}
-    .recs-list .icon{font-size:1rem;flex-shrink:0;margin-top:1px}
-    .tag{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:999px;margin-left:6px}
-    .tag.green{background:#e8f5e9;color:#2e7d32}
-    .tag.amber{background:#fff3e0;color:#e65100}
-    .tag.red{background:#ffebee;color:#c62828}
-
-    /* Info section */
-    .info-section{max-width:860px;margin:40px auto 60px;padding:0 20px}
-    .info-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:34px}
-    .info-card h2{font-size:1.3rem;font-weight:800;color:var(--dark);border-left:4px solid var(--red);padding-left:14px;margin-bottom:16px}
-    .info-card h3{font-size:1.05rem;font-weight:700;color:var(--dark);margin:20px 0 8px}
-    .info-card p{color:var(--text2);font-size:.93rem;line-height:1.8;margin-bottom:12px}
-    .faq-item{border-bottom:1px solid #eee;padding:14px 0}
-    .faq-item:last-child{border-bottom:none}
-    .faq-q{font-size:.95rem;font-weight:700;color:var(--dark);margin-bottom:6px}
-    .faq-a{font-size:.9rem;color:var(--text2);line-height:1.7}
-
-    #loading{display:none;text-align:center;padding:30px;color:var(--text2)}
-    .spinner{width:40px;height:40px;border:4px solid #eee;border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 12px}
-    @keyframes spin{to{transform:rotate(360deg)}}
-  </style>
-
-<style id='tt-global'>
-
-/* ── TubeTools Global Fix ── */
-*, *::before, *::after { box-sizing: border-box; }
-a { color: inherit; }
-a:not([class]):not([style]) { color: inherit; text-decoration: none; }
-.read-more, .btn-read-more {
-  display: inline-block; background: #d32f2f; color: #fff !important;
-  text-decoration: none; padding: 9px 18px; border-radius: 8px;
-  font-size: .85rem; font-weight: 700; transition: background .2s; margin-top: 8px;
-}
-.read-more:hover, .btn-read-more:hover { background: #b71c1c !important; }
-.article-card h3 a, .article-title a, .card-title a, .blog-card h3 a {
-  color: #1c1e21 !important; text-decoration: none !important; font-weight: 700;
-}
-.article-card h3 a:hover, .blog-card h3 a:hover { color: #d32f2f !important; }
-footer a { color: #888 !important; text-decoration: none !important; }
-footer a:hover { color: #fff !important; }
-nav a { text-decoration: none; }
-/* Nav fix */
-nav { position: sticky; top: 0; z-index: 1000; background: #1c1e21;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 24px; height: 58px; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
-nav .nav-logo { color: #fff; text-decoration: none; font-size: 1.1rem;
-  font-weight: 800; display: flex; align-items: center; gap: 6px; }
-nav .nav-logo .logo-accent { color: #ff5252; }
-nav .nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
-nav .nav-links a { color: #ccc !important; text-decoration: none; font-size: .88rem;
-  font-weight: 500; padding: 6px 11px; border-radius: 8px;
-  transition: background .2s, color .2s; white-space: nowrap; }
-nav .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
-nav .nav-links a.lang-btn-en { color: #90caf9; border: 1px solid rgba(144,202,249,.35); }
-nav .nav-links a.lang-btn-es { color: #a5d6a7; border: 1px solid rgba(165,214,167,.35); }
-nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
-.nav-toggle { display: none; background: none; border: none; color: #fff;
-  font-size: 1.4rem; cursor: pointer; padding: 6px; }
-/* Tools dropdown */
-.nav-dropdown { position: relative; }
-.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-.nav-dropdown > a::after { content: '▾'; font-size: .7rem; opacity: .7; }
-.dropdown-panel { display: none; position: absolute; top: calc(100% + 6px);
-  left: 50%; transform: translateX(-50%); background: #2c2e33;
-  border-radius: 12px; padding: 10px 8px; min-width: 240px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.4); border: 1px solid rgba(255,255,255,.07);
-  z-index: 2000; }
-.nav-dropdown:hover .dropdown-panel,
-.nav-dropdown:focus-within .dropdown-panel { display: block; }
-.dropdown-panel a { display: flex; align-items: center; gap: 10px; color: #ccc !important;
-  text-decoration: none !important; font-size: .85rem; padding: 9px 14px;
-  border-radius: 8px; transition: background .2s; width: 100%; }
-.dropdown-panel a:hover { background: rgba(255,255,255,.09) !important; color: #fff !important; }
-.dp-icon { width: 22px; text-align: center; font-size: 1.05rem; flex-shrink: 0; }
-/* Mobile nav */
-@media(max-width: 720px) {
-  .nav-toggle { display: block !important; }
-  .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0;
-    background: #2c2e33; flex-direction: column; align-items: stretch;
-    padding: 10px 16px 16px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
-  .nav-links.open { display: flex; }
-  .nav-links a { padding: 11px 14px; border-radius: 8px; }
-  .nav-dropdown > a::after { display: none; }
-  .dropdown-panel { display: block; position: static; transform: none;
-    background: rgba(255,255,255,.04); border: none; box-shadow: none;
-    border-radius: 8px; padding: 4px 0 4px 12px; min-width: auto; margin-top: 2px; }
-  .dropdown-panel a { font-size: .83rem; padding: 7px 10px; }
-}
-/* Footer fix */
-.site-footer { background: #1c1e21; color: #888; padding: 48px 20px 32px; margin-top: 60px; }
-.site-footer .footer-inner { max-width: 960px; margin: 0 auto; }
-.site-footer .footer-grid { display: grid; grid-template-columns: 1fr repeat(3, auto);
-  gap: 40px; margin-bottom: 36px; }
-@media(max-width: 700px) { .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
-@media(max-width: 440px) { .site-footer .footer-grid { grid-template-columns: 1fr; } }
-.site-footer .footer-brand .footer-logo { font-size: 1.1rem; font-weight: 800;
-  color: #fff; margin-bottom: 10px; }
-.site-footer .footer-brand .footer-logo .logo-accent { color: #ff5252; }
-.site-footer .footer-brand p { font-size: .83rem; color: #666; line-height: 1.6; max-width: 220px; }
-.site-footer .footer-col h4 { font-size: .8rem; font-weight: 700; color: #fff;
-  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
-.site-footer .footer-col a { display: block; color: #888 !important;
-  text-decoration: none !important; font-size: .85rem; margin-bottom: 8px;
-  transition: color .2s; }
-.site-footer .footer-col a:hover { color: #fff !important; }
-.site-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.07);
-  padding-top: 20px; display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 10px; }
-.site-footer .footer-bottom p { font-size: .78rem; color: #555; }
-.site-footer .footer-lang-btn { padding: 5px 14px; border-radius: 999px;
-  text-decoration: none !important; font-size: .82rem; font-weight: 600; transition: background .2s; }
-.site-footer .footer-lang-btn.en-fb { background: rgba(144,202,249,.12);
-  color: #90caf9 !important; border: 1px solid rgba(144,202,249,.3); }
-.site-footer .footer-lang-btn.en-fb:hover { background: rgba(144,202,249,.22) !important; }
-.site-footer .footer-lang-btn.es-fb { background: rgba(165,214,167,.1);
-  color: #a5d6a7 !important; border: 1px solid rgba(165,214,167,.3); }
-.site-footer .footer-lang-btn.es-fb:hover { background: rgba(165,214,167,.2) !important; }
-
-</style>
-
-<style id="mobile-nav-fix">
-@media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
-  .nav-links.open{display:flex !important}
-  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
-  .nav-dropdown{width:100% !important;position:static !important}
-  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
-  .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
-  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
-}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analizador de miniaturas de YouTube gratis – contraste, color y legibilidad | TubeTools</title>
+<meta name="description" content="Revisa una miniatura de YouTube antes de publicar: tamaño y formato, brillo, contraste, color, exceso de detalle, bordes en modo oscuro y vista a tamaño pequeño. En tu navegador.">
+<link rel="canonical" href="https://tubetools.online/analizador-miniaturas.html">
+<link rel="alternate" hreflang="en" href="https://tubetools.online/en/thumbnail-analyzer.html">
+<link rel="alternate" hreflang="es" href="https://tubetools.online/analizador-miniaturas.html">
+<link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/thumbnail-analyzer.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:site_name" content="TubeTools">
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Analizador de miniaturas de YouTube">
+<meta property="og:description" content="Revisa una miniatura de YouTube antes de publicar: tamaño y formato, brillo, contraste, color, exceso de detalle, bordes en modo oscuro y vista a tamaño pequeño. En tu navegador.">
+<meta property="og:url" content="https://tubetools.online/analizador-miniaturas.html">
+<meta property="og:image" content="https://tubetools.online/assets/img/og-es.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',region:["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"],wait_for_update:500});gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});gtag('js',new Date());gtag('config','G-MKM07L3RLR');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/site.css?v=7d5d42b9">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Analizador de miniaturas", "url": "https://tubetools.online/analizador-miniaturas.html", "description": "Revisa una miniatura de YouTube antes de publicar: tamaño y formato, brillo, contraste, color, exceso de detalle, bordes en modo oscuro y vista a tamaño pequeño. En tu navegador.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "inLanguage": "es"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://tubetools.online/"}, {"@type": "ListItem", "position": 2, "name": "Analizador de miniaturas", "item": "https://tubetools.online/analizador-miniaturas.html"}]}</script>
 </head>
-<body>
-
-<nav>
-  <a href="/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="nav-links">
-    <a href="/en/thumbnail-analyzer.html" class="lang-btn-en">🇬🇧 EN</a>
-    <a href="/">Inicio</a>
-    <div class="nav-dropdown">
-      <a href="/herramientas.html">🎯 Herramientas</a>
-      <div class="dropdown-panel">
-        <a href="/"><span class="dp-icon">🖼️</span>Extractor de Miniaturas</a>
-        <a href="/analizador-miniaturas.html"><span class="dp-icon">🔬</span>Analizador de Miniaturas</a>
-        <a href="/generador-titulos-youtube.html"><span class="dp-icon">✍️</span>Generador de Títulos</a>
-        <a href="/calculadora.html"><span class="dp-icon">🧮</span>Calculadora de Ganancias</a>
-        <a href="/calculadora-puntuacion-ctr.html"><span class="dp-icon">📊</span>CTR Score</a>
-        <a href="/checklist-miniaturas.html"><span class="dp-icon">✅</span>Checklist</a>
+<body class="page-tool">
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#d32f2f"/><path d="M9 9h14v4.5h-4.75V24h-4.5V13.5H9z" fill="#fff"/></svg><span>Tube<b>Tools</b></span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="sr-only">Menú</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <div class="nav-dd">
+        <button class="nav-dd-btn is-active" aria-expanded="false">Herramientas <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="nav-dd-panel"><a href="/" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span><strong>Descargar miniaturas</strong><small>Guarda la miniatura de cualquier vídeo</small></span></a><a href="/analizador-miniaturas.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="15.5" cy="9" r="1.5"/></svg><span><strong>Analizador de miniaturas</strong><small>Contraste, color y legibilidad</small></span></a><a href="/vista-previa-miniatura-youtube.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><span><strong>Vista previa en el feed</strong><small>Tu miniatura junto a la competencia</small></span></a><a href="/checklist-miniaturas.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg><span><strong>Checklist de miniaturas</strong><small>Revisión de 15 puntos con puntuación</small></span></a><a href="/generador-titulos-youtube.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5h16v2"/><path d="M12 5v14"/><path d="M9 19h6"/></svg><span><strong>Generador de títulos</strong><small>Ideas de título y comprobador de longitud</small></span></a><a href="/calculadora.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg><span><strong>Calculadora de ingresos</strong><small>Estima ganancias según visitas y RPM</small></span></a></div>
       </div>
-    </div>
-    <a href="/blog.html">Blog</a>
-    <a href="/glosario.html">Glosario</a>
-    <a href="/contacto.html">Contacto</a>
+      <a href="/blog.html">Guías</a>
+      <a href="/glosario.html">Glosario</a>
+      <a href="/about.html">Sobre TubeTools</a>
+      <a class="lang-switch" href="/en/thumbnail-analyzer.html" hreflang="en" lang="en" title="Read in English"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg> English</a>
+    </nav>
   </div>
-</nav>
+</header>
+<main id="main" class="tool-main">
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Inicio</a></li><li aria-current="page">Analizador de miniaturas</li></ol></nav>
+      <h1>Analizador de miniaturas de YouTube</h1>
+      <p class="lead">Sube tu miniatura (o pega un enlace de YouTube) para revisar lo técnico que hace difícil leer una miniatura: contraste, brillo, color, exceso de detalle y cómo se ve a tamaño pequeño. Todo se procesa en tu navegador; no se sube nada.</p>
+    </div>
+  </section>
+<script type="application/json" id="tool-i18n">{
+"invalidUrl":"Eso no parece un enlace de vídeo de YouTube.","notImage":"Elige un archivo de imagen (JPG, PNG o WebP).","loadFailed":"No hemos podido cargar la miniatura de ese vídeo. Revisa el enlace o descarga la imagen y súbela.",
+"cAspect":"Proporción","aspectOk":"Exactamente 16:9: no se recortará ni tendrá bandas.","aspectBad":"No es 16:9. YouTube añadirá bandas negras o la recortará. Redimensiona el lienzo a 16:9.",
+"cResolution":"Resolución","resOk":"Nítida en móviles, portátiles y la mayoría de televisores.","resSmall":"Por encima del mínimo de 640 px de YouTube, pero con 1280 px de ancho o más se verá más nítida.","resTooSmall":"Por debajo del mínimo de 640 px de ancho. Exporta a 1280×720 o más.",
+"cFileSize":"Peso del archivo","sizeOk":"Menos de 2 MB: también podrás subirla desde la app móvil.","sizeMobile":"Válido desde el ordenador (límite de 50 MB), pero demasiado para la app móvil (2 MB). Exporta un JPG más ligero si subes desde el móvil.","sizeTooBig":"Supera el límite de 50 MB de YouTube. Exporta un archivo más pequeño.",
+"cBrightness":"Brillo","brightLow":"Bastante oscura en general. Las miniaturas oscuras pueden desaparecer en modo oscuro y en pantallas con poco brillo: ilumina al protagonista.","brightHigh":"Muy luminosa en general. Puede verse lavada, sobre todo en modo claro. Añade zonas oscuras para dar profundidad.","brightOk":"Un brillo general cómodo.",
+"cContrast":"Contraste","contrastLow":"Contraste bajo: la imagen puede verse plana a tamaño pequeño. Separa protagonista y fondo con luces y sombras.","contrastMid":"Contraste moderado. Mira la vista en grises: ¿el protagonista destaca con claridad?","contrastOk":"Buen contraste de luces y sombras, lo que ayuda a leerla en pequeño.",
+"cColor":"Intensidad de color","cf1":"sin color","cf2":"poco colorida","cf3":"moderadamente colorida","cf4":"colorida","cf5":"bastante colorida","cf6":"muy colorida","colorLow":"Colores apagados. Puede ser un estilo buscado, pero asegúrate de que el protagonista destaca frente a las miniaturas vecinas.","colorHigh":"Extremadamente saturada. Comprueba que los tonos de piel siguen pareciendo naturales.","colorOk":"La intensidad del color está en un rango saludable.",
+"cComplexity":"Exceso de detalle","busy":"Mucho detalle y muchos bordes. Al tamaño del feed puede parecer ruido: simplifica el fondo o quita un elemento.","plain":"Muy poco detalle. Asegúrate de que hay un protagonista claro que diga de qué va el vídeo.","complexityOk":"Una cantidad de detalle equilibrada.",
+"cEdges":"Bordes en modo claro/oscuro","edgesDark":"Los bordes son muy oscuros, así que la miniatura puede fundirse con el modo oscuro de YouTube. Añade algo de luz cerca de los bordes.","edgesLight":"Los bordes son muy claros, así que la miniatura puede fundirse con el fondo blanco de YouTube.","edgesOk":"Los bordes deberían destacar tanto en modo claro como oscuro.",
+"cCorner":"Esquina inferior derecha","cornerBusy":"Hay mucho detalle en la esquina inferior derecha, donde YouTube muestra la duración. Aparta de ahí los elementos importantes.","cornerOk":"La esquina inferior derecha (tapada por la duración) está despejada.",
+"cPalette":"Foco de la paleta","colorsValue":"{n} colores principales","paletteBusy":"Muchos colores con un peso parecido. Un color dominante más un acento suele leerse mejor.","paletteOk":"Foco de color claro: el color dominante cubre aproximadamente el {p} % de la imagen.",
+"summary":"{p} de {t} comprobaciones correctas","summaryNote":"Son comprobaciones técnicas, no una predicción del porcentaje de clics. El tema, el título y el público importan igual.",
+"bOk":"Bien","bWarn":"Revisar","bBad":"Corregir",
+"pSidebar":"Columna de sugeridos","pSearch":"Resultado de búsqueda","pHome":"Página de inicio","pGray":"Escala de grises (luces)","pLight":"Modo claro","pDark":"Modo oscuro",
+"allGood":"No hay problemas técnicos. Ahora compárala con vídeos de la competencia en la herramienta de vista previa."
+}</script>
 
-<section class="hero">
-  <h1>Analizador de Miniaturas YouTube<br><em>Gratis, Instantáneo, en tu Navegador</em></h1>
-  <p>Sube cualquier miniatura o pega una URL de YouTube. Obtén puntuación CTR, paleta de colores, análisis de contraste y recomendaciones específicas — 100% gratis, sin cuenta.</p>
-  <div class="badge-row">
-    <span class="badge">🔒 No se sube al servidor</span>
-    <span class="badge">⚡ Resultados instantáneos</span>
-    <span class="badge">🆓 Completamente gratis</span>
-    <span class="badge">📊 12 métricas analizadas</span>
+<div class="container">
+  <div class="tool-panel">
+    <div id="an-drop" class="dropzone" role="button" tabindex="0" aria-label="Elegir una imagen de miniatura">
+      <strong>Arrastra aquí tu miniatura o haz clic para elegir un archivo</strong>
+      <p>JPG, PNG o WebP · se analiza en tu dispositivo, nunca se sube</p>
+    </div>
+    <input id="an-file" type="file" accept="image/*" hidden>
+    <div class="or-sep">o analiza un vídeo publicado</div>
+    <form id="an-url-form" class="input-row" novalidate>
+      <label class="sr-only" for="an-url">URL del vídeo de YouTube</label>
+      <input class="input" id="an-url" type="text" inputmode="url" autocomplete="off" placeholder="https://www.youtube.com/watch?v=…">
+      <button class="btn btn-dark" type="submit">Analizar</button>
+    </form>
+    <p id="an-error" class="alert alert-error" role="alert" hidden></p>
+  </div>
+
+  <section id="an-results" hidden aria-live="polite">
+    <div class="tool-panel">
+      <div class="toolbar"><div id="an-summary"></div><button type="button" class="btn btn-ghost btn-sm" id="an-reset">Analizar otra</button></div>
+      <h2 id="como-se-ve-a-tamanos-reales">Cómo se ve a tamaños reales</h2>
+      <div class="preview-strip" id="an-previews"></div>
+      <div class="preview-strip" id="an-themes" style="margin-top:16px"></div>
+    </div>
+    <div class="tool-panel">
+      <h2 id="comprobaciones">Comprobaciones</h2>
+      <div class="metric-list" id="an-metrics"></div>
+    </div>
+    <div class="tool-panel">
+      <h2 id="colores-dominantes">Colores dominantes</h2>
+      <div class="palette" id="an-palette"></div>
+      <h2 style="margin-top:24px" id="que-mejorar">Qué mejorar</h2>
+      <ul class="recs" id="an-recs"></ul>
+      <p class="panel-note">Siguiente paso: mírala junto a vídeos de la competencia en la <a href="/vista-previa-miniatura-youtube.html">vista previa del feed</a> o repasa el <a href="/checklist-miniaturas.html">checklist de miniaturas</a> para lo que un programa no puede medir (idea, emoción, honestidad).</p>
+    </div>
+  </section>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2 id="que-revisa-el-analizador-y-por-que">Qué revisa el analizador y por qué</h2>
+    <p>La mayoría de las miniaturas se ven a una fracción del tamaño con el que se diseñaron, muchas veces en un móvil y junto a muchas otras. El analizador se centra en propiedades medibles que influyen en lo legible que es tu imagen en esa situación. No intenta predecir tu porcentaje de clics: ninguna herramienta puede hacerlo solo con la imagen, porque el tema, el título y el público importan igual.</p>
+
+    <h3 id="comprobaciones-tecnicas-archivos-subidos">Comprobaciones técnicas (archivos subidos)</h3>
+    <ul>
+      <li><strong>Proporción:</strong> las miniaturas de vídeos normales deben ser exactamente 16:9. Cualquier otra cosa aparece con bandas o recortada.</li>
+      <li><strong>Resolución:</strong> YouTube exige al menos 640 píxeles de ancho y ahora recomienda hasta 3840&times;2160. Con 1280&times;720 o más se ve nítida casi en cualquier sitio.</li>
+      <li><strong>Peso:</strong> el límite de subida es de 50 MB desde el ordenador, pero de 2 MB desde la app móvil.</li>
+    </ul>
+
+    <h3 id="brillo-y-contraste">Brillo y contraste</h3>
+    <p>El brillo es la luminosidad media percibida de la imagen. El contraste se mide como cuánto varía la luminosidad en la imagen (la desviación típica de la luminosidad percibida). Un contraste bajo es el motivo más habitual por el que una miniatura se ve plana y sucia a tamaño pequeño. La vista en grises es la forma más rápida de juzgarlo a ojo: si tu protagonista no destaca en blanco y negro, tampoco destacará en color. Nuestra <a href="/teoria-del-color-miniaturas-youtube.html">guía de teoría del color</a> explica cómo corregirlo.</p>
+
+    <h3 id="intensidad-de-color">Intensidad de color</h3>
+    <p>Usamos una medida de «colorido» publicada por Hasler y Süsstrunk (2003), que se corresponde bien con lo colorida que las personas consideran una imagen. Su escala va de «sin color» a «moderadamente», «bastante» y «extremadamente colorida». Las miniaturas apagadas pueden funcionar como estilo, pero necesitan mucho contraste de luminosidad para destacar.</p>
+
+    <h3 id="exceso-de-detalle">Exceso de detalle</h3>
+    <p>Se estima a partir de la densidad de bordes: la proporción de la imagen con cambios fuertes de luminosidad. Muchos bordes suelen significar muchos detalles pequeños, que se convierten en ruido en el feed. Es una aproximación, así que úsala junto a tu propio criterio y las vistas a tamaño pequeño.</p>
+
+    <h3 id="bordes-y-esquina-inferior-derecha">Bordes y esquina inferior derecha</h3>
+    <p>YouTube muestra las miniaturas sobre fondo blanco en modo claro y casi negro en modo oscuro. Si el borde exterior de tu imagen es muy oscuro o muy claro, puede fundirse con uno de ellos. El analizador también busca detalle en la esquina inferior derecha, que tapa la etiqueta de duración.</p>
+
+    <h3 id="privacidad">Privacidad</h3>
+    <p>Tu imagen se procesa por completo en tu dispositivo con la API Canvas del navegador. Cuando analizas un enlace de YouTube, la miniatura se carga directamente desde el servidor de imágenes de YouTube. No se envía nada a TubeTools.</p>
+
+    <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>¿Una buena puntuación significa que tendré más clics?</summary><p>No. Las comprobaciones eliminan fallos técnicos comunes, pero los clics dependen de la idea, el título, el público y la competencia. Usa Probar y comparar de YouTube para medir el rendimiento real; consulta nuestra <a href="/ab-testing-miniaturas-youtube.html">guía de pruebas A/B</a>.</p></details>
+      <details><summary>¿Por qué me avisa si mi miniatura es oscura a propósito?</summary><p>Los estilos oscuros pueden funcionar muy bien, pero los bordes oscuros tienden a desaparecer en modo oscuro. El aviso es un recordatorio para revisarlo, no una regla: mira la vista en modo oscuro y decide.</p></details>
+      <details><summary>¿Puedo analizar miniaturas de la competencia?</summary><p>Sí: pega el enlace del vídeo. Es una forma útil de comparar tu diseño con lo que ya aparece para tu tema. Las imágenes pertenecen a sus creadores, así que úsalas solo para analizar.</p></details>
+    </div>
   </div>
 </section>
 
-<div class="tool-wrap">
-  <div class="drop-zone" id="dropZone">
-    <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/gif" onchange="handleFile(this.files[0])">
-    <div class="dz-icon">🖼️</div>
-    <h2>Arrastra tu miniatura aquí</h2>
-    <p>JPG, PNG o WebP — analizado localmente, nunca se sube</p>
-    <label class="dz-btn" for="fileInput">Elegir imagen</label>
-    <div class="dz-sep">— o analizar desde URL de YouTube —</div>
-    <div class="url-row">
-      <input type="url" id="ytUrl" placeholder="https://youtube.com/watch?v=..." autocomplete="off">
-      <button onclick="analyzeFromUrl()">Analizar →</button>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo logo-invert" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#d32f2f"/><path d="M9 9h14v4.5h-4.75V24h-4.5V13.5H9z" fill="#fff"/></svg><span>Tube<b>Tools</b></span></a>
+      <p>Herramientas gratuitas y respetuosas con tu privacidad, y guías claras para creadores de YouTube.</p>
     </div>
+    <div><h2 class="footer-h">Herramientas</h2><ul><li><a href="/">Descargar miniaturas</a></li><li><a href="/analizador-miniaturas.html">Analizador de miniaturas</a></li><li><a href="/vista-previa-miniatura-youtube.html">Vista previa en el feed</a></li><li><a href="/checklist-miniaturas.html">Checklist de miniaturas</a></li><li><a href="/generador-titulos-youtube.html">Generador de títulos</a></li><li><a href="/calculadora.html">Calculadora de ingresos</a></li></ul></div>
+    <div><h2 class="footer-h">Guías populares</h2><ul><li><a href="/guia-miniaturas-ctr.html">Guía de miniaturas</a></li><li><a href="/guia-ctr-youtube-para-principiantes.html">CTR para principiantes</a></li><li><a href="/requisitos-monetizacion-youtube.html">Requisitos de monetización</a></li><li><a href="/rpm-vs-cpm-youtube.html">RPM vs CPM</a></li><li><a href="/cpm-youtube-por-nicho.html">CPM por nicho</a></li><li><a href="/tamano-formato-miniatura-youtube-2026.html">Tamaño y formato</a></li></ul></div>
+    <div><h2 class="footer-h">TubeTools</h2><ul><li><a href="/about.html">Sobre TubeTools</a></li><li><a href="/contacto.html">Contacto</a></li><li><a href="/privacidad.html">Política de privacidad</a></li><li><a href="/terminos.html">Términos de uso</a></li><li><a href="/mapa-sitio.html">Mapa del sitio</a></li><li><a href="/privacidad.html#cookies" class="js-privacy-settings">Configurar privacidad</a></li></ul></div>
   </div>
-
-  <div id="loading"><div class="spinner"></div>Analizando miniatura…</div>
-
-  <div id="results">
-    <div class="result-grid">
-      <!-- CTR Score -->
-      <div class="result-card" style="text-align:center;">
-        <div class="rc-label">Puntuación CTR General</div>
-        <div class="score-ring" id="scoreRing">0</div>
-        <div class="rc-sub" id="scoreLabel">–</div>
-      </div>
-      <!-- Preview -->
-      <div class="result-card">
-        <div class="rc-label">Tu Miniatura</div>
-        <img id="previewImg" class="preview-img" alt="Thumbnail preview">
-        <div class="rc-sub" id="imgSize">–</div>
-      </div>
-      <!-- Contrast -->
-      <div class="result-card">
-        <div class="rc-label">Puntuación de Contraste</div>
-        <div class="rc-val" id="contrastVal">–</div>
-        <div class="meter"><div class="meter-fill" id="contrastBar" style="width:0%;background:#d32f2f"></div></div>
-        <div class="rc-sub" id="contrastSub">–</div>
-      </div>
-      <!-- Brillo -->
-      <div class="result-card">
-        <div class="rc-label">Brillo</div>
-        <div class="rc-val" id="brightnessVal">–</div>
-        <div class="meter"><div class="meter-fill" id="brightnessBar" style="width:0%;background:#f57c00"></div></div>
-        <div class="rc-sub" id="brightnessSub">–</div>
-      </div>
-      <!-- Saturation -->
-      <div class="result-card">
-        <div class="rc-label">Saturación de Color</div>
-        <div class="rc-val" id="satVal">–</div>
-        <div class="meter"><div class="meter-fill" id="satBar" style="width:0%;background:#7b1fa2"></div></div>
-        <div class="rc-sub" id="satSub">–</div>
-      </div>
-      <!-- Complexity -->
-      <div class="result-card">
-        <div class="rc-label">Complejidad Visual</div>
-        <div class="rc-val" id="complexVal">–</div>
-        <div class="meter"><div class="meter-fill" id="complexBar" style="width:0%;background:#1565c0"></div></div>
-        <div class="rc-sub" id="complexSub">–</div>
-      </div>
-      <!-- Color Palette -->
-      <div class="result-card full">
-        <div class="rc-label">Paleta de Colores Dominante</div>
-        <div class="palette" id="palette"></div>
-        <div class="rc-sub" style="margin-top:12px;" id="paletteSub">–</div>
-      </div>
-      <!-- Recommendations -->
-      <div class="result-card full">
-        <div class="rc-label">📋 Recomendaciones de Mejora</div>
-        <ul class="recs-list" id="recsList"></ul>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:20px;">
-      <button onclick="resetTool()" style="background:#f4f5f7;color:#555;border:2px solid #ddd;padding:10px 24px;border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;">Analizar otra →</button>
-    </div>
+  <div class="container footer-bottom">
+    <p>&copy; 2026 TubeTools &middot; tubetools.online. Todos los derechos reservados.</p>
+    <p>TubeTools es un proyecto independiente y no está afiliado, respaldado ni patrocinado por YouTube ni por Google.</p>
   </div>
-</div>
-
-<!-- Hidden canvas for analysis -->
-<canvas id="analysisCanvas" style="display:none"></canvas>
-
-<div class="info-section">
-  <div class="info-card">
-    <h2>Cómo Funciona el Analizador de Miniaturas</h2>
-    <p>El analizador procesa tu miniatura completamente en tu navegador usando la Canvas API. No se envía ninguna imagen a ningún servidor. Aquí te explicamos qué mide cada métrica y por qué importa para tu CTR en YouTube.</p>
-
-    <h3>Puntuación CTR (0–100)</h3>
-    <p>Una puntuación compuesta calculada a partir de todas las métricas analizadas. Refleja la calidad técnica de la miniatura en los factores más correlacionados con el rendimiento de clics. Una puntuación superior a 65 indica una miniatura técnicamente sólida. Por debajo de 40 señala problemas fundamentales que predeciblemente suprimen el CTR independientemente de la ejecución creativa.</p>
-
-    <h3>Puntuación de Contraste</h3>
-    <p>Mide la diferencia de luminancia entre las regiones más brillantes y más oscuras de la imagen. Un alto contraste (puntuación 70+) garantiza que tu miniatura permanezca visualmente distinta en un feed al desplazarse, especialmente en dispositivos móviles bajo distintas condiciones de iluminación. El bajo contraste (por debajo de 40) es la razón más común por la que las miniaturas fallan en smartphones de gama media.</p>
-
-    <h3>Brillo</h3>
-    <p>Luminancia media de toda la imagen. Las miniaturas demasiado oscuras (por debajo del 20%) son invisibles en interfaces de modo oscuro y en pantallas OLED. Las demasiado brillantes (por encima del 85%) pierden detalle y parecen "quemadas" en el feed. El rango óptimo es 35–75%, con el sujeto principal más brillante que el fondo.</p>
-
-    <h3>Color Saturación</h3>
-    <p>Mide la intensidad del color en toda la imagen. Las miniaturas muy saturadas (70% o más) llaman más la atención en un feed neutral. Las miniaturas desaturadas o con un fuerte predominio del gris (menos del 30%) tienden a desaparecer visualmente. Sin embargo, una saturación extremadamente alta (95% o más) puede resultar estridente y dar una sensación de baja calidad de producción.</p>
-
-    <h3>Complejidad Visual</h3>
-    <p>Estima la densidad de los bordes visuales en la imagen, lo que sirve como un indicador de la cantidad de elementos distintos. Una complejidad alta (demasiados bordes) se corresponde con una miniatura saturada y con puntos focales que compiten entre sí. Las miniaturas óptimas tienen una complejidad media: el interés visual suficiente para atraer la atención, pero con los elementos justos para mantener una jerarquía focal clara.</p>
-
-    <h3>Paleta de Colores Dominante</h3>
-    <p>Extrae los 6 colores más dominantes mediante un algoritmo de muestreo de píxeles. Utiliza esto para identificar si tu miniatura tiene una historia cromática clara (2 o 3 colores dominantes) o una paleta fragmentada (5 o 6 colores que compiten con un peso similar). Las miniaturas más efectivas tienen un color dominante, un acento de contraste y un relleno neutro; la paleta revela si la tuya sigue este patrón.</p>
-
-    <div class="faq-item" style="margin-top:24px;">
-      <div class="faq-q">¿Es este analizador de miniaturas realmente gratuito y sin límites?</div>
-      <div class="faq-a">Sí. Todo el procesamiento se ejecuta localmente en tu navegador utilizando la API Canvas. No hay llamadas al servidor, ni cuentas, ni claves API, ni límites de uso. Puedes analizar tantas miniaturas como quieras.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">¿Puedo analizar miniaturas de la competencia?</div>
-      <div class="faq-a">Sí. Pega cualquier URL de YouTube y la herramienta extraerá y analizará la miniatura. También puedes descargar las miniaturas de la competencia utilizando el extractor principal de TubeTools y luego subirlas aquí para su análisis.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">¿Qué tan precisa es la Puntuación CTR?</div>
-      <div class="faq-a">La puntuación CTR (porcentaje de clics) es una calificación de calidad técnica, no una predicción del CTR real. Identifica debilidades medibles (bajo contraste, mala saturación, complejidad excesiva) que se correlacionan sistemáticamente con un CTR más bajo. Una puntuación alta elimina los puntos débiles técnicos que se pueden evitar; el CTR real seguirá dependiendo de la demanda del tema, el encaje con la audiencia y la estrategia creativa.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">¿Qué formatos de imagen son compatibles?</div>
-      <div class="faq-a">Se admiten JPG, PNG, WebP y GIF. Para mejores resultados, sube en la resolución completa de 1280×720. El analizador escalará las imágenes para su procesamiento, pero siempre las evaluará respetando las proporciones de la original.</div>
-    </div>
-  </div>
-</div>
-
-
-<div class="info-section">
-  <div class="info-card">
-    <h2>Por Qué el Análisis de Miniaturas Aumenta el CTR</h2>
-    <p>La mayoría de creadores diseñan miniaturas por intuición: crean algo que les parece bien y publican. El análisis sistemático reemplaza la intuición con datos. Cada métrica que mide el analizador corresponde a un modo de fallo documentado que reduce el CTR.</p>
-    <p>La puntuación de contraste identifica miniaturas que se volverán invisibles en smartphones de gama media bajo la luz del día — el dispositivo principal para más del 70% de la audiencia global de YouTube. La complejidad detecta diseños saturados con demasiados focos visuales, que impiden al ojo encontrar un ancla en menos de 150 milisegundos. La saturación señala paletas apagadas que se pierden en el feed gris neutro de YouTube sin activar la respuesta atencional necesaria para el clic.</p>
-
-    <h3>La Regla de los 2 Segundos</h3>
-    <p>La investigación de eye-tracking sobre comportamiento en feeds muestra consistentemente que los usuarios que no pausan en un vídeo en 1,5–2 segundos desde que entra en su campo visual lo ignoran sin evaluación consciente. Cada métrica del analizador está calibrada para esa ventana de 2 segundos.</p>
-    <p>Una miniatura que puntúa por encima de 65 ha superado esos umbrales perceptivos. Una miniatura por debajo de 40 falla en al menos uno de ellos de manera que suprimirá el CTR en un porcentaje medible de impresiones.</p>
-
-    <h3>Cómo Usar el Análisis en tu Flujo de Trabajo</h3>
-    <p>El flujo más efectivo: analiza tu miniatura antes de finalizarla, no después de publicar. Ejecuta el analizador cuando el diseño esté al 80% — identifica problemas críticos, corrígelos, finaliza. Un segundo análisis antes de subir detecta regresiones introducidas en el retoque final.</p>
-    <p>Analiza también las miniaturas de la competencia con mejor rendimiento en tu nicho. Esto revela el nivel técnico que tu audiencia ya espera — los rangos de contraste, saturación y complejidad que ya generan clics en tu categoría.</p>
-
-    <div class="faq-item" style="margin-top:20px;">
-      <div class="faq-q">¿Una puntuación alta garantiza un CTR alto?</div>
-      <div class="faq-a">No: elimina los puntos débiles técnicos evitables. Una puntuación superior a 65 significa que tu miniatura no tiene barreras técnicas medibles para ser clicada. El CTR real sigue dependiendo de la demanda del tema, el ajuste de audiencia y la estrategia creativa.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">¿Puedo analizar miniaturas de Shorts?</div>
-      <div class="faq-a">Sí, aunque los Shorts usan formato vertical 9:16. Las puntuaciones de contraste, brillo y saturación aplican igual. Para complejidad, los valores óptimos son menores en Shorts (más simple es mejor en el feed de scroll rápido). Sube la imagen vertical directamente.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">¿Qué hago después de recibir los resultados?</div>
-      <div class="faq-a">Prioriza primero las recomendaciones en rojo (Crítico), luego las ámbar (Mejorar). Las verdes confirman lo que ya funciona. Tras los cambios, vuelve a analizar para verificar la mejora antes de publicar.</div>
-    </div>
-  </div>
-</div>
-  
-  <section style="max-width:860px;margin:48px auto;padding:0 20px;">
-    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:36px 32px;">
-      <h2 style="font-size:1.3rem;font-weight:800;color:#1c1e21;border-left:4px solid #d32f2f;padding-left:14px;margin-bottom:24px;">Preguntas Frecuentes</h2>
-      <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
-        <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Qué significa la puntuación CTR del analizador?</h3>
-        <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">La puntuación CTR es una calificación técnica de 0 a 100 basada en contraste, brillo, saturación y complejidad visual. No predice el CTR real, pero identifica debilidades técnicas que estadísticamente suprimen los clics. Una puntuación superior a 65 indica una miniatura técnicamente sólida.</p>
-      </div>
-      <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
-        <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Es seguro subir mis miniaturas al analizador?</h3>
-        <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Sí, el análisis se ejecuta completamente en tu navegador mediante la Canvas API. Ninguna imagen se envía a ningún servidor. Tus archivos nunca salen de tu dispositivo.</p>
-      </div>
-      <div style="border-bottom:1px solid #f0f0f0;padding:18px 0;">
-        <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Qué formatos admite el analizador?</h3>
-        <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">JPG, PNG, WebP y GIF. También puedes pegar directamente la URL de cualquier vídeo de YouTube para analizar su miniatura sin descargarla. El tamaño máximo recomendado es 2 MB.</p>
-      </div>
-      <div style="padding:18px 0;">
-        <h3 style="font-size:.97rem;font-weight:700;color:#1c1e21;margin-bottom:8px;">¿Con qué frecuencia debo analizar mis miniaturas?</h3>
-        <p style="font-size:.9rem;color:#555;line-height:1.7;margin:0;">Analiza cada miniatura antes de publicar el vídeo. También es útil analizar las 5-10 miniaturas con mejor rendimiento de los canales líderes de tu nicho para identificar los patrones visuales que generan más clics en tu categoría.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">🚀 Tube<span>Tools</span></div>
-          <p>Herramientas gratuitas para creadores de YouTube que quieren crecer con datos, no con suerte.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Herramientas</h4>
-          <a href="/">Extractor Miniaturas</a>
-          <a href="/analizador-miniaturas.html">Analizador</a>
-          <a href="/generador-titulos-youtube.html">Generador Títulos</a>
-          <a href="/calculadora.html">Calculadora</a>
-          <a href="/calculadora-puntuacion-ctr.html">CTR Score</a>
-          <a href="/checklist-miniaturas.html">Checklist</a>
-        </div>
-        <div class="footer-col">
-          <h4>Guías</h4>
-          <a href="/guia-miniaturas-ctr.html">Guía CTR</a>
-          <a href="/aumentar-rpm-youtube.html">Aumentar RPM</a>
-          <a href="/cpm-youtube-por-nicho.html">CPM por Nicho</a>
-          <a href="/requisitos-monetizacion-youtube.html">Monetización</a>
-          <a href="/mejores-nichos-youtube-adsense.html">Mejores Nichos</a>
-          <a href="/glosario.html">Glosario</a>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/privacidad.html">Privacidad</a>
-          <a href="/terminos.html">Términos</a>
-          <a href="/contacto.html">Contacto</a>
-          <a href="/about.html">Sobre Nosotros</a>
-          <a href="/mapa-sitio.html">Mapa del Sitio</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 TubeTools.online — Todos los derechos reservados.</p>
-        <a href="/en/thumbnail-analyzer.html" class="footer-lang-btn en-fb">🇬🇧 Switch to English</a>
-      </div>
-    </div>
-  </footer>
-
-<script>
-// ── DRAG & DROP ──────────────────────────────────────────────────────────────
-const dz = document.getElementById('dropZone');
-dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('dragover'); });
-dz.addEventListener('dragleave', () => dz.classList.remove('dragover'));
-dz.addEventListener('drop', e => { e.preventDefault(); dz.classList.remove('dragover'); if(e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); });
-
-function handleFile(file) {
-  if (!file || !file.type.startsWith('image/')) return;
-  const reader = new FileReader();
-  reader.onload = e => analyzeImage(e.target.result, file.name, `${file.name} · ${(file.size/1024).toFixed(0)} KB`);
-  reader.readAsDataURL(file);
-}
-
-function analyzeFromUrl() {
-  const url = document.getElementById('ytUrl').value.trim();
-  if (!url) return;
-  const vid = extractVideoId(url);
-  if (!vid) { alert('Could not find a YouTube video ID in that URL. Please check the link.'); return; }
-  const thumbUrl = `https://img.youtube.com/vi/${vid}/maxresdefault.jpg`;
-  // Load via image element (CORS-safe read)
-  showLoading();
-  const img = new Image();
-  img.crossOrigin = 'anonymous';
-  img.onload = () => {
-    const canvas = document.getElementById('analysisCanvas');
-    canvas.width = img.width; canvas.height = img.height;
-    canvas.getContext('2d').drawImage(img, 0, 0);
-    try {
-      const dataUrl = canvas.toDataURL('image/jpeg');
-      analyzeImage(dataUrl, `YouTube: ${vid}`, `${img.width}×${img.height}px · YouTube thumbnail`);
-    } catch(e) {
-      // CORS blocked, try proxy
-      loadWithProxy(thumbUrl, vid);
-    }
-  };
-  img.onerror = () => loadWithProxy(thumbUrl, vid);
-  img.src = thumbUrl;
-}
-
-function loadWithProxy(thumbUrl, vid) {
-  const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(thumbUrl)}`;
-  const img = new Image();
-  img.crossOrigin = 'anonymous';
-  img.onload = () => {
-    const canvas = document.getElementById('analysisCanvas');
-    canvas.width = img.width; canvas.height = img.height;
-    canvas.getContext('2d').drawImage(img, 0, 0);
-    try {
-      const dataUrl = canvas.toDataURL('image/jpeg');
-      analyzeImage(dataUrl, `YouTube: ${vid}`, `${img.width}×${img.height}px`);
-    } catch(e) {
-      hideLoading();
-      alert('Could not analyze this thumbnail due to browser security restrictions. Please download it first and upload the file directly.');
-    }
-  };
-  img.onerror = () => { hideLoading(); alert('Could not load the thumbnail. Please download it and upload the file instead.'); };
-  img.src = proxyUrl;
-}
-
-function extractVideoId(url) {
-  const m = url.match(/(?:v=|\/embed\/|youtu\.be\/|\/shorts\/)([A-Za-z0-9_-]{11})/);
-  return m ? m[1] : null;
-}
-
-function showLoading() {
-  document.getElementById('dropZone').style.display = 'none';
-  document.getElementById('loading').style.display = 'block';
-  document.getElementById('results').style.display = 'none';
-}
-function hideLoading() {
-  document.getElementById('loading').style.display = 'none';
-  document.getElementById('dropZone').style.display = 'block';
-}
-function resetTool() {
-  document.getElementById('results').style.display = 'none';
-  document.getElementById('dropZone').style.display = 'block';
-  document.getElementById('ytUrl').value = '';
-  document.getElementById('fileInput').value = '';
-}
-
-// ── CORE ANALYSIS ────────────────────────────────────────────────────────────
-function analyzeImage(dataUrl, name, sizeLabel) {
-  showLoading();
-  const img = new Image();
-  img.onload = () => {
-    const canvas = document.getElementById('analysisCanvas');
-    const MAX = 200; // scale for performance
-    const scale = Math.min(1, MAX / Math.max(img.width, img.height));
-    canvas.width = Math.round(img.width * scale);
-    canvas.height = Math.round(img.height * scale);
-    const ctx = canvas.getContext('2d');
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
-
-    const metrics = computeMetrics(data, canvas.width, canvas.height);
-    const score = computeScore(metrics);
-    const recs = generateRecs(metrics, score);
-
-    // Show preview at original
-    document.getElementById('previewImg').src = dataUrl;
-    document.getElementById('imgSize').textContent = sizeLabel;
-
-    // Score ring
-    const ring = document.getElementById('scoreRing');
-    const sc = score.total;
-    ring.textContent = sc;
-    ring.style.background = sc >= 70 ? '#2e7d32' : sc >= 45 ? '#f57c00' : '#c62828';
-    document.getElementById('scoreLabel').textContent = sc >= 70 ? '🏆 Miniatura Sólida' : sc >= 45 ? '⚡ Margen de Mejora' : '⚠️ Necesita Trabajo';
-
-    // Contrast
-    setCard('contrast', Math.round(metrics.contrast), `${Math.round(metrics.contrast)}%`,
-      metrics.contrast >= 55 ? 'Bien — visible en la mayoría de pantallas' : metrics.contrast >= 35 ? 'Moderado — puede perder impacto en móvil' : 'Bajo — probablemente invisible a plena luz',
-      metrics.contrast, '#d32f2f');
-
-    // Brightness
-    const bPct = Math.round(metrics.brightness);
-    const bLabel = bPct < 20 ? 'Muy Oscuro — pierde detalle en modo oscuro' : bPct > 82 ? 'Muy Claro — aspecto sobreexpuesto' : bPct >= 35 && bPct <= 72 ? 'Rango óptimo ✅' : 'Aceptable';
-    setCard('brightness', bPct, `${bPct}%`, bLabel, bPct < 20 ? bPct*3 : bPct > 82 ? 100-bPct : bPct, '#f57c00');
-
-    // Saturation
-    const sPct = Math.round(metrics.saturation);
-    setCard('sat', sPct, `${sPct}%`,
-      sPct >= 55 ? 'Vívido — llama la atención en el feed ✅' : sPct >= 30 ? 'Moderado — considera colores más vívidos' : 'Apagado — puede perderse en el feed',
-      sPct, '#7b1fa2');
-
-    // Complexity
-    const cPct = Math.round(metrics.complexity * 100);
-    setCard('complex', cPct > 70 ? 'High' : cPct > 35 ? 'Balanced' : 'Simple', `${cPct > 70 ? 'High' : cPct > 35 ? 'Balanced' : 'Simple'}`,
-      cPct > 70 ? 'Demasiado saturado — simplifica para legibilidad móvil' : cPct > 35 ? 'Buen equilibrio entre detalle y claridad ✅' : 'Muy simple — considera añadir un elemento focal',
-      cPct, '#1565c0');
-
-    // Palette
-    const palette = document.getElementById('palette');
-    palette.innerHTML = '';
-    metrics.palette.forEach(c => {
-      const sw = document.createElement('div');
-      sw.className = 'swatch';
-      sw.style.background = `rgb(${c.r},${c.g},${c.b})`;
-      const hex = '#' + [c.r,c.g,c.b].map(x=>x.toString(16).padStart(2,'0')).join('');
-      sw.setAttribute('data-hex', hex);
-      sw.title = hex;
-      palette.appendChild(sw);
-    });
-    const diversity = metrics.palette.length >= 5 ? 'Alta diversidad — puede competir por la atención' : metrics.palette.length >= 3 ? 'Buen equilibrio — historia de color clara' : 'Baja diversidad — paleta fuerte y enfocada ✅';
-    document.getElementById('paletteSub').textContent = `${metrics.palette.length} colores dominantes · ${diversity}`;
-
-    // Recommendations
-    const list = document.getElementById('recsList');
-    list.innerHTML = '';
-    recs.forEach(r => {
-      const li = document.createElement('li');
-      li.innerHTML = `<span class="icon">${r.icon}</span><div><strong>${r.title}</strong><span class="tag ${r.urgency}">${r.urgency === 'red' ? 'Critical' : r.urgency === 'amber' ? 'Improve' : 'Good'}</span><br>${r.desc}</div>`;
-      list.appendChild(li);
-    });
-
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('results').style.display = 'block';
-  };
-  img.src = dataUrl;
-}
-
-function setCard(id, display, val, sub, pct, color) {
-  const el = document.getElementById(id+'Val');
-  if(el) el.textContent = typeof display === 'number' ? val : display;
-  const bar = document.getElementById(id+'Bar');
-  if(bar) { bar.style.width = Math.min(100, Math.max(0, pct))+'%'; bar.style.background = color; }
-  const subEl = document.getElementById(id+'Sub');
-  if(subEl) subEl.textContent = sub;
-}
-
-// ── PIXEL METRICS ────────────────────────────────────────────────────────────
-function computeMetrics(data, w, h) {
-  let totalLum = 0, minLum = 255, maxLum = 0;
-  let totalSat = 0;
-  const step = 4; // sample every pixel
-  const n = data.length / 4;
-  const colorBuckets = {};
-
-  for (let i = 0; i < data.length; i += 4 * step) {
-    const r = data[i], g = data[i+1], b = data[i+2];
-    const lum = 0.299*r + 0.587*g + 0.114*b;
-    totalLum += lum;
-    if(lum < minLum) minLum = lum;
-    if(lum > maxLum) maxLum = lum;
-    // Saturation from HSL
-    const max = Math.max(r,g,b)/255, min = Math.min(r,g,b)/255;
-    const l = (max+min)/2;
-    const sat = max === min ? 0 : l < 0.5 ? (max-min)/(max+min) : (max-min)/(2-max-min);
-    totalSat += sat;
-    // Quantize for palette
-    const qr = Math.round(r/42)*42, qg = Math.round(g/42)*42, qb = Math.round(b/42)*42;
-    const key = `${qr},${qg},${qb}`;
-    colorBuckets[key] = (colorBuckets[key]||0) + 1;
-  }
-
-  const samples = n / step;
-  const avgLum = totalLum / samples;
-  const contrast = ((maxLum - minLum) / 255) * 100;
-  const brightness = (avgLum / 255) * 100;
-  const saturation = (totalSat / samples) * 100;
-
-  // Edge detection approximation (variance of luminance in blocks)
-  let edgeScore = 0;
-  const blockSize = Math.max(1, Math.floor(w / 10));
-  let blockCount = 0;
-  for(let y = 0; y < h - blockSize; y += blockSize) {
-    for(let x = 0; x < w - blockSize; x += blockSize) {
-      const lumVals = [];
-      for(let dy = 0; dy < blockSize; dy+=2) {
-        for(let dx = 0; dx < blockSize; dx+=2) {
-          const idx = ((y+dy)*w + (x+dx)) * 4;
-          lumVals.push(0.299*data[idx] + 0.587*data[idx+1] + 0.114*data[idx+2]);
-        }
-      }
-      const mean = lumVals.reduce((a,b)=>a+b,0)/lumVals.length;
-      const variance = lumVals.reduce((s,v)=>s+(v-mean)**2,0)/lumVals.length;
-      if(variance > 400) edgeScore++;
-      blockCount++;
-    }
-  }
-  const complexity = blockCount > 0 ? edgeScore / blockCount : 0;
-
-  // Top palette colors
-  const sorted = Object.entries(colorBuckets).sort((a,b)=>b[1]-a[1]);
-  // Deduplicate similar colors
-  const palette = [];
-  for(const [key] of sorted) {
-    if(palette.length >= 6) break;
-    const [r,g,b] = key.split(',').map(Number);
-    const tooClose = palette.some(c => Math.abs(c.r-r)+Math.abs(c.g-g)+Math.abs(c.b-b) < 80);
-    if(!tooClose) palette.push({r,g,b});
-  }
-
-  return { contrast, brightness, saturation, complexity, palette };
-}
-
-function computeScore(m) {
-  // Contrast: 0–100, ideal 50–90
-  const cScore = m.contrast >= 50 ? Math.min(100, m.contrast * 1.1) : m.contrast * 0.7;
-  // Brightness: ideal 35–75
-  const bScore = (m.brightness >= 35 && m.brightness <= 75) ? 100 : m.brightness < 20 || m.brightness > 88 ? 30 : 65;
-  // Saturation: ideal 40–85
-  const sScore = (m.saturation >= 40 && m.saturation <= 85) ? 100 : m.saturation < 20 ? 40 : m.saturation > 90 ? 70 : 70;
-  // Complexity: ideal 0.25–0.6
-  const compScore = (m.complexity >= 0.2 && m.complexity <= 0.6) ? 100 : m.complexity > 0.75 ? 40 : m.complexity < 0.1 ? 55 : 75;
-  // Palette: ideal 2–4 colors
-  const pScore = m.palette.length <= 4 ? 100 : m.palette.length === 5 ? 80 : 60;
-
-  const total = Math.round(cScore*0.30 + bScore*0.20 + sScore*0.20 + compScore*0.20 + pScore*0.10);
-  return { total, cScore: Math.round(cScore), bScore: Math.round(bScore), sScore: Math.round(sScore), compScore: Math.round(compScore) };
-}
-
-function generateRecs(m, score) {
-  const recs = [];
-  if(m.contrast < 35) recs.push({icon:'⚡',title:'Aumenta el Contraste',urgency:'red',desc:'Tu miniatura tiene poco contraste. Usa un sujeto más claro sobre un fondo más oscuro (o viceversa). Las miniaturas de bajo contraste se vuelven invisibles en pantallas móviles con luz de día.'});
-  else if(m.contrast < 55) recs.push({icon:'🎨',title:'Mejora el Contraste Ligeramente',urgency:'amber',desc:'El contraste podría ser más fuerte. Prueba a oscurecer el fondo y aclarar el sujeto principal o el texto para crear más separación visual.'});
-  else recs.push({icon:'✅',title:'El Contraste es Sólido',urgency:'green',desc:'Buen ratio de contraste. Tu miniatura debería mantenerse visible en distintos tipos de pantalla y condiciones de luz.'});
-
-  if(m.brightness < 20) recs.push({icon:'💡',title:'Miniatura Demasiado Oscura',urgency:'red',desc:'El brillo medio es muy bajo. Las miniaturas oscuras pierden detalle en pantallas OLED y en interfaces con modo oscuro. Aumenta la exposición general o usa un fondo más claro.'});
-  else if(m.brightness > 85) recs.push({icon:'☀️',title:'Miniatura Demasiado Brillante',urgency:'amber',desc:'Un brillo general muy alto puede provocar pérdida de detalle y verse "quemado" en el feed. Considera añadir más contraste visual con elementos más oscuros.'});
-  else recs.push({icon:'✅',title:'Brillo en Rango Óptimo',urgency:'green',desc:'Los niveles de brillo están bien equilibrados para la mayoría de los tipos de pantalla.'});
-
-  if(m.saturation < 25) recs.push({icon:'🌈',title:'Los Colores son Demasiado Apagados',urgency:'amber',desc:'La baja saturación hace que las miniaturas se mezclen con el feed. Aumenta la viveza del color en tu herramienta de edición — especialmente en el sujeto principal o en los textos superpuestos.'});
-  else if(m.saturation > 90) recs.push({icon:'🎨',title:'Los Colores Pueden Estar Sobresaturados',urgency:'amber',desc:'Una saturación extremadamente alta puede resultar chillona. Considera reducirla ligeramente, sobre todo en los tonos de piel, para mantener un aspecto profesional.'});
-  else recs.push({icon:'✅',title:'La Saturación de Color es Buena',urgency:'green',desc:'La viveza del color está en el rango que capta la atención sin parecer artificial.'});
-
-  if(m.complexity > 0.72) recs.push({icon:'🗂️',title:'Demasiados Elementos Visuales',urgency:'red',desc:'Una complejidad visual alta significa demasiados puntos focales compitiendo entre sí. El espectador no puede procesar miniaturas saturadas en menos de 2 segundos. Elimina elementos no esenciales y céntrate en un solo sujeto principal.'});
-  else if(m.complexity < 0.1) recs.push({icon:'➕',title:'Añade un Elemento Focal',urgency:'amber',desc:'La miniatura es muy austera. Añadir un elemento focal claro — una cara con expresión, un objeto clave, o texto llamativo — puede mejorar significativamente la intención de clic.'});
-  else recs.push({icon:'✅',title:'La Complejidad Visual es Equilibrada',urgency:'green',desc:'Buen equilibrio entre simplicidad e interés visual. El espectador debería poder identificar el sujeto principal rápidamente.'});
-
-  if(m.palette.length > 4) recs.push({icon:'🎭',title:'Simplifica la Paleta de Colores',urgency:'amber',desc:`${m.palette.length} colores dominantes son demasiados. Las miniaturas efectivas usan 2–3 colores dominantes. Neutraliza o desatura las áreas de color no esenciales para crear una historia visual más limpia.`});
-  else recs.push({icon:'✅',title:'La Paleta de Colores es Enfocada',urgency:'green',desc:'El número de colores dominantes está dentro del rango óptimo para la legibilidad de la miniatura.'});
-
-  return recs;
-}
-</script>
-
-  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(28,30,33,.97);backdrop-filter:blur(6px);color:#fff;padding:18px 20px;text-align:center;z-index:9999;border-top:2px solid #d32f2f;">
-    <p style="font-size:.88rem;margin-bottom:12px;color:#ccc;">🍪 Usamos cookies para mejorar tu experiencia y mostrar anuncios relevantes. <a href="/privacidad.html" style="color:#ff8a80;">Política de privacidad</a></p>
-    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-      <button onclick="localStorage.setItem('cookieConsent','accepted');document.getElementById('cookie-banner').style.display='none';" style="background:#d32f2f;color:#fff;border:none;padding:9px 22px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.88rem;">Aceptar todo</button>
-      <button onclick="localStorage.setItem('cookieConsent','rejected');document.getElementById('cookie-banner').style.display='none';" style="background:#444;color:#ccc;border:none;padding:9px 22px;border-radius:8px;cursor:pointer;font-size:.88rem;">Rechazar</button>
-    </div>
-  </div>
-  <script>if(!localStorage.getItem('cookieConsent'))document.getElementById('cookie-banner').style.display='block';</script>
-
-<script>
-(function(){
-  var btn = document.querySelector('.nav-toggle');
-  var links = document.querySelector('.nav-links');
-  if(!btn || !links) return;
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isOpen = links.classList.toggle('open');
-    btn.textContent = isOpen ? '✕' : '☰';
-  });
-  document.addEventListener('click', function(e){
-    if(!links.contains(e.target) && e.target !== btn){
-      links.classList.remove('open');
-      btn.textContent = '☰';
-    }
-  });
-})();
-</script>
+</footer>
+<script src="/assets/js/site.js?v=7d5d42b9" defer></script>
+<script src="/assets/js/tools/analyzer.js?v=7d5d42b9" defer></script>
 </body>
 </html>

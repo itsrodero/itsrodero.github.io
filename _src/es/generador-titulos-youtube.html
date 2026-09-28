@@ -1,0 +1,123 @@
+---
+type: tool
+title: Generador de títulos para YouTube y comprobador de longitud (gratis)
+description: Genera ideas de títulos para YouTube con fórmulas probadas y revisa la longitud de cualquier título, dónde se corta en móvil y ordenador, mayúsculas y avisos de clickbait. Gratis.
+h1: Generador y comprobador de títulos de YouTube
+lead: Consigue una docena de ideas de título basadas en fórmulas que funcionan para tutoriales, historias, reseñas y divulgación, y comprueba cómo se cortará tu título final en el móvil y en la columna de sugeridos.
+alt: youtube-title-generator
+nav: tools
+tool_order: 5
+icon: type
+card_title: Generador de títulos
+card_short: Ideas de título y comprobador de longitud
+card_desc: Genera ideas de título con fórmulas probadas y mira dónde se corta tu título.
+crumb: Generador de títulos
+script: titles
+---
+<script type="application/json" id="tool-i18n">{
+"stripPrefixes":["cómo ","como ","qué es ","que es ","por qué "],
+"defResult":"resultados reales","defPeriod":"30 días","defAudience":"principiantes",
+"chars":"caracteres","lenGood":"cabe","lenOk":"puede cortarse en el móvil","lenLong":"probablemente se corte","check":"Revisar","copy":"Copiar","copied":"Copiado ✓",
+"bOk":"Bien","bWarn":"Revisar","bBad":"Corregir",
+"nTooLong":"Supera el límite de 100 caracteres de YouTube.","nLong":"Largo: el final se cortará en muchos sitios. Asegúrate de que los primeros ~50 caracteres llevan la idea.","nShort":"Muy corto. Plantéate añadir un detalle concreto (un número, un resultado o un plazo).","nGood":"Buena longitud: la idea principal debería verse casi en cualquier sitio.",
+"nCaps":"Muchas palabras en MAYÚSCULAS. Una palabra en mayúsculas da énfasis; más parece un grito.","nPunct":"La puntuación repetida (!!, ??) puede parecer spam.","nEmoji":"Varios emojis ocupan espacio y rara vez aportan significado.","nNumber":"Incluye un número: las cifras concretas hacen tangible la promesa. Asegúrate de que es exacto.",
+"nHype":"Incluye palabras exageradas. Bien si el vídeo lo cumple de verdad; si no, puede dañar la confianza y la retención.","nVague":"Empieza con una frase vaga. Empieza mejor por el tema o el gancho.",
+"hype":["no te vas a creer","impactante","increíble lo que","salió mal","el secreto que","100% garantizado","tienes que ver"],
+"vague":["mis reflexiones","vlog","vídeo ","video ","actualización","episodio"],
+"templates":[
+{"s":"howto","k":"Guía para empezar","t":"{T} para {A}: todo lo que necesitas saber"},
+{"s":"howto","k":"Explicación rápida","t":"{T} explicado en 10 minutos"},
+{"s":"howto","k":"Consejos","t":"Consejos de {t} que funcionan de verdad"},
+{"s":"list","k":"Errores","t":"7 errores con {t} que debes evitar"},
+{"s":"list","k":"Lecciones","t":"5 cosas que aprendí tras {P} de {t}"},
+{"s":"story","k":"Experimento","t":"Probé {t} durante {P}: esto es lo que pasó"},
+{"s":"story","k":"Resultado","t":"Cómo conseguí {R} con {t}"},
+{"s":"story","k":"Mirando atrás","t":"{T}: lo que me habría gustado saber antes de empezar"},
+{"s":"question","k":"¿Merece la pena?","t":"¿Merece la pena {t} en {Y}? Mi opinión sincera"},
+{"s":"question","k":"Por qué","t":"Por qué a la mayoría le cuesta {t}"},
+{"s":"question","k":"Lo que no se cuenta","t":"Lo que nadie te cuenta sobre {t}"},
+{"s":"review","k":"Comparativa","t":"Barato vs caro: ¿se nota la diferencia en {t}?"},
+{"s":"review","k":"Niveles","t":"Principiante vs profesional: {t}"},
+{"s":"review","k":"Veredicto","t":"{T}: mi opinión sincera después de {P}"}
+]}</script>
+
+<div class="container">
+  <div class="tool-panel">
+    <h2>1. Genera ideas de título</h2>
+    <form id="tg-form" novalidate>
+      <div class="field">
+        <label for="tg-topic">Tema <span class="muted">(unas pocas palabras)</span></label>
+        <input class="input" id="tg-topic" type="text" maxlength="60" placeholder="p. ej. el pan de masa madre, viajar barato, entrenar en casa" required>
+        <span class="hint">Escribe el tema, no una frase completa. «Viajar barato» funciona mejor que «cómo viajar gastando poco».</span>
+      </div>
+      <div class="form-grid">
+        <div class="field"><label for="tg-audience">Público <span class="muted">(opcional)</span></label><input class="input" id="tg-audience" type="text" maxlength="30" placeholder="principiantes"></div>
+        <div class="field"><label for="tg-style">Estilo</label>
+          <select class="select" id="tg-style">
+            <option value="all">Todas las fórmulas</option>
+            <option value="howto">Tutoriales y guías</option>
+            <option value="list">Listas</option>
+            <option value="story">Historias y experimentos</option>
+            <option value="question">Preguntas y divulgación</option>
+            <option value="review">Reseñas y comparativas</option>
+          </select></div>
+        <div class="field"><label for="tg-result">Resultado <span class="muted">(opcional)</span></label><input class="input" id="tg-result" type="text" maxlength="30" placeholder="p. ej. mis primeros 1.000 suscriptores"></div>
+        <div class="field"><label for="tg-period">Plazo <span class="muted">(opcional)</span></label><input class="input" id="tg-period" type="text" maxlength="20" placeholder="30 días"></div>
+      </div>
+      <button class="btn btn-primary" type="submit">Generar ideas</button>
+    </form>
+  </div>
+
+  <section class="tool-panel" id="tg-results" hidden aria-live="polite">
+    <h2>Ideas de título</h2>
+    <p class="muted small">Son puntos de partida, no títulos terminados. Cambia las palabras generales por detalles concretos de tu vídeo y usa una fórmula solo si el vídeo la cumple. Revisa también la concordancia (género y número) con tu tema.</p>
+    <ul class="title-list" id="tg-list"></ul>
+  </section>
+
+  <div class="tool-panel">
+    <h2>2. Revisa tu título</h2>
+    <div class="field">
+      <label for="tc-input">Tu título</label>
+      <input class="input" id="tc-input" type="text" maxlength="100" placeholder="Pega o escribe un título para revisarlo">
+    </div>
+    <div id="tc-out" hidden>
+      <p><span class="badge" id="tc-count">0 / 100</span></p>
+      <div class="form-grid">
+        <div class="field"><span class="label">Aprox. en el móvil (~55 caracteres)</span><p class="kpi" id="tc-mobile" style="margin:0;font-weight:600"></p></div>
+        <div class="field"><span class="label">Aprox. en la columna de sugeridos (~70)</span><p class="kpi" id="tc-side" style="margin:0;font-weight:600"></p></div>
+      </div>
+      <ul class="recs" id="tc-notes" style="list-style:none;padding-left:0"></ul>
+      <p class="panel-note">El corte es aproximado: YouTube recorta los títulos según el ancho en píxeles y el número de líneas, que varía con el dispositivo, la fuente y el diseño. Míralo junto a tu miniatura en la <a href="@vista-previa-miniatura-youtube">vista previa del feed</a>.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>Cómo convertir una idea en un gran título</h2>
+    <p>Los títulos generados son plantillas. Lo que hace que un título funcione es el detalle concreto que solo tú puedes añadir. «Probé viajar barato durante 30 días: esto es lo que pasó» mejora mucho como «30 días en Japón con 40 € al día: esto es lo que pasó»: un lugar real, una cifra real, una promesa real.</p>
+    <ol class="steps">
+      <li><strong>Elige la fórmula que encaja con el vídeo.</strong> Un tutorial pide un «cómo» o una lista; una historia personal, un experimento; una decisión de compra, una comparativa.</li>
+      <li><strong>Cambia las palabras genéricas por detalles concretos</strong>: números, lugares, precios, nombres, plazos.</li>
+      <li><strong>Pon el gancho en los primeros ~50 caracteres.</strong> Usa el comprobador para ver dónde se corta el título.</li>
+      <li><strong>Combínalo con la miniatura.</strong> El título debe sumar a la imagen, no repetirla.</li>
+      <li><strong>Prueba dos opciones</strong> con Probar y comparar de YouTube cuando dudes.</li>
+    </ol>
+    <p>Para entender los principios de estas fórmulas, incluido lo que dice la investigación sobre la curiosidad y el enfoque negativo, lee <a href="@titulos-youtube-que-generan-clics">cómo escribir títulos de YouTube que consigan clics</a>.</p>
+
+    <h2>Qué revisa el comprobador</h2>
+    <ul>
+      <li><strong>Longitud:</strong> YouTube permite 100 caracteres, pero el móvil y la columna de sugeridos muestran bastantes menos. Aproximamos el corte en unos 55 y 70 caracteres.</li>
+      <li><strong>Mayúsculas y puntuación:</strong> una palabra en mayúsculas da énfasis; muchas mayúsculas y «!!» o «??» repetidos parecen spam.</li>
+      <li><strong>Emojis:</strong> uno puede dar personalidad; varios ocupan espacio valioso.</li>
+      <li><strong>Palabras exageradas:</strong> expresiones como «no te vas a creer» no están prohibidas, pero crean expectativas que tu vídeo debe cumplir.</li>
+    </ul>
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>¿Esta herramienta usa IA?</summary><p>No. Combina tu tema con un conjunto de fórmulas de título seleccionadas, todo en tu navegador. Así es rápida y privada, y por eso conviene que siempre edites el resultado con detalles de tu vídeo.</p></details>
+      <details><summary>¿Qué longitud debe tener un título de YouTube?</summary><p>Se permiten hasta 100 caracteres. Intenta que los primeros 50 o así tengan sentido por sí solos; muchos buenos títulos tienen entre 40 y 60 caracteres.</p></details>
+      <details><summary>¿Debo poner palabras clave en el título?</summary><p>Sí, si la gente busca ese tema: usa la frase que escribiría, con naturalidad y cerca del principio. No acumules varias palabras clave.</p></details>
+    </div>
+  </div>
+</section>

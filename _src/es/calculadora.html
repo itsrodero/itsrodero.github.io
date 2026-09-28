@@ -1,0 +1,100 @@
+---
+type: tool
+title: Calculadora de ingresos de YouTube – estima ganancias por visitas y RPM
+description: Estima lo que ganarías con la publicidad de YouTube al día, al mes y al año a partir de tus visualizaciones y tu RPM, con rangos orientativos por nicho y una línea aparte para Shorts.
+h1: Calculadora de ingresos de YouTube
+lead: Estima lo que podrían generar tus visualizaciones con la publicidad de YouTube. Usa tu RPM real de YouTube Studio para la mejor estimación o elige un nicho para ver un rango orientativo. Te enseñamos el cálculo para que sepas de dónde sale la cifra.
+alt: calculator
+nav: tools
+tool_order: 6
+icon: calc
+card_title: Calculadora de ingresos
+card_short: Estima ganancias según visitas y RPM
+card_desc: Estima tus ganancias diarias, mensuales y anuales en YouTube según visualizaciones y RPM, incluidos los Shorts.
+crumb: Calculadora de ingresos
+script: calculator
+---
+<script type="application/json" id="tool-i18n">{}</script>
+
+<div class="container">
+  <div class="two-col" style="margin-top:28px">
+    <form class="tool-panel" id="rc-form" style="margin:0" novalidate>
+      <h2>Tus cifras</h2>
+      <div class="form-grid">
+        <div class="field"><label for="rc-views">Visualizaciones de vídeos largos</label><input class="input" id="rc-views" type="number" min="0" step="1000" value="100000" inputmode="numeric"></div>
+        <div class="field"><label for="rc-period">Por</label>
+          <select class="select" id="rc-period"><option value="day">Día</option><option value="month" selected>Mes</option><option value="year">Año</option></select></div>
+      </div>
+      <div class="field"><label for="rc-mode">Origen del RPM</label>
+        <select class="select" id="rc-mode">
+          <option value="niche" selected>Estimar según mi nicho</option>
+          <option value="custom">Usar mi propio RPM (recomendado si ya monetizas)</option>
+        </select></div>
+      <div class="field" id="rc-niche-wrap"><label for="rc-niche">Nicho</label>
+        <select class="select" id="rc-niche">
+          <option value="finance">Finanzas personales e inversión</option>
+          <option value="business">Negocios, marketing y software para empresas</option>
+          <option value="tech">Tecnología y tutoriales de software</option>
+          <option value="education" selected>Educación y tutoriales</option>
+          <option value="auto">Coches y motor</option>
+          <option value="health">Salud y fitness</option>
+          <option value="lifestyle">Cocina, viajes y lifestyle</option>
+          <option value="beauty">Belleza y moda</option>
+          <option value="entertainment">Entretenimiento, humor y vlogs</option>
+          <option value="gaming">Videojuegos</option>
+          <option value="kids">Contenido creado para niños</option>
+        </select>
+        <span class="hint">Rangos orientativos para audiencias sobre todo de EE. UU. Con público de España o Latinoamérica, lo normal es ganar menos por visualización.</span></div>
+      <div class="field" id="rc-rpm-wrap" hidden><label for="rc-rpm">Tu RPM</label><input class="input" id="rc-rpm" type="number" min="0" step="0.1" value="2"><span class="hint">YouTube Studio &rarr; Estadísticas &rarr; Ingresos &rarr; RPM</span></div>
+      <div class="form-grid">
+        <div class="field"><label for="rc-shorts">Visualizaciones de Shorts al mes</label><input class="input" id="rc-shorts" type="number" min="0" step="10000" value="0"></div>
+        <div class="field"><label for="rc-srpm">RPM de Shorts</label><input class="input" id="rc-srpm" type="number" min="0" step="0.01" value="0.03"><span class="hint">Valor ilustrativo; usa el tuyo de Studio.</span></div>
+      </div>
+      <div class="field"><label for="rc-cur">Símbolo de moneda</label>
+        <select class="select" id="rc-cur"><option value="EUR" selected>Euro (€)</option><option value="USD">Dólar estadounidense ($)</option><option value="MXN">Peso mexicano</option><option value="GBP">Libra (£)</option></select>
+        <span class="hint">Solo cambia el símbolo. Los rangos por nicho están en dólares estadounidenses.</span></div>
+    </form>
+
+    <aside class="sticky-score" aria-live="polite">
+      <div class="tool-panel" style="margin:0">
+        <p class="label">Ingresos estimados en YouTube</p>
+        <div class="result-grid" style="grid-template-columns:1fr">
+          <div class="result-box highlight"><b id="rc-month">–</b><span>al mes</span></div>
+          <div class="result-box"><b id="rc-year">–</b><span>al año</span></div>
+          <div class="result-box"><b id="rc-day">–</b><span>al día</span></div>
+        </div>
+        <p class="small muted" style="margin-top:12px">Con <strong id="rc-views-month">0</strong> visualizaciones de vídeos largos al mes y un RPM de <strong id="rc-rpm-used">–</strong>, más <strong id="rc-shorts-out">–</strong> al mes de Shorts. Antes de impuestos.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<section class="section section-alt">
+  <div class="container narrow prose">
+    <h2>Cómo funciona la calculadora</h2>
+    <p>YouTube te muestra tu <strong>RPM</strong> (ingresos por cada 1.000 visualizaciones) después de quedarse su parte y contando todas las visualizaciones, también las que no tienen anuncios. Eso simplifica el cálculo:</p>
+    <p class="formula">Ingresos estimados = visualizaciones &times; RPM &divide; 1.000</p>
+    <p>Si eliges un nicho, la calculadora usa un rango orientativo de RPM para ese nicho y muestra una estimación baja y otra alta. Estos rangos salen de cifras que los creadores comparten públicamente para audiencias en inglés, sobre todo de Estados Unidos; no son datos oficiales de YouTube. Si tu canal ya está monetizado, cambia a «Usar mi propio RPM» e introduce la cifra de YouTube Studio: siempre será más precisa que cualquier media.</p>
+    <p>Los Shorts se calculan aparte porque se pagan desde un fondo compartido y suelen generar solo céntimos por cada 1.000 visualizaciones. El RPM de Shorts por defecto es un valor ilustrativo; cámbialo por el tuyo.</p>
+
+    <h2>Por qué la estimación puede fallar</h2>
+    <ul>
+      <li><strong>Ubicación de la audiencia:</strong> los anunciantes pagan más por algunos países. En español, el público de España suele generar más por visualización que el de muchos países de Latinoamérica.</li>
+      <li><strong>Temporada:</strong> el RPM suele subir de octubre a diciembre y bajar en enero.</li>
+      <li><strong>Duración:</strong> los vídeos de 8 minutos o más pueden incluir anuncios a mitad del vídeo.</li>
+      <li><strong>Publicidad limitada:</strong> los vídeos que no son totalmente aptos para anunciantes ganan mucho menos.</li>
+      <li><strong>Otros ingresos:</strong> las membresías, los Supers y YouTube Premium se incluyen en tu RPM real, pero varían mucho de un canal a otro.</li>
+    </ul>
+    <p>Para entender estos factores, lee <a href="@rpm-vs-cpm-youtube">RPM vs CPM explicado</a>, <a href="@cpm-youtube-por-nicho">RPM por nicho</a> y <a href="@aumentar-rpm-youtube">cómo aumentar tu RPM</a>.</p>
+
+    <h2>Antes de poder ganar dinero</h2>
+    <p>Para cobrar por publicidad hay que entrar en el Programa de Socios de YouTube. Los requisitos cambian el 1 de febrero de 2027: consulta los <a href="@requisitos-monetizacion-youtube">requisitos de monetización</a> actuales y los nuevos.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>¿Cuánto paga YouTube por cada 1.000 visualizaciones?</summary><p>Eso es tu RPM, y varía muchísimo según el nicho, la ubicación del público y el formato: desde bastante menos de 1 € en muchos Shorts hasta más de 10 € en algunos canales de finanzas o negocios. Tu YouTube Studio muestra tu cifra exacta.</p></details>
+      <details><summary>¿Cuánto vale un millón de visualizaciones?</summary><p>Con un RPM de 1 €, unos 1.000 €; con 3 €, unos 3.000 €; con 8 €, unos 8.000 €. En Shorts, un millón de visualizaciones suele dar bastante menos.</p></details>
+      <details><summary>¿Se guardan mis datos?</summary><p>Tus cifras se recuerdan en tu navegador para que sigan ahí la próxima vez. No se nos envía nada.</p></details>
+    </div>
+  </div>
+</section>

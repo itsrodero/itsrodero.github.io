@@ -1,430 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    if (localStorage.getItem("cookieConsent") === "accepted") {
-      var s = document.createElement("script");
-      s.async = true;
-      s.src = "https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR";
-      document.head.appendChild(s);
-      s.onload = function(){ gtag("js", new Date()); gtag("config", "G-MKM07L3RLR"); };
-    }
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy – TubeTools</title>
-  <meta name="description" content="TubeTools privacy policy. How we collect data, how Google AdSense uses cookies, your rights under GDPR and CCPA, and how to manage your preferences.">
-  <link rel="canonical" href="https://tubetools.online/en/privacy.html">
-  <link rel="alternate" hreflang="en" href="https://tubetools.online/en/privacy.html">
-  <link rel="alternate" hreflang="es" href="https://tubetools.online/privacidad.html">
-  <link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/privacy.html">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f9f9f9; color: #1c1e21; line-height: 1.8; }
-    nav { background-color: #1c1e21; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-    nav a { color: white !important; text-decoration: none; font-weight: bold; font-size: 15px; margin-left: 20px; }
-    nav a:hover { color: #d32f2f !important; }
-    main { max-width: 860px; margin: 40px auto; padding: 40px; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-    h1 { color: #d32f2f; font-size: 2rem; margin-bottom: 8px; }
-    h2 { color: #1c1e21; margin-top: 35px; margin-bottom: 10px; font-size: 1.3rem; border-left: 4px solid #d32f2f; padding-left: 12px; }
-    p { margin-bottom: 15px; color: #333; }
-    ul { margin: 10px 0 15px 20px; }
-    ul li { margin-bottom: 8px; color: #333; }
-    .highlight { background: #fff5f5; border: 1px solid #ffcdd2; border-radius: 8px; padding: 20px; margin: 20px 0; }
-    .adsense-section { background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 8px; padding: 20px; margin: 20px 0; }
-    footer { background: #1c1e21; color: #888; text-align: center; padding: 30px; margin-top: 40px; }
-    footer a { color: #bbb; text-decoration: none; margin: 0 10px; }
-    @media(max-width:600px){ main { padding: 20px; margin: 20px; } }
-  
-    nav{position:sticky;top:0;z-index:1000;background:#1c1e21;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
-    .nav-logo{color:#fff;text-decoration:none;font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:8px}
-    .nav-logo span{color:#ff5252}
-    .nav-links{display:flex;gap:4px;align-items:center}
-    .nav-links a{color:#ccc !important;text-decoration:none;font-size:.88rem;font-weight:500;padding:6px 11px;border-radius:8px;transition:background .2s,color .2s;white-space:nowrap}
-    .nav-links a:hover{background:rgba(255,255,255,.08);color:#fff !important}
-    .nav-links a.lang-btn-es{color:#a5d6a7 !important;border:1px solid rgba(165,214,167,.35)}
-    .nav-links a.active-link{color:#fff !important;background:rgba(211,47,47,.2)}
-    .nav-dropdown{position:relative}
-    .nav-dropdown>a{display:flex;align-items:center;gap:4px}
-    .nav-dropdown>a::after{content:'▾';font-size:.7rem;opacity:.7}
-    .dropdown-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#2c2e33;border-radius:12px;padding:10px 8px;min-width:240px;box-shadow:0 8px 32px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.07);z-index:2000}
-    .nav-dropdown:hover .dropdown-panel,.nav-dropdown:focus-within .dropdown-panel{display:block}
-    .dropdown-panel a{display:flex;align-items:center;gap:10px;color:#ccc !important;text-decoration:none;font-size:.85rem;padding:9px 14px;border-radius:8px;transition:background .2s;width:100%}
-    .dropdown-panel a:hover{background:rgba(255,255,255,.09);color:#fff !important}
-    .dp-icon{width:22px;text-align:center;font-size:1.05rem;flex-shrink:0}
-    .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px}
-    @media(max-width:720px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}.nav-links.open{display:flex}.nav-links a{padding:11px 14px;border-radius:8px}.nav-dropdown>a::after{display:none}.dropdown-panel{display:block;position:static;transform:none;background:rgba(255,255,255,.04);border:none;box-shadow:none;border-radius:8px;padding:4px 0 4px 12px;min-width:auto;margin-top:2px}.dropdown-panel a{font-size:.83rem;padding:7px 10px}}
-    .site-footer{background:#1c1e21;color:#888;padding:48px 20px 32px;margin-top:60px}
-    .footer-inner{max-width:960px;margin:0 auto}
-    .footer-grid{display:grid;grid-template-columns:1fr repeat(3,auto);gap:40px;margin-bottom:36px}
-    @media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
-    @media(max-width:440px){.footer-grid{grid-template-columns:1fr}}
-    .footer-logo{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:10px}
-    .footer-logo span{color:#ff5252}
-    .footer-brand p{font-size:.83rem;color:#666;line-height:1.6;max-width:220px}
-    .footer-col h4{font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
-    .footer-col a{display:block;color:#888 !important;text-decoration:none;font-size:.85rem;margin-bottom:8px;transition:color .2s}
-    .footer-col a:hover{color:#fff !important}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-    .footer-bottom p{font-size:.78rem;color:#555}
-    .footer-lang-btn{padding:5px 14px;border-radius:999px;text-decoration:none !important;font-size:.82rem;font-weight:600;transition:background .2s}
-    .footer-lang-btn.es-fb{background:rgba(165,214,167,.1);color:#a5d6a7 !important;border:1px solid rgba(165,214,167,.3)}
-    .footer-lang-btn.es-fb:hover{background:rgba(165,214,167,.2)}
-    </style>
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tubetools.online/en/privacy.html">
-  <meta property="og:title" content="Privacy Policy – TubeTools">
-  <meta property="og:description" content="TubeTools privacy policy. How we collect data, how Google AdSense uses cookies, your rights under GDPR and CCPA, and how to manage your preferences.">
-  <meta property="og:image" content="https://tubetools.online/og_image_en.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Privacy Policy – TubeTools">
-  <meta name="twitter:description" content="TubeTools privacy policy. How we collect data, how Google AdSense uses cookies, your rights under GDPR and CCPA, and how to manage your preferences.">
-  <meta name="twitter:image" content="https://tubetools.online/og_image_en.png">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"Privacy Policy – TubeTools","url":"https://tubetools.online/en/privacy.html","publisher":{"@type":"Organization","name":"TubeTools","url":"https://tubetools.online"}}
-  </script>
-
-<style id='tt-global'>
-
-/* ── TubeTools Global Fix ── */
-*, *::before, *::after { box-sizing: border-box; }
-a { color: inherit; }
-a:not([class]):not([style]) { color: inherit; text-decoration: none; }
-.read-more, .btn-read-more {
-  display: inline-block; background: #d32f2f; color: #fff !important;
-  text-decoration: none; padding: 9px 18px; border-radius: 8px;
-  font-size: .85rem; font-weight: 700; transition: background .2s; margin-top: 8px;
-}
-.read-more:hover, .btn-read-more:hover { background: #b71c1c !important; }
-.article-card h3 a, .article-title a, .card-title a, .blog-card h3 a {
-  color: #1c1e21 !important; text-decoration: none !important; font-weight: 700;
-}
-.article-card h3 a:hover, .blog-card h3 a:hover { color: #d32f2f !important; }
-footer a { color: #888 !important; text-decoration: none !important; }
-footer a:hover { color: #fff !important; }
-nav a { text-decoration: none; }
-/* Nav fix */
-nav { position: sticky; top: 0; z-index: 1000; background: #1c1e21;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 24px; height: 58px; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
-nav .nav-logo { color: #fff; text-decoration: none; font-size: 1.1rem;
-  font-weight: 800; display: flex; align-items: center; gap: 6px; }
-nav .nav-logo .logo-accent { color: #ff5252; }
-nav .nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
-nav .nav-links a { color: #ccc !important; text-decoration: none; font-size: .88rem;
-  font-weight: 500; padding: 6px 11px; border-radius: 8px;
-  transition: background .2s, color .2s; white-space: nowrap; }
-nav .nav-links a:hover { background: rgba(255,255,255,.08); color: #fff; }
-nav .nav-links a.lang-btn-en { color: #90caf9; border: 1px solid rgba(144,202,249,.35); }
-nav .nav-links a.lang-btn-es { color: #a5d6a7; border: 1px solid rgba(165,214,167,.35); }
-nav .nav-links a.active-link { color: #fff; background: rgba(211,47,47,.2); }
-.nav-toggle { display: none; background: none; border: none; color: #fff;
-  font-size: 1.4rem; cursor: pointer; padding: 6px; }
-/* Tools dropdown */
-.nav-dropdown { position: relative; }
-.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-.nav-dropdown > a::after { content: '▾'; font-size: .7rem; opacity: .7; }
-.dropdown-panel { display: none; position: absolute; top: calc(100% + 6px);
-  left: 50%; transform: translateX(-50%); background: #2c2e33;
-  border-radius: 12px; padding: 10px 8px; min-width: 240px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.4); border: 1px solid rgba(255,255,255,.07);
-  z-index: 2000; }
-.nav-dropdown:hover .dropdown-panel,
-.nav-dropdown:focus-within .dropdown-panel { display: block; }
-.dropdown-panel a { display: flex; align-items: center; gap: 10px; color: #ccc !important;
-  text-decoration: none !important; font-size: .85rem; padding: 9px 14px;
-  border-radius: 8px; transition: background .2s; width: 100%; }
-.dropdown-panel a:hover { background: rgba(255,255,255,.09) !important; color: #fff !important; }
-.dp-icon { width: 22px; text-align: center; font-size: 1.05rem; flex-shrink: 0; }
-/* Mobile nav */
-@media(max-width: 720px) {
-  .nav-toggle { display: block !important; }
-  .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0;
-    background: #2c2e33; flex-direction: column; align-items: stretch;
-    padding: 10px 16px 16px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
-  .nav-links.open { display: flex; }
-  .nav-links a { padding: 11px 14px; border-radius: 8px; }
-  .nav-dropdown > a::after { display: none; }
-  .dropdown-panel { display: block; position: static; transform: none;
-    background: rgba(255,255,255,.04); border: none; box-shadow: none;
-    border-radius: 8px; padding: 4px 0 4px 12px; min-width: auto; margin-top: 2px; }
-  .dropdown-panel a { font-size: .83rem; padding: 7px 10px; }
-}
-/* Footer fix */
-.site-footer { background: #1c1e21; color: #888; padding: 48px 20px 32px; margin-top: 60px; }
-.site-footer .footer-inner { max-width: 960px; margin: 0 auto; }
-.site-footer .footer-grid { display: grid; grid-template-columns: 1fr repeat(3, auto);
-  gap: 40px; margin-bottom: 36px; }
-@media(max-width: 700px) { .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
-@media(max-width: 440px) { .site-footer .footer-grid { grid-template-columns: 1fr; } }
-.site-footer .footer-brand .footer-logo { font-size: 1.1rem; font-weight: 800;
-  color: #fff; margin-bottom: 10px; }
-.site-footer .footer-brand .footer-logo .logo-accent { color: #ff5252; }
-.site-footer .footer-brand p { font-size: .83rem; color: #666; line-height: 1.6; max-width: 220px; }
-.site-footer .footer-col h4 { font-size: .8rem; font-weight: 700; color: #fff;
-  text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
-.site-footer .footer-col a { display: block; color: #888 !important;
-  text-decoration: none !important; font-size: .85rem; margin-bottom: 8px;
-  transition: color .2s; }
-.site-footer .footer-col a:hover { color: #fff !important; }
-.site-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.07);
-  padding-top: 20px; display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 10px; }
-.site-footer .footer-bottom p { font-size: .78rem; color: #555; }
-.site-footer .footer-lang-btn { padding: 5px 14px; border-radius: 999px;
-  text-decoration: none !important; font-size: .82rem; font-weight: 600; transition: background .2s; }
-.site-footer .footer-lang-btn.en-fb { background: rgba(144,202,249,.12);
-  color: #90caf9 !important; border: 1px solid rgba(144,202,249,.3); }
-.site-footer .footer-lang-btn.en-fb:hover { background: rgba(144,202,249,.22) !important; }
-.site-footer .footer-lang-btn.es-fb { background: rgba(165,214,167,.1);
-  color: #a5d6a7 !important; border: 1px solid rgba(165,214,167,.3); }
-.site-footer .footer-lang-btn.es-fb:hover { background: rgba(165,214,167,.2) !important; }
-
-</style>
-
-<style id="mobile-nav-fix">
-@media(max-width:720px){
-  .nav-toggle{display:block !important;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:6px;z-index:1001;position:relative}
-  .nav-links{display:none !important;position:absolute;top:58px;left:0;right:0;background:#2c2e33;flex-direction:column !important;align-items:stretch !important;padding:10px 16px 16px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000}
-  .nav-links.open{display:flex !important}
-  .nav-links>a,.nav-links>.nav-dropdown{width:100% !important;display:block !important}
-  .nav-links a{padding:11px 14px !important;border-radius:8px;color:#ccc !important;width:100%;display:block !important}
-  .nav-dropdown{width:100% !important;position:static !important}
-  .nav-dropdown>a{display:flex !important;align-items:center;justify-content:flex-start;gap:6px;width:100% !important;padding:11px 14px !important;border-radius:8px;color:#ccc !important}
-  .nav-dropdown>a::after{display:none !important}
-  .dropdown-panel{display:block !important;position:static !important;transform:none !important;background:rgba(255,255,255,.04) !important;border:none !important;box-shadow:none !important;border-radius:8px !important;padding:4px 0 4px 12px !important;min-width:auto !important;margin-top:2px;width:100% !important}
-  .dropdown-panel a{font-size:.83rem !important;padding:7px 10px !important;width:100% !important}
-}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | TubeTools</title>
+<meta name="description" content="How TubeTools handles data: what our browser-based tools do and don&#x27;t collect, Google AdSense and Analytics cookies, consent choices, and your privacy rights.">
+<link rel="canonical" href="https://tubetools.online/en/privacy.html">
+<link rel="alternate" hreflang="en" href="https://tubetools.online/en/privacy.html">
+<link rel="alternate" hreflang="es" href="https://tubetools.online/privacidad.html">
+<link rel="alternate" hreflang="x-default" href="https://tubetools.online/en/privacy.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:site_name" content="TubeTools">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Privacy Policy">
+<meta property="og:description" content="How TubeTools handles data: what our browser-based tools do and don&#x27;t collect, Google AdSense and Analytics cookies, consent choices, and your privacy rights.">
+<meta property="og:url" content="https://tubetools.online/en/privacy.html">
+<meta property="og:image" content="https://tubetools.online/assets/img/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',region:["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"],wait_for_update:500});gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});gtag('js',new Date());gtag('config','G-MKM07L3RLR');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKM07L3RLR"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8621886093597255" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/site.css?v=7d5d42b9">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tubetools.online/en/"}, {"@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://tubetools.online/en/privacy.html"}]}</script>
 </head>
-<body>
-
-<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1c1e21;color:white;padding:20px;text-align:center;z-index:9999;display:none;">
-  <p style="margin-bottom:15px;">🍪 We use cookies to improve your experience and show personalized ads. <a href="privacy.html" style="color:#ff4757;text-decoration:underline;">Privacy Policy</a>.</p>
-  <button onclick="localStorage.setItem('cookieConsent','accepted');this.parentElement.style.display='none';" style="background:#d32f2f;color:white;border:none;padding:10px 20px;border-radius:5px;margin-right:10px;cursor:pointer;">Accept</button>
-  <button onclick="localStorage.setItem('cookieConsent','rejected');this.parentElement.style.display='none';" style="background:#555;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">Reject</button>
-</div>
-<script>if(!localStorage.getItem('cookieConsent'))document.getElementById('cookie-banner').style.display='block';</script>
-
-<nav>
-  <a href="/en/" class="nav-logo">🚀 Tube<span>Tools</span></a>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-  <div class="nav-links">
-    <a href="/privacidad.html" class="lang-btn-es">🇪🇸 ES</a>
-    <a href="/en/">Home</a>
-    <div class="nav-dropdown">
-      <a href="/en/tools.html">🎯 Tools</a>
-      <div class="dropdown-panel">
-        <a href="/en/"><span class="dp-icon">🖼️</span>Thumbnail Extractor</a>
-        <a href="/en/thumbnail-analyzer.html"><span class="dp-icon">🔬</span>Thumbnail Analyzer</a>
-        <a href="/en/youtube-title-generator.html"><span class="dp-icon">✍️</span>Title Generator</a>
-        <a href="/en/calculator.html"><span class="dp-icon">🧮</span>Revenue Calculator</a>
-        <a href="/en/ctr-score-calculator.html"><span class="dp-icon">📊</span>CTR Score</a>
-        <a href="/en/thumbnail-checklist.html"><span class="dp-icon">✅</span>Checklist</a>
+<body class="page-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/en/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#d32f2f"/><path d="M9 9h14v4.5h-4.75V24h-4.5V13.5H9z" fill="#fff"/></svg><span>Tube<b>Tools</b></span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="sr-only">Menu</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <div class="nav-dd">
+        <button class="nav-dd-btn" aria-expanded="false">Tools <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="nav-dd-panel"><a href="/en/" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span><strong>Thumbnail Downloader</strong><small>Save any video&#x27;s thumbnail in full size</small></span></a><a href="/en/thumbnail-analyzer.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="15.5" cy="9" r="1.5"/></svg><span><strong>Thumbnail Analyzer</strong><small>Contrast, color and readability checks</small></span></a><a href="/en/youtube-thumbnail-preview.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><span><strong>Feed Preview</strong><small>See your thumbnail next to competitors</small></span></a><a href="/en/thumbnail-checklist.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg><span><strong>Thumbnail Checklist</strong><small>15-point review with a score</small></span></a><a href="/en/youtube-title-generator.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5h16v2"/><path d="M12 5v14"/><path d="M9 19h6"/></svg><span><strong>Title Generator</strong><small>Title ideas plus a length checker</small></span></a><a href="/en/calculator.html" class="dd-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg><span><strong>Revenue Calculator</strong><small>Estimate earnings from views and RPM</small></span></a></div>
       </div>
+      <a href="/en/blog.html">Guides</a>
+      <a href="/en/glossary.html">Glossary</a>
+      <a href="/en/about.html" class="is-active">About</a>
+      <a class="lang-switch" href="/privacidad.html" hreflang="es" lang="es" title="Leer en español"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg> Español</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="page-main">
+  <div class="container narrow">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/en/">Home</a></li><li aria-current="page">Privacy Policy</li></ol></nav>
+    <header class="page-header">
+      <h1>Privacy Policy</h1>
+      <p class="lead">Last updated: September 28, 2026</p>
+    </header>
+    <div class="prose">
+<div class="callout callout-info"><span class="callout-title">The short version</span>
+Our tools run in your browser: the images you analyze and the links you paste are not sent to us. The site is funded by Google AdSense ads and uses Google Analytics to understand traffic. Google may use cookies for these services; in the EEA, UK and Switzerland they're only used for personalized ads and analytics if you consent. You can change your choice at any time with the "Privacy settings" link in the footer.</div>
+
+<h2 id="1-who-is-responsible">1. Who is responsible</h2>
+<p>TubeTools (tubetools.online) is run by Daniel, an individual based in Spain, who is the data controller for this website. Contact: <a href="mailto:contacto@tubetools.online">contacto@tubetools.online</a>.</p>
+
+<h2 id="2-what-our-tools-do-with-your-data">2. What our tools do with your data</h2>
+<ul>
+  <li><strong>Images you upload</strong> to the Thumbnail Analyzer or Feed Preview are processed locally in your browser. They are never uploaded to TubeTools or anyone else.</li>
+  <li><strong>YouTube links you paste</strong> are read in your browser to find the video ID. Your browser then requests the thumbnail images directly from YouTube's image servers (i.ytimg.com) and, for titles and channel names, YouTube's public oEmbed service (youtube.com). Those requests go from your device to Google/YouTube, which receive your IP address as with any website request, under <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>. We don't receive or store the links.</li>
+  <li><strong>Local storage:</strong> some tools remember things for your convenience on your own device — recent thumbnail searches, checklist ticks, calculator inputs and preview settings. This data stays in your browser's local storage, is never sent to us, and can be deleted by clearing this site's data in your browser.</li>
+</ul>
+
+<h2 id="3-advertising-google-adsense">3. Advertising (Google AdSense)</h2>
+<p>We show ads served by Google AdSense, operated by Google LLC (and Google Ireland Limited for users in the EEA and Switzerland). To show and measure ads:</p>
+<ul>
+  <li>Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites.</li>
+  <li>Google's use of advertising cookies enables it and its partners to serve ads based on your visits to this and/or other sites on the Internet.</li>
+  <li>Other ad vendors and ad networks certified by Google may also serve ads and use cookies on this site.</li>
+</ul>
+<p>You can opt out of personalized advertising in Google's <a href="https://myadcenter.google.com/" rel="noopener">My Ad Center</a>, and opt out of some third-party vendors' use of cookies for personalized advertising at <a href="https://optout.aboutads.info/" rel="noopener">aboutads.info</a> (US) or <a href="https://www.youronlinechoices.eu/" rel="noopener">youronlinechoices.eu</a> (EU). To learn more, see <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">how Google uses information from sites or apps that use its services</a> and <a href="https://policies.google.com/technologies/ads" rel="noopener">how Google uses cookies in advertising</a>.</p>
+
+<h2 id="4-analytics-google-analytics">4. Analytics (Google Analytics)</h2>
+<p>We use Google Analytics 4 to understand which pages are useful and how people find the site (for example pages viewed, approximate location, device and browser). We don't use it to identify individuals, and we don't combine it with other data about you. You can also block it with Google's <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Analytics opt-out browser add-on</a>.</p>
+
+<h2 id="cookies">5. Cookies and your consent choices</h2>
+<ul>
+  <li><strong>EEA, UK and Switzerland:</strong> when you first visit, a consent message from Google (a certified consent management platform) asks for your choices. Until you decide, advertising and analytics cookies are denied by default using Google Consent Mode, and ads that are shown are non-personalized or limited.</li>
+  <li><strong>United States:</strong> depending on your state, you may have the right to opt out of the "sale" or "sharing" of personal information or of targeted advertising. Where required, a message lets you exercise that choice. We don't sell your personal information for money.</li>
+  <li><strong>Change your choice at any time</strong> with the "Privacy settings" link in the footer of every page, or by deleting this site's cookies in your browser.</li>
+</ul>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Type</th><th>Set by</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Necessary / preferences</td><td>TubeTools (local storage)</td><td>Remember tool inputs and consent choices on your device.</td></tr>
+      <tr><td>Analytics</td><td>Google Analytics</td><td>Aggregate statistics on how the site is used.</td></tr>
+      <tr><td>Advertising</td><td>Google AdSense and certified ad partners</td><td>Serve, limit repetition of and measure ads; personalize ads where you've allowed it.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="6-contact-form">6. Contact form</h2>
+<p>If you use the contact form, your name, email address and message are delivered to us through Formspree, Inc., a form-processing service (<a href="https://formspree.io/legal/privacy-policy" rel="noopener">Formspree privacy policy</a>). We use this information only to reply and keep messages for up to 12 months after the conversation ends, unless we need them longer to resolve a legal issue. You can also email us directly.</p>
+
+<h2 id="7-hosting">7. Hosting</h2>
+<p>The site is hosted on GitHub Pages (GitHub, Inc.). Like any web host, GitHub processes technical data such as IP addresses to deliver pages and protect the service (<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub privacy statement</a>).</p>
+
+<h2 id="8-legal-bases-eea-uk-users">8. Legal bases (EEA/UK users)</h2>
+<ul>
+  <li><strong>Consent</strong> for analytics and personalized advertising cookies.</li>
+  <li><strong>Legitimate interest</strong> in running, securing and improving the website, and in showing non-personalized ads to fund it.</li>
+  <li><strong>Your request</strong> (pre-contractual steps / legitimate interest) to answer messages sent through the contact form.</li>
+</ul>
+
+<h2 id="9-international-transfers">9. International transfers</h2>
+<p>Google, GitHub and Formspree may process data in the United States. These transfers rely on the EU–US Data Privacy Framework where the provider is certified, and/or on the European Commission's Standard Contractual Clauses.</p>
+
+<h2 id="10-your-rights">10. Your rights</h2>
+<p>Depending on where you live (for example under the GDPR or US state privacy laws), you may have the right to access, correct, delete or port your personal data, to object to or restrict certain processing, to withdraw consent at any time, and to opt out of targeted advertising. Because our tools don't send us your images or links, we usually hold very little data about you — typically only contact-form messages. To make a request, email <a href="mailto:contacto@tubetools.online">contacto@tubetools.online</a>. If you're in the EEA, you can also complain to your data protection authority; in Spain that's the <a href="https://www.aepd.es/" rel="noopener">Agencia Española de Protección de Datos</a>.</p>
+
+<h2 id="11-children">11. Children</h2>
+<p>TubeTools is a general-audience site for creators and isn't directed at children under 13 (or under 14 in Spain). We don't knowingly collect personal information from children. If you believe a child has sent us personal information, contact us and we'll delete it.</p>
+
+<h2 id="12-changes-to-this-policy">12. Changes to this policy</h2>
+<p>We'll update this page if our practices or the services we use change, and update the date at the top. Significant changes will be highlighted on this page.</p>
+
     </div>
-    <a href="/en/blog.html">Blog</a>
-    <a href="/en/glossary.html">Glossary</a>
-    <a href="/en/contact.html">Contact</a>
-  </div>
-</nav>
-
-<main>
-  <h1>Privacy Policy</h1>
-  <p><em>Last updated: May 5, 2026</em></p>
-
-  <p>This Privacy Policy explains how <strong>TubeTools</strong> (tubetools.online) collects, uses, and protects information when you use our website. We are committed to full transparency about our data practices, including how we use advertising services such as Google AdSense. Please read this policy carefully before using our services.</p>
-
-  <h2>1. Data Controller</h2>
-  <p><strong>Owner:</strong> Daniel (operating as TubeTools)<br>
-  <strong>Contact email:</strong> contacto@tubetools.online<br>
-  <strong>Website:</strong> https://tubetools.online<br>
-  <strong>Purpose:</strong> Platform management, tool development, and user support.</p>
-
-  <h2>2. What Data We Collect</h2>
-  <p>TubeTools collects the following types of data:</p>
-  <ul>
-    <li><strong>Browsing data:</strong> IP address, browser type, operating system, pages visited, time on page, date and time of visit (collected via Google Analytics 4).</li>
-    <li><strong>Contact data:</strong> When you use our contact form, we collect your name and email address solely to respond to your inquiry.</li>
-    <li><strong>Cookie data:</strong> We use first-party and third-party cookies. Third-party cookies from Google are used for analytics and advertising purposes (see Section 5 below).</li>
-    <li><strong>Tool usage data:</strong> URLs entered into our thumbnail extractor tool are processed in real time but are NOT stored on our servers.</li>
-  </ul>
-
-  <h2>3. How We Use Your Data</h2>
-  <p>We use collected data to:</p>
-  <ul>
-    <li>Provide the YouTube thumbnail extraction and analysis service.</li>
-    <li>Respond to contact form inquiries and user feedback.</li>
-    <li>Analyze website traffic and improve user experience through Google Analytics.</li>
-    <li>Display relevant advertisements through Google AdSense (with your cookie consent).</li>
-    <li>Detect and prevent technical errors and abuse of our tools.</li>
-  </ul>
-
-  <div class="adsense-section">
-    <h2 style="border:none;padding:0;margin-top:0;">4. Google AdSense – Advertising Cookies (Important)</h2>
-    <p>TubeTools is monetized through <strong>Google AdSense</strong>, operated by Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). This is the primary way we fund the free tools we offer.</p>
-    <p>When you accept cookies, Google AdSense may:</p>
-    <ul>
-      <li>Set advertising cookies (including <code>__gads</code>, <code>__gpi</code>, <code>NID</code>) in your browser to serve personalized ads based on your interests and browsing behavior.</li>
-      <li>Use device fingerprinting and cross-site tracking to show you relevant advertisements across different websites.</li>
-      <li>Collect data about your visits to TubeTools and other websites to measure ad performance and optimize ad delivery.</li>
-    </ul>
-    <p>If you <strong>reject cookies</strong>, Google AdSense will serve non-personalized ads only. You will still see advertisements, but they will not be based on your personal interests or browsing history.</p>
-    <p>You can manage your Google advertising preferences at: <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">https://adssettings.google.com</a></p>
-    <p>To opt out of Google's use of cookies for advertising, you can visit: <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">https://www.google.com/settings/ads</a></p>
-    <p>For more information about how Google uses data when you use partner sites or apps, visit: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Google's Privacy & Terms</a>.</p>
-  </div>
-
-  <h2>5. Cookie Policy</h2>
-  <p>We use the following types of cookies:</p>
-  <ul>
-    <li><strong>Essential / Technical cookies:</strong> Required for the website to function. These cannot be disabled. They store your cookie consent preference and enable core features like the thumbnail extractor.</li>
-    <li><strong>Analytics cookies (Google Analytics 4):</strong> Collect anonymized data about how visitors use our website. These are only loaded after you accept cookies. You can opt out via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out</a>.</li>
-    <li><strong>Advertising cookies (Google AdSense):</strong> Used to serve personalized advertisements. These are activated by the Google AdSense script present on our pages. If you reject cookies, ads will be non-personalized.</li>
-  </ul>
-  <p>You can manage or withdraw your cookie consent at any time by clearing your browser's localStorage for tubetools.online or by clicking the "Reject" option if the cookie banner reappears after clearing.</p>
-
-  <h2>6. Legal Basis for Processing</h2>
-  <ul>
-    <li><strong>Contract performance:</strong> Processing necessary to provide the thumbnail extraction service.</li>
-    <li><strong>Consent:</strong> For analytics (Google Analytics) and advertising (Google AdSense) cookies — activated only after you accept cookies in our banner.</li>
-    <li><strong>Legitimate interests:</strong> For security, fraud prevention, and general website operation.</li>
-  </ul>
-
-  <h2>7. Data Retention</h2>
-  <ul>
-    <li><strong>Contact form data:</strong> Retained for up to 6 months after your inquiry is resolved.</li>
-    <li><strong>Analytics data:</strong> Retained by Google Analytics for 14 months (Google's default retention period).</li>
-    <li><strong>Advertising data:</strong> Managed by Google per their own data retention policies.</li>
-    <li><strong>Tool usage data (thumbnail URLs):</strong> Not stored — processed in real time only.</li>
-  </ul>
-
-  <h2>8. Third-Party Services</h2>
-  <p>We share data with the following third parties to operate our services:</p>
-  <ul>
-    <li><strong>Google LLC</strong> — Google Analytics (traffic analysis) and Google AdSense (advertising). Google's privacy policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></li>
-    <li><strong>GitHub Pages</strong> — Website hosting. GitHub's privacy policy: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a></li>
-    <li><strong>Formspree</strong> — Contact form processing. Formspree's privacy policy: <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">formspree.io/legal/privacy-policy</a></li>
-  </ul>
-
-  <h2>9. International Data Transfers</h2>
-  <p>By using Google Analytics and Google AdSense, your data may be transferred to and processed in the United States. Google LLC is certified under the EU-US Data Privacy Framework and complies with EU Standard Contractual Clauses for international data transfers.</p>
-
-  <h2>10. California Privacy Rights (CCPA)</h2>
-  <p>If you are a California resident, you have the following rights under the California Consumer Privacy Act (CCPA):</p>
-  <ul>
-    <li>The right to know what personal information we collect, use, and disclose.</li>
-    <li>The right to delete your personal information.</li>
-    <li>The right to opt out of the sale of personal information. (Note: TubeTools does not sell personal information.)</li>
-    <li>The right not to be discriminated against for exercising your CCPA rights.</li>
-  </ul>
-  <p>To exercise any of these rights, contact us at contacto@tubetools.online.</p>
-
-  <h2>11. Your Rights (GDPR – EU Residents)</h2>
-  <p>If you are located in the European Union, you have the following rights under GDPR:</p>
-  <ul>
-    <li><strong>Right of access:</strong> Request a copy of the personal data we hold about you.</li>
-    <li><strong>Right to rectification:</strong> Request correction of inaccurate data.</li>
-    <li><strong>Right to erasure:</strong> Request deletion of your data ("right to be forgotten").</li>
-    <li><strong>Right to restrict processing:</strong> Request that we limit how we use your data.</li>
-    <li><strong>Right to data portability:</strong> Receive your data in a machine-readable format.</li>
-    <li><strong>Right to object:</strong> Object to processing based on legitimate interests.</li>
-    <li><strong>Right to withdraw consent:</strong> Withdraw cookie consent at any time without affecting the lawfulness of prior processing.</li>
-  </ul>
-  <p>To exercise any of these rights, email us at <strong>contacto@tubetools.online</strong>. We will respond within 30 days.</p>
-
-  <h2>12. Children's Privacy</h2>
-  <p>TubeTools is not directed at children under 13 years of age. We do not knowingly collect personal information from children. If you believe a child under 13 has provided us with personal information, please contact us and we will delete it immediately.</p>
-
-  <h2>13. Security</h2>
-  <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. Our website uses HTTPS encryption for all connections.</p>
-
-  <h2>14. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. We encourage you to review this policy periodically. Continued use of TubeTools after changes constitutes acceptance of the updated policy.</p>
-
-  <h2>15. Contact Us</h2>
-  <p>If you have questions about this Privacy Policy or your personal data, please contact us:</p>
-  <ul>
-    <li><strong>Email:</strong> contacto@tubetools.online</li>
-    <li><strong>Website:</strong> <a href="contact.html">tubetools.online/en/contact.html</a></li>
-  </ul>
-
-  <div class="highlight">
-    <strong>Summary:</strong> TubeTools is free because it shows ads via Google AdSense. If you accept cookies, those ads are personalized based on your interests. If you reject cookies, you'll see generic ads. You can change your preference at any time by clearing your browser data for this site. We never sell your data to anyone.
   </div>
 </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">🚀 Tube<span>Tools</span></div>
-          <p>Free tools for YouTube creators who want to grow with data, not luck.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Tools</h4>
-          <a href="/en/">Thumbnail Extractor</a>
-          <a href="/en/thumbnail-analyzer.html">Analyzer</a>
-          <a href="/en/youtube-title-generator.html">Title Generator</a>
-          <a href="/en/calculator.html">Calculator</a>
-          <a href="/en/ctr-score-calculator.html">CTR Score</a>
-          <a href="/en/thumbnail-checklist.html">Checklist</a>
-        </div>
-        <div class="footer-col">
-          <h4>Guides</h4>
-          <a href="/en/guide-thumbnails-ctr.html">CTR Guide</a>
-          <a href="/en/how-to-increase-youtube-rpm.html">Increase RPM</a>
-          <a href="/en/youtube-cpm-by-niche.html">CPM by Niche</a>
-          <a href="/en/youtube-monetization-requirements.html">Monetization</a>
-          <a href="/en/best-youtube-niches-adsense.html">Best Niches</a>
-          <a href="/en/glossary.html">Glossary</a>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/en/privacy.html">Privacy</a>
-          <a href="/en/terms.html">Terms</a>
-          <a href="/en/contact.html">Contact</a>
-          <a href="/en/about.html">About</a>
-          <a href="/en/sitemap-page.html">Sitemap</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 TubeTools.online — All rights reserved.</p>
-        <a href="/privacidad.html" class="footer-lang-btn es-fb">🇪🇸 Ver en Español</a>
-      </div>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo logo-invert" href="/en/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#d32f2f"/><path d="M9 9h14v4.5h-4.75V24h-4.5V13.5H9z" fill="#fff"/></svg><span>Tube<b>Tools</b></span></a>
+      <p>Free, privacy-friendly tools and plain-English guides for YouTube creators.</p>
     </div>
-  </footer>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('SW ok'))
-        .catch(err => console.log('SW error:', err));
-    });
-  }
-</script>
-
-<script>
-(function(){
-  var btn = document.querySelector('.nav-toggle');
-  var links = document.querySelector('.nav-links');
-  if(!btn || !links) return;
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isOpen = links.classList.toggle('open');
-    btn.textContent = isOpen ? '✕' : '☰';
-  });
-  document.addEventListener('click', function(e){
-    if(!links.contains(e.target) && e.target !== btn){
-      links.classList.remove('open');
-      btn.textContent = '☰';
-    }
-  });
-})();
-</script>
+    <div><h2 class="footer-h">Tools</h2><ul><li><a href="/en/">Thumbnail Downloader</a></li><li><a href="/en/thumbnail-analyzer.html">Thumbnail Analyzer</a></li><li><a href="/en/youtube-thumbnail-preview.html">Feed Preview</a></li><li><a href="/en/thumbnail-checklist.html">Thumbnail Checklist</a></li><li><a href="/en/youtube-title-generator.html">Title Generator</a></li><li><a href="/en/calculator.html">Revenue Calculator</a></li></ul></div>
+    <div><h2 class="footer-h">Popular guides</h2><ul><li><a href="/en/guide-thumbnails-ctr.html">Thumbnail guide</a></li><li><a href="/en/youtube-ctr-guide-for-beginners.html">CTR for beginners</a></li><li><a href="/en/youtube-monetization-requirements.html">Monetization requirements</a></li><li><a href="/en/youtube-rpm-vs-cpm.html">RPM vs CPM</a></li><li><a href="/en/youtube-cpm-by-niche.html">CPM by niche</a></li><li><a href="/en/youtube-thumbnail-size-format-guide.html">Thumbnail size &amp; format</a></li></ul></div>
+    <div><h2 class="footer-h">TubeTools</h2><ul><li><a href="/en/about.html">About</a></li><li><a href="/en/contact.html">Contact</a></li><li><a href="/en/privacy.html">Privacy Policy</a></li><li><a href="/en/terms.html">Terms of Use</a></li><li><a href="/en/sitemap-page.html">Sitemap</a></li><li><a href="/en/privacy.html#cookies" class="js-privacy-settings">Privacy settings</a></li></ul></div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; 2026 TubeTools &middot; tubetools.online. All rights reserved.</p>
+    <p>TubeTools is an independent project and is not affiliated with, endorsed by, or sponsored by YouTube or Google.</p>
+  </div>
+</footer>
+<script src="/assets/js/site.js?v=7d5d42b9" defer></script>
 </body>
 </html>
