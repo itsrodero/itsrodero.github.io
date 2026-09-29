@@ -61,6 +61,33 @@ REDIRECTS = {
     '/en/blog (1).html': '/en/blog.html',
 }
 
+# The first version of the site used numbered URLs (article1.html, articulo1.html…).
+# Google still requests them, so each one points straight at today's equivalent guide.
+_LEGACY = [
+    ('free-youtube-tools-for-creators', 'herramientas-gratis-para-youtubers'),
+    ('youtube-ctr-guide-for-beginners', 'guia-ctr-youtube-para-principiantes'),
+    ('thumbnail-mistakes-killing-your-ctr', 'errores-miniatura-que-matan-tu-ctr'),
+    ('guide-thumbnails-ctr', 'guia-miniaturas-ctr'),
+    ('facial-expressions-youtube-thumbnails', 'expresiones-faciales-miniaturas-youtube'),
+    ('youtube-thumbnail-size-format-guide', 'tamano-formato-miniatura-youtube-2026'),
+    ('youtube-rpm-vs-cpm', 'rpm-vs-cpm-youtube'),
+    ('youtube-thumbnail-ab-testing-guide', 'ab-testing-miniaturas-youtube'),
+    ('guide-thumbnails-ctr', 'guia-miniaturas-ctr'),
+    ('ctr-vs-watch-time-youtube-growth', 'ctr-vs-retencion-crecimiento-youtube'),
+    ('advanced-color-theory-youtube-thumbnails', 'teoria-del-color-miniaturas-youtube'),
+    ('ctr-vs-watch-time-youtube-growth', 'ctr-vs-retencion-crecimiento-youtube'),
+    ('youtube-thumbnail-size-format-guide', 'tamano-formato-miniatura-youtube-2026'),
+    ('typography-for-youtube-thumbnails', 'tipografia-para-miniaturas-youtube'),
+    ('youtube-video-titles-that-get-clicks', 'titulos-youtube-que-generan-clics'),
+    ('how-much-youtuber-100k-subscribers-earn', 'cuanto-gana-youtuber-100k-suscriptores'),
+]
+for _n, (_en, _es) in enumerate(_LEGACY, 1):
+    REDIRECTS[f'/article{_n}.html'] = f'/en/{_en}.html'
+    REDIRECTS[f'/en/article{_n}.html'] = f'/en/{_en}.html'
+    REDIRECTS[f'/articulo{_n}.html'] = f'/{_es}.html'
+REDIRECTS['/en/articulo13.html'] = '/tamano-formato-miniatura-youtube-2026.html'
+REDIRECTS['/en/en/article5.html'] = '/en/facial-expressions-youtube-thumbnails.html'
+
 # EEA + UK + Switzerland: consent is denied by default until the
 # Google-certified CMP (AdSense > Privacy & messaging) collects it.
 CONSENT_REGIONS = [
@@ -898,6 +925,7 @@ def main():
         rel = old.strip('/')
         if rel in written:
             sys.exit(f'Redirect {old} collides with a real page')
+        os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, 'w', encoding='utf-8', newline='\n') as f:
             f.write(redirect_html(old, new))
         written.add(rel)
