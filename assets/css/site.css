@@ -156,7 +156,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .table-wrap table { width: 100%; border-collapse: collapse; font-size: .95rem; min-width: 520px; }
 .table-wrap th, .table-wrap td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .table-wrap th { background: var(--surface); font-weight: 700; color: var(--ink); font-size: .88rem; }
-.table-wrap tr:last-child td { border-bottom: 0; }
+.table-wrap tbody th { background: none; font-size: inherit; }
+.table-wrap tbody tr:last-child > * { border-bottom: 0; }
+.table-wrap thead td { background: var(--surface); }
 .table-note { font-size: .86rem; color: var(--muted); margin-top: -.8em; }
 
 .callout { border-radius: var(--radius); padding: 16px 18px; margin: 1.6em 0; border: 1px solid; font-size: 1rem; }

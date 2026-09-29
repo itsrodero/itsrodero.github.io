@@ -15,19 +15,21 @@ check links, improve design, research every AdSense requirement and make the sit
 - New guides (EN+ES): Shorts monetization, how to get watch hours, YouTube SEO,
   chapters guide, banner size guide, how to start a channel.
 
+## Also done (2026-09-29, after "continúa")
+- Monetization order renumbered; covers for all 46 guides; titles <= 65 and descriptions <= 160.
+- "Key takeaways" box on every guide; original SVG diagrams (sizes, zones, color, rpm, funnel).
+- Feed preview compares up to 3 own thumbnail variants; downloader "Download all sizes".
+- Comparison tables use row headers (Lighthouse a11y 100).
+- Checks: 102 pages, 0 broken internal links, 0 tag problems; external links OK
+  (non-200 only from bot-blocking sites and preconnect origins).
+- Lighthouse local (new guide + new tool): Accessibility 100, Best practices 100, SEO 100.
+
 ## Still to do
-1. Renumber monetization `order`: requirements 1, watch hours 2, rpm-vs-cpm 3, increase-rpm 4,
-   cpm-by-niche 5, 100k 6, shorts 7 (same in ES).
-2. `node _tools/covers.mjs` for the 12 new guides, rebuild, run link/tag checks, screenshot and
-   test the 3 new tools (desktop + mobile).
-3. Shorten <title> (> ~60 chars incl. brand) and meta descriptions (> 160 chars, mostly ES).
-4. Add original SVG diagrams to key guides (thumbnail safe zones, 60-30-10 color, CPM→RPM flow)
-   and "Key takeaways" boxes to the older guides.
-5. Tools: feed preview with several own thumbnail variants (A/B); downloader "download all sizes".
-6. Final report to the user: SEO audit findings, AdSense requirements checklist, how often to ask
-   for work, what was changed.
-7. Publish only when the user approves: merge to main, then Search Console → request indexing of
-   new/updated URLs (≤10/day) and validate the 404 fix. Request AdSense review ~2026-10-12, not before.
+1. Publish only when the user approves: merge to main, then Search Console → request indexing of
+   new/updated URLs (<=10/day) and validate the 404 fix. Request AdSense review ~2026-10-12, not before.
+2. Ongoing: 1–2 new guides per week (EN+ES), monthly refresh of facts and Search Console check.
+   Ideas: YouTube description template, best time to post, YouTube Analytics basics,
+   end screens and cards, community posts, how to get sponsorships.
 
 ## Audit findings so far
 - Search Console (Mar–Sep 2026): 63 clicks, 56 of them branded ("tubetools"); ~no organic traffic.
