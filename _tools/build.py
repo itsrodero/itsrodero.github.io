@@ -705,7 +705,9 @@ def render(page, pages, ver):
     body, toc = add_heading_ids(body)
     minutes, words = reading_time(body)
     canonical = SITE_URL + page['url']
-    title_full = m['title'] if m.get('title_exact') == 'true' else f'{m["title"]} | {SITE_NAME}'
+    title_full = m['title']
+    if m.get('title_exact') != 'true' and len(m['title']) + len(SITE_NAME) + 3 <= 65:
+        title_full = f'{m["title"]} | {SITE_NAME}'
 
     if kind == 'article':
         toc_html = ''
@@ -852,11 +854,11 @@ def check_required(pages):
             sys.exit(f'{lang}/{slug}: alt page {other}/{alt} does not exist')
         if alt and pages[(other, alt)]['meta'].get('alt') != slug:
             sys.exit(f'{lang}/{slug}: alt page {other}/{alt} does not point back')
-        tl = len(p['meta']['title']) + len(SITE_NAME) + 3
-        if tl > 70 and p['meta'].get('title_exact') != 'true':
+        tl = len(p['meta']['title'])
+        if tl > 65:
             print(f'  note: long <title> ({tl} chars) on {lang}/{slug}')
         dl = len(p['meta']['description'])
-        if not 70 <= dl <= 165:
+        if not 70 <= dl <= 160:
             print(f'  note: description length {dl} on {lang}/{slug}')
 
 

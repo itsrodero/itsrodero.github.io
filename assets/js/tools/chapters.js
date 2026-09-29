@@ -80,8 +80,7 @@
     chapters.forEach(function (c) { if (!c.title) problems.push(['warn', L.noTitle.replace('{t}', fmt(c.sec, false))]); });
     if (chapters.some(function (c) { return c.added; })) problems.push(['info', L.added]);
 
-    var long = chapters.some(function (c) { return c.sec >= 3600; }) || len >= 3600;
-    out.value = chapters.map(function (c) { return fmt(c.sec, long) + ' ' + (c.title || '…'); }).join('\n');
+    out.value = chapters.map(function (c) { return fmt(c.sec, c.sec >= 3600) + ' ' + (c.title || '…'); }).join('\n');
     var bad = problems.filter(function (p) { return p[0] === 'bad'; }).length;
     if (!bad) problems.unshift(['ok', L.valid.replace('{n}', chapters.length)]);
     issues.innerHTML = problems.map(li).join('');
