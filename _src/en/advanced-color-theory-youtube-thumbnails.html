@@ -15,6 +15,15 @@ updated: 2026-09-28
 nav: guides
 related: guide-thumbnails-ctr, typography-for-youtube-thumbnails, thumbnail-analyzer
 ---
+<div class="takeaways">
+  <h2 data-notoc>Key takeaways</h2>
+  <ul>
+    <li>Fix brightness contrast first: if the subject disappears in grayscale, color won't save it.</li>
+    <li>Use color relationships (complementary, 60–30–10) and keep one strong accent for what matters most.</li>
+    <li>Check light and dark mode, and never rely on red vs. green alone.</li>
+  </ul>
+</div>
+
 <p>Designers usually describe color with three properties: <strong>value</strong> (how light or dark), <strong>hue</strong> (red, blue, green…) and <strong>saturation</strong> (how intense). Most thumbnail color problems come from getting them in the wrong order — picking exciting hues first and only later noticing that the subject blends into the background. This guide works through them in the order that matters for a feed.</p>
 
 <h2>Start with value: the grayscale test</h2>
@@ -40,6 +49,22 @@ related: guide-thumbnails-ctr, typography-for-youtube-thumbnails, thumbnail-anal
   </table>
 </div>
 <p>A useful rule of thumb borrowed from interior design is <strong>60–30–10</strong>: roughly 60% of the image in a dominant color, 30% in a secondary color, and 10% in a strong accent reserved for the thing you want noticed first.</p>
+<figure class="diagram" data-diagram="color">
+  <svg viewBox="0 0 640 250" role="img" aria-label="60-30-10 color rule and grayscale test">
+    <rect x="0" y="10" width="384" height="70" fill="#1e3a8a"/><rect x="384" y="10" width="192" height="70" fill="#e2e8f0"/><rect x="576" y="10" width="64" height="70" fill="#f59e0b"/>
+    <text x="192" y="52" text-anchor="middle" font-size="18" font-weight="800" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,sans-serif">60% dominant</text>
+    <text x="480" y="52" text-anchor="middle" font-size="16" font-weight="800" fill="#0f172a" font-family="system-ui,-apple-system,Segoe UI,sans-serif">30% secondary</text>
+    <text x="608" y="52" text-anchor="middle" font-size="15" font-weight="800" fill="#0f172a" font-family="system-ui,-apple-system,Segoe UI,sans-serif">10%</text>
+    <text x="0" y="112" font-size="14" font-weight="700" fill="#475569" font-family="system-ui,-apple-system,Segoe UI,sans-serif">The grayscale test: same colors, with and without brightness contrast</text>
+    <rect x="0" y="125" width="150" height="90" rx="8" fill="#16a34a"/><circle cx="75" cy="170" r="28" fill="#dc2626"/>
+    <rect x="165" y="125" width="150" height="90" rx="8" fill="#6f6f6f"/><circle cx="240" cy="170" r="28" fill="#5c5c5c"/>
+    <text x="158" y="238" text-anchor="middle" font-size="13" fill="#b91c1c" font-weight="700" font-family="system-ui,-apple-system,Segoe UI,sans-serif">Red on green: vivid, but similar brightness</text>
+    <rect x="330" y="125" width="150" height="90" rx="8" fill="#1e3a8a"/><circle cx="405" cy="170" r="28" fill="#facc15"/>
+    <rect x="495" y="125" width="145" height="90" rx="8" fill="#3b3b3b"/><circle cx="567" cy="170" r="28" fill="#c5c5c5"/>
+    <text x="485" y="238" text-anchor="middle" font-size="13" fill="#15803d" font-weight="700" font-family="system-ui,-apple-system,Segoe UI,sans-serif">Yellow on navy, light on dark: readable</text>
+  </svg>
+  <figcaption>Top: a 60–30–10 split keeps one accent for what matters. Bottom: red and green of similar brightness become the same grey; brightness contrast survives.</figcaption>
+</figure>
 
 <h3>Warm and cool colors</h3>
 <p>Warm colors (reds, oranges, yellows) tend to feel closer and more energetic; cool colors (blues, teals, purples) tend to recede. A warm subject on a cool background is an easy way to create depth. Skin tones are warm, which is one reason blue and teal backgrounds are so common behind faces.</p>

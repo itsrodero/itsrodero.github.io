@@ -16,6 +16,15 @@ updated: 2026-09-28
 nav: guides
 related: guide-thumbnails-ctr, youtube-thumbnail-preview, advanced-color-theory-youtube-thumbnails
 ---
+<div class="takeaways">
+  <h2 data-notoc>Key takeaways</h2>
+  <ul>
+    <li>YouTube recommends up to 3840 &times; 2160 (16:9), minimum 640 px wide; 50 MB from a computer, 2 MB from the app.</li>
+    <li>Most views happen at small sizes, so design for phones and the ~168 px sidebar.</li>
+    <li>Shorts thumbnails are vertical 9:16 (2160 &times; 3840 recommended).</li>
+  </ul>
+</div>
+
 <p>Getting the technical specs right is the easy part of thumbnail design, but it's also where small mistakes (black bars, blurry text, rejected uploads) are completely avoidable. This page summarizes the official requirements from YouTube's Help Center as of September 2026, then covers the part that matters more: how your thumbnail will actually look on the devices people use.</p>
 
 <h2>Official YouTube thumbnail specs</h2>
@@ -64,6 +73,21 @@ related: guide-thumbnails-ctr, youtube-thumbnail-preview, advanced-color-theory-
 <p>You can see your design at these sizes, in light and dark mode, with our <a href="@youtube-thumbnail-preview">thumbnail preview tool</a>.</p>
 
 <h2>Safe zones: where not to put important details</h2>
+<figure class="diagram" data-diagram="zones">
+  <svg viewBox="0 0 640 360" role="img" aria-label="Thumbnail safe zones: focal points and areas covered by YouTube">
+    <rect x="0" y="0" width="640" height="360" rx="10" fill="#cbd5e1"/>
+    <g stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 6"><line x1="213" y1="0" x2="213" y2="360"/><line x1="427" y1="0" x2="427" y2="360"/><line x1="0" y1="120" x2="640" y2="120"/><line x1="0" y1="240" x2="640" y2="240"/></g>
+    <circle cx="213" cy="120" r="8" fill="#15803d"/><circle cx="427" cy="120" r="8" fill="#15803d"/><circle cx="213" cy="240" r="8" fill="#15803d"/><circle cx="427" cy="240" r="8" fill="#15803d"/>
+    <text x="320" y="185" text-anchor="middle" font-size="16" font-weight="700" fill="#15803d" font-family="system-ui,-apple-system,Segoe UI,sans-serif">Rule of thirds: strong focal points</text>
+    <rect x="500" y="300" width="124" height="44" rx="6" fill="#0f172a" fill-opacity=".85"/>
+    <text x="562" y="328" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,sans-serif">12:34</text>
+    <rect x="470" y="262" width="164" height="92" rx="6" fill="none" stroke="#b91c1c" stroke-width="3"/>
+    <text x="552" y="255" text-anchor="middle" font-size="13" font-weight="700" fill="#b91c1c" font-family="system-ui,-apple-system,Segoe UI,sans-serif">Duration badge area</text>
+    <rect x="0" y="352" width="260" height="8" fill="#d32f2f"/>
+    <text x="16" y="342" font-size="13" font-weight="700" fill="#b91c1c" font-family="system-ui,-apple-system,Segoe UI,sans-serif">Progress bar (partly watched)</text>
+  </svg>
+  <figcaption>Keep important details out of the bottom-right corner and the bottom edge. The rule-of-thirds intersections are natural places for the main subject.</figcaption>
+</figure>
 <ul>
   <li><strong>Bottom-right corner:</strong> the video duration badge covers roughly the bottom-right 15–20% of the width. Never put a number, price or punchline there.</li>
   <li><strong>Bottom edge:</strong> a red progress bar appears across the bottom for videos a viewer has partly watched.</li>

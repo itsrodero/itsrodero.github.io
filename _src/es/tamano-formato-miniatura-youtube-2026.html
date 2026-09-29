@@ -16,6 +16,15 @@ updated: 2026-09-28
 nav: guides
 related: guia-miniaturas-ctr, vista-previa-miniatura-youtube, teoria-del-color-miniaturas-youtube
 ---
+<div class="takeaways">
+  <h2 data-notoc>Lo esencial</h2>
+  <ul>
+    <li>YouTube recomienda hasta 3840 &times; 2160 (16:9), mínimo 640 px de ancho; 50 MB desde ordenador y 2 MB desde la app.</li>
+    <li>La mayoría de visualizaciones son a tamaño pequeño: diseña para el móvil y la columna de ~168 px.</li>
+    <li>Las miniaturas de Shorts son verticales 9:16 (2160 &times; 3840 recomendado).</li>
+  </ul>
+</div>
+
 <p>Acertar con las especificaciones técnicas es la parte fácil del diseño de miniaturas, pero también es donde se cometen errores totalmente evitables: bandas negras, texto borroso o subidas rechazadas. Esta página resume los requisitos oficiales del Centro de Ayuda de YouTube a septiembre de 2026 y después se centra en lo que importa más: cómo se verá tu miniatura en los dispositivos que usa la gente.</p>
 
 <h2>Especificaciones oficiales de las miniaturas</h2>
@@ -64,6 +73,21 @@ related: guia-miniaturas-ctr, vista-previa-miniatura-youtube, teoria-del-color-m
 <p>Puedes ver tu diseño a estos tamaños, en modo claro y oscuro, con nuestra <a href="@vista-previa-miniatura-youtube">herramienta de vista previa</a>.</p>
 
 <h2>Zonas seguras: dónde no poner detalles importantes</h2>
+<figure class="diagram" data-diagram="zones">
+  <svg viewBox="0 0 640 360" role="img" aria-label="Zonas seguras de la miniatura: puntos focales y zonas tapadas por YouTube">
+    <rect x="0" y="0" width="640" height="360" rx="10" fill="#cbd5e1"/>
+    <g stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 6"><line x1="213" y1="0" x2="213" y2="360"/><line x1="427" y1="0" x2="427" y2="360"/><line x1="0" y1="120" x2="640" y2="120"/><line x1="0" y1="240" x2="640" y2="240"/></g>
+    <circle cx="213" cy="120" r="8" fill="#15803d"/><circle cx="427" cy="120" r="8" fill="#15803d"/><circle cx="213" cy="240" r="8" fill="#15803d"/><circle cx="427" cy="240" r="8" fill="#15803d"/>
+    <text x="320" y="185" text-anchor="middle" font-size="16" font-weight="700" fill="#15803d" font-family="system-ui,-apple-system,Segoe UI,sans-serif">Regla de los tercios: puntos focales fuertes</text>
+    <rect x="500" y="300" width="124" height="44" rx="6" fill="#0f172a" fill-opacity=".85"/>
+    <text x="562" y="328" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,sans-serif">12:34</text>
+    <rect x="470" y="262" width="164" height="92" rx="6" fill="none" stroke="#b91c1c" stroke-width="3"/>
+    <text x="552" y="255" text-anchor="middle" font-size="13" font-weight="700" fill="#b91c1c" font-family="system-ui,-apple-system,Segoe UI,sans-serif">Zona de la duración</text>
+    <rect x="0" y="352" width="260" height="8" fill="#d32f2f"/>
+    <text x="16" y="342" font-size="13" font-weight="700" fill="#b91c1c" font-family="system-ui,-apple-system,Segoe UI,sans-serif">Barra de progreso (vídeo empezado)</text>
+  </svg>
+  <figcaption>Deja fuera de la esquina inferior derecha y del borde inferior los detalles importantes. Las intersecciones de los tercios son buenos lugares para el protagonista.</figcaption>
+</figure>
 <ul>
   <li><strong>Esquina inferior derecha:</strong> la etiqueta de duración tapa aproximadamente el 15–20 % inferior derecho del ancho. Nunca pongas ahí un número, un precio o el remate.</li>
   <li><strong>Borde inferior:</strong> aparece una barra roja de progreso en los vídeos que el usuario ya empezó a ver.</li>
