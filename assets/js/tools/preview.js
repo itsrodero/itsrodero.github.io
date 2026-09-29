@@ -8,7 +8,9 @@
   var KEY = 'tt.preview';
   var saved = TT.store.get(KEY, {});
   var state = {
-    img: null,
+    variants: [],   // up to 3 of your own thumbnails: { img, name }
+    active: 0,
+    showAll: false,
     title: saved.title || '',
     channel: saved.channel || '',
     dur: saved.dur || '12:34',
@@ -44,17 +46,37 @@
   el.drop.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.file.click(); } });
   ['dragenter', 'dragover'].forEach(function (ev) { el.drop.addEventListener(ev, function (e) { e.preventDefault(); el.drop.classList.add('drag'); }); });
   ['dragleave', 'drop'].forEach(function (ev) { el.drop.addEventListener(ev, function (e) { e.preventDefault(); el.drop.classList.remove('drag'); }); });
-  el.drop.addEventListener('drop', function (e) { var f = e.dataTransfer.files[0]; if (f) useFile(f); });
-  el.file.addEventListener('change', function () { if (el.file.files[0]) useFile(el.file.files[0]); });
+  el.drop.addEventListener('drop', function (e) { useFiles(e.dataTransfer.files); });
+  el.file.addEventListener('change', function () { useFiles(el.file.files); });
 
-  function useFile(f) {
-    if (!/^image\//.test(f.type)) { err(L.notImage); return; }
-    err('');
-    if (state.img && state.img.indexOf('blob:') === 0) URL.revokeObjectURL(state.img);
-    state.img = URL.createObjectURL(f);
-    el.drop.querySelector('strong').textContent = f.name;
-    render();
+  function useFiles(list) {
+    var files = Array.prototype.filter.call(list || [], function (f) { return /^image\//.test(f.type); }).slice(0, 3);
+    if (!files.length) { err(L.notImage); return; }
+    err((list.length > 3) ? L.maxVariants : '');
+    state.variants.forEach(function (v) { if (v.img.indexOf('blob:') === 0) URL.revokeObjectURL(v.img); });
+    state.variants = files.map(function (f) { return { img: URL.createObjectURL(f), name: f.name }; });
+    state.active = 0;
+    el.drop.querySelector('strong').textContent = files.map(function (f) { return f.name; }).join(', ');
+    renderVariantBar(); render();
   }
+
+  var varBar = document.getElementById('pv-varbar');
+  var varSeg = document.getElementById('pv-var-seg');
+  var allBox = document.getElementById('pv-all');
+  function renderVariantBar() {
+    varBar.hidden = state.variants.length < 2;
+    varSeg.innerHTML = state.variants.map(function (v, i) {
+      return '<button type="button" data-var="' + i + '" aria-pressed="' + (i === state.active) + '" title="' + TT.esc(v.name) + '">' +
+        TT.esc(L.variant) + ' ' + 'ABC'.charAt(i) + '</button>';
+    }).join('');
+  }
+  varSeg.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-var]');
+    if (!b) return;
+    state.active = +b.dataset.var; state.showAll = false; allBox.checked = false;
+    renderVariantBar(); render();
+  });
+  allBox.addEventListener('change', function () { state.showAll = allBox.checked; render(); });
 
   document.getElementById('pv-mine-form').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -65,10 +87,12 @@
   });
 
   function loadMine(id) {
-    state.img = TT.thumbUrl(id, 'maxresdefault');
+    var v = { img: TT.thumbUrl(id, 'maxresdefault'), name: 'YouTube' };
+    state.variants = [v]; state.active = 0;
+    renderVariantBar();
     var probe = new Image();
-    probe.onload = function () { if (probe.naturalWidth <= 120) { state.img = TT.thumbUrl(id, 'mqdefault'); render(); } };
-    probe.src = state.img;
+    probe.onload = function () { if (probe.naturalWidth <= 120) { v.img = TT.thumbUrl(id, 'mqdefault'); render(); } };
+    probe.src = v.img;
     TT.oembed(id).then(function (d) {
       if (!el.title.value) { el.title.value = d.title; state.title = d.title; updateCount(); }
       if (!el.channel.value) { el.channel.value = d.author_name; state.channel = d.author_name; }
@@ -164,16 +188,15 @@
     return '<div class="yt-card' + (item.mine ? ' mine' : '') + '">' + thumb + info + '</div>';
   }
 
-  function render() {
+  function feed(img) {
     var mine = {
       mine: true,
-      img: state.img,
+      img: img || 'data:image/svg+xml;utf8,' + encodeURIComponent(L.emptySvg),
       title: state.title,
       channel: state.channel || L.yourChannel,
       dur: state.dur,
       meta: L.mineMeta
     };
-    if (!state.img) mine.img = 'data:image/svg+xml;utf8,' + encodeURIComponent(L.emptySvg);
     var others = state.others.map(function (o, i) {
       return { img: TT.thumbUrl(o.id, 'mqdefault'), title: o.title, channel: o.channel, dur: ['8:21', '14:02', '10:47', '22:15', '6:58'][i % 5], meta: '' };
     });
@@ -184,11 +207,23 @@
     var items = others.slice(0, pos).concat([mine], others.slice(pos));
 
     var cls = { home: 'yt-grid', mobile: 'yt-mobile', side: 'yt-side', search: 'yt-side yt-search' }[state.layout];
+    return '<div class="' + cls + '">' + items.map(function (it) { return card(it, state.layout === 'side'); }).join('') + '</div>';
+  }
+
+  function render() {
     stage.className = 'yt-stage ' + state.theme;
-    stage.innerHTML = '<div class="' + cls + '">' + items.map(function (it) { return card(it, state.layout === 'side'); }).join('') + '</div>';
+    var v = state.variants;
+    if (state.showAll && v.length > 1) {
+      stage.innerHTML = v.map(function (x, i) {
+        return '<p class="yt-variant-label">' + TT.esc(L.variant) + ' ' + 'ABC'.charAt(i) + '</p>' + feed(x.img);
+      }).join('');
+    } else {
+      stage.innerHTML = feed(v[state.active] ? v[state.active].img : null);
+    }
   }
 
   renderComp();
+  renderVariantBar();
   render();
   var pre = new URLSearchParams(location.search).get('v');
   if (pre && TT.videoId(pre)) { el.mineUrl.value = 'https://www.youtube.com/watch?v=' + pre; loadMine(TT.videoId(pre)); }

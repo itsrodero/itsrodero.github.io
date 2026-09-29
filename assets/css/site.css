@@ -427,3 +427,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .takeaways h2 { font-size: 1rem !important; margin: 0 0 8px !important; padding: 0 !important; text-transform: uppercase; letter-spacing: .06em; color: var(--brand-dark); }
 .takeaways ul { margin: 0; padding-left: 1.2em; }
 .takeaways li { margin: .3em 0; }
+
+.yt-variant-label { font: 800 .8rem var(--font); text-transform: uppercase; letter-spacing: .08em; margin: 18px 0 10px; opacity: .7; }
+.yt-variant-label:first-child { margin-top: 0; }

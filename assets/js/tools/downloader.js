@@ -64,6 +64,7 @@
     var el = document.createElement('div');
     el.className = 'thumb-card';
     el.hidden = true;
+    el._size = size;
     var url = TT.thumbUrl(current.id, size.key);
     el.innerHTML =
       '<img alt="" width="' + size.w + '" height="' + size.h + '">' +
@@ -98,12 +99,26 @@
 
   function renderMeta() {
     var links =
+      '<button type="button" class="btn btn-primary btn-sm" id="dl-all">' + TT.esc(L.all) + '</button> ' +
       '<a class="btn btn-ghost btn-sm" href="' + L.analyzerUrl + '?v=' + current.id + '">' + TT.esc(L.analyze) + '</a> ' +
       '<a class="btn btn-ghost btn-sm" href="' + L.previewUrl + '?v=' + current.id + '">' + TT.esc(L.preview) + '</a>';
     metaBox.innerHTML =
       '<div><p class="title">' + TT.esc(current.title || L.untitled) + '</p>' +
       '<p class="channel">' + TT.esc(current.channel || '') + '</p></div>';
     document.getElementById('dl-links').innerHTML = links;
+    document.getElementById('dl-all').addEventListener('click', downloadAll);
+  }
+
+  // Downloads every size that exists for this video, one after another.
+  function downloadAll(e) {
+    var btn = e.currentTarget;
+    var cards = Array.prototype.filter.call(grid.querySelectorAll('.thumb-card'), function (c) { return !c.hidden && c._size; });
+    btn.disabled = true;
+    (function next(i) {
+      if (i >= cards.length) { btn.disabled = false; return; }
+      download(cards[i]._size, cards[i].querySelector('.js-dl'));
+      setTimeout(function () { next(i + 1); }, 700);
+    })(0);
   }
 
   function saveHistory() {
