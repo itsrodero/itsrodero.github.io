@@ -1,4 +1,4 @@
-# Work in progress (branch `wip/seo-adsense-2026-09-29`) — NOT published
+# TubeTools status — published to main on 2026-09-29
 
 The user asked (2026-09-28): full SEO audit, say how often they need to ask for more work,
 check links, improve design, research every AdSense requirement and make the site compliant
@@ -24,10 +24,20 @@ check links, improve design, research every AdSense requirement and make the sit
   (non-200 only from bot-blocking sites and preconnect origins).
 - Lighthouse local (new guide + new tool): Accessibility 100, Best practices 100, SEO 100.
 
+## Published 2026-09-29
+- Merged to main and live. All 80 sitemap URLs return 200.
+- 50 redirects for the original numbered URLs (article1-16, articulo1-16, en/article1-16).
+- Search Console: sitemap resubmitted; indexing requested for /en/, /en/blog.html,
+  /en/youtube-shorts-monetization.html, /en/how-to-get-watch-hours.html, /en/youtube-seo-guide.html,
+  /en/how-to-start-a-youtube-channel.html, /en/youtube-chapters-generator.html,
+  /en/watch-hours-calculator.html (daily quota hit after 8). "Not found (404)" validation started.
+- Weekly reminder scheduled (Mondays, local app task "tubetools-recordatorio-semanal").
+
 ## Still to do
-1. Publish only when the user approves: merge to main, then Search Console → request indexing of
-   new/updated URLs (<=10/day) and validate the 404 fix. Request AdSense review ~2026-10-12, not before.
-2. Ongoing: 1–2 new guides per week (EN+ES), monthly refresh of facts and Search Console check.
+1. Request indexing (<=10/day): /en/youtube-banner-checker.html, /en/youtube-monetization-requirements.html,
+   then the Spanish versions of the new guides and tools.
+2. Request AdSense review ~2026-10-12, not before (brother's account).
+3. Ongoing: 1–2 new guides per week (EN+ES), monthly refresh of facts and Search Console check.
    Ideas: YouTube description template, best time to post, YouTube Analytics basics,
    end screens and cards, community posts, how to get sponsorships.
 
