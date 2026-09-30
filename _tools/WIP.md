@@ -33,9 +33,21 @@ check links, improve design, research every AdSense requirement and make the sit
   /en/watch-hours-calculator.html (daily quota hit after 8). "Not found (404)" validation started.
 - Weekly reminder scheduled (Mondays, local app task "tubetools-recordatorio-semanal").
 
+## Indexing requests done
+- 2026-09-29: /en/, /en/blog.html, /en/youtube-shorts-monetization.html, /en/how-to-get-watch-hours.html,
+  /en/youtube-seo-guide.html, /en/how-to-start-a-youtube-channel.html, /en/youtube-chapters-generator.html,
+  /en/watch-hours-calculator.html. Sitemap resubmitted; 404 validation started.
+- 2026-09-30: /monetizacion-youtube-shorts.html, /en/youtube-chapters-guide.html, /en/youtube-banner-size-guide.html,
+  /en/youtube-banner-checker.html, /en/youtube-monetization-requirements.html, /en/guide-thumbnails-ctr.html,
+  /en/youtube-rpm-vs-cpm.html, / (ES home), /calculadora-horas-visualizacion.html (10th hit the daily limit).
+- Tip: in Search Console, ref/coordinate clicks can silently miss; click the visible "SOLICITAR INDEXACIÓN"
+  button via JS and confirm the dialog "Se ha añadido la URL a una cola de rastreo prioritaria".
+
 ## Still to do
-1. Request indexing (<=10/day): /en/youtube-banner-checker.html, /en/youtube-monetization-requirements.html,
-   then the Spanish versions of the new guides and tools.
+1. Request indexing (<=10/day): /seo-youtube-guia.html, /capitulos-youtube-marcas-de-tiempo.html,
+   /tamano-banner-youtube.html, /como-crear-un-canal-de-youtube.html, /como-conseguir-horas-de-visualizacion.html,
+   /comprobador-banner-youtube.html, /generador-capitulos-youtube.html, /rpm-vs-cpm-youtube.html,
+   /en/youtube-cpm-by-niche.html, /en/how-to-increase-youtube-rpm.html, then remaining rewritten guides.
 2. Request AdSense review ~2026-10-12, not before (brother's account).
 3. Ongoing: 1–2 new guides per week (EN+ES), monthly refresh of facts and Search Console check.
    Ideas: YouTube description template, best time to post, YouTube Analytics basics,
