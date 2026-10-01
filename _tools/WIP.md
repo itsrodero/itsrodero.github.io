@@ -40,14 +40,23 @@ check links, improve design, research every AdSense requirement and make the sit
 - 2026-09-30: /monetizacion-youtube-shorts.html, /en/youtube-chapters-guide.html, /en/youtube-banner-size-guide.html,
   /en/youtube-banner-checker.html, /en/youtube-monetization-requirements.html, /en/guide-thumbnails-ctr.html,
   /en/youtube-rpm-vs-cpm.html, / (ES home), /calculadora-horas-visualizacion.html (10th hit the daily limit).
+- 2026-10-01 (~21:00): /seo-youtube-guia.html, /capitulos-youtube-marcas-de-tiempo.html,
+  /tamano-banner-youtube.html, /como-crear-un-canal-de-youtube.html,
+  /como-conseguir-horas-de-visualizacion.html (5; the other 5 of the shared quota went to SizeMyProject).
+- Index check 2026-10-01 (URL inspection of the improved pages, 24 URLs): 13 indexed.
+  - English mostly in: 11/14 indexed. Not yet: /en/how-to-get-watch-hours.html ("Discovered – not indexed"),
+    /en/watch-hours-calculator.html (unknown to Google), /en/how-to-increase-youtube-rpm.html
+    (Google still has an old 404; the page is 200 now — request indexing).
+  - Spanish mostly not: 2/10 indexed (/monetizacion-youtube-shorts.html, /calculadora-horas-visualizacion.html).
+    Most ES pages were only requested today.
+  - Verdict: not ready for the AdSense review yet; re-check in ~4–5 days.
 - Tip: in Search Console, ref/coordinate clicks can silently miss; click the visible "SOLICITAR INDEXACIÓN"
   button via JS and confirm the dialog "Se ha añadido la URL a una cola de rastreo prioritaria".
 
 ## Still to do
-1. Request indexing (<=10/day): /seo-youtube-guia.html, /capitulos-youtube-marcas-de-tiempo.html,
-   /tamano-banner-youtube.html, /como-crear-un-canal-de-youtube.html, /como-conseguir-horas-de-visualizacion.html,
+1. Request indexing (5/day, shared quota with SizeMyProject): /en/how-to-increase-youtube-rpm.html,
    /comprobador-banner-youtube.html, /generador-capitulos-youtube.html, /rpm-vs-cpm-youtube.html,
-   /en/youtube-cpm-by-niche.html, /en/how-to-increase-youtube-rpm.html, then remaining rewritten guides.
+   /en/watch-hours-calculator.html, then remaining rewritten guides (ES first).
 2. Request AdSense review (brother's account) as soon as the improved pages are indexed — no fixed
    date (rule changed with the user on 2026-10-01; the old target was ~2026-10-12). Check with URL
    inspection: the 6 new guides and 3 new tools (EN+ES) plus a sample of the rewritten guides that
