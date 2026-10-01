@@ -48,7 +48,11 @@ check links, improve design, research every AdSense requirement and make the sit
    /tamano-banner-youtube.html, /como-crear-un-canal-de-youtube.html, /como-conseguir-horas-de-visualizacion.html,
    /comprobador-banner-youtube.html, /generador-capitulos-youtube.html, /rpm-vs-cpm-youtube.html,
    /en/youtube-cpm-by-niche.html, /en/how-to-increase-youtube-rpm.html, then remaining rewritten guides.
-2. Request AdSense review ~2026-10-12, not before (brother's account).
+2. Request AdSense review (brother's account) as soon as the improved pages are indexed — no fixed
+   date (rule changed with the user on 2026-10-01; the old target was ~2026-10-12). Check with URL
+   inspection: the 6 new guides and 3 new tools (EN+ES) plus a sample of the rewritten guides that
+   were "Crawled – currently not indexed". When almost all of them are "URL is on Google", request
+   the review. Record here when it is requested and the result (the weekly reminder reads this file).
 3. Ongoing: 1–2 new guides per week (EN+ES), monthly refresh of facts and Search Console check.
    Ideas: YouTube description template, best time to post, YouTube Analytics basics,
    end screens and cards, community posts, how to get sponsorships.
