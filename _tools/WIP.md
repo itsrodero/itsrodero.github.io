@@ -50,13 +50,19 @@ check links, improve design, research every AdSense requirement and make the sit
   - Spanish mostly not: 2/10 indexed (/monetizacion-youtube-shorts.html, /calculadora-horas-visualizacion.html).
     Most ES pages were only requested today.
   - Verdict: not ready for the AdSense review yet; re-check in ~4–5 days.
+- 2026-10-02 (~21:00): /en/how-to-increase-youtube-rpm.html, /comprobador-banner-youtube.html,
+  /generador-capitulos-youtube.html, /rpm-vs-cpm-youtube.html, /en/watch-hours-calculator.html.
+- Index check 2026-10-02: the 5 ES pages requested on 10-01 are all indexed now, so 18/24 improved
+  pages are in Google. Not yet: the 5 requested on 10-02 and /en/how-to-get-watch-hours.html.
+  When those are in (likely within 1–3 days), request the AdSense review.
 - Tip: in Search Console, ref/coordinate clicks can silently miss; click the visible "SOLICITAR INDEXACIÓN"
   button via JS and confirm the dialog "Se ha añadido la URL a una cola de rastreo prioritaria".
 
 ## Still to do
-1. Request indexing (5/day, shared quota with SizeMyProject): /en/how-to-increase-youtube-rpm.html,
-   /comprobador-banner-youtube.html, /generador-capitulos-youtube.html, /rpm-vs-cpm-youtube.html,
-   /en/watch-hours-calculator.html, then remaining rewritten guides (ES first).
+1. Request indexing (5/day, shared quota with SizeMyProject): /en/how-to-get-watch-hours.html, then
+   remaining rewritten ES guides (check first; skip those already in Google): /aumentar-rpm-youtube.html,
+   /cpm-youtube-por-nicho.html, /requisitos-monetizacion-youtube.html, /guia-miniaturas-ctr.html,
+   /cuanto-gana-youtuber-100k-suscriptores.html, then the other ES guides.
 2. Request AdSense review (brother's account) as soon as the improved pages are indexed — no fixed
    date (rule changed with the user on 2026-10-01; the old target was ~2026-10-12). Check with URL
    inspection: the 6 new guides and 3 new tools (EN+ES) plus a sample of the rewritten guides that
