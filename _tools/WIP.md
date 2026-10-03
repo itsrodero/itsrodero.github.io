@@ -61,6 +61,9 @@ check links, improve design, research every AdSense requirement and make the sit
 - Index check 2026-10-02: the 5 ES pages requested on 10-01 are all indexed now, so 18/24 improved
   pages are in Google. Not yet: the 5 requested on 10-02 and /en/how-to-get-watch-hours.html.
   When those are in (likely within 1–3 days), request the AdSense review.
+- 2026-10-03 (~21:05): /en/youtube-thumbnail-size-format-guide.html, /en/typography-for-youtube-thumbnails.html,
+  /cpm-youtube-por-nicho.html, /aumentar-rpm-youtube.html, /cuanto-gana-youtuber-100k-suscriptores.html
+  (all had an old 404 in Google). From 2026-10-04 the user continues by hand (plan file, days 2–7).
 - Tip: in Search Console, ref/coordinate clicks can silently miss; click the visible "SOLICITAR INDEXACIÓN"
   button via JS and confirm the dialog "Se ha añadido la URL a una cola de rastreo prioritaria".
 
