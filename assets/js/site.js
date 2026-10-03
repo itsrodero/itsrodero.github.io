@@ -162,4 +162,19 @@
   };
 
   TT.lang = document.documentElement.lang || 'en';
+
+  // Copy-paste templates in guides: <pre class="template"> gets a Copy button.
+  document.querySelectorAll('pre.template').forEach(function (pre) {
+    var es = TT.lang === 'es';
+    var box = document.createElement('div');
+    box.className = 'template-box';
+    pre.parentNode.insertBefore(box, pre);
+    box.appendChild(pre);
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'btn btn-ghost btn-sm template-copy';
+    btn.textContent = es ? 'Copiar plantilla' : 'Copy template';
+    btn.addEventListener('click', function () { TT.copy(pre.textContent, btn, es ? 'Copiada ✓' : 'Copied ✓'); });
+    box.appendChild(btn);
+  });
 })();

@@ -174,6 +174,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .steps > li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--ink); color: #fff; font-weight: 800; font-size: .9rem; display: flex; align-items: center; justify-content: center; }
 
 .formula { font-family: var(--mono); background: var(--ink); color: #f8fafc; padding: 14px 18px; border-radius: var(--radius-sm); overflow-x: auto; font-size: .95rem; margin: 1.2em 0; }
+.template-box { position: relative; margin: 1.2em 0; }
+.template { font-family: var(--mono); font-size: .9rem; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 52px 18px 16px; margin: 1.2em 0; color: var(--ink); }
+.template-box .template { margin: 0; }
+.template-copy { position: absolute; top: 10px; right: 10px; }
 .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 1.4em 0; }
 .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
 .kpi b { display: block; font-size: 1.35rem; color: var(--ink); line-height: 1.2; }

@@ -33,6 +33,12 @@ check links, improve design, research every AdSense requirement and make the sit
   /en/watch-hours-calculator.html (daily quota hit after 8). "Not found (404)" validation started.
 - Weekly reminder scheduled (Mondays, local app task "tubetools-recordatorio-semanal").
 
+## Added 2026-10-03
+- New guide (EN+ES): YouTube description template — /en/youtube-description-template.html and
+  /plantilla-descripcion-youtube.html (growth, order 5), with three copy-paste templates.
+- `pre.template` blocks get a "Copy template" button (site.js) and their own style (site.css).
+- Linked from the YouTube SEO guide (EN+ES), step 4.
+
 ## Indexing requests done
 - 2026-09-29: /en/, /en/blog.html, /en/youtube-shorts-monetization.html, /en/how-to-get-watch-hours.html,
   /en/youtube-seo-guide.html, /en/how-to-start-a-youtube-channel.html, /en/youtube-chapters-generator.html,
