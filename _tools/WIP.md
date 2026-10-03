@@ -65,12 +65,21 @@ check links, improve design, research every AdSense requirement and make the sit
   button via JS and confirm the dialog "Se ha añadido la URL a una cola de rastreo prioritaria".
 
 ## Still to do
-1. Request indexing (5/day, shared quota with SizeMyProject): /en/how-to-get-watch-hours.html, then
-   remaining rewritten ES guides (check first; skip those already in Google): /aumentar-rpm-youtube.html,
-   /cpm-youtube-por-nicho.html, /requisitos-monetizacion-youtube.html, /guia-miniaturas-ctr.html,
-   /cuanto-gana-youtuber-100k-suscriptores.html, then the other ES guides.
-2. Request AdSense review (brother's account) as soon as the improved pages are indexed — no fixed
-   date (rule changed with the user on 2026-10-01; the old target was ~2026-10-12). Check with URL
+1. Request indexing (5–10/day, shared quota with SizeMyProject). Full index check on 2026-10-03:
+   37 of 80 URLs indexed (22 of the 24 improved pages). Not indexed, in this order:
+   - Google still has an old 404 (from the downtime): /en/youtube-thumbnail-size-format-guide.html,
+     /en/typography-for-youtube-thumbnails.html, /cpm-youtube-por-nicho.html, /aumentar-rpm-youtube.html,
+     /cuanto-gana-youtuber-100k-suscriptores.html, /tipografia-para-miniaturas-youtube.html,
+     /checklist-miniaturas.html, /en/analyze-thumbnail.html, /en/tools.html, /en/privacy.html,
+     /en/terms.html, /en/about.html, /en/contact.html.
+   - New: /en/youtube-description-template.html, /plantilla-descripcion-youtube.html.
+   - "Crawled – not indexed" with last crawl in June/July 2026 (old versions, before the rewrite) or
+     unknown/discovered: the remaining guides and tools (CTR, mistakes, titles, 100k earnings, CTR vs
+     retention, A/B testing, facial expressions, color theory, thumbnail size ES, free tools, title
+     generator, analyzers, preview, checklist EN, glossaries, how-to-get-watch-hours, watch-hours-calculator).
+   The user has a day-by-day checklist (plan-indexacion-adsense.html) to do this by hand from 2026-10-03.
+2. Request AdSense review (brother's account) — planned for Tue 2026-10-06, after 3 days of requests
+   for the stale 404 pages. No fixed rule beyond "improved pages indexed" (rule changed with the user on 2026-10-01; the old target was ~2026-10-12). Check with URL
    inspection: the 6 new guides and 3 new tools (EN+ES) plus a sample of the rewritten guides that
    were "Crawled – currently not indexed". When almost all of them are "URL is on Google", request
    the review. Record here when it is requested and the result (the weekly reminder reads this file).
