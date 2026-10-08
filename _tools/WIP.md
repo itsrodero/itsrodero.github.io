@@ -64,6 +64,22 @@ check links, improve design, research every AdSense requirement and make the sit
 - 2026-10-03 (~21:05): /en/youtube-thumbnail-size-format-guide.html, /en/typography-for-youtube-thumbnails.html,
   /cpm-youtube-por-nicho.html, /aumentar-rpm-youtube.html, /cuanto-gana-youtuber-100k-suscriptores.html
   (all had an old 404 in Google). From 2026-10-04 the user continues by hand (plan file, days 2–7).
+- 2026-10-04..07: the user requested days 2–4 (and maybe part of 5) of the plan by hand.
+- Check 2026-10-08: 24 of the 45 remaining URLs now indexed (all 13 old-404 pages, legal EN pages,
+  description template EN+ES, CTR/mistakes/titles guides…) — about 61 of 82 in total.
+- 2026-10-08 (~19:30), 8 requested: /en/facial-expressions-youtube-thumbnails.html,
+  /en/advanced-color-theory-youtube-thumbnails.html, /teoria-del-color-miniaturas-youtube.html,
+  /tamano-formato-miniatura-youtube-2026.html, /herramientas-gratis-para-youtubers.html,
+  /en/youtube-video-titles-that-get-clicks.html, /en/ctr-vs-watch-time-youtube-growth.html,
+  /en/free-youtube-tools-for-creators.html (quota hit on the 10th; /expresiones-faciales-miniaturas-youtube.html got an error).
+  Still not indexed: /expresiones-faciales-miniaturas-youtube.html, /en/how-to-get-watch-hours.html,
+  /en/youtube-title-generator.html, /generador-titulos-youtube.html, /en/thumbnail-analyzer.html,
+  /analizador-miniaturas.html, /analizar-miniaturas-competencia.html, /en/youtube-thumbnail-preview.html,
+  /vista-previa-miniatura-youtube.html, /en/thumbnail-checklist.html, /en/glossary.html, /glosario.html,
+  /en/watch-hours-calculator.html.
+- AdSense 2026-10-08: tubetools.online still "Requiere su atención – Contenido de poco valor" (last update
+  2026-07-17); review NOT requested yet. Criteria shown: substantial unique value, constant presence and
+  "genuine user interest". Search Console last 28 days: 3 clicks, 37 impressions.
 - Tip: in Search Console, ref/coordinate clicks can silently miss; click the visible "SOLICITAR INDEXACIÓN"
   button via JS and confirm the dialog "Se ha añadido la URL a una cola de rastreo prioritaria".
 
