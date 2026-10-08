@@ -39,6 +39,12 @@ check links, improve design, research every AdSense requirement and make the sit
 - `pre.template` blocks get a "Copy template" button (site.js) and their own style (site.css).
 - Linked from the YouTube SEO guide (EN+ES), step 4.
 
+## Added 2026-10-08
+- New guides (EN+ES), growth category: "Best time to post on YouTube" (/en/best-time-to-post-on-youtube.html,
+  /mejor-hora-para-subir-videos-youtube.html; based on YouTube's own FAQ: publish time not known to affect
+  long-term performance) and "End screens & cards" (/en/youtube-end-screens-and-cards.html,
+  /pantallas-finales-y-tarjetas-youtube.html). Linked from the watch-hours guides.
+
 ## Indexing requests done
 - 2026-09-29: /en/, /en/blog.html, /en/youtube-shorts-monetization.html, /en/how-to-get-watch-hours.html,
   /en/youtube-seo-guide.html, /en/how-to-start-a-youtube-channel.html, /en/youtube-chapters-generator.html,

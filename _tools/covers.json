@@ -12,6 +12,12 @@
   "category": "thumbnails"
  },
  {
+  "out": "assets/img/covers/en-best-time-to-post-on-youtube.jpg",
+  "title": "The Best Time to Post on YouTube: What Actually Matters",
+  "label": "Channel growth & SEO",
+  "category": "growth"
+ },
+ {
   "out": "assets/img/covers/en-ctr-vs-watch-time-youtube-growth.jpg",
   "title": "CTR vs. Watch Time: How They Work Together",
   "label": "CTR & the algorithm",
@@ -98,6 +104,12 @@
  {
   "out": "assets/img/covers/en-youtube-description-template.jpg",
   "title": "YouTube Description Template: What to Write and Copy-Paste Examples",
+  "label": "Channel growth & SEO",
+  "category": "growth"
+ },
+ {
+  "out": "assets/img/covers/en-youtube-end-screens-and-cards.jpg",
+  "title": "YouTube End Screens and Cards: How to Use Them to Keep Viewers Watching",
   "label": "Channel growth & SEO",
   "category": "growth"
  },
@@ -228,10 +240,22 @@
   "category": "resources"
  },
  {
+  "out": "assets/img/covers/es-mejor-hora-para-subir-videos-youtube.jpg",
+  "title": "La mejor hora para subir vídeos a YouTube: lo que de verdad importa",
+  "label": "Crecimiento y SEO del canal",
+  "category": "growth"
+ },
+ {
   "out": "assets/img/covers/es-monetizacion-youtube-shorts.jpg",
   "title": "Cómo funciona la monetización de YouTube Shorts",
   "label": "Monetización",
   "category": "monetization"
+ },
+ {
+  "out": "assets/img/covers/es-pantallas-finales-y-tarjetas-youtube.jpg",
+  "title": "Pantallas finales y tarjetas de YouTube: cómo usarlas para que sigan viéndote",
+  "label": "Crecimiento y SEO del canal",
+  "category": "growth"
  },
  {
   "out": "assets/img/covers/es-plantilla-descripcion-youtube.jpg",
