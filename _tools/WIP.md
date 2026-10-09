@@ -86,6 +86,13 @@ check links, improve design, research every AdSense requirement and make the sit
 - AdSense 2026-10-08: tubetools.online still "Requiere su atención – Contenido de poco valor" (last update
   2026-07-17); review NOT requested yet. Criteria shown: substantial unique value, constant presence and
   "genuine user interest". Search Console last 28 days: 3 clicks, 37 impressions.
+- 2026-10-09: /en/best-time-to-post-on-youtube.html, /mejor-hora-para-subir-videos-youtube.html (~17:40),
+  /en/youtube-end-screens-and-cards.html, /pantallas-finales-y-tarjetas-youtube.html,
+  /expresiones-faciales-miniaturas-youtube.html (~19:40). Next: /en/how-to-get-watch-hours.html,
+  /en/youtube-title-generator.html, /generador-titulos-youtube.html, /en/thumbnail-analyzer.html,
+  /analizador-miniaturas.html, /analizar-miniaturas-competencia.html, /en/youtube-thumbnail-preview.html,
+  /vista-previa-miniatura-youtube.html, /en/thumbnail-checklist.html, /en/glossary.html, /glosario.html,
+  /en/watch-hours-calculator.html (quota frees ~19:40).
 - Tip: in Search Console, ref/coordinate clicks can silently miss; click the visible "SOLICITAR INDEXACIÓN"
   button via JS and confirm the dialog "Se ha añadido la URL a una cola de rastreo prioritaria".
 
