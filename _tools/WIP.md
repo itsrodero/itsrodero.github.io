@@ -93,8 +93,18 @@ check links, improve design, research every AdSense requirement and make the sit
   /analizador-miniaturas.html, /analizar-miniaturas-competencia.html, /en/youtube-thumbnail-preview.html,
   /vista-previa-miniatura-youtube.html, /en/thumbnail-checklist.html, /en/glossary.html, /glosario.html,
   /en/watch-hours-calculator.html (quota frees ~19:40).
+- 2026-10-10 (~14:15), 7 requested: /en/how-to-get-watch-hours.html, /en/youtube-title-generator.html,
+  /generador-titulos-youtube.html, /en/thumbnail-analyzer.html, /analizador-miniaturas.html,
+  /analizar-miniaturas-competencia.html, /en/youtube-thumbnail-preview.html.
+- 2026-10-11 (~11:50), 5 requested: /vista-previa-miniatura-youtube.html, /en/thumbnail-checklist.html,
+  /en/glossary.html, /glosario.html, /en/watch-hours-calculator.html. With this, every URL that was not
+  indexed has been requested at least once; next step is a full index check around 2026-10-15.
 - Tip: in Search Console, ref/coordinate clicks can silently miss; click the visible "SOLICITAR INDEXACIÓN"
   button via JS and confirm the dialog "Se ha añadido la URL a una cola de rastreo prioritaria".
+
+- IndexNow (2026-10-11): key file `7afeee78b3f1dbbdbdecc38840ebc52e.txt` at the root; run
+  `python _tools/indexnow.py page.html ...` after publishing (no arguments = whole sitemap). Tells Bing,
+  which also feeds ChatGPT search, Copilot and DuckDuckGo. The site was not on Bing on 2026-10-11.
 
 ## Still to do
 1. Request indexing (5–10/day, shared quota with SizeMyProject). Full index check on 2026-10-03:
