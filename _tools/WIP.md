@@ -105,6 +105,7 @@ check links, improve design, research every AdSense requirement and make the sit
 - IndexNow (2026-10-11): key file `7afeee78b3f1dbbdbdecc38840ebc52e.txt` at the root; run
   `python _tools/indexnow.py page.html ...` after publishing (no arguments = whole sitemap). Tells Bing,
   which also feeds ChatGPT search, Copilot and DuckDuckGo. The site was not on Bing on 2026-10-11.
+  Bing Webmaster Tools: site imported from Search Console the same day, with its sitemap (Processing).
 
 ## Still to do
 1. Request indexing (5–10/day, shared quota with SizeMyProject). Full index check on 2026-10-03:
