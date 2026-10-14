@@ -107,6 +107,12 @@ check links, improve design, research every AdSense requirement and make the sit
   which also feeds ChatGPT search, Copilot and DuckDuckGo. The site was not on Bing on 2026-10-11.
   Bing Webmaster Tools: site imported from Search Console the same day, with its sitemap (Processing).
 
+- 2026-10-14: new guide "YouTube Analytics for Beginners" / "YouTube Analytics para principiantes" (growth,
+  order 8) with covers. Search Console 28 days to ~10-13: 6 clicks (5 brand "tubetools"), 44 impressions, pos 12.8.
+  Pages report (data 10-09): 70 indexed, 42 not (7 alternate canonical = redirect stubs, 18 crawled-not-indexed,
+  9 discovered, 6 old 404s in validation, 1 redirect). GA 10-06..10-12: most "users" were datacenter bots
+  (Council Bluffs/Ashburn); real visitors ~6–8, incl. 4 sessions from AI assistants.
+
 ## Still to do
 1. Request indexing (5–10/day, shared quota with SizeMyProject). Full index check on 2026-10-03:
    37 of 80 URLs indexed (22 of the 24 improved pages). Not indexed, in this order:

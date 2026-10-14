@@ -78,6 +78,12 @@
   "category": "thumbnails"
  },
  {
+  "out": "assets/img/covers/en-youtube-analytics-for-beginners.jpg",
+  "title": "YouTube Analytics for Beginners: The Numbers That Actually Matter",
+  "label": "Channel growth & SEO",
+  "category": "growth"
+ },
+ {
   "out": "assets/img/covers/en-youtube-banner-size-guide.jpg",
   "title": "YouTube Banner Size: Dimensions, Safe Area and Design Tips",
   "label": "Channel growth & SEO",
@@ -310,5 +316,11 @@
   "title": "Cómo escribir títulos de YouTube que consigan clics, sin clickbait",
   "label": "Títulos",
   "category": "titles"
+ },
+ {
+  "out": "assets/img/covers/es-youtube-analytics-para-principiantes.jpg",
+  "title": "YouTube Analytics para principiantes: los números que de verdad importan",
+  "label": "Crecimiento y SEO del canal",
+  "category": "growth"
  }
 ]
