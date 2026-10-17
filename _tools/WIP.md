@@ -113,6 +113,27 @@ check links, improve design, research every AdSense requirement and make the sit
   9 discovered, 6 old 404s in validation, 1 redirect). GA 10-06..10-12: most "users" were datacenter bots
   (Council Bluffs/Ashburn); real visitors ~6–8, incl. 4 sessions from AI assistants.
 
+- 2026-10-16: GSC 90 days: 167 impressions, 9 clicks (8 brand). Head terms (monetization requirements, timestamps,
+  rpm) sit at position 40–80. Only the money cluster has some traction: CPM by niche pos ~17 (most impressions
+  after the home page), increase RPM ~20, best niches (now redirected to CPM by niche) ~21–27. Pages report:
+  80 indexed / 32 not. AdSense review postponed to 10-22..26 with the user (traffic still ~0); if TubeTools
+  hasn't moved by then, consider SizeMyProject as the first AdSense candidate.
+- 2026-10-17: focus on the money cluster.
+  - CPM by niche (EN+ES) is now "by niche and country":
+    - 21 niches (added real estate, law/tax/insurance, DIY, history & documentary, parenting, true crime,
+      animals, news, sports, music);
+    - a section with real medians from AIR Media-Tech (300 channels, May 2025–May 2026);
+    - an RPM-by-country table from Dynamoi (Oct 2025–Oct 2026, updated 10-14), with explicit ids
+      `#youtube-rpm-by-country` / `#rpm-de-youtube-por-pais`;
+    - a Spanish-language section, 2 new FAQs, new title and covers.
+  - Revenue calculator (EN+ES): 21 niches plus a "where most viewers are" select. Factors: tier1 100%,
+    JP/KR 50%, W. Europe 35%, Spanish-speaking mix 15%, LatAm/E. Europe 10%, Asia/Africa 5%, worldwide 25%.
+    - The guide and calculator share the same tables (keep `assets/js/tools/calculator.js` in sync).
+    - The hash `#niche=finance&aud=weu` preselects.
+    - Worked example on the page; new FAQ about Spain/Mexico.
+    - Titles now mention niche and country.
+  - Re-check both datasets and the "2026" titles in early 2027.
+
 ## Still to do
 1. Request indexing (5–10/day, shared quota with SizeMyProject). Full index check on 2026-10-03:
    37 of 80 URLs indexed (22 of the 24 improved pages). Not indexed, in this order:

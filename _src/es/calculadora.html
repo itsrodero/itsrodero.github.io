@@ -1,16 +1,16 @@
 ---
 type: tool
-title: Calculadora de ingresos de YouTube por visitas y RPM
-description: Estima lo que ganarías en YouTube al día, al mes y al año según visualizaciones y RPM, con rangos orientativos por nicho y Shorts por separado.
+title: Calculadora de ingresos de YouTube por nicho, país y visitas
+description: Estima lo que ganarías en YouTube al día, al mes y al año según visualizaciones, nicho y país de tu público, o con tu propio RPM. Shorts aparte.
 h1: Calculadora de ingresos de YouTube
-lead: Estima lo que podrían generar tus visualizaciones con la publicidad de YouTube. Usa tu RPM real de YouTube Studio para la mejor estimación o elige un nicho para ver un rango orientativo. Te enseñamos el cálculo para que sepas de dónde sale la cifra.
+lead: Estima lo que podrían generar tus visualizaciones con la publicidad de YouTube. Usa tu RPM real de YouTube Studio para la mejor estimación o elige tu nicho y dónde está tu público para ver un rango orientativo. Te enseñamos el cálculo para que sepas de dónde sale la cifra.
 alt: calculator
 nav: tools
 tool_order: 6
 icon: calc
 card_title: Calculadora de ingresos
 card_short: Estima ganancias según visitas y RPM
-card_desc: Estima tus ganancias diarias, mensuales y anuales en YouTube según visualizaciones y RPM, incluidos los Shorts.
+card_desc: Estima tus ganancias diarias, mensuales y anuales en YouTube según nicho, país del público y visualizaciones, incluidos los Shorts.
 crumb: Calculadora de ingresos
 script: calculator
 ---
@@ -34,17 +34,37 @@ script: calculator
         <select class="select" id="rc-niche">
           <option value="finance">Finanzas personales e inversión</option>
           <option value="business">Negocios, marketing y software para empresas</option>
+          <option value="realestate">Inmobiliaria</option>
+          <option value="legal">Derecho, impuestos y seguros</option>
           <option value="tech">Tecnología y tutoriales de software</option>
-          <option value="education" selected>Educación y tutoriales</option>
+          <option value="education" selected>Educación y ciencia</option>
+          <option value="diy">Bricolaje y reformas</option>
           <option value="auto">Coches y motor</option>
+          <option value="history">Historia y documentales</option>
           <option value="health">Salud y fitness</option>
           <option value="lifestyle">Cocina, viajes y lifestyle</option>
+          <option value="parenting">Crianza y familia</option>
+          <option value="truecrime">True crime y misterio</option>
           <option value="beauty">Belleza y moda</option>
+          <option value="animals">Animales y mascotas</option>
+          <option value="news">Noticias y política</option>
+          <option value="sports">Deportes</option>
           <option value="entertainment">Entretenimiento, humor y vlogs</option>
           <option value="gaming">Videojuegos</option>
+          <option value="music">Música</option>
           <option value="kids">Contenido creado para niños</option>
+        </select></div>
+      <div class="field" id="rc-aud-wrap"><label for="rc-aud">Dónde está la mayoría de tu público</label>
+        <select class="select" id="rc-aud">
+          <option value="hispanic" selected>Mezcla hispanohablante (España, EE. UU. y Latinoamérica)</option>
+          <option value="weu">España y Europa occidental</option>
+          <option value="latam">Latinoamérica y Europa del Este</option>
+          <option value="tier1">EE. UU., Canadá, Reino Unido, Australia y nórdicos</option>
+          <option value="jpkr">Japón y Corea del Sur</option>
+          <option value="asia">India, Sudeste asiático y África</option>
+          <option value="world">Mezcla mundial</option>
         </select>
-        <span class="hint">Rangos orientativos para audiencias sobre todo de EE. UU. Con público de España o Latinoamérica, lo normal es ganar menos por visualización.</span></div>
+        <span class="hint">Ajusta el rango del nicho según lo que vale una visita en cada zona. <a href="@cpm-youtube-por-nicho#rpm-de-youtube-por-pais">Ver los datos</a>.</span></div>
       <div class="field" id="rc-rpm-wrap" hidden><label for="rc-rpm">Tu RPM</label><input class="input" id="rc-rpm" type="number" min="0" step="0.1" value="2"><span class="hint">YouTube Studio &rarr; Estadísticas &rarr; Ingresos &rarr; RPM</span></div>
       <div class="form-grid">
         <div class="field"><label for="rc-shorts">Visualizaciones de Shorts al mes</label><input class="input" id="rc-shorts" type="number" min="0" step="10000" value="0"></div>
@@ -63,7 +83,8 @@ script: calculator
           <div class="result-box"><b id="rc-year">–</b><span>al año</span></div>
           <div class="result-box"><b id="rc-day">–</b><span>al día</span></div>
         </div>
-        <p class="small muted" style="margin-top:12px">Con <strong id="rc-views-month">0</strong> visualizaciones de vídeos largos al mes y un RPM de <strong id="rc-rpm-used">–</strong>, más <strong id="rc-shorts-out">–</strong> al mes de Shorts. Antes de impuestos.</p>
+        <p class="small muted" id="rc-basis" style="margin-top:12px"></p>
+        <p class="small muted" style="margin-top:8px">Con <strong id="rc-views-month">0</strong> visualizaciones de vídeos largos al mes y un RPM de <strong id="rc-rpm-used">–</strong>, más <strong id="rc-shorts-out">–</strong> al mes de Shorts. Antes de impuestos.</p>
       </div>
     </aside>
   </div>
@@ -74,12 +95,20 @@ script: calculator
     <h2>Cómo funciona la calculadora</h2>
     <p>YouTube te muestra tu <strong>RPM</strong> (ingresos por cada 1.000 visualizaciones) después de quedarse su parte y contando todas las visualizaciones, también las que no tienen anuncios. Eso simplifica el cálculo:</p>
     <p class="formula">Ingresos estimados = visualizaciones &times; RPM &divide; 1.000</p>
-    <p>Si eliges un nicho, la calculadora usa un rango orientativo de RPM para ese nicho y muestra una estimación baja y otra alta. Estos rangos salen de cifras que los creadores comparten públicamente para audiencias en inglés, sobre todo de Estados Unidos; no son datos oficiales de YouTube. Si tu canal ya está monetizado, cambia a «Usar mi propio RPM» e introduce la cifra de YouTube Studio: siempre será más precisa que cualquier media.</p>
+    <p>Si eliges un nicho, la calculadora parte de un rango orientativo de RPM para ese nicho con público mayoritariamente estadounidense, los mismos rangos de nuestra guía de <a href="@cpm-youtube-por-nicho">RPM por nicho y país</a>. Después ajusta el rango según dónde está la mayoría de tu público. Por ejemplo, una visita desde Europa occidental cuenta como el 35 % de una de EE. UU., y una desde Latinoamérica, como el 10 %. Estos factores están redondeados a partir de un conjunto público de datos de 2026 sobre el RPM de creadores por país, y la guía muestra las cifras de origen. Los rangos por nicho salen de cifras que los creadores comparten públicamente; nada de esto son datos oficiales de YouTube.</p>
+    <p>Si tu canal ya está monetizado, cambia a «Usar mi propio RPM» e introduce la cifra de YouTube Studio. Ya incluye tu nicho, tus países y tus formatos, así que siempre será más precisa que cualquier media.</p>
+    <div class="callout callout-info"><span class="callout-title">Ejemplo: un canal de educación con 100.000 visualizaciones de vídeos largos al mes</span>
+      <ul>
+        <li>Público de EE. UU.: RPM de 3–10 $, así que unos <strong>300–1.000 $ al mes</strong>.</li>
+        <li>Público sobre todo de España y Europa occidental: 3–10 $ &times; 35 % = 1,05–3,50 $ de RPM, así que unos <strong>105–350 $ al mes</strong>.</li>
+        <li>Mezcla hispanohablante: 3–10 $ &times; 15 % = 0,45–1,50 $ de RPM, así que unos <strong>45–150 $ al mes</strong>.</li>
+      </ul>
+    </div>
     <p>Los Shorts se calculan aparte porque se pagan desde un fondo compartido y suelen generar solo céntimos por cada 1.000 visualizaciones. El RPM de Shorts por defecto es un valor ilustrativo; cámbialo por el tuyo.</p>
 
     <h2>Por qué la estimación puede fallar</h2>
     <ul>
-      <li><strong>Ubicación de la audiencia:</strong> los anunciantes pagan más por algunos países. En español, el público de España suele generar más por visualización que el de muchos países de Latinoamérica.</li>
+      <li><strong>Ubicación de la audiencia:</strong> los factores por país son medias de regiones enteras. Tu reparto real de países, que YouTube Studio muestra en Ingresos por zona geográfica, decide tu cifra.</li>
       <li><strong>Temporada:</strong> el RPM suele subir de octubre a diciembre y bajar en enero.</li>
       <li><strong>Duración:</strong> los vídeos de 8 minutos o más pueden incluir anuncios a mitad del vídeo.</li>
       <li><strong>Publicidad limitada:</strong> los vídeos que no son totalmente aptos para anunciantes ganan mucho menos.</li>
@@ -93,6 +122,7 @@ script: calculator
     <h2>Preguntas frecuentes</h2>
     <div class="faq">
       <details><summary>¿Cuánto paga YouTube por cada 1.000 visualizaciones?</summary><p>Eso es tu RPM, y varía muchísimo según el nicho, la ubicación del público y el formato: desde bastante menos de 1 € en muchos Shorts hasta más de 10 € en algunos canales de finanzas o negocios. Tu YouTube Studio muestra tu cifra exacta.</p></details>
+      <details><summary>¿Cuánto paga YouTube por cada 1.000 visualizaciones en España o en México?</summary><p>Bastante menos que en EE. UU. En un conjunto público de datos de 2026, los creadores ganaron unos 1,50 $ por cada 1.000 visualizaciones desde España y unos 0,27 $ desde México, frente a unos 5,14 $ desde EE. UU. Tu nicho puede mover estas cifras hacia arriba o hacia abajo.</p></details>
       <details><summary>¿Cuánto vale un millón de visualizaciones?</summary><p>Con un RPM de 1 €, unos 1.000 €; con 3 €, unos 3.000 €; con 8 €, unos 8.000 €. En Shorts, un millón de visualizaciones suele dar bastante menos.</p></details>
       <details><summary>¿Se guardan mis datos?</summary><p>Tus cifras se recuerdan en tu navegador para que sigan ahí la próxima vez. No se nos envía nada.</p></details>
     </div>

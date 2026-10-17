@@ -1,16 +1,16 @@
 ---
 type: tool
-title: YouTube Money Calculator – Estimate Earnings From Views & RPM
-description: Estimate YouTube earnings per day, month and year from views and RPM, with indicative RPM ranges by niche and a separate line for Shorts.
+title: YouTube Money Calculator – Earnings by Niche, Country & Views
+description: Estimate YouTube earnings per day, month and year from views, niche and audience country, or from your own RPM, with Shorts calculated separately.
 h1: YouTube Revenue Calculator
-lead: Estimate what your views could earn from YouTube ads. Use your real RPM from YouTube Studio for the best estimate, or pick a niche to see an indicative range. The math is shown, so you know exactly where the number comes from.
+lead: Estimate what your views could earn from YouTube ads. Use your real RPM from YouTube Studio for the best estimate, or pick your niche and where your viewers are to see an indicative range. The math is shown, so you know exactly where the number comes from.
 alt: calculadora
 nav: tools
 tool_order: 6
 icon: calc
 card_title: Revenue Calculator
 card_short: Estimate earnings from views and RPM
-card_desc: Estimate daily, monthly and yearly YouTube earnings from views and RPM, including Shorts.
+card_desc: Estimate daily, monthly and yearly YouTube earnings by niche, audience country and views, including Shorts.
 crumb: Revenue Calculator
 script: calculator
 ---
@@ -34,17 +34,37 @@ script: calculator
         <select class="select" id="rc-niche">
           <option value="finance">Personal finance &amp; investing</option>
           <option value="business">Business, marketing &amp; B2B software</option>
+          <option value="realestate">Real estate</option>
+          <option value="legal">Law, tax &amp; insurance</option>
           <option value="tech">Technology &amp; software tutorials</option>
-          <option value="education" selected>Education &amp; how-to</option>
+          <option value="education" selected>Education &amp; science</option>
+          <option value="diy">DIY &amp; home improvement</option>
           <option value="auto">Cars &amp; automotive</option>
+          <option value="history">History &amp; documentary</option>
           <option value="health">Health &amp; fitness</option>
           <option value="lifestyle">Food, travel &amp; lifestyle</option>
+          <option value="parenting">Parenting &amp; family</option>
+          <option value="truecrime">True crime &amp; mystery</option>
           <option value="beauty">Beauty &amp; fashion</option>
+          <option value="animals">Animals &amp; pets</option>
+          <option value="news">News &amp; politics</option>
+          <option value="sports">Sports</option>
           <option value="entertainment">Entertainment, comedy &amp; vlogs</option>
           <option value="gaming">Gaming</option>
+          <option value="music">Music</option>
           <option value="kids">Made-for-kids content</option>
+        </select></div>
+      <div class="field" id="rc-aud-wrap"><label for="rc-aud">Where most viewers are</label>
+        <select class="select" id="rc-aud">
+          <option value="tier1" selected>US, Canada, UK, Australia, Nordics</option>
+          <option value="jpkr">Japan &amp; South Korea</option>
+          <option value="weu">Western Europe (Germany, France, Spain, Italy…)</option>
+          <option value="hispanic">Spanish-speaking mix (Spain, US, Latin America)</option>
+          <option value="latam">Latin America &amp; Eastern Europe</option>
+          <option value="asia">India, Southeast Asia &amp; Africa</option>
+          <option value="world">Worldwide mix</option>
         </select>
-        <span class="hint">Indicative ranges for mostly-US audiences. Other audiences usually earn less per view.</span></div>
+        <span class="hint">Scales the niche range by how much a view is worth in each region. <a href="@youtube-cpm-by-niche#youtube-rpm-by-country">See the data</a>.</span></div>
       <div class="field" id="rc-rpm-wrap" hidden><label for="rc-rpm">Your RPM</label><input class="input" id="rc-rpm" type="number" min="0" step="0.1" value="4"><span class="hint">YouTube Studio &rarr; Analytics &rarr; Revenue &rarr; RPM</span></div>
       <div class="form-grid">
         <div class="field"><label for="rc-shorts">Shorts views per month</label><input class="input" id="rc-shorts" type="number" min="0" step="10000" value="0"></div>
@@ -63,7 +83,8 @@ script: calculator
           <div class="result-box"><b id="rc-year">–</b><span>per year</span></div>
           <div class="result-box"><b id="rc-day">–</b><span>per day</span></div>
         </div>
-        <p class="small muted" style="margin-top:12px">Based on <strong id="rc-views-month">0</strong> long-form views/month at an RPM of <strong id="rc-rpm-used">–</strong>, plus <strong id="rc-shorts-out">–</strong>/month from Shorts. Before taxes.</p>
+        <p class="small muted" id="rc-basis" style="margin-top:12px"></p>
+        <p class="small muted" style="margin-top:8px">Based on <strong id="rc-views-month">0</strong> long-form views/month at an RPM of <strong id="rc-rpm-used">–</strong>, plus <strong id="rc-shorts-out">–</strong>/month from Shorts. Before taxes.</p>
       </div>
     </aside>
   </div>
@@ -74,12 +95,20 @@ script: calculator
     <h2>How the calculator works</h2>
     <p>YouTube reports your <strong>RPM</strong> (revenue per 1,000 views) after its revenue share, across all views, including ones without ads. That makes the math simple:</p>
     <p class="formula">Estimated revenue = views &times; RPM &divide; 1,000</p>
-    <p>If you choose a niche, the calculator uses an indicative RPM range for that niche and shows a low and high estimate. These ranges come from figures creators commonly share publicly for English-language, mostly-US audiences — they're not official YouTube data. If your channel is monetized, switch to "Use my own RPM" and enter the number from YouTube Studio: it will always be more accurate than any average.</p>
+    <p>If you choose a niche, the calculator starts from an indicative RPM range for that niche with a mostly US audience, the same ranges as our <a href="@youtube-cpm-by-niche">RPM by niche and country</a> guide. It then scales the range by where most of your viewers are. A view from Western Europe, for example, is counted at 35% of a US view, and one from Latin America at 10%. These factors are rounded from a public 2026 dataset of creator RPM by country, and the guide shows the underlying numbers. The niche ranges come from figures creators commonly share publicly; neither is official YouTube data.</p>
+    <p>If your channel is monetized, switch to "Use my own RPM" and enter the number from YouTube Studio. It already includes your niche, countries and formats, so it will always be more accurate than any average.</p>
+    <div class="callout callout-info"><span class="callout-title">Example: an education channel with 100,000 long-form views a month</span>
+      <ul>
+        <li>US-heavy audience: $3–$10 RPM, so about <strong>$300–$1,000 a month</strong>.</li>
+        <li>Mostly Western Europe: $3–$10 &times; 35% = $1.05–$3.50 RPM, so about <strong>$105–$350 a month</strong>.</li>
+        <li>Spanish-speaking mix: $3–$10 &times; 15% = $0.45–$1.50 RPM, so about <strong>$45–$150 a month</strong>.</li>
+      </ul>
+    </div>
     <p>Shorts are calculated separately because they're paid from a shared pool and usually earn only cents per 1,000 views. The default Shorts RPM is an illustrative value; replace it with your own.</p>
 
     <h2>Why estimates can be off</h2>
     <ul>
-      <li><strong>Audience location:</strong> advertisers pay more for some countries. A channel with most viewers outside the US, Canada, UK and Australia will typically earn less per view.</li>
+      <li><strong>Audience location:</strong> the country factors are averages for whole regions. Your real mix of countries, which YouTube Studio shows under Revenue by geography, decides your actual figure.</li>
       <li><strong>Season:</strong> RPM usually rises in October–December and drops in January.</li>
       <li><strong>Video length:</strong> videos of 8 minutes or more can include mid-roll ads.</li>
       <li><strong>Limited ads:</strong> videos that aren't fully advertiser-friendly earn much less.</li>
@@ -93,6 +122,7 @@ script: calculator
     <h2>Frequently asked questions</h2>
     <div class="faq">
       <details><summary>How much does YouTube pay per 1,000 views?</summary><p>That's your RPM, and it varies widely by niche, audience location and format — from well under $1 for many Shorts to $20 or more for some finance and business channels. Your own YouTube Studio shows your exact figure.</p></details>
+      <details><summary>How much does YouTube pay per 1,000 views in Spain or Mexico?</summary><p>Much less than in the US. In a public 2026 dataset, creators earned about $1.50 per 1,000 views from Spain and about $0.27 from Mexico, against about $5.14 from the US. Your niche can move these numbers up or down.</p></details>
       <details><summary>How much is 1 million views worth?</summary><p>At an RPM of $2, about $2,000; at $5, about $5,000; at $12, about $12,000. For Shorts, 1 million views typically earns far less.</p></details>
       <details><summary>Is my data saved?</summary><p>Your inputs are remembered in your browser so they're there next time. Nothing is sent to us.</p></details>
     </div>
