@@ -134,6 +134,7 @@ check links, improve design, research every AdSense requirement and make the sit
     - Titles now mention niche and country.
   - Re-check both datasets and the "2026" titles in early 2027.
 
+
 ## Still to do
 1. Request indexing (5–10/day, shared quota with SizeMyProject). Full index check on 2026-10-03:
    37 of 80 URLs indexed (22 of the 24 improved pages). Not indexed, in this order:
