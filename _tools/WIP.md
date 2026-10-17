@@ -133,6 +133,9 @@ check links, improve design, research every AdSense requirement and make the sit
     - Worked example on the page; new FAQ about Spain/Mexico.
     - Titles now mention niche and country.
   - Re-check both datasets and the "2026" titles in early 2027.
+- 2026-10-17 (~22:40): indexing requested OK for /en/youtube-cpm-by-niche.html, /cpm-youtube-por-nicho.html,
+  /en/calculator.html, /calculadora.html. All four were already "on Google"; this asks for a recrawl of the new
+  content. IndexNow sent too.
 
 
 ## Still to do
