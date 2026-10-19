@@ -138,6 +138,15 @@ check links, improve design, research every AdSense requirement and make the sit
   content. IndexNow sent too.
 
 
+- 2026-10-19 (weekly review pick): the chapters guide (EN+ES) widened to "timestamps" intent. GSC had "youtube
+  timestamps", "timestamps youtube" and "add timestamps" at positions 43–68.
+  - New title and H1 ("YouTube Timestamps: How to Add Chapters & Timestamp Links").
+  - Table of the 3 uses (description chapters, comment links, URL start time).
+  - Mobile steps (YouTube Studio app).
+  - Section on linking to a specific time (Share > Start at; `?t=150` / `&t=150s` / `t=2m30s`), checked against
+    YouTube Help 57741.
+  - Section on timestamps in comments, 2 new FAQs, new covers.
+
 ## Still to do
 1. Request indexing (5–10/day, shared quota with SizeMyProject). Full index check on 2026-10-03:
    37 of 80 URLs indexed (22 of the 24 improved pages). Not indexed, in this order:
