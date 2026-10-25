@@ -147,6 +147,14 @@ check links, improve design, research every AdSense requirement and make the sit
     YouTube Help 57741.
   - Section on timestamps in comments, 2 new FAQs, new covers.
 
+- **2026-10-25: AdSense review REQUESTED** for tubetools.online. The user clicked "Solicitar revisión" in AdSense
+  (brother's account, pub-8621886093597255) after we agreed on the data:
+  - GSC 28 days: 85 impressions (previous 28 days: 46), position 11.3 (was 22.1), 12 clicks (10 brand).
+  - GA4 28 days: 22 sessions from ChatGPT (17 engaged), 6 organic.
+  - 81/88 URLs indexed; ads.txt, AdSense code and the Google CMP are in place.
+  - Previous rejection: "Contenido de poco valor". Next: check the status in AdSense > Sites at each weekly review and
+    record the result here.
+
 ## Still to do
 1. Request indexing (5–10/day, shared quota with SizeMyProject). Full index check on 2026-10-03:
    37 of 80 URLs indexed (22 of the 24 improved pages). Not indexed, in this order:
