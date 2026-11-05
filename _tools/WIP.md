@@ -154,6 +154,9 @@ check links, improve design, research every AdSense requirement and make the sit
   - 81/88 URLs indexed; ads.txt, AdSense code and the Google CMP are in place.
   - Previous rejection: "Contenido de poco valor". Next: check the status in AdSense > Sites at each weekly review and
     record the result here.
+- **2026-11-04: AdSense REJECTED again** ("Requiere su atención – Contenido de poco valor"; ads.txt "Autorizado").
+  By then Google had dropped the site to 5/88 indexed URLs (de-indexing from 2026-10-23). Do NOT request another
+  review until the site is back in the index and has real organic traffic; decide at the 2026-11-16 checkpoint.
 
 ## Still to do
 1. Request indexing (5–10/day, shared quota with SizeMyProject). Full index check on 2026-10-03:
