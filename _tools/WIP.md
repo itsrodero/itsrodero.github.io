@@ -157,6 +157,8 @@ check links, improve design, research every AdSense requirement and make the sit
 - **2026-11-04: AdSense REJECTED again** ("Requiere su atención – Contenido de poco valor"; ads.txt "Autorizado").
   By then Google had dropped the site to 5/88 indexed URLs (de-indexing from 2026-10-23). Do NOT request another
   review until the site is back in the index and has real organic traffic; decide at the 2026-11-16 checkpoint.
+  The rejection page (seen 2026-11-09) says the review-attempt limit was reached: a new review can be requested
+  from 2026-11-18 at the earliest. TubeTools is at rest since 2026-11-05, so do NOT use that date by default.
 
 ## Still to do
 1. Request indexing (5–10/day, shared quota with SizeMyProject). Full index check on 2026-10-03:
